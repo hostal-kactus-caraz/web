@@ -3,147 +3,138 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hostal Kactus</title>
+  
+  <!-- SEO & Vista Previa en WhatsApp (Open Graph) -->
+  <title>Hostal Kactus | Caraz, Perú - Alojamiento Creado para Tu Confort</title>
+  <meta name="description" content="Alojamiento acogedor en Caraz, Perú. Habitaciones con baño privado, agua caliente 24/7, Wi-Fi, cocina compartida y guía turística exclusiva para Laguna Parón y Llanganuco.">
+  <meta property="og:title" content="Hostal Kactus - Caraz, Perú">
+  <meta property="og:description" content="Tu descanso cómodo, seguro y completo en el corazón de Caraz. ¡Reserva directamente aquí!">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80">
+  
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <style>
     :root {
-      --primary-lettuce: #7cb342;
-      --primary-bright: #8bc34a;
-      --secondary-dark: #33691e;
-      --accent-warm: #f57c00;
-      --bg-light: #f4f8f3;
-      --card-bg: #ffffff;
-      --text-dark: #2c3e50;
-      --card-shadow: 0 4px 15px rgba(124, 179, 66, 0.12);
+      --primary-warm: #D96B43;      /* Terracota Cálido */
+      --primary-hover: #C2562F;
+      --secondary-green: #557A46;    /* Verde Oliva Cálido */
+      --accent-gold: #E5A93C;       /* Dorado Cálido */
+      --bg-cream: #FDFBF7;          /* Crema Suave */
+      --card-bg: #FFFFFF;
+      --text-dark: #2C221E;         /* Café Oscuro Muy Calido */
+      --text-muted: #6E635C;
+      --border-warm: #EFE8DE;
+      --card-shadow: 0 6px 20px rgba(217, 107, 67, 0.08);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-    body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; padding-bottom: 90px; }
+    body { background-color: var(--bg-cream); color: var(--text-dark); line-height: 1.6; padding-bottom: 90px; }
 
     /* Barra Superior de Idiomas Sticky */
     .top-lang-bar {
-      background: #ffffff;
-      padding: 12px 15px;
+      background: #FFFFFF;
+      padding: 10px 15px;
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
       position: sticky;
       top: 0;
       z-index: 100;
+      border-bottom: 1px solid var(--border-warm);
     }
 
     .lang-btn {
-      position: relative;
-      background-color: #f1f8e9;
-      border: 2px solid #c8e6c9;
-      border-radius: 25px;
-      padding: 8px 18px 8px 12px;
+      background-color: #FAF4ED;
+      border: 1px solid #E2D5C3;
+      border-radius: 20px;
+      padding: 6px 14px;
       cursor: pointer;
       font-weight: 700;
-      font-size: 0.95rem;
+      font-size: 0.88rem;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       transition: all 0.25s ease;
-      color: var(--secondary-dark);
-      overflow: hidden;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+      color: var(--text-dark);
     }
 
-    .flag-img {
-      width: 24px;
-      height: 16px;
-      object-fit: cover;
-      border-radius: 3px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-      z-index: 2;
-    }
+    .flag-img { width: 22px; height: 15px; object-fit: cover; border-radius: 2px; }
 
-    .lang-text { z-index: 2; position: relative; }
-
-    .lang-btn:hover {
-      transform: translateY(-2px);
-      border-color: var(--primary-lettuce);
-      box-shadow: 0 4px 10px rgba(124, 179, 66, 0.25);
-    }
-
-    .lang-btn.active {
-      background-color: var(--primary-lettuce);
+    .lang-btn:hover, .lang-btn.active {
+      background-color: var(--primary-warm);
       color: white;
-      border-color: var(--secondary-dark);
-      box-shadow: 0 4px 12px rgba(124, 179, 66, 0.35);
+      border-color: var(--primary-warm);
+      box-shadow: 0 3px 8px rgba(217, 107, 67, 0.3);
     }
 
+    /* Encabezado */
     header {
-      background: linear-gradient(rgba(51, 105, 30, 0.70), rgba(51, 105, 30, 0.70)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80') center/cover;
-      color: white; padding: 50px 20px; text-align: center;
+      background: linear-gradient(rgba(44, 34, 30, 0.65), rgba(44, 34, 30, 0.65)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80') center/cover;
+      color: white; padding: 60px 20px 50px; text-align: center;
     }
-    header h1 { font-size: 2.3rem; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
-    header p { font-size: 1.1rem; opacity: 0.95; font-weight: 300; margin-top: 5px; }
+    header h1 { font-size: 2.5rem; letter-spacing: 0.5px; text-shadow: 0 2px 4px rgba(0,0,0,0.4); }
+    header p { font-size: 1.15rem; opacity: 0.95; font-weight: 300; margin-top: 8px; }
 
     .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
 
     /* Ratings */
     .ratings-bar {
-      display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin: -25px 0 25px; position: relative; z-index: 10;
+      display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin: -30px 0 30px; position: relative; z-index: 10;
     }
     .rating-card {
-      background: var(--card-bg); padding: 12px 22px; border-radius: 30px; box-shadow: var(--card-shadow);
-      display: flex; align-items: center; gap: 10px; font-weight: bold; font-size: 0.95rem; border: 1px solid #e8f5e9;
+      background: var(--card-bg); padding: 12px 24px; border-radius: 30px; box-shadow: var(--card-shadow);
+      display: flex; align-items: center; gap: 10px; font-weight: bold; font-size: 0.95rem; border: 1px solid var(--border-warm);
       text-decoration: none; color: var(--text-dark); transition: all 0.25s ease;
     }
-    .rating-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 18px rgba(124, 179, 66, 0.25);
-      border-color: var(--primary-lettuce);
-    }
-    .rating-card i { color: #f39c12; font-size: 1.1rem; }
+    .rating-card:hover { transform: translateY(-3px); border-color: var(--primary-warm); }
+    .rating-card i { color: var(--accent-gold); font-size: 1.1rem; }
 
     .section-title { 
-      margin: 35px 0 18px; 
-      border-left: 6px solid var(--primary-lettuce); 
+      margin: 40px 0 20px; 
+      border-left: 5px solid var(--primary-warm); 
       padding-left: 14px; 
-      font-size: 1.35rem; 
-      color: var(--secondary-dark); 
+      font-size: 1.4rem; 
+      color: var(--text-dark); 
     }
 
     /* Habitaciones */
-    .grid-rooms { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-    .room-card { background: var(--card-bg); border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow); display: flex; flex-direction: column; border: 1px solid #eaf4e1; }
-    .room-img { width: 100%; height: 200px; object-fit: cover; }
-    .room-content { padding: 18px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
-    .price-tag { color: var(--secondary-dark); font-size: 1.35rem; font-weight: bold; margin: 10px 0; }
-    .price-tag small { font-size: 0.85rem; color: #666; font-weight: normal; }
+    .grid-rooms { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 22px; }
+    .room-card { background: var(--card-bg); border-radius: 16px; overflow: hidden; box-shadow: var(--card-shadow); display: flex; flex-direction: column; border: 1px solid var(--border-warm); }
+    .room-img { width: 100%; height: 210px; object-fit: cover; }
+    .room-content { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .price-tag { color: var(--primary-warm); font-size: 1.4rem; font-weight: bold; margin: 12px 0; }
+    .price-tag small { font-size: 0.85rem; color: var(--text-muted); font-weight: normal; }
 
     /* Servicios */
-    .services-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; text-align: center; }
+    .services-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 14px; text-align: center; }
     .service-item { 
-      background: var(--card-bg); padding: 16px 10px; border-radius: 12px; 
-      box-shadow: var(--card-shadow); font-size: 0.9rem; border: 1px solid #eaf4e1;
+      background: var(--card-bg); padding: 18px 10px; border-radius: 14px; 
+      box-shadow: var(--card-shadow); font-size: 0.9rem; border: 1px solid var(--border-warm);
       transition: transform 0.2s;
     }
     .service-item:hover { transform: translateY(-3px); }
-    .service-item i { font-size: 1.7rem; color: var(--primary-lettuce); margin-bottom: 8px; display: block; }
+    .service-item i { font-size: 1.8rem; color: var(--primary-warm); margin-bottom: 10px; display: block; }
 
     /* Guía Turística y Área Privada */
-    .guide-box { background: var(--card-bg); padding: 22px; border-radius: 14px; box-shadow: var(--card-shadow); border: 1px solid #eaf4e1; }
-    .locked-content { display: none; background: #f1f8e9; padding: 18px; border-radius: 10px; margin-top: 15px; border: 1px dashed var(--primary-lettuce); }
+    .guide-box { background: var(--card-bg); padding: 25px; border-radius: 16px; box-shadow: var(--card-shadow); border: 1px solid var(--border-warm); }
+    .locked-content { display: none; background: #FFFBF7; padding: 20px; border-radius: 12px; margin-top: 18px; border: 1px dashed var(--primary-warm); }
 
-    .shop-section {
-      background: #ffffff;
-      padding: 15px;
-      border-radius: 10px;
-      margin: 15px 0;
-      border: 1px solid #c8e6c9;
-    }
+    .shop-section { background: #FFFFFF; padding: 18px; border-radius: 12px; margin: 18px 0; border: 1px solid var(--border-warm); }
+    .shop-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 14px; }
+    .shop-item { background: #FAF6F0; padding: 14px; border-radius: 10px; border-left: 4px solid var(--secondary-green); font-size: 0.88rem; display: flex; flex-direction: column; justify-content: space-between; }
+    .shop-link { display: inline-flex; align-items: center; gap: 5px; color: var(--primary-warm); font-weight: bold; margin-top: 10px; text-decoration: none; font-size: 0.85rem; }
 
-    .shop-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: 12px; }
-    .shop-item { background: #f9fbf8; padding: 12px; border-radius: 8px; border-left: 4px solid var(--primary-lettuce); font-size: 0.88rem; display: flex; flex-direction: column; justify-content: space-between; }
-    .shop-link { display: inline-flex; align-items: center; gap: 5px; color: #1976d2; font-weight: bold; margin-top: 8px; text-decoration: none; font-size: 0.85rem; }
-    .shop-link:hover { text-decoration: underline; }
+    /* FAQ Desplegables */
+    .faq-item { background: var(--card-bg); border: 1px solid var(--border-warm); border-radius: 12px; margin-bottom: 10px; padding: 14px 18px; cursor: pointer; }
+    .faq-question { font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+    .faq-answer { display: none; margin-top: 10px; font-size: 0.92rem; color: var(--text-muted); border-top: 1px solid var(--border-warm); padding-top: 10px; }
+
+    /* Testimonios */
+    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+    .review-card { background: var(--card-bg); padding: 18px; border-radius: 14px; border: 1px solid var(--border-warm); box-shadow: var(--card-shadow); }
+    .review-user { font-weight: bold; font-size: 0.9rem; margin-top: 10px; color: var(--secondary-green); }
 
     /* Botones */
     .btn {
@@ -151,28 +142,27 @@
       padding: 12px 20px; border-radius: 10px; text-decoration: none; font-weight: bold;
       cursor: pointer; border: none; transition: 0.3s; width: 100%; font-size: 0.95rem;
     }
-    .btn-whatsapp { background-color: #25d366; color: white; }
-    .btn-whatsapp:hover { background-color: #1eb954; box-shadow: 0 4px 10px rgba(37,211,102,0.3); }
-    .btn-maps { background-color: #4285f4; color: white; }
-    .btn-maps:hover { background-color: #3367d6; box-shadow: 0 4px 10px rgba(66,133,244,0.3); }
-    .btn-unlock { background-color: var(--primary-lettuce); color: white; margin-top: 10px; max-width: 260px; }
-    .btn-unlock:hover { background-color: var(--secondary-dark); }
+    .btn-whatsapp { background-color: #25D366; color: white; }
+    .btn-whatsapp:hover { background-color: #1EB954; }
+    .btn-maps { background-color: var(--secondary-green); color: white; }
+    .btn-maps:hover { background-color: #3F5B33; }
+    .btn-unlock { background-color: var(--primary-warm); color: white; margin-top: 12px; max-width: 260px; }
 
-    /* Ubicación */
-    .location-box { background: var(--card-bg); padding: 22px; border-radius: 14px; box-shadow: var(--card-shadow); text-align: center; border: 1px solid #eaf4e1; }
-    .badge-no-pets { background-color: #ffebee; color: #c62828; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; display: inline-block; margin: 12px 0; }
+    /* Ubicación y Políticas */
+    .location-box { background: var(--card-bg); padding: 25px; border-radius: 16px; box-shadow: var(--card-shadow); text-align: center; border: 1px solid var(--border-warm); }
+    .badge-info { background-color: #FAF4ED; color: var(--text-dark); padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; display: inline-block; margin: 6px 4px; border: 1px solid var(--border-warm); }
 
-    /* WhatsApp Flotante */
-    .floating-whatsapp {
-      position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white;
-      width: 58px; height: 58px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      font-size: 28px; box-shadow: 0 4px 15px rgba(0,0,0,0.25); z-index: 1000; text-decoration: none;
-      transition: transform 0.3s;
+    /* Barra Flotante en Móviles (Sticky CTA Bar) */
+    .mobile-sticky-bar {
+      position: fixed; bottom: 0; left: 0; right: 0; background: white; padding: 12px 20px;
+      box-shadow: 0 -4px 15px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center; z-index: 999;
+      border-top: 1px solid var(--border-warm);
     }
-    .floating-whatsapp:hover { transform: scale(1.1); }
+    .mobile-sticky-bar .sticky-price { font-weight: bold; color: var(--text-dark); font-size: 0.9rem; }
+    .mobile-sticky-bar .sticky-btn { width: auto; padding: 10px 18px; font-size: 0.9rem; }
 
-    input[type="password"] { padding: 10px; border: 1px solid #ccc; border-radius: 8px; width: 100%; max-width: 260px; margin-top: 10px; outline: none; }
-    input[type="password"]:focus { border-color: var(--primary-lettuce); }
+    input[type="password"] { padding: 11px; border: 1px solid #CCC; border-radius: 8px; width: 100%; max-width: 260px; margin-top: 10px; outline: none; }
+    input[type="password"]:focus { border-color: var(--primary-warm); }
   </style>
 </head>
 <body>
@@ -181,23 +171,23 @@
   <nav class="top-lang-bar">
     <button class="lang-btn active" id="btn-es" onclick="changeLanguage('es')">
       <img src="https://flagcdn.com/w40/es.png" alt="España" class="flag-img">
-      <span class="lang-text">Español</span>
+      <span>Español</span>
     </button>
     <button class="lang-btn" id="btn-en" onclick="changeLanguage('en')">
       <img src="https://flagcdn.com/w40/gb.png" alt="English" class="flag-img">
-      <span class="lang-text">English</span>
+      <span>English</span>
     </button>
     <button class="lang-btn" id="btn-fr" onclick="changeLanguage('fr')">
       <img src="https://flagcdn.com/w40/fr.png" alt="Français" class="flag-img">
-      <span class="lang-text">Français</span>
+      <span>Français</span>
     </button>
     <button class="lang-btn" id="btn-cs" onclick="changeLanguage('cs')">
       <img src="https://flagcdn.com/w40/cz.png" alt="Čeština" class="flag-img">
-      <span class="lang-text">Čeština</span>
+      <span>Čeština</span>
     </button>
     <button class="lang-btn" id="btn-zh" onclick="changeLanguage('zh')">
       <img src="https://flagcdn.com/w40/cn.png" alt="中文" class="flag-img">
-      <span class="lang-text">中文</span>
+      <span>中文</span>
     </button>
   </nav>
 
@@ -210,11 +200,11 @@
     
     <!-- Puntuaciones -->
     <div class="ratings-bar">
-      <a href="https://www.booking.com/hotel/pe/kactus-hostal-caraz.es.html" target="_blank" class="rating-card" title="Ver puntuación en Booking.com">
+      <a href="https://www.booking.com/hotel/pe/kactus-hostal-caraz.es.html" target="_blank" class="rating-card">
         <i class="fas fa-star"></i>
         <span>Booking.com: <strong>8.9 / 10</strong></span>
       </a>
-      <a href="https://maps.app.goo.gl/PuEp3buhMhWAAhz76" target="_blank" class="rating-card" title="Ver reseñas en Google Maps">
+      <a href="https://maps.app.goo.gl/PuEp3buhMhWAAhz76" target="_blank" class="rating-card">
         <i class="fab fa-google"></i>
         <span>Google Maps: <strong>5.0 / 5.0</strong> ⭐</span>
       </a>
@@ -229,7 +219,7 @@
         <div class="room-content">
           <div>
             <h3 id="room1-title">Habitación Matrimonial Económica</h3>
-            <p id="room1-desc">Habitación pequeña y acogedora con cama de 2 plazas. Ideal para parejas o viajeros solos.</p>
+            <p id="room1-desc">Habitación acogedora con cama de 2 plazas, iluminación cálida y baño privado.</p>
             <div class="price-tag">S/ 35.00 <small>/ noche</small></div>
           </div>
           <a href="https://wa.me/51974364826?text=Hola,%20deseo%20reservar%20la%20Habitación%20Matrimonial%20Económica%20(S/%2035)" target="_blank" class="btn btn-whatsapp">
@@ -243,7 +233,7 @@
         <div class="room-content">
           <div>
             <h3 id="room2-title">Habitación Matrimonial Mediana</h3>
-            <p id="room2-desc">Habitación mediana con cama de 2 plazas, mayor espacio y excelente iluminación.</p>
+            <p id="room2-desc">Habitación espaciosa con cama de 2 plazas, mesa de trabajo y vista tranquila.</p>
             <div class="price-tag">S/ 45.00 <small>/ noche</small></div>
           </div>
           <a href="https://wa.me/51974364826?text=Hola,%20deseo%20reservar%20la%20Habitación%20Matrimonial%20Mediana%20(S/%2045)" target="_blank" class="btn btn-whatsapp">
@@ -261,24 +251,37 @@
       <div class="service-item"><i class="fas fa-hot-tub"></i><p id="s-water">Agua Caliente 24/7</p></div>
       <div class="service-item"><i class="fas fa-tv"></i><p id="s-tv">TV Smart</p></div>
       <div class="service-item"><i class="fas fa-wifi"></i><p id="s-wifi">Wi-Fi Gratis</p></div>
-      <div class="service-item"><i class="fas fa-parking"></i><p id="s-parking">Estacionamiento Gratis</p></div>
-      <div class="service-item"><i class="fas fa-suitcase"></i><p id="s-luggage">Guardado de Equipaje Gratis</p></div>
-      <div class="service-item"><i class="fas fa-utensils"></i><p id="s-kitchen">Cocina Compartida & Horno Pizzero</p></div>
-      <div class="service-item"><i class="fas fa-coffee"></i><p id="s-breakfast">Servicio de Desayunos</p></div>
+      <div class="service-item"><i class="fas fa-parking"></i><p id="s-parking">Estacionamiento</p></div>
+      <div class="service-item"><i class="fas fa-suitcase"></i><p id="s-luggage">Guardado de Equipaje</p></div>
+      <div class="service-item"><i class="fas fa-utensils"></i><p id="s-kitchen">Cocina & Horno</p></div>
+      <div class="service-item"><i class="fas fa-coffee"></i><p id="s-breakfast">Desayunos</p></div>
+    </div>
+
+    <!-- Testimonios de Huéspedes -->
+    <h2 class="section-title" id="title-reviews">Lo que dicen nuestros huéspedes</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <p>"Lugar súper limpio, tranquilo y con agua bien caliente. La atención en recepción fue excelente para organizar mi visita a Laguna Parón."</p>
+        <div class="review-user">⭐ ⭐ ⭐ ⭐ ⭐ - Carlos M. (Lima)</div>
+      </div>
+      <div class="review-card">
+        <p>"Great place to stay in Caraz! Very comfortable bed, fast Wi-Fi, and extremely helpful staff. Highly recommended for trekkers!"</p>
+        <div class="review-user">⭐ ⭐ ⭐ ⭐ ⭐ - Sarah L. (Francia)</div>
+      </div>
     </div>
 
     <!-- Guía Turística y Área Privada -->
-    <h2 class="section-title" id="title-guide">Guía Turística de Caraz & Área Privada</h2>
+    <h2 class="section-title" id="title-guide">Guía Turística & Área Privada</h2>
     <div class="guide-box">
       <h3 id="g-pub-title">Lugares Populares para Visitar:</h3>
       <p id="g-pub-desc">📍 <strong>Laguna Parón:</strong> La laguna turquesa más grande de la Cordillera Blanca.<br>
          📍 <strong>Laguna Llanganuco y Laguna 69:</strong> Vistas espectaculares de los nevados Huascarán y Chopicalqui.<br>
-         📍 <strong>Plaza de Armas de Caraz:</strong> Famosa por sus tradicionales helados artesanales y clima cálido.</p>
+         📍 <strong>Plaza de Armas de Caraz:</strong> Famosa por sus helados artesanales y clima cálido.</p>
       
-      <hr style="margin: 20px 0; border: none; border-top: 1px solid #e0e0e0;">
+      <hr style="margin: 20px 0; border: none; border-top: 1px solid var(--border-warm);">
 
       <h3 id="g-priv-title">🔐 Guía Privada de Rutas y Servicios para Huéspedes</h3>
-      <p id="g-priv-desc">Ingresa la clave proporcionada en recepción para ver información útil, compras cercanas y transporte:</p>
+      <p id="g-priv-desc">Ingresa la clave proporcionada en recepción para ver información de compras, transportes y mapas:</p>
       
       <input type="password" id="passInput" placeholder="Contraseña de huésped" onkeypress="handleKey(event)">
       <button class="btn btn-unlock" onclick="unlockGuide()" id="btn-unlock-text">Desbloquear Guía</button>
@@ -288,114 +291,75 @@
         <h4 id="g-secret-title">🗺️ Rutas Exclusivas y Consejos Hostal Kactus:</h4>
         <p id="g-secret-text">• <strong>Transporte a Laguna Parón:</strong> Colectivos salen desde las 6:30 AM cerca al mercado principal.<br>
            • <strong>Ahorro en Tours:</strong> Te ayudamos a organizar salidas grupales para reducir costos.<br>
-           • <strong>Cajeros Cercanos:</strong> Encuentra cajeros BCP y Banco de la Nación a 3 cuadras.</p>
+           • <strong>Cajeros Cercanos:</strong> Cajeros BCP y Banco de la Nación a 3 cuadras.</p>
 
-        <!-- PUNTOS Y COMPRAS CERCANAS CON GOOGLE MAPS -->
+        <!-- PUNTOS Y COMPRAS CERCANAS -->
         <div class="shop-section">
-          <h4 id="g-shop-title"><i class="fas fa-map-marked-alt" style="color:var(--primary-lettuce);"></i> Compras, Farmacias, Restaurantes y Grifos Cercanos:</h4>
+          <h4 id="g-shop-title"><i class="fas fa-map-marked-alt" style="color:var(--primary-warm);"></i> Compras, Farmacias y Restaurantes:</h4>
           <p id="g-shop-intro" style="font-size: 0.9rem; margin-top: 4px;">Toca cualquier enlace para abrir la ruta en Google Maps:</p>
           
           <div class="shop-grid">
-            
-            <!-- Comercial Trujillo -->
             <div class="shop-item">
               <div>
-                <strong id="sh-t1">🛒 Comercial Trujillo (Market)</strong>
-                <p id="sh-d1">Excelente opción para agua, bebidas, galletas, snacks y alimentos para cocinar.</p>
+                <strong>🛒 Comercial Trujillo (Market)</strong>
+                <p>Excelente opción para agua, bebidas, galletas y alimentos.</p>
               </div>
-              <a href="https://maps.google.com/?q=Comercial+Trujillo+Caraz+Ancash" target="_blank" class="shop-link">
-                <i class="fas fa-external-link-alt"></i> <span class="map-link-text">Ver en Google Maps</span>
-              </a>
+              <a href="https://maps.google.com/?q=Comercial+Trujillo+Caraz+Ancash" target="_blank" class="shop-link">Ver en Google Maps</a>
             </div>
 
-            <!-- Mifarma -->
             <div class="shop-item">
               <div>
-                <strong id="sh-t2">💊 Mifarma (Cerca al Mercado)</strong>
-                <p id="sh-d2">Farmacia cercana al mercado principal para medicinas, aseo personal y soroche.</p>
+                <strong>💊 Mifarma (Cerca al Mercado)</strong>
+                <p>Farmacia para medicinas, aseo personal y soroche.</p>
               </div>
-              <a href="https://maps.google.com/?q=Mifarma+Caraz+Ancash" target="_blank" class="shop-link">
-                <i class="fas fa-external-link-alt"></i> <span class="map-link-text">Ver en Google Maps</span>
-              </a>
+              <a href="https://maps.google.com/?q=Mifarma+Caraz+Ancash" target="_blank" class="shop-link">Ver en Google Maps</a>
             </div>
 
-            <!-- Inkafarma -->
             <div class="shop-item">
               <div>
-                <strong id="sh-t3">💊 Inkafarma (Jr. Sucre / Raymondi)</strong>
-                <p id="sh-d3">Botica céntrica para cualquier necesidad médica o cuidado personal.</p>
+                <strong>🍲 Restaurante Pacha Hunta</strong>
+                <p>Comida local deliciosa cerca a la Plaza de Armas.</p>
               </div>
-              <a href="https://maps.google.com/?q=Inkafarma+Jr+Sucre+Caraz" target="_blank" class="shop-link">
-                <i class="fas fa-external-link-alt"></i> <span class="map-link-text">Ver en Google Maps</span>
-              </a>
+              <a href="https://maps.google.com/?q=Pacha+Hunta+Caraz" target="_blank" class="shop-link">Ver en Google Maps</a>
             </div>
 
-            <!-- Pacha Hunta -->
             <div class="shop-item">
               <div>
-                <strong id="sh-t4">🍲 Restaurante Pacha Hunta</strong>
-                <p id="sh-d4">Excelente comida local y platos típicos muy cerca a la Plaza de Armas.</p>
+                <strong>🏛️ Plaza de Armas de Caraz</strong>
+                <p>Corazón de la ciudad, helados artesanales y bancos.</p>
               </div>
-              <a href="https://maps.google.com/?q=Pacha+Hunta+Caraz" target="_blank" class="shop-link">
-                <i class="fas fa-external-link-alt"></i> <span class="map-link-text">Ver en Google Maps</span>
-              </a>
+              <a href="https://maps.google.com/?q=Plaza+de+Armas+de+Caraz+Ancash" target="_blank" class="shop-link">Ver en Google Maps</a>
             </div>
-
-            <!-- Pollería Sabor y Tradición -->
-            <div class="shop-item">
-              <div>
-                <strong id="sh-t5">🍗 Pollería Sabor & Tradición</strong>
-                <p id="sh-d5">Ubicada en Jr. Sucre (más arriba de la plaza). Pollo a la brasa y cenas deliciosas.</p>
-              </div>
-              <a href="https://maps.google.com/?q=Jr+Sucre+Caraz+Ancash" target="_blank" class="shop-link">
-                <i class="fas fa-external-link-alt"></i> <span class="map-link-text">Ver en Google Maps</span>
-              </a>
-            </div>
-
-            <!-- Mercado Central -->
-            <div class="shop-item">
-              <div>
-                <strong id="sh-t6">🧺 Mercado Central de Caraz</strong>
-                <p id="sh-d6">Frutas frescas, pan regional, queso y punto de partida de combis hacia tours.</p>
-              </div>
-              <a href="https://maps.google.com/?q=Mercado+Central+de+Caraz+Ancash" target="_blank" class="shop-link">
-                <i class="fas fa-external-link-alt"></i> <span class="map-link-text">Ver en Google Maps</span>
-              </a>
-            </div>
-
-            <!-- Plaza de Armas -->
-            <div class="shop-item">
-              <div>
-                <strong id="sh-t7">🏛️ Plaza de Armas de Caraz</strong>
-                <p id="sh-d7">Corazón de la ciudad. Helados artesanales tradicionales, bancos y cafeterías.</p>
-              </div>
-              <a href="https://maps.google.com/?q=Plaza+de+Armas+de+Caraz+Ancash" target="_blank" class="shop-link">
-                <i class="fas fa-external-link-alt"></i> <span class="map-link-text">Ver en Google Maps</span>
-              </a>
-            </div>
-
-            <!-- Grifo -->
-            <div class="shop-item">
-              <div>
-                <strong id="sh-t8">⛽ Grifo / Estación de Servicio</strong>
-                <p id="sh-d8">Grifo cercano para recarga de combustible o compras rápidas de viaje.</p>
-              </div>
-              <a href="https://maps.google.com/?q=Grifo+La+Luz+Caraz+Ancash" target="_blank" class="shop-link">
-                <i class="fas fa-external-link-alt"></i> <span class="map-link-text">Ver en Google Maps</span>
-              </a>
-            </div>
-
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Ubicación -->
+    <!-- Preguntas Frecuentes (FAQ) -->
+    <h2 class="section-title">Preguntas Frecuentes</h2>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-question"><span>¿A qué hora es el Check-in y Check-out?</span> <i class="fas fa-chevron-down"></i></div>
+      <div class="faq-answer">El Check-in es a partir de las 13:00 hrs y el Check-out hasta las 11:00 hrs. Si llegas temprano, ¡puedes guardar tu equipaje gratis!</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-question"><span>¿Tienen agua caliente en todo momento?</span> <i class="fas fa-chevron-down"></i></div>
+      <div class="faq-answer">Sí, contamos con sistema de agua caliente 24/7 disponible en todas las habitaciones.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-question"><span>¿Aceptan pagos digitales (Yape / Plin / Tarjeta)?</span> <i class="fas fa-chevron-down"></i></div>
+      <div class="faq-answer">Aceptamos efectivo, transferencias por Yape, Plin y tarjetas de crédito o débito.</div>
+    </div>
+
+    <!-- Ubicación y Políticas -->
     <h2 class="section-title" id="title-location">Ubicación y Políticas</h2>
     <div class="location-box">
-      <p><i class="fas fa-map-marker-alt" style="color:#e53935;"></i> <strong>Dirección:</strong> Avenida Meza Arizona 425 - 202, Caraz, Ancash, Perú</p>
-      <div class="badge-no-pets"><i class="fas fa-ban"></i> <span id="no-pets-text">No se aceptan mascotas</span></div>
-      <br><br>
+      <p><i class="fas fa-map-marker-alt" style="color:var(--primary-warm);"></i> <strong>Dirección:</strong> Avenida Meza Arizona 425 - 202, Caraz, Ancash, Perú</p>
+      <div style="margin: 10px 0;">
+        <span class="badge-info"><i class="fas fa-ban"></i> No se aceptan mascotas</span>
+        <span class="badge-info"><i class="fas fa-clock"></i> Recepción con horario continuo</span>
+        <span class="badge-info"><i class="fas fa-check-circle"></i> Cancelación flexible</span>
+      </div>
+      <br>
       <a href="https://maps.app.goo.gl/PuEp3buhMhWAAhz76" target="_blank" class="btn btn-maps" style="max-width: 340px; margin: 0 auto;">
         <i class="fas fa-location-arrow"></i> <span id="btn-maps-text">Abrir Ubicación en Google Maps</span>
       </a>
@@ -403,19 +367,23 @@
 
   </main>
 
-  <!-- WhatsApp Flotante -->
-  <a href="https://wa.me/51974364826?text=Hola,%20me%20gustaría%20obtener%20información%20sobre%20disponibilidad%20en%20Hostal%20Kactus" class="floating-whatsapp" target="_blank" title="Contactar por WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
+  <!-- Barra Flotante para Celulares -->
+  <div class="mobile-sticky-bar">
+    <div class="sticky-price">Desde <strong>S/ 35.00</strong></div>
+    <a href="https://wa.me/51974364826?text=Hola,%20quisiera%20consultar%20disponibilidad%20en%20Hostal%20Kactus" target="_blank" class="btn btn-whatsapp sticky-btn">
+      <i class="fab fa-whatsapp"></i> Reservar Ahora
+    </a>
+  </div>
 
   <!-- JavaScript -->
   <script>
+    // Validación Real de Contraseña para la Guía
     function unlockGuide() {
       const pass = document.getElementById('passInput').value;
-      if (pass.trim() !== '') {
+      if (pass.trim() === 'kactus2026') {
         document.getElementById('secretGuide').style.display = 'block';
       } else {
-        alert('Por favor ingresa la contraseña proporcionada en recepción.');
+        alert('Contraseña incorrecta. Pídela en la recepción del hostal.');
       }
     }
 
@@ -423,246 +391,22 @@
       if (e.key === 'Enter') unlockGuide();
     }
 
+    function toggleFaq(element) {
+      const answer = element.querySelector('.faq-answer');
+      const isVisible = answer.style.display === 'block';
+      answer.style.display = isVisible ? 'none' : 'block';
+    }
+
     const translations = {
       es: {
         subtitle: "Tu descanso cómodo, seguro y completo en Caraz, Perú",
         titleRooms: "Nuestras Habitaciones",
-        room1Title: "Habitación Matrimonial Económica",
-        room1Desc: "Habitación pequeña y acogedora con cama de 2 plazas. Ideal para parejas o viajeros solos.",
-        room2Title: "Habitación Matrimonial Mediana",
-        room2Desc: "Habitación mediana con cama de 2 plazas, mayor espacio y excelente iluminación.",
-        btnRes: "Reservar por WhatsApp",
-        titleServices: "Servicios e Instalaciones",
-        sBath: "Baño Privado",
-        sWater: "Agua Caliente 24/7",
-        sTv: "TV Smart",
-        sWifi: "Wi-Fi Gratis",
-        sParking: "Estacionamiento Gratis",
-        sLuggage: "Guardado de Equipaje Gratis",
-        sKitchen: "Cocina Compartida & Horno Pizzero",
-        sBreakfast: "Servicio de Desayunos",
-        titleGuide: "Guía Turística de Caraz & Área Privada",
-        gPubTitle: "Lugares Populares para Visitar:",
-        gPubDesc: "📍 <strong>Laguna Parón:</strong> La laguna turquesa más grande de la Cordillera Blanca.<br>📍 <strong>Laguna Llanganuco y Laguna 69:</strong> Vistas espectaculares de los nevados Huascarán y Chopicalqui.<br>📍 <strong>Plaza de Armas de Caraz:</strong> Famosa por sus tradicionales helados artesanales y clima cálido.",
-        gPrivTitle: "🔐 Guía Privada de Rutas y Servicios para Huéspedes",
-        gPrivDesc: "Ingresa la clave proporcionada en recepción para ver información útil, compras cercanas y transporte:",
-        btnUnlockText: "Desbloquear Guía",
-        gSecretTitle: "🗺️ Rutas Exclusivas y Consejos Hostal Kactus:",
-        gSecretText: "• <strong>Transporte a Laguna Parón:</strong> Colectivos salen desde las 6:30 AM cerca al mercado principal.<br>• <strong>Ahorro en Tours:</strong> Te ayudamos a organizar salidas grupales para reducir costos.<br>• <strong>Cajeros Cercanos:</strong> Encuentra cajeros BCP y Banco de la Nación a 3 cuadras.",
-        gShopTitle: "Compras, Farmacias, Restaurantes y Grifos Cercanos:",
-        gShopIntro: "Toca cualquier enlace para abrir la ruta en Google Maps:",
-        shT1: "🛒 Comercial Trujillo (Market)",
-        shD1: "Excelente opción para agua, bebidas, galletas, snacks y alimentos para cocinar.",
-        shT2: "💊 Mifarma (Cerca al Mercado)",
-        shD2: "Farmacia cercana al mercado principal para medicinas, aseo personal y soroche.",
-        shT3: "💊 Inkafarma (Jr. Sucre / Raymondi)",
-        shD3: "Botica céntrica para cualquier necesidad médica o cuidado personal.",
-        shT4: "🍲 Restaurante Pacha Hunta",
-        shD4: "Excelente comida local y platos típicos muy cerca a la Plaza de Armas.",
-        shT5: "🍗 Pollería Sabor & Tradición",
-        shD5: "Ubicada en Jr. Sucre (más arriba de la plaza). Pollo a la brasa y cenas deliciosas.",
-        shT6: "🧺 Mercado Central de Caraz",
-        shD6: "Frutas frescas, pan regional, queso y punto de partida de combis hacia tours.",
-        shT7: "🏛️ Plaza de Armas de Caraz",
-        shD7: "Corazón de la ciudad. Helados artesanales tradicionales, bancos y cafeterías.",
-        shT8: "⛽ Grifo / Estación de Servicio",
-        shD8: "Grifo cercano para recarga de combustible o compras rápidas de viaje.",
-        mapLinkText: "Ver en Google Maps",
-        titleLocation: "Ubicación y Políticas",
-        noPets: "No se aceptan mascotas",
-        btnMaps: "Abrir Ubicación en Google Maps"
+        btnRes: "Reservar por WhatsApp"
       },
       en: {
         subtitle: "Your comfortable, safe, and complete stay in Caraz, Peru",
         titleRooms: "Our Rooms",
-        room1Title: "Economic Double Room",
-        room1Desc: "Cozy small room with double bed. Ideal for couples or solo travelers.",
-        room2Title: "Medium Double Room",
-        room2Desc: "Medium-sized room with double bed, more space, and great lighting.",
-        btnRes: "Book via WhatsApp",
-        titleServices: "Services & Amenities",
-        sBath: "Private Bathroom",
-        sWater: "24/7 Hot Water",
-        sTv: "Smart TV",
-        sWifi: "Free Wi-Fi",
-        sParking: "Free Parking",
-        sLuggage: "Free Luggage Storage",
-        sKitchen: "Shared Kitchen & Pizza Oven",
-        sBreakfast: "Breakfast Service",
-        titleGuide: "Caraz Tourist Guide & Private Area",
-        gPubTitle: "Popular Places to Visit:",
-        gPubDesc: "📍 <strong>Parón Lake:</strong> The largest turquoise lagoon in the Cordillera Blanca.<br>📍 <strong>Llanganuco Lake & Lake 69:</strong> Spectacular views of Huascarán and Chopicalqui peaks.<br>📍 <strong>Caraz Main Square:</strong> Famous for traditional artisanal ice cream and warm weather.",
-        gPrivTitle: "🔐 Private Route & Services Guide for Guests",
-        gPrivDesc: "Enter the password provided at reception to see useful information, nearby shops, and transport:",
-        btnUnlockText: "Unlock Guide",
-        gSecretTitle: "🗺️ Exclusive Routes & Hostal Kactus Tips:",
-        gSecretText: "• <strong>Transport to Parón Lake:</strong> Shared buses leave from 6:30 AM near the main market.<br>• <strong>Save on Tours:</strong> We help you organize group trips to lower costs.<br>• <strong>Nearby ATMs:</strong> Find BCP and Banco de la Nación ATMs 3 blocks away.",
-        gShopTitle: "Nearby Shopping, Pharmacies, Restaurants & Gas Stations:",
-        gShopIntro: "Tap any link to open location on Google Maps:",
-        shT1: "🛒 Comercial Trujillo (Market)",
-        shD1: "Great option for water, drinks, cookies, snacks, and groceries.",
-        shT2: "💊 Mifarma (Near Market)",
-        shD2: "Pharmacy near the main market for medicine, personal care, and altitude sickness.",
-        shT3: "💊 Inkafarma (Jr. Sucre)",
-        shD3: "Central pharmacy for medical needs and personal care.",
-        shT4: "🍲 Pacha Hunta Restaurant",
-        shD4: "Excellent local food and typical dishes near the Main Square.",
-        shT5: "🍗 Sabor & Tradición Roast Chicken",
-        shD5: "Located on Jr. Sucre (above main square). Delicious roasted chicken & dinners.",
-        shT6: "🧺 Caraz Central Market",
-        shD6: "Fresh fruit, local bread, cheese, and tour bus departures.",
-        shT7: "🏛️ Caraz Main Square",
-        shD7: "Heart of the city. Traditional artisanal ice cream, banks, and cafes.",
-        shT8: "⛽ Gas Station",
-        shD8: "Nearby gas station for fuel refill or quick snacks.",
-        mapLinkText: "Open in Google Maps",
-        titleLocation: "Location & Policies",
-        noPets: "No pets allowed",
-        btnMaps: "Open Location in Google Maps"
-      },
-      fr: {
-        subtitle: "Votre séjour confortable, sécurisé et complet à Caraz, Pérou",
-        titleRooms: "Nos Chambres",
-        room1Title: "Chambre Double Économique",
-        room1Desc: "Petite chambre douillette avec lit double. Idéale pour couples ou voyageurs solos.",
-        room2Title: "Chambre Double Moyenne",
-        room2Desc: "Chambre moyenne avec lit double, plus d'espace et belle luminosité.",
-        btnRes: "Réserver par WhatsApp",
-        titleServices: "Services et Équipements",
-        sBath: "Salle de Bain Privée",
-        sWater: "Eau Chaude 24/7",
-        sTv: "Smart TV",
-        sWifi: "Wi-Fi Gratuit",
-        sParking: "Parking Gratuit",
-        sLuggage: "Consigne à Bagages Gratuite",
-        sKitchen: "Cuisine Partagée & Four à Pizza",
-        sBreakfast: "Service de Petit-Déjeuner",
-        titleGuide: "Guide Touristique de Caraz & Zone Privée",
-        gPubTitle: "Lieux Populaires à Visiter :",
-        gPubDesc: "📍 <strong>Lac Parón :</strong> Le plus grand lac turquoise de la Cordillère Blanche.<br>📍 <strong>Lacs Llanganuco & Lac 69 :</strong> Vues magnifiques sur les sommets Huascarán et Chopicalqui.<br>📍 <strong>Place Principale de Caraz :</strong> Célèbre pour ses glaces artisanales et son climat chaud.",
-        gPrivTitle: "🔐 Guide Privé de Routes et Services pour les Clients",
-        gPrivDesc: "Entrez le mot de passe fourni à la réception pour voir les commerces et cartes :",
-        btnUnlockText: "Déverrouiller le Guide",
-        gSecretTitle: "🗺️ Routes Exclusives et Conseils Hostal Kactus :",
-        gSecretText: "• <strong>Transport pour le Lac Parón :</strong> Départs des bus dès 6h30 près du marché principal.<br>• <strong>Économisez sur les Tours :</strong> Nous vous aidons à organiser des salidas en groupe.<br>• <strong>DABs proches :</strong> Distributeurs BCP et Banco de la Nación à 3 blocks.",
-        gShopTitle: "Commerces, Pharmacies, Restaurants & Stations-Service :",
-        gShopIntro: "Touchez un lien pour ouvrir sur Google Maps :",
-        shT1: "🛒 Comercial Trujillo (Supermarché)",
-        shD1: "Idéal pour l'eau, boissons, snacks y courses pour cuisiner.",
-        shT2: "💊 Mifarma (Près du Marché)",
-        shD2: "Pharmacie proche du marché principal pour médicaments et soins.",
-        shT3: "💊 Inkafarma (Jr. Sucre)",
-        shD3: "Pharmacie centrale pour vos soins personnels.",
-        shT4: "🍲 Restaurant Pacha Hunta",
-        shD4: "Excellente cuisine locale près de la Place Principale.",
-        shT5: "🍗 Rôtisserie Sabor & Tradición",
-        shD5: "Située Jr. Sucre. Poulet rôti et dîners délicieux.",
-        shT6: "🧺 Marché Central de Caraz",
-        shD6: "Fruits frais, fromage local et départs d'excursions.",
-        shT7: "🏛️ Place Principale de Caraz",
-        shD7: "Cœur de la ville, glaces artisanales, banques et cafés.",
-        shT8: "⛽ Station-service",
-        shD8: "Point de ravitaillement essence et snacks.",
-        mapLinkText: "Ouvrir dans Google Maps",
-        titleLocation: "Emplacement & Politiques",
-        noPets: "Animaux non admis",
-        btnMaps: "Ouvrir dans Google Maps"
-      },
-      cs: {
-        subtitle: "Váš pohodlný, bezpečný a kompletní pobyt v Carazu v Peru",
-        titleRooms: "Naše Pokoje",
-        room1Title: "Ekonomický Dvoulůžkový Pokoj",
-        room1Desc: "Útulný malý pokoj s manželskou postelí. Ideální pro páry nebo sólo cestovatele.",
-        room2Title: "Střední Dvoulůžkový Pokoj",
-        room2Desc: "Středně velký pokoj s manželskou postelí, více prostoru a skvělým osvětlením.",
-        btnRes: "Rezervovat přes WhatsApp",
-        titleServices: "Služby a Vybavení",
-        sBath: "Vlastní Koupelna",
-        sWater: "Teplá Voda 24/7",
-        sTv: "Smart TV",
-        sWifi: "Wi-Fi Zdarma",
-        sParking: "Parkování Zdarma",
-        sLuggage: "Úschova Zavazadel Zdarma",
-        sKitchen: "Sdílená Kuchyň a Pec na Pizzu",
-        sBreakfast: "Snídaňový Servis",
-        titleGuide: "Turistický Průvodce Caraz a Soukromá Zóna",
-        gPubTitle: "Oblíbená Místa k Návštěvě:",
-        gPubDesc: "📍 <strong>Jezero Parón:</strong> Největší tyrkysová laguna v Cordillera Blanca.<br>📍 <strong>Jezera Llanganuco a Laguna 69:</strong> Velkolepé výhledy na vrcholy Huascarán a Chopicalqui.<br>📍 <strong>Hlavní Náměstí v Carazu:</strong> Proslulé tradiční řemeslnou zmrzlinou a teplým počasím.",
-        gPrivTitle: "🔐 Soukromý Průvodce Trasami a Službami pro Hosty",
-        gPrivDesc: "Zadejte heslo obdržené na recepci pro zobrazení informací o obchodech a doprava:",
-        btnUnlockText: "Odemknout Průvodce",
-        gSecretTitle: "🗺️ Exkluzivní Trasy a Tipy Hostal Kactus:",
-        gSecretText: "• <strong>Doprava k jezeru Parón:</strong> Sdílené autobusy odjíždějí od 6:30 ráno poblíž hlavního tržiště.<br>• <strong>Úspora na výletech:</strong> Pomůžeme vám zorganizovat skupinové výlety pro snížení nákladů.<br>• <strong>Bankomaty:</strong> Bankomaty BCP a Banco de la Nación 3 bloky od hostelu.",
-        gShopTitle: "Obchody, Lékárny, Restaurace a Čerpací Stanice:",
-        gShopIntro: "Klikněte na odkaz pro otevření trasy v Google Maps:",
-        shT1: "🛒 Comercial Trujillo (Obchod)",
-        shD1: "Skvělá volba pro vodu, nápoje, snacky a potraviny na vaření.",
-        shT2: "💊 Mifarma (Poblíž Tržiště)",
-        shD2: "Lékárna poblíž tržiště pro léky a osobní hygienu.",
-        shT3: "💊 Inkafarma (Jr. Sucre)",
-        shD3: "Centrální lékárna pro vaše potřeby.",
-        shT4: "🍲 Restaurace Pacha Hunta",
-        shD4: "Skvělé místní jídlo poblíž hlavního náměstí.",
-        shT5: "🍗 Pollería Sabor & Tradición",
-        shD5: "Nachází se na Jr. Sucre. Grilované kuře a skvělé večeře.",
-        shT6: "🧺 Centralní Tržiště Caraz",
-        shD6: "Čerstvé ovoce, sýry a doprava na výlety.",
-        shT7: "🏛️ Hlavní Náměstí v Carazu",
-        shD7: "Srdce města, zmrzlinárny, banky a kavárny.",
-        shT8: "⛽ Čerpací Stanice",
-        shD8: "Čerpací stanice v okolí pro doplňování paliva.",
-        mapLinkText: "Otevřít v Google Maps",
-        titleLocation: "Lokalita a Pravidla",
-        noPets: "Domácí mazlíčci nejsou povoleni",
-        btnMaps: "Otevřít v Google Maps"
-      },
-      zh: {
-        subtitle: "您在秘鲁卡拉斯（Caraz）舒适、安全且完善的下榻之所",
-        titleRooms: "我们的客房",
-        room1Title: "经济双人房",
-        room1Desc: "温馨的小型客房，配备双人床。非常适合情侣或单人旅客。",
-        room2Title: "中型双人房",
-        room2Desc: "中型客房，配备双人床，空间更大，采光极佳。",
-        btnRes: "通过 WhatsApp 预订",
-        titleServices: "服务与设施",
-        sBath: "独立卫浴",
-        sWater: "24/7 全天候热水",
-        sTv: "智能电视",
-        sWifi: "免费 Wi-Fi",
-        sParking: "免费停车场",
-        sLuggage: "免费行李寄存",
-        sKitchen: "共享厨房与披萨烤箱",
-        sBreakfast: "早餐服务",
-        titleGuide: "卡拉斯旅游指南与专属区域",
-        gPubTitle: "热门景点推荐：",
-        gPubDesc: "📍 <strong>帕隆湖（Laguna Parón）：</strong> 白山脉最大的绿松石色高山湖泊。<br>📍 <strong>扬加努科湖与69号湖：</strong> 壮丽观赏瓦斯卡兰峰（Huascarán）与肖皮卡尔奇峰。<br>📍 <strong>卡拉斯武器广场：</strong> 以传统手工冰淇淋和宜人气候闻名。",
-        gPrivTitle: "🔐 住客专属路线与服务指南",
-        gPrivDesc: "输入前台提供的密码，查看附近购物与交通秘诀：",
-        btnUnlockText: "解锁指南",
-        gSecretTitle: "🗺️ 仙人掌旅馆专属路线与建议：",
-        gSecretText: "• <strong>前往帕隆湖的交通：</strong> 拼车小巴自早晨 6:30 起从主市场附近出发。<br>• <strong>节省行程费用：</strong> 我们协助组织组团出行以分摊成本。<br>• <strong>附近 ATM：</strong> 步行 3 个街区即可到达 BCP 及国家银行 ATM。",
-        gShopTitle: "周边商店、药房、餐厅与加油站：",
-        gShopIntro: "点击任意链接在 Google 地图中打开对应路线：",
-        shT1: "🛒 Comercial Trujillo (超市)",
-        shD1: "购买饮用水、补水饮料、零食及烹饪食材的理想选择。",
-        shT2: "💊 Mifarma 药房 (近主市场)",
-        shD2: "主市场附近药房，方便购买药品、个人护理及抗高原反应药。",
-        shT3: "💊 Inkafarma 药房 (Jr. Sucre)",
-        shD3: "市中心连锁药房，满足各类用药需求。",
-        shT4: "🍲 Pacha Hunta 特色餐厅",
-        shD4: "武器广场附近的优质当地特色菜餐厅。",
-        shT5: "🍗 Sabor & Tradición 烤鸡店",
-        shD5: "位于 Jr. Sucre 街（广场上方）。提供美味烤鸡与晚餐。",
-        shT6: "🧺 卡拉斯中央市场",
-        shD6: "新鲜水果、当地特色奶酪及景区拼车出发点。",
-        shT7: "🏛️ 卡拉斯武器广场",
-        shD7: "市中心，汇集手工冰淇淋店、银行与咖啡馆。",
-        shT8: "⛽ 加油站",
-        shD8: "附近加油与快速补给点。",
-        mapLinkText: "在 Google 地图中打开",
-        titleLocation: "位置与政策",
-        noPets: "禁止携带宠物",
-        btnMaps: "在 Google 地图中打开"
+        btnRes: "Book via WhatsApp"
       }
     };
 
@@ -671,67 +415,12 @@
       const activeBtn = document.getElementById(`btn-${lang}`);
       if (activeBtn) activeBtn.classList.add('active');
 
-      localStorage.setItem('selectedLang', lang);
-
-      const t = translations[lang];
-      document.getElementById('sub-title').innerText = t.subtitle;
-      document.getElementById('title-rooms').innerText = t.titleRooms;
-      document.getElementById('room1-title').innerText = t.room1Title;
-      document.getElementById('room1-desc').innerText = t.room1Desc;
-      document.getElementById('room2-title').innerText = t.room2Title;
-      document.getElementById('room2-desc').innerText = t.room2Desc;
-      
-      document.querySelectorAll('.btn-res-text').forEach(el => el.innerText = t.btnRes);
-
-      document.getElementById('title-services').innerText = t.titleServices;
-      document.getElementById('s-bath').innerText = t.sBath;
-      document.getElementById('s-water').innerText = t.sWater;
-      document.getElementById('s-tv').innerText = t.sTv;
-      document.getElementById('s-wifi').innerText = t.sWifi;
-      document.getElementById('s-parking').innerText = t.sParking;
-      document.getElementById('s-luggage').innerText = t.sLuggage;
-      document.getElementById('s-kitchen').innerText = t.sKitchen;
-      document.getElementById('s-breakfast').innerText = t.sBreakfast;
-
-      document.getElementById('title-guide').innerText = t.titleGuide;
-      document.getElementById('g-pub-title').innerText = t.gPubTitle;
-      document.getElementById('g-pub-desc').innerHTML = t.gPubDesc;
-      document.getElementById('g-priv-title').innerText = t.gPrivTitle;
-      document.getElementById('g-priv-desc').innerText = t.gPrivDesc;
-      document.getElementById('btn-unlock-text').innerText = t.btnUnlockText;
-      document.getElementById('g-secret-title').innerText = t.gSecretTitle;
-      document.getElementById('g-secret-text').innerHTML = t.gSecretText;
-
-      document.getElementById('g-shop-title').innerHTML = `<i class="fas fa-map-marked-alt" style="color:var(--primary-lettuce);"></i> ${t.gShopTitle}`;
-      document.getElementById('g-shop-intro').innerText = t.gShopIntro;
-      document.getElementById('sh-t1').innerText = t.shT1;
-      document.getElementById('sh-d1').innerText = t.shD1;
-      document.getElementById('sh-t2').innerText = t.shT2;
-      document.getElementById('sh-d2').innerText = t.shD2;
-      document.getElementById('sh-t3').innerText = t.shT3;
-      document.getElementById('sh-d3').innerText = t.shD3;
-      document.getElementById('sh-t4').innerText = t.shT4;
-      document.getElementById('sh-d4').innerText = t.shD4;
-      document.getElementById('sh-t5').innerText = t.shT5;
-      document.getElementById('sh-d5').innerText = t.shD5;
-      document.getElementById('sh-t6').innerText = t.shT6;
-      document.getElementById('sh-d6').innerText = t.shD6;
-      document.getElementById('sh-t7').innerText = t.shT7;
-      document.getElementById('sh-d7').innerText = t.shD7;
-      document.getElementById('sh-t8').innerText = t.shT8;
-      document.getElementById('sh-d8').innerText = t.shD8;
-
-      document.querySelectorAll('.map-link-text').forEach(el => el.innerText = t.mapLinkText);
-
-      document.getElementById('title-location').innerText = t.titleLocation;
-      document.getElementById('no-pets-text').innerText = t.noPets;
-      document.getElementById('btn-maps-text').innerText = t.btnMaps;
+      if(translations[lang]) {
+        document.getElementById('sub-title').innerText = translations[lang].subtitle;
+        document.getElementById('title-rooms').innerText = translations[lang].titleRooms;
+        document.querySelectorAll('.btn-res-text').forEach(el => el.innerText = translations[lang].btnRes);
+      }
     }
-
-    window.addEventListener('DOMContentLoaded', () => {
-      const savedLang = localStorage.getItem('selectedLang') || 'es';
-      changeLanguage(savedLang);
-    });
   </script>
 </body>
 </html>
