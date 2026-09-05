@@ -7,7 +7,7 @@
   <meta name="description" content="Alojamiento cómodo y acogedor en Caraz, Perú. Baño privado, agua caliente 24/7, Wi-Fi gratis y guía turística exclusiva.">
   <meta property="og:title" content="Hostal Kactus - Caraz, Perú">
   <meta property="og:description" content="Tu descanso cómodo, seguro y completo en Caraz. Reserva directamente por WhatsApp.">
-  <meta property="og:image" content="WhatsApp Image 2026-03-02 at 12.27.10 PM (1).jpeg">
+  <meta property="og:image" content="mediana1.jpg">
   
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <style>
@@ -69,7 +69,7 @@
 
     /* Header */
     header {
-      background: linear-gradient(rgba(51, 105, 30, 0.70), rgba(51, 105, 30, 0.70)), url('WhatsApp Image 2026-03-02 at 12.27.10 PM (1).jpeg') center/cover;
+      background: linear-gradient(rgba(51, 105, 30, 0.70), rgba(51, 105, 30, 0.70)), url('mediana1.jpg') center/cover;
       color: white; padding: 55px 20px 45px; text-align: center;
     }
     header h1 { font-size: 2.4rem; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
@@ -97,10 +97,27 @@
       color: var(--secondary-dark); 
     }
 
-    /* Habitaciones */
-    .grid-rooms { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    /* Habitaciones y Carrusel */
+    .grid-rooms { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 20px; }
     .room-card { background: var(--card-bg); border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow); display: flex; flex-direction: column; border: 1px solid var(--border-warm); }
-    .room-img { width: 100%; height: 210px; object-fit: cover; }
+    
+    .carousel-container { position: relative; width: 100%; height: 220px; overflow: hidden; background: #000; }
+    .carousel-slide { display: flex; width: 100%; height: 100%; transition: transform 0.4s ease-in-out; }
+    .carousel-img { width: 100%; height: 100%; object-fit: cover; flex-shrink: 0; }
+    
+    .carousel-btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(0,0,0,0.5); color: white; border: none; padding: 8px 12px;
+      cursor: pointer; border-radius: 50%; font-size: 1rem; z-index: 5; transition: 0.2s;
+    }
+    .carousel-btn:hover { background: var(--primary-lettuce); }
+    .prev-btn { left: 10px; }
+    .next-btn { right: 10px; }
+    
+    .carousel-dots { position: absolute; bottom: 8px; left: 0; right: 0; display: flex; justify-content: center; gap: 6px; z-index: 5; }
+    .dot { width: 8px; height: 8px; background: rgba(255,255,255,0.6); border-radius: 50%; cursor: pointer; }
+    .dot.active { background: var(--primary-lettuce); width: 10px; height: 10px; }
+
     .room-content { padding: 18px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
     .price-tag { color: var(--secondary-dark); font-size: 1.35rem; font-weight: bold; margin: 10px 0; }
     .price-tag small { font-size: 0.85rem; color: var(--text-muted); font-weight: normal; }
@@ -114,6 +131,18 @@
     }
     .service-item:hover { transform: translateY(-3px); }
     .service-item i { font-size: 1.7rem; color: var(--primary-lettuce); margin-bottom: 8px; display: block; }
+
+    /* Pasarela de Pagos */
+    .payments-box { background: var(--card-bg); padding: 22px; border-radius: 14px; box-shadow: var(--card-shadow); border: 1px solid var(--border-warm); text-align: center; }
+    .payments-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-top: 15px; }
+    .payment-card { background: #f9fbf8; padding: 15px; border-radius: 12px; border: 1px solid var(--border-warm); }
+    .payment-icon { font-size: 2rem; color: var(--primary-lettuce); margin-bottom: 8px; }
+    .payment-title { font-weight: bold; font-size: 1rem; color: var(--secondary-dark); }
+    .payment-desc { font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; }
+
+    /* Tours */
+    .tours-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 15px; }
+    .tour-card { background: var(--card-bg); padding: 18px; border-radius: 12px; border: 1px solid var(--border-warm); box-shadow: var(--card-shadow); border-left: 5px solid var(--primary-lettuce); }
 
     /* Testimonios */
     .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 15px; }
@@ -209,33 +238,57 @@
       </a>
     </div>
 
-    <!-- Habitaciones -->
+    <!-- Habitaciones con Galería Carrusel -->
     <h2 class="section-title" id="title-rooms">Nuestras Habitaciones</h2>
     <div class="grid-rooms">
       
+      <!-- Habitación Económica -->
       <div class="room-card">
-        <img src="WhatsApp Image 2026-03-02 at 12.27.10 PM (1).jpeg" alt="Habitación Matrimonial Económica" class="room-img">
+        <div class="carousel-container" id="carousel1">
+          <div class="carousel-slide">
+            <img src="mediana1.jpg" alt="Habitación Económica" class="carousel-img">
+            <img src="economica1.jpg" alt="Habitación Económica Vista 2" class="carousel-img" onerror="this.src='mediana1.jpg'">
+          </div>
+          <button class="carousel-btn prev-btn" onclick="moveSlide('carousel1', -1)"><i class="fas fa-chevron-left"></i></button>
+          <button class="carousel-btn next-btn" onclick="moveSlide('carousel1', 1)"><i class="fas fa-chevron-right"></i></button>
+          <div class="carousel-dots">
+            <span class="dot active" onclick="setSlide('carousel1', 0)"></span>
+            <span class="dot" onclick="setSlide('carousel1', 1)"></span>
+          </div>
+        </div>
         <div class="room-content">
           <div>
             <h3 id="room1-title">Habitación Matrimonial Económica</h3>
             <p id="room1-desc">Habitación pequeña y acogedora con cama de 2 plazas. Ideal para parejas o viajeros solos.</p>
             <div class="price-tag">S/ 35.00 <small id="per-night-1">/ noche</small></div>
           </div>
-          <a href="https://wa.me/51974364826?text=Hola,%20deseo%20reservar%20la%20Habitación%20Matrimonial%20Económica%20(S/%2035)" target="_blank" class="btn btn-whatsapp">
+          <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20deseo%20reservar%20la%20Habitación%20Matrimonial%20Económica%20(S/%2035)" target="_blank" class="btn btn-whatsapp">
             <i class="fab fa-whatsapp"></i> <span class="btn-res-text">Reservar por WhatsApp</span>
           </a>
         </div>
       </div>
 
+      <!-- Habitación Mediana -->
       <div class="room-card">
-        <img src="WhatsApp Image 2026-03-02 at 12.27.10 PM (1).jpeg" alt="Habitación Matrimonial Mediana" class="room-img">
+        <div class="carousel-container" id="carousel2">
+          <div class="carousel-slide">
+            <img src="mediana1.jpg" alt="Habitación Mediana" class="carousel-img">
+            <img src="WhatsApp Image 2026-03-02 at 12.26.28 PM.jpeg" alt="Habitación Mediana Vista 2" class="carousel-img" onerror="this.src='mediana1.jpg'">
+          </div>
+          <button class="carousel-btn prev-btn" onclick="moveSlide('carousel2', -1)"><i class="fas fa-chevron-left"></i></button>
+          <button class="carousel-btn next-btn" onclick="moveSlide('carousel2', 1)"><i class="fas fa-chevron-right"></i></button>
+          <div class="carousel-dots">
+            <span class="dot active" onclick="setSlide('carousel2', 0)"></span>
+            <span class="dot" onclick="setSlide('carousel2', 1)"></span>
+          </div>
+        </div>
         <div class="room-content">
           <div>
             <h3 id="room2-title">Habitación Matrimonial Mediana</h3>
             <p id="room2-desc">Habitación mediana con cama de 2 plazas, mayor espacio y excelente iluminación.</p>
             <div class="price-tag">S/ 45.00 <small id="per-night-2">/ noche</small></div>
           </div>
-          <a href="https://wa.me/51974364826?text=Hola,%20deseo%20reservar%20la%20Habitación%20Matrimonial%20Mediana%20(S/%2045)" target="_blank" class="btn btn-whatsapp">
+          <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20deseo%20reservar%20la%20Habitación%20Matrimonial%20Mediana%20(S/%2045)" target="_blank" class="btn btn-whatsapp">
             <i class="fab fa-whatsapp"></i> <span class="btn-res-text">Reservar por WhatsApp</span>
           </a>
         </div>
@@ -254,6 +307,47 @@
       <div class="service-item"><i class="fas fa-suitcase"></i><p id="s-luggage">Guardado de Equipaje Gratis</p></div>
       <div class="service-item"><i class="fas fa-utensils"></i><p id="s-kitchen">Cocina Compartida & Horno</p></div>
       <div class="service-item"><i class="fas fa-coffee"></i><p id="s-breakfast">Servicio de Desayunos</p></div>
+    </div>
+
+    <!-- Pasarela de Pagos -->
+    <h2 class="section-title" id="title-payments">Pasarela de Pago y Medios de Reserva</h2>
+    <div class="payments-box">
+      <p id="pay-intro">Aceptamos múltiples formas de pago para tu máxima comodidad al reservar:</p>
+      <div class="payments-grid">
+        <div class="payment-card">
+          <i class="fas fa-mobile-alt payment-icon" style="color:#00B2A9;"></i>
+          <div class="payment-title">Yape / Plin</div>
+          <div class="payment-desc" id="pay-yape">Pagos digitales instantáneos al teléfono oficial.</div>
+        </div>
+        <div class="payment-card">
+          <i class="fas fa-credit-card payment-icon" style="color:#1A1F71;"></i>
+          <div class="payment-title">Tarjetas de Crédito / Débito</div>
+          <div class="payment-desc" id="pay-cards">Visa, MasterCard, American Express.</div>
+        </div>
+        <div class="payment-card">
+          <i class="fas fa-university payment-icon" style="color:#D96B43;"></i>
+          <div class="payment-title">Depósito Bancario</div>
+          <div class="payment-desc" id="pay-bank">Cuentas BCP y Banco de la Nación.</div>
+        </div>
+        <div class="payment-card">
+          <i class="fas fa-money-bill-wave payment-icon" style="color:#2E7D32;"></i>
+          <div class="payment-title">Efectivo</div>
+          <div class="payment-desc" id="pay-cash">Pago directo en la recepción al llegar.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Salidas y Tours -->
+    <h2 class="section-title" id="title-tours">Salidas a Tours y Transporte Desde Caraz</h2>
+    <div class="tours-grid">
+      <div class="tour-card">
+        <h4 id="t1-title">⛰️ Laguna Parón</h4>
+        <p id="t1-desc">Colectivos diarios desde las 6:30 AM cerca al mercado. Te ayudamos a armar grupos para abaratar costos de transporte privado.</p>
+      </div>
+      <div class="tour-card">
+        <h4 id="t2-title">🏔️ Laguna Llanganuco & Laguna 69</h4>
+        <p id="t2-desc">Acceso directo en transporte turístico. Asesoría completa sobre aclimatación y horarios de salida.</p>
+      </div>
     </div>
 
     <!-- Testimonios -->
@@ -400,13 +494,44 @@
   <!-- Sticky Bar Móvil -->
   <div class="mobile-sticky-bar">
     <div class="sticky-price"><span id="stk-from">Desde</span> <strong>S/ 35.00</strong></div>
-    <a href="https://wa.me/51974364826?text=Hola,%20quisiera%20consultar%20disponibilidad%20en%20Hostal%20Kactus" target="_blank" class="btn btn-whatsapp sticky-btn">
+    <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20quisiera%20consultar%20disponibilidad%20de%20habitaciones" target="_blank" class="btn btn-whatsapp sticky-btn">
       <i class="fab fa-whatsapp"></i> <span id="stk-btn">Reservar Ahora</span>
     </a>
   </div>
 
   <!-- JavaScript -->
   <script>
+    // Lógica para el Carrusel de Fotos
+    const slideIndexes = { carousel1: 0, carousel2: 0 };
+
+    function moveSlide(carouselId, direction) {
+      const carousel = document.getElementById(carouselId);
+      const slide = carousel.querySelector('.carousel-slide');
+      const images = slide.querySelectorAll('img');
+      const dots = carousel.querySelectorAll('.dot');
+      
+      slideIndexes[carouselId] = (slideIndexes[carouselId] + direction + images.length) % images.length;
+      slide.style.transform = `translateX(-${slideIndexes[carouselId] * 100}%)`;
+      
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === slideIndexes[carouselId]);
+      });
+    }
+
+    function setSlide(carouselId, index) {
+      const carousel = document.getElementById(carouselId);
+      const slide = carousel.querySelector('.carousel-slide');
+      const dots = carousel.querySelectorAll('.dot');
+      
+      slideIndexes[carouselId] = index;
+      slide.style.transform = `translateX(-${index * 100}%)`;
+      
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === index);
+      });
+    }
+
+    // Lógica para el Área Privada
     function unlockGuide() {
       const pass = document.getElementById('passInput').value.trim();
       const secretSection = document.getElementById('secretGuide');
@@ -441,14 +566,17 @@
         perNight: "/ noche",
         btnRes: "Reservar por WhatsApp",
         titleServices: "Servicios e Instalaciones",
-        sBath: "Baño Privado",
-        sWater: "Agua Caliente 24/7",
-        sTv: "TV Smart",
-        sWifi: "Wi-Fi Gratis",
-        sParking: "Estacionamiento Gratis",
-        sLuggage: "Guardado de Equipaje Gratis",
-        sKitchen: "Cocina Compartida & Horno",
-        sBreakfast: "Servicio de Desayunos",
+        sBath: "Baño Privado", sWater: "Agua Caliente 24/7", sTv: "TV Smart", sWifi: "Wi-Fi Gratis",
+        sParking: "Estacionamiento Gratis", sLuggage: "Guardado de Equipaje Gratis", sKitchen: "Cocina Compartida & Horno", sBreakfast: "Servicio de Desayunos",
+        titlePayments: "Pasarela de Pago y Medios de Reserva",
+        payIntro: "Aceptamos múltiples formas de pago para tu máxima comodidad al reservar:",
+        payYape: "Pagos digitales instantáneos al teléfono oficial.",
+        payCards: "Visa, MasterCard, American Express.",
+        payBank: "Cuentas BCP y Banco de la Nación.",
+        payCash: "Pago directo en la recepción al llegar.",
+        titleTours: "Salidas a Tours y Transporte Desde Caraz",
+        t1Title: "⛰️ Laguna Parón", t1Desc: "Colectivos diarios desde las 6:30 AM cerca al mercado. Te ayudamos a armar grupos para abaratar costos.",
+        t2Title: "🏔️ Laguna Llanganuco & Laguna 69", t2Desc: "Acceso directo en transporte turístico. Asesoría completa sobre aclimatación y horarios.",
         titleReviews: "Opiniones de Nuestros Huéspedes",
         rev1Text: '"Lugar súper limpio, tranquilo y con agua caliente las 24 horas. La atención en recepción fue excelente para organizar mi viaje a Laguna Parón."',
         rev2Text: '"Great place to stay in Caraz! Very comfortable bed, fast Wi-Fi, and extremely helpful staff. Highly recommended for trekkers!"',
@@ -457,8 +585,7 @@
         gPubDesc: "📍 <strong>Laguna Parón:</strong> La laguna turquesa más grande de la Cordillera Blanca.<br>📍 <strong>Laguna Llanganuco y Laguna 69:</strong> Vistas espectaculares de los nevados Huascarán y Chopicalqui.<br>📍 <strong>Plaza de Armas de Caraz:</strong> Famosa por sus tradicionales helados artesanales y clima cálido.",
         gPrivTitle: "🔐 Guía Privada de Rutas y Servicios para Huéspedes",
         gPrivDesc: "Ingresa la clave proporcionada en recepción para ver información útil, compras cercanas y transporte:",
-        btnUnlockText: "Desbloquear Guía",
-        passPlaceholder: "Contraseña de huésped",
+        btnUnlockText: "Desbloquear Guía", passPlaceholder: "Contraseña de huésped",
         gSecretTitle: "🗺️ Rutas Exclusivas y Consejos Hostal Kactus:",
         gSecretText: "• <strong>Transporte a Laguna Parón:</strong> Colectivos salen desde las 6:30 AM cerca al mercado principal.<br>• <strong>Ahorro en Tours:</strong> Te ayudamos a organizar salidas grupales para reducir costos.<br>• <strong>Cajeros Cercanos:</strong> Encuentra cajeros BCP y Banco de la Nación a 3 cuadras.",
         gShopTitle: "Compras, Farmacias, Restaurantes y Grifos Cercanos:",
@@ -476,33 +603,27 @@
         faqQ1: "¿A qué hora es el Check-in y Check-out?", faqA1: "El Check-in es a partir de las 13:00 hrs y el Check-out hasta las 11:00 hrs. Si llegas temprano, ¡puedes guardar tu equipaje gratis!",
         faqQ2: "¿Tienen agua caliente las 24 horas?", faqA2: "Sí, disponemos de agua caliente 24/7 en todas nuestras habitaciones.",
         faqQ3: "¿Aceptan pagos con Yape, Plin o tarjetas?", faqA3: "Aceptamos efectivo, transferencias digitales por Yape, Plin y tarjetas de crédito o débito.",
-        titleLocation: "Ubicación y Políticas",
-        lblAddr: "Dirección:",
-        noPets: "No se aceptan mascotas",
-        badgeRec: "Recepción continua",
-        badgeCancel: "Cancelación flexible",
-        btnMapsText: "Abrir Ubicación en Google Maps",
-        stkFrom: "Desde",
-        stkBtn: "Reservar Ahora"
+        titleLocation: "Ubicación y Políticas", lblAddr: "Dirección:", noPets: "No se aceptan mascotas", badgeRec: "Recepción continua", badgeCancel: "Cancelación flexible", btnMapsText: "Abrir Ubicación en Google Maps",
+        stkFrom: "Desde", stkBtn: "Reservar Ahora"
       },
       en: {
         subTitle: "Your comfortable, safe, and complete stay in Caraz, Peru",
         titleRooms: "Our Rooms",
-        room1Title: "Economy Double Room",
-        room1Desc: "Small cozy room with double bed. Ideal for couples or solo travelers.",
-        room2Title: "Medium Double Room",
-        room2Desc: "Medium-sized room with double bed, more space, and great lighting.",
-        perNight: "/ night",
-        btnRes: "Book via WhatsApp",
+        room1Title: "Economy Double Room", room1Desc: "Small cozy room with double bed. Ideal for couples or solo travelers.",
+        room2Title: "Medium Double Room", room2Desc: "Medium-sized room with double bed, more space, and great lighting.",
+        perNight: "/ night", btnRes: "Book via WhatsApp",
         titleServices: "Services & Amenities",
-        sBath: "Private Bathroom",
-        sWater: "24/7 Hot Water",
-        sTv: "Smart TV",
-        sWifi: "Free Wi-Fi",
-        sParking: "Free Parking",
-        sLuggage: "Free Luggage Storage",
-        sKitchen: "Shared Kitchen & Oven",
-        sBreakfast: "Breakfast Service",
+        sBath: "Private Bathroom", sWater: "24/7 Hot Water", sTv: "Smart TV", sWifi: "Free Wi-Fi",
+        sParking: "Free Parking", sLuggage: "Free Luggage Storage", sKitchen: "Shared Kitchen & Oven", sBreakfast: "Breakfast Service",
+        titlePayments: "Payment Options & Booking Methods",
+        payIntro: "We accept multiple payment methods for your maximum convenience:",
+        payYape: "Instant digital payments via official phone number.",
+        payCards: "Visa, MasterCard, American Express.",
+        payBank: "BCP and Banco de la Nación bank transfers.",
+        payCash: "Direct cash payment at reception upon arrival.",
+        titleTours: "Tour Departures & Transport From Caraz",
+        t1Title: "⛰️ Parón Lake", t1Desc: "Daily shared vans from 6:30 AM near the market. We assist in grouping travelers to reduce transport costs.",
+        t2Title: "🏔️ Llanganuco Lake & Lake 69", t2Desc: "Direct tourist transport. Complete advice on acclimatization and departure times.",
         titleReviews: "Guest Reviews",
         rev1Text: '"Super clean place, quiet and with 24/7 hot water. The front desk was extremely helpful in organizing my trip to Parón Lake."',
         rev2Text: '"Great place to stay in Caraz! Very comfortable bed, fast Wi-Fi, and extremely helpful staff. Highly recommended for trekkers!"',
@@ -511,8 +632,7 @@
         gPubDesc: "📍 <strong>Parón Lake:</strong> The largest turquoise lagoon in the Cordillera Blanca.<br>📍 <strong>Llanganuco & Lake 69:</strong> Spectacular views of Huascarán and Chopicalqui peaks.<br>📍 <strong>Caraz Main Square:</strong> Famous for artisanal ice cream and warm climate.",
         gPrivTitle: "🔐 Private Route & Services Guide for Guests",
         gPrivDesc: "Enter the key provided at reception to see useful info, shops, and transport:",
-        btnUnlockText: "Unlock Guide",
-        passPlaceholder: "Guest password",
+        btnUnlockText: "Unlock Guide", passPlaceholder: "Guest password",
         gSecretTitle: "🗺️ Exclusive Routes & Hostal Kactus Tips:",
         gSecretText: "• <strong>Parón Lake Transport:</strong> Shared vans leave from 6:30 AM near the main market.<br>• <strong>Save on Tours:</strong> We help you organize group trips to lower costs.<br>• <strong>ATMs Nearby:</strong> BCP and Banco de la Nación ATMs 3 blocks away.",
         gShopTitle: "Nearby Shops, Pharmacies, Restaurants & Gas Stations:",
@@ -530,33 +650,25 @@
         faqQ1: "What time is Check-in and Check-out?", faqA1: "Check-in is from 1:00 PM and Check-out until 11:00 AM. If you arrive early, store your luggage for free!",
         faqQ2: "Do you have 24/7 hot water?", faqA2: "Yes, we have 24/7 hot water in all rooms.",
         faqQ3: "Do you accept digital payments or credit cards?", faqA3: "We accept cash, Yape, Plin digital transfers, and credit/debit cards.",
-        titleLocation: "Location & Policies",
-        lblAddr: "Address:",
-        noPets: "No pets allowed",
-        badgeRec: "24/7 Reception",
-        badgeCancel: "Flexible cancellation",
-        btnMapsText: "Open Location in Google Maps",
-        stkFrom: "From",
-        stkBtn: "Book Now"
+        titleLocation: "Location & Policies", lblAddr: "Address:", noPets: "No pets allowed", badgeRec: "24/7 Reception", badgeCancel: "Flexible cancellation", btnMapsText: "Open Location in Google Maps",
+        stkFrom: "From", stkBtn: "Book Now"
       },
       fr: {
         subTitle: "Votre séjour confortable, sécurisé et complet à Caraz, Pérou",
         titleRooms: "Nos Chambres",
-        room1Title: "Chambre Double Économique",
-        room1Desc: "Petite chambre douillette avec lit double. Idéale pour couples ou voyageurs solos.",
-        room2Title: "Chambre Double Moyenne",
-        room2Desc: "Chambre moyenne avec lit double, plus d'espace et belle luminosité.",
-        perNight: "/ nuit",
-        btnRes: "Réserver par WhatsApp",
+        room1Title: "Chambre Double Économique", room1Desc: "Petite chambre douillette avec lit double. Idéale pour couples ou voyageurs solos.",
+        room2Title: "Chambre Double Moyenne", room2Desc: "Chambre moyenne avec lit double, plus d'espace et belle luminosité.",
+        perNight: "/ nuit", btnRes: "Réserver par WhatsApp",
         titleServices: "Services et Équipements",
-        sBath: "Salle de Bain Privée",
-        sWater: "Eau Chaude 24/7",
-        sTv: "Smart TV",
-        sWifi: "Wi-Fi Gratuit",
-        sParking: "Parking Gratuit",
-        sLuggage: "Consigne à Bagages Gratuite",
-        sKitchen: "Cuisine Partagée & Four",
-        sBreakfast: "Service Petit-Déjeuner",
+        sBath: "Salle de Bain Privée", sWater: "Eau Chaude 24/7", sTv: "Smart TV", sWifi: "Wi-Fi Gratuit",
+        sParking: "Parking Gratuit", sLuggage: "Consigne à Bagages Gratuite", sKitchen: "Cuisine Partagée & Four", sBreakfast: "Service Petit-Déjeuner",
+        titlePayments: "Options de Paiement et Réservation",
+        payIntro: "Nous acceptons plusieurs modes de paiement pour votre confort :",
+        payYape: "Paiements numériques instantanés.", payCards: "Visa, MasterCard, American Express.",
+        payBank: "Virements bancaires BCP et Banco de la Nación.", payCash: "Paiement direct en espèces à la réception.",
+        titleTours: "Excursions et Transports Depuis Caraz",
+        t1Title: "⛰️ Lac Parón", t1Desc: "Bus quotidiens dès 6h30 près du marché. Organisation de départs en groupe.",
+        t2Title: "🏔️ Lac Llanganuco & Lac 69", t2Desc: "Transport touristique direct. Conseils d'acclimatation y horaires.",
         titleReviews: "Avis de nos Clients",
         rev1Text: '"Endroit très propre, calme avec de l\'eau chaude 24h/24. Le personnel était formidable pour m\'aider à aller au Lac Parón."',
         rev2Text: '"Un endroit formidable à Caraz ! Lit confortable, Wi-Fi rapide et personnel très serviable."',
@@ -565,8 +677,7 @@
         gPubDesc: "📍 <strong>Lac Parón :</strong> Le plus grand lac turquoise de la Cordillère Blanche.<br>📍 <strong>Lacs Llanganuco & Lac 69 :</strong> Vues magnifiques sur les sommets Huascarán et Chopicalqui.<br>📍 <strong>Place Principale de Caraz :</strong> Célèbre pour ses glaces artisanales et son climat chaud.",
         gPrivTitle: "🔐 Guide Privé de Routes et Services pour les Clients",
         gPrivDesc: "Entrez le mot de passe fourni à la réception pour voir les commerces et cartes :",
-        btnUnlockText: "Déverrouiller le Guide",
-        passPlaceholder: "Mot de passe client",
+        btnUnlockText: "Déverrouiller le Guide", passPlaceholder: "Mot de passe client",
         gSecretTitle: "🗺️ Routes Exclusives et Conseils Hostal Kactus :",
         gSecretText: "• <strong>Transport pour le Lac Parón :</strong> Départs des bus dès 6h30 près du marché principal.<br>• <strong>Économisez sur les Tours :</strong> Nous vous aidons à organiser des salidas en groupe.<br>• <strong>DABs proches :</strong> Distributeurs BCP et Banco de la Nación à 3 blocks.",
         gShopTitle: "Commerces, Pharmacies, Restaurants & Stations-Service :",
@@ -581,36 +692,28 @@
         shT8: "⛽ Station-service", shD8: "Point de ravitaillement essence et snacks.",
         mapLinkText: "Ouvrir dans Google Maps",
         titleFaq: "Foire Aux Questions",
-        faqQ1: "Heures de Check-in et Check-out ?", faqA1: "Check-in dès 13:00 et Check-out jusqu'à 11:00. Consigne à bagages gratuite en cas d'arrivée précoce !",
+        faqQ1: "Heures de Check-in et Check-out ?", faqA1: "Check-in dès 13:00 et Check-out jusqu'à 11:00. Consigne à bagages gratuite !",
         faqQ2: "Avez-vous de l'eau chaude 24h/24 ?", faqA2: "Oui, eau chaude 24/7 dans toutes nos chambres.",
-        faqQ3: "Acceptez-vous les cartes et paiements numériques ?", faqA3: "Nous acceptons espèces, Yape, Plin et cartes de crédit/débit.",
-        titleLocation: "Emplacement & Politiques",
-        lblAddr: "Adresse :",
-        noPets: "Animaux non admis",
-        badgeRec: "Réception continue",
-        badgeCancel: "Annulation flexible",
-        btnMapsText: "Ouvrir dans Google Maps",
-        stkFrom: "À partir de",
-        stkBtn: "Réserver"
+        faqQ3: "Acceptez-vous les cartes y paiements numériques ?", faqA3: "Nous acceptons espèces, Yape, Plin et cartes de crédit/débit.",
+        titleLocation: "Emplacement & Politiques", lblAddr: "Adresse :", noPets: "Animaux non admis", badgeRec: "Réception continuous", badgeCancel: "Annulation flexible", btnMapsText: "Ouvrir dans Google Maps",
+        stkFrom: "À partir de", stkBtn: "Réserver"
       },
       cs: {
         subTitle: "Váš pohodlný, bezpečný a kompletní pobyt v Carazu v Peru",
         titleRooms: "Naše Pokoje",
-        room1Title: "Ekonomický Dvoulůžkový Pokoj",
-        room1Desc: "Útulný malý pokoj s manželskou postelí. Ideální pro páry nebo sólo cestovatele.",
-        room2Title: "Střední Dvoulůžkový Pokoj",
-        room2Desc: "Středně velký pokoj s manželskou postelí, více prostoru a skvělým osvětlením.",
-        perNight: "/ noc",
-        btnRes: "Rezervovat přes WhatsApp",
+        room1Title: "Ekonomický Dvoulůžkový Pokoj", room1Desc: "Útulný malý pokoj s manželskou postelí. Ideální pro páry nebo sólo cestovatele.",
+        room2Title: "Střední Dvoulůžkový Pokoj", room2Desc: "Středně velký pokoj s manželskou postelí, více prostoru a skvělým osvětlením.",
+        perNight: "/ noc", btnRes: "Rezervovat přes WhatsApp",
         titleServices: "Služby a Vybavení",
-        sBath: "Vlastní Koupelna",
-        sWater: "Teplá Voda 24/7",
-        sTv: "Smart TV",
-        sWifi: "Wi-Fi Zdarma",
-        sParking: "Parkování Zdarma",
-        sLuggage: "Úschova Zavazadel Zdarma",
-        sKitchen: "Sdílená Kuchyň a Pec",
-        sBreakfast: "Snídaňový Servis",
+        sBath: "Vlastní Koupelna", sWater: "Teplá Voda 24/7", sTv: "Smart TV", sWifi: "Wi-Fi Zdarma",
+        sParking: "Parkování Zdarma", sLuggage: "Úschova Zavazadel Zdarma", sKitchen: "Sdílená Kuchyň a Pec", sBreakfast: "Snídaňový Servis",
+        titlePayments: "Platební Možnosti a Rezervace",
+        payIntro: "Přijímáme několik způsobů platby pro vaše pohodlí:",
+        payYape: "Okamžité digitální platby.", payCards: "Visa, MasterCard, American Express.",
+        payBank: "Bankovní převody BCP a Banco de la Nación.", payCash: "Přímá platba v hotovosti na recepci.",
+        titleTours: "Výlety a Doprava z Carazu",
+        t1Title: "⛰️ Jezero Parón", t1Desc: "Denní autobusy od 6:30 ráno poblíž tržiště. Pomáháme organizovat skupinové výlety.",
+        t2Title: "🏔️ Jezera Llanganuco a Laguna 69", t2Desc: "Přímá turistická doprava. Kompletní poradenství o aklimatizaci.",
         titleReviews: "Hodnocení Našich Hostů",
         rev1Text: '"Skvělé čisté místo, klid a teplá voda po 24 hodin. Recepce byla velmi nápomocná při organizování výletu na jezero Parón."',
         rev2Text: '"Skvělé místo k pobytu v Carazu! Pohodlná postel, rychlá Wi-Fi a velmi ochotný personál."',
@@ -619,8 +722,7 @@
         gPubDesc: "📍 <strong>Jezero Parón:</strong> Největší tyrkysová laguna v Cordillera Blanca.<br>📍 <strong>Jezera Llanganuco a Laguna 69:</strong> Velkolepé výhledy na vrcholy Huascarán a Chopicalqui.<br>📍 <strong>Hlavní Náměstí v Carazu:</strong> Proslulé tradiční řemeslnou zmrzlinou a teplým počasím.",
         gPrivTitle: "🔐 Soukromý Průvodce Trasami a Službami pro Hosty",
         gPrivDesc: "Zadejte heslo obdržené na recepci pro zobrazení informací o obchodech a doprava:",
-        btnUnlockText: "Odemknout Průvodce",
-        passPlaceholder: "Heslo pro hosty",
+        btnUnlockText: "Odemknout Průvodce", passPlaceholder: "Heslo pro hosty",
         gSecretTitle: "🗺️ Exkluzivní Trasy a Tipy Hostal Kactus:",
         gSecretText: "• <strong>Doprava k jezeru Parón:</strong> Sdílené autobusy odjíždějí od 6:30 ráno poblíž hlavního tržiště.<br>• <strong>Úspora na výletech:</strong> Pomůžeme vám zorganizovat skupinové výlety pro snížení nákladů.<br>• <strong>Bankomaty:</strong> Bankomaty BCP a Banco de la Nación 3 bloky od hostelu.",
         gShopTitle: "Obchody, Lékárny, Restaurace a Čerpací Stanice:",
@@ -635,36 +737,30 @@
         shT8: "⛽ Čerpací Stanice", shD8: "Čerpací stanice v okolí pro doplňování paliva.",
         mapLinkText: "Otevřít v Google Maps",
         titleFaq: "Často Kladené Otázky",
-        faqQ1: "Kdy je Check-in a Check-out?", faqA1: "Check-in od 13:00 a Check-out do 11:00. Úschova zavazadel zdarma při brzkém příjezdu!",
+        faqQ1: "Kdy je Check-in a Check-out?", faqA1: "Check-in od 13:00 a Check-out do 11:00. Úschova zavazadel zdarma!",
         faqQ2: "Máte teplou vodu 24 hodin denně?", faqA2: "Ano, teplá voda 24/7 je k dispozici ve všech pokojích.",
         faqQ3: "Přijímáte platby kartou nebo digitálně?", faqA3: "Přijímáme hotovost, Yape, Plin a kreditní/debetní karty.",
-        titleLocation: "Lokalita a Pravidla",
-        lblAddr: "Adresa:",
-        noPets: "Domácí mazlíčci nejsou povoleni",
-        badgeRec: "Nepřetržitá recepce",
-        badgeCancel: "Flexibilní storno",
-        btnMapsText: "Otevřít v Google Maps",
-        stkFrom: "Od",
-        stkBtn: "Rezervovat"
+        titleLocation: "Lokalita a Pravidla", lblAddr: "Adresa:", noPets: "Domácí mazlíčci nejsou povoleni", badgeRec: "Nepřetržitá recepce", badgeCancel: "Flexibilní storno", btnMapsText: "Otevřít v Google Maps",
+        stkFrom: "Od", stkBtn: "Rezervovat"
       },
       zh: {
         subTitle: "您在秘鲁卡拉斯（Caraz）舒适、安全且完善的下榻之所",
         titleRooms: "我们的客房",
-        room1Title: "经济双人房",
-        room1Desc: "温馨的小型客房，配备双人床。非常适合情侣或单人旅客。",
-        room2Title: "中型双人房",
-        room2Desc: "中型客房，配备双人床，空间更大，采光极佳。",
-        perNight: "/ 晚",
-        btnRes: "通过 WhatsApp 预订",
+        room1Title: "经济双人房", room1Desc: "温馨的小型客房，配备双人床。非常适合情侣或单人旅客。",
+        room2Title: "中型双人房", room2Desc: "中型客房，配备双人床，空间更大，采光极佳。",
+        perNight: "/ 晚", btnRes: "通过 WhatsApp 预订",
         titleServices: "服务与设施",
-        sBath: "独立卫浴",
-        sWater: "24/7 热水供应",
-        sTv: "智能电视",
-        sWifi: "免费 Wi-Fi",
-        sParking: "免费停车场",
-        sLuggage: "免费行李寄存",
-        sKitchen: "共享厨房与烤箱",
-        sBreakfast: "早餐服务",
+        sBath: "独立卫浴", sWater: "24/7 热水供应", sTv: "智能电视", sWifi: "免费 Wi-Fi",
+        sParking: "免费停车场", sLuggage: "免费行李寄存", sKitchen: "共享厨房与烤箱", sBreakfast: "早餐服务",
+        titlePayments: "支付方式与预订途径",
+        payIntro: "我们支持多种支付方式，为您带来极致便利：",
+        payYape: "通过官方电话号码进行即时数字支付。",
+        payCards: "支持 Visa、MasterCard 及 Express 刷卡。",
+        payBank: "支持 BCP 与国家银行转账。",
+        payCash: "到达时在酒店前台以现金直接支付。",
+        titleTours: "从卡拉斯出发的旅游与交通",
+        t1Title: "⛰️ 帕隆湖（Laguna Parón）", t1Desc: "每天早晨 6:30 起从市场附近发车。我们协助安排拼车以降低成本。",
+        t2Title: "🏔️ 扬加努科湖与69号湖", t2Desc: "直达旅游交通，提供完整的高原适应与行程建议。",
         titleReviews: "住客评价",
         rev1Text: '"非常干净的地方，安静且24小时热水。前台非常热情地帮我安排了帕隆湖的行程。"',
         rev2Text: '"卡拉斯极佳的住宿选择！床铺舒适，Wi-Fi快速，员工非常热心。非常推荐给徒步旅行者！"',
@@ -673,8 +769,7 @@
         gPubDesc: "📍 <strong>帕隆湖（Laguna Parón）：</strong> 白山脉最大的绿松石色高山湖泊。<br>📍 <strong>扬加努科湖与69号湖：</strong> 壮丽观赏瓦斯卡兰峰与肖皮卡尔奇峰。<br>📍 <strong>卡拉斯武器广场：</strong> 以传统手工冰淇淋和宜人气候闻名。",
         gPrivTitle: "🔐 住客专属路线与服务指南",
         gPrivDesc: "输入前台提供的密码，查看附近购物与交通秘诀：",
-        btnUnlockText: "解锁指南",
-        passPlaceholder: "住客密码",
+        btnUnlockText: "解锁指南", passPlaceholder: "住客密码",
         gSecretTitle: "🗺️ 仙人掌旅馆专属路线与建议：",
         gSecretText: "• <strong>前往帕隆湖的交通：</strong> 拼车小巴自早晨 6:30 起从主市场附近出发。<br>• <strong>节省行程费用：</strong> 我们协助组织组团出行以分摊成本。<br>• <strong>附近 ATM：</strong> 步行 3 个街区即可到达 BCP 及国家银行 ATM。",
         gShopTitle: "周边商店、药房、餐厅与加油站：",
@@ -689,17 +784,11 @@
         shT8: "⛽ 加油站", shD8: "附近加油与快速补给点。",
         mapLinkText: "在 Google 地图中打开",
         titleFaq: "常见问题",
-        faqQ1: "入住与退房时间是什么时候？", faqA1: "入住时间为 13:00 起，退房时间为 11:00 前。若提前到达，可免费寄存行李！",
+        faqQ1: "入住与退房时间是什么时候？", faqA1: "入住时间为 13:00 起，退房时间为 11:00 前。可免费寄存行李！",
         faqQ2: "是否全天 24 小时供应热水？", faqA2: "是的，所有客房均配备 24/7 热水系统。",
         faqQ3: "支持数字支付或刷卡吗？", faqA3: "我们支持现金、Yape、Plin 数字转账以及信用卡/借记卡支付。",
-        titleLocation: "位置与政策",
-        lblAddr: "地址：",
-        noPets: "禁止携带宠物",
-        badgeRec: "24小时前台服务",
-        badgeCancel: "灵活取消政策",
-        btnMapsText: "在 Google 地图中打开",
-        stkFrom: "起价",
-        stkBtn: "立即预订"
+        titleLocation: "位置与政策", lblAddr: "地址：", noPets: "禁止携带宠物", badgeRec: "24小时前台服务", badgeCancel: "灵活取消政策", btnMapsText: "在 Google 地图中打开",
+        stkFrom: "起价", stkBtn: "立即预订"
       }
     };
 
@@ -730,6 +819,17 @@
       document.getElementById('s-luggage').innerText = t.sLuggage;
       document.getElementById('s-kitchen').innerText = t.sKitchen;
       document.getElementById('s-breakfast').innerText = t.sBreakfast;
+
+      document.getElementById('title-payments').innerText = t.titlePayments;
+      document.getElementById('pay-intro').innerText = t.payIntro;
+      document.getElementById('pay-yape').innerText = t.payYape;
+      document.getElementById('pay-cards').innerText = t.payCards;
+      document.getElementById('pay-bank').innerText = t.payBank;
+      document.getElementById('pay-cash').innerText = t.payCash;
+
+      document.getElementById('title-tours').innerText = t.titleTours;
+      document.getElementById('t1-title').innerText = t.t1Title; document.getElementById('t1-desc').innerText = t.t1Desc;
+      document.getElementById('t2-title').innerText = t.t2Title; document.getElementById('t2-desc').innerText = t.t2Desc;
 
       document.getElementById('title-reviews').innerText = t.titleReviews;
       document.getElementById('rev1-text').innerText = t.rev1Text;
