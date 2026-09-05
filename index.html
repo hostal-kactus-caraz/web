@@ -132,7 +132,7 @@
     .service-item:hover { transform: translateY(-3px); }
     .service-item i { font-size: 1.7rem; color: var(--primary-lettuce); margin-bottom: 8px; display: block; }
 
-    /* Pasarela de Pagos con Tío MacPato */
+    /* Pasarela de Pagos con Tío MacPato Caricatura */
     .payments-box { 
       background: var(--card-bg); 
       padding: 22px; 
@@ -149,23 +149,22 @@
       justify-content: center;
       gap: 15px;
       background: #f1f8e9;
-      padding: 12px 20px;
+      padding: 14px 20px;
       border-radius: 12px;
       margin-bottom: 18px;
-      border: 1px solid #c8e6c9;
+      border: 1.5px dashed var(--primary-lettuce);
     }
-    .scrooge-img {
-      width: 75px;
-      height: 75px;
-      object-fit: contain;
-      filter: drop-shadow(0 3px 5px rgba(0,0,0,0.15));
+    .scrooge-svg {
+      width: 80px;
+      height: 80px;
+      flex-shrink: 0;
     }
     .scrooge-text {
       text-align: left;
     }
     .scrooge-text strong {
       color: var(--secondary-dark);
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       display: block;
     }
     .scrooge-text span {
@@ -234,6 +233,7 @@
 </head>
 <body>
 
+  <!-- Selector de Idiomas -->
   <nav class="top-lang-bar">
     <button class="lang-btn active" id="btn-es" onclick="changeLanguage('es')">
       <img src="https://flagcdn.com/w40/es.png" alt="España" class="flag-img">
@@ -264,6 +264,7 @@
 
   <main class="container">
     
+    <!-- Ratings -->
     <div class="ratings-bar">
       <a href="https://www.booking.com/hotel/pe/kactus-hostal-caraz.es.html" target="_blank" class="rating-card">
         <i class="fas fa-star"></i>
@@ -275,9 +276,11 @@
       </a>
     </div>
 
+    <!-- Habitaciones con Galería Carrusel -->
     <h2 class="section-title" id="title-rooms">Nuestras Habitaciones</h2>
     <div class="grid-rooms">
       
+      <!-- Habitación Económica -->
       <div class="room-card">
         <div class="carousel-container" id="carousel1">
           <div class="carousel-slide">
@@ -303,6 +306,7 @@
         </div>
       </div>
 
+      <!-- Habitación Mediana -->
       <div class="room-card">
         <div class="carousel-container" id="carousel2">
           <div class="carousel-slide">
@@ -330,6 +334,7 @@
 
     </div>
 
+    <!-- Servicios -->
     <h2 class="section-title" id="title-services">Servicios e Instalaciones</h2>
     <div class="services-list">
       <div class="service-item"><i class="fas fa-bath"></i><p id="s-bath">Baño Privado</p></div>
@@ -342,11 +347,32 @@
       <div class="service-item"><i class="fas fa-coffee"></i><p id="s-breakfast">Servicio de Desayunos</p></div>
     </div>
 
+    <!-- Pasarela de Pagos con Ilustración Integrada de Tío Rico MacPato -->
     <h2 class="section-title" id="title-payments">Pasarela de Pago y Medios de Reserva</h2>
     <div class="payments-box">
       
+      <!-- Ilustración Integrada de Rico MacPato (Vectorial SVG) -->
       <div class="scrooge-banner">
-        <img src="https://upload.wikimedia.org/wikipedia/en/7/70/Scrooge_McDuck.png" alt="Tío MacPato" class="scrooge-img">
+        <svg class="scrooge-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <!-- Sombrero de Copa -->
+          <rect x="30" y="5" width="40" height="25" rx="3" fill="#1f2937"/>
+          <rect x="20" y="27" width="60" height="6" rx="2" fill="#1f2937"/>
+          <rect x="30" y="23" width="40" height="4" fill="#dc2626"/>
+          <!-- Cabeza de Pato -->
+          <circle cx="50" cy="50" r="22" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+          <!-- Gafas/Lentes (Pince-nez) -->
+          <circle cx="43" cy="46" r="7" fill="none" stroke="#374151" stroke-width="2"/>
+          <circle cx="57" cy="46" r="7" fill="none" stroke="#374151" stroke-width="2"/>
+          <line x1="50" y1="46" x2="50" y2="48" stroke="#374151" stroke-width="2"/>
+          <!-- Ojos de Rico MacPato -->
+          <circle cx="43" cy="46" r="2.5" fill="#1d4ed8"/>
+          <circle cx="57" cy="46" r="2.5" fill="#1d4ed8"/>
+          <!-- Pico -->
+          <path d="M 32 54 Q 50 48 68 54 Q 50 68 32 54 Z" fill="#f59e0b" stroke="#d97706" stroke-width="1.5"/>
+          <!-- Bolsa de Dinero con Monedas -->
+          <circle cx="50" cy="82" r="15" fill="#eab308"/>
+          <text x="50" y="87" font-size="14" font-weight="bold" fill="#78350f" text-anchor="middle">$</text>
+        </svg>
         <div class="scrooge-text">
           <strong id="scrooge-title">¡Aprobado por el Tío Rico MacPato! 💰🎩</strong>
           <span id="scrooge-desc">Paga seguro, fácil y sin comisiones ocultas para tus reservas.</span>
@@ -379,6 +405,7 @@
       </div>
     </div>
 
+    <!-- Salidas y Tours -->
     <h2 class="section-title" id="title-tours">Salidas a Tours y Transporte Desde Caraz</h2>
     <div class="tours-grid">
       <div class="tour-card">
@@ -391,6 +418,7 @@
       </div>
     </div>
 
+    <!-- Testimonios -->
     <h2 class="section-title" id="title-reviews">Opiniones de Nuestros Huéspedes</h2>
     <div class="reviews-grid">
       <div class="review-card">
@@ -403,6 +431,7 @@
       </div>
     </div>
 
+    <!-- Guía Turística & Área Privada -->
     <h2 class="section-title" id="title-guide">Guía Turística de Caraz & Área Privada</h2>
     <div class="guide-box">
       <h3 id="g-pub-title">Lugares Populares para Visitar:</h3>
@@ -418,6 +447,7 @@
       <input type="password" id="passInput" placeholder="Contraseña de huésped" onkeypress="handleKey(event)">
       <button class="btn btn-unlock" onclick="unlockGuide()" id="btn-unlock-text">Desbloquear Guía</button>
 
+      <!-- ÁREA DESBLOQUEABLE -->
       <div class="locked-content" id="secretGuide">
         <h4 id="g-secret-title">🗺️ Rutas Exclusivas y Consejos Hostal Kactus:</h4>
         <p id="g-secret-text">• <strong>Transporte a Laguna Parón:</strong> Colectivos salen desde las 6:30 AM cerca al mercado principal.<br>
@@ -497,6 +527,7 @@
       </div>
     </div>
 
+    <!-- FAQ -->
     <h2 class="section-title" id="title-faq">Preguntas Frecuentes</h2>
     <div class="faq-item" onclick="toggleFaq(this)">
       <div class="faq-question"><span id="faq-q1">¿A qué hora es el Check-in y Check-out?</span> <i class="fas fa-chevron-down"></i></div>
@@ -511,6 +542,7 @@
       <div class="faq-answer" id="faq-a3">Aceptamos efectivo, transferencias digitales por Yape, Plin y tarjetas de crédito o débito.</div>
     </div>
 
+    <!-- Ubicación -->
     <h2 class="section-title" id="title-location">Ubicación y Políticas</h2>
     <div class="location-box">
       <p><i class="fas fa-map-marker-alt" style="color:#e53935;"></i> <strong id="lbl-addr">Dirección:</strong> Avenida Meza Arizona 425 - 202, Caraz, Ancash, Perú</p>
@@ -527,6 +559,7 @@
 
   </main>
 
+  <!-- Sticky Bar Móvil -->
   <div class="mobile-sticky-bar">
     <div class="sticky-price"><span id="stk-from">Desde</span> <strong>S/ 35.00</strong></div>
     <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20quisiera%20consultar%20disponibilidad%20de%20habitaciones" target="_blank" class="btn btn-whatsapp sticky-btn">
@@ -534,6 +567,7 @@
     </a>
   </div>
 
+  <!-- JavaScript -->
   <script>
     // Lógica para el Carrusel de Fotos
     const slideIndexes = { carousel1: 0, carousel2: 0 };
@@ -831,4 +865,94 @@
         faqQ1: "入住与退房时间是什么时候？", faqA1: "入住时间为 13:00 起，退房时间为 11:00 前。可免费寄存行李！",
         faqQ2: "是否全天 24 小时供应热水？", faqA2: "是的，所有客房均配备 24/7 热水系统。",
         faqQ3: "支持数字支付或刷卡吗？", faqA3: "我们支持现金、Yape、Plin 数字转账以及信用卡/借记卡支付。",
-        titleLocation: "
+        titleLocation: "位置与政策", lblAddr: "地址：", noPets: "禁止携带宠物", badgeRec: "24小时前台服务", badgeCancel: "灵活取消政策", btnMapsText: "在 Google 地图中打开",
+        stkFrom: "起价", stkBtn: "立即预订"
+      }
+    };
+
+    function changeLanguage(lang) {
+      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+      const activeBtn = document.getElementById(`btn-${lang}`);
+      if (activeBtn) activeBtn.classList.add('active');
+
+      const t = translations[lang] || translations['es'];
+
+      document.getElementById('sub-title').innerText = t.subTitle;
+      document.getElementById('title-rooms').innerText = t.titleRooms;
+      document.getElementById('room1-title').innerText = t.room1Title;
+      document.getElementById('room1-desc').innerText = t.room1Desc;
+      document.getElementById('room2-title').innerText = t.room2Title;
+      document.getElementById('room2-desc').innerText = t.room2Desc;
+      document.getElementById('per-night-1').innerText = t.perNight;
+      document.getElementById('per-night-2').innerText = t.perNight;
+      
+      document.querySelectorAll('.btn-res-text').forEach(el => el.innerText = t.btnRes);
+
+      document.getElementById('title-services').innerText = t.titleServices;
+      document.getElementById('s-bath').innerText = t.sBath;
+      document.getElementById('s-water').innerText = t.sWater;
+      document.getElementById('s-tv').innerText = t.sTv;
+      document.getElementById('s-wifi').innerText = t.sWifi;
+      document.getElementById('s-parking').innerText = t.sParking;
+      document.getElementById('s-luggage').innerText = t.sLuggage;
+      document.getElementById('s-kitchen').innerText = t.sKitchen;
+      document.getElementById('s-breakfast').innerText = t.sBreakfast;
+
+      document.getElementById('title-payments').innerText = t.titlePayments;
+      if(document.getElementById('scrooge-title')) document.getElementById('scrooge-title').innerText = t.scroogeTitle;
+      if(document.getElementById('scrooge-desc')) document.getElementById('scrooge-desc').innerText = t.scroogeDesc;
+      document.getElementById('pay-intro').innerText = t.payIntro;
+      document.getElementById('pay-yape').innerText = t.payYape;
+      document.getElementById('pay-cards').innerText = t.payCards;
+      document.getElementById('pay-bank').innerText = t.payBank;
+      document.getElementById('pay-cash').innerText = t.payCash;
+
+      document.getElementById('title-tours').innerText = t.titleTours;
+      document.getElementById('t1-title').innerText = t.t1Title; document.getElementById('t1-desc').innerText = t.t1Desc;
+      document.getElementById('t2-title').innerText = t.t2Title; document.getElementById('t2-desc').innerText = t.t2Desc;
+
+      document.getElementById('title-reviews').innerText = t.titleReviews;
+      document.getElementById('rev1-text').innerText = t.rev1Text;
+      document.getElementById('rev2-text').innerText = t.rev2Text;
+
+      document.getElementById('title-guide').innerText = t.titleGuide;
+      document.getElementById('g-pub-title').innerText = t.gPubTitle;
+      document.getElementById('g-pub-desc').innerHTML = t.gPubDesc;
+      document.getElementById('g-priv-title').innerText = t.gPrivTitle;
+      document.getElementById('g-priv-desc').innerText = t.gPrivDesc;
+      document.getElementById('btn-unlock-text').innerText = t.btnUnlockText;
+      document.getElementById('passInput').placeholder = t.passPlaceholder;
+      document.getElementById('g-secret-title').innerText = t.gSecretTitle;
+      document.getElementById('g-secret-text').innerHTML = t.gSecretText;
+
+      document.getElementById('g-shop-title').innerHTML = `<i class="fas fa-map-marked-alt" style="color:var(--primary-lettuce);"></i> ${t.gShopTitle}`;
+      document.getElementById('g-shop-intro').innerText = t.gShopIntro;
+      document.getElementById('sh-t1').innerText = t.shT1; document.getElementById('sh-d1').innerText = t.shD1;
+      document.getElementById('sh-t2').innerText = t.shT2; document.getElementById('sh-d2').innerText = t.shD2;
+      document.getElementById('sh-t3').innerText = t.shT3; document.getElementById('sh-d3').innerText = t.shD3;
+      document.getElementById('sh-t4').innerText = t.shT4; document.getElementById('sh-d4').innerText = t.shD4;
+      document.getElementById('sh-t5').innerText = t.shT5; document.getElementById('sh-d5').innerText = t.shD5;
+      document.getElementById('sh-t6').innerText = t.shT6; document.getElementById('sh-d6').innerText = t.shD6;
+      document.getElementById('sh-t7').innerText = t.shT7; document.getElementById('sh-d7').innerText = t.shD7;
+      document.getElementById('sh-t8').innerText = t.shT8; document.getElementById('sh-d8').innerText = t.shD8;
+
+      document.querySelectorAll('.map-link-text').forEach(el => el.innerText = t.mapLinkText);
+
+      document.getElementById('title-faq').innerText = t.titleFaq;
+      document.getElementById('faq-q1').innerText = t.faqQ1; document.getElementById('faq-a1').innerText = t.faqA1;
+      document.getElementById('faq-q2').innerText = t.faqQ2; document.getElementById('faq-a2').innerText = t.faqA2;
+      document.getElementById('faq-q3').innerText = t.faqQ3; document.getElementById('faq-a3').innerText = t.faqA3;
+
+      document.getElementById('title-location').innerText = t.titleLocation;
+      document.getElementById('lbl-addr').innerText = t.lblAddr;
+      document.getElementById('no-pets-text').innerText = t.noPets;
+      document.getElementById('badge-rec').innerText = t.badgeRec;
+      document.getElementById('badge-cancel').innerText = t.badgeCancel;
+      document.getElementById('btn-maps-text').innerText = t.btnMapsText;
+
+      document.getElementById('stk-from').innerText = t.stkFrom;
+      document.getElementById('stk-btn').innerText = t.stkBtn;
+    }
+  </script>
+</body>
+</html>
