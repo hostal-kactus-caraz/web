@@ -24,12 +24,6 @@
           fontFamily: {
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
           },
-          colors: {
-            ayenda: {
-              green: '#10b981',
-              dark: '#0f172a',
-            }
-          },
           boxShadow: {
             'ayenda': '0 10px 30px -5px rgba(0, 0, 0, 0.15)',
             'card': '0 4px 20px -2px rgba(0, 0, 0, 0.06)',
@@ -44,7 +38,7 @@
       display: flex;
       transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .ayenda-card {
+    .kactus-card {
       background: #ffffff;
       border: 1px solid #e2e8f0;
       border-radius: 1.25rem;
@@ -53,17 +47,19 @@
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-500 selection:text-white pb-24">
 
-  <!-- BARRA SUPERIOR EXACTA ESTILO AYENDA -->
+  <!-- BARRA SUPERIOR 100% PROPIA DE HOSTAL KACTUS -->
   <nav class="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-xs py-3 px-6 sm:px-10">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
       
-      <!-- Logo y Nombre -->
-      <a href="#" class="flex items-center gap-2 group">
-        <span class="font-extrabold text-2xl tracking-tighter text-slate-900">ayenda</span>
-        <span class="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full font-bold">Kactus</span>
+      <!-- Logo y Nombre de Kactus -->
+      <a href="#" class="flex items-center gap-2.5 group">
+        <div class="w-9 h-9 bg-emerald-600 rounded-xl flex items-center justify-center text-white shadow-md font-black text-base">
+          K
+        </div>
+        <span class="font-extrabold text-lg tracking-tight text-slate-900">Hostal Kactus <span class="text-xs text-emerald-600 font-bold">Caraz</span></span>
       </a>
 
-      <!-- Iconos y Controles Superiores Derecha -->
+      <!-- Controles Superiores Derecha (Código de Huésped e Idiomas) -->
       <div class="flex items-center gap-3">
         
         <!-- Acceso Código de Huésped -->
@@ -71,7 +67,7 @@
           <i class="fas fa-key text-emerald-600"></i> <span id="nav-code-text">Código de Huésped</span>
         </a>
 
-        <!-- Selector de Idioma Desplegable/Minibotones -->
+        <!-- Selector de Idioma -->
         <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200">
           <button class="lang-btn active px-2.5 py-1 rounded-lg text-[11px] font-bold transition-all flex items-center gap-1 bg-emerald-600 text-white shadow-xs" id="btn-es" onclick="changeLanguage('es')">
             <img src="https://flagcdn.com/w40/es.png" alt="ES" class="w-3.5 h-2.5 object-cover rounded-xs">
@@ -95,35 +91,28 @@
           </button>
         </div>
 
-        <!-- Iconos de Perfil Ayenda -->
-        <div class="hidden md:flex items-center gap-2 pl-2 border-l border-slate-200 text-slate-600">
-          <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold hover:bg-slate-200 cursor-pointer">
-            <i class="fas fa-user"></i>
-          </div>
-        </div>
-
       </div>
 
     </div>
   </nav>
 
-  <!-- BANNER PRINCIPAL CON BUSCADOR FLOTANTE IDÉNTICO A LA REFERENCIA AYENDA -->
+  <!-- BANNER PRINCIPAL CON CONTENIDO 100% PROPIO Y ESTILO VISUAL MODERNO -->
   <header class="relative bg-slate-900 text-white py-20 px-4 overflow-hidden">
     <div class="absolute inset-0 bg-cover bg-center opacity-35" style="background-image: url('https://lh3.googleusercontent.com/d/1306fD7zgATU2P_1JwTWkWpq-lukMtejG');"></div>
     
     <div class="relative z-10 max-w-5xl mx-auto text-center space-y-4 mb-12">
       <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight max-w-3xl mx-auto leading-tight" id="hero-title">
-        Más de 450 hoteles, hostales y aparthoteles con la mejor tarifa directa en <span class="text-emerald-400">Caraz, Ancash y Perú</span>
+        Tu descanso cómodo, seguro y completo en <span class="text-emerald-400">Caraz, Perú</span>
       </h1>
       <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto" id="hero-subtitle">
-        Compara y reserva en línea con confirmación inmediata, y paga al mejor precio con la garantía de tarifa directa.
+        Disfruta de habitaciones acogedoras, agua caliente 24/7 y la mejor ubicación para tus aventuras en la Cordillera Blanca.
       </p>
     </div>
 
-    <!-- Barra de Búsqueda Flotante Idéntica a Ayenda -->
+    <!-- Barra de Búsqueda Flotante Estilo Referencia (Con Contenido Propio de Kactus) -->
     <div class="relative z-20 max-w-4xl mx-auto bg-white text-slate-800 p-3 sm:p-4 rounded-2xl shadow-ayenda grid grid-cols-1 md:grid-cols-4 gap-3 items-center">
       
-      <!-- Destino -->
+      <!-- Ubicación fija Kactus -->
       <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-xl border border-slate-200">
         <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-sm">
           <i class="fas fa-map-marker-alt"></i>
@@ -134,31 +123,31 @@
         </div>
       </div>
 
-      <!-- Día de entrada -->
+      <!-- Fecha Entrada -->
       <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-200">
         <label class="block text-[10px] font-extrabold text-slate-400 uppercase mb-0.5" id="lbl-checkin">Día de entrada</label>
         <input type="date" id="checkinDate" class="w-full bg-transparent text-xs font-bold text-slate-800 focus:outline-none">
       </div>
 
-      <!-- Día de salida -->
+      <!-- Fecha Salida -->
       <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-200">
         <label class="block text-[10px] font-extrabold text-slate-400 uppercase mb-0.5" id="lbl-checkout">Día de salida</label>
         <input type="date" id="checkoutDate" class="w-full bg-transparent text-xs font-bold text-slate-800 focus:outline-none">
       </div>
 
-      <!-- Botón Ver Precios (Verde brillante Ayenda) -->
+      <!-- Botón de Acción -->
       <div>
         <button onclick="sendCustomReservation()" class="w-full bg-emerald-500 hover:bg-emerald-600 active:scale-95 text-white font-extrabold py-3.5 px-4 rounded-xl text-xs transition-all shadow-md shadow-emerald-500/20 flex items-center justify-center gap-2">
-          <i class="fab fa-whatsapp text-base"></i> <span id="btn-search-prices">Ver precios</span>
+          <i class="fab fa-whatsapp text-base"></i> <span id="btn-search-prices">Consultar Disponibilidad</span>
         </button>
       </div>
 
     </div>
 
-    <!-- Garantías inferiores del banner -->
+    <!-- Garantías -->
     <div class="relative z-10 max-w-3xl mx-auto mt-6 flex flex-wrap justify-center gap-6 text-[11px] font-bold text-slate-300">
-      <span class="flex items-center gap-1.5"><i class="fas fa-check-circle text-emerald-400"></i> Sin costos de cancelación</span>
-      <span class="flex items-center gap-1.5"><i class="fas fa-shield-halved text-emerald-400"></i> Mejor precio garantizado</span>
+      <span class="flex items-center gap-1.5"><i class="fas fa-check-circle text-emerald-400"></i> Reserva directa sin intermediarios</span>
+      <span class="flex items-center gap-1.5"><i class="fas fa-shield-halved text-emerald-400"></i> Atención personalizada 24/7</span>
     </div>
   </header>
 
@@ -166,14 +155,14 @@
 
     <!-- Calificaciones -->
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto">
-      <a href="https://www.booking.com/hotel/pe/kactus-hostal-caraz.es.html" target="_blank" rel="noopener" class="ayenda-card p-4 shadow-card hover:shadow-lg transition-all flex items-center gap-3.5 group">
+      <a href="https://www.booking.com/hotel/pe/kactus-hostal-caraz.es.html" target="_blank" rel="noopener" class="kactus-card p-4 shadow-card hover:shadow-lg transition-all flex items-center gap-3.5 group">
         <div class="w-10 h-10 bg-blue-600 text-white rounded-xl flex items-center justify-center font-black text-sm shadow-sm">8.9</div>
         <div>
           <div class="text-[10px] font-extrabold text-slate-400 uppercase">Booking.com</div>
           <div class="text-xs font-extrabold text-slate-900" id="badge-booking">Fabuloso · Excelente Ubicación</div>
         </div>
       </a>
-      <a href="https://maps.google.com" target="_blank" rel="noopener" class="ayenda-card p-4 shadow-card hover:shadow-lg transition-all flex items-center gap-3.5 group">
+      <a href="https://maps.google.com" target="_blank" rel="noopener" class="kactus-card p-4 shadow-card hover:shadow-lg transition-all flex items-center gap-3.5 group">
         <div class="w-10 h-10 bg-amber-500 text-white rounded-xl flex items-center justify-center text-sm shadow-sm"><i class="fas fa-star"></i></div>
         <div>
           <div class="text-[10px] font-extrabold text-slate-400 uppercase">Google Maps</div>
@@ -186,22 +175,20 @@
     <section>
       <div class="flex items-center justify-between mb-6">
         <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight" id="title-rooms">Nuestras Habitaciones</h2>
-        <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200" id="rooms-badge">Tarifa Directa Garantizada</span>
+        <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200" id="rooms-badge">Garantía Mejor Precio Directo</span>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         
-        <!-- Habitación 1: ECONÓMICA -->
-        <div class="ayenda-card overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 flex flex-col group">
+        <!-- Habitación 1 -->
+        <div class="kactus-card overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 flex flex-col group">
           <div class="relative w-full h-60 bg-slate-900 overflow-hidden" id="carousel1">
             <div class="absolute top-3 left-3 z-20 bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-black px-3 py-1 rounded-full shadow-xs border border-white/20" id="room1-tag">
               ECONÓMICA & CONFORT
             </div>
             
             <div class="carousel-slide w-full h-full">
-              <!-- Foto Estética Renovada -->
               <img src="https://lh3.googleusercontent.com/d/1xAPzvxsRh7d5ftObKRHJ54-Pg5DKO7zs" alt="Habitación Económica" class="w-full h-full object-cover shrink-0">
-              <!-- Banner Área Protegida -->
               <div class="w-full h-full shrink-0 bg-gradient-to-br from-slate-900 to-emerald-950 text-white p-6 flex flex-col items-center justify-center text-center space-y-3">
                 <div class="w-10 h-10 bg-amber-400 text-slate-950 rounded-xl flex items-center justify-center font-black text-lg animate-bounce">
                   <i class="fas fa-key"></i>
@@ -232,8 +219,8 @@
           </div>
         </div>
 
-        <!-- Habitación 2: MEDIANA -->
-        <div class="ayenda-card overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 flex flex-col group">
+        <!-- Habitación 2 -->
+        <div class="kactus-card overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 flex flex-col group">
           <div class="relative w-full h-60 bg-slate-900 overflow-hidden" id="carousel2">
             <div class="absolute top-3 left-3 z-20 bg-emerald-600 text-white text-[10px] font-black px-3 py-1 rounded-full shadow-xs border border-white/20" id="room2-tag">
               MÁS POPULAR
@@ -272,7 +259,7 @@
         <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight" id="title-camping">Alquiler de Equipos de Camping y Trekking</h2>
       </div>
 
-      <div class="ayenda-card p-6 shadow-card space-y-6">
+      <div class="kactus-card p-6 shadow-card space-y-6">
         <div class="bg-slate-900 text-white p-5 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
             <h4 class="font-extrabold text-sm text-amber-300">🧗‍♂️ Equipamiento Profesional para Montaña</h4>
@@ -352,35 +339,35 @@
     <section>
       <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-6" id="title-services">Servicios e Instalaciones</h2>
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <div class="ayenda-card p-4 text-center shadow-xs hover:shadow-md transition-all">
+        <div class="kactus-card p-4 text-center shadow-xs hover:shadow-md transition-all">
           <i class="fas fa-bath text-2xl text-emerald-600 mb-2"></i>
           <p id="s-bath" class="text-xs font-bold text-slate-800">Baño Privado</p>
         </div>
-        <div class="ayenda-card p-4 text-center shadow-xs hover:shadow-md transition-all">
+        <div class="kactus-card p-4 text-center shadow-xs hover:shadow-md transition-all">
           <i class="fas fa-hot-tub text-2xl text-emerald-600 mb-2"></i>
           <p id="s-water" class="text-xs font-bold text-slate-800">Agua Caliente 24/7</p>
         </div>
-        <div class="ayenda-card p-4 text-center shadow-xs hover:shadow-md transition-all">
+        <div class="kactus-card p-4 text-center shadow-xs hover:shadow-md transition-all">
           <i class="fas fa-tv text-2xl text-emerald-600 mb-2"></i>
           <p id="s-tv" class="text-xs font-bold text-slate-800">TV Smart</p>
         </div>
-        <div class="ayenda-card p-4 text-center shadow-xs hover:shadow-md transition-all">
+        <div class="kactus-card p-4 text-center shadow-xs hover:shadow-md transition-all">
           <i class="fas fa-wifi text-2xl text-emerald-600 mb-2"></i>
           <p id="s-wifi" class="text-xs font-bold text-slate-800">Wi-Fi Gratis</p>
         </div>
-        <div class="ayenda-card p-4 text-center shadow-xs hover:shadow-md transition-all">
+        <div class="kactus-card p-4 text-center shadow-xs hover:shadow-md transition-all">
           <i class="fas fa-parking text-2xl text-emerald-600 mb-2"></i>
           <p id="s-parking" class="text-xs font-bold text-slate-800">Estacionamiento Gratis</p>
         </div>
-        <div class="ayenda-card p-4 text-center shadow-xs hover:shadow-md transition-all">
+        <div class="kactus-card p-4 text-center shadow-xs hover:shadow-md transition-all">
           <i class="fas fa-suitcase text-2xl text-emerald-600 mb-2"></i>
           <p id="s-luggage" class="text-xs font-bold text-slate-800">Guardado de Equipaje</p>
         </div>
-        <div class="ayenda-card p-4 text-center shadow-xs hover:shadow-md transition-all">
+        <div class="kactus-card p-4 text-center shadow-xs hover:shadow-md transition-all">
           <i class="fas fa-utensils text-2xl text-emerald-600 mb-2"></i>
           <p id="s-kitchen" class="text-xs font-bold text-slate-800">Cocina Compartida</p>
         </div>
-        <div class="ayenda-card p-4 text-center shadow-xs hover:shadow-md transition-all">
+        <div class="kactus-card p-4 text-center shadow-xs hover:shadow-md transition-all">
           <i class="fas fa-coffee text-2xl text-emerald-600 mb-2"></i>
           <p id="s-breakfast" class="text-xs font-bold text-slate-800">Desayunos</p>
         </div>
@@ -389,7 +376,7 @@
 
     <!-- SECCIÓN 4: GUÍA TURÍSTICA Y ÁREA PRIVADA (Protegida) -->
     <section class="mb-12">
-      <div class="ayenda-card p-6 sm:p-8 shadow-card space-y-6">
+      <div class="kactus-card p-6 sm:p-8 shadow-card space-y-6">
         <div>
           <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-2" id="title-guide">Guía Turística de Caraz & Área Privada</h2>
           <p id="g-pub-desc" class="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -537,14 +524,14 @@
 
     const translations = {
       es: {
-        heroTitle: "Más de 450 hoteles, hostales y aparthoteles con la mejor tarifa directa en <span class='text-emerald-400'>Caraz, Ancash y Perú</span>",
-        heroSubtitle: "Compara y reserva en línea con confirmación inmediata, y paga al mejor precio con la garantía de tarifa directa.",
+        heroTitle: "Tu descanso cómodo, seguro y completo en <span class='text-emerald-400'>Caraz, Perú</span>",
+        heroSubtitle: "Disfruta de habitaciones acogedoras, agua caliente 24/7 y la mejor ubicación para tus aventuras en la Cordillera Blanca.",
         lblCheckin: "Día de entrada",
         lblCheckout: "Día de salida",
-        btnSearchPrices: "Ver precios",
+        btnSearchPrices: "Consultar Disponibilidad",
         badgeBooking: "Fabuloso · Excelente Ubicación",
         titleRooms: "Nuestras Habitaciones",
-        roomsBadge: "Tarifa Directa Garantizada",
+        roomsBadge: "Garantía Mejor Precio Directo",
         room1Tag: "ECONÓMICA & CONFORT",
         room1Title: "Habitación Matrimonial Económica",
         room1Desc: "Habitación pequeña y acogedora con cama de 2 plazas. Ideal para parejas o viajeros solos.",
@@ -564,14 +551,14 @@
         stkFrom: "Desde", stkBtn: "Reservar Ahora", navCodeText: "Código de Huésped"
       },
       en: {
-        heroTitle: "More than 450 hotels, hostels and apart-hotels with the best direct rate in <span class='text-emerald-400'>Caraz, Ancash and Peru</span>",
-        heroSubtitle: "Compare and book online with instant confirmation, and pay at the best price with direct rate guarantee.",
+        heroTitle: "Your comfortable, safe and complete stay in <span class='text-emerald-400'>Caraz, Peru</span>",
+        heroSubtitle: "Enjoy cozy rooms, 24/7 hot water and the best location for your adventures in the Cordillera Blanca.",
         lblCheckin: "Check-in date",
         lblCheckout: "Check-out date",
-        btnSearchPrices: "View prices",
+        btnSearchPrices: "Check Availability",
         badgeBooking: "Fabulous · Excellent Location",
         titleRooms: "Our Rooms",
-        roomsBadge: "Best Direct Rate Guaranteed",
+        roomsBadge: "Best Direct Price Guarantee",
         room1Tag: "ECONOMY & COMFORT",
         room1Title: "Economy Double Room",
         room1Desc: "Cozy small room with double bed. Ideal for couples or solo travelers.",
@@ -591,14 +578,14 @@
         stkFrom: "From", stkBtn: "Book Now", navCodeText: "Guest Code"
       },
       fr: {
-        heroTitle: "Plus de 450 hôtels, auberges et appart-hôtels au meilleur tarif direct à <span class='text-emerald-400'>Caraz, Ancash et Pérou</span>",
-        heroSubtitle: "Comparez et réservez en ligne avec confirmation immédiate au meilleur prix garanti.",
+        heroTitle: "Votre séjour confortable, sûr et complet à <span class='text-emerald-400'>Caraz, Pérou</span>",
+        heroSubtitle: "Profitez de chambres chaleureuses, d'eau chaude 24/7 et du meilleur emplacement pour vos aventures.",
         lblCheckin: "Date d'arrivée",
         lblCheckout: "Date de départ",
-        btnSearchPrices: "Voir les prix",
+        btnSearchPrices: "Vérifier la Disponibilité",
         badgeBooking: "Fabuleux · Excellent Emplacement",
         titleRooms: "Nos Chambres",
-        roomsBadge: "Meilleur Tarif Direct Garanti",
+        roomsBadge: "Garantie Meilleur Prix Direct",
         room1Tag: "ÉCONOMIQUE & CONFORT",
         room1Title: "Chambre Double Économique",
         room1Desc: "Petite chambre douillette avec lit double. Idéale pour couples ou voyageurs solos.",
@@ -612,20 +599,20 @@
         sBath: "Salle de Bain Privée", sWater: "Eau Chaude 24/7", sTv: "Smart TV", sWifi: "Wi-Fi Gratuit",
         sParking: "Parking Gratuit", sLuggage: "Consigne Bagages", sKitchen: "Cuisine Partagée", sBreakfast: "Petit-Déjeuner",
         titleGuide: "Guide Touristique de Caraz & Zone Privée",
-        gPubDesc: "📍 <strong>Lac Parón :</strong> Le plus grand lac turquoise de la Cordillère Blanche.<br>📍 <strong>Lacs Llanganuco & Lac 69 :</strong> Vues magnifiques sur les sommets Huascarán.",
+        gPubDesc: "📍 <strong>Lac Parón :</strong> Le plus grand lac turquoise de la Cordillère Blanca.<br>📍 <strong>Lacs Llanganuco & Lac 69 :</strong> Vues magnifiques sur les sommets Huascarán.",
         gPrivDesc: "Entrez le mot de passe fourni à la réception pour voir les prix protégés :",
         btnUnlockText: "Déverrouiller", passPlaceholder: "Mot de passe client",
         stkFrom: "À partir de", stkBtn: "Réserver", navCodeText: "Code Client"
       },
       cs: {
-        heroTitle: "Více než 450 hotelů, hostelů a aparthotelů s nejlepší přímou sazbou v <span class='text-emerald-400'>Carazu, Ancash a Peru</span>",
-        heroSubtitle: "Porovnejte a rezervujte online s okamžitým potvrzením za nejlepší zaručenou cenu.",
+        heroTitle: "Váš pohodlný, bezpečný a kompletní pobyt v <span class='text-emerald-400'>Carazu v Peru</span>",
+        heroSubtitle: "Užijte si útulné pokoje, teplou vodu 24/7 a nejlepší polohu pro vaše dobrodružství v Cordillera Blanca.",
         lblCheckin: "Datum příjezdu",
         lblCheckout: "Datum odjezdu",
-        btnSearchPrices: "Zobrazit ceny",
+        btnSearchPrices: "Ověřit dostupnost",
         badgeBooking: "Báječné · Skvělá Lokalita",
         titleRooms: "Naše Pokoje",
-        roomsBadge: "Záruka nejlepší přímé ceny",
+        roomsBadge: "Záruka nejlepší ceny",
         room1Tag: "EKONOMICKÝ A POHODLÍ",
         room1Title: "Ekonomický Dvoulůžkový Pokoj",
         room1Desc: "Útulný malý pokoj s manželskou postelí. Ideální pro páry nebo sólo cestovatele.",
@@ -645,11 +632,11 @@
         stkFrom: "Od", stkBtn: "Rezervovat", navCodeText: "Kód hosta"
       },
       zh: {
-        heroTitle: "拥有 450 多家酒店、旅馆和公寓式酒店，在 <span class='text-emerald-400'>秘鲁卡拉斯</span> 提供最优直订价",
-        heroSubtitle: "在线比较并预订，即时确认，享受最优价格保障。",
+        heroTitle: "您在<span class='text-emerald-400'>秘鲁卡拉斯</span>舒适、安全且温馨的下榻之所",
+        heroSubtitle: "享受温馨舒适的客房、24/7 热水以及探索白山脉的绝佳地理位置。",
         lblCheckin: "入住日期",
         lblCheckout: "退房日期",
-        btnSearchPrices: "查看价格",
+        btnSearchPrices: "查询空房",
         badgeBooking: "极佳 · 优越地理位置",
         titleRooms: "我们的客房",
         roomsBadge: "直订最优价格保证",
