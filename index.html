@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,527 +9,498 @@
   <meta property="og:description" content="Tu descanso cómodo, seguro y completo en Caraz. Reserva directamente por WhatsApp.">
   <meta property="og:image" content="mediana1.jpg">
   
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            kactus: {
+              50: '#f4f8f3',
+              100: '#eaf4e1',
+              200: '#c8e6c9',
+              500: '#7cb342',
+              600: '#8bc34a',
+              700: '#558b2f',
+              800: '#33691e',
+              900: '#1b4332',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
   <style>
-    :root {
-      --primary-lettuce: #7cb342;
-      --primary-bright: #8bc34a;
-      --secondary-dark: #33691e;
-      --accent-warm: #f57c00;
-      --bg-light: #f4f8f3;
-      --card-bg: #ffffff;
-      --text-dark: #2c3e50;
-      --text-muted: #666666;
-      --border-warm: #eaf4e1;
-      --card-shadow: 0 4px 15px rgba(124, 179, 66, 0.12);
+    .glass-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
     }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-    body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; padding-bottom: 90px; }
-
-    /* Barra Superior de Idiomas Sticky */
-    .top-lang-bar {
-      background: #ffffff;
-      padding: 10px 15px;
+    .carousel-slide {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid var(--border-warm);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
-
-    .lang-btn {
-      background-color: #f1f8e9;
-      border: 1.5px solid #c8e6c9;
-      border-radius: 20px;
-      padding: 6px 14px;
-      cursor: pointer;
-      font-weight: 700;
-      font-size: 0.88rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.25s ease;
-      color: var(--secondary-dark);
-    }
-
-    .flag-img { width: 22px; height: 15px; object-fit: cover; border-radius: 2px; }
-
-    .lang-btn:hover, .lang-btn.active {
-      background-color: var(--primary-lettuce);
-      color: white;
-      border-color: var(--secondary-dark);
-      box-shadow: 0 3px 8px rgba(124, 179, 66, 0.3);
-    }
-
-    /* Header */
-    header {
-      background: linear-gradient(rgba(51, 105, 30, 0.70), rgba(51, 105, 30, 0.70)), url('mediana1.jpg') center/cover;
-      color: white; padding: 55px 20px 45px; text-align: center;
-    }
-    header h1 { font-size: 2.4rem; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
-    header p { font-size: 1.1rem; opacity: 0.95; font-weight: 300; margin-top: 6px; }
-
-    .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-
-    /* Ratings */
-    .ratings-bar {
-      display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin: -28px 0 28px; position: relative; z-index: 10;
-    }
-    .rating-card {
-      background: var(--card-bg); padding: 12px 22px; border-radius: 30px; box-shadow: var(--card-shadow);
-      display: flex; align-items: center; gap: 10px; font-weight: bold; font-size: 0.92rem; border: 1px solid var(--border-warm);
-      text-decoration: none; color: var(--text-dark); transition: all 0.25s ease;
-    }
-    .rating-card:hover { transform: translateY(-3px); border-color: var(--primary-lettuce); }
-    .rating-card i { color: #f39c12; font-size: 1.1rem; }
-
-    .section-title { 
-      margin: 35px 0 18px; 
-      border-left: 6px solid var(--primary-lettuce); 
-      padding-left: 14px; 
-      font-size: 1.35rem; 
-      color: var(--secondary-dark); 
-    }
-
-    /* Habitaciones y Carrusel */
-    .grid-rooms { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 20px; }
-    .room-card { background: var(--card-bg); border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow); display: flex; flex-direction: column; border: 1px solid var(--border-warm); }
-    
-    .carousel-container { position: relative; width: 100%; height: 220px; overflow: hidden; background: #000; }
-    .carousel-slide { display: flex; width: 100%; height: 100%; transition: transform 0.4s ease-in-out; }
-    .carousel-img { width: 100%; height: 100%; object-fit: cover; flex-shrink: 0; }
-    
-    .carousel-btn {
-      position: absolute; top: 50%; transform: translateY(-50%);
-      background: rgba(0,0,0,0.5); color: white; border: none; padding: 8px 12px;
-      cursor: pointer; border-radius: 50%; font-size: 1rem; z-index: 5; transition: 0.2s;
-    }
-    .carousel-btn:hover { background: var(--primary-lettuce); }
-    .prev-btn { left: 10px; }
-    .next-btn { right: 10px; }
-    
-    .carousel-dots { position: absolute; bottom: 8px; left: 0; right: 0; display: flex; justify-content: center; gap: 6px; z-index: 5; }
-    .dot { width: 8px; height: 8px; background: rgba(255,255,255,0.6); border-radius: 50%; cursor: pointer; }
-    .dot.active { background: var(--primary-lettuce); width: 10px; height: 10px; }
-
-    .room-content { padding: 18px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
-    .price-tag { color: var(--secondary-dark); font-size: 1.35rem; font-weight: bold; margin: 10px 0; }
-    .price-tag small { font-size: 0.85rem; color: var(--text-muted); font-weight: normal; }
-
-    /* Servicios */
-    .services-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; text-align: center; }
-    .service-item { 
-      background: var(--card-bg); padding: 16px 10px; border-radius: 12px; 
-      box-shadow: var(--card-shadow); font-size: 0.9rem; border: 1px solid var(--border-warm);
-      transition: transform 0.2s;
-    }
-    .service-item:hover { transform: translateY(-3px); }
-    .service-item i { font-size: 1.7rem; color: var(--primary-lettuce); margin-bottom: 8px; display: block; }
-
-    /* Pasarela de Pagos */
-    .payments-box { 
-      background: var(--card-bg); 
-      padding: 22px; 
-      border-radius: 14px; 
-      box-shadow: var(--card-shadow); 
-      border: 1px solid var(--border-warm); 
-      text-align: center; 
-      position: relative;
-      overflow: hidden;
-    }
-    .scrooge-banner {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-      background: #f1f8e9;
-      padding: 14px 20px;
-      border-radius: 12px;
-      margin-bottom: 18px;
-      border: 1.5px dashed var(--primary-lettuce);
-    }
-    .scrooge-svg { width: 80px; height: 80px; flex-shrink: 0; }
-    .scrooge-text { text-align: left; }
-    .scrooge-text strong { color: var(--secondary-dark); font-size: 1.1rem; display: block; }
-    .scrooge-text span { font-size: 0.88rem; color: var(--text-muted); }
-    
-    .payments-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; }
-    .payment-card { background: #f9fbf8; padding: 15px; border-radius: 12px; border: 1px solid var(--border-warm); }
-    .payment-icon { font-size: 2rem; color: var(--primary-lettuce); margin-bottom: 8px; }
-    .payment-title { font-weight: bold; font-size: 1rem; color: var(--secondary-dark); }
-    .payment-desc { font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; }
-
-    /* Tours */
-    .tours-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 15px; }
-    .tour-card { background: var(--card-bg); padding: 18px; border-radius: 12px; border: 1px solid var(--border-warm); box-shadow: var(--card-shadow); border-left: 5px solid var(--primary-lettuce); }
-
-    /* Testimonios */
-    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 15px; }
-    .review-card { background: var(--card-bg); padding: 18px; border-radius: 12px; border: 1px solid var(--border-warm); box-shadow: var(--card-shadow); }
-    .review-user { font-weight: bold; font-size: 0.88rem; margin-top: 10px; color: var(--secondary-dark); }
-
-    /* Guía Turística y Área Privada */
-    .guide-box { background: var(--card-bg); padding: 22px; border-radius: 14px; box-shadow: var(--card-shadow); border: 1px solid var(--border-warm); }
-    .locked-content { display: none; background: #f1f8e9; padding: 18px; border-radius: 10px; margin-top: 18px; border: 1px dashed var(--primary-lettuce); }
-
-    .shop-section { background: #ffffff; padding: 16px; border-radius: 10px; margin: 15px 0; border: 1px solid #c8e6c9; }
-    .shop-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: 12px; }
-    .shop-item { background: #f9fbf8; padding: 12px; border-radius: 8px; border-left: 4px solid var(--primary-lettuce); font-size: 0.88rem; display: flex; flex-direction: column; justify-content: space-between; }
-    .shop-link { display: inline-flex; align-items: center; gap: 5px; color: #1976d2; font-weight: bold; margin-top: 8px; text-decoration: none; font-size: 0.85rem; }
-
-    /* FAQ */
-    .faq-item { background: var(--card-bg); border: 1px solid var(--border-warm); border-radius: 10px; margin-bottom: 10px; padding: 12px 16px; cursor: pointer; }
-    .faq-question { font-weight: bold; display: flex; justify-content: space-between; align-items: center; color: var(--secondary-dark); }
-    .faq-answer { display: none; margin-top: 8px; font-size: 0.9rem; color: var(--text-muted); border-top: 1px solid var(--border-warm); padding-top: 8px; }
-
-    /* Botones */
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      padding: 12px 20px; border-radius: 10px; text-decoration: none; font-weight: bold;
-      cursor: pointer; border: none; transition: 0.3s; width: 100%; font-size: 0.95rem;
-    }
-    .btn-whatsapp { background-color: #25d366; color: white; }
-    .btn-whatsapp:hover { background-color: #1eb954; }
-    .btn-maps { background-color: #4285f4; color: white; }
-    .btn-maps:hover { background-color: #3367d6; }
-    .btn-unlock { background-color: var(--primary-lettuce); color: white; margin-top: 10px; max-width: 260px; }
-    .btn-unlock:hover { background-color: var(--secondary-dark); }
-
-    /* Ubicación */
-    .location-box { background: var(--card-bg); padding: 22px; border-radius: 14px; box-shadow: var(--card-shadow); text-align: center; border: 1px solid var(--border-warm); }
-    .badge-info { background-color: #f1f8e9; color: var(--secondary-dark); padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; display: inline-block; margin: 4px; border: 1px solid #c8e6c9; }
-
-    /* Sticky Bar Móvil */
-    .mobile-sticky-bar {
-      position: fixed; bottom: 0; left: 0; right: 0; background: white; padding: 10px 18px;
-      box-shadow: 0 -3px 12px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center; z-index: 999;
-      border-top: 1px solid var(--border-warm);
-    }
-    .mobile-sticky-bar .sticky-price { font-weight: bold; color: var(--secondary-dark); font-size: 0.9rem; }
-    .mobile-sticky-bar .sticky-btn { width: auto; padding: 8px 16px; font-size: 0.88rem; }
-
-    input[type="password"] { padding: 10px; border: 1px solid #ccc; border-radius: 8px; width: 100%; max-width: 260px; margin-top: 10px; outline: none; }
-    input[type="password"]:focus { border-color: var(--primary-lettuce); }
   </style>
 </head>
-<body>
+<body class="bg-kactus-50 text-slate-800 antialiased selection:bg-kactus-500 selection:text-white pb-24 border-t-4 border-kactus-700">
 
-  <nav class="top-lang-bar">
-    <button class="lang-btn active" id="btn-es" onclick="changeLanguage('es')">
-      <img src="https://flagcdn.com/w40/es.png" alt="España" class="flag-img">
-      <span>Español</span>
-    </button>
-    <button class="lang-btn" id="btn-en" onclick="changeLanguage('en')">
-      <img src="https://flagcdn.com/w40/gb.png" alt="English" class="flag-img">
-      <span>English</span>
-    </button>
-    <button class="lang-btn" id="btn-fr" onclick="changeLanguage('fr')">
-      <img src="https://flagcdn.com/w40/fr.png" alt="Français" class="flag-img">
-      <span>Français</span>
-    </button>
-    <button class="lang-btn" id="btn-cs" onclick="changeLanguage('cs')">
-      <img src="https://flagcdn.com/w40/cz.png" alt="Čeština" class="flag-img">
-      <span>Čeština</span>
-    </button>
-    <button class="lang-btn" id="btn-zh" onclick="changeLanguage('zh')">
-      <img src="https://flagcdn.com/w40/cn.png" alt="中文" class="flag-img">
-      <span>中文</span>
-    </button>
+  <!-- Barra Superior de Idiomas Sticky -->
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-kactus-100 shadow-sm py-2.5 px-4">
+    <div class="max-w-5xl mx-auto flex flex-wrap justify-center items-center gap-2">
+      <button class="lang-btn active transition-all duration-200 flex items-center gap-2 bg-kactus-100 border border-kactus-200 rounded-full px-3.5 py-1.5 text-xs font-bold text-kactus-800 hover:bg-kactus-500 hover:text-white shadow-sm" id="btn-es" onclick="changeLanguage('es')">
+        <img src="https://flagcdn.com/w40/es.png" alt="España" class="w-5 h-3.5 object-cover rounded shadow-xs">
+        <span>Español</span>
+      </button>
+      <button class="lang-btn transition-all duration-200 flex items-center gap-2 bg-kactus-100 border border-kactus-200 rounded-full px-3.5 py-1.5 text-xs font-bold text-kactus-800 hover:bg-kactus-500 hover:text-white shadow-sm" id="btn-en" onclick="changeLanguage('en')">
+        <img src="https://flagcdn.com/w40/gb.png" alt="English" class="w-5 h-3.5 object-cover rounded shadow-xs">
+        <span>English</span>
+      </button>
+      <button class="lang-btn transition-all duration-200 flex items-center gap-2 bg-kactus-100 border border-kactus-200 rounded-full px-3.5 py-1.5 text-xs font-bold text-kactus-800 hover:bg-kactus-500 hover:text-white shadow-sm" id="btn-fr" onclick="changeLanguage('fr')">
+        <img src="https://flagcdn.com/w40/fr.png" alt="Français" class="w-5 h-3.5 object-cover rounded shadow-xs">
+        <span>Français</span>
+      </button>
+      <button class="lang-btn transition-all duration-200 flex items-center gap-2 bg-kactus-100 border border-kactus-200 rounded-full px-3.5 py-1.5 text-xs font-bold text-kactus-800 hover:bg-kactus-500 hover:text-white shadow-sm" id="btn-cs" onclick="changeLanguage('cs')">
+        <img src="https://flagcdn.com/w40/cz.png" alt="Čeština" class="w-5 h-3.5 object-cover rounded shadow-xs">
+        <span>Čeština</span>
+      </button>
+      <button class="lang-btn transition-all duration-200 flex items-center gap-2 bg-kactus-100 border border-kactus-200 rounded-full px-3.5 py-1.5 text-xs font-bold text-kactus-800 hover:bg-kactus-500 hover:text-white shadow-sm" id="btn-zh" onclick="changeLanguage('zh')">
+        <img src="https://flagcdn.com/w40/cn.png" alt="中文" class="w-5 h-3.5 object-cover rounded shadow-xs">
+        <span>中文</span>
+      </button>
+    </div>
   </nav>
 
-  <header>
-    <h1>Hostal Kactus</h1>
-    <p id="sub-title">Tu descanso cómodo, seguro y completo en Caraz, Perú</p>
+  <!-- Header / Hero Section -->
+  <header class="relative bg-kactus-800 text-white py-16 px-4 text-center overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-overlay" style="background-image: url('mediana1.jpg');"></div>
+    <div class="relative z-10 max-w-3xl mx-auto space-y-3">
+      <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider text-kactus-200 border border-white/20">
+        <i class="fas fa-mountain text-kactus-600"></i> Cordillera Blanca • Ancash
+      </div>
+      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white drop-shadow-md">Hostal Kactus</h1>
+      <p id="sub-title" class="text-lg md:text-xl font-light text-kactus-50 max-w-xl mx-auto leading-relaxed">
+        Tu descanso cómodo, seguro y completo en Caraz, Perú
+      </p>
+    </div>
   </header>
 
-  <main class="container">
-    
-    <div class="ratings-bar">
-      <a href="https://www.booking.com/hotel/pe/kactus-hostal-caraz.es.html" target="_blank" rel="noopener" class="rating-card">
-        <i class="fas fa-star"></i>
-        <span>Booking.com: <strong>8.9 / 10</strong></span>
+  <main class="max-w-5xl mx-auto px-4 sm:px-6">
+
+    <!-- Tarjetas de Calificación -->
+    <div class="flex flex-wrap justify-center gap-4 -mt-7 relative z-20 mb-10">
+      <a href="https://www.booking.com/hotel/pe/kactus-hostal-caraz.es.html" target="_blank" rel="noopener" class="bg-white hover:bg-kactus-50 border border-kactus-100 px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-3 font-semibold text-sm text-slate-800 group">
+        <i class="fas fa-star text-amber-500 text-lg group-hover:scale-110 transition-transform"></i>
+        <span>Booking.com: <strong class="text-kactus-800 font-bold">8.9 / 10</strong></span>
       </a>
-      <a href="https://maps.google.com" target="_blank" rel="noopener" class="rating-card">
-        <i class="fab fa-google"></i>
-        <span>Google Maps: <strong>5.0 / 5.0</strong> ⭐</span>
+      <a href="https://maps.google.com" target="_blank" rel="noopener" class="bg-white hover:bg-kactus-50 border border-kactus-100 px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-3 font-semibold text-sm text-slate-800 group">
+        <i class="fab fa-google text-blue-500 text-lg group-hover:scale-110 transition-transform"></i>
+        <span>Google Maps: <strong class="text-kactus-800 font-bold">5.0 / 5.0 ⭐</strong></span>
       </a>
     </div>
 
-    <h2 class="section-title" id="title-rooms">Nuestras Habitaciones</h2>
-    <div class="grid-rooms">
-      
-      <div class="room-card">
-        <div class="carousel-container" id="carousel1">
-          <div class="carousel-slide">
-            <img src="mediana1.jpg" alt="Habitación Económica" class="carousel-img">
-            <img src="economica1.jpg" alt="Habitación Económica Vista 2" class="carousel-img" onerror="this.src='mediana1.jpg'">
+    <!-- Sección Habitaciones -->
+    <section class="mb-14">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-2 h-8 bg-kactus-500 rounded-full"></div>
+        <h2 class="text-2xl font-bold text-kactus-800" id="title-rooms">Nuestras Habitaciones</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Habitación 1 -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border border-kactus-100 flex flex-col">
+          <div class="relative w-full h-60 bg-slate-900 overflow-hidden" id="carousel1">
+            <div class="carousel-slide w-full h-full">
+              <img src="mediana1.jpg" alt="Habitación Económica" class="w-full h-full object-cover shrink-0">
+              <img src="economica1.jpg" alt="Habitación Económica Vista 2" class="w-full h-full object-cover shrink-0" onerror="this.src='mediana1.jpg'">
+            </div>
+            <button aria-label="Anterior" onclick="moveSlide('carousel1', -1)" class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-kactus-500 text-white w-9 h-9 rounded-full flex items-center justify-center transition-colors z-10"><i class="fas fa-chevron-left"></i></button>
+            <button aria-label="Siguiente" onclick="moveSlide('carousel1', 1)" class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-kactus-500 text-white w-9 h-9 rounded-full flex items-center justify-center transition-colors z-10"><i class="fas fa-chevron-right"></i></button>
+            <div class="carousel-dots absolute bottom-3 left-0 right-0 flex justify-center gap-2 z-10">
+              <span class="w-2.5 h-2.5 rounded-full bg-white/60 cursor-pointer active-dot transition-all bg-kactus-500 w-3 h-3" onclick="setSlide('carousel1', 0)"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-white/60 cursor-pointer transition-all" onclick="setSlide('carousel1', 1)"></span>
+            </div>
           </div>
-          <button class="carousel-btn prev-btn" aria-label="Anterior" onclick="moveSlide('carousel1', -1)"><i class="fas fa-chevron-left"></i></button>
-          <button class="carousel-btn next-btn" aria-label="Siguiente" onclick="moveSlide('carousel1', 1)"><i class="fas fa-chevron-right"></i></button>
-          <div class="carousel-dots">
-            <span class="dot active" onclick="setSlide('carousel1', 0)"></span>
-            <span class="dot" onclick="setSlide('carousel1', 1)"></span>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="text-xl font-bold text-slate-800 mb-2" id="room1-title">Habitación Matrimonial Económica</h3>
+              <p class="text-slate-600 text-sm leading-relaxed" id="room1-desc">Habitación pequeña y acogedora con cama de 2 plazas. Ideal para parejas o viajeros solos.</p>
+              <div class="text-2xl font-extrabold text-kactus-800 mt-4">S/ 35.00 <span class="text-xs font-normal text-slate-500" id="per-night-1">/ noche</span></div>
+            </div>
+            <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20deseo%20reservar%20la%20Habitación%20Matrimonial%20Económica%20(S/%2035)" target="_blank" rel="noopener" class="w-full bg-emerald-500 hover:bg-emerald-600 active:scale-95 text-white font-bold py-3 px-4 rounded-xl shadow-md transition-all duration-200 flex items-center justify-center gap-2">
+              <i class="fab fa-whatsapp text-lg"></i> <span class="btn-res-text">Reservar por WhatsApp</span>
+            </a>
           </div>
         </div>
-        <div class="room-content">
+
+        <!-- Habitación 2 -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border border-kactus-100 flex flex-col">
+          <div class="relative w-full h-60 bg-slate-900 overflow-hidden" id="carousel2">
+            <div class="carousel-slide w-full h-full">
+              <img src="mediana1.jpg" alt="Habitación Mediana" class="w-full h-full object-cover shrink-0">
+              <img src="mediana2.jpg" alt="Habitación Mediana Vista 2" class="w-full h-full object-cover shrink-0" onerror="this.src='mediana1.jpg'">
+            </div>
+            <button aria-label="Anterior" onclick="moveSlide('carousel2', -1)" class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-kactus-500 text-white w-9 h-9 rounded-full flex items-center justify-center transition-colors z-10"><i class="fas fa-chevron-left"></i></button>
+            <button aria-label="Siguiente" onclick="moveSlide('carousel2', 1)" class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-kactus-500 text-white w-9 h-9 rounded-full flex items-center justify-center transition-colors z-10"><i class="fas fa-chevron-right"></i></button>
+            <div class="carousel-dots absolute bottom-3 left-0 right-0 flex justify-center gap-2 z-10">
+              <span class="w-2.5 h-2.5 rounded-full bg-white/60 cursor-pointer active-dot transition-all bg-kactus-500 w-3 h-3" onclick="setSlide('carousel2', 0)"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-white/60 cursor-pointer transition-all" onclick="setSlide('carousel2', 1)"></span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="text-xl font-bold text-slate-800 mb-2" id="room2-title">Habitación Matrimonial Mediana</h3>
+              <p class="text-slate-600 text-sm leading-relaxed" id="room2-desc">Habitación mediana con cama de 2 plazas, mayor espacio y excelente iluminación.</p>
+              <div class="text-2xl font-extrabold text-kactus-800 mt-4">S/ 45.00 <span class="text-xs font-normal text-slate-500" id="per-night-2">/ noche</span></div>
+            </div>
+            <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20deseo%20reservar%20la%20Habitación%20Matrimonial%20Mediana%20(S/%2045)" target="_blank" rel="noopener" class="w-full bg-emerald-500 hover:bg-emerald-600 active:scale-95 text-white font-bold py-3 px-4 rounded-xl shadow-md transition-all duration-200 flex items-center justify-center gap-2">
+              <i class="fab fa-whatsapp text-lg"></i> <span class="btn-res-text">Reservar por WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Sección Servicios -->
+    <section class="mb-14">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-2 h-8 bg-kactus-500 rounded-full"></div>
+        <h2 class="text-2xl font-bold text-kactus-800" id="title-services">Servicios e Instalaciones</h2>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div class="bg-white p-4 rounded-xl border border-kactus-100 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 text-center">
+          <i class="fas fa-bath text-2xl text-kactus-500 mb-2"></i>
+          <p id="s-bath" class="text-xs font-bold text-slate-700">Baño Privado</p>
+        </div>
+        <div class="bg-white p-4 rounded-xl border border-kactus-100 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 text-center">
+          <i class="fas fa-hot-tub text-2xl text-kactus-500 mb-2"></i>
+          <p id="s-water" class="text-xs font-bold text-slate-700">Agua Caliente 24/7</p>
+        </div>
+        <div class="bg-white p-4 rounded-xl border border-kactus-100 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 text-center">
+          <i class="fas fa-tv text-2xl text-kactus-500 mb-2"></i>
+          <p id="s-tv" class="text-xs font-bold text-slate-700">TV Smart</p>
+        </div>
+        <div class="bg-white p-4 rounded-xl border border-kactus-100 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 text-center">
+          <i class="fas fa-wifi text-2xl text-kactus-500 mb-2"></i>
+          <p id="s-wifi" class="text-xs font-bold text-slate-700">Wi-Fi Gratis</p>
+        </div>
+        <div class="bg-white p-4 rounded-xl border border-kactus-100 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 text-center">
+          <i class="fas fa-parking text-2xl text-kactus-500 mb-2"></i>
+          <p id="s-parking" class="text-xs font-bold text-slate-700">Estacionamiento Gratis</p>
+        </div>
+        <div class="bg-white p-4 rounded-xl border border-kactus-100 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 text-center">
+          <i class="fas fa-suitcase text-2xl text-kactus-500 mb-2"></i>
+          <p id="s-luggage" class="text-xs font-bold text-slate-700">Guardado de Equipaje Gratis</p>
+        </div>
+        <div class="bg-white p-4 rounded-xl border border-kactus-100 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 text-center">
+          <i class="fas fa-utensils text-2xl text-kactus-500 mb-2"></i>
+          <p id="s-kitchen" class="text-xs font-bold text-slate-700">Cocina Compartida & Horno</p>
+        </div>
+        <div class="bg-white p-4 rounded-xl border border-kactus-100 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 text-center">
+          <i class="fas fa-coffee text-2xl text-kactus-500 mb-2"></i>
+          <p id="s-breakfast" class="text-xs font-bold text-slate-700">Servicio de Desayunos</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Pagos -->
+    <section class="mb-14">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-2 h-8 bg-kactus-500 rounded-full"></div>
+        <h2 class="text-2xl font-bold text-kactus-800" id="title-payments">Pasarela de Pago y Medios de Reserva</h2>
+      </div>
+
+      <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-md border border-kactus-100">
+        <div class="flex flex-col sm:flex-row items-center gap-4 bg-kactus-50 p-4 rounded-xl border border-dashed border-kactus-500 mb-6">
+          <svg class="w-16 h-16 shrink-0" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <rect x="30" y="5" width="40" height="25" rx="3" fill="#1f2937"/>
+            <rect x="20" y="27" width="60" height="6" rx="2" fill="#1f2937"/>
+            <rect x="30" y="23" width="40" height="4" fill="#dc2626"/>
+            <circle cx="50" cy="50" r="22" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+            <circle cx="43" cy="46" r="7" fill="none" stroke="#374151" stroke-width="2"/>
+            <circle cx="57" cy="46" r="7" fill="none" stroke="#374151" stroke-width="2"/>
+            <line x1="50" y1="46" x2="50" y2="48" stroke="#374151" stroke-width="2"/>
+            <circle cx="43" cy="46" r="2.5" fill="#1d4ed8"/>
+            <circle cx="57" cy="46" r="2.5" fill="#1d4ed8"/>
+            <path d="M 32 54 Q 50 48 68 54 Q 50 68 32 54 Z" fill="#f59e0b" stroke="#d97706" stroke-width="1.5"/>
+            <circle cx="50" cy="82" r="15" fill="#eab308"/>
+            <text x="50" y="87" font-size="14" font-weight="bold" fill="#78350f" text-anchor="middle">$</text>
+          </svg>
           <div>
-            <h3 id="room1-title">Habitación Matrimonial Económica</h3>
-            <p id="room1-desc">Habitación pequeña y acogedora con cama de 2 plazas. Ideal para parejas o viajeros solos.</p>
-            <div class="price-tag">S/ 35.00 <small id="per-night-1">/ noche</small></div>
-          </div>
-          <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20deseo%20reservar%20la%20Habitación%20Matrimonial%20Económica%20(S/%2035)" target="_blank" rel="noopener" class="btn btn-whatsapp">
-            <i class="fab fa-whatsapp"></i> <span class="btn-res-text">Reservar por WhatsApp</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="room-card">
-        <div class="carousel-container" id="carousel2">
-          <div class="carousel-slide">
-            <img src="mediana1.jpg" alt="Habitación Mediana" class="carousel-img">
-            <img src="mediana2.jpg" alt="Habitación Mediana Vista 2" class="carousel-img" onerror="this.src='mediana1.jpg'">
-          </div>
-          <button class="carousel-btn prev-btn" aria-label="Anterior" onclick="moveSlide('carousel2', -1)"><i class="fas fa-chevron-left"></i></button>
-          <button class="carousel-btn next-btn" aria-label="Siguiente" onclick="moveSlide('carousel2', 1)"><i class="fas fa-chevron-right"></i></button>
-          <div class="carousel-dots">
-            <span class="dot active" onclick="setSlide('carousel2', 0)"></span>
-            <span class="dot" onclick="setSlide('carousel2', 1)"></span>
+            <strong id="scrooge-title" class="text-base sm:text-lg font-bold text-kactus-800 block">¡Aprobado por el Tío Rico MacPato! 💰🎩</strong>
+            <span id="scrooge-desc" class="text-xs sm:text-sm text-slate-600">Paga seguro, fácil y sin comisiones ocultas para tus reservas.</span>
           </div>
         </div>
-        <div class="room-content">
-          <div>
-            <h3 id="room2-title">Habitación Matrimonial Mediana</h3>
-            <p id="room2-desc">Habitación mediana con cama de 2 plazas, mayor espacio y excelente iluminación.</p>
-            <div class="price-tag">S/ 45.00 <small id="per-night-2">/ noche</small></div>
+
+        <p id="pay-intro" class="text-sm text-slate-600 mb-6">Aceptamos múltiples formas de pago para tu máxima comodidad al reservar:</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 text-center">
+            <i class="fas fa-mobile-alt text-3xl mb-2 text-teal-600"></i>
+            <div class="font-bold text-slate-800 text-sm">Yape / Plin</div>
+            <div class="text-xs text-slate-500 mt-1" id="pay-yape">Pagos digitales instantáneos al teléfono oficial.</div>
           </div>
-          <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20deseo%20reservar%20la%20Habitación%20Matrimonial%20Mediana%20(S/%2045)" target="_blank" rel="noopener" class="btn btn-whatsapp">
-            <i class="fab fa-whatsapp"></i> <span class="btn-res-text">Reservar por WhatsApp</span>
-          </a>
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 text-center">
+            <i class="fas fa-credit-card text-3xl mb-2 text-indigo-900"></i>
+            <div class="font-bold text-slate-800 text-sm">Tarjetas de Crédito / Débito</div>
+            <div class="text-xs text-slate-500 mt-1" id="pay-cards">Visa, MasterCard, American Express.</div>
+          </div>
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 text-center">
+            <i class="fas fa-university text-3xl mb-2 text-orange-600"></i>
+            <div class="font-bold text-slate-800 text-sm">Depósito Bancario</div>
+            <div class="text-xs text-slate-500 mt-1" id="pay-bank">Cuentas BCP y Banco de la Nación.</div>
+          </div>
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 text-center">
+            <i class="fas fa-money-bill-wave text-3xl mb-2 text-emerald-700"></i>
+            <div class="font-bold text-slate-800 text-sm">Efectivo</div>
+            <div class="text-xs text-slate-500 mt-1" id="pay-cash">Pago directo en la recepción al llegar.</div>
+          </div>
         </div>
       </div>
+    </section>
 
-    </div>
+    <!-- Tours -->
+    <section class="mb-14">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-2 h-8 bg-kactus-500 rounded-full"></div>
+        <h2 class="text-2xl font-bold text-kactus-800" id="title-tours">Salidas a Tours y Transporte Desde Caraz</h2>
+      </div>
 
-    <h2 class="section-title" id="title-services">Servicios e Instalaciones</h2>
-    <div class="services-list">
-      <div class="service-item"><i class="fas fa-bath"></i><p id="s-bath">Baño Privado</p></div>
-      <div class="service-item"><i class="fas fa-hot-tub"></i><p id="s-water">Agua Caliente 24/7</p></div>
-      <div class="service-item"><i class="fas fa-tv"></i><p id="s-tv">TV Smart</p></div>
-      <div class="service-item"><i class="fas fa-wifi"></i><p id="s-wifi">Wi-Fi Gratis</p></div>
-      <div class="service-item"><i class="fas fa-parking"></i><p id="s-parking">Estacionamiento Gratis</p></div>
-      <div class="service-item"><i class="fas fa-suitcase"></i><p id="s-luggage">Guardado de Equipaje Gratis</p></div>
-      <div class="service-item"><i class="fas fa-utensils"></i><p id="s-kitchen">Cocina Compartida & Horno</p></div>
-      <div class="service-item"><i class="fas fa-coffee"></i><p id="s-breakfast">Servicio de Desayunos</p></div>
-    </div>
-
-    <h2 class="section-title" id="title-payments">Pasarela de Pago y Medios de Reserva</h2>
-    <div class="payments-box">
-      
-      <div class="scrooge-banner">
-        <svg class="scrooge-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-          <rect x="30" y="5" width="40" height="25" rx="3" fill="#1f2937"/>
-          <rect x="20" y="27" width="60" height="6" rx="2" fill="#1f2937"/>
-          <rect x="30" y="23" width="40" height="4" fill="#dc2626"/>
-          <circle cx="50" cy="50" r="22" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
-          <circle cx="43" cy="46" r="7" fill="none" stroke="#374151" stroke-width="2"/>
-          <circle cx="57" cy="46" r="7" fill="none" stroke="#374151" stroke-width="2"/>
-          <line x1="50" y1="46" x2="50" y2="48" stroke="#374151" stroke-width="2"/>
-          <circle cx="43" cy="46" r="2.5" fill="#1d4ed8"/>
-          <circle cx="57" cy="46" r="2.5" fill="#1d4ed8"/>
-          <path d="M 32 54 Q 50 48 68 54 Q 50 68 32 54 Z" fill="#f59e0b" stroke="#d97706" stroke-width="1.5"/>
-          <circle cx="50" cy="82" r="15" fill="#eab308"/>
-          <text x="50" y="87" font-size="14" font-weight="bold" fill="#78350f" text-anchor="middle">$</text>
-        </svg>
-        <div class="scrooge-text">
-          <strong id="scrooge-title">¡Aprobado por el Tío Rico MacPato! 💰🎩</strong>
-          <span id="scrooge-desc">Paga seguro, fácil y sin comisiones ocultas para tus reservas.</span>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-2xl border-l-4 border-l-kactus-500 border-y border-r border-kactus-100 shadow-sm space-y-2">
+          <h4 id="t1-title" class="font-bold text-lg text-slate-800">⛰️ Laguna Parón</h4>
+          <p id="t1-desc" class="text-sm text-slate-600 leading-relaxed">Colectivos diarios desde las 6:30 AM cerca al mercado. Te ayudamos a armar grupos para abaratar costos de transporte privado.</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl border-l-4 border-l-kactus-500 border-y border-r border-kactus-100 shadow-sm space-y-2">
+          <h4 id="t2-title" class="font-bold text-lg text-slate-800">🏔️ Laguna Llanganuco & Laguna 69</h4>
+          <p id="t2-desc" class="text-sm text-slate-600 leading-relaxed">Acceso directo en transporte turístico. Asesoría completa sobre aclimatación y horarios de salida.</p>
         </div>
       </div>
+    </section>
 
-      <p id="pay-intro" style="margin-bottom: 15px;">Aceptamos múltiples formas de pago para tu máxima comodidad al reservar:</p>
-      
-      <div class="payments-grid">
-        <div class="payment-card">
-          <i class="fas fa-mobile-alt payment-icon" style="color:#00B2A9;"></i>
-          <div class="payment-title">Yape / Plin</div>
-          <div class="payment-desc" id="pay-yape">Pagos digitales instantáneos al teléfono oficial.</div>
+    <!-- Testimonios -->
+    <section class="mb-14">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-2 h-8 bg-kactus-500 rounded-full"></div>
+        <h2 class="text-2xl font-bold text-kactus-800" id="title-reviews">Opiniones de Nuestros Huéspedes</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-2xl border border-kactus-100 shadow-sm flex flex-col justify-between space-y-4">
+          <p id="rev1-text" class="text-sm text-slate-600 italic leading-relaxed">"Lugar súper limpio, tranquilo y con agua caliente las 24 horas. La atención en recepción fue excelente para organizar mi viaje a Laguna Parón."</p>
+          <div class="text-xs font-bold text-kactus-800">⭐ ⭐ ⭐ ⭐ ⭐ - Carlos M. (Lima)</div>
         </div>
-        <div class="payment-card">
-          <i class="fas fa-credit-card payment-icon" style="color:#1A1F71;"></i>
-          <div class="payment-title">Tarjetas de Crédito / Débito</div>
-          <div class="payment-desc" id="pay-cards">Visa, MasterCard, American Express.</div>
-        </div>
-        <div class="payment-card">
-          <i class="fas fa-university payment-icon" style="color:#D96B43;"></i>
-          <div class="payment-title">Depósito Bancario</div>
-          <div class="payment-desc" id="pay-bank">Cuentas BCP y Banco de la Nación.</div>
-        </div>
-        <div class="payment-card">
-          <i class="fas fa-money-bill-wave payment-icon" style="color:#2E7D32;"></i>
-          <div class="payment-title">Efectivo</div>
-          <div class="payment-desc" id="pay-cash">Pago directo en la recepción al llegar.</div>
+        <div class="bg-white p-6 rounded-2xl border border-kactus-100 shadow-sm flex flex-col justify-between space-y-4">
+          <p id="rev2-text" class="text-sm text-slate-600 italic leading-relaxed">"Great place to stay in Caraz! Very comfortable bed, fast Wi-Fi, and extremely helpful staff. Highly recommended for trekkers!"</p>
+          <div class="text-xs font-bold text-kactus-800">⭐ ⭐ ⭐ ⭐ ⭐ - Sarah L. (Francia)</div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <h2 class="section-title" id="title-tours">Salidas a Tours y Transporte Desde Caraz</h2>
-    <div class="tours-grid">
-      <div class="tour-card">
-        <h4 id="t1-title">⛰️ Laguna Parón</h4>
-        <p id="t1-desc">Colectivos diarios desde las 6:30 AM cerca al mercado. Te ayudamos a armar grupos para abaratar costos de transporte privado.</p>
+    <!-- Guía Turística & Área Privada -->
+    <section class="mb-14">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-2 h-8 bg-kactus-500 rounded-full"></div>
+        <h2 class="text-2xl font-bold text-kactus-800" id="title-guide">Guía Turística de Caraz & Área Privada</h2>
       </div>
-      <div class="tour-card">
-        <h4 id="t2-title">🏔️ Laguna Llanganuco & Laguna 69</h4>
-        <p id="t2-desc">Acceso directo en transporte turístico. Asesoría completa sobre aclimatación y horarios de salida.</p>
-      </div>
-    </div>
 
-    <h2 class="section-title" id="title-reviews">Opiniones de Nuestros Huéspedes</h2>
-    <div class="reviews-grid">
-      <div class="review-card">
-        <p id="rev1-text">"Lugar súper limpio, tranquilo y con agua caliente las 24 horas. La atención en recepción fue excelente para organizar mi viaje a Laguna Parón."</p>
-        <div class="review-user">⭐ ⭐ ⭐ ⭐ ⭐ - Carlos M. (Lima)</div>
-      </div>
-      <div class="review-card">
-        <p id="rev2-text">"Great place to stay in Caraz! Very comfortable bed, fast Wi-Fi, and extremely helpful staff. Highly recommended for trekkers!"</p>
-        <div class="review-user">⭐ ⭐ ⭐ ⭐ ⭐ - Sarah L. (Francia)</div>
-      </div>
-    </div>
+      <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-md border border-kactus-100 space-y-6">
+        <div>
+          <h3 id="g-pub-title" class="font-bold text-lg text-slate-800 mb-2">Lugares Populares para Visitar:</h3>
+          <p id="g-pub-desc" class="text-sm text-slate-600 leading-relaxed">
+            📍 <strong>Laguna Parón:</strong> La laguna turquesa más grande de la Cordillera Blanca.<br>
+            📍 <strong>Laguna Llanganuco y Laguna 69:</strong> Vistas espectaculares de los nevados Huascarán y Chopicalqui.<br>
+            📍 <strong>Plaza de Armas de Caraz:</strong> Famosa por sus tradicionales helados artesanales y clima cálido.
+          </p>
+        </div>
 
-    <h2 class="section-title" id="title-guide">Guía Turística de Caraz & Área Privada</h2>
-    <div class="guide-box">
-      <h3 id="g-pub-title">Lugares Populares para Visitar:</h3>
-      <p id="g-pub-desc">📍 <strong>Laguna Parón:</strong> La laguna turquesa más grande de la Cordillera Blanca.<br>
-         📍 <strong>Laguna Llanganuco y Laguna 69:</strong> Vistas espectaculares de los nevados Huascarán y Chopicalqui.<br>
-         📍 <strong>Plaza de Armas de Caraz:</strong> Famosa por sus tradicionales helados artesanales y clima cálido.</p>
-      
-      <hr style="margin: 20px 0; border: none; border-top: 1px solid #e0e0e0;">
+        <hr class="border-slate-100">
 
-      <h3 id="g-priv-title">🔐 Guía Privada de Rutas y Servicios para Huéspedes</h3>
-      <p id="g-priv-desc">Ingresa la clave proporcionada en recepción para ver información útil, compras cercanas y transporte:</p>
-      
-      <input type="password" id="passInput" placeholder="Contraseña de huésped" onkeypress="handleKey(event)">
-      <button class="btn btn-unlock" onclick="unlockGuide()" id="btn-unlock-text">Desbloquear Guía</button>
-
-      <div class="locked-content" id="secretGuide">
-        <h4 id="g-secret-title">🗺️ Rutas Exclusivas y Consejos Hostal Kactus:</h4>
-        <p id="g-secret-text">• <strong>Transporte a Laguna Parón:</strong> Colectivos salen desde las 6:30 AM cerca al mercado principal.<br>
-           • <strong>Ahorro en Tours:</strong> Te ayudamos a organizar salidas grupales para reducir costos.<br>
-           • <strong>Cajeros Cercanos:</strong> Encuentra cajeros BCP y Banco de la Nación a 3 cuadras.</p>
-
-        <div class="shop-section">
-          <h4 id="g-shop-title"><i class="fas fa-map-marked-alt" style="color:var(--primary-lettuce);"></i> Compras, Farmacias, Restaurantes y Grifos Cercanos:</h4>
-          <p id="g-shop-intro" style="font-size: 0.9rem; margin-top: 4px;">Toca cualquier enlace para abrir la ruta en Google Maps:</p>
+        <div>
+          <h3 id="g-priv-title" class="font-bold text-lg text-slate-800 mb-1">🔐 Guía Privada de Rutas y Servicios para Huéspedes</h3>
+          <p id="g-priv-desc" class="text-sm text-slate-600 mb-4">Ingresa la clave proporcionada en recepción para ver información útil, compras cercanas y transporte:</p>
           
-          <div class="shop-grid">
-            <div class="shop-item">
-              <div>
-                <strong id="sh-t1">🛒 Comercial Trujillo (Market)</strong>
-                <p id="sh-d1">Excelente opción para agua, bebidas, galletas, snacks y alimentos para cocinar.</p>
-              </div>
-              <a href="https://maps.google.com" target="_blank" rel="noopener" class="shop-link"><span class="map-link-text">Ver en Google Maps</span></a>
+          <div class="flex flex-col sm:flex-row gap-3 max-w-md">
+            <input type="password" id="passInput" placeholder="Contraseña de huésped" onkeypress="handleKey(event)" class="px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-kactus-500 text-sm flex-1">
+            <button onclick="unlockGuide()" id="btn-unlock-text" class="bg-kactus-500 hover:bg-kactus-800 active:scale-95 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-all shadow-sm">Desbloquear Guía</button>
+          </div>
+
+          <!-- Contenido Desbloqueable -->
+          <div id="secretGuide" class="hidden mt-6 bg-kactus-50 p-6 rounded-xl border border-dashed border-kactus-500 space-y-6 animate-fade-in">
+            <div>
+              <h4 id="g-secret-title" class="font-bold text-slate-800 text-base mb-2">🗺️ Rutas Exclusivas y Consejos Hostal Kactus:</h4>
+              <p id="g-secret-text" class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                • <strong>Transporte a Laguna Parón:</strong> Colectivos salen desde las 6:30 AM cerca al mercado principal.<br>
+                • <strong>Ahorro en Tours:</strong> Te ayudamos a organizar salidas grupales para reducir costos.<br>
+                • <strong>Cajeros Cercanos:</strong> Encuentra cajeros BCP y Banco de la Nación a 3 cuadras.
+              </p>
             </div>
 
-            <div class="shop-item">
-              <div>
-                <strong id="sh-t2">💊 Mifarma (Cerca al Mercado)</strong>
-                <p id="sh-d2">Farmacia cercana al mercado principal para medicinas, aseo personal y soroche.</p>
+            <div class="bg-white p-5 rounded-xl border border-kactus-200">
+              <h4 id="g-shop-title" class="font-bold text-slate-800 text-sm mb-1 flex items-center gap-2">
+                <i class="fas fa-map-marked-alt text-kactus-500"></i> Compras, Farmacias, Restaurantes y Grifos Cercanos:
+              </h4>
+              <p id="g-shop-intro" class="text-xs text-slate-500 mb-4">Toca cualquier enlace para abrir la ruta en Google Maps:</p>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                
+                <div class="bg-slate-50 p-3.5 rounded-lg border-l-4 border-l-kactus-500 flex flex-col justify-between text-xs space-y-2">
+                  <div>
+                    <strong id="sh-t1" class="text-slate-800">🛒 Comercial Trujillo (Market)</strong>
+                    <p id="sh-d1" class="text-slate-500 mt-1">Excelente opción para agua, bebidas, galletas, snacks y alimentos para cocinar.</p>
+                  </div>
+                  <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1 hover:underline"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
+                </div>
+
+                <div class="bg-slate-50 p-3.5 rounded-lg border-l-4 border-l-kactus-500 flex flex-col justify-between text-xs space-y-2">
+                  <div>
+                    <strong id="sh-t2" class="text-slate-800">💊 Mifarma (Cerca al Mercado)</strong>
+                    <p id="sh-d2" class="text-slate-500 mt-1">Farmacia cercana al mercado principal para medicinas, aseo personal y soroche.</p>
+                  </div>
+                  <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1 hover:underline"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
+                </div>
+
+                <div class="bg-slate-50 p-3.5 rounded-lg border-l-4 border-l-kactus-500 flex flex-col justify-between text-xs space-y-2">
+                  <div>
+                    <strong id="sh-t3" class="text-slate-800">💊 Inkafarma (Jr. Sucre / Raymondi)</strong>
+                    <p id="sh-d3" class="text-slate-500 mt-1">Botica céntrica para cualquier necesidad médica o cuidado personal.</p>
+                  </div>
+                  <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1 hover:underline"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
+                </div>
+
+                <div class="bg-slate-50 p-3.5 rounded-lg border-l-4 border-l-kactus-500 flex flex-col justify-between text-xs space-y-2">
+                  <div>
+                    <strong id="sh-t4" class="text-slate-800">🍲 Restaurante Pacha Hunta</strong>
+                    <p id="sh-d4" class="text-slate-500 mt-1">Excelente comida local y platos típicos muy cerca a la Plaza de Armas.</p>
+                  </div>
+                  <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1 hover:underline"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
+                </div>
+
+                <div class="bg-slate-50 p-3.5 rounded-lg border-l-4 border-l-kactus-500 flex flex-col justify-between text-xs space-y-2">
+                  <div>
+                    <strong id="sh-t5" class="text-slate-800">🍗 Pollería Sabor & Tradición</strong>
+                    <p id="sh-d5" class="text-slate-500 mt-1">Ubicada en Jr. Sucre (más arriba de la plaza). Pollo a la brasa y cenas deliciosas.</p>
+                  </div>
+                  <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1 hover:underline"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
+                </div>
+
+                <div class="bg-slate-50 p-3.5 rounded-lg border-l-4 border-l-kactus-500 flex flex-col justify-between text-xs space-y-2">
+                  <div>
+                    <strong id="sh-t6" class="text-slate-800">🧺 Mercado Central de Caraz</strong>
+                    <p id="sh-d6" class="text-slate-500 mt-1">Frutas frescas, pan regional, queso y punto de partida de combis hacia tours.</p>
+                  </div>
+                  <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1 hover:underline"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
+                </div>
+
+                <div class="bg-slate-50 p-3.5 rounded-lg border-l-4 border-l-kactus-500 flex flex-col justify-between text-xs space-y-2">
+                  <div>
+                    <strong id="sh-t7" class="text-slate-800">🏛️ Plaza de Armas de Caraz</strong>
+                    <p id="sh-d7" class="text-slate-500 mt-1">Corazón de la ciudad. Helados artesanales tradicionales, bancos y cafeterías.</p>
+                  </div>
+                  <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1 hover:underline"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
+                </div>
+
+                <div class="bg-slate-50 p-3.5 rounded-lg border-l-4 border-l-kactus-500 flex flex-col justify-between text-xs space-y-2">
+                  <div>
+                    <strong id="sh-t8" class="text-slate-800">⛽ Grifo / Estación de Servicio</strong>
+                    <p id="sh-d8" class="text-slate-500 mt-1">Grifo cercano para recarga de combustible o compras rápidas de viaje.</p>
+                  </div>
+                  <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1 hover:underline"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
+                </div>
+
               </div>
-              <a href="https://maps.google.com" target="_blank" rel="noopener" class="shop-link"><span class="map-link-text">Ver en Google Maps</span></a>
             </div>
 
-            <div class="shop-item">
-              <div>
-                <strong id="sh-t3">💊 Inkafarma (Jr. Sucre / Raymondi)</strong>
-                <p id="sh-d3">Botica céntrica para cualquier necesidad médica o cuidado personal.</p>
-              </div>
-              <a href="https://maps.google.com" target="_blank" rel="noopener" class="shop-link"><span class="map-link-text">Ver en Google Maps</span></a>
-            </div>
-
-            <div class="shop-item">
-              <div>
-                <strong id="sh-t4">🍲 Restaurante Pacha Hunta</strong>
-                <p id="sh-d4">Excelente comida local y platos típicos muy cerca a la Plaza de Armas.</p>
-              </div>
-              <a href="https://maps.google.com" target="_blank" rel="noopener" class="shop-link"><span class="map-link-text">Ver en Google Maps</span></a>
-            </div>
-
-            <div class="shop-item">
-              <div>
-                <strong id="sh-t5">🍗 Pollería Sabor & Tradición</strong>
-                <p id="sh-d5">Ubicada en Jr. Sucre (más arriba de la plaza). Pollo a la brasa y cenas deliciosas.</p>
-              </div>
-              <a href="https://maps.google.com" target="_blank" rel="noopener" class="shop-link"><span class="map-link-text">Ver en Google Maps</span></a>
-            </div>
-
-            <div class="shop-item">
-              <div>
-                <strong id="sh-t6">🧺 Mercado Central de Caraz</strong>
-                <p id="sh-d6">Frutas frescas, pan regional, queso y punto de partida de combis hacia tours.</p>
-              </div>
-              <a href="https://maps.google.com" target="_blank" rel="noopener" class="shop-link"><span class="map-link-text">Ver en Google Maps</span></a>
-            </div>
-
-            <div class="shop-item">
-              <div>
-                <strong id="sh-t7">🏛️ Plaza de Armas de Caraz</strong>
-                <p id="sh-d7">Corazón de la ciudad. Helados artesanales tradicionales, bancos y cafeterías.</p>
-              </div>
-              <a href="https://maps.google.com" target="_blank" rel="noopener" class="shop-link"><span class="map-link-text">Ver en Google Maps</span></a>
-            </div>
-
-            <div class="shop-item">
-              <div>
-                <strong id="sh-t8">⛽ Grifo / Estación de Servicio</strong>
-                <p id="sh-d8">Grifo cercano para recarga de combustible o compras rápidas de viaje.</p>
-              </div>
-              <a href="https://maps.google.com" target="_blank" rel="noopener" class="shop-link"><span class="map-link-text">Ver en Google Maps</span></a>
-            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <h2 class="section-title" id="title-faq">Preguntas Frecuentes</h2>
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-question"><span id="faq-q1">¿A qué hora es el Check-in y Check-out?</span> <i class="fas fa-chevron-down"></i></div>
-      <div class="faq-answer" id="faq-a1">El Check-in es a partir de las 13:00 hrs y el Check-out hasta las 11:00 hrs. Si llegas temprano, ¡puedes guardar tu equipaje gratis!</div>
-    </div>
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-question"><span id="faq-q2">¿Tienen agua caliente las 24 horas?</span> <i class="fas fa-chevron-down"></i></div>
-      <div class="faq-answer" id="faq-a2">Sí, disponemos de agua caliente 24/7 en todas nuestras habitaciones.</div>
-    </div>
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-question"><span id="faq-q3">¿Aceptan pagos con Yape, Plin o tarjetas?</span> <i class="fas fa-chevron-down"></i></div>
-      <div class="faq-answer" id="faq-a3">Aceptamos efectivo, transferencias digitales por Yape, Plin y tarjetas de crédito o débito.</div>
-    </div>
-
-    <h2 class="section-title" id="title-location">Ubicación y Políticas</h2>
-    <div class="location-box">
-      <p><i class="fas fa-map-marker-alt" style="color:#e53935;"></i> <strong id="lbl-addr">Dirección:</strong> Avenida Meza Arizona 425 - 202, Caraz, Ancash, Perú</p>
-      <div style="margin: 10px 0;">
-        <span class="badge-info"><i class="fas fa-ban"></i> <span id="no-pets-text">No se aceptan mascotas</span></span>
-        <span class="badge-info"><i class="fas fa-clock"></i> <span id="badge-rec">Recepción continua</span></span>
-        <span class="badge-info"><i class="fas fa-check-circle"></i> <span id="badge-cancel">Cancelación flexible</span></span>
+    <!-- FAQ -->
+    <section class="mb-14">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-2 h-8 bg-kactus-500 rounded-full"></div>
+        <h2 class="text-2xl font-bold text-kactus-800" id="title-faq">Preguntas Frecuentes</h2>
       </div>
-      <br>
-      <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn btn-maps" style="max-width: 340px; margin: 0 auto;">
-        <i class="fas fa-location-arrow"></i> <span id="btn-maps-text">Abrir Ubicación en Google Maps</span>
-      </a>
-    </div>
+
+      <div class="space-y-3">
+        <div class="bg-white rounded-xl border border-kactus-100 shadow-sm overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
+          <div class="p-4 flex justify-between items-center font-bold text-sm text-kactus-800">
+            <span id="faq-q1">¿A qué hora es el Check-in y Check-out?</span>
+            <i class="fas fa-chevron-down transition-transform duration-200"></i>
+          </div>
+          <div class="hidden px-4 pb-4 text-xs sm:text-sm text-slate-600 border-t border-slate-50 pt-3" id="faq-a1">
+            El Check-in es a partir de las 13:00 hrs y el Check-out hasta las 11:00 hrs. Si llegas temprano, ¡puedes guardar tu equipaje gratis!
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl border border-kactus-100 shadow-sm overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
+          <div class="p-4 flex justify-between items-center font-bold text-sm text-kactus-800">
+            <span id="faq-q2">¿Tienen agua caliente las 24 horas?</span>
+            <i class="fas fa-chevron-down transition-transform duration-200"></i>
+          </div>
+          <div class="hidden px-4 pb-4 text-xs sm:text-sm text-slate-600 border-t border-slate-50 pt-3" id="faq-a2">
+            Sí, disponemos de agua caliente 24/7 en todas nuestras habitaciones.
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl border border-kactus-100 shadow-sm overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
+          <div class="p-4 flex justify-between items-center font-bold text-sm text-kactus-800">
+            <span id="faq-q3">¿Aceptan pagos con Yape, Plin o tarjetas?</span>
+            <i class="fas fa-chevron-down transition-transform duration-200"></i>
+          </div>
+          <div class="hidden px-4 pb-4 text-xs sm:text-sm text-slate-600 border-t border-slate-50 pt-3" id="faq-a3">
+            Aceptamos efectivo, transferencias digitales por Yape, Plin y tarjetas de crédito o débito.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ubicación -->
+    <section class="mb-8">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-2 h-8 bg-kactus-500 rounded-full"></div>
+        <h2 class="text-2xl font-bold text-kactus-800" id="title-location">Ubicación y Políticas</h2>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl border border-kactus-100 shadow-sm text-center space-y-4">
+        <p class="text-sm text-slate-700">
+          <i class="fas fa-map-marker-alt text-red-500 mr-1"></i> <strong id="lbl-addr">Dirección:</strong> Avenida Meza Arizona 425 - 202, Caraz, Ancash, Perú
+        </p>
+        <div class="flex flex-wrap justify-center gap-2">
+          <span class="bg-kactus-50 border border-kactus-200 text-kactus-800 text-xs font-semibold px-3 py-1 rounded-full"><i class="fas fa-ban mr-1"></i> <span id="no-pets-text">No se aceptan mascotas</span></span>
+          <span class="bg-kactus-50 border border-kactus-200 text-kactus-800 text-xs font-semibold px-3 py-1 rounded-full"><i class="fas fa-clock mr-1"></i> <span id="badge-rec">Recepción continua</span></span>
+          <span class="bg-kactus-50 border border-kactus-200 text-kactus-800 text-xs font-semibold px-3 py-1 rounded-full"><i class="fas fa-check-circle mr-1"></i> <span id="badge-cancel">Cancelación flexible</span></span>
+        </div>
+        <div class="pt-2">
+          <a href="https://maps.google.com" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 active:scale-95 text-white font-bold py-3 px-6 rounded-xl text-sm transition-all shadow-md">
+            <i class="fas fa-location-arrow"></i> <span id="btn-maps-text">Abrir Ubicación en Google Maps</span>
+          </a>
+        </div>
+      </div>
+    </section>
 
   </main>
 
-  <div class="mobile-sticky-bar">
-    <div class="sticky-price"><span id="stk-from">Desde</span> <strong>S/ 35.00</strong></div>
-    <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20quisiera%20consultar%20disponibilidad%20de%20habitaciones" target="_blank" rel="noopener" class="btn btn-whatsapp sticky-btn">
-      <i class="fab fa-whatsapp"></i> <span id="stk-btn">Reservar Ahora</span>
+  <!-- Sticky Bar Móvil -->
+  <div class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-kactus-100 p-3 px-6 shadow-2xl flex justify-between items-center z-50">
+    <div class="text-xs sm:text-sm text-slate-700 font-medium">
+      <span id="stk-from">Desde</span> <strong class="text-base text-kactus-800 font-extrabold">S/ 35.00</strong>
+    </div>
+    <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20quisiera%20consultar%20disponibilidad%20de%20habitaciones" target="_blank" rel="noopener" class="bg-emerald-500 hover:bg-emerald-600 active:scale-95 text-white font-bold py-2.5 px-5 rounded-xl text-xs sm:text-sm shadow-md transition-all flex items-center gap-2">
+      <i class="fab fa-whatsapp text-base"></i> <span id="stk-btn">Reservar Ahora</span>
     </a>
   </div>
 
@@ -540,26 +511,38 @@
       const carousel = document.getElementById(carouselId);
       const slide = carousel.querySelector('.carousel-slide');
       const images = slide.querySelectorAll('img');
-      const dots = carousel.querySelectorAll('.dot');
+      const dots = carousel.querySelectorAll('.carousel-dots span');
       
       slideIndexes[carouselId] = (slideIndexes[carouselId] + direction + images.length) % images.length;
       slide.style.transform = `translateX(-${slideIndexes[carouselId] * 100}%)`;
       
       dots.forEach((dot, idx) => {
-        dot.classList.toggle('active', idx === slideIndexes[carouselId]);
+        if (idx === slideIndexes[carouselId]) {
+          dot.classList.add('bg-kactus-500', 'w-3', 'h-3');
+          dot.classList.remove('bg-white/60', 'w-2.5', 'h-2.5');
+        } else {
+          dot.classList.remove('bg-kactus-500', 'w-3', 'h-3');
+          dot.classList.add('bg-white/60', 'w-2.5', 'h-2.5');
+        }
       });
     }
 
     function setSlide(carouselId, index) {
       const carousel = document.getElementById(carouselId);
       const slide = carousel.querySelector('.carousel-slide');
-      const dots = carousel.querySelectorAll('.dot');
+      const dots = carousel.querySelectorAll('.carousel-dots span');
       
       slideIndexes[carouselId] = index;
       slide.style.transform = `translateX(-${index * 100}%)`;
       
       dots.forEach((dot, idx) => {
-        dot.classList.toggle('active', idx === index);
+        if (idx === index) {
+          dot.classList.add('bg-kactus-500', 'w-3', 'h-3');
+          dot.classList.remove('bg-white/60', 'w-2.5', 'h-2.5');
+        } else {
+          dot.classList.remove('bg-kactus-500', 'w-3', 'h-3');
+          dot.classList.add('bg-white/60', 'w-2.5', 'h-2.5');
+        }
       });
     }
 
@@ -568,9 +551,9 @@
       const secretSection = document.getElementById('secretGuide');
 
       if (pass === '301298') {
-        secretSection.style.display = 'block';
+        secretSection.classList.remove('hidden');
       } else {
-        secretSection.style.display = 'none';
+        secretSection.classList.add('hidden');
         alert('Contraseña incorrecta. Por favor solicita la clave oficial en recepción.');
         document.getElementById('passInput').value = '';
       }
@@ -581,9 +564,10 @@
     }
 
     function toggleFaq(element) {
-      const answer = element.querySelector('.faq-answer');
-      const isVisible = answer.style.display === 'block';
-      answer.style.display = isVisible ? 'none' : 'block';
+      const answer = element.querySelector('div:nth-child(2)');
+      const icon = element.querySelector('i');
+      answer.classList.toggle('hidden');
+      icon.classList.toggle('rotate-180');
     }
 
     const translations = {
@@ -834,9 +818,9 @@
     };
 
     function changeLanguage(lang) {
-      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active', 'bg-kactus-500', 'text-white'));
       const activeBtn = document.getElementById(`btn-${lang}`);
-      if (activeBtn) activeBtn.classList.add('active');
+      if (activeBtn) activeBtn.classList.add('active', 'bg-kactus-500', 'text-white');
 
       const t = translations[lang] || translations['es'];
 
@@ -888,7 +872,7 @@
       document.getElementById('g-secret-title').innerText = t.gSecretTitle;
       document.getElementById('g-secret-text').innerHTML = t.gSecretText;
 
-      document.getElementById('g-shop-title').innerHTML = `<i class="fas fa-map-marked-alt" style="color:var(--primary-lettuce);"></i> ${t.gShopTitle}`;
+      document.getElementById('g-shop-title').innerHTML = `<i class="fas fa-map-marked-alt text-kactus-500"></i> ${t.gShopTitle}`;
       document.getElementById('g-shop-intro').innerText = t.gShopIntro;
       document.getElementById('sh-t1').innerText = t.shT1; document.getElementById('sh-d1').innerText = t.shD1;
       document.getElementById('sh-t2').innerText = t.shT2; document.getElementById('sh-d2').innerText = t.shD2;
