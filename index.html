@@ -7,7 +7,7 @@
   <meta name="description" content="Alojamiento acogedor en Caraz, Perú. Baño privado, agua caliente 24/7, Wi-Fi rápido, alquiler de equipos de camping y guía exclusiva a Laguna Parón y Laguna 69.">
   <meta property="og:title" content="Hostal Kactus - Caraz, Perú">
   <meta property="og:description" content="Tu descanso cómodo, seguro y completo en Caraz. Reserva directamente por WhatsApp.">
-  <meta property="og:image" content="mediana1.jpg">
+  <meta property="og:image" content="https://lh3.googleusercontent.com/d/1306fD7zgATU2P_1JwTWkWpq-lukMtejG">
   
   <!-- Google Fonts & Font Awesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,18 +26,24 @@
           },
           colors: {
             kactus: {
-              50: '#f2f9ed',
-              100: '#e1f2d7',
-              200: '#c3e5b1',
+              50: '#f7f7f0',
+              100: '#eee3cd',
+              200: '#e3d2ab',
               500: '#689f38',
               600: '#558b2f',
               700: '#33691e',
-              800: '#2e5b18',
+              800: '#2d5016',
               900: '#1b3a0e',
+            },
+            warm: {
+              50: '#faf7f2',
+              100: '#f3ece0',
+              200: '#e7d9c3',
+              800: '#4a3b2c',
             }
           },
           boxShadow: {
-            'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.07)',
+            'glass': '0 8px 32px 0 rgba(74, 59, 44, 0.08)',
             'glow': '0 0 20px rgba(104, 159, 56, 0.3)',
           }
         }
@@ -51,56 +57,49 @@
       transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .glass-card {
-      background: rgba(255, 255, 255, 0.88);
+      background: rgba(253, 250, 245, 0.92);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
     }
-    .gradient-bg {
-      background: linear-gradient(135deg, #f8faf6 0%, #eef6ea 50%, #f1f7ed 100%);
-    }
-    .badge-pulse {
-      animation: pulse-glow 2s infinite;
-    }
-    @keyframes pulse-glow {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.03); opacity: 0.9; }
+    /* Fondo Cálido con degradado acogedor tipo arena/crema */
+    .warm-bg {
+      background: linear-gradient(135deg, #f7f3eb 0%, #efe7d8 50%, #f4eee2 100%);
     }
   </style>
 </head>
-<body class="gradient-bg text-slate-800 antialiased selection:bg-kactus-500 selection:text-white pb-24 border-t-4 border-kactus-700 min-h-screen">
+<body class="warm-bg text-slate-800 antialiased selection:bg-kactus-500 selection:text-white pb-24 border-t-4 border-kactus-700 min-h-screen">
 
-  <!-- Barra Superior de Idiomas Sticky Modernizada -->
-  <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-kactus-100/80 shadow-xs py-2.5 px-4 transition-all duration-300">
+  <!-- Barra Superior de Idiomas Sticky -->
+  <nav class="sticky top-0 z-50 bg-[#faf7f2]/90 backdrop-blur-md border-b border-warm-200/80 shadow-xs py-2.5 px-4 transition-all duration-300">
     <div class="max-w-5xl mx-auto flex flex-wrap justify-center items-center gap-2">
       <button class="lang-btn active transition-all duration-300 flex items-center gap-2 bg-kactus-100 border border-kactus-200 rounded-full px-3.5 py-1.5 text-xs font-bold text-kactus-900 hover:bg-kactus-500 hover:text-white shadow-xs hover:shadow-glow transform hover:-translate-y-0.5" id="btn-es" onclick="changeLanguage('es')">
         <img src="https://flagcdn.com/w40/es.png" alt="España" class="w-4 h-3 object-cover rounded">
         <span>Español</span>
       </button>
-      <button class="lang-btn transition-all duration-300 flex items-center gap-2 bg-white/80 border border-slate-200 rounded-full px-3.5 py-1.5 text-xs font-bold text-slate-700 hover:bg-kactus-500 hover:text-white shadow-xs hover:shadow-glow transform hover:-translate-y-0.5" id="btn-en" onclick="changeLanguage('en')">
+      <button class="lang-btn transition-all duration-300 flex items-center gap-2 bg-white/80 border border-warm-200 rounded-full px-3.5 py-1.5 text-xs font-bold text-slate-700 hover:bg-kactus-500 hover:text-white shadow-xs hover:shadow-glow transform hover:-translate-y-0.5" id="btn-en" onclick="changeLanguage('en')">
         <img src="https://flagcdn.com/w40/gb.png" alt="English" class="w-4 h-3 object-cover rounded">
         <span>English</span>
       </button>
-      <button class="lang-btn transition-all duration-300 flex items-center gap-2 bg-white/80 border border-slate-200 rounded-full px-3.5 py-1.5 text-xs font-bold text-slate-700 hover:bg-kactus-500 hover:text-white shadow-xs hover:shadow-glow transform hover:-translate-y-0.5" id="btn-fr" onclick="changeLanguage('fr')">
+      <button class="lang-btn transition-all duration-300 flex items-center gap-2 bg-white/80 border border-warm-200 rounded-full px-3.5 py-1.5 text-xs font-bold text-slate-700 hover:bg-kactus-500 hover:text-white shadow-xs hover:shadow-glow transform hover:-translate-y-0.5" id="btn-fr" onclick="changeLanguage('fr')">
         <img src="https://flagcdn.com/w40/fr.png" alt="Français" class="w-4 h-3 object-cover rounded">
         <span>Français</span>
       </button>
-      <button class="lang-btn transition-all duration-300 flex items-center gap-2 bg-white/80 border border-slate-200 rounded-full px-3.5 py-1.5 text-xs font-bold text-slate-700 hover:bg-kactus-500 hover:text-white shadow-xs hover:shadow-glow transform hover:-translate-y-0.5" id="btn-cs" onclick="changeLanguage('cs')">
+      <button class="lang-btn transition-all duration-300 flex items-center gap-2 bg-white/80 border border-warm-200 rounded-full px-3.5 py-1.5 text-xs font-bold text-slate-700 hover:bg-kactus-500 hover:text-white shadow-xs hover:shadow-glow transform hover:-translate-y-0.5" id="btn-cs" onclick="changeLanguage('cs')">
         <img src="https://flagcdn.com/w40/cz.png" alt="Čeština" class="w-4 h-3 object-cover rounded">
         <span>Čeština</span>
       </button>
-      <button class="lang-btn transition-all duration-300 flex items-center gap-2 bg-white/80 border border-slate-200 rounded-full px-3.5 py-1.5 text-xs font-bold text-slate-700 hover:bg-kactus-500 hover:text-white shadow-xs hover:shadow-glow transform hover:-translate-y-0.5" id="btn-zh" onclick="changeLanguage('zh')">
+      <button class="lang-btn transition-all duration-300 flex items-center gap-2 bg-white/80 border border-warm-200 rounded-full px-3.5 py-1.5 text-xs font-bold text-slate-700 hover:bg-kactus-500 hover:text-white shadow-xs hover:shadow-glow transform hover:-translate-y-0.5" id="btn-zh" onclick="changeLanguage('zh')">
         <img src="https://flagcdn.com/w40/cn.png" alt="中文" class="w-4 h-3 object-cover rounded">
         <span>中文</span>
       </button>
     </div>
   </nav>
 
-  <!-- Header / Hero Section de Nivel Profesional -->
-  <header class="relative bg-gradient-to-br from-kactus-900 via-kactus-800 to-slate-900 text-white py-16 md:py-20 px-4 text-center overflow-hidden">
-    <div class="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-overlay scale-105 transition-transform duration-1000" style="background-image: url('mediana1.jpg');"></div>
+  <!-- Header / Hero Section -->
+  <header class="relative bg-gradient-to-br from-kactus-900 via-kactus-800 to-warm-800 text-white py-16 md:py-20 px-4 text-center overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center opacity-25 mix-blend-overlay scale-105" style="background-image: url('https://lh3.googleusercontent.com/d/1306fD7zgATU2P_1JwTWkWpq-lukMtejG');"></div>
     <div class="relative z-10 max-w-3xl mx-auto space-y-5 flex flex-col items-center">
       
-      <!-- Contenedor Premium del Logo con Sombra y Borde Glaseado -->
       <div class="glass-card p-4 rounded-3xl shadow-2xl border-2 border-white/40 inline-block mb-1 transform hover:rotate-1 hover:scale-105 transition-all duration-300">
         <img src="logo.jpeg" alt="Logo Hostal Kactus" class="h-32 sm:h-40 w-auto object-contain rounded-2xl" onerror="this.onerror=null; this.src='logo.jpg'; this.onerror=function(){this.src='logo.png';};">
       </div>
@@ -114,9 +113,9 @@
 
   <main class="max-w-5xl mx-auto px-4 sm:px-6">
 
-    <!-- Tarjetas de Calificación de Alto Impacto -->
+    <!-- Tarjetas de Calificación -->
     <div class="flex flex-wrap justify-center gap-4 -mt-8 relative z-20 mb-10">
-      <a href="https://www.booking.com/hotel/pe/kactus-hostal-caraz.es.html" target="_blank" rel="noopener" class="glass-card hover:bg-white border border-white/60 px-6 py-3.5 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-3.5 font-semibold text-sm text-slate-800 group transform hover:-translate-y-1">
+      <a href="https://www.booking.com/hotel/pe/kactus-hostal-caraz.es.html" target="_blank" rel="noopener" class="glass-card hover:bg-white border border-warm-200 px-6 py-3.5 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-3.5 font-semibold text-sm text-slate-800 group transform hover:-translate-y-1">
         <div class="w-9 h-9 bg-blue-600 text-white rounded-xl flex items-center justify-center font-bold text-xs shadow-md group-hover:scale-110 transition-transform">
           8.9
         </div>
@@ -125,7 +124,7 @@
           <div class="text-sm font-extrabold text-kactus-900" id="badge-booking-desc">Fabuloso · Excelente Ubicación</div>
         </div>
       </a>
-      <a href="https://maps.google.com" target="_blank" rel="noopener" class="glass-card hover:bg-white border border-white/60 px-6 py-3.5 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-3.5 font-semibold text-sm text-slate-800 group transform hover:-translate-y-1">
+      <a href="https://maps.google.com" target="_blank" rel="noopener" class="glass-card hover:bg-white border border-warm-200 px-6 py-3.5 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-3.5 font-semibold text-sm text-slate-800 group transform hover:-translate-y-1">
         <div class="w-9 h-9 bg-amber-500 text-white rounded-xl flex items-center justify-center text-sm shadow-md group-hover:scale-110 transition-transform">
           <i class="fas fa-star"></i>
         </div>
@@ -137,19 +136,18 @@
     </div>
 
     <!-- Barra Interactiva de Reserva Rápida -->
-    <section class="glass-card p-6 sm:p-8 rounded-3xl shadow-xl border border-white/80 mb-14 relative overflow-hidden">
-      <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-kactus-500/10 rounded-full blur-2xl pointer-events-none"></div>
+    <section class="glass-card p-6 sm:p-8 rounded-3xl shadow-xl border border-warm-200 mb-14 relative overflow-hidden">
       <h3 class="text-base font-bold text-kactus-900 uppercase tracking-wider mb-5 text-center sm:text-left flex items-center justify-center sm:justify-start gap-2.5">
         <i class="fas fa-calendar-check text-kactus-600 text-lg"></i> <span id="bar-title">Consulta Disponibilidad Directa</span>
       </h3>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
         <div>
           <label class="block text-xs font-bold text-slate-600 mb-1.5" id="lbl-checkin">Llegada (Check-in 11 AM)</label>
-          <input type="date" id="checkinDate" class="w-full px-4 py-3 bg-white/80 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-kactus-500 focus:bg-white shadow-xs transition-all">
+          <input type="date" id="checkinDate" class="w-full px-4 py-3 bg-white/90 border border-warm-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-kactus-500 focus:bg-white shadow-xs transition-all">
         </div>
         <div>
           <label class="block text-xs font-bold text-slate-600 mb-1.5" id="lbl-checkout">Salida (Check-out 11 AM)</label>
-          <input type="date" id="checkoutDate" class="w-full px-4 py-3 bg-white/80 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-kactus-500 focus:bg-white shadow-xs transition-all">
+          <input type="date" id="checkoutDate" class="w-full px-4 py-3 bg-white/90 border border-warm-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-kactus-500 focus:bg-white shadow-xs transition-all">
         </div>
         <div class="flex items-end">
           <button onclick="sendCustomReservation()" class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-bold py-3 px-5 rounded-xl text-sm transition-all duration-300 flex items-center justify-center gap-2.5 shadow-lg shadow-emerald-600/30">
@@ -168,15 +166,15 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         
-        <!-- Habitación 1 -->
-        <div class="glass-card rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/80 flex flex-col group transform hover:-translate-y-1.5">
+        <!-- Habitación 1: ECONÓMICA (2 Fotos) -->
+        <div class="glass-card rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-warm-200 flex flex-col group transform hover:-translate-y-1.5">
           <div class="relative w-full h-64 bg-slate-900 overflow-hidden" id="carousel1">
             <div class="absolute top-4 left-4 z-20 bg-slate-900/80 backdrop-blur-md text-white text-xs font-extrabold px-3.5 py-1.5 rounded-full shadow-md border border-white/20" id="room1-tag">
               ECONÓMICA & CONFORT
             </div>
             <div class="carousel-slide w-full h-full">
-              <img src="mediana1.jpg" alt="Habitación Económica" class="w-full h-full object-cover shrink-0">
-              <img src="economica1.jpg" alt="Habitación Económica Vista 2" class="w-full h-full object-cover shrink-0" onerror="this.src='mediana1.jpg'">
+              <img src="https://lh3.googleusercontent.com/d/1jJYyIAlyJyZreK1MjVfGTOugKCvAtK9K" alt="Habitación Económica 1" class="w-full h-full object-cover shrink-0">
+              <img src="https://lh3.googleusercontent.com/d/10fGa6KJMQqt2LK5yqKQo31YlpXlPmtVd" alt="Habitación Económica 2" class="w-full h-full object-cover shrink-0">
             </div>
             <button aria-label="Anterior" onclick="moveSlide('carousel1', -1)" class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-kactus-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition-all z-10 opacity-80 hover:opacity-100"><i class="fas fa-chevron-left"></i></button>
             <button aria-label="Siguiente" onclick="moveSlide('carousel1', 1)" class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-kactus-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition-all z-10 opacity-80 hover:opacity-100"><i class="fas fa-chevron-right"></i></button>
@@ -197,21 +195,25 @@
           </div>
         </div>
 
-        <!-- Habitación 2 -->
-        <div class="glass-card rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/80 flex flex-col group transform hover:-translate-y-1.5">
+        <!-- Habitación 2: MEDIANA (4 Fotos) -->
+        <div class="glass-card rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-warm-200 flex flex-col group transform hover:-translate-y-1.5">
           <div class="relative w-full h-64 bg-slate-900 overflow-hidden" id="carousel2">
             <div class="absolute top-4 left-4 z-20 bg-kactus-600 text-white text-xs font-extrabold px-3.5 py-1.5 rounded-full shadow-md border border-white/20" id="room2-tag">
               MÁS POPULAR
             </div>
             <div class="carousel-slide w-full h-full">
-              <img src="mediana1.jpg" alt="Habitación Mediana" class="w-full h-full object-cover shrink-0">
-              <img src="mediana2.jpg" alt="Habitación Mediana Vista 2" class="w-full h-full object-cover shrink-0" onerror="this.src='mediana1.jpg'">
+              <img src="https://lh3.googleusercontent.com/d/1306fD7zgATU2P_1JwTWkWpq-lukMtejG" alt="Habitación Mediana 1" class="w-full h-full object-cover shrink-0">
+              <img src="https://lh3.googleusercontent.com/d/1DQW5MV5ORQ2VWNBnQ3nlC4eTb0Sktw4y" alt="Habitación Mediana 2" class="w-full h-full object-cover shrink-0">
+              <img src="https://lh3.googleusercontent.com/d/1xAPzvxsRh7d5ftObKRHJ54-Pg5DKO7zs" alt="Habitación Mediana 3" class="w-full h-full object-cover shrink-0">
+              <img src="https://lh3.googleusercontent.com/d/16qo3MrK1JLGwdnbUU4cLPXOYOIxRqGAw" alt="Habitación Mediana 4" class="w-full h-full object-cover shrink-0">
             </div>
             <button aria-label="Anterior" onclick="moveSlide('carousel2', -1)" class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-kactus-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition-all z-10 opacity-80 hover:opacity-100"><i class="fas fa-chevron-left"></i></button>
             <button aria-label="Siguiente" onclick="moveSlide('carousel2', 1)" class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-kactus-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition-all z-10 opacity-80 hover:opacity-100"><i class="fas fa-chevron-right"></i></button>
             <div class="carousel-dots absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-10">
               <span class="w-3 h-3 rounded-full bg-kactus-500 cursor-pointer transition-all shadow-md" onclick="setSlide('carousel2', 0)"></span>
               <span class="w-2.5 h-2.5 rounded-full bg-white/70 cursor-pointer transition-all" onclick="setSlide('carousel2', 1)"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-white/70 cursor-pointer transition-all" onclick="setSlide('carousel2', 2)"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-white/70 cursor-pointer transition-all" onclick="setSlide('carousel2', 3)"></span>
             </div>
           </div>
           <div class="p-7 flex-1 flex flex-col justify-between space-y-5">
@@ -236,11 +238,11 @@
         <h2 class="text-2xl sm:text-3xl font-extrabold text-kactus-900 tracking-tight" id="title-camping">Alquiler de Equipos de Camping y Trekking</h2>
       </div>
 
-      <div class="glass-card p-6 sm:p-8 rounded-3xl border border-white/80 shadow-xl relative overflow-hidden">
+      <div class="glass-card p-6 sm:p-8 rounded-3xl border border-warm-200 shadow-xl relative overflow-hidden">
         <p class="text-sm text-slate-600 mb-6 font-medium leading-relaxed" id="camp-intro">Equípate directamente en el hostal con material especializado de alta montaña para tus trekking en la Cordillera Blanca:</p>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
-          <div class="bg-white/90 p-5 rounded-2xl border border-slate-100 shadow-xs hover:shadow-md transition-all flex flex-col justify-between space-y-3 hover:-translate-y-1">
+          <div class="bg-white/90 p-5 rounded-2xl border border-warm-200 shadow-xs hover:shadow-md transition-all flex flex-col justify-between space-y-3 hover:-translate-y-1">
             <div>
               <div class="font-bold text-slate-800 text-base" id="camp-item1"><i class="fas fa-campground text-kactus-600 mr-2"></i>Carpa 3 Estaciones</div>
               <p class="text-xs text-slate-500 mt-1" id="camp-desc1">Carpa resistente para acampar en montaña.</p>
@@ -248,7 +250,7 @@
             <div class="text-xl font-black text-kactus-800">S/ 25.00 <span class="text-xs font-normal text-slate-500" id="camp-unit1">/ día</span></div>
           </div>
 
-          <div class="bg-white/90 p-5 rounded-2xl border border-slate-100 shadow-xs hover:shadow-md transition-all flex flex-col justify-between space-y-3 hover:-translate-y-1">
+          <div class="bg-white/90 p-5 rounded-2xl border border-warm-200 shadow-xs hover:shadow-md transition-all flex flex-col justify-between space-y-3 hover:-translate-y-1">
             <div>
               <div class="font-bold text-slate-800 text-base" id="camp-item2"><i class="fas fa-bed text-kactus-600 mr-2"></i>Saco de Dormir Pluma</div>
               <p class="text-xs text-slate-500 mt-1" id="camp-desc2">Pluma de pato de alta resistencia (-5°C a -20°C).</p>
@@ -256,7 +258,7 @@
             <div class="text-xl font-black text-kactus-800">S/ 25.00 <span class="text-xs font-normal text-slate-500" id="camp-unit2">/ día</span></div>
           </div>
 
-          <div class="bg-white/90 p-5 rounded-2xl border border-slate-100 shadow-xs hover:shadow-md transition-all flex flex-col justify-between space-y-3 hover:-translate-y-1">
+          <div class="bg-white/90 p-5 rounded-2xl border border-warm-200 shadow-xs hover:shadow-md transition-all flex flex-col justify-between space-y-3 hover:-translate-y-1">
             <div>
               <div class="font-bold text-slate-800 text-base" id="camp-item3"><i class="fas fa-hiking text-kactus-600 mr-2"></i>Bastones de Trekking</div>
               <p class="text-xs text-slate-500 mt-1" id="camp-desc3">El par de bastones telescópicos ergonómicos.</p>
@@ -264,7 +266,7 @@
             <div class="text-xl font-black text-kactus-800">S/ 5.00 <span class="text-xs font-normal text-slate-500" id="camp-unit3">/ par por día</span></div>
           </div>
 
-          <div class="bg-white/90 p-5 rounded-2xl border border-slate-100 shadow-xs hover:shadow-md transition-all flex flex-col justify-between space-y-3 hover:-translate-y-1">
+          <div class="bg-white/90 p-5 rounded-2xl border border-warm-200 shadow-xs hover:shadow-md transition-all flex flex-col justify-between space-y-3 hover:-translate-y-1">
             <div>
               <div class="font-bold text-slate-800 text-base" id="camp-item4"><i class="fas fa-binoculars text-kactus-600 mr-2"></i>Largavistas / Binoculares</div>
               <p class="text-xs text-slate-500 mt-1" id="camp-desc4">Observación de paisajes y nevados.</p>
@@ -272,7 +274,7 @@
             <div class="text-xl font-black text-kactus-800">S/ 4.00 <span class="text-xs font-normal text-slate-500" id="camp-unit4">/ día</span></div>
           </div>
 
-          <div class="bg-white/90 p-5 rounded-2xl border border-slate-100 shadow-xs hover:shadow-md transition-all flex flex-col justify-between space-y-3 hover:-translate-y-1">
+          <div class="bg-white/90 p-5 rounded-2xl border border-warm-200 shadow-xs hover:shadow-md transition-all flex flex-col justify-between space-y-3 hover:-translate-y-1">
             <div>
               <div class="font-bold text-slate-800 text-base" id="camp-item5"><i class="fas fa-fire-burner text-kactus-600 mr-2"></i>Cocina de Campaña</div>
               <p class="text-xs text-slate-500 mt-1" id="camp-desc5">Incluye utensilios de cocina. (No incluye balón).</p>
@@ -280,7 +282,7 @@
             <div class="text-xl font-black text-kactus-800">S/ 8.00 <span class="text-xs font-normal text-slate-500" id="camp-unit5">/ día</span></div>
           </div>
 
-          <div class="bg-white/90 p-5 rounded-2xl border border-slate-100 shadow-xs hover:shadow-md transition-all flex flex-col justify-between space-y-3 hover:-translate-y-1">
+          <div class="bg-white/90 p-5 rounded-2xl border border-warm-200 shadow-xs hover:shadow-md transition-all flex flex-col justify-between space-y-3 hover:-translate-y-1">
             <div>
               <div class="font-bold text-slate-800 text-base" id="camp-item6"><i class="fas fa-gas-pump text-kactus-600 mr-2"></i>Balón de Gas Nuevo</div>
               <p class="text-xs text-slate-500 mt-1" id="camp-desc6">Balón de gas sellado por separado.</p>
@@ -289,7 +291,7 @@
           </div>
         </div>
 
-        <div class="mt-6 p-5 bg-gradient-to-r from-kactus-100/90 to-emerald-50/90 border border-kactus-200 rounded-2xl text-xs text-kactus-900 flex items-center gap-4 shadow-xs">
+        <div class="mt-6 p-5 bg-gradient-to-r from-kactus-100/90 to-amber-50/90 border border-kactus-200 rounded-2xl text-xs text-kactus-900 flex items-center gap-4 shadow-xs">
           <div class="w-10 h-10 bg-kactus-600 text-white rounded-xl flex items-center justify-center shrink-0 text-lg shadow-md">
             <i class="fas fa-gift"></i>
           </div>
@@ -308,35 +310,35 @@
       </div>
 
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5">
-        <div class="glass-card p-5 rounded-2xl border border-white/80 shadow-xs hover:shadow-md transition-all hover:-translate-y-1 text-center group">
+        <div class="glass-card p-5 rounded-2xl border border-warm-200 shadow-xs hover:shadow-md transition-all hover:-translate-y-1 text-center group">
           <i class="fas fa-bath text-3xl text-kactus-600 mb-3 group-hover:scale-110 transition-transform"></i>
           <p id="s-bath" class="text-xs sm:text-sm font-bold text-slate-800">Baño Privado</p>
         </div>
-        <div class="glass-card p-5 rounded-2xl border border-white/80 shadow-xs hover:shadow-md transition-all hover:-translate-y-1 text-center group">
+        <div class="glass-card p-5 rounded-2xl border border-warm-200 shadow-xs hover:shadow-md transition-all hover:-translate-y-1 text-center group">
           <i class="fas fa-hot-tub text-3xl text-kactus-600 mb-3 group-hover:scale-110 transition-transform"></i>
           <p id="s-water" class="text-xs sm:text-sm font-bold text-slate-800">Agua Caliente 24/7</p>
         </div>
-        <div class="glass-card p-5 rounded-2xl border border-white/80 shadow-xs hover:shadow-md transition-all hover:-translate-y-1 text-center group">
+        <div class="glass-card p-5 rounded-2xl border border-warm-200 shadow-xs hover:shadow-md transition-all hover:-translate-y-1 text-center group">
           <i class="fas fa-tv text-3xl text-kactus-600 mb-3 group-hover:scale-110 transition-transform"></i>
           <p id="s-tv" class="text-xs sm:text-sm font-bold text-slate-800">TV Smart</p>
         </div>
-        <div class="glass-card p-5 rounded-2xl border border-white/80 shadow-xs hover:shadow-md transition-all hover:-translate-y-1 text-center group">
+        <div class="glass-card p-5 rounded-2xl border border-warm-200 shadow-xs hover:shadow-md transition-all hover:-translate-y-1 text-center group">
           <i class="fas fa-wifi text-3xl text-kactus-600 mb-3 group-hover:scale-110 transition-transform"></i>
           <p id="s-wifi" class="text-xs sm:text-sm font-bold text-slate-800">Wi-Fi Gratis</p>
         </div>
-        <div class="glass-card p-5 rounded-2xl border border-white/80 shadow-xs hover:shadow-md transition-all hover:-translate-y-1 text-center group">
+        <div class="glass-card p-5 rounded-2xl border border-warm-200 shadow-xs hover:shadow-md transition-all hover:-translate-y-1 text-center group">
           <i class="fas fa-parking text-3xl text-kactus-600 mb-3 group-hover:scale-110 transition-transform"></i>
           <p id="s-parking" class="text-xs sm:text-sm font-bold text-slate-800">Estacionamiento Gratis</p>
         </div>
-        <div class="glass-card p-5 rounded-2xl border border-white/80 shadow-xs hover:shadow-md transition-all hover:-translate-y-1 text-center group">
+        <div class="glass-card p-5 rounded-2xl border border-warm-200 shadow-xs hover:shadow-md transition-all hover:-translate-y-1 text-center group">
           <i class="fas fa-suitcase text-3xl text-kactus-600 mb-3 group-hover:scale-110 transition-transform"></i>
           <p id="s-luggage" class="text-xs sm:text-sm font-bold text-slate-800">Guardado de Equipaje GRATIS</p>
         </div>
-        <div class="glass-card p-5 rounded-2xl border border-white/80 shadow-xs hover:shadow-md transition-all hover:-translate-y-1 text-center group">
+        <div class="glass-card p-5 rounded-2xl border border-warm-200 shadow-xs hover:shadow-md transition-all hover:-translate-y-1 text-center group">
           <i class="fas fa-utensils text-3xl text-kactus-600 mb-3 group-hover:scale-110 transition-transform"></i>
           <p id="s-kitchen" class="text-xs sm:text-sm font-bold text-slate-800">Cocina Compartida & Horno</p>
         </div>
-        <div class="glass-card p-5 rounded-2xl border border-white/80 shadow-xs hover:shadow-md transition-all hover:-translate-y-1 text-center group">
+        <div class="glass-card p-5 rounded-2xl border border-warm-200 shadow-xs hover:shadow-md transition-all hover:-translate-y-1 text-center group">
           <i class="fas fa-coffee text-3xl text-kactus-600 mb-3 group-hover:scale-110 transition-transform"></i>
           <p id="s-breakfast" class="text-xs sm:text-sm font-bold text-slate-800">Servicio de Desayunos</p>
         </div>
@@ -350,26 +352,26 @@
         <h2 class="text-2xl sm:text-3xl font-extrabold text-kactus-900 tracking-tight" id="title-payments">Pasarela de Pago y Medios de Reserva</h2>
       </div>
 
-      <div class="glass-card p-6 sm:p-8 rounded-3xl shadow-xl border border-white/80">
+      <div class="glass-card p-6 sm:p-8 rounded-3xl shadow-xl border border-warm-200">
         <p id="pay-intro" class="text-sm text-slate-600 mb-6 font-medium">Aceptamos múltiples formas de pago para tu máxima comodidad al reservar:</p>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
-          <div class="bg-white/90 p-5 rounded-2xl border border-slate-100 text-center shadow-xs">
+          <div class="bg-white/90 p-5 rounded-2xl border border-warm-200 text-center shadow-xs">
             <i class="fas fa-mobile-alt text-3xl mb-3 text-teal-600"></i>
             <div class="font-bold text-slate-800 text-sm">Yape / Plin</div>
             <div class="text-xs text-slate-500 mt-1" id="pay-yape">Pagos digitales instantáneos al teléfono oficial.</div>
           </div>
-          <div class="bg-white/90 p-5 rounded-2xl border border-slate-100 text-center shadow-xs">
+          <div class="bg-white/90 p-5 rounded-2xl border border-warm-200 text-center shadow-xs">
             <i class="fas fa-credit-card text-3xl mb-3 text-indigo-900"></i>
             <div class="font-bold text-slate-800 text-sm" id="pay-title-cards">Tarjetas de Crédito / Débito</div>
             <div class="text-xs text-slate-500 mt-1" id="pay-cards">Visa, MasterCard, American Express.</div>
           </div>
-          <div class="bg-white/90 p-5 rounded-2xl border border-slate-100 text-center shadow-xs">
+          <div class="bg-white/90 p-5 rounded-2xl border border-warm-200 text-center shadow-xs">
             <i class="fas fa-university text-3xl mb-3 text-orange-600"></i>
             <div class="font-bold text-slate-800 text-sm" id="pay-title-bank">Depósito Bancario</div>
             <div class="text-xs text-slate-500 mt-1" id="pay-bank">Cuentas BCP y Banco de la Nación.</div>
           </div>
-          <div class="bg-white/90 p-5 rounded-2xl border border-slate-100 text-center shadow-xs">
+          <div class="bg-white/90 p-5 rounded-2xl border border-warm-200 text-center shadow-xs">
             <i class="fas fa-money-bill-wave text-3xl mb-3 text-emerald-700"></i>
             <div class="font-bold text-slate-800 text-sm" id="pay-title-cash">Efectivo</div>
             <div class="text-xs text-slate-500 mt-1" id="pay-cash">Pago directo en la recepción al llegar.</div>
@@ -386,25 +388,25 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="glass-card p-7 rounded-3xl border-l-4 border-l-kactus-600 border-y border-r border-white/80 shadow-md space-y-3 hover:-translate-y-1 transition-all">
+        <div class="glass-card p-7 rounded-3xl border-l-4 border-l-kactus-600 border-y border-r border-warm-200 shadow-md space-y-3 hover:-translate-y-1 transition-all">
           <h4 id="t1-title" class="font-extrabold text-xl text-slate-800">⛰️ Laguna Parón</h4>
           <p id="t1-desc" class="text-sm text-slate-600 leading-relaxed">Salidas directas coordinadas con el hostal o colectivos locales diarios desde Caraz. Asesoría completa sobre aclimatación y rutas.</p>
         </div>
-        <div class="glass-card p-7 rounded-3xl border-l-4 border-l-kactus-600 border-y border-r border-white/80 shadow-md space-y-3 hover:-translate-y-1 transition-all">
+        <div class="glass-card p-7 rounded-3xl border-l-4 border-l-kactus-600 border-y border-r border-warm-200 shadow-md space-y-3 hover:-translate-y-1 transition-all">
           <h4 id="t2-title" class="font-extrabold text-xl text-slate-800">🏔️ Laguna Llanganuco & Laguna 69</h4>
           <p id="t2-desc" class="text-sm text-slate-600 leading-relaxed">Excursión Full Day con tour operador autorizado. Incluye transporte, guía oficial y recojo estratégico.</p>
         </div>
       </div>
     </section>
 
-    <!-- Testimonios / Reseñas Reales Ampliadas de Google Maps y Booking -->
+    <!-- Testimonios -->
     <section class="mb-16">
       <div class="flex items-center justify-between flex-wrap gap-4 mb-8">
         <div class="flex items-center gap-3">
           <div class="w-2.5 h-9 bg-kactus-600 rounded-full"></div>
           <h2 class="text-2xl sm:text-3xl font-extrabold text-kactus-900 tracking-tight" id="title-reviews">Opiniones Reales de Nuestros Huéspedes</h2>
         </div>
-        <div class="flex items-center gap-2 text-xs font-bold text-slate-500 bg-white/80 px-4 py-2 rounded-full shadow-xs border border-slate-200">
+        <div class="flex items-center gap-2 text-xs font-bold text-slate-600 bg-white/80 px-4 py-2 rounded-full shadow-xs border border-warm-200">
           <i class="fab fa-google text-blue-500"></i>
           <i class="fas fa-star text-amber-500"></i>
           <span>Reseñas Verificadas</span>
@@ -412,45 +414,42 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Reseña 1 -->
-        <div class="glass-card p-6 rounded-3xl border border-white/80 shadow-md flex flex-col justify-between space-y-4 hover:-translate-y-1 transition-all">
+        <div class="glass-card p-6 rounded-3xl border border-warm-200 shadow-md flex flex-col justify-between space-y-4 hover:-translate-y-1 transition-all">
           <div class="space-y-3">
             <div class="flex text-amber-400 text-sm gap-1">
               <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
             </div>
             <p id="rev1-text" class="text-xs sm:text-sm text-slate-600 italic leading-relaxed">"Lugar súper limpio, tranquilo y con agua caliente las 24 horas. La atención en recepción fue excelente para organizar mi viaje a Laguna Parón."</p>
           </div>
-          <div class="border-t border-slate-100 pt-3 flex items-center justify-between text-xs">
+          <div class="border-t border-warm-200 pt-3 flex items-center justify-between text-xs">
             <span class="font-bold text-slate-800">Carlos M.</span>
-            <span class="text-slate-400 font-medium">Google Reviews (Lima)</span>
+            <span class="text-slate-500 font-medium">Google Reviews (Lima)</span>
           </div>
         </div>
 
-        <!-- Reseña 2 -->
-        <div class="glass-card p-6 rounded-3xl border border-white/80 shadow-md flex flex-col justify-between space-y-4 hover:-translate-y-1 transition-all">
+        <div class="glass-card p-6 rounded-3xl border border-warm-200 shadow-md flex flex-col justify-between space-y-4 hover:-translate-y-1 transition-all">
           <div class="space-y-3">
             <div class="flex text-amber-400 text-sm gap-1">
               <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
             </div>
             <p id="rev2-text" class="text-xs sm:text-sm text-slate-600 italic leading-relaxed">"Great place to stay in Caraz! Very comfortable bed, fast Wi-Fi, and extremely helpful staff. Highly recommended for trekkers!"</p>
           </div>
-          <div class="border-t border-slate-100 pt-3 flex items-center justify-between text-xs">
+          <div class="border-t border-warm-200 pt-3 flex items-center justify-between text-xs">
             <span class="font-bold text-slate-800">Sarah L.</span>
-            <span class="text-slate-400 font-medium">Booking.com (Francia)</span>
+            <span class="text-slate-500 font-medium">Booking.com (Francia)</span>
           </div>
         </div>
 
-        <!-- Reseña 3 -->
-        <div class="glass-card p-6 rounded-3xl border border-white/80 shadow-md flex flex-col justify-between space-y-4 hover:-translate-y-1 transition-all">
+        <div class="glass-card p-6 rounded-3xl border border-warm-200 shadow-md flex flex-col justify-between space-y-4 hover:-translate-y-1 transition-all">
           <div class="space-y-3">
             <div class="flex text-amber-400 text-sm gap-1">
               <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
             </div>
             <p id="rev3-text" class="text-xs sm:text-sm text-slate-600 italic leading-relaxed">"Excelente ubicación a pocas cuadras de la plaza. Nos ayudaron alquilándonos carpas y bolsas de dormir para acampar en Parón. ¡Volveremos!"</p>
           </div>
-          <div class="border-t border-slate-100 pt-3 flex items-center justify-between text-xs">
+          <div class="border-t border-warm-200 pt-3 flex items-center justify-between text-xs">
             <span class="font-bold text-slate-800">Mathieu & Elena</span>
-            <span class="text-slate-400 font-medium">Google Reviews (Bélgica)</span>
+            <span class="text-slate-500 font-medium">Google Reviews (Bélgica)</span>
           </div>
         </div>
       </div>
@@ -463,7 +462,7 @@
         <h2 class="text-2xl sm:text-3xl font-extrabold text-kactus-900 tracking-tight" id="title-guide">Guía Turística de Caraz & Área Privada</h2>
       </div>
 
-      <div class="glass-card p-6 sm:p-8 rounded-3xl shadow-xl border border-white/80 space-y-8">
+      <div class="glass-card p-6 sm:p-8 rounded-3xl shadow-xl border border-warm-200 space-y-8">
         <div>
           <h3 id="g-pub-title" class="font-extrabold text-xl text-slate-800 mb-3">Lugares Populares para Visitar:</h3>
           <p id="g-pub-desc" class="text-sm text-slate-600 leading-relaxed space-y-2">
@@ -473,7 +472,7 @@
           </p>
         </div>
 
-        <hr class="border-slate-200/60">
+        <hr class="border-warm-200">
 
         <div>
           <h3 id="g-priv-title" class="font-extrabold text-xl text-slate-800 mb-2 flex items-center gap-2">
@@ -482,12 +481,12 @@
           <p id="g-priv-desc" class="text-sm text-slate-600 mb-5">Ingresa la clave proporcionada en recepción para ver guías detalladas de Laguna Parón, Laguna 69, restaurantes recomendados, farmacias, grifos y taller mecánico:</p>
           
           <div class="flex flex-col sm:flex-row gap-3 max-w-md">
-            <input type="password" id="passInput" placeholder="Contraseña de huésped" onkeypress="handleKey(event)" class="px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-kactus-500 text-sm flex-1 bg-white shadow-xs">
+            <input type="password" id="passInput" placeholder="Contraseña de huésped" onkeypress="handleKey(event)" class="px-4 py-3 rounded-xl border border-warm-200 focus:outline-none focus:ring-2 focus:ring-kactus-500 text-sm flex-1 bg-white shadow-xs">
             <button onclick="unlockGuide()" id="btn-unlock-text" class="bg-kactus-600 hover:bg-kactus-700 active:scale-95 text-white font-bold py-3 px-6 rounded-xl text-sm transition-all shadow-md shadow-kactus-600/30">Desbloquear Guía</button>
           </div>
 
           <!-- Contenido Desbloqueable Exclusivo -->
-          <div id="secretGuide" class="hidden mt-8 bg-kactus-50/80 p-6 sm:p-8 rounded-3xl border-2 border-dashed border-kactus-400 space-y-8 animate-fade-in">
+          <div id="secretGuide" class="hidden mt-8 bg-warm-50/90 p-6 sm:p-8 rounded-3xl border-2 border-dashed border-kactus-400 space-y-8 animate-fade-in">
             
             <!-- 1. GUÍA DETALLADA: LAGUNA PARÓN -->
             <div class="bg-white p-6 sm:p-7 rounded-2xl border border-kactus-200 shadow-sm space-y-5">
@@ -608,7 +607,7 @@
             </div>
 
             <!-- 3. CONSEJOS GENERALES DE RECEPCIÓN -->
-            <div class="bg-gradient-to-r from-kactus-100 to-emerald-50 p-5 rounded-2xl border border-kactus-200 text-xs text-kactus-950 space-y-1.5 shadow-xs" id="rec-tips-box">
+            <div class="bg-gradient-to-r from-kactus-100 to-amber-50 p-5 rounded-2xl border border-kactus-200 text-xs text-kactus-950 space-y-1.5 shadow-xs" id="rec-tips-box">
               <h4 class="font-extrabold text-sm mb-2 text-kactus-900">🗺️ Consejos Rápidos de Recepción:</h4>
               <p>• <strong>Guardado de Equipaje:</strong> Deja tus maletas gratis antes del Check-in o después del Check-out.</p>
               <p>• <strong>Cajeros Cercanos:</strong> BCP y Banco de la Nación a 3 cuadras del hostal.</p>
@@ -623,7 +622,6 @@
               
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
 
-                <!-- Gerardo's Chicken -->
                 <div class="bg-slate-50 p-4 rounded-xl border-l-4 border-l-amber-500 flex flex-col justify-between text-xs space-y-3 hover:shadow-xs transition-shadow">
                   <div>
                     <strong class="text-slate-800 text-sm" id="rest1-title">🍗 Gerardo's Chicken (Restaurante / Pollería)</strong>
@@ -632,7 +630,6 @@
                   <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1.5 hover:underline pt-1"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
                 </div>
 
-                <!-- Pacha Hunta -->
                 <div class="bg-slate-50 p-4 rounded-xl border-l-4 border-l-amber-500 flex flex-col justify-between text-xs space-y-3 hover:shadow-xs transition-shadow">
                   <div>
                     <strong class="text-slate-800 text-sm" id="rest2-title">🍲 Restaurante Pacha Hunta</strong>
@@ -641,7 +638,6 @@
                   <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1.5 hover:underline pt-1"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
                 </div>
 
-                <!-- Sabor & Tradición -->
                 <div class="bg-slate-50 p-4 rounded-xl border-l-4 border-l-amber-500 flex flex-col justify-between text-xs space-y-3 hover:shadow-xs transition-shadow">
                   <div>
                     <strong class="text-slate-800 text-sm" id="rest3-title">🍗 Pollería Sabor & Tradición</strong>
@@ -650,7 +646,6 @@
                   <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1.5 hover:underline pt-1"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
                 </div>
 
-                <!-- Inkafarma -->
                 <div class="bg-slate-50 p-4 rounded-xl border-l-4 border-l-emerald-600 flex flex-col justify-between text-xs space-y-3 hover:shadow-xs transition-shadow">
                   <div>
                     <strong class="text-slate-800 text-sm" id="farm1-title">💊 Inkafarma (Jr. Sucre / Raymondi)</strong>
@@ -659,7 +654,6 @@
                   <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1.5 hover:underline pt-1"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
                 </div>
 
-                <!-- Mifarma -->
                 <div class="bg-slate-50 p-4 rounded-xl border-l-4 border-l-emerald-600 flex flex-col justify-between text-xs space-y-3 hover:shadow-xs transition-shadow">
                   <div>
                     <strong class="text-slate-800 text-sm" id="farm2-title">💊 Mifarma (Cerca al Mercado)</strong>
@@ -668,7 +662,6 @@
                   <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1.5 hover:underline pt-1"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
                 </div>
 
-                <!-- Grifo El Arco -->
                 <div class="bg-slate-50 p-4 rounded-xl border-l-4 border-l-red-500 flex flex-col justify-between text-xs space-y-3 hover:shadow-xs transition-shadow">
                   <div>
                     <strong class="text-slate-800 text-sm" id="gas1-title">⛽ Grifo "El Arco" (Caraz)</strong>
@@ -677,7 +670,6 @@
                   <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1.5 hover:underline pt-1"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
                 </div>
 
-                <!-- Grifo Bomberos -->
                 <div class="bg-slate-50 p-4 rounded-xl border-l-4 border-l-red-500 flex flex-col justify-between text-xs space-y-3 hover:shadow-xs transition-shadow">
                   <div>
                     <strong class="text-slate-800 text-sm" id="gas2-title">⛽ Grifo Cerca a la Compañía de Bomberos</strong>
@@ -686,7 +678,6 @@
                   <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1.5 hover:underline pt-1"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
                 </div>
 
-                <!-- Taller Mecánico -->
                 <div class="bg-slate-50 p-4 rounded-xl border-l-4 border-l-blue-600 flex flex-col justify-between text-xs space-y-3 hover:shadow-xs transition-shadow">
                   <div>
                     <strong class="text-slate-800 text-sm" id="mech-title">🔧 Taller Mecánico de Motos</strong>
@@ -711,32 +702,32 @@
       </div>
 
       <div class="space-y-4">
-        <div class="glass-card rounded-2xl border border-white/80 shadow-xs overflow-hidden cursor-pointer transition-all hover:border-kactus-300" onclick="toggleFaq(this)">
+        <div class="glass-card rounded-2xl border border-warm-200 shadow-xs overflow-hidden cursor-pointer transition-all hover:border-kactus-300" onclick="toggleFaq(this)">
           <div class="p-5 flex justify-between items-center font-bold text-sm sm:text-base text-kactus-900">
             <span id="faq-q1">¿A qué hora es el Check-in y Check-out?</span>
             <i class="fas fa-chevron-down transition-transform duration-300 text-kactus-600"></i>
           </div>
-          <div class="hidden px-5 pb-5 text-xs sm:text-sm text-slate-600 border-t border-slate-100/60 pt-3 leading-relaxed" id="faq-a1">
+          <div class="hidden px-5 pb-5 text-xs sm:text-sm text-slate-600 border-t border-warm-200/60 pt-3 leading-relaxed" id="faq-a1">
             El Check-in es a las <strong>11:00 AM</strong> y el Check-out a las <strong>11:00 AM</strong>. Si llegas antes o necesitas salir después, ¡puedes guardar tu equipaje gratis!
           </div>
         </div>
 
-        <div class="glass-card rounded-2xl border border-white/80 shadow-xs overflow-hidden cursor-pointer transition-all hover:border-kactus-300" onclick="toggleFaq(this)">
+        <div class="glass-card rounded-2xl border border-warm-200 shadow-xs overflow-hidden cursor-pointer transition-all hover:border-kactus-300" onclick="toggleFaq(this)">
           <div class="p-5 flex justify-between items-center font-bold text-sm sm:text-base text-kactus-900">
             <span id="faq-q2">¿Tienen agua caliente las 24 horas?</span>
             <i class="fas fa-chevron-down transition-transform duration-300 text-kactus-600"></i>
           </div>
-          <div class="hidden px-5 pb-5 text-xs sm:text-sm text-slate-600 border-t border-slate-100/60 pt-3 leading-relaxed" id="faq-a2">
+          <div class="hidden px-5 pb-5 text-xs sm:text-sm text-slate-600 border-t border-warm-200/60 pt-3 leading-relaxed" id="faq-a2">
             Sí, disponemos de agua caliente las 24 horas en todas nuestras habitaciones.
           </div>
         </div>
 
-        <div class="glass-card rounded-2xl border border-white/80 shadow-xs overflow-hidden cursor-pointer transition-all hover:border-kactus-300" onclick="toggleFaq(this)">
+        <div class="glass-card rounded-2xl border border-warm-200 shadow-xs overflow-hidden cursor-pointer transition-all hover:border-kactus-300" onclick="toggleFaq(this)">
           <div class="p-5 flex justify-between items-center font-bold text-sm sm:text-base text-kactus-900">
             <span id="faq-q3">¿Puedo alquilar equipos de camping en el hostal?</span>
             <i class="fas fa-chevron-down transition-transform duration-300 text-kactus-600"></i>
           </div>
-          <div class="hidden px-5 pb-5 text-xs sm:text-sm text-slate-600 border-t border-slate-100/60 pt-3 leading-relaxed" id="faq-a3">
+          <div class="hidden px-5 pb-5 text-xs sm:text-sm text-slate-600 border-t border-warm-200/60 pt-3 leading-relaxed" id="faq-a3">
             ¡Sí! Alquilamos carpas 3 estaciones, sacos de dormir de pluma (-5°C a -20°C), bastones de trekking, cocinas con utensilios y largavistas.
           </div>
         </div>
@@ -750,7 +741,7 @@
         <h2 class="text-2xl sm:text-3xl font-extrabold text-kactus-900 tracking-tight" id="title-location">Ubicación y Políticas</h2>
       </div>
 
-      <div class="glass-card p-7 sm:p-8 rounded-3xl border border-white/80 shadow-xl text-center space-y-5">
+      <div class="glass-card p-7 sm:p-8 rounded-3xl border border-warm-200 shadow-xl text-center space-y-5">
         <p class="text-sm sm:text-base text-slate-700">
           <i class="fas fa-map-marker-alt text-red-500 mr-1.5 text-lg"></i> <strong id="lbl-addr">Dirección:</strong> Avenida Meza Arizona 425 - 202, Caraz, Ancash, Perú
         </p>
@@ -769,8 +760,8 @@
 
   </main>
 
-  <!-- Sticky Bar Móvil Flotante Premium -->
-  <div class="fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-lg border-t border-slate-200/80 p-3.5 px-6 shadow-2xl flex justify-between items-center z-50">
+  <!-- Sticky Bar Móvil Flotante -->
+  <div class="fixed bottom-0 left-0 right-0 bg-[#faf7f2]/95 backdrop-blur-lg border-t border-warm-200 p-3.5 px-6 shadow-2xl flex justify-between items-center z-50">
     <div class="text-xs sm:text-sm text-slate-700 font-medium">
       <span id="stk-from">Desde</span> <strong class="text-lg text-kactus-900 font-black">S/ 35.00</strong>
     </div>
@@ -1335,7 +1326,7 @@
         l69Opt2Title: "🥾 乘坐当地公共交通自由行",
         l69Opt2List: '<li>• <strong>第一段（卡拉斯 - 云盖）：</strong> 当地小巴往返 6.00 索尔。</li><li>• <strong>第二段（云盖 - 徒步起点）：</strong> 乘坐开往 Yanama 的拼车，每人约 30.00 索尔。</li><li>• <strong>返回：</strong> 乘坐从 Yanama 返回的过路车（约 20.00 至 30.00 索尔）。</li>',
         l69Note: '⚠️ <strong>注意：</strong> 选择自行前往请务必提前安排好检查站要求的导游陪同。',
-        l69EntryBox: '<strong class="text-slate-900 text-sm">🎟️ 瓦斯卡兰国家公园门票（69号湖）：</strong><p class="text-slate-600 mt-0.5">两种方式均需在国家公园检查站直接支付门票 <strong>30.00 索尔/人</strong>。</p>',
+        l69EntryBox: '<strong class="text-slate-900 text-sm">🎟️ 瓦斯卡兰国家公园门票（69号湖）：</strong><p class="text-slate-500 mt-0.5">两种方式均需在国家公园检查站直接支付门票 <strong>30.00 索尔/人</strong>。</p>',
         recTipsBox: '<h4 class="font-extrabold text-sm mb-2 text-kactus-900">🗺️ 前台快捷提示：</h4><p>• <strong>行李寄存：</strong> 入住前或退房后均可免费寄存行李。</p><p>• <strong>周边 ATM：</strong> 距离旅馆 3 个街区即有 BCP 及国家银行 ATM。</p>',
         gShopTitle: "推荐餐厅、药房、加油站与周边服务：",
         gShopIntro: "点击任意链接在 Google 地图中打开对应路线：",
