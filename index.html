@@ -27,6 +27,7 @@
           boxShadow: {
             'ayenda': '0 10px 30px -5px rgba(0, 0, 0, 0.15)',
             'card': '0 4px 20px -2px rgba(0, 0, 0, 0.06)',
+            'glow': '0 0 25px -5px rgba(16, 185, 129, 0.4)',
           }
         }
       }
@@ -100,9 +101,9 @@
     </div>
   </nav>
 
-  <!-- BANNER PRINCIPAL CON BUSCADOR FLOTANTE -->
-  <header class="relative bg-slate-900 text-white py-20 px-4 overflow-hidden">
-    <div class="absolute inset-0 bg-cover bg-center opacity-35" style="background-image: url('https://lh3.googleusercontent.com/d/1306fD7zgATU2P_1JwTWkWpq-lukMtejG');"></div>
+  <!-- BANNER PRINCIPAL (Fondo Verde Kactus Profundo y Elegante) -->
+  <header class="relative bg-gradient-to-br from-emerald-950 via-slate-900 to-emerald-900 text-white py-20 px-4 overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center opacity-25" style="background-image: url('https://lh3.googleusercontent.com/d/1306fD7zgATU2P_1JwTWkWpq-lukMtejG');"></div>
     
     <div class="relative z-10 max-w-5xl mx-auto text-center space-y-4 mb-12">
       <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight max-w-3xl mx-auto leading-tight" id="hero-title">
@@ -181,20 +182,22 @@
         
         <!-- Habitación 1 -->
         <div class="kactus-card overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 flex flex-col group">
-          <div class="relative w-full h-60 bg-slate-900 overflow-hidden" id="carousel1">
-            <div class="absolute top-3 left-3 z-20 bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-black px-3 py-1 rounded-full shadow-xs border border-white/20" id="room1-tag">
+          <div class="relative w-full h-60 bg-emerald-950 overflow-hidden" id="carousel1">
+            <div class="absolute top-3 left-3 z-20 bg-emerald-900/90 backdrop-blur-md text-white text-[10px] font-black px-3 py-1 rounded-full shadow-xs border border-white/20" id="room1-tag">
               ECONÓMICA & CONFORT
             </div>
             
             <div class="carousel-slide w-full h-full">
               <img src="https://lh3.googleusercontent.com/d/1xAPzvxsRh7d5ftObKRHJ54-Pg5DKO7zs" alt="Habitación Económica" class="w-full h-full object-cover shrink-0">
-              <div class="w-full h-full shrink-0 bg-gradient-to-br from-slate-900 to-emerald-950 text-white p-6 flex flex-col items-center justify-center text-center space-y-3">
-                <div class="w-10 h-10 bg-amber-400 text-slate-950 rounded-xl flex items-center justify-center font-black text-lg animate-bounce">
+              
+              <!-- CARTEL ELEGANTE Y BRILLANTE (Ámbar / Dorado Atractivo sobre fondo Verde Kactus Profundo) -->
+              <div class="w-full h-full shrink-0 bg-gradient-to-br from-emerald-950 via-slate-900 to-emerald-900 text-white p-6 flex flex-col items-center justify-center text-center space-y-3 shadow-inner">
+                <div class="w-11 h-11 bg-gradient-to-tr from-amber-400 to-yellow-300 text-slate-950 rounded-2xl flex items-center justify-center font-black text-lg shadow-glow animate-pulse">
                   <i class="fas fa-key"></i>
                 </div>
-                <h4 class="font-extrabold text-xs text-amber-300">¿Ya tienes tu reserva?</h4>
-                <p class="text-[11px] text-slate-200">Ingresa tu código en la guía privada para ver precios y servicios exclusivos.</p>
-                <a href="#title-guide" class="bg-amber-400 text-slate-950 text-[10px] font-black py-1.5 px-4 rounded-full shadow-md">Ir a Área Privada</a>
+                <h4 class="font-extrabold text-xs sm:text-sm text-amber-300 px-2" id="banner-code-title">¿Tienes tu código de reserva?</h4>
+                <p class="text-[11px] text-slate-200 max-w-xs leading-relaxed" id="banner-code-desc">Usa aquí tu código brindado por el alojamiento y encuentra precios protegidos, indicaciones y más.</p>
+                <a href="#title-guide" class="bg-gradient-to-r from-amber-400 to-yellow-400 hover:from-amber-500 hover:to-yellow-500 text-slate-950 text-[11px] font-extrabold py-2 px-5 rounded-xl shadow-md transition-all transform hover:scale-105">Ir a Sección Reservada</a>
               </div>
             </div>
 
@@ -220,7 +223,7 @@
 
         <!-- Habitación 2 -->
         <div class="kactus-card overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 flex flex-col group">
-          <div class="relative w-full h-60 bg-slate-900 overflow-hidden" id="carousel2">
+          <div class="relative w-full h-60 bg-emerald-950 overflow-hidden" id="carousel2">
             <div class="absolute top-3 left-3 z-20 bg-emerald-600 text-white text-[10px] font-black px-3 py-1 rounded-full shadow-xs border border-white/20" id="room2-tag">
               MÁS POPULAR
             </div>
@@ -252,20 +255,20 @@
       </div>
     </section>
 
-    <!-- SECCIÓN 2: ALQUILER DE EQUIPOS (Sin Precios Públicos) -->
+    <!-- SECCIÓN 2: ALQUILER DE EQUIPOS -->
     <section>
       <div class="flex items-center justify-between mb-6">
         <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight" id="title-camping">Alquiler de Equipos de Camping y Trekking</h2>
       </div>
 
       <div class="kactus-card p-6 shadow-card space-y-6">
-        <div class="bg-slate-900 text-white p-5 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="bg-gradient-to-r from-emerald-950 to-slate-900 text-white p-5 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
             <h4 class="font-extrabold text-sm text-amber-300">🧗‍♂️ Equipamiento Profesional para Montaña</h4>
             <p class="text-xs text-slate-300 mt-0.5">Material especializado de alta montaña listo para tu aventura.</p>
           </div>
-          <a href="#title-guide" class="bg-amber-400 text-slate-950 font-black text-[11px] px-4 py-2.5 rounded-xl shadow-sm shrink-0">
-            <i class="fas fa-key"></i> Ver Precios en Área Privada
+          <a href="#title-guide" class="bg-gradient-to-r from-amber-400 to-yellow-400 text-slate-950 font-black text-[11px] px-4 py-2.5 rounded-xl shadow-sm shrink-0 hover:scale-105 transition-transform">
+            <i class="fas fa-key"></i> Ver Precios en Área Reservada
           </a>
         </div>
 
@@ -377,7 +380,7 @@
     <section class="mb-12">
       <div class="kactus-card p-6 sm:p-8 shadow-card space-y-6">
         <div>
-          <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-2" id="title-guide">Guía Turística de Caraz & Área Privada</h2>
+          <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-2" id="title-guide">Guía Turística de Caraz & Área Reservada</h2>
           <p id="g-pub-desc" class="text-xs sm:text-sm text-slate-600 leading-relaxed">
             📍 <strong>Laguna Parón:</strong> La laguna turquesa más grande de la Cordillera Blanca, ubicada a 32 km de Caraz. Espléndidas vistas de los nevados Artesonraju, Pirámide de Garcilaso y Huandoy.<br><br>
             📍 <strong>Laguna Llanganuco (Chinancocha y Orconcocha):</strong> Impresionantes espejos de agua color turquesa rodeados de bosques de quenuales, bajo la majestuosa sombra del Nevado Huascarán y Chopicalqui.<br><br>
@@ -389,16 +392,16 @@
 
         <div>
           <h3 class="font-extrabold text-base text-slate-900 mb-2 flex items-center gap-2">
-            🔐 Guía Privada de Rutas y Servicios para Huéspedes
+            🔐 Sección Reservada de Rutas y Servicios para Huéspedes
           </h3>
           <p id="g-priv-desc" class="text-xs text-slate-600 mb-4">Ingresa la clave proporcionada en recepción para ver los precios protegidos y guías de emergencia:</p>
           
           <div class="flex flex-col sm:flex-row gap-3 max-w-md">
             <input type="password" id="passInput" placeholder="Contraseña de huésped" onkeypress="handleKey(event)" class="px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs flex-1 bg-white">
-            <button onclick="unlockGuide()" id="btn-unlock-text" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-5 rounded-xl text-xs shadow-md">Desbloquear Guía</button>
+            <button onclick="unlockGuide()" id="btn-unlock-text" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-5 rounded-xl text-xs shadow-md">Desbloquear Sección</button>
           </div>
 
-          <!-- CONTENIDO PRIVADO DESBLOQUEABLE COMPLETO Y DETALLADO -->
+          <!-- CONTENIDO PRIVADO DESBLOQUEABLE COMPLETO -->
           <div id="secretGuide" class="hidden mt-6 bg-slate-50 p-6 rounded-2xl border-2 border-dashed border-emerald-500 space-y-6">
             
             <!-- PRECIOS DE EQUIPOS (Privado) -->
@@ -460,7 +463,7 @@
   </main>
 
   <!-- Barra inferior fija para reservas -->
-  <div class="fixed bottom-0 left-0 right-0 bg-slate-900/95 backdrop-blur-md border-t border-slate-800 p-3.5 px-6 flex justify-between items-center z-50 text-white">
+  <div class="fixed bottom-0 left-0 right-0 bg-emerald-950/95 backdrop-blur-md border-t border-emerald-900 p-3.5 px-6 flex justify-between items-center z-50 text-white">
     <div class="text-xs">
       <span class="text-slate-400" id="stk-from">Desde</span> <strong class="text-base text-emerald-400 font-black">S/ 35.00</strong>
     </div>
@@ -555,14 +558,17 @@
         room2Desc: "Habitación espaciosa con cama de 2 plazas, gran iluminación natural y armario.",
         perNight: "promedio por noche",
         btnRes: "Reservar por WhatsApp",
+        bannerCodeTitle: "¿Tienes tu código de reserva?",
+        bannerCodeDesc: "Usa aquí tu código brindado por el alojamiento y encuentra precios protegidos, indicaciones y más.",
+        bannerCodeBtn: "Ir a Sección Reservada",
         titleCamping: "Alquiler de Equipos de Camping y Trekking",
         titleServices: "Servicios e Instalaciones",
         sBath: "Baño Privado", sWater: "Agua Caliente 24/7", sTv: "TV Smart", sWifi: "Wi-Fi Gratis",
         sParking: "Estacionamiento Gratis", sLuggage: "Guardado de Equipaje", sKitchen: "Cocina Compartida", sBreakfast: "Desayunos",
-        titleGuide: "Guía Turística de Caraz & Área Privada",
+        titleGuide: "Guía Turística de Caraz & Área Reservada",
         gPubDesc: "📍 <strong>Laguna Parón:</strong> La laguna turquesa más grande de la Cordillera Blanca, ubicada a 32 km de Caraz. Espléndidas vistas de los nevados Artesonraju, Pirámide de Garcilaso y Huandoy.<br><br>📍 <strong>Laguna Llanganuco (Chinancocha y Orconcocha):</strong> Impresionantes espejos de agua color turquesa rodeados de bosques de quenuales, bajo la majestuosa sombra del Nevado Huascarán y Chopicalqui.<br><br>📍 <strong>Laguna 69:</strong> Uno de los trekkings de alta montaña más famosos del mundo, con paisajes glaciares inigualables en el Parque Nacional Huascarán.",
         gPrivDesc: "Ingresa la clave proporcionada en recepción para ver los precios protegidos y guías de emergencia:",
-        btnUnlockText: "Desbloquear Guía", passPlaceholder: "Contraseña de huésped",
+        btnUnlockText: "Desbloquear Sección", passPlaceholder: "Contraseña de huésped",
         stkFrom: "Desde", stkBtn: "Reservar Ahora", navCodeText: "Código de Huésped"
       },
       en: {
@@ -582,14 +588,17 @@
         room2Desc: "Spacious room with double bed, great natural lighting, and wardrobe.",
         perNight: "avg per night",
         btnRes: "Book via WhatsApp",
+        bannerCodeTitle: "Do you have your booking code?",
+        bannerCodeDesc: "Use your code provided by the lodge here to find protected prices, directions, and more.",
+        bannerCodeBtn: "Go to Reserved Area",
         titleCamping: "Camping & Trekking Gear Rental",
         titleServices: "Services & Amenities",
         sBath: "Private Bathroom", sWater: "24/7 Hot Water", sTv: "Smart TV", sWifi: "Free Wi-Fi",
         sParking: "Free Parking", sLuggage: "Luggage Storage", sKitchen: "Shared Kitchen", sBreakfast: "Breakfast",
-        titleGuide: "Caraz Tourist Guide & Private Area",
+        titleGuide: "Caraz Tourist Guide & Reserved Area",
         gPubDesc: "📍 <strong>Parón Lake:</strong> The largest turquoise lagoon in the Cordillera Blanca, located 32 km from Caraz. Splendid views of Artesonraju, Pirámide de Garcilaso, and Huandoy peaks.<br><br>📍 <strong>Llanganuco Lakes (Chinancocha & Orconcocha):</strong> Stunning turquoise water mirrors surrounded by quenual forests, under the majestic shadow of Huascarán and Chopicalqui.<br><br>📍 <strong>Lake 69:</strong> One of the most famous high-mountain treks in the world, featuring unmatched glacial landscapes within Huascarán National Park.",
         gPrivDesc: "Enter the key provided at reception to view protected prices and emergency guides:",
-        btnUnlockText: "Unlock Guide", passPlaceholder: "Guest password",
+        btnUnlockText: "Unlock Area", passPlaceholder: "Guest password",
         stkFrom: "From", stkBtn: "Book Now", navCodeText: "Guest Code"
       },
       fr: {
@@ -609,12 +618,15 @@
         room2Desc: "Chambre spacieuse avec lit double, lumière naturelle et armoire.",
         perNight: "moy. par nuit",
         btnRes: "Réserver par WhatsApp",
+        bannerCodeTitle: "Avez-vous votre code de réservation ?",
+        bannerCodeDesc: "Utilisez ici votre code fourni par l'hébergement pour trouver des tarifs protégés et des guides.",
+        bannerCodeBtn: "Aller à l'Espace Réservé",
         titleCamping: "Location de Matériel de Camping & Trekking",
         titleServices: "Services et Équipements",
         sBath: "Salle de Bain Privée", sWater: "Eau Chaude 24/7", sTv: "Smart TV", sWifi: "Wi-Fi Gratuit",
         sParking: "Parking Gratuit", sLuggage: "Consigne Bagages", sKitchen: "Cuisine Partagée", sBreakfast: "Petit-Déjeuner",
-        titleGuide: "Guide Touristique de Caraz & Zone Privée",
-        gPubDesc: "📍 <strong>Lac Parón :</strong> Le plus grand lac turquoise de la Cordillère Blanche, situé à 32 km de Caraz.<br><br>📍 <strong>Lacs Llanganuco (Chinancocha et Orconcocha) :</strong> Superbes miroirs d'eau turquoise entourés de forêts de quenuales.<br><br>📍 <strong>Lac 69 :</strong> L'un des treks de haute montagne les plus célèbres au monde.",
+        titleGuide: "Guide Touristique de Caraz & Espace Réservé",
+        gPubDesc: "📍 <strong>Lac Parón :</strong> Le plus grand lac turquoise de la Cordillère Blanche, situé à 32 km de Caraz.<br><br>📍 <strong>Lacs Llanganuco (Chinancocha et Orconcocha) :</strong> Superbes miroirs d'eau turquoise.<br><br>📍 <strong>Lac 69 :</strong> L'un des treks de haute montagne les plus célèbres au monde.",
         gPrivDesc: "Entrez le mot de passe fourni à la réception pour voir les prix protégés :",
         btnUnlockText: "Déverrouiller", passPlaceholder: "Mot de passe client",
         stkFrom: "À partir de", stkBtn: "Réserver", navCodeText: "Code Client"
@@ -636,11 +648,14 @@
         room2Desc: "Prostorný pokoj s manželskou postelí, přirozeným světlem a skříní.",
         perNight: "průměr za noc",
         btnRes: "Rezervovat přes WhatsApp",
+        bannerCodeTitle: "Máte svůj rezervační kód?",
+        bannerCodeDesc: "Zde použijte kód od ubytování k zobrazení chráněných cen, pokynů a dalšího.",
+        bannerCodeBtn: "Přejít do rezervované zóny",
         titleCamping: "Půjčovna Kempingového a Trekového Vybavení",
         titleServices: "Služby a Vybavení",
         sBath: "Vlastní Koupelna", sWater: "Teplá Voda 24/7", sTv: "Smart TV", sWifi: "Wi-Fi Zdarma",
         sParking: "Parkování Zdarma", sLuggage: "Úschova Zavazadel", sKitchen: "Sdílená Kuchyň", sBreakfast: "Snídaně",
-        titleGuide: "Turistický Průvodce Caraz a Soukromá Zóna",
+        titleGuide: "Turistický Průvodce Caraz a Rezervovaná Zóna",
         gPubDesc: "📍 <strong>Jezero Parón:</strong> Největší tyrkysová laguna v Cordillera Blanca, 32 km od Carazu.<br><br>📍 <strong>Jezera Llanganuco:</strong> Nádherná tyrkysová jezera obklopená lesy quenual.<br><br>📍 <strong>Laguna 69:</strong> Jeden z nejznámějších vysokohorských treků na světě.",
         gPrivDesc: "Zadejte heslo obdržené na recepci pro zobrazení chráněných cen:",
         btnUnlockText: "Odemknout", passPlaceholder: "Heslo pro hosty",
@@ -663,6 +678,9 @@
         room2Desc: "宽敞的客房，配备双人床，采光极佳并配有衣柜。",
         perNight: "每晚平均",
         btnRes: "通过 WhatsApp 预订",
+        bannerCodeTitle: "您有预订代码吗？",
+        bannerCodeDesc: "在此输入住宿方提供的代码，即可查看专属价格、指南等信息。",
+        bannerCodeBtn: "前往专属区域",
         titleCamping: "露营与徒步装备租赁",
         titleServices: "服务与设施",
         sBath: "独立卫浴", sWater: "24/7 热水", sTv: "智能电视", sWifi: "免费 Wi-Fi",
@@ -670,7 +688,7 @@
         titleGuide: "卡拉斯旅游指南与专属区域",
         gPubDesc: "📍 <strong>帕隆湖：</strong> 白山脉最大的绿松石色高山湖泊，距离卡拉斯32公里。<br><br>📍 <strong>扬加努科湖：</strong> 壮丽的翠绿色高山湖泊群。<br>📍 <strong>69号湖：</strong> 世界闻名的高山徒步路线之一。",
         gPrivDesc: "输入前台提供的密码查看受保护的价格：",
-        btnUnlockText: "解锁指南", passPlaceholder: "住客密码",
+        btnUnlockText: "解锁专属区", passPlaceholder: "住客密码",
         stkFrom: "起价", stkBtn: "立即预订", navCodeText: "住客代码"
       }
     };
@@ -704,6 +722,9 @@
       document.getElementById('per-night-1').innerText = t.perNight;
       document.getElementById('per-night-2').innerText = t.perNight;
       document.querySelectorAll('.btn-res-text').forEach(el => el.innerText = t.btnRes);
+      document.getElementById('banner-code-title').innerText = t.bannerCodeTitle;
+      document.getElementById('banner-code-desc').innerText = t.bannerCodeDesc;
+      document.querySelector('#carousel1 a[href="#title-guide"]').innerText = t.bannerCodeBtn;
       document.getElementById('title-camping').innerText = t.titleCamping;
       document.getElementById('title-services').innerText = t.titleServices;
       document.getElementById('s-bath').innerText = t.sBath;
@@ -716,7 +737,7 @@
       document.getElementById('s-breakfast').innerText = t.sBreakfast;
       document.getElementById('title-guide').innerText = t.titleGuide;
       document.getElementById('g-pub-desc').innerHTML = t.gPubDesc;
-      document.getElementById('g-priv-desc').innerText = t.gPrivdesc || t.gPrivDesc;
+      document.getElementById('g-priv-desc').innerText = t.gPrivDesc;
       document.getElementById('btn-unlock-text').innerText = t.btnUnlockText;
       document.getElementById('passInput').placeholder = t.passPlaceholder;
       document.getElementById('stk-from').innerText = t.stkFrom;
