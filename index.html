@@ -25,26 +25,19 @@
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
           },
           colors: {
-            brand: {
-              900: '#121826', // Azul marino profundo estilo Hoteles.com
-              800: '#1e293b',
-              600: '#0284c7',
+            ayenda: {
+              green: '#10b981', // Verde brillante característico estilo Ayenda
+              dark: '#0f172a',
             },
             kactus: {
-              500: '#689f38',
-              600: '#558b2f',
-              700: '#33691e',
-              900: '#1b3a0e',
-            },
-            warm: {
-              50: '#faf7f2',
-              100: '#f3ece0',
-              200: '#e7d9c3',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
             }
           },
           boxShadow: {
-            'card': '0 4px 20px -2px rgba(0, 0, 0, 0.08)',
-            'card-hover': '0 10px 25px -5px rgba(0, 0, 0, 0.12)',
+            'ayenda': '0 10px 30px -5px rgba(0, 0, 0, 0.15)',
+            'card': '0 4px 20px -2px rgba(0, 0, 0, 0.06)',
           }
         }
       }
@@ -56,136 +49,170 @@
       display: flex;
       transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .card-glass {
+    .ayenda-card {
       background: #ffffff;
       border: 1px solid #e2e8f0;
+      border-radius: 1.25rem;
     }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-kactus-500 selection:text-white pb-24">
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-500 selection:text-white pb-24">
 
-  <!-- Barra de Navegación Superior Estilo Hoteles.com -->
-  <nav class="sticky top-0 z-50 bg-[#121826] text-white shadow-md border-b border-slate-800 py-3 px-4 sm:px-8 transition-all">
-    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-4">
+  <!-- BARRA SUPERIOR EXACTA ESTILO AYENDA -->
+  <nav class="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-xs py-3.5 px-6 sm:px-10">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
       
-      <!-- Logo y Nombre -->
-      <a href="#" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 bg-white rounded-xl p-1 shadow-md flex items-center justify-center transform group-hover:scale-105 transition-transform">
-          <img src="logo.jpeg" alt="Logo Kactus" class="w-full h-full object-contain rounded-lg" onerror="this.src='logo.jpg';">
+      <!-- Logo y Nombre Estilo Ayenda -->
+      <a href="#" class="flex items-center gap-2.5 group">
+        <div class="w-9 h-9 bg-emerald-600 rounded-xl flex items-center justify-center text-white shadow-md font-black text-base transform group-hover:scale-105 transition-transform">
+          K
         </div>
-        <div>
-          <span class="font-black text-lg tracking-tight text-white block leading-none">Hostal Kactus</span>
-          <span class="text-[10px] text-amber-400 font-bold uppercase tracking-widest">Caraz · Perú</span>
-        </div>
+        <span class="font-extrabold text-xl tracking-tight text-slate-900">Hostal Kactus</span>
       </a>
 
-      <!-- Selectores de Idioma Elegantes Integrados -->
-      <div class="flex items-center gap-1.5 bg-slate-800/80 p-1 rounded-full border border-slate-700">
-        <button class="lang-btn active px-3 py-1 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 bg-kactus-600 text-white shadow-xs" id="btn-es" onclick="changeLanguage('es')">
-          <img src="https://flagcdn.com/w40/es.png" alt="ES" class="w-3.5 h-2.5 object-cover rounded-xs">
-          <span>ES</span>
-        </button>
-        <button class="lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 text-slate-300 hover:text-white hover:bg-slate-700" id="btn-en" onclick="changeLanguage('en')">
-          <img src="https://flagcdn.com/w40/gb.png" alt="EN" class="w-3.5 h-2.5 object-cover rounded-xs">
-          <span>EN</span>
-        </button>
-        <button class="lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 text-slate-300 hover:text-white hover:bg-slate-700" id="btn-fr" onclick="changeLanguage('fr')">
-          <img src="https://flagcdn.com/w40/fr.png" alt="FR" class="w-3.5 h-2.5 object-cover rounded-xs">
-          <span>FR</span>
-        </button>
-        <button class="lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 text-slate-300 hover:text-white hover:bg-slate-700" id="btn-cs" onclick="changeLanguage('cs')">
-          <img src="https://flagcdn.com/w40/cz.png" alt="CS" class="w-3.5 h-2.5 object-cover rounded-xs">
-          <span>CS</span>
-        </button>
-        <button class="lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 text-slate-300 hover:text-white hover:bg-slate-700" id="btn-zh" onclick="changeLanguage('zh')">
-          <img src="https://flagcdn.com/w40/cn.png" alt="ZH" class="w-3.5 h-2.5 object-cover rounded-xs">
-          <span>中文</span>
-        </button>
+      <!-- Iconos y Botones Superiores Derecha (Selector de Idiomas y Accesos) -->
+      <div class="flex items-center gap-3">
+        <!-- Selector de Idioma Minimalista -->
+        <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-full border border-slate-200">
+          <button class="lang-btn active px-2.5 py-1 rounded-full text-[11px] font-bold transition-all flex items-center gap-1 bg-emerald-600 text-white shadow-xs" id="btn-es" onclick="changeLanguage('es')">
+            <img src="https://flagcdn.com/w40/es.png" alt="ES" class="w-3.5 h-2.5 object-cover rounded-xs">
+            <span>ES</span>
+          </button>
+          <button class="lang-btn px-2.5 py-1 rounded-full text-[11px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900" id="btn-en" onclick="changeLanguage('en')">
+            <img src="https://flagcdn.com/w40/gb.png" alt="EN" class="w-3.5 h-2.5 object-cover rounded-xs">
+            <span>EN</span>
+          </button>
+          <button class="lang-btn px-2.5 py-1 rounded-full text-[11px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900" id="btn-fr" onclick="changeLanguage('fr')">
+            <img src="https://flagcdn.com/w40/fr.png" alt="FR" class="w-3.5 h-2.5 object-cover rounded-xs">
+            <span>FR</span>
+          </button>
+          <button class="lang-btn px-2.5 py-1 rounded-full text-[11px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900" id="btn-cs" onclick="changeLanguage('cs')">
+            <img src="https://flagcdn.com/w40/cz.png" alt="CS" class="w-3.5 h-2.5 object-cover rounded-xs">
+            <span>CS</span>
+          </button>
+          <button class="lang-btn px-2.5 py-1 rounded-full text-[11px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900" id="btn-zh" onclick="changeLanguage('zh')">
+            <img src="https://flagcdn.com/w40/cn.png" alt="ZH" class="w-3.5 h-2.5 object-cover rounded-xs">
+            <span>中文</span>
+          </button>
+        </div>
+
+        <a href="#title-guide" class="hidden sm:flex items-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-full text-xs font-bold transition-colors">
+          <i class="fas fa-key text-emerald-600"></i> <span id="nav-code-text">Código de Huésped</span>
+        </a>
       </div>
 
     </div>
   </nav>
 
-  <!-- Hero Section con Buscador Estilo Plataforma de Hoteles -->
-  <header class="relative bg-slate-900 text-white py-16 px-4 overflow-hidden">
+  <!-- BANNER PRINCIPAL CON BUSCADOR FLOTANTE EXACTO ESTILO AYENDA -->
+  <header class="relative bg-slate-900 text-white py-20 px-4 overflow-hidden">
     <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('https://lh3.googleusercontent.com/d/1306fD7zgATU2P_1JwTWkWpq-lukMtejG');"></div>
-    <div class="relative z-10 max-w-5xl mx-auto text-center space-y-4">
-      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight" id="hero-title">Tu próximo viaje comienza aquí</h1>
-      <p class="text-slate-300 text-sm md:text-lg max-w-xl mx-auto" id="hero-subtitle">Encuentra el descanso ideal en Caraz con la mejor comodidad y ubicación.</p>
+    
+    <div class="relative z-10 max-w-5xl mx-auto text-center space-y-4 mb-10">
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight max-w-3xl mx-auto leading-tight" id="hero-title">
+        Habitaciones y hostales con la mejor tarifa directa en Caraz, Perú
+      </h1>
+      <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto" id="hero-subtitle">
+        Compara y reserva en línea con confirmación inmediata por WhatsApp al mejor precio garantizado.
+      </p>
     </div>
 
-    <!-- Barra Buscador Flotante -->
-    <div class="relative z-20 max-w-4xl mx-auto mt-8 bg-white text-slate-800 p-4 sm:p-5 rounded-2xl shadow-2xl border border-slate-200 grid grid-cols-1 sm:grid-cols-3 gap-4">
-      <div>
-        <label class="block text-[11px] font-extrabold text-slate-500 uppercase tracking-wider mb-1" id="lbl-checkin">Llegada (Check-in)</label>
-        <input type="date" id="checkinDate" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs focus:ring-2 focus:ring-kactus-500 focus:bg-white">
+    <!-- Barra de Búsqueda Flotante Estilo Ayenda (Exacta) -->
+    <div class="relative z-20 max-w-4xl mx-auto bg-white text-slate-800 p-3 sm:p-4 rounded-2xl shadow-ayenda grid grid-cols-1 md:grid-cols-4 gap-3 items-center">
+      
+      <!-- Ubicación / Destino fijo -->
+      <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-xl border border-slate-200">
+        <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-sm">
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <div class="text-left overflow-hidden">
+          <span class="block text-[10px] font-extrabold text-slate-400 uppercase">Destino</span>
+          <span class="block text-xs font-bold text-slate-800 truncate">Caraz, Ancash, Perú</span>
+        </div>
       </div>
-      <div>
-        <label class="block text-[11px] font-extrabold text-slate-500 uppercase tracking-wider mb-1" id="lbl-checkout">Salida (Check-out)</label>
-        <input type="date" id="checkoutDate" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs focus:ring-2 focus:ring-kactus-500 focus:bg-white">
+
+      <!-- Fecha Entrada -->
+      <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-200">
+        <label class="block text-[10px] font-extrabold text-slate-400 uppercase mb-0.5" id="lbl-checkin">Día de entrada</label>
+        <input type="date" id="checkinDate" class="w-full bg-transparent text-xs font-bold text-slate-800 focus:outline-none">
       </div>
-      <div class="flex items-end">
-        <button onclick="sendCustomReservation()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-4 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2">
-          <i class="fab fa-whatsapp text-base"></i> <span id="btn-search-whatsapp">Consultar Disponibilidad</span>
+
+      <!-- Fecha Salida -->
+      <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-200">
+        <label class="block text-[10px] font-extrabold text-slate-400 uppercase mb-0.5" id="lbl-checkout">Día de salida</label>
+        <input type="date" id="checkoutDate" class="w-full bg-transparent text-xs font-bold text-slate-800 focus:outline-none">
+      </div>
+
+      <!-- Botón de Acción Principal Verde Ayenda -->
+      <div>
+        <button onclick="sendCustomReservation()" class="w-full bg-emerald-500 hover:bg-emerald-600 active:scale-95 text-white font-extrabold py-3.5 px-4 rounded-xl text-xs transition-all shadow-md shadow-emerald-500/20 flex items-center justify-center gap-2">
+          <i class="fab fa-whatsapp text-base"></i> <span id="btn-search-prices">Ver precios y reservar</span>
         </button>
       </div>
+
+    </div>
+
+    <!-- Garantías debajo del buscador -->
+    <div class="relative z-10 max-w-3xl mx-auto mt-6 flex flex-wrap justify-center gap-6 text-[11px] font-bold text-slate-300">
+      <span class="flex items-center gap-1.5"><i class="fas fa-check-circle text-emerald-400"></i> Sin costos de cancelación</span>
+      <span class="flex items-center gap-1.5"><i class="fas fa-shield-halved text-emerald-400"></i> Mejor precio garantizado</span>
     </div>
   </header>
 
   <main class="max-w-7xl mx-auto px-4 sm:px-6 mt-12 space-y-16">
 
-    <!-- Sección de Calificaciones tipo Tarjetas Superiores -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
-      <a href="https://www.booking.com/hotel/pe/kactus-hostal-caraz.es.html" target="_blank" rel="noopener" class="card-glass p-4 rounded-2xl shadow-xs hover:shadow-card-hover transition-all flex items-center gap-4 group">
-        <div class="w-10 h-10 bg-blue-600 text-white rounded-xl flex items-center justify-center font-black text-sm shadow-sm group-hover:scale-105">8.9</div>
+    <!-- Tarjetas de Calificación Superiores -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto">
+      <a href="https://www.booking.com/hotel/pe/kactus-hostal-caraz.es.html" target="_blank" rel="noopener" class="ayenda-card p-4 shadow-card hover:shadow-lg transition-all flex items-center gap-3.5 group">
+        <div class="w-10 h-10 bg-blue-600 text-white rounded-xl flex items-center justify-center font-black text-sm shadow-sm">8.9</div>
         <div>
-          <div class="text-[11px] font-bold text-slate-400 uppercase">Booking.com</div>
-          <div class="text-xs font-extrabold text-slate-800" id="badge-booking">Fabuloso · Excelente Ubicación</div>
+          <div class="text-[10px] font-extrabold text-slate-400 uppercase">Booking.com</div>
+          <div class="text-xs font-extrabold text-slate-900" id="badge-booking">Fabuloso · Excelente Ubicación</div>
         </div>
       </a>
-      <a href="https://maps.google.com" target="_blank" rel="noopener" class="card-glass p-4 rounded-2xl shadow-xs hover:shadow-card-hover transition-all flex items-center gap-4 group">
-        <div class="w-10 h-10 bg-amber-500 text-white rounded-xl flex items-center justify-center text-sm shadow-sm group-hover:scale-105"><i class="fas fa-star"></i></div>
+      <a href="https://maps.google.com" target="_blank" rel="noopener" class="ayenda-card p-4 shadow-card hover:shadow-lg transition-all flex items-center gap-3.5 group">
+        <div class="w-10 h-10 bg-amber-500 text-white rounded-xl flex items-center justify-center text-sm shadow-sm"><i class="fas fa-star"></i></div>
         <div>
-          <div class="text-[11px] font-bold text-slate-400 uppercase">Google Maps</div>
-          <div class="text-xs font-extrabold text-slate-800">5.0 / 5.0 ⭐⭐⭐⭐⭐</div>
+          <div class="text-[10px] font-extrabold text-slate-400 uppercase">Google Maps</div>
+          <div class="text-xs font-extrabold text-slate-900">5.0 / 5.0 ⭐⭐⭐⭐⭐</div>
         </div>
       </a>
     </div>
 
-    <!-- SECCIÓN 1: NUESTRAS HABITACIONES (Formato Cuadrícula de 4 columnas / Tarjetas Estilo Hoteles.com) -->
+    <!-- SECCIÓN 1: NUESTRAS HABITACIONES (Estilo Tarjeta Moderna Ayenda) -->
     <section>
       <div class="flex items-center justify-between mb-6">
         <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight" id="title-rooms">Nuestras Habitaciones</h2>
-        <span class="text-xs font-bold text-kactus-700 bg-kactus-50 px-3 py-1 rounded-full border border-kactus-200" id="rooms-badge">Garantía Mejor Precio Directo</span>
+        <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200" id="rooms-badge">Tarifa Directa Garantizada</span>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         
-        <!-- Habitación 1 -->
-        <div class="card-glass rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col group">
-          <div class="relative w-full h-56 bg-slate-900 overflow-hidden" id="carousel1">
+        <!-- Habitación 1: ECONÓMICA (Con foto estética renovada) -->
+        <div class="ayenda-card overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 flex flex-col group">
+          <div class="relative w-full h-60 bg-slate-900 overflow-hidden" id="carousel1">
             <div class="absolute top-3 left-3 z-20 bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-black px-3 py-1 rounded-full shadow-xs border border-white/20" id="room1-tag">
               ECONÓMICA & CONFORT
             </div>
             
             <div class="carousel-slide w-full h-full">
-              <!-- Foto Principal Estética -->
-              <img src="https://lh3.googleusercontent.com/d/1306fD7zgATU2P_1JwTWkWpq-lukMtejG" alt="Habitación Económica" class="w-full h-full object-cover shrink-0">
-              <!-- Tarjeta Banner Área Protegida -->
-              <div class="w-full h-full shrink-0 bg-gradient-to-br from-slate-900 to-amber-950 text-white p-6 flex flex-col items-center justify-center text-center space-y-3">
+              <!-- Foto Estética Renovada -->
+              <img src="https://lh3.googleusercontent.com/d/1xAPzvxsRh7d5ftObKRHJ54-Pg5DKO7zs" alt="Habitación Económica" class="w-full h-full object-cover shrink-0">
+              <!-- Banner Área Protegida Interna -->
+              <div class="w-full h-full shrink-0 bg-gradient-to-br from-slate-900 to-emerald-950 text-white p-6 flex flex-col items-center justify-center text-center space-y-3">
                 <div class="w-10 h-10 bg-amber-400 text-slate-950 rounded-xl flex items-center justify-center font-black text-lg animate-bounce">
                   <i class="fas fa-key"></i>
                 </div>
-                <h4 class="font-extrabold text-xs text-amber-300">¿Ya tienes reserva?</h4>
+                <h4 class="font-extrabold text-xs text-amber-300">¿Ya tienes tu reserva?</h4>
                 <p class="text-[11px] text-slate-200">Ingresa tu código en la guía privada para ver precios y servicios exclusivos.</p>
                 <a href="#title-guide" class="bg-amber-400 text-slate-950 text-[10px] font-black py-1.5 px-4 rounded-full shadow-md">Ir a Área Privada</a>
               </div>
             </div>
 
-            <button aria-label="Anterior" onclick="moveSlide('carousel1', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-kactus-600 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-left text-xs"></i></button>
-            <button aria-label="Siguiente" onclick="moveSlide('carousel1', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-kactus-600 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-right text-xs"></i></button>
+            <button aria-label="Anterior" onclick="moveSlide('carousel1', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-left text-xs"></i></button>
+            <button aria-label="Siguiente" onclick="moveSlide('carousel1', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-right text-xs"></i></button>
             <div class="carousel-dots absolute bottom-3 left-0 right-0 flex justify-center gap-1.5 z-10">
-              <span class="w-2.5 h-2.5 rounded-full bg-kactus-500 cursor-pointer shadow-xs" onclick="setSlide('carousel1', 0)"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 cursor-pointer shadow-xs" onclick="setSlide('carousel1', 0)"></span>
               <span class="w-2 h-2 rounded-full bg-white/70 cursor-pointer" onclick="setSlide('carousel1', 1)"></span>
             </div>
           </div>
@@ -194,18 +221,18 @@
             <div>
               <h3 class="text-lg font-extrabold text-slate-900 mb-1.5" id="room1-title">Habitación Matrimonial Económica</h3>
               <p class="text-slate-600 text-xs leading-relaxed" id="room1-desc">Habitación pequeña y acogedora con cama de 2 plazas. Ideal para parejas o viajeros solos.</p>
-              <div class="text-2xl font-black text-kactus-700 mt-4 flex items-baseline gap-1">S/ 35.00 <span class="text-[11px] font-semibold text-slate-400" id="per-night-1">promedio por noche</span></div>
+              <div class="text-2xl font-black text-emerald-600 mt-4 flex items-baseline gap-1">S/ 35.00 <span class="text-[11px] font-semibold text-slate-400" id="per-night-1">promedio por noche</span></div>
             </div>
-            <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20deseo%20reservar%20la%20Habitación%20Matrimonial%20Económica%20(S/%2035)" target="_blank" rel="noopener" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2">
+            <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20deseo%20reservar%20la%20Habitación%20Matrimonial%20Económica%20(S/%2035)" target="_blank" rel="noopener" class="w-full bg-emerald-500 hover:bg-emerald-600 active:scale-95 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2">
               <i class="fab fa-whatsapp text-base"></i> <span class="btn-res-text">Reservar por WhatsApp</span>
             </a>
           </div>
         </div>
 
-        <!-- Habitación 2 -->
-        <div class="card-glass rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col group">
-          <div class="relative w-full h-56 bg-slate-900 overflow-hidden" id="carousel2">
-            <div class="absolute top-3 left-3 z-20 bg-kactus-600 text-white text-[10px] font-black px-3 py-1 rounded-full shadow-xs border border-white/20" id="room2-tag">
+        <!-- Habitación 2: MEDIANA -->
+        <div class="ayenda-card overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 flex flex-col group">
+          <div class="relative w-full h-60 bg-slate-900 overflow-hidden" id="carousel2">
+            <div class="absolute top-3 left-3 z-20 bg-emerald-600 text-white text-[10px] font-black px-3 py-1 rounded-full shadow-xs border border-white/20" id="room2-tag">
               MÁS POPULAR
             </div>
             <div class="carousel-slide w-full h-full">
@@ -213,10 +240,10 @@
               <img src="https://lh3.googleusercontent.com/d/1306fD7zgATU2P_1JwTWkWpq-lukMtejG" alt="Habitación Mediana 2" class="w-full h-full object-cover shrink-0">
               <img src="https://lh3.googleusercontent.com/d/1xAPzvxsRh7d5ftObKRHJ54-Pg5DKO7zs" alt="Habitación Mediana 3" class="w-full h-full object-cover shrink-0">
             </div>
-            <button aria-label="Anterior" onclick="moveSlide('carousel2', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-kactus-600 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-left text-xs"></i></button>
-            <button aria-label="Siguiente" onclick="moveSlide('carousel2', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-kactus-600 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-right text-xs"></i></button>
+            <button aria-label="Anterior" onclick="moveSlide('carousel2', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-left text-xs"></i></button>
+            <button aria-label="Siguiente" onclick="moveSlide('carousel2', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-right text-xs"></i></button>
             <div class="carousel-dots absolute bottom-3 left-0 right-0 flex justify-center gap-1.5 z-10">
-              <span class="w-2.5 h-2.5 rounded-full bg-kactus-500 cursor-pointer shadow-xs" onclick="setSlide('carousel2', 0)"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 cursor-pointer shadow-xs" onclick="setSlide('carousel2', 0)"></span>
               <span class="w-2 h-2 rounded-full bg-white/70 cursor-pointer" onclick="setSlide('carousel2', 1)"></span>
               <span class="w-2 h-2 rounded-full bg-white/70 cursor-pointer" onclick="setSlide('carousel2', 2)"></span>
             </div>
@@ -225,9 +252,9 @@
             <div>
               <h3 class="text-lg font-extrabold text-slate-900 mb-1.5" id="room2-title">Habitación Matrimonial Mediana</h3>
               <p class="text-slate-600 text-xs leading-relaxed" id="room2-desc">Habitación espaciosa con cama de 2 plazas, gran iluminación natural y armario.</p>
-              <div class="text-2xl font-black text-kactus-700 mt-4 flex items-baseline gap-1">S/ 45.00 <span class="text-[11px] font-semibold text-slate-400" id="per-night-2">promedio por noche</span></div>
+              <div class="text-2xl font-black text-emerald-600 mt-4 flex items-baseline gap-1">S/ 45.00 <span class="text-[11px] font-semibold text-slate-400" id="per-night-2">promedio por noche</span></div>
             </div>
-            <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20deseo%20reservar%20la%20Habitación%20Matrimonial%20Mediana%20(S/%2045)" target="_blank" rel="noopener" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2">
+            <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20deseo%20reservar%20la%20Habitación%20Matrimonial%20Mediana%20(S/%2045)" target="_blank" rel="noopener" class="w-full bg-emerald-500 hover:bg-emerald-600 active:scale-95 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2">
               <i class="fab fa-whatsapp text-base"></i> <span class="btn-res-text">Reservar por WhatsApp</span>
             </a>
           </div>
@@ -236,13 +263,13 @@
       </div>
     </section>
 
-    <!-- SECCIÓN 2: ALQUILER DE EQUIPOS (Formato Tarjetas Tipo Destino de Viaje sin Precios Públicos) -->
+    <!-- SECCIÓN 2: ALQUILER DE EQUIPOS (Sin Precios Públicos) -->
     <section>
       <div class="flex items-center justify-between mb-6">
         <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight" id="title-camping">Alquiler de Equipos de Camping y Trekking</h2>
       </div>
 
-      <div class="card-glass p-6 rounded-3xl shadow-card space-y-6">
+      <div class="ayenda-card p-6 shadow-card space-y-6">
         <div class="bg-slate-900 text-white p-5 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
             <h4 class="font-extrabold text-sm text-amber-300">🧗‍♂️ Equipamiento Profesional para Montaña</h4>
@@ -260,7 +287,7 @@
               <img src="https://lh3.googleusercontent.com/d/1306fD7zgATU2P_1JwTWkWpq-lukMtejG" alt="Carpa" class="w-full h-full object-cover">
             </div>
             <div>
-              <div class="font-bold text-slate-900 text-xs flex items-center gap-1.5"><i class="fas fa-campground text-kactus-600"></i> Carpa 3 Estaciones</div>
+              <div class="font-bold text-slate-900 text-xs flex items-center gap-1.5"><i class="fas fa-campground text-emerald-600"></i> Carpa 3 Estaciones</div>
               <p class="text-[11px] text-slate-500 mt-0.5">Carpa resistente para alta montaña.</p>
             </div>
           </div>
@@ -270,7 +297,7 @@
               <img src="https://lh3.googleusercontent.com/d/1DQW5MV5ORQ2VWNBnQ3nlC4eTb0Sktw4y" alt="Saco" class="w-full h-full object-cover">
             </div>
             <div>
-              <div class="font-bold text-slate-900 text-xs flex items-center gap-1.5"><i class="fas fa-bed text-kactus-600"></i> Saco de Dormir Pluma</div>
+              <div class="font-bold text-slate-900 text-xs flex items-center gap-1.5"><i class="fas fa-bed text-emerald-600"></i> Saco de Dormir Pluma</div>
               <p class="text-[11px] text-slate-500 mt-0.5">Pluma de alta resistencia (-5°C a -20°C).</p>
             </div>
           </div>
@@ -280,7 +307,7 @@
               <img src="https://lh3.googleusercontent.com/d/1xAPzvxsRh7d5ftObKRHJ54-Pg5DKO7zs" alt="Bastones" class="w-full h-full object-cover">
             </div>
             <div>
-              <div class="font-bold text-slate-900 text-xs flex items-center gap-1.5"><i class="fas fa-hiking text-kactus-600"></i> Bastones de Trekking</div>
+              <div class="font-bold text-slate-900 text-xs flex items-center gap-1.5"><i class="fas fa-hiking text-emerald-600"></i> Bastones de Trekking</div>
               <p class="text-[11px] text-slate-500 mt-0.5">Par de bastones ergonómicos.</p>
             </div>
           </div>
@@ -290,7 +317,7 @@
               <img src="https://lh3.googleusercontent.com/d/1306fD7zgATU2P_1JwTWkWpq-lukMtejG" alt="Binoculares" class="w-full h-full object-cover">
             </div>
             <div>
-              <div class="font-bold text-slate-900 text-xs flex items-center gap-1.5"><i class="fas fa-binoculars text-kactus-600"></i> Largavistas / Binoculares</div>
+              <div class="font-bold text-slate-900 text-xs flex items-center gap-1.5"><i class="fas fa-binoculars text-emerald-600"></i> Largavistas / Binoculares</div>
               <p class="text-[11px] text-slate-500 mt-0.5">Observación de nevados y paisajes.</p>
             </div>
           </div>
@@ -300,7 +327,7 @@
               <img src="https://lh3.googleusercontent.com/d/1DQW5MV5ORQ2VWNBnQ3nlC4eTb0Sktw4y" alt="Cocina" class="w-full h-full object-cover">
             </div>
             <div>
-              <div class="font-bold text-slate-900 text-xs flex items-center gap-1.5"><i class="fas fa-fire-burner text-kactus-600"></i> Cocina de Campaña</div>
+              <div class="font-bold text-slate-900 text-xs flex items-center gap-1.5"><i class="fas fa-fire-burner text-emerald-600"></i> Cocina de Campaña</div>
               <p class="text-[11px] text-slate-500 mt-0.5">Incluye utensilios de cocina.</p>
             </div>
           </div>
@@ -310,7 +337,7 @@
               <img src="https://lh3.googleusercontent.com/d/1xAPzvxsRh7d5ftObKRHJ54-Pg5DKO7zs" alt="Gas" class="w-full h-full object-cover">
             </div>
             <div>
-              <div class="font-bold text-slate-900 text-xs flex items-center gap-1.5"><i class="fas fa-gas-pump text-kactus-600"></i> Balón de Gas Nuevo</div>
+              <div class="font-bold text-slate-900 text-xs flex items-center gap-1.5"><i class="fas fa-gas-pump text-emerald-600"></i> Balón de Gas Nuevo</div>
               <p class="text-[11px] text-slate-500 mt-0.5">Balón sellado para montaña.</p>
             </div>
           </div>
@@ -322,44 +349,44 @@
     <section>
       <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-6" id="title-services">Servicios e Instalaciones</h2>
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <div class="card-glass p-4 rounded-2xl text-center shadow-xs hover:shadow-card transition-all">
-          <i class="fas fa-bath text-2xl text-kactus-600 mb-2"></i>
+        <div class="ayenda-card p-4 text-center shadow-xs hover:shadow-md transition-all">
+          <i class="fas fa-bath text-2xl text-emerald-600 mb-2"></i>
           <p id="s-bath" class="text-xs font-bold text-slate-800">Baño Privado</p>
         </div>
-        <div class="card-glass p-4 rounded-2xl text-center shadow-xs hover:shadow-card transition-all">
-          <i class="fas fa-hot-tub text-2xl text-kactus-600 mb-2"></i>
+        <div class="ayenda-card p-4 text-center shadow-xs hover:shadow-md transition-all">
+          <i class="fas fa-hot-tub text-2xl text-emerald-600 mb-2"></i>
           <p id="s-water" class="text-xs font-bold text-slate-800">Agua Caliente 24/7</p>
         </div>
-        <div class="card-glass p-4 rounded-2xl text-center shadow-xs hover:shadow-card transition-all">
-          <i class="fas fa-tv text-2xl text-kactus-600 mb-2"></i>
+        <div class="ayenda-card p-4 text-center shadow-xs hover:shadow-md transition-all">
+          <i class="fas fa-tv text-2xl text-emerald-600 mb-2"></i>
           <p id="s-tv" class="text-xs font-bold text-slate-800">TV Smart</p>
         </div>
-        <div class="card-glass p-4 rounded-2xl text-center shadow-xs hover:shadow-card transition-all">
-          <i class="fas fa-wifi text-2xl text-kactus-600 mb-2"></i>
+        <div class="ayenda-card p-4 text-center shadow-xs hover:shadow-md transition-all">
+          <i class="fas fa-wifi text-2xl text-emerald-600 mb-2"></i>
           <p id="s-wifi" class="text-xs font-bold text-slate-800">Wi-Fi Gratis</p>
         </div>
-        <div class="card-glass p-4 rounded-2xl text-center shadow-xs hover:shadow-card transition-all">
-          <i class="fas fa-parking text-2xl text-kactus-600 mb-2"></i>
+        <div class="ayenda-card p-4 text-center shadow-xs hover:shadow-md transition-all">
+          <i class="fas fa-parking text-2xl text-emerald-600 mb-2"></i>
           <p id="s-parking" class="text-xs font-bold text-slate-800">Estacionamiento Gratis</p>
         </div>
-        <div class="card-glass p-4 rounded-2xl text-center shadow-xs hover:shadow-card transition-all">
-          <i class="fas fa-suitcase text-2xl text-kactus-600 mb-2"></i>
+        <div class="ayenda-card p-4 text-center shadow-xs hover:shadow-md transition-all">
+          <i class="fas fa-suitcase text-2xl text-emerald-600 mb-2"></i>
           <p id="s-luggage" class="text-xs font-bold text-slate-800">Guardado de Equipaje</p>
         </div>
-        <div class="card-glass p-4 rounded-2xl text-center shadow-xs hover:shadow-card transition-all">
-          <i class="fas fa-utensils text-2xl text-kactus-600 mb-2"></i>
+        <div class="ayenda-card p-4 text-center shadow-xs hover:shadow-md transition-all">
+          <i class="fas fa-utensils text-2xl text-emerald-600 mb-2"></i>
           <p id="s-kitchen" class="text-xs font-bold text-slate-800">Cocina Compartida</p>
         </div>
-        <div class="card-glass p-4 rounded-2xl text-center shadow-xs hover:shadow-card transition-all">
-          <i class="fas fa-coffee text-2xl text-kactus-600 mb-2"></i>
+        <div class="ayenda-card p-4 text-center shadow-xs hover:shadow-md transition-all">
+          <i class="fas fa-coffee text-2xl text-emerald-600 mb-2"></i>
           <p id="s-breakfast" class="text-xs font-bold text-slate-800">Desayunos</p>
         </div>
       </div>
     </section>
 
-    <!-- SECCIÓN 4: GUÍA TURÍSTICA Y ÁREA PRIVADA CON CONTRASEÑA -->
+    <!-- SECCIÓN 4: GUÍA TURÍSTICA Y ÁREA PRIVADA (Protegida) -->
     <section class="mb-12">
-      <div class="card-glass p-6 sm:p-8 rounded-3xl shadow-card space-y-6">
+      <div class="ayenda-card p-6 sm:p-8 shadow-card space-y-6">
         <div>
           <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-2" id="title-guide">Guía Turística de Caraz & Área Privada</h2>
           <p id="g-pub-desc" class="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -378,22 +405,22 @@
           
           <div class="flex flex-col sm:flex-row gap-3 max-w-md">
             <input type="password" id="passInput" placeholder="Contraseña de huésped" onkeypress="handleKey(event)" class="px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs flex-1 bg-white">
-            <button onclick="unlockGuide()" id="btn-unlock-text" class="bg-kactus-600 hover:bg-kactus-700 text-white font-bold py-2.5 px-5 rounded-xl text-xs shadow-md">Desbloquear Guía</button>
+            <button onclick="unlockGuide()" id="btn-unlock-text" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-5 rounded-xl text-xs shadow-md">Desbloquear Guía</button>
           </div>
 
           <!-- CONTENIDO PRIVADO DESBLOQUEABLE -->
-          <div id="secretGuide" class="hidden mt-6 bg-slate-50 p-6 rounded-2xl border-2 border-dashed border-kactus-500 space-y-6">
+          <div id="secretGuide" class="hidden mt-6 bg-slate-50 p-6 rounded-2xl border-2 border-dashed border-emerald-500 space-y-6">
             
             <!-- PRECIOS DE EQUIPOS (Privado) -->
             <div class="bg-white p-5 rounded-xl border border-slate-200 space-y-4">
               <h4 class="font-extrabold text-sm text-slate-900">🏷️ Tarifas de Alquiler de Equipos (Exclusivo Huéspedes)</h4>
               <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs">
-                <div class="p-3 bg-kactus-50 rounded-lg flex justify-between"><span>Carpa 3 Estaciones</span><strong class="text-kactus-800">S/ 25.00 /día</strong></div>
-                <div class="p-3 bg-kactus-50 rounded-lg flex justify-between"><span>Saco de Dormir Pluma</span><strong class="text-kactus-800">S/ 25.00 /día</strong></div>
-                <div class="p-3 bg-kactus-50 rounded-lg flex justify-between"><span>Bastones de Trekking</span><strong class="text-kactus-800">S/ 5.00 /día</strong></div>
-                <div class="p-3 bg-kactus-50 rounded-lg flex justify-between"><span>Largavistas</span><strong class="text-kactus-800">S/ 4.00 /día</strong></div>
-                <div class="p-3 bg-kactus-50 rounded-lg flex justify-between"><span>Cocina de Campaña</span><strong class="text-kactus-800">S/ 8.00 /día</strong></div>
-                <div class="p-3 bg-kactus-50 rounded-lg flex justify-between"><span>Balón de Gas Nuevo</span><strong class="text-kactus-800">S/ 33.00</strong></div>
+                <div class="p-3 bg-emerald-50 rounded-lg flex justify-between"><span>Carpa 3 Estaciones</span><strong class="text-emerald-800">S/ 25.00 /día</strong></div>
+                <div class="p-3 bg-emerald-50 rounded-lg flex justify-between"><span>Saco de Dormir Pluma</span><strong class="text-emerald-800">S/ 25.00 /día</strong></div>
+                <div class="p-3 bg-emerald-50 rounded-lg flex justify-between"><span>Bastones de Trekking</span><strong class="text-emerald-800">S/ 5.00 /día</strong></div>
+                <div class="p-3 bg-emerald-50 rounded-lg flex justify-between"><span>Largavistas</span><strong class="text-emerald-800">S/ 4.00 /día</strong></div>
+                <div class="p-3 bg-emerald-50 rounded-lg flex justify-between"><span>Cocina de Campaña</span><strong class="text-emerald-800">S/ 8.00 /día</strong></div>
+                <div class="p-3 bg-emerald-50 rounded-lg flex justify-between"><span>Balón de Gas Nuevo</span><strong class="text-emerald-800">S/ 33.00</strong></div>
               </div>
             </div>
 
@@ -401,7 +428,7 @@
             <div class="bg-white p-5 rounded-xl border border-slate-200 space-y-4">
               <h4 class="font-extrabold text-sm text-slate-900">⛰️ Opciones y Costos a Laguna Parón</h4>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-slate-700">
-                <div class="p-4 bg-kactus-50 rounded-xl border border-kactus-200 space-y-2">
+                <div class="p-4 bg-emerald-50 rounded-xl border border-emerald-200 space-y-2">
                   <strong class="text-slate-900 block font-bold">Salida Privada Kactus</strong>
                   <p>• <strong>Precio:</strong> S/ 40.00 por persona (Mín. 4).</p>
                   <p>• <strong>Espera:</strong> 2 horas completas en la laguna.</p>
@@ -428,11 +455,11 @@
   </main>
 
   <!-- Barra inferior fija para reservas -->
-  <div class="fixed bottom-0 left-0 right-0 bg-slate-900/95 backdrop-blur-md border-t border-slate-800 p-3 px-6 flex justify-between items-center z-50 text-white">
+  <div class="fixed bottom-0 left-0 right-0 bg-slate-900/95 backdrop-blur-md border-t border-slate-800 p-3.5 px-6 flex justify-between items-center z-50 text-white">
     <div class="text-xs">
-      <span class="text-slate-400" id="stk-from">Desde</span> <strong class="text-base text-amber-400 font-black">S/ 35.00</strong>
+      <span class="text-slate-400" id="stk-from">Desde</span> <strong class="text-base text-emerald-400 font-black">S/ 35.00</strong>
     </div>
-    <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20quisiera%20consultar%20disponibilidad" target="_blank" rel="noopener" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-5 rounded-xl text-xs shadow-md flex items-center gap-2">
+    <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20quisiera%20consultar%20disponibilidad" target="_blank" rel="noopener" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-2.5 px-5 rounded-xl text-xs shadow-md flex items-center gap-2">
       <i class="fab fa-whatsapp text-sm"></i> <span id="stk-btn">Reservar Ahora</span>
     </a>
   </div>
@@ -451,10 +478,10 @@
       
       dots.forEach((dot, idx) => {
         if (idx === slideIndexes[carouselId]) {
-          dot.classList.add('bg-kactus-500', 'w-3');
+          dot.classList.add('bg-emerald-500', 'w-3');
           dot.classList.remove('bg-white/70', 'w-2');
         } else {
-          dot.classList.remove('bg-kactus-500', 'w-3');
+          dot.classList.remove('bg-emerald-500', 'w-3');
           dot.classList.add('bg-white/70', 'w-2');
         }
       });
@@ -470,10 +497,10 @@
       
       dots.forEach((dot, idx) => {
         if (idx === index) {
-          dot.classList.add('bg-kactus-500', 'w-3');
+          dot.classList.add('bg-emerald-500', 'w-3');
           dot.classList.remove('bg-white/70', 'w-2');
         } else {
-          dot.classList.remove('bg-kactus-500', 'w-3');
+          dot.classList.remove('bg-emerald-500', 'w-3');
           dot.classList.add('bg-white/70', 'w-2');
         }
       });
@@ -507,14 +534,14 @@
 
     const translations = {
       es: {
-        heroTitle: "Tu próximo viaje comienza aquí",
-        heroSubtitle: "Encuentra el descanso ideal en Caraz con la mejor comodidad y ubicación.",
-        lblCheckin: "Llegada (Check-in)",
-        lblCheckout: "Salida (Check-out)",
-        btnSearchWhatsapp: "Consultar Disponibilidad",
+        heroTitle: "Habitaciones y hostales con la mejor tarifa directa en Caraz, Perú",
+        heroSubtitle: "Compara y reserva en línea con confirmación inmediata por WhatsApp al mejor precio garantizado.",
+        lblCheckin: "Día de entrada",
+        lblCheckout: "Día de salida",
+        btnSearchPrices: "Ver precios y reservar",
         badgeBooking: "Fabuloso · Excelente Ubicación",
         titleRooms: "Nuestras Habitaciones",
-        roomsBadge: "Garantía Mejor Precio Directo",
+        roomsBadge: "Tarifa Directa Garantizada",
         room1Tag: "ECONÓMICA & CONFORT",
         room1Title: "Habitación Matrimonial Económica",
         room1Desc: "Habitación pequeña y acogedora con cama de 2 plazas. Ideal para parejas o viajeros solos.",
@@ -531,17 +558,17 @@
         gPubDesc: "📍 <strong>Laguna Parón:</strong> La laguna turquesa más grande de la Cordillera Blanca.<br>📍 <strong>Laguna Llanganuco y Laguna 69:</strong> Vistas espectaculares de los nevados Huascarán y Chopicalqui.",
         gPrivDesc: "Ingresa la clave proporcionada en recepción para ver los precios protegidos y guías de emergencia:",
         btnUnlockText: "Desbloquear Guía", passPlaceholder: "Contraseña de huésped",
-        stkFrom: "Desde", stkBtn: "Reservar Ahora"
+        stkFrom: "Desde", stkBtn: "Reservar Ahora", navCodeText: "Código de Huésped"
       },
       en: {
-        heroTitle: "Your next trip starts here",
-        heroSubtitle: "Find the ideal stay in Caraz with maximum comfort and great location.",
-        lblCheckin: "Check-in",
-        lblCheckout: "Check-out",
-        btnSearchWhatsapp: "Check Availability",
+        heroTitle: "Rooms and hostels with the best direct rate in Caraz, Peru",
+        heroSubtitle: "Compare and book online with instant WhatsApp confirmation at the best guaranteed price.",
+        lblCheckin: "Check-in date",
+        lblCheckout: "Check-out date",
+        btnSearchPrices: "View prices and book",
         badgeBooking: "Fabulous · Excellent Location",
         titleRooms: "Our Rooms",
-        roomsBadge: "Best Direct Price Guarantee",
+        roomsBadge: "Best Direct Rate Guaranteed",
         room1Tag: "ECONOMY & COMFORT",
         room1Title: "Economy Double Room",
         room1Desc: "Cozy small room with double bed. Ideal for couples or solo travelers.",
@@ -558,17 +585,17 @@
         gPubDesc: "📍 <strong>Parón Lake:</strong> The largest turquoise lagoon in the Cordillera Blanca.<br>📍 <strong>Llanganuco & Lake 69:</strong> Spectacular views of Huascarán and Chopicalqui.",
         gPrivDesc: "Enter the key provided at reception to view protected prices and emergency guides:",
         btnUnlockText: "Unlock Guide", passPlaceholder: "Guest password",
-        stkFrom: "From", stkBtn: "Book Now"
+        stkFrom: "From", stkBtn: "Book Now", navCodeText: "Guest Code"
       },
       fr: {
-        heroTitle: "Votre prochain voyage commence ici",
-        heroSubtitle: "Trouvez le séjour idéal à Caraz avec un confort optimal et un excellent emplacement.",
-        lblCheckin: "Arrivée",
-        lblCheckout: "Départ",
-        btnSearchWhatsapp: "Vérifier la Disponibilité",
+        heroTitle: "Chambres et auberges au meilleur tarif direct à Caraz, Pérou",
+        heroSubtitle: "Comparez et réservez en ligne avec confirmation WhatsApp immédiate au meilleur prix garanti.",
+        lblCheckin: "Date d'arrivée",
+        lblCheckout: "Date de départ",
+        btnSearchPrices: "Voir les prix et réserver",
         badgeBooking: "Fabuleux · Excellent Emplacement",
         titleRooms: "Nos Chambres",
-        roomsBadge: "Garantie Meilleur Prix Direct",
+        roomsBadge: "Meilleur Tarif Direct Garanti",
         room1Tag: "ÉCONOMIQUE & CONFORT",
         room1Title: "Chambre Double Économique",
         room1Desc: "Petite chambre douillette avec lit double. Idéale pour couples ou voyageurs solos.",
@@ -585,17 +612,17 @@
         gPubDesc: "📍 <strong>Lac Parón :</strong> Le plus grand lac turquoise de la Cordillère Blanche.<br>📍 <strong>Lacs Llanganuco & Lac 69 :</strong> Vues magnifiques sur les sommets Huascarán.",
         gPrivDesc: "Entrez le mot de passe fourni à la réception pour voir les prix protégés :",
         btnUnlockText: "Déverrouiller", passPlaceholder: "Mot de passe client",
-        stkFrom: "À partir de", stkBtn: "Réserver"
+        stkFrom: "À partir de", stkBtn: "Réserver", navCodeText: "Code Client"
       },
       cs: {
-        heroTitle: "Vaše příští cesta začíná zde",
-        heroSubtitle: "Najděte ideální pobyt v Carazu s maximálním pohodlím a skvělou polohou.",
-        lblCheckin: "Příjezd",
-        lblCheckout: "Odjezd",
-        btnSearchWhatsapp: "Ověřit dostupnost",
+        heroTitle: "Pokoje a hostely s nejlepší přímou sazbou v Carazu v Peru",
+        heroSubtitle: "Porovnejte a rezervujte online s okamžitým potvrzením přes WhatsApp za nejlepší zaručenou cenu.",
+        lblCheckin: "Datum příjezdu",
+        lblCheckout: "Datum odjezdu",
+        btnSearchPrices: "Zobrazit ceny a rezervovat",
         badgeBooking: "Báječné · Skvělá Lokalita",
         titleRooms: "Naše Pokoje",
-        roomsBadge: "Záruka nejlepší ceny",
+        roomsBadge: "Záruka nejlepší přímé ceny",
         room1Tag: "EKONOMICKÝ A POHODLÍ",
         room1Title: "Ekonomický Dvoulůžkový Pokoj",
         room1Desc: "Útulný malý pokoj s manželskou postelí. Ideální pro páry nebo sólo cestovatele.",
@@ -612,14 +639,14 @@
         gPubDesc: "📍 <strong>Jezero Parón:</strong> Největší tyrkysová laguna v Cordillera Blanca.<br>📍 <strong>Jezera Llanganuco a Laguna 69:</strong> Velkolepé výhledy na vrcholy Huascarán.",
         gPrivDesc: "Zadejte heslo obdržené na recepci pro zobrazení chráněných cen:",
         btnUnlockText: "Odemknout", passPlaceholder: "Heslo pro hosty",
-        stkFrom: "Od", stkBtn: "Rezervovat"
+        stkFrom: "Od", stkBtn: "Rezervovat", navCodeText: "Kód hosta"
       },
       zh: {
-        heroTitle: "您的下一段旅程从这里开始",
-        heroSubtitle: "在卡拉斯寻找最佳舒适度与优越地理位置的理想下榻之所。",
+        heroTitle: "秘鲁卡拉斯最佳直订价格的客房与旅馆",
+        heroSubtitle: "在线比较并预订，通过 WhatsApp 即时确认，享受最优价格保证。",
         lblCheckin: "入住日期",
         lblCheckout: "退房日期",
-        btnSearchWhatsapp: "查询空房",
+        btnSearchPrices: "查看价格并预订",
         badgeBooking: "极佳 · 优越地理位置",
         titleRooms: "我们的客房",
         roomsBadge: "直订最优价格保证",
@@ -639,19 +666,19 @@
         gPubDesc: "📍 <strong>帕隆湖：</strong> 白山脉最大的绿松石色高山湖泊。<br>📍 <strong>扬加努科湖与69号湖：</strong> 壮丽观赏瓦斯卡兰峰。",
         gPrivDesc: "输入前台提供的密码查看受保护的价格：",
         btnUnlockText: "解锁指南", passPlaceholder: "住客密码",
-        stkFrom: "起价", stkBtn: "立即预订"
+        stkFrom: "起价", stkBtn: "立即预订", navCodeText: "住客代码"
       }
     };
 
     function changeLanguage(lang) {
       document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.remove('active', 'bg-kactus-600', 'text-white');
-        btn.classList.add('text-slate-300', 'hover:text-white', 'hover:bg-slate-700');
+        btn.classList.remove('active', 'bg-emerald-600', 'text-white');
+        btn.classList.add('text-slate-600');
       });
       const activeBtn = document.getElementById(`btn-${lang}`);
       if (activeBtn) {
-        activeBtn.classList.add('active', 'bg-kactus-600', 'text-white');
-        activeBtn.classList.remove('text-slate-300', 'hover:text-white', 'hover:bg-slate-700');
+        activeBtn.classList.add('active', 'bg-emerald-600', 'text-white');
+        activeBtn.classList.remove('text-slate-600');
       }
 
       const t = translations[lang] || translations['es'];
@@ -659,7 +686,7 @@
       document.getElementById('hero-subtitle').innerText = t.heroSubtitle;
       document.getElementById('lbl-checkin').innerText = t.lblCheckin;
       document.getElementById('lbl-checkout').innerText = t.lblCheckout;
-      document.getElementById('btn-search-whatsapp').innerText = t.btnSearchWhatsapp;
+      document.getElementById('btn-search-prices').innerText = t.btnSearchPrices;
       document.getElementById('badge-booking').innerText = t.badgeBooking;
       document.getElementById('title-rooms').innerText = t.titleRooms;
       document.getElementById('rooms-badge').innerText = t.roomsBadge;
@@ -689,6 +716,7 @@
       document.getElementById('passInput').placeholder = t.passPlaceholder;
       document.getElementById('stk-from').innerText = t.stkFrom;
       document.getElementById('stk-btn').innerText = t.stkBtn;
+      document.getElementById('nav-code-text').innerText = t.navCodeText;
     }
   </script>
 </body>
