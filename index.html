@@ -341,7 +341,7 @@
       </div>
     </section>
 
-    <!-- Tours -->
+    <!-- Tours General -->
     <section class="mb-14">
       <div class="flex items-center gap-3 mb-6">
         <div class="w-2 h-8 bg-kactus-500 rounded-full"></div>
@@ -351,11 +351,11 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="bg-white p-6 rounded-2xl border-l-4 border-l-kactus-500 border-y border-r border-kactus-100 shadow-sm space-y-2">
           <h4 id="t1-title" class="font-bold text-lg text-slate-800">⛰️ Laguna Parón</h4>
-          <p id="t1-desc" class="text-sm text-slate-600 leading-relaxed">Colectivos diarios desde las 6:30 AM cerca al mercado. Te ayudamos a armar grupos para abaratar costos de transporte privado.</p>
+          <p id="t1-desc" class="text-sm text-slate-600 leading-relaxed">Salidas directas coordinadas con el hostal o colectivos locales diarios desde Caraz. Asesoría completa sobre aclimatación y rutas.</p>
         </div>
         <div class="bg-white p-6 rounded-2xl border-l-4 border-l-kactus-500 border-y border-r border-kactus-100 shadow-sm space-y-2">
           <h4 id="t2-title" class="font-bold text-lg text-slate-800">🏔️ Laguna Llanganuco & Laguna 69</h4>
-          <p id="t2-desc" class="text-sm text-slate-600 leading-relaxed">Acceso directo en transporte turístico. Asesoría completa sobre aclimatación y horarios de salida.</p>
+          <p id="t2-desc" class="text-sm text-slate-600 leading-relaxed">Excursión Full Day con tour operador autorizado. Incluye transporte, guía oficial y recojo estratégico.</p>
         </div>
       </div>
     </section>
@@ -400,26 +400,143 @@
 
         <div>
           <h3 id="g-priv-title" class="font-bold text-lg text-slate-800 mb-1">🔐 Guía Privada de Rutas y Servicios para Huéspedes</h3>
-          <p id="g-priv-desc" class="text-sm text-slate-600 mb-4">Ingresa la clave proporcionada en recepción para ver información útil, restaurantes recomendados, farmacias, grifos y taller mecánico:</p>
+          <p id="g-priv-desc" class="text-sm text-slate-600 mb-4">Ingresa la clave proporcionada en recepción para ver guías detalladas de Laguna Parón, Laguna 69, restaurantes recomendados, farmacias, grifos y taller mecánico:</p>
           
           <div class="flex flex-col sm:flex-row gap-3 max-w-md">
             <input type="password" id="passInput" placeholder="Contraseña de huésped" onkeypress="handleKey(event)" class="px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-kactus-500 text-sm flex-1">
             <button onclick="unlockGuide()" id="btn-unlock-text" class="bg-kactus-500 hover:bg-kactus-800 active:scale-95 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-all shadow-sm">Desbloquear Guía</button>
           </div>
 
-          <!-- Contenido Desbloqueable -->
-          <div id="secretGuide" class="hidden mt-6 bg-kactus-50 p-6 rounded-xl border border-dashed border-kactus-500 space-y-6">
-            <div>
-              <h4 id="g-secret-title" class="font-bold text-slate-800 text-base mb-2">🗺️ Rutas Exclusivas y Consejos Hostal Kactus:</h4>
-              <p id="g-secret-text" class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                • <strong>Guardado de Equipaje:</strong> Puedes dejar tus maletas gratis antes del Check-in o después del Check-out.<br>
-                • <strong>Transporte a Laguna Parón:</strong> Colectivos salen desde las 6:30 AM cerca al mercado principal.<br>
-                • <strong>Ahorro en Tours:</strong> Te ayudamos a organizar salidas grupales para reducir costos.<br>
-                • <strong>Cajeros Cercanos:</strong> Encuentra cajeros BCP y Banco de la Nación a 3 cuadras.
-              </p>
+          <!-- Contenido Desbloqueable Exclusivo -->
+          <div id="secretGuide" class="hidden mt-6 bg-kactus-50 p-6 rounded-xl border border-dashed border-kactus-500 space-y-8">
+            
+            <!-- GUÍA DETALLADA: LAGUNA PARÓN -->
+            <div class="bg-white p-6 rounded-xl border border-kactus-200 shadow-sm space-y-4">
+              <div class="flex items-center gap-3 border-b border-kactus-100 pb-3">
+                <i class="fas fa-mountain-sun text-2xl text-kactus-600"></i>
+                <div>
+                  <h4 class="font-extrabold text-slate-800 text-lg">⛰️ Guía Oficial: Salida a la Laguna Parón</h4>
+                  <p class="text-xs text-slate-500">Opciones de transporte, precios, consejos e información de acampada.</p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+                
+                <!-- Opción 1: Servicio Hostal Kactus -->
+                <div class="bg-kactus-50 p-4 rounded-xl border border-kactus-200 flex flex-col justify-between space-y-3">
+                  <div>
+                    <div class="inline-block bg-kactus-600 text-white text-[11px] font-bold px-2.5 py-0.5 rounded-full mb-2">OPCIÓN RECOMENDADA</div>
+                    <h5 class="font-bold text-slate-800 text-base">🚘 Salida Privada con Hostal Kactus</h5>
+                    <ul class="text-xs text-slate-600 space-y-1.5 mt-2">
+                      <li>• <strong>Precio:</strong> S/ 40.00 por persona (Mínimo 4 personas).</li>
+                      <li>• <strong>Grupos pequeños:</strong> Si son 2 personas o menos, pueden realizar el viaje cubriendo el costo total del servicio.</li>
+                      <li>• <strong>Tiempo de espera:</strong> 2 horas completas en la laguna (con opción a esperar un poco más previa coordinación entre el grupo de viajeros).</li>
+                      <li>• <strong>Formas de pago:</strong> Aceptamos efectivo o tarjeta en recepción.</li>
+                    </ul>
+                  </div>
+                  <div class="p-2.5 bg-amber-50 border border-amber-200 rounded-lg text-[11px] text-amber-900">
+                    💡 <strong>Consejo del Hostal:</strong> Te sugerimos llevar agua, frutas o snacks desde Caraz, ya que la comida en la laguna suele ser más costosa.
+                  </div>
+                </div>
+
+                <!-- Opción 2: Colectivo Público -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 flex flex-col justify-between space-y-3">
+                  <div>
+                    <div class="inline-block bg-slate-600 text-white text-[11px] font-bold px-2.5 py-0.5 rounded-full mb-2">OPCIÓN COLECTIVO</div>
+                    <h5 class="font-bold text-slate-800 text-base">Municipalidad / Colectivo Local</h5>
+                    <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                      Puedes acudir al terminal y unirte a otros viajeros para completar el vehículo.
+                    </p>
+                    <ul class="text-xs text-slate-600 space-y-1.5 mt-2">
+                      <li>• <strong>Costo aprox:</strong> S/ 40.00 a S/ 50.00 por persona (dependiendo del conductor).</li>
+                      <li>• <strong>Incluye:</strong> Espera de 2 horas en la laguna y retorno a Caraz.</li>
+                    </ul>
+                  </div>
+                  <a href="https://maps.app.goo.gl/uJMRmvXjhRAzCGPU8" target="_blank" rel="noopener" class="w-full bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold py-2 px-3 rounded-lg flex items-center justify-center gap-2 transition-colors">
+                    <i class="fas fa-location-dot"></i> Ver Terminal Santa Cruz en Google Maps
+                  </a>
+                </div>
+
+              </div>
+
+              <!-- Detalles adicionales Parón -->
+              <div class="p-4 bg-slate-100 rounded-xl text-xs text-slate-700 space-y-2 border border-slate-200">
+                <div class="font-bold text-slate-800">📌 Información Importante sobre Laguna Parón:</div>
+                <p>• <strong>Entrada al Parque:</strong> En <strong>ambas opciones</strong> los visitantes pagan directamente la entrada de <strong>S/ 5.00</strong> al guardabosques o puesto de control.</p>
+                <p>• <strong>Actividades:</strong> Durante el tiempo de permanencia puedes realizar la caminata hacia el Mirador para tomar fotos increíbles de la laguna turquesa y el nevado Artesonraju.</p>
+                <p>• <strong>¿Deseas acampar en Laguna Parón?</strong> Es una experiencia inolvidable. Recuerda que en <strong>Hostal Kactus te alquilamos todo el equipo necesario</strong> (carpas 3 estaciones, sacos de pluma, cocinas y bastones).</p>
+              </div>
             </div>
 
-            <div class="bg-white p-5 rounded-xl border border-kactus-200">
+            <!-- GUÍA DETALLADA: LAGUNA 69 -->
+            <div class="bg-white p-6 rounded-xl border border-kactus-200 shadow-sm space-y-4">
+              <div class="flex items-center gap-3 border-b border-kactus-100 pb-3">
+                <i class="fas fa-person-hiking text-2xl text-kactus-600"></i>
+                <div>
+                  <h4 class="font-extrabold text-slate-800 text-lg">🏔️ Guía Oficial: Excursión a la Laguna 69</h4>
+                  <p class="text-xs text-slate-500">Trekking icónico de la Cordillera Blanca. Opciones, guías exigidos y costos.</p>
+                </div>
+              </div>
+
+              <!-- Advertencia de Guía Exigido por Guardabosques -->
+              <div class="p-3.5 bg-amber-50 border-l-4 border-l-amber-500 rounded-r-xl text-xs text-amber-900 leading-relaxed">
+                <strong class="font-bold uppercase tracking-wider text-amber-950 flex items-center gap-1.5 mb-1"><i class="fas fa-triangle-exclamation text-amber-600"></i> Detalle Crucial del Parque Nacional Huascarán:</strong>
+                Toma en cuenta que los guardabosques en el puesto de control suelen <strong>exigir obligatoriamente la presencia de un guía turístico certificado</strong> para permitir iniciar el ascenso a la Laguna 69. Si vas totalmente por tu cuenta sin guía, corres el riesgo de que no te permitan el ingreso.
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+                
+                <!-- Opción Recomendada con Agencia Autorizada -->
+                <div class="bg-kactus-50 p-4 rounded-xl border border-kactus-200 flex flex-col justify-between space-y-3">
+                  <div>
+                    <div class="inline-block bg-kactus-600 text-white text-[11px] font-bold px-2.5 py-0.5 rounded-full mb-2">⭐ OPCIÓN MÁS SEGURA Y RECOMENDADA</div>
+                    <h5 class="font-bold text-slate-800 text-base">🚌 Tour Organizado con Agencia Autorizada</h5>
+                    <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                      Trabajamos en alianza con agencias profesionales. Te reservamos el cupo directamente desde el hostal.
+                    </p>
+                    <ul class="text-xs text-slate-600 space-y-1.5 mt-3">
+                      <li>• <strong>Costo del Tour:</strong> S/ 60.00 por persona (Transporte + Guía oficial exigido por el parque).</li>
+                      <li>• <strong>Pasaje de enlace:</strong> S/ 6.00 ida y vuelta (S/ 3 Caraz a Yungay + S/ 3 retorno).</li>
+                      <li>• <strong>Punto de encuentro:</strong> Esquina de la Comisaría de Yungay a las 6:00 AM aprox.</li>
+                      <li>• <strong>Modalidad:</strong> Full Day (Retorno a Caraz aprox 6:00 PM).</li>
+                      <li>• <strong>Pago:</strong> En efectivo o tarjeta en la recepción de Hostal Kactus.</li>
+                    </ul>
+                  </div>
+                  <a href="https://maps.google.com" target="_blank" rel="noopener" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-2 px-3 rounded-lg flex items-center justify-center gap-2 transition-colors">
+                    <i class="fas fa-location-dot"></i> Ver Comisaría de Yungay en Google Maps
+                  </a>
+                </div>
+
+                <!-- Opción Por Cuenta Propia -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 flex flex-col justify-between space-y-3">
+                  <div>
+                    <div class="inline-block bg-slate-600 text-white text-[11px] font-bold px-2.5 py-0.5 rounded-full mb-2">OPCIÓN POR CUENTA PROPIA</div>
+                    <h5 class="font-bold text-slate-800 text-base">🥾 Viaje Independiente en Colectivos</h5>
+                    <ul class="text-xs text-slate-600 space-y-1.5 mt-2">
+                      <li>• <strong>Tramo 1 (Caraz - Yungay):</strong> Combi local S/ 3.00 ida y S/ 3.00 vuelta (S/ 6.00 total).</li>
+                      <li>• <strong>Tramo 2 (Yungay - Inicio del Sendero):</strong> Colectivos que van hacia Yanama aprox. S/ 30.00 por persona.</li>
+                      <li>• <strong>Retorno a Yungay:</strong> Tomar transporte de paso que regrese de Yanama (aprox. S/ 20.00 a S/ 30.00).</li>
+                    </ul>
+                  </div>
+                  <div class="p-2.5 bg-red-50 border border-red-200 rounded-lg text-[11px] text-red-900">
+                    ⚠️ <strong>Nota:</strong> Si eliges ir por tu cuenta, asegúrate de coordinar la presencia del guía requerido en el control.
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Costos de Entrada Oficiales Laguna 69 -->
+              <div class="p-4 bg-slate-100 rounded-xl text-xs text-slate-700 border border-slate-200 flex items-center justify-between flex-wrap gap-2">
+                <div>
+                  <strong class="text-slate-800">🎟️ Entrada al Parque Nacional Huascarán (Laguna 69):</strong>
+                  <p class="text-slate-500 mt-0.5">El pago de <strong>S/ 30.00 por persona</strong> se realiza directamente en el puesto de control del parque en ambas modalidades.</p>
+                </div>
+                <div class="text-lg font-extrabold text-kactus-800 bg-white px-3 py-1.5 rounded-lg border border-slate-200">S/ 30.00</div>
+              </div>
+            </div>
+
+            <!-- RESTAURANTES, FARMACIAS Y MECÁNICA -->
+            <div class="bg-white p-5 rounded-xl border border-kactus-200 space-y-4">
               <h4 id="g-shop-title" class="font-bold text-slate-800 text-sm mb-1 flex items-center gap-2">
                 <i class="fas fa-map-marked-alt text-kactus-500"></i> Restaurantes Recomendados, Farmacias, Grifos y Servicios Cercanos:
               </h4>
@@ -680,8 +797,8 @@
         payBank: "Cuentas BCP y Banco de la Nación.",
         payCash: "Pago directo en la recepción al llegar.",
         titleTours: "Salidas a Tours y Transporte Desde Caraz",
-        t1Title: "⛰️ Laguna Parón", t1Desc: "Colectivos diarios desde las 6:30 AM cerca al mercado. Te ayudamos a armar grupos para abaratar costos.",
-        t2Title: "🏔️ Laguna Llanganuco & Laguna 69", t2Desc: "Acceso directo en transporte turístico. Asesoría completa sobre aclimatación y horarios.",
+        t1Title: "⛰️ Laguna Parón", t1Desc: "Salidas directas coordinadas con el hostal o colectivos locales diarios desde Caraz.",
+        t2Title: "🏔️ Laguna Llanganuco & Laguna 69", t2Desc: "Excursión Full Day con tour operador autorizado. Incluye transporte, guía oficial y recojo estratégico.",
         titleReviews: "Opiniones de Nuestros Huéspedes",
         rev1Text: '"Lugar súper limpio, tranquilo y con agua caliente las 24 horas. La atención en recepción fue excelente para organizar mi viaje a Laguna Parón."',
         rev2Text: '"Great place to stay in Caraz! Very comfortable bed, fast Wi-Fi, and extremely helpful staff. Highly recommended for trekkers!"',
@@ -689,10 +806,8 @@
         gPubTitle: "Lugares Populares para Visitar:",
         gPubDesc: "📍 <strong>Laguna Parón:</strong> La laguna turquesa más grande de la Cordillera Blanca.<br>📍 <strong>Laguna Llanganuco y Laguna 69:</strong> Vistas espectaculares de los nevados Huascarán y Chopicalqui.<br>📍 <strong>Plaza de Armas de Caraz:</strong> Famosa por sus tradicionales helados artesanales y clima cálido.",
         gPrivTitle: "🔐 Guía Privada de Rutas y Servicios para Huéspedes",
-        gPrivDesc: "Ingresa la clave proporcionada en recepción para ver información útil, restaurantes recomendados, farmacias, grifos y taller mecánico:",
+        gPrivDesc: "Ingresa la clave proporcionada en recepción para ver guías detalladas de Laguna Parón, Laguna 69, restaurantes recomendados, farmacias, grifos y taller mecánico:",
         btnUnlockText: "Desbloquear Guía", passPlaceholder: "Contraseña de huésped",
-        gSecretTitle: "🗺️ Rutas Exclusivas y Consejos Hostal Kactus:",
-        gSecretText: "• <strong>Guardado de Equipaje:</strong> Puedes dejar tus maletas gratis antes del Check-in o después del Check-out.<br>• <strong>Transporte a Laguna Parón:</strong> Colectivos salen desde las 6:30 AM cerca al mercado principal.<br>• <strong>Ahorro en Tours:</strong> Te ayudamos a organizar salidas grupales para reducir costos.<br>• <strong>Cajeros Cercanos:</strong> Encuentra cajeros BCP y Banco de la Nación a 3 cuadras.",
         gShopTitle: "Restaurantes Recomendados, Farmacias, Grifos y Servicios Cercanos:",
         gShopIntro: "Toca cualquier enlace para abrir la ruta en Google Maps:",
         mapLinkText: "Ver en Google Maps",
@@ -723,8 +838,8 @@
         payBank: "BCP and Banco de la Nación bank transfers.",
         payCash: "Direct cash payment at reception upon arrival.",
         titleTours: "Tour Departures & Transport From Caraz",
-        t1Title: "⛰️ Parón Lake", t1Desc: "Daily shared vans from 6:30 AM near the market. We assist in grouping travelers to reduce transport costs.",
-        t2Title: "🏔️ Llanganuco Lake & Lake 69", t2Desc: "Direct tourist transport. Complete advice on acclimatization and departure times.",
+        t1Title: "⛰️ Parón Lake", t1Desc: "Direct departures coordinated with the hostel or daily local shared vans.",
+        t2Title: "🏔️ Llanganuco Lake & Lake 69", t2Desc: "Full Day excursion with licensed tour operator. Includes transport, official guide, and strategic pickup.",
         titleReviews: "Guest Reviews",
         rev1Text: '"Super clean place, quiet and with 24/7 hot water. The front desk was extremely helpful in organizing my trip to Parón Lake."',
         rev2Text: '"Great place to stay in Caraz! Very comfortable bed, fast Wi-Fi, and extremely helpful staff. Highly recommended for trekkers!"',
@@ -732,10 +847,8 @@
         gPubTitle: "Popular Places to Visit:",
         gPubDesc: "📍 <strong>Parón Lake:</strong> The largest turquoise lagoon in the Cordillera Blanca.<br>📍 <strong>Llanganuco & Lake 69:</strong> Spectacular views of Huascarán and Chopicalqui peaks.<br>📍 <strong>Caraz Main Square:</strong> Famous for artisanal ice cream and warm climate.",
         gPrivTitle: "🔐 Private Route & Services Guide for Guests",
-        gPrivDesc: "Enter the key provided at reception to see useful info, recommended restaurants, pharmacies, gas stations & mechanics:",
+        gPrivDesc: "Enter the key provided at reception to see detailed guides for Parón Lake, Lake 69, recommended restaurants, pharmacies & services:",
         btnUnlockText: "Unlock Guide", passPlaceholder: "Guest password",
-        gSecretTitle: "🗺️ Exclusive Routes & Hostal Kactus Tips:",
-        gSecretText: "• <strong>Free Luggage Storage:</strong> You can store your bags for free before check-in or after check-out.<br>• <strong>Parón Lake Transport:</strong> Shared vans leave from 6:30 AM near the main market.<br>• <strong>Save on Tours:</strong> We help you organize group trips to lower costs.<br>• <strong>ATMs Nearby:</strong> BCP and Banco de la Nación ATMs 3 blocks away.",
         gShopTitle: "Recommended Restaurants, Pharmacies, Gas Stations & Mechanics:",
         gShopIntro: "Tap any link to open location on Google Maps:",
         mapLinkText: "Open in Google Maps",
@@ -764,8 +877,8 @@
         payYape: "Paiements numériques instantanés.", payCards: "Visa, MasterCard, American Express.",
         payBank: "Virements bancaires BCP et Banco de la Nación.", payCash: "Paiement direct en espèces à la réception.",
         titleTours: "Excursions et Transports Depuis Caraz",
-        t1Title: "⛰️ Lac Parón", t1Desc: "Bus quotidiens dès 6h30 près du marché. Organisation de départs en groupe.",
-        t2Title: "🏔️ Lac Llanganuco & Lac 69", t2Desc: "Transport touristique direct. Conseils d'acclimatation y horaires.",
+        t1Title: "⛰️ Lac Parón", t1Desc: "Départs directs organisés avec l'auberge ou bus locaux.",
+        t2Title: "🏔️ Lac Llanganuco & Lac 69", t2Desc: "Excursion d'une journée avec opérateur agréé. Transport et guide officiel inclus.",
         titleReviews: "Avis de nos Clients",
         rev1Text: '"Endroit très propre, calme avec de l\'eau chaude 24h/24. Le personnel était formidable pour m\'aider à aller au Lac Parón."',
         rev2Text: '"Un endroit formidable à Caraz ! Lit confortable, Wi-Fi rapide et personnel très serviable."',
@@ -775,8 +888,6 @@
         gPrivTitle: "🔐 Guide Privé de Routes et Services pour les Clients",
         gPrivDesc: "Entrez le mot de passe fourni à la réception :",
         btnUnlockText: "Déverrouiller le Guide", passPlaceholder: "Mot de passe client",
-        gSecretTitle: "🗺️ Routes Exclusives et Conseils Hostal Kactus :",
-        gSecretText: "• <strong>Bagages Gratuits :</strong> Consigne à bagages gratuite avant le check-in ou après le check-out.<br>• <strong>Transport pour el Lac Parón :</strong> Départs des bus dès 6h30.",
         gShopTitle: "Restaurants Recommandés, Pharmacies & Services :",
         gShopIntro: "Touchez un lien pour ouvrir sur Google Maps :",
         mapLinkText: "Ouvrir dans Google Maps",
@@ -805,8 +916,8 @@
         payYape: "Okamžité digitální platby.", payCards: "Visa, MasterCard, American Express.",
         payBank: "Bankovní převody BCP a Banco de la Nación.", payCash: "Přímá platba v hotovosti na recepci.",
         titleTours: "Výlety a Doprava z Carazu",
-        t1Title: "⛰️ Jezero Parón", t1Desc: "Denní autobusy od 6:30 ráno poblíž tržiště. Pomáháme organizovat skupinové výlety.",
-        t2Title: "🏔️ Jezera Llanganuco a Laguna 69", t2Desc: "Přímá turistická doprava. Kompletní poradenství o aklimatizaci.",
+        t1Title: "⛰️ Jezero Parón", t1Desc: "Přímé odjezdy koordinované s hostelem nebo místními autobusy.",
+        t2Title: "🏔️ Jezera Llanganuco a Laguna 69", t2Desc: "Celodenní výlet s licencovaným průvodcem. Zahrnuje dopravu a oficiálního průvodce.",
         titleReviews: "Hodnocení Našich Hostů",
         rev1Text: '"Skvělé čisté místo, klid a teplá voda po 24 hodin. Recepce byla velmi nápomocná při organizování výletu na jezero Parón."',
         rev2Text: '"Skvělé místo k pobytu v Carazu! Pohodlná postel, rychlá Wi-Fi a velmi ochotný personál."',
@@ -816,8 +927,6 @@
         gPrivTitle: "🔐 Soukromý Průvodce Trasami a Službami pro Hosty",
         gPrivDesc: "Zadejte heslo obdržené na recepci:",
         btnUnlockText: "Odemknout Průvodce", passPlaceholder: "Heslo pro hosty",
-        gSecretTitle: "🗺️ Exkluzivní Trasy a Tipy Hostal Kactus:",
-        gSecretText: "• <strong>Úschova Zavazadel Zdarma:</strong> Zavazadla si můžete bezplatně uložit před check-inem nebo po check-outu.<br>• <strong>Doprava k jezeru Parón:</strong> Autobusy od 6:30 ráno.",
         gShopTitle: "Doporučené Restaurace, Lékárny a Služby:",
         gShopIntro: "Klikněte na odkaz pro otevření trasy v Google Maps:",
         mapLinkText: "Otevřít v Google Maps",
@@ -848,8 +957,8 @@
         payBank: "支持 BCP 与国家银行转账。",
         payCash: "到达时在酒店前台以现金直接支付。",
         titleTours: "从卡拉斯出发的旅游与交通",
-        t1Title: "⛰️ 帕隆湖（Laguna Parón）", t1Desc: "每天早晨 6:30 起从市场附近发车。我们协助安排拼车以降低成本。",
-        t2Title: "🏔️ 扬加努科湖与69号湖", t2Desc: "直达旅游交通，提供完整的高原适应与行程建议。",
+        t1Title: "⛰️ 帕隆湖（Laguna Parón）", t1Desc: "旅馆直接协调出发或乘坐当地拼车。",
+        t2Title: "🏔️ 扬加努科湖与69号湖", t2Desc: "持牌旅行社一日游，包含往返交通、官方导游及接送服务。",
         titleReviews: "住客评价",
         rev1Text: '"非常干净的地方，安静且24小时热水。前台非常热情地帮我安排了帕隆湖的行程。"',
         rev2Text: '"卡拉斯极佳的住宿选择！床铺舒适，Wi-Fi快速，员工非常热心。非常推荐给徒步旅行者！"',
@@ -857,10 +966,8 @@
         gPubTitle: "热门景点推荐：",
         gPubDesc: "📍 <strong>帕隆湖（Laguna Parón）：</strong> 白山脉最大的绿松石色高山湖泊。<br>📍 <strong>扬加努科湖与69号湖：</strong> 壮丽观赏瓦斯卡兰峰与肖皮卡尔奇峰。<br>📍 <strong>卡拉斯武器广场：</strong> 以传统手工冰淇淋和宜人气候闻名。",
         gPrivTitle: "🔐 住客专属路线与服务指南",
-        gPrivDesc: "输入前台提供的密码，查看推荐餐厅、药房与加油站：",
+        gPrivDesc: "输入前台提供的密码，查看帕隆湖与69号湖指南、推荐餐厅与服务：",
         btnUnlockText: "解锁指南", passPlaceholder: "住客密码",
-        gSecretTitle: "🗺️ 仙人掌旅馆专属路线与建议：",
-        gSecretText: "• <strong>免费行李寄存：</strong> 入住前或退房后均可免费寄存行李。<br>• <strong>前往帕隆湖的交通：</strong> 拼车小巴自早晨 6:30 起出发。",
         gShopTitle: "推荐餐厅、药房、加油站与周边服务：",
         gShopIntro: "点击任意链接在 Google 地图中打开对应路线：",
         mapLinkText: "在 Google 地图中打开",
@@ -927,8 +1034,6 @@
       document.getElementById('g-priv-desc').innerText = t.gPrivDesc;
       document.getElementById('btn-unlock-text').innerText = t.btnUnlockText;
       document.getElementById('passInput').placeholder = t.passPlaceholder;
-      document.getElementById('g-secret-title').innerText = t.gSecretTitle;
-      document.getElementById('g-secret-text').innerHTML = t.gSecretText;
 
       document.getElementById('g-shop-title').innerHTML = `<i class="fas fa-map-marked-alt text-kactus-500"></i> ${t.gShopTitle}`;
       document.getElementById('g-shop-intro').innerText = t.gShopIntro;
