@@ -61,7 +61,6 @@
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
     }
-    /* Fondo Cálido con degradado acogedor tipo arena/crema */
     .warm-bg {
       background: linear-gradient(135deg, #f7f3eb 0%, #efe7d8 50%, #f4eee2 100%);
     }
@@ -166,16 +165,32 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         
-        <!-- Habitación 1: ECONÓMICA (2 Fotos) -->
+        <!-- Habitación 1: ECONÓMICA (Foto real + Banner Publicitario de Llamado a la Acción) -->
         <div class="glass-card rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-warm-200 flex flex-col group transform hover:-translate-y-1.5">
           <div class="relative w-full h-64 bg-slate-900 overflow-hidden" id="carousel1">
             <div class="absolute top-4 left-4 z-20 bg-slate-900/80 backdrop-blur-md text-white text-xs font-extrabold px-3.5 py-1.5 rounded-full shadow-md border border-white/20" id="room1-tag">
               ECONÓMICA & CONFORT
             </div>
+            
             <div class="carousel-slide w-full h-full">
-              <img src="https://lh3.googleusercontent.com/d/1jJYyIAlyJyZreK1MjVfGTOugKCvAtK9K" alt="Habitación Económica 1" class="w-full h-full object-cover shrink-0">
-              <img src="https://lh3.googleusercontent.com/d/10fGa6KJMQqt2LK5yqKQo31YlpXlPmtVd" alt="Habitación Económica 2" class="w-full h-full object-cover shrink-0">
+              <!-- Foto 1 Solicitada -->
+              <img src="https://lh3.googleusercontent.com/d/1jJYyIAlyJyZreK1MjVfGTOugKCvAtK9K" alt="Habitación Económica" class="w-full h-full object-cover shrink-0">
+              
+              <!-- Foto 2: Banner Publicitario Exclusivo y Llamativo para Huéspedes -->
+              <div class="w-full h-full shrink-0 bg-gradient-to-br from-kactus-900 via-kactus-800 to-amber-950 text-white p-6 flex flex-col items-center justify-center text-center space-y-3 relative">
+                <div class="w-12 h-12 bg-amber-400 text-kactus-900 rounded-2xl flex items-center justify-center text-2xl font-black shadow-lg animate-bounce">
+                  <i class="fas fa-key"></i>
+                </div>
+                <h4 class="font-extrabold text-lg text-amber-300 leading-tight">¿Ya reservaste tu habitación?</h4>
+                <p class="text-xs text-slate-200 max-w-xs leading-relaxed">
+                  Solicita tu <strong>Código Exclusivo en Recepción</strong> para acceder a precios de tours, mejores restaurantes, farmacias, grifos y teléfonos de emergencia en Caraz.
+                </p>
+                <a href="#title-guide" class="mt-1 bg-amber-400 hover:bg-amber-300 text-kactus-950 text-xs font-black py-2 px-5 rounded-full shadow-md transition-all flex items-center gap-2">
+                  <i class="fas fa-lock-open"></i> Ir a la Guía Privada
+                </a>
+              </div>
             </div>
+
             <button aria-label="Anterior" onclick="moveSlide('carousel1', -1)" class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-kactus-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition-all z-10 opacity-80 hover:opacity-100"><i class="fas fa-chevron-left"></i></button>
             <button aria-label="Siguiente" onclick="moveSlide('carousel1', 1)" class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-kactus-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition-all z-10 opacity-80 hover:opacity-100"><i class="fas fa-chevron-right"></i></button>
             <div class="carousel-dots absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-10">
@@ -183,6 +198,7 @@
               <span class="w-2.5 h-2.5 rounded-full bg-white/70 cursor-pointer transition-all" onclick="setSlide('carousel1', 1)"></span>
             </div>
           </div>
+          
           <div class="p-7 flex-1 flex flex-col justify-between space-y-5">
             <div>
               <h3 class="text-xl font-extrabold text-slate-800 mb-2.5" id="room1-title">Habitación Matrimonial Económica</h3>
@@ -195,7 +211,7 @@
           </div>
         </div>
 
-        <!-- Habitación 2: MEDIANA (4 Fotos) -->
+        <!-- Habitación 2: MEDIANA (4 Fotos Reales) -->
         <div class="glass-card rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-warm-200 flex flex-col group transform hover:-translate-y-1.5">
           <div class="relative w-full h-64 bg-slate-900 overflow-hidden" id="carousel2">
             <div class="absolute top-4 left-4 z-20 bg-kactus-600 text-white text-xs font-extrabold px-3.5 py-1.5 rounded-full shadow-md border border-white/20" id="room2-tag">
@@ -478,7 +494,7 @@
           <h3 id="g-priv-title" class="font-extrabold text-xl text-slate-800 mb-2 flex items-center gap-2">
             🔐 Guía Privada de Rutas y Servicios para Huéspedes
           </h3>
-          <p id="g-priv-desc" class="text-sm text-slate-600 mb-5">Ingresa la clave proporcionada en recepción para ver guías detalladas de Laguna Parón, Laguna 69, restaurantes recomendados, farmacias, grifos y taller mecánico:</p>
+          <p id="g-priv-desc" class="text-sm text-slate-600 mb-5">Ingresa la clave proporcionada en recepción para ver guías detalladas de Laguna Parón, Laguna 69, restaurantes recomendados, farmacias, grifos y teléfonos de emergencia:</p>
           
           <div class="flex flex-col sm:flex-row gap-3 max-w-md">
             <input type="password" id="passInput" placeholder="Contraseña de huésped" onkeypress="handleKey(event)" class="px-4 py-3 rounded-xl border border-warm-200 focus:outline-none focus:ring-2 focus:ring-kactus-500 text-sm flex-1 bg-white shadow-xs">
@@ -606,14 +622,60 @@
               </div>
             </div>
 
-            <!-- 3. CONSEJOS GENERALES DE RECEPCIÓN -->
+            <!-- 3. DIRECTORIO DE TELÉFONOS & EMERGENCIAS EN CARAZ (NUEVA SECCIÓN VERIFICADA) -->
+            <div class="bg-white p-6 sm:p-7 rounded-2xl border border-red-200 shadow-sm space-y-5">
+              <div class="flex items-center gap-3 border-b border-red-100 pb-4">
+                <i class="fas fa-shield-heart text-3xl text-red-600"></i>
+                <div>
+                  <h4 class="font-black text-slate-800 text-xl" id="emg-title">🚨 Teléfonos de Emergencia y Salud en Caraz</h4>
+                  <p class="text-xs text-slate-500" id="emg-sub">Directorio de asistencia inmediata disponible las 24 horas.</p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+                
+                <!-- Policia Nacional PNP -->
+                <div class="bg-slate-50 p-4 rounded-2xl border-l-4 border-l-blue-700 flex flex-col justify-between space-y-3">
+                  <div>
+                    <strong class="text-slate-800 text-sm flex items-center gap-2"><i class="fas fa-user-shield text-blue-700"></i> Comisaría Sectorial PNP Caraz</strong>
+                    <p class="text-xs text-slate-600 mt-1 leading-relaxed"><strong>Dirección:</strong> Av. 20 de Enero 2da cuadra s/n, Caraz.</p>
+                    <p class="text-xs text-slate-600 mt-1"><strong>Central Fija:</strong> (043) 391-335</p>
+                  </div>
+                  <a href="https://maps.app.goo.gl/94k2Z1yqB8Jm2m7G6" target="_blank" rel="noopener" class="text-blue-600 font-bold text-xs inline-flex items-center gap-1.5 hover:underline"><i class="fas fa-location-dot"></i> Ver en Google Maps</a>
+                </div>
+
+                <!-- Bomberos B-181 -->
+                <div class="bg-slate-50 p-4 rounded-2xl border-l-4 border-l-red-600 flex flex-col justify-between space-y-3">
+                  <div>
+                    <strong class="text-slate-800 text-sm flex items-center gap-2"><i class="fas fa-fire-extinguisher text-red-600"></i> Bomberos Caraz (B-181)</strong>
+                    <p class="text-xs text-slate-600 mt-1 leading-relaxed"><strong>Dirección:</strong> Carretera Central Mz. B-6 L-2, Caraz.</p>
+                    <p class="text-xs text-slate-600 mt-1"><strong>Nacional:</strong> 116 | <strong>Fijo:</strong> (043) 391-751</p>
+                    <p class="text-xs text-slate-600"><strong>Celular Directo:</strong> 941 741 480</p>
+                  </div>
+                  <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold text-xs inline-flex items-center gap-1.5 hover:underline"><i class="fas fa-location-dot"></i> Ver en Google Maps</a>
+                </div>
+
+                <!-- Hospital San Juan de Dios -->
+                <div class="bg-slate-50 p-4 rounded-2xl border-l-4 border-l-emerald-600 flex flex-col justify-between space-y-3">
+                  <div>
+                    <strong class="text-slate-800 text-sm flex items-center gap-2"><i class="fas fa-hospital text-emerald-600"></i> Hospital "San Juan de Dios"</strong>
+                    <p class="text-xs text-slate-600 mt-1 leading-relaxed"><strong>Dirección:</strong> Av. Circunvalación Norte s/n, Caraz.</p>
+                    <p class="text-xs text-slate-600 mt-1"><strong>Atención 24 Horas:</strong> (043) 391-822 / (043) 391-026</p>
+                  </div>
+                  <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold text-xs inline-flex items-center gap-1.5 hover:underline"><i class="fas fa-location-dot"></i> Ver en Google Maps</a>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- 4. CONSEJOS GENERALES DE RECEPCIÓN -->
             <div class="bg-gradient-to-r from-kactus-100 to-amber-50 p-5 rounded-2xl border border-kactus-200 text-xs text-kactus-950 space-y-1.5 shadow-xs" id="rec-tips-box">
               <h4 class="font-extrabold text-sm mb-2 text-kactus-900">🗺️ Consejos Rápidos de Recepción:</h4>
               <p>• <strong>Guardado de Equipaje:</strong> Deja tus maletas gratis antes del Check-in o después del Check-out.</p>
               <p>• <strong>Cajeros Cercanos:</strong> BCP y Banco de la Nación a 3 cuadras del hostal.</p>
             </div>
 
-            <!-- 4. RESTAURANTES, FARMACIAS Y MECÁNICA -->
+            <!-- 5. RESTAURANTES, FARMACIAS Y MECÁNICA -->
             <div class="bg-white p-6 sm:p-7 rounded-2xl border border-kactus-200 space-y-5">
               <h4 id="g-shop-title" class="font-extrabold text-slate-800 text-base mb-1 flex items-center gap-2">
                 <i class="fas fa-map-marked-alt text-kactus-600"></i> Restaurantes Recomendados, Farmacias, Grifos y Servicios Cercanos:
@@ -776,10 +838,10 @@
     function moveSlide(carouselId, direction) {
       const carousel = document.getElementById(carouselId);
       const slide = carousel.querySelector('.carousel-slide');
-      const images = slide.querySelectorAll('img');
+      const items = slide.children;
       const dots = carousel.querySelectorAll('.carousel-dots span');
       
-      slideIndexes[carouselId] = (slideIndexes[carouselId] + direction + images.length) % images.length;
+      slideIndexes[carouselId] = (slideIndexes[carouselId] + direction + items.length) % items.length;
       slide.style.transform = `translateX(-${slideIndexes[carouselId] * 100}%)`;
       
       dots.forEach((dot, idx) => {
@@ -908,7 +970,7 @@
         gPubTitle: "Lugares Populares para Visitar:",
         gPubDesc: "📍 <strong>Laguna Parón:</strong> La laguna turquesa más grande de la Cordillera Blanca.<br>📍 <strong>Laguna Llanganuco y Laguna 69:</strong> Vistas espectaculares de los nevados Huascarán y Chopicalqui.<br>📍 <strong>Plaza de Armas de Caraz:</strong> Famosa por sus tradicionales helados artesanales y clima cálido.",
         gPrivTitle: "🔐 Guía Privada de Rutas y Servicios para Huéspedes",
-        gPrivDesc: "Ingresa la clave proporcionada en recepción para ver guías detalladas de Laguna Parón, Laguna 69, restaurantes recomendados, farmacias, grifos y taller mecánico:",
+        gPrivDesc: "Ingresa la clave proporcionada en recepción para ver guías detalladas de Laguna Parón, Laguna 69, restaurantes recomendados, farmacias, grifos y teléfonos de emergencia:",
         btnUnlockText: "Desbloquear Guía", passPlaceholder: "Contraseña de huésped",
         pTitle: "⛰️ Guía Oficial: Salida a la Laguna Parón",
         pSub: "Opciones de transporte, precios, consejos e información de acampada.",
@@ -1006,7 +1068,7 @@
         gPubTitle: "Popular Places to Visit:",
         gPubDesc: "📍 <strong>Parón Lake:</strong> The largest turquoise lagoon in the Cordillera Blanca.<br>📍 <strong>Llanganuco & Lake 69:</strong> Spectacular views of Huascarán and Chopicalqui peaks.<br>📍 <strong>Caraz Main Square:</strong> Famous for artisanal ice cream and warm climate.",
         gPrivTitle: "🔐 Private Route & Services Guide for Guests",
-        gPrivDesc: "Enter the key provided at reception to see detailed guides for Parón Lake, Lake 69, recommended restaurants, pharmacies, gas stations & mechanics:",
+        gPrivDesc: "Enter the key provided at reception to see detailed guides for Parón Lake, Lake 69, recommended restaurants, pharmacies, gas stations & emergency contacts:",
         btnUnlockText: "Unlock Guide", passPlaceholder: "Guest password",
         pTitle: "⛰️ Official Guide: Trip to Parón Lake",
         pSub: "Transport options, pricing, advice & camping info.",
@@ -1104,7 +1166,7 @@
         gPubTitle: "Lieux Populaires à Visiter :",
         gPubDesc: "📍 <strong>Lac Parón :</strong> Le plus grand lac turquoise de la Cordillère Blanche.<br>📍 <strong>Lacs Llanganuco & Lac 69 :</strong> Vues magnifiques sur les sommets Huascarán et Chopicalqui.<br>📍 <strong>Place Principale de Caraz :</strong> Célèbre pour ses glaces artisanales et son climat chaud.",
         gPrivTitle: "🔐 Guide Privé de Routes et Services pour les Clients",
-        gPrivDesc: "Entrez le mot de passe fourni à la réception pour afficher les guides détaillés pour le Lac Parón, le Lac 69, les restaurants, pharmacies et services :",
+        gPrivDesc: "Entrez le mot de passe fourni à la réception pour afficher les guides détaillés pour le Lac Parón, le Lac 69, les restaurants, pharmacies et numéros d'urgence :",
         btnUnlockText: "Déverrouiller le Guide", passPlaceholder: "Mot de passe client",
         pTitle: "⛰️ Guide Officiel : Excursion au Lac Parón",
         pSub: "Options de transport, tarifs, conseils et camping.",
@@ -1202,7 +1264,7 @@
         gPubTitle: "Oblíbená Místa k Návštěvě:",
         gPubDesc: "📍 <strong>Jezero Parón:</strong> Největší tyrkysová laguna v Cordillera Blanca.<br>📍 <strong>Jezera Llanganuco a Laguna 69:</strong> Velkolepé výhledy na vrcholy Huascarán a Chopicalqui.<br>📍 <strong>Hlavní Náměstí v Carazu:</strong> Proslulé tradiční řemeslnou zmrzlinou a teplým počasím.",
         gPrivTitle: "🔐 Soukromý Průvodce Trasami a Službami pro Hosty",
-        gPrivDesc: "Zadejte heslo obdržené na recepci pro zobrazení podrobných průvodců pro jezero Parón, Lagunu 69, restaurace a služby:",
+        gPrivDesc: "Zadejte heslo obdržené na recepci pro zobrazení podrobných průvodců pro jezero Parón, Lagunu 69, restaurace a nouzové kontakty:",
         btnUnlockText: "Odemknout Průvodce", passPlaceholder: "Heslo pro hosty",
         pTitle: "⛰️ Oficiální Průvodce: Výlet k jezeru Parón",
         pSub: "Možnosti dopravy, ceny, tipy a informace o kempování.",
@@ -1300,7 +1362,7 @@
         gPubTitle: "热门景点推荐：",
         gPubDesc: "📍 <strong>帕隆湖（Laguna Parón）：</strong> 白山脉最大的绿松石色高山湖泊。<br>📍 <strong>扬加努科湖与69号湖：</strong> 壮丽观赏瓦斯卡兰峰与肖皮卡尔奇峰。<br>📍 <strong>卡拉斯武器广场：</strong> 以传统手工冰淇淋和宜人气候闻名。",
         gPrivTitle: "🔐 住客专属路线与服务指南",
-        gPrivDesc: "输入前台提供的密码，查看帕隆湖与69号湖指南、推荐餐厅与周边服务：",
+        gPrivDesc: "输入前台提供的密码，查看帕隆湖与69号湖指南、推荐餐厅、药房、加油站与紧急电话：",
         btnUnlockText: "解锁指南", passPlaceholder: "住客密码",
         pTitle: "⛰️ 官方指南：帕隆湖（Laguna Parón）行程",
         pSub: "交通选择、价格、建议与露营说明。",
@@ -1326,7 +1388,7 @@
         l69Opt2Title: "🥾 乘坐当地公共交通自由行",
         l69Opt2List: '<li>• <strong>第一段（卡拉斯 - 云盖）：</strong> 当地小巴往返 6.00 索尔。</li><li>• <strong>第二段（云盖 - 徒步起点）：</strong> 乘坐开往 Yanama 的拼车，每人约 30.00 索尔。</li><li>• <strong>返回：</strong> 乘坐从 Yanama 返回的过路车（约 20.00 至 30.00 索尔）。</li>',
         l69Note: '⚠️ <strong>注意：</strong> 选择自行前往请务必提前安排好检查站要求的导游陪同。',
-        l69EntryBox: '<strong class="text-slate-900 text-sm">🎟️ 瓦斯卡兰国家公园门票（69号湖）：</strong><p class="text-slate-500 mt-0.5">两种方式均需在国家公园检查站直接支付门票 <strong>30.00 索尔/人</strong>。</p>',
+        l69EntryBox: '<strong class="text-slate-900 text-sm">🎟️ 瓦斯卡兰国家公园门票（69号湖）：</strong><p class="text-slate-600 mt-0.5">两种方式均需在国家公园检查站直接支付门票 <strong>30.00 索尔/人</strong>。</p>',
         recTipsBox: '<h4 class="font-extrabold text-sm mb-2 text-kactus-900">🗺️ 前台快捷提示：</h4><p>• <strong>行李寄存：</strong> 入住前或退房后均可免费寄存行李。</p><p>• <strong>周边 ATM：</strong> 距离旅馆 3 个街区即有 BCP 及国家银行 ATM。</p>',
         gShopTitle: "推荐餐厅、药房、加油站与周边服务：",
         gShopIntro: "点击任意链接在 Google 地图中打开对应路线：",
