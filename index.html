@@ -81,7 +81,6 @@
     <div class="absolute inset-0 bg-cover bg-center opacity-25 mix-blend-overlay" style="background-image: url('mediana1.jpg');"></div>
     <div class="relative z-10 max-w-3xl mx-auto space-y-4 flex flex-col items-center">
       
-      <!-- Contenedor Grande del Logo -->
       <div class="bg-white p-4 rounded-3xl shadow-2xl border-4 border-kactus-200 inline-block mb-2 transform hover:scale-105 transition-transform duration-300">
         <img src="logo.jpeg" alt="Logo Hostal Kactus" class="h-32 sm:h-40 w-auto object-contain" onerror="this.onerror=null; this.src='logo.jpg'; this.onerror=function(){this.src='logo.png';};">
       </div>
@@ -201,62 +200,62 @@
       </div>
 
       <div class="bg-white p-6 rounded-2xl border border-kactus-100 shadow-md">
-        <p class="text-sm text-slate-600 mb-6">Equípate directamente en el hostal con material especializado de alta montaña para tus caminatas en la Cordillera Blanca:</p>
+        <p class="text-sm text-slate-600 mb-6" id="camp-intro">Equípate directamente en el hostal con material especializado de alta montaña para tus caminatas en la Cordillera Blanca:</p>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 flex flex-col justify-between space-y-2">
             <div>
-              <div class="font-bold text-slate-800 text-base"><i class="fas fa-campground text-kactus-600 mr-2"></i>Carpa 3 Estaciones</div>
-              <p class="text-xs text-slate-500 mt-1">Carpa resistente para acampar en montaña.</p>
+              <div class="font-bold text-slate-800 text-base" id="camp-item1"><i class="fas fa-campground text-kactus-600 mr-2"></i>Carpa 3 Estaciones</div>
+              <p class="text-xs text-slate-500 mt-1" id="camp-desc1">Carpa resistente para acampar en montaña.</p>
             </div>
-            <div class="text-lg font-extrabold text-kactus-800">S/ 25.00 <span class="text-xs font-normal text-slate-500">/ día</span></div>
+            <div class="text-lg font-extrabold text-kactus-800">S/ 25.00 <span class="text-xs font-normal text-slate-500" id="camp-unit1">/ día</span></div>
           </div>
 
           <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 flex flex-col justify-between space-y-2">
             <div>
-              <div class="font-bold text-slate-800 text-base"><i class="fas fa-bed text-kactus-600 mr-2"></i>Saco de Dormir Pluma</div>
-              <p class="text-xs text-slate-500 mt-1">Pluma de pato de alta resistencia (-5°C a -20°C).</p>
+              <div class="font-bold text-slate-800 text-base" id="camp-item2"><i class="fas fa-bed text-kactus-600 mr-2"></i>Saco de Dormir Pluma</div>
+              <p class="text-xs text-slate-500 mt-1" id="camp-desc2">Pluma de pato de alta resistencia (-5°C a -20°C).</p>
             </div>
-            <div class="text-lg font-extrabold text-kactus-800">S/ 25.00 <span class="text-xs font-normal text-slate-500">/ día</span></div>
+            <div class="text-lg font-extrabold text-kactus-800">S/ 25.00 <span class="text-xs font-normal text-slate-500" id="camp-unit2">/ día</span></div>
           </div>
 
           <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 flex flex-col justify-between space-y-2">
             <div>
-              <div class="font-bold text-slate-800 text-base"><i class="fas fa-hiking text-kactus-600 mr-2"></i>Bastones de Trekking</div>
-              <p class="text-xs text-slate-500 mt-1">El par de bastones telescópicos ergonómicos.</p>
+              <div class="font-bold text-slate-800 text-base" id="camp-item3"><i class="fas fa-hiking text-kactus-600 mr-2"></i>Bastones de Trekking</div>
+              <p class="text-xs text-slate-500 mt-1" id="camp-desc3">El par de bastones telescópicos ergonómicos.</p>
             </div>
-            <div class="text-lg font-extrabold text-kactus-800">S/ 5.00 <span class="text-xs font-normal text-slate-500">/ par por día</span></div>
+            <div class="text-lg font-extrabold text-kactus-800">S/ 5.00 <span class="text-xs font-normal text-slate-500" id="camp-unit3">/ par por día</span></div>
           </div>
 
           <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 flex flex-col justify-between space-y-2">
             <div>
-              <div class="font-bold text-slate-800 text-base"><i class="fas fa-binoculars text-kactus-600 mr-2"></i>Largavistas / Binoculares</div>
-              <p class="text-xs text-slate-500 mt-1">Observación de paisajes y nevados.</p>
+              <div class="font-bold text-slate-800 text-base" id="camp-item4"><i class="fas fa-binoculars text-kactus-600 mr-2"></i>Largavistas / Binoculares</div>
+              <p class="text-xs text-slate-500 mt-1" id="camp-desc4">Observación de paisajes y nevados.</p>
             </div>
-            <div class="text-lg font-extrabold text-kactus-800">S/ 4.00 <span class="text-xs font-normal text-slate-500">/ día</span></div>
+            <div class="text-lg font-extrabold text-kactus-800">S/ 4.00 <span class="text-xs font-normal text-slate-500" id="camp-unit4">/ día</span></div>
           </div>
 
           <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 flex flex-col justify-between space-y-2">
             <div>
-              <div class="font-bold text-slate-800 text-base"><i class="fas fa-fire-burner text-kactus-600 mr-2"></i>Cocina de Campaña</div>
-              <p class="text-xs text-slate-500 mt-1">Incluye utensilios de cocina. (No incluye balón).</p>
+              <div class="font-bold text-slate-800 text-base" id="camp-item5"><i class="fas fa-fire-burner text-kactus-600 mr-2"></i>Cocina de Campaña</div>
+              <p class="text-xs text-slate-500 mt-1" id="camp-desc5">Incluye utensilios de cocina. (No incluye balón).</p>
             </div>
-            <div class="text-lg font-extrabold text-kactus-800">S/ 8.00 <span class="text-xs font-normal text-slate-500">/ día</span></div>
+            <div class="text-lg font-extrabold text-kactus-800">S/ 8.00 <span class="text-xs font-normal text-slate-500" id="camp-unit5">/ día</span></div>
           </div>
 
           <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 flex flex-col justify-between space-y-2">
             <div>
-              <div class="font-bold text-slate-800 text-base"><i class="fas fa-gas-pump text-kactus-600 mr-2"></i>Balón de Gas Nuevo</div>
-              <p class="text-xs text-slate-500 mt-1">Balón de gas sellado por separado.</p>
+              <div class="font-bold text-slate-800 text-base" id="camp-item6"><i class="fas fa-gas-pump text-kactus-600 mr-2"></i>Balón de Gas Nuevo</div>
+              <p class="text-xs text-slate-500 mt-1" id="camp-desc6">Balón de gas sellado por separado.</p>
             </div>
-            <div class="text-lg font-extrabold text-kactus-800">S/ 33.00 <span class="text-xs font-normal text-slate-500">/ unidad</span></div>
+            <div class="text-lg font-extrabold text-kactus-800">S/ 33.00 <span class="text-xs font-normal text-slate-500" id="camp-unit6">/ unidad</span></div>
           </div>
         </div>
 
         <!-- Nota de cortesía -->
         <div class="mt-4 p-4 bg-kactus-100 border border-kactus-200 rounded-xl text-xs text-kactus-900 flex items-center gap-3">
           <i class="fas fa-gift text-xl text-kactus-700"></i>
-          <div>
+          <div id="camp-courtesy">
             <strong>¡Cortesía especial de la casa!</strong> Si al momento de alquilar tus equipos contamos con balones de gas dejados por huéspedes anteriores, te lo entregamos <strong>completamente gratis</strong> como cortesía por el alquiler.
           </div>
         </div>
@@ -324,17 +323,17 @@
           </div>
           <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 text-center">
             <i class="fas fa-credit-card text-3xl mb-2 text-indigo-900"></i>
-            <div class="font-bold text-slate-800 text-sm">Tarjetas de Crédito / Débito</div>
+            <div class="font-bold text-slate-800 text-sm" id="pay-title-cards">Tarjetas de Crédito / Débito</div>
             <div class="text-xs text-slate-500 mt-1" id="pay-cards">Visa, MasterCard, American Express.</div>
           </div>
           <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 text-center">
             <i class="fas fa-university text-3xl mb-2 text-orange-600"></i>
-            <div class="font-bold text-slate-800 text-sm">Depósito Bancario</div>
+            <div class="font-bold text-slate-800 text-sm" id="pay-title-bank">Depósito Bancario</div>
             <div class="text-xs text-slate-500 mt-1" id="pay-bank">Cuentas BCP y Banco de la Nación.</div>
           </div>
           <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 text-center">
             <i class="fas fa-money-bill-wave text-3xl mb-2 text-emerald-700"></i>
-            <div class="font-bold text-slate-800 text-sm">Efectivo</div>
+            <div class="font-bold text-slate-800 text-sm" id="pay-title-cash">Efectivo</div>
             <div class="text-xs text-slate-500 mt-1" id="pay-cash">Pago directo en la recepción al llegar.</div>
           </div>
         </div>
@@ -407,7 +406,7 @@
             <button onclick="unlockGuide()" id="btn-unlock-text" class="bg-kactus-500 hover:bg-kactus-800 active:scale-95 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-all shadow-sm">Desbloquear Guía</button>
           </div>
 
-          <!-- Contenido Desbloqueable Exclusivo (REORDENADO PRIMERO PARÓN Y LAGUNA 69) -->
+          <!-- Contenido Desbloqueable Exclusivo -->
           <div id="secretGuide" class="hidden mt-6 bg-kactus-50 p-6 rounded-xl border border-dashed border-kactus-500 space-y-8">
             
             <!-- 1. GUÍA DETALLADA: LAGUNA PARÓN -->
@@ -415,52 +414,49 @@
               <div class="flex items-center gap-3 border-b border-kactus-100 pb-3">
                 <i class="fas fa-mountain-sun text-2xl text-kactus-600"></i>
                 <div>
-                  <h4 class="font-extrabold text-slate-800 text-lg">⛰️ Guía Oficial: Salida a la Laguna Parón</h4>
-                  <p class="text-xs text-slate-500">Opciones de transporte, precios, consejos e información de acampada.</p>
+                  <h4 class="font-extrabold text-slate-800 text-lg" id="p-title">⛰️ Guía Oficial: Salida a la Laguna Parón</h4>
+                  <p class="text-xs text-slate-500" id="p-sub">Opciones de transporte, precios, consejos e información de acampada.</p>
                 </div>
               </div>
 
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
                 
-                <!-- Opción 1: Servicio Hostal Kactus -->
                 <div class="bg-kactus-50 p-4 rounded-xl border border-kactus-200 flex flex-col justify-between space-y-3">
                   <div>
-                    <div class="inline-block bg-kactus-600 text-white text-[11px] font-bold px-2.5 py-0.5 rounded-full mb-2">OPCIÓN RECOMENDADA</div>
-                    <h5 class="font-bold text-slate-800 text-base">🚘 Salida Privada con Hostal Kactus</h5>
-                    <ul class="text-xs text-slate-600 space-y-1.5 mt-2">
+                    <div class="inline-block bg-kactus-600 text-white text-[11px] font-bold px-2.5 py-0.5 rounded-full mb-2" id="p-opt1-badge">OPCIÓN RECOMENDADA</div>
+                    <h5 class="font-bold text-slate-800 text-base" id="p-opt1-title">🚘 Salida Privada con Hostal Kactus</h5>
+                    <ul class="text-xs text-slate-600 space-y-1.5 mt-2" id="p-opt1-list">
                       <li>• <strong>Precio:</strong> S/ 40.00 por persona (Mínimo 4 personas).</li>
                       <li>• <strong>Grupos pequeños:</strong> Si son 2 personas o menos, pueden realizar el viaje cubriendo el costo total del servicio.</li>
                       <li>• <strong>Tiempo de espera:</strong> 2 horas completas en la laguna (con opción a esperar un poco más previa coordinación entre el grupo de viajeros).</li>
                       <li>• <strong>Formas de pago:</strong> Aceptamos efectivo o tarjeta en recepción.</li>
                     </ul>
                   </div>
-                  <div class="p-2.5 bg-amber-50 border border-amber-200 rounded-lg text-[11px] text-amber-900">
+                  <div class="p-2.5 bg-amber-50 border border-amber-200 rounded-lg text-[11px] text-amber-900" id="p-tip">
                     💡 <strong>Consejo del Hostal:</strong> Te sugerimos llevar agua, frutas o snacks desde Caraz, ya que la comida en la laguna suele ser más costosa.
                   </div>
                 </div>
 
-                <!-- Opción 2: Colectivo Público -->
                 <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 flex flex-col justify-between space-y-3">
                   <div>
-                    <div class="inline-block bg-slate-600 text-white text-[11px] font-bold px-2.5 py-0.5 rounded-full mb-2">OPCIÓN COLECTIVO</div>
-                    <h5 class="font-bold text-slate-800 text-base">Municipalidad / Colectivo Local</h5>
-                    <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                    <div class="inline-block bg-slate-600 text-white text-[11px] font-bold px-2.5 py-0.5 rounded-full mb-2" id="p-opt2-badge">OPCIÓN COLECTIVO</div>
+                    <h5 class="font-bold text-slate-800 text-base" id="p-opt2-title">Municipalidad / Colectivo Local</h5>
+                    <p class="text-xs text-slate-600 mt-2 leading-relaxed" id="p-opt2-desc">
                       Puedes acudir al terminal y unirte a otros viajeros para completar el vehículo.
                     </p>
-                    <ul class="text-xs text-slate-600 space-y-1.5 mt-2">
+                    <ul class="text-xs text-slate-600 space-y-1.5 mt-2" id="p-opt2-list">
                       <li>• <strong>Costo aprox:</strong> S/ 40.00 a S/ 50.00 por persona (dependiendo del conductor).</li>
                       <li>• <strong>Incluye:</strong> Espera de 2 horas en la laguna y retorno a Caraz.</li>
                     </ul>
                   </div>
                   <a href="https://maps.app.goo.gl/uJMRmvXjhRAzCGPU8" target="_blank" rel="noopener" class="w-full bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold py-2 px-3 rounded-lg flex items-center justify-center gap-2 transition-colors">
-                    <i class="fas fa-location-dot"></i> Ver Terminal Santa Cruz en Google Maps
+                    <i class="fas fa-location-dot"></i> <span id="p-map-btn">Ver Terminal Santa Cruz en Google Maps</span>
                   </a>
                 </div>
 
               </div>
 
-              <!-- Detalles adicionales Parón -->
-              <div class="p-4 bg-slate-100 rounded-xl text-xs text-slate-700 space-y-2 border border-slate-200">
+              <div class="p-4 bg-slate-100 rounded-xl text-xs text-slate-700 space-y-2 border border-slate-200" id="p-info-box">
                 <div class="font-bold text-slate-800">📌 Información Importante sobre Laguna Parón:</div>
                 <p>• <strong>Entrada al Parque:</strong> En <strong>ambas opciones</strong> los visitantes pagan directamente la entrada de <strong>S/ 5.00</strong> al guardabosques o puesto de control.</p>
                 <p>• <strong>Actividades:</strong> Durante el tiempo de permanencia puedes realizar la caminata hacia el Mirador para tomar fotos increíbles de la laguna turquesa y el nevado Artesonraju.</p>
@@ -473,28 +469,26 @@
               <div class="flex items-center gap-3 border-b border-kactus-100 pb-3">
                 <i class="fas fa-person-hiking text-2xl text-kactus-600"></i>
                 <div>
-                  <h4 class="font-extrabold text-slate-800 text-lg">🏔️ Guía Oficial: Excursión a la Laguna 69</h4>
-                  <p class="text-xs text-slate-500">Trekking icónico de la Cordillera Blanca. Opciones, guías exigidos y costos.</p>
+                  <h4 class="font-extrabold text-slate-800 text-lg" id="l69-title">🏔️ Guía Oficial: Excursión a la Laguna 69</h4>
+                  <p class="text-xs text-slate-500" id="l69-sub">Trekking icónico de la Cordillera Blanca. Opciones, guías exigidos y costos.</p>
                 </div>
               </div>
 
-              <!-- Advertencia de Guía Exigido por Guardabosques -->
-              <div class="p-3.5 bg-amber-50 border-l-4 border-l-amber-500 rounded-r-xl text-xs text-amber-900 leading-relaxed">
+              <div class="p-3.5 bg-amber-50 border-l-4 border-l-amber-500 rounded-r-xl text-xs text-amber-900 leading-relaxed" id="l69-warn">
                 <strong class="font-bold uppercase tracking-wider text-amber-950 flex items-center gap-1.5 mb-1"><i class="fas fa-triangle-exclamation text-amber-600"></i> Detalle Crucial del Parque Nacional Huascarán:</strong>
                 Toma en cuenta que los guardabosques en el puesto de control suelen <strong>exigir obligatoriamente la presencia de un guía turístico certificado</strong> para permitir iniciar el ascenso a la Laguna 69. Si vas totalmente por tu cuenta sin guía, corres el riesgo de que no te permitan el ingreso.
               </div>
 
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
                 
-                <!-- Opción Recomendada con Agencia Autorizada -->
                 <div class="bg-kactus-50 p-4 rounded-xl border border-kactus-200 flex flex-col justify-between space-y-3">
                   <div>
-                    <div class="inline-block bg-kactus-600 text-white text-[11px] font-bold px-2.5 py-0.5 rounded-full mb-2">⭐ OPCIÓN MÁS SEGURA Y RECOMENDADA</div>
-                    <h5 class="font-bold text-slate-800 text-base">🚌 Tour Organizado con Agencia Autorizada</h5>
-                    <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                    <div class="inline-block bg-kactus-600 text-white text-[11px] font-bold px-2.5 py-0.5 rounded-full mb-2" id="l69-opt1-badge">⭐ OPCIÓN MÁS SEGURA Y RECOMENDADA</div>
+                    <h5 class="font-bold text-slate-800 text-base" id="l69-opt1-title">🚌 Tour Organizado con Agencia Autorizada</h5>
+                    <p class="text-xs text-slate-600 mt-1 leading-relaxed" id="l69-opt1-desc">
                       Trabajamos en alianza con agencias profesionales. Te reservamos el cupo directamente desde el hostal.
                     </p>
-                    <ul class="text-xs text-slate-600 space-y-1.5 mt-3">
+                    <ul class="text-xs text-slate-600 space-y-1.5 mt-3" id="l69-opt1-list">
                       <li>• <strong>Costo del Tour:</strong> S/ 60.00 por persona (Transporte + Guía oficial exigido por el parque).</li>
                       <li>• <strong>Pasaje de enlace:</strong> S/ 6.00 ida y vuelta (S/ 3 Caraz a Yungay + S/ 3 retorno).</li>
                       <li>• <strong>Punto de encuentro:</strong> Esquina de la Comisaría de Yungay a las 6:00 AM aprox.</li>
@@ -503,31 +497,29 @@
                     </ul>
                   </div>
                   <a href="https://maps.google.com" target="_blank" rel="noopener" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-2 px-3 rounded-lg flex items-center justify-center gap-2 transition-colors">
-                    <i class="fas fa-location-dot"></i> Ver Comisaría de Yungay en Google Maps
+                    <i class="fas fa-location-dot"></i> <span id="l69-map-btn">Ver Comisaría de Yungay en Google Maps</span>
                   </a>
                 </div>
 
-                <!-- Opción Por Cuenta Propia -->
                 <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 flex flex-col justify-between space-y-3">
                   <div>
-                    <div class="inline-block bg-slate-600 text-white text-[11px] font-bold px-2.5 py-0.5 rounded-full mb-2">OPCIÓN POR CUENTA PROPIA</div>
-                    <h5 class="font-bold text-slate-800 text-base">🥾 Viaje Independiente en Colectivos</h5>
-                    <ul class="text-xs text-slate-600 space-y-1.5 mt-2">
+                    <div class="inline-block bg-slate-600 text-white text-[11px] font-bold px-2.5 py-0.5 rounded-full mb-2" id="l69-opt2-badge">OPCIÓN POR CUENTA PROPIA</div>
+                    <h5 class="font-bold text-slate-800 text-base" id="l69-opt2-title">🥾 Viaje Independiente en Colectivos</h5>
+                    <ul class="text-xs text-slate-600 space-y-1.5 mt-2" id="l69-opt2-list">
                       <li>• <strong>Tramo 1 (Caraz - Yungay):</strong> Combi local S/ 3.00 ida y S/ 3.00 vuelta (S/ 6.00 total).</li>
                       <li>• <strong>Tramo 2 (Yungay - Inicio del Sendero):</strong> Colectivos que van hacia Yanama aprox. S/ 30.00 por persona.</li>
                       <li>• <strong>Retorno a Yungay:</strong> Tomar transporte de paso que regrese de Yanama (aprox. S/ 20.00 a S/ 30.00).</li>
                     </ul>
                   </div>
-                  <div class="p-2.5 bg-red-50 border border-red-200 rounded-lg text-[11px] text-red-900">
+                  <div class="p-2.5 bg-red-50 border border-red-200 rounded-lg text-[11px] text-red-900" id="l69-note">
                     ⚠️ <strong>Nota:</strong> Si eliges ir por tu cuenta, asegúrate de coordinar la presencia del guía requerido en el control.
                   </div>
                 </div>
 
               </div>
 
-              <!-- Costos de Entrada Oficiales Laguna 69 -->
               <div class="p-4 bg-slate-100 rounded-xl text-xs text-slate-700 border border-slate-200 flex items-center justify-between flex-wrap gap-2">
-                <div>
+                <div id="l69-entry-box">
                   <strong class="text-slate-800">🎟️ Entrada al Parque Nacional Huascarán (Laguna 69):</strong>
                   <p class="text-slate-500 mt-0.5">El pago de <strong>S/ 30.00 por persona</strong> se realiza directamente en el puesto de control del parque en ambas modalidades.</p>
                 </div>
@@ -535,8 +527,8 @@
               </div>
             </div>
 
-            <!-- 3. DATOS DE SERVICIO Y CONSEJOS GENERALES -->
-            <div class="bg-kactus-100 p-4 rounded-xl border border-kactus-200 text-xs text-kactus-900">
+            <!-- 3. CONSEJOS GENERALES DE RECEPCIÓN -->
+            <div class="bg-kactus-100 p-4 rounded-xl border border-kactus-200 text-xs text-kactus-900" id="rec-tips-box">
               <h4 class="font-bold text-sm mb-1">🗺️ Consejos Rápidos de Recepción:</h4>
               <p>• <strong>Guardado de Equipaje:</strong> Deja tus maletas gratis antes del Check-in o después del Check-out.</p>
               <p>• <strong>Cajeros Cercanos:</strong> BCP y Banco de la Nación a 3 cuadras del hostal.</p>
@@ -551,70 +543,74 @@
               
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
-                <!-- Restaurantes Recomendados -->
+                <!-- Gerardo's Chicken -->
                 <div class="bg-slate-50 p-3.5 rounded-lg border-l-4 border-l-amber-500 flex flex-col justify-between text-xs space-y-2">
                   <div>
-                    <strong class="text-slate-800">🍗 Gerardo's Chicken (Restaurante / Pollería)</strong>
-                    <p class="text-slate-500 mt-1">Sabor único en pollo a la brasa, papas crujientes y platos variados para cenar en Caraz.</p>
+                    <strong class="text-slate-800" id="rest1-title">🍗 Gerardo's Chicken (Restaurante / Pollería)</strong>
+                    <p class="text-slate-500 mt-1" id="rest1-desc">Sabor único en pollo a la brasa, papas crujientes y platos variados para cenar en Caraz.</p>
                   </div>
                   <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1 hover:underline"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
                 </div>
 
+                <!-- Pacha Hunta -->
                 <div class="bg-slate-50 p-3.5 rounded-lg border-l-4 border-l-amber-500 flex flex-col justify-between text-xs space-y-2">
                   <div>
-                    <strong class="text-slate-800">🍲 Restaurante Pacha Hunta</strong>
-                    <p class="text-slate-500 mt-1">Excelente comida local, menús tradicionales y platos típicos cerca de la Plaza de Armas.</p>
+                    <strong class="text-slate-800" id="rest2-title">🍲 Restaurante Pacha Hunta</strong>
+                    <p class="text-slate-500 mt-1" id="rest2-desc">Excelente comida local, menús tradicionales y platos típicos cerca de la Plaza de Armas.</p>
                   </div>
                   <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1 hover:underline"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
                 </div>
 
+                <!-- Sabor & Tradición -->
                 <div class="bg-slate-50 p-3.5 rounded-lg border-l-4 border-l-amber-500 flex flex-col justify-between text-xs space-y-2">
                   <div>
-                    <strong class="text-slate-800">🍗 Pollería Sabor & Tradición</strong>
-                    <p class="text-slate-500 mt-1">Ubicada en Jr. Sucre (arriba de la plaza). Opción tradicional para cenas y pollo a la brasa.</p>
+                    <strong class="text-slate-800" id="rest3-title">🍗 Pollería Sabor & Tradición</strong>
+                    <p class="text-slate-500 mt-1" id="rest3-desc">Ubicada en Jr. Sucre (arriba de la plaza). Opción tradicional para cenas y pollo a la brasa.</p>
                   </div>
                   <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1 hover:underline"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
                 </div>
 
-                <!-- Farmacias -->
+                <!-- Inkafarma -->
                 <div class="bg-slate-50 p-3.5 rounded-lg border-l-4 border-l-emerald-600 flex flex-col justify-between text-xs space-y-2">
                   <div>
-                    <strong class="text-slate-800">💊 Inkafarma (Jr. Sucre / Raymondi)</strong>
-                    <p class="text-slate-500 mt-1">Botica céntrica para medicamentos, artículos de aseo personal y pastillas para el soroche.</p>
+                    <strong class="text-slate-800" id="farm1-title">💊 Inkafarma (Jr. Sucre / Raymondi)</strong>
+                    <p class="text-slate-500 mt-1" id="farm1-desc">Botica céntrica para medicamentos, artículos de aseo personal y pastillas para el soroche.</p>
                   </div>
                   <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1 hover:underline"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
                 </div>
 
+                <!-- Mifarma -->
                 <div class="bg-slate-50 p-3.5 rounded-lg border-l-4 border-l-emerald-600 flex flex-col justify-between text-xs space-y-2">
                   <div>
-                    <strong class="text-slate-800">💊 Mifarma (Cerca al Mercado)</strong>
-                    <p class="text-slate-500 mt-1">Farmacia cercana al mercado principal para cualquier atención médica de emergencia.</p>
+                    <strong class="text-slate-800" id="farm2-title">💊 Mifarma (Cerca al Mercado)</strong>
+                    <p class="text-slate-500 mt-1" id="farm2-desc">Farmacia cercana al mercado principal para cualquier atención médica de emergencia.</p>
                   </div>
                   <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1 hover:underline"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
                 </div>
 
-                <!-- Grifos -->
+                <!-- Grifo El Arco -->
                 <div class="bg-slate-50 p-3.5 rounded-lg border-l-4 border-l-red-500 flex flex-col justify-between text-xs space-y-2">
                   <div>
-                    <strong class="text-slate-800">⛽ Grifo "El Arco" (Caraz)</strong>
-                    <p class="text-slate-500 mt-1">Estación de servicio ubicada en la entrada a la ciudad para abastecimiento rápido de combustible.</p>
+                    <strong class="text-slate-800" id="gas1-title">⛽ Grifo "El Arco" (Caraz)</strong>
+                    <p class="text-slate-500 mt-1" id="gas1-desc">Estación de servicio ubicada en la entrada a la ciudad para abastecimiento rápido de combustible.</p>
                   </div>
                   <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1 hover:underline"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
                 </div>
 
+                <!-- Grifo Bomberos -->
                 <div class="bg-slate-50 p-3.5 rounded-lg border-l-4 border-l-red-500 flex flex-col justify-between text-xs space-y-2">
                   <div>
-                    <strong class="text-slate-800">⛽ Grifo Cerca a la Compañía de Bomberos</strong>
-                    <p class="text-slate-500 mt-1">Estación de servicio estratégica cerca a la carretera principal y la estación de bomberos de Caraz.</p>
+                    <strong class="text-slate-800" id="gas2-title">⛽ Grifo Cerca a la Compañía de Bomberos</strong>
+                    <p class="text-slate-500 mt-1" id="gas2-desc">Estación de servicio estratégica cerca a la carretera principal y la estación de bomberos de Caraz.</p>
                   </div>
                   <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1 hover:underline"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
                 </div>
 
-                <!-- Taller Mecánico de Motos -->
+                <!-- Taller Mecánico -->
                 <div class="bg-slate-50 p-3.5 rounded-lg border-l-4 border-l-blue-600 flex flex-col justify-between text-xs space-y-2">
                   <div>
-                    <strong class="text-slate-800">🔧 Taller Mecánico de Motos</strong>
-                    <p class="text-slate-500 mt-1">Servicio de mantenimiento, cambio de aceite y reparaciones rápidas para motocicletas en Caraz.</p>
+                    <strong class="text-slate-800" id="mech-title">🔧 Taller Mecánico de Motos</strong>
+                    <p class="text-slate-500 mt-1" id="mech-desc">Servicio de mantenimiento, cambio de aceite y reparaciones rápidas para motocicletas en Caraz.</p>
                   </div>
                   <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1 hover:underline"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
                 </div>
@@ -679,9 +675,9 @@
           <i class="fas fa-map-marker-alt text-red-500 mr-1"></i> <strong id="lbl-addr">Dirección:</strong> Avenida Meza Arizona 425 - 202, Caraz, Ancash, Perú
         </p>
         <div class="flex flex-wrap justify-center gap-2">
-          <span class="bg-kactus-50 border border-kactus-200 text-kactus-800 text-xs font-semibold px-3 py-1 rounded-full"><i class="fas fa-clock mr-1"></i> Check-in & Check-out: 11:00 AM</span>
-          <span class="bg-kactus-50 border border-kactus-200 text-kactus-800 text-xs font-semibold px-3 py-1 rounded-full"><i class="fas fa-suitcase mr-1"></i> Equipaje gratis</span>
-          <span class="bg-kactus-50 border border-kactus-200 text-kactus-800 text-xs font-semibold px-3 py-1 rounded-full"><i class="fas fa-ban mr-1"></i> No mascotas</span>
+          <span class="bg-kactus-50 border border-kactus-200 text-kactus-800 text-xs font-semibold px-3 py-1 rounded-full" id="pol-time"><i class="fas fa-clock mr-1"></i> Check-in & Check-out: 11:00 AM</span>
+          <span class="bg-kactus-50 border border-kactus-200 text-kactus-800 text-xs font-semibold px-3 py-1 rounded-full" id="pol-luggage"><i class="fas fa-suitcase mr-1"></i> Equipaje gratis</span>
+          <span class="bg-kactus-50 border border-kactus-200 text-kactus-800 text-xs font-semibold px-3 py-1 rounded-full" id="pol-pets"><i class="fas fa-ban mr-1"></i> No mascotas</span>
         </div>
         <div class="pt-2">
           <a href="https://maps.google.com" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 active:scale-95 text-white font-bold py-3 px-6 rounded-xl text-sm transition-all shadow-md">
@@ -794,17 +790,41 @@
         room2Desc: "Habitación mediana con cama de 2 plazas, mayor espacio y excelente iluminación.",
         perNight: "/ noche",
         btnRes: "Reservar por WhatsApp",
+        titleCamping: "Alquiler de Equipos de Camping y Trekking",
+        campIntro: "Equípate directamente en el hostal con material especializado de alta montaña para tus caminatas en la Cordillera Blanca:",
+        campItem1: '<i class="fas fa-campground text-kactus-600 mr-2"></i>Carpa 3 Estaciones',
+        campDesc1: "Carpa resistente para acampar en montaña.",
+        campUnit1: "/ día",
+        campItem2: '<i class="fas fa-bed text-kactus-600 mr-2"></i>Saco de Dormir Pluma',
+        campDesc2: "Pluma de pato de alta resistencia (-5°C a -20°C).",
+        campUnit2: "/ día",
+        campItem3: '<i class="fas fa-hiking text-kactus-600 mr-2"></i>Bastones de Trekking',
+        campDesc3: "El par de bastones telescópicos ergonómicos.",
+        campUnit3: "/ par por día",
+        campItem4: '<i class="fas fa-binoculars text-kactus-600 mr-2"></i>Largavistas / Binoculares',
+        campDesc4: "Observación de paisajes y nevados.",
+        campUnit4: "/ día",
+        campItem5: '<i class="fas fa-fire-burner text-kactus-600 mr-2"></i>Cocina de Campaña',
+        campDesc5: "Incluye utensilios de cocina. (No incluye balón).",
+        campUnit5: "/ día",
+        campItem6: '<i class="fas fa-gas-pump text-kactus-600 mr-2"></i>Balón de Gas Nuevo',
+        campDesc6: "Balón de gas sellado por separado.",
+        campUnit6: "/ unidad",
+        campCourtesy: '<strong>¡Cortesía especial de la casa!</strong> Si al momento de alquilar tus equipos contamos con balones de gas dejados por huéspedes anteriores, te lo entregamos <strong>completamente gratis</strong> como cortesía por el alquiler.',
         titleServices: "Servicios e Instalaciones",
         sBath: "Baño Privado", sWater: "Agua Caliente 24/7", sTv: "TV Smart", sWifi: "Wi-Fi Gratis",
         sParking: "Estacionamiento Gratis", sLuggage: "Guardado de Equipaje GRATIS", sKitchen: "Cocina Compartida & Horno", sBreakfast: "Servicio de Desayunos",
         titlePayments: "Pasarela de Pago y Medios de Reserva",
         payIntro: "Aceptamos múltiples formas de pago para tu máxima comodidad al reservar:",
         payYape: "Pagos digitales instantáneos al teléfono oficial.",
+        payTitleCards: "Tarjetas de Crédito / Débito",
         payCards: "Visa, MasterCard, American Express.",
+        payTitleBank: "Depósito Bancario",
         payBank: "Cuentas BCP y Banco de la Nación.",
+        payTitleCash: "Efectivo",
         payCash: "Pago directo en la recepción al llegar.",
         titleTours: "Salidas a Tours y Transporte Desde Caraz",
-        t1Title: "⛰️ Laguna Parón", t1Desc: "Salidas directas coordinadas con el hostal o colectivos locales diarios desde Caraz.",
+        t1Title: "⛰️ Laguna Parón", t1Desc: "Salidas directas coordinadas con el hostal o colectivos locales diarios desde Caraz. Asesoría completa sobre aclimatación y rutas.",
         t2Title: "🏔️ Laguna Llanganuco & Laguna 69", t2Desc: "Excursión Full Day con tour operador autorizado. Incluye transporte, guía oficial y recojo estratégico.",
         titleReviews: "Opiniones de Nuestros Huéspedes",
         rev1Text: '"Lugar súper limpio, tranquilo y con agua caliente las 24 horas. La atención en recepción fue excelente para organizar mi viaje a Laguna Parón."',
@@ -815,14 +835,52 @@
         gPrivTitle: "🔐 Guía Privada de Rutas y Servicios para Huéspedes",
         gPrivDesc: "Ingresa la clave proporcionada en recepción para ver guías detalladas de Laguna Parón, Laguna 69, restaurantes recomendados, farmacias, grifos y taller mecánico:",
         btnUnlockText: "Desbloquear Guía", passPlaceholder: "Contraseña de huésped",
+        pTitle: "⛰️ Guía Oficial: Salida a la Laguna Parón",
+        pSub: "Opciones de transporte, precios, consejos e información de acampada.",
+        pOpt1Badge: "OPCIÓN RECOMENDADA",
+        pOpt1Title: "🚘 Salida Privada con Hostal Kactus",
+        pOpt1List: '<li>• <strong>Precio:</strong> S/ 40.00 por persona (Mínimo 4 personas).</li><li>• <strong>Grupos pequeños:</strong> Si son 2 personas o menos, pueden realizar el viaje cubriendo el costo total del servicio.</li><li>• <strong>Tiempo de espera:</strong> 2 horas completas en la laguna (con opción a esperar un poco más previa coordinación entre el grupo de viajeros).</li><li>• <strong>Formas de pago:</strong> Aceptamos efectivo o tarjeta en recepción.</li>',
+        pTip: '💡 <strong>Consejo del Hostal:</strong> Te sugerimos llevar agua, frutas o snacks desde Caraz, ya que la comida en la laguna suele ser más costosa.',
+        pOpt2Badge: "OPCIÓN COLECTIVO",
+        pOpt2Title: "Municipalidad / Colectivo Local",
+        pOpt2Desc: "Puedes acudir al terminal y unirte a otros viajeros para completar el vehículo.",
+        pOpt2List: '<li>• <strong>Costo aprox:</strong> S/ 40.00 a S/ 50.00 por persona (dependiendo del conductor).</li><li>• <strong>Incluye:</strong> Espera de 2 horas en la laguna y retorno a Caraz.</li>',
+        pMapBtn: "Ver Terminal Santa Cruz en Google Maps",
+        pInfoBox: '<div class="font-bold text-slate-800">📌 Información Importante sobre Laguna Parón:</div><p>• <strong>Entrada al Parque:</strong> En <strong>ambas opciones</strong> los visitantes pagan directamente la entrada de <strong>S/ 5.00</strong> al guardabosques o puesto de control.</p><p>• <strong>Actividades:</strong> Durante el tiempo de permanencia puedes realizar la caminata hacia el Mirador para tomar fotos increíbles de la laguna turquesa y el nevado Artesonraju.</p><p>• <strong>¿Deseas acampar en Laguna Parón?</strong> Es una experiencia inolvidable. Recuerda que en <strong>Hostal Kactus te alquilamos todo el equipo necesario</strong> (carpas 3 estaciones, sacos de pluma, cocinas y bastones).</p>',
+        l69Title: "🏔️ Guía Oficial: Excursión a la Laguna 69",
+        l69Sub: "Trekking icónico de la Cordillera Blanca. Opciones, guías exigidos y costos.",
+        l69Warn: '<strong class="font-bold uppercase tracking-wider text-amber-950 flex items-center gap-1.5 mb-1"><i class="fas fa-triangle-exclamation text-amber-600"></i> Detalle Crucial del Parque Nacional Huascarán:</strong>Toma en cuenta que los guardabosques en el puesto de control suelen <strong>exigir obligatoriamente la presencia de un guía turístico certificado</strong> para permitir iniciar el ascenso a la Laguna 69. Si vas totalmente por tu cuenta sin guía, corres el riesgo de que no te permitan el ingreso.',
+        l69Opt1Badge: "⭐ OPCIÓN MÁS SEGURA Y RECOMENDADA",
+        l69Opt1Title: "🚌 Tour Organizado con Agencia Autorizada",
+        l69Opt1Desc: "Trabajamos en alianza con agencias profesionales. Te reservamos el cupo directamente desde el hostal.",
+        l69Opt1List: '<li>• <strong>Costo del Tour:</strong> S/ 60.00 por persona (Transporte + Guía oficial exigido por el parque).</li><li>• <strong>Pasaje de enlace:</strong> S/ 6.00 ida y vuelta (S/ 3 Caraz a Yungay + S/ 3 retorno).</li><li>• <strong>Punto de encuentro:</strong> Esquina de la Comisaría de Yungay a las 6:00 AM aprox.</li><li>• <strong>Modalidad:</strong> Full Day (Retorno a Caraz aprox 6:00 PM).</li><li>• <strong>Pago:</strong> En efectivo o tarjeta en la recepción de Hostal Kactus.</li>',
+        l69MapBtn: "Ver Comisaría de Yungay en Google Maps",
+        l69Opt2Badge: "OPCIÓN POR CUENTA PROPIA",
+        l69Opt2Title: "🥾 Viaje Independiente en Colectivos",
+        l69Opt2List: '<li>• <strong>Tramo 1 (Caraz - Yungay):</strong> Combi local S/ 3.00 ida y S/ 3.00 vuelta (S/ 6.00 total).</li><li>• <strong>Tramo 2 (Yungay - Inicio del Sendero):</strong> Colectivos que van hacia Yanama aprox. S/ 30.00 por persona.</li><li>• <strong>Retorno a Yungay:</strong> Tomar transporte de paso que regrese de Yanama (aprox. S/ 20.00 a S/ 30.00).</li>',
+        l69Note: '⚠️ <strong>Nota:</strong> Si eliges ir por tu cuenta, asegúrate de coordinar la presencia del guía requerido en el control.',
+        l69EntryBox: '<strong class="text-slate-800">🎟️ Entrada al Parque Nacional Huascarán (Laguna 69):</strong><p class="text-slate-500 mt-0.5">El pago de <strong>S/ 30.00 por persona</strong> se realiza directamente en el puesto de control del parque en ambas modalidades.</p>',
+        recTipsBox: '<h4 class="font-bold text-sm mb-1">🗺️ Consejos Rápidos de Recepción:</h4><p>• <strong>Guardado de Equipaje:</strong> Deja tus maletas gratis antes del Check-in o después del Check-out.</p><p>• <strong>Cajeros Cercanos:</strong> BCP y Banco de la Nación a 3 cuadras del hostal.</p>',
         gShopTitle: "Restaurantes Recomendados, Farmacias, Grifos y Servicios Cercanos:",
         gShopIntro: "Toca cualquier enlace para abrir la ruta en Google Maps:",
+        rest1Title: "🍗 Gerardo's Chicken (Restaurante / Pollería)", rest1Desc: "Sabor único en pollo a la brasa, papas crujientes y platos variados para cenar en Caraz.",
+        rest2Title: "🍲 Restaurante Pacha Hunta", rest2Desc: "Excelente comida local, menús tradicionales y platos típicos cerca de la Plaza de Armas.",
+        rest3Title: "🍗 Pollería Sabor & Tradición", rest3Desc: "Ubicada en Jr. Sucre (arriba de la plaza). Opción tradicional para cenas y pollo a la brasa.",
+        farm1Title: "💊 Inkafarma (Jr. Sucre / Raymondi)", farm1Desc: "Botica céntrica para medicamentos, artículos de aseo personal y pastillas para el soroche.",
+        farm2Title: "💊 Mifarma (Cerca al Mercado)", farm2Desc: "Farmacia cercana al mercado principal para cualquier atención médica de emergencia.",
+        gas1Title: '⛽ Grifo "El Arco" (Caraz)', gas1Desc: "Estación de servicio ubicada en la entrada a la ciudad para abastecimiento rápido de combustible.",
+        gas2Title: "⛽ Grifo Cerca a la Compañía de Bomberos", gas2Desc: "Estación de servicio estratégica cerca a la carretera principal y la estación de bomberos de Caraz.",
+        mechTitle: "🔧 Taller Mecánico de Motos", mechDesc: "Servicio de mantenimiento, cambio de aceite y reparaciones rápidas para motocicletas en Caraz.",
         mapLinkText: "Ver en Google Maps",
         titleFaq: "Preguntas Frecuentes",
         faqQ1: "¿A qué hora es el Check-in y Check-out?", faqA1: "El Check-in es a las 11:00 AM y el Check-out a las 11:00 AM. Si llegas antes o necesitas salir después, ¡puedes guardar tu equipaje gratis!",
         faqQ2: "¿Tienen agua caliente las 24 horas?", faqA2: "Sí, disponemos de agua caliente 24/7 en todas nuestras habitaciones.",
         faqQ3: "¿Puedo alquilar equipos de camping en el hostal?", faqA3: "¡Sí! Alquilamos carpas 3 estaciones, sacos de dormir de pluma (-5°C a -20°C), bastones de trekking, cocinas con utensilios y largavistas.",
-        titleLocation: "Ubicación y Políticas", lblAddr: "Dirección:", btnMapsText: "Abrir Ubicación en Google Maps",
+        titleLocation: "Ubicación y Políticas", lblAddr: "Dirección:",
+        polTime: '<i class="fas fa-clock mr-1"></i> Check-in & Check-out: 11:00 AM',
+        polLuggage: '<i class="fas fa-suitcase mr-1"></i> Equipaje gratis',
+        polPets: '<i class="fas fa-ban mr-1"></i> No mascotas',
+        btnMapsText: "Abrir Ubicación en Google Maps",
         stkFrom: "Desde", stkBtn: "Reservar Ahora"
       },
       en: {
@@ -835,17 +893,32 @@
         room1Title: "Economy Double Room", room1Desc: "Small cozy room with double bed. Ideal for couples or solo travelers.",
         room2Title: "Medium Double Room", room2Desc: "Medium-sized room with double bed, more space, and great lighting.",
         perNight: "/ night", btnRes: "Book via WhatsApp",
+        titleCamping: "Camping & Trekking Gear Rental",
+        campIntro: "Equip yourself directly at the hostel with high-mountain gear for your treks in the Cordillera Blanca:",
+        campItem1: '<i class="fas fa-campground text-kactus-600 mr-2"></i>3-Season Tent',
+        campDesc1: "Durable mountain camping tent.", campUnit1: "/ day",
+        campItem2: '<i class="fas fa-bed text-kactus-600 mr-2"></i>Down Sleeping Bag',
+        campDesc2: "High-grade duck down (-5°C to -20°C).", campUnit2: "/ day",
+        campItem3: '<i class="fas fa-hiking text-kactus-600 mr-2"></i>Trekking Poles',
+        campDesc3: "Pair of ergonomic telescopic poles.", campUnit3: "/ pair per day",
+        campItem4: '<i class="fas fa-binoculars text-kactus-600 mr-2"></i>Binoculars',
+        campDesc4: "Landscape and peak observation.", campUnit4: "/ day",
+        campItem5: '<i class="fas fa-fire-burner text-kactus-600 mr-2"></i>Camp Stove',
+        campDesc5: "Includes cooking utensils. (Gas canister separate).", campUnit5: "/ day",
+        campItem6: '<i class="fas fa-gas-pump text-kactus-600 mr-2"></i>New Gas Canister',
+        campDesc6: "Sealed gas canister.", campUnit6: "/ unit",
+        campCourtesy: '<strong>House Special Courtesy!</strong> If we have partially used gas canisters left by previous guests, we provide them <strong>100% free of charge</strong> with your equipment rental.',
         titleServices: "Services & Amenities",
         sBath: "Private Bathroom", sWater: "24/7 Hot Water", sTv: "Smart TV", sWifi: "Free Wi-Fi",
         sParking: "Free Parking", sLuggage: "FREE Luggage Storage", sKitchen: "Shared Kitchen & Oven", sBreakfast: "Breakfast Service",
         titlePayments: "Payment Options & Booking Methods",
         payIntro: "We accept multiple payment methods for your maximum convenience:",
         payYape: "Instant digital payments via official phone number.",
-        payCards: "Visa, MasterCard, American Express.",
-        payBank: "BCP and Banco de la Nación bank transfers.",
-        payCash: "Direct cash payment at reception upon arrival.",
+        payTitleCards: "Credit / Debit Cards", payCards: "Visa, MasterCard, American Express.",
+        payTitleBank: "Bank Transfer", payBank: "BCP & Banco de la Nación accounts.",
+        payTitleCash: "Cash", payCash: "Direct cash payment at reception upon arrival.",
         titleTours: "Tour Departures & Transport From Caraz",
-        t1Title: "⛰️ Parón Lake", t1Desc: "Direct departures coordinated with the hostel or daily local shared vans.",
+        t1Title: "⛰️ Parón Lake", t1Desc: "Direct departures coordinated with the hostel or daily local shared vans from Caraz. Complete advice on acclimatization and routes.",
         t2Title: "🏔️ Llanganuco Lake & Lake 69", t2Desc: "Full Day excursion with licensed tour operator. Includes transport, official guide, and strategic pickup.",
         titleReviews: "Guest Reviews",
         rev1Text: '"Super clean place, quiet and with 24/7 hot water. The front desk was extremely helpful in organizing my trip to Parón Lake."',
@@ -854,16 +927,54 @@
         gPubTitle: "Popular Places to Visit:",
         gPubDesc: "📍 <strong>Parón Lake:</strong> The largest turquoise lagoon in the Cordillera Blanca.<br>📍 <strong>Llanganuco & Lake 69:</strong> Spectacular views of Huascarán and Chopicalqui peaks.<br>📍 <strong>Caraz Main Square:</strong> Famous for artisanal ice cream and warm climate.",
         gPrivTitle: "🔐 Private Route & Services Guide for Guests",
-        gPrivDesc: "Enter the key provided at reception to see detailed guides for Parón Lake, Lake 69, recommended restaurants, pharmacies & services:",
+        gPrivDesc: "Enter the key provided at reception to see detailed guides for Parón Lake, Lake 69, recommended restaurants, pharmacies, gas stations & mechanics:",
         btnUnlockText: "Unlock Guide", passPlaceholder: "Guest password",
-        gShopTitle: "Recommended Restaurants, Pharmacies, Gas Stations & Mechanics:",
-        gShopIntro: "Tap any link to open location on Google Maps:",
+        pTitle: "⛰️ Official Guide: Trip to Parón Lake",
+        pSub: "Transport options, pricing, advice & camping info.",
+        pOpt1Badge: "RECOMMENDED OPTION",
+        pOpt1Title: "🚘 Private Departure with Hostal Kactus",
+        pOpt1List: '<li>• <strong>Price:</strong> S/ 40.00 per person (Minimum 4 people).</li><li>• <strong>Small Groups:</strong> Parties of 2 or fewer can travel by covering the full vehicle cost.</li><li>• <strong>Wait Time:</strong> 2 full hours at the lake (flexible upon group agreement).</li><li>• <strong>Payment:</strong> Cash or card accepted at reception.</li>',
+        pTip: '💡 <strong>Hostel Tip:</strong> Bring water and snacks from Caraz, as food at the lake is more expensive.',
+        pOpt2Badge: "SHARED VAN OPTION",
+        pOpt2Title: "Local Shared Van (Colectivo)",
+        pOpt2Desc: "Head to the station and group with other travelers to fill the van.",
+        pOpt2List: '<li>• <strong>Approx Cost:</strong> S/ 40.00 to S/ 50.00 per person.</li><li>• <strong>Includes:</strong> 2 hours waiting time at the lake and return to Caraz.</li>',
+        pMapBtn: "Open Santa Cruz Station in Google Maps",
+        pInfoBox: '<div class="font-bold text-slate-800">📌 Important Parón Lake Info:</div><p>• <strong>Park Entrance Fee:</strong> In <strong>both options</strong>, visitors pay <strong>S/ 5.00</strong> directly at the checkpoint.</p><p>• <strong>Activities:</strong> Enjoy the hike up to the Viewpoint for iconic photos of Mount Artesonraju.</p><p>• <strong>Camping at Parón?</strong> We rent all required high-altitude camping gear at reception.</p>',
+        l69Title: "🏔️ Official Guide: Lake 69 Day Hike",
+        l69Sub: "Iconic Cordillera Blanca trek. Options, mandatory guides & costs.",
+        l69Warn: '<strong class="font-bold uppercase tracking-wider text-amber-950 flex items-center gap-1.5 mb-1"><i class="fas fa-triangle-exclamation text-amber-600"></i> Crucial Huascarán National Park Requirement:</strong>Park rangers at the checkpoint <strong>strictly require a certified mountain guide</strong> to allow entry onto the Lake 69 trail. Independent hikers without a guide risk being turned away.',
+        l69Opt1Badge: "⭐ SAFEST & RECOMMENDED OPTION",
+        l69Opt1Title: "🚌 Organised Tour with Licensed Agency",
+        l69Opt1Desc: "We partner with licensed tour operators and book your seats directly at reception.",
+        l69Opt1List: '<li>• <strong>Tour Cost:</strong> S/ 60.00 per person (Transport + Official certified guide included).</li><li>• <strong>Connecting Bus:</strong> S/ 6.00 round trip (S/ 3 Caraz to Yungay + S/ 3 return).</li><li>• <strong>Meeting Point:</strong> Yungay Police Station corner at ~6:00 AM.</li><li>• <strong>Duration:</strong> Full Day (Return to Caraz ~6:00 PM).</li><li>• <strong>Payment:</strong> Cash or card at Hostal Kactus reception.</li>',
+        l69MapBtn: "Open Yungay Police Station in Google Maps",
+        l69Opt2Badge: "INDEPENDENT OPTION",
+        l69Opt2Title: "🥾 Travel via Local Buses & Vans",
+        l69Opt2List: '<li>• <strong>Leg 1 (Caraz - Yungay):</strong> Local combi S/ 3.00 each way (S/ 6.00 total).</li><li>• <strong>Leg 2 (Yungay - Trailhead):</strong> Shared van towards Yanama ~S/ 30.00 per person.</li><li>• <strong>Return:</strong> Catch passing vans returning from Yanama (~S/ 20.00 to S/ 30.00).</li>',
+        l69Note: '⚠️ <strong>Note:</strong> If traveling independently, ensure guide arrangements are cleared at checkpoint.',
+        l69EntryBox: '<strong class="text-slate-800">🎟️ Huascarán National Park Fee (Lake 69):</strong><p class="text-slate-500 mt-0.5">The entrance fee of <strong>S/ 30.00 per person</strong> is paid directly at the park checkpoint.</p>',
+        recTipsBox: '<h4 class="font-bold text-sm mb-1">🗺️ Reception Quick Tips:</h4><p>• <strong>Luggage Storage:</strong> Free luggage storage before check-in or after check-out.</p><p>• <strong>ATMs Nearby:</strong> BCP & Banco de la Nación ATMs 3 blocks away.</p>',
+        gShopTitle: "Recommended Restaurants, Pharmacies, Gas Stations & Services:",
+        gShopIntro: "Tap any link to open location in Google Maps:",
+        rest1Title: "🍗 Gerardo's Chicken (Restaurant / Grill)", rest1Desc: "Crispy Peruvian roast chicken, fries, and dinner dishes in Caraz.",
+        rest2Title: "🍲 Pacha Hunta Restaurant", rest2Desc: "Excellent local Peruvian cuisine and traditional set menus near Main Square.",
+        rest3Title: "🍗 Sabor & Tradición Roast Chicken", rest3Desc: "Located on Jr. Sucre. Traditional spot for roast chicken dinners.",
+        farm1Title: "💊 Inkafarma (Jr. Sucre / Raymondi)", farm1Desc: "Central pharmacy for medicines, toiletries, and altitude sickness pills (soroche).",
+        farm2Title: "💊 Mifarma (Near Main Market)", farm2Desc: "Pharmacy close to the main market for any medical emergencies.",
+        gas1Title: '⛽ "El Arco" Gas Station (Caraz)', gas1Desc: "Gas station located at the entrance of town for quick fuel top-ups.",
+        gas2Title: "⛽ Gas Station near Fire Department", gas2Desc: "Strategic gas station near the main highway and Caraz fire station.",
+        mechTitle: "🔧 Motorcycle Repair Workshop", mechDesc: "Maintenance, oil changes, and quick repairs for motorcycles in Caraz.",
         mapLinkText: "Open in Google Maps",
         titleFaq: "Frequently Asked Questions",
         faqQ1: "What time is Check-in and Check-out?", faqA1: "Check-in is at 11:00 AM and Check-out at 11:00 AM. Free luggage storage available!",
         faqQ2: "Do you have 24/7 hot water?", faqA2: "Yes, we have 24/7 hot water in all rooms.",
         faqQ3: "Can I rent camping gear at the hostel?", faqA3: "Yes! We rent 3-season tents, down sleeping bags (-5°C to -20°C), trekking poles, stoves, and binoculars.",
-        titleLocation: "Location & Policies", lblAddr: "Address:", btnMapsText: "Open Location in Google Maps",
+        titleLocation: "Location & Policies", lblAddr: "Address:",
+        polTime: '<i class="fas fa-clock mr-1"></i> Check-in & Check-out: 11:00 AM',
+        polLuggage: '<i class="fas fa-suitcase mr-1"></i> Free luggage storage',
+        polPets: '<i class="fas fa-ban mr-1"></i> No pets allowed',
+        btnMapsText: "Open Location in Google Maps",
         stkFrom: "From", stkBtn: "Book Now"
       },
       fr: {
@@ -876,15 +987,32 @@
         room1Title: "Chambre Double Économique", room1Desc: "Petite chambre douillette avec lit double. Idéale pour couples ou voyageurs solos.",
         room2Title: "Chambre Double Moyenne", room2Desc: "Chambre moyenne avec lit double, plus d'espace et belle luminosité.",
         perNight: "/ nuit", btnRes: "Réserver par WhatsApp",
+        titleCamping: "Location de Matériel de Camping & Trekking",
+        campIntro: "Équipez-vous directement à l'auberge avec du matériel de haute montagne pour vos randonnées :",
+        campItem1: '<i class="fas fa-campground text-kactus-600 mr-2"></i>Tente 3 Saisons',
+        campDesc1: "Tente résistante pour le camping en montagne.", campUnit1: "/ jour",
+        campItem2: '<i class="fas fa-bed text-kactus-600 mr-2"></i>Sac de Couchage en Duvet',
+        campDesc2: "Duvet de canard haute isolation (-5°C à -20°C).", campUnit2: "/ jour",
+        campItem3: '<i class="fas fa-hiking text-kactus-600 mr-2"></i>Bâtons de Randonnée',
+        campDesc3: "Paire de bâtons télescopiques ergonomiques.", campUnit3: "/ paire par jour",
+        campItem4: '<i class="fas fa-binoculars text-kactus-600 mr-2"></i>Jumelles de Vue',
+        campDesc4: "Observation des paysages et sommets enneigés.", campUnit4: "/ jour",
+        campItem5: '<i class="fas fa-fire-burner text-kactus-600 mr-2"></i>Réchaud de Camping',
+        campDesc5: "Comprend les ustensiles de cuisine. (Recharge gaz en sus).", campUnit5: "/ jour",
+        campItem6: '<i class="fas fa-gas-pump text-kactus-600 mr-2"></i>Cartouche de Gaz Neuve',
+        campDesc6: "Cartouche de gaz scellée.", campUnit6: "/ unité",
+        campCourtesy: '<strong>Courtoisie spéciale de la maison !</strong> Si nous disposons de cartouches de gaz entamées laissées par de précédents clients, nous vous les fournissons <strong>100% gratuitement</strong> avec votre location.',
         titleServices: "Services et Équipements",
         sBath: "Salle de Bain Privée", sWater: "Eau Chaude 24/7", sTv: "Smart TV", sWifi: "Wi-Fi Gratuit",
         sParking: "Parking Gratuit", sLuggage: "Consigne à Bagages GRATUITE", sKitchen: "Cuisine Partagée & Four", sBreakfast: "Service Petit-Déjeuner",
         titlePayments: "Options de Paiement et Réservation",
         payIntro: "Nous acceptons plusieurs modes de paiement pour votre confort :",
-        payYape: "Paiements numériques instantanés.", payCards: "Visa, MasterCard, American Express.",
-        payBank: "Virements bancaires BCP et Banco de la Nación.", payCash: "Paiement direct en espèces à la réception.",
+        payYape: "Paiements numériques instantanés.",
+        payTitleCards: "Cartes de Crédit / Débit", payCards: "Visa, MasterCard, American Express.",
+        payTitleBank: "Virement Bancaire", payBank: "Comptes BCP et Banco de la Nación.",
+        payTitleCash: "Espèces", payCash: "Paiement direct en espèces à la réception.",
         titleTours: "Excursions et Transports Depuis Caraz",
-        t1Title: "⛰️ Lac Parón", t1Desc: "Départs directs organisés avec l'auberge ou bus locaux.",
+        t1Title: "⛰️ Lac Parón", t1Desc: "Départs directs organisés avec l'auberge ou bus locaux quotidiens. Conseils complets sur l'acclimatation et les itinéraires.",
         t2Title: "🏔️ Lac Llanganuco & Lac 69", t2Desc: "Excursion d'une journée avec opérateur agréé. Transport et guide officiel inclus.",
         titleReviews: "Avis de nos Clients",
         rev1Text: '"Endroit très propre, calme avec de l\'eau chaude 24h/24. Le personnel était formidable pour m\'aider à aller au Lac Parón."',
@@ -893,16 +1021,54 @@
         gPubTitle: "Lieux Populaires à Visiter :",
         gPubDesc: "📍 <strong>Lac Parón :</strong> Le plus grand lac turquoise de la Cordillère Blanche.<br>📍 <strong>Lacs Llanganuco & Lac 69 :</strong> Vues magnifiques sur les sommets Huascarán et Chopicalqui.<br>📍 <strong>Place Principale de Caraz :</strong> Célèbre pour ses glaces artisanales et son climat chaud.",
         gPrivTitle: "🔐 Guide Privé de Routes et Services pour les Clients",
-        gPrivDesc: "Entrez le mot de passe fourni à la réception :",
+        gPrivDesc: "Entrez le mot de passe fourni à la réception pour afficher les guides détaillés pour le Lac Parón, le Lac 69, les restaurants, pharmacies et services :",
         btnUnlockText: "Déverrouiller le Guide", passPlaceholder: "Mot de passe client",
-        gShopTitle: "Restaurants Recommandés, Pharmacies & Services :",
-        gShopIntro: "Touchez un lien pour ouvrir sur Google Maps :",
+        pTitle: "⛰️ Guide Officiel : Excursion au Lac Parón",
+        pSub: "Options de transport, tarifs, conseils et camping.",
+        pOpt1Badge: "OPTION RECOMMANDÉE",
+        pOpt1Title: "🚘 Départ Privé avec Hostal Kactus",
+        pOpt1List: '<li>• <strong>Prix :</strong> 40,00 Soles par personne (Minimum 4 personnes).</li><li>• <strong>Petits groupes :</strong> Si vous êtes 2 personnes ou moins, vous pouvez voyager en couvrant le coût total du véhicule.</li><li>• <strong>Temps sur place :</strong> 2 heures complètes au lac (flexible selon l\'accord du groupe).</li><li>• <strong>Paiement :</strong> Espèces ou carte à la réception.</li>',
+        pTip: '💡 <strong>Conseil de l\'Auberge :</strong> Emportez de l\'eau et des collations depuis Caraz, la nourriture au lac étant plus chère.',
+        pOpt2Badge: "OPTION BUS COLLECTIF",
+        pOpt2Title: "Bus Collectif Local (Colectivo)",
+        pOpt2Desc: "Rendez-vous à la station et regroupez-vous avec d'autres voyageurs.",
+        pOpt2List: '<li>• <strong>Coût approx :</strong> 40,00 à 50,00 Soles par personne.</li><li>• <strong>Inclus :</strong> 2 heures d\'attente au lac et retour à Caraz.</li>',
+        pMapBtn: "Ouvrir la Station Santa Cruz sur Google Maps",
+        pInfoBox: '<div class="font-bold text-slate-800">📌 Infos Importantes pour le Lac Parón :</div><p>• <strong>Entrée du Parc :</strong> Pour <strong>les deux options</strong>, les visiteurs paient <strong>5,00 Soles</strong> au poste de contrôle.</p><p>• <strong>Activités :</strong> Profitez de la montée au belvédère pour une vue panoramique époustouflante.</p><p>• <strong>Camping au Lac Parón ?</strong> Nous louons tout le matériel de haute montagne nécessaire.</p>',
+        l69Title: "🏔️ Guide Officiel : Randonnée au Lac 69",
+        l69Sub: "Trek emblématique de la Cordillère Blanche. Options, guides obligatoires et tarifs.",
+        l69Warn: '<strong class="font-bold uppercase tracking-wider text-amber-950 flex items-center gap-1.5 mb-1"><i class="fas fa-triangle-exclamation text-amber-600"></i> Exigence Cruciale du Parc National Huascarán :</strong>Les gardes du parc <strong>exigent obligatoirement un guide de montagne certifié</strong> pour accéder au sentier du Lac 69. Sans guide, l\'accès peut vous être refusé.',
+        l69Opt1Badge: "⭐ OPTION LA PLUS SÛRE ET RECOMMANDÉE",
+        l69Opt1Title: "🚌 Tour Organisé avec Agence Agréée",
+        l69Opt1Desc: "Nous collaborons avec des agences agréées et réservons vos places à la réception.",
+        l69Opt1List: '<li>• <strong>Tarif du Tour :</strong> 60,00 Soles par personne (Transport + Guide officiel certifié inclus).</li><li>• <strong>Transport de liaison :</strong> 6,00 Soles aller-retour (3 Soles Caraz-Yungay + 3 Soles retour).</li><li>• <strong>Point de RDV :</strong> Angle du commissariat de Yungay vers 6h00.</li><li>• <strong>Durée :</strong> Journée complète (Retour à Caraz vers 18h00).</li><li>• <strong>Paiement :</strong> Espèces ou carte à la réception du Hostal Kactus.</li>',
+        l69MapBtn: "Ouvrir le Commissariat de Yungay sur Google Maps",
+        l69Opt2Badge: "OPTION INDÉPENDANTE",
+        l69Opt2Title: "🥾 Voyage Indépendant en Transport Local",
+        l69Opt2List: '<li>• <strong>Trajet 1 (Caraz - Yungay) :</strong> Minibus local 3,00 Soles aller / 3,00 Soles retour.</li><li>• <strong>Trajet 2 (Yungay - Départ du sentier) :</strong> Bus vers Yanama ~30,00 Soles par personne.</li><li>• <strong>Retour :</strong> Emprunter un transport de passage repassant par Yanama (~20,00 à 30,00 Soles).</li>',
+        l69Note: '⚠️ <strong>Remarque :</strong> En voyage indépendant, assurez-vous d\'avoir réglé la question du guide obligatoire au contrôle.',
+        l69EntryBox: '<strong class="text-slate-800">🎟️ Entrée du Parc National Huascarán (Lac 69) :</strong><p class="text-slate-500 mt-0.5">Le droit d\'entrée de <strong>30,00 Soles par personne</strong> se règle directement au poste de contrôle.</p>',
+        recTipsBox: '<h4 class="font-bold text-sm mb-1">🗺️ Astuces de la Réception :</h4><p>• <strong>Consigne Bagages :</strong> Consigne à bagages gratuite avant le check-in ou après le check-out.</p><p>• <strong>Distributeurs à proximité :</strong> Distributeurs BCP & Banco de la Nación à 3 pâtés de maisons.</p>',
+        gShopTitle: "Restaurants Recommandés, Pharmacies & Services à proximité :",
+        gShopIntro: "Touchez un lien pour ouvrir l'itinéraire sur Google Maps :",
+        rest1Title: "🍗 Gerardo's Chicken (Pollería / Restaurant)", rest1Desc: "Poulet rôti traditionnel, frites croustillantes et plats variés pour le dîner à Caraz.",
+        rest2Title: "🍲 Restaurant Pacha Hunta", rest2Desc: "Excellente cuisine locale et menus traditionnels près de la Place d'Armes.",
+        rest3Title: "🍗 Pollería Sabor & Tradición", rest3Desc: "Située Jr. Sucre. Option traditionnelle pour les dîners de poulet rôti.",
+        farm1Title: "💊 Inkafarma (Jr. Sucre / Raymondi)", farm1Desc: "Pharmacie centrale pour médicaments, produits d'hygiène et pilules contre el soroche (mal de l'altitude).",
+        farm2Title: "💊 Mifarma (Près du Marché)", farm2Desc: "Pharmacie proche du marché principal pour toute urgence médicale.",
+        gas1Title: '⛽ Station-service "El Arco" (Caraz)', gas1Desc: "Station située à l'entrée de la ville pour un plein rapide de carburant.",
+        gas2Title: "⛽ Station-service près des Pompiers", gas2Desc: "Station stratégique près de la route principale et de la caserne des pompiers.",
+        mechTitle: "🔧 Atelier de Réparation Motos", mechDesc: "Entretien, vidange et réparations rapides pour motos à Caraz.",
         mapLinkText: "Ouvrir dans Google Maps",
         titleFaq: "Foire Aux Questions",
         faqQ1: "Heures de Check-in et Check-out ?", faqA1: "Check-in à 11:00 AM et Check-out à 11:00 AM. Consigne à bagages gratuite !",
         faqQ2: "Avez-vous de l'eau chaude 24h/24 ?", faqA2: "Oui, eau chaude 24/7 dans toutes nos chambres.",
         faqQ3: "Peut-on louer du matériel de camping ?", faqA3: "Oui ! Tentes 3 saisons, sacs de couchage en duvet, bâtons, réchauds et jumelles.",
-        titleLocation: "Emplacement & Politiques", lblAddr: "Adresse :", btnMapsText: "Ouvrir dans Google Maps",
+        titleLocation: "Emplacement & Politiques", lblAddr: "Adresse :",
+        polTime: '<i class="fas fa-clock mr-1"></i> Check-in & Check-out: 11:00 AM',
+        polLuggage: '<i class="fas fa-suitcase mr-1"></i> Consigne bagages gratuite',
+        polPets: '<i class="fas fa-ban mr-1"></i> Animaux non admis',
+        btnMapsText: "Ouvrir dans Google Maps",
         stkFrom: "À partir de", stkBtn: "Réserver"
       },
       cs: {
@@ -915,15 +1081,32 @@
         room1Title: "Ekonomický Dvoulůžkový Pokoj", room1Desc: "Útulný malý pokoj s manželskou postelí. Ideální pro páry nebo sólo cestovatele.",
         room2Title: "Střední Dvoulůžkový Pokoj", room2Desc: "Středně velký pokoj s manželskou postelí, více prostoru a skvělým osvětlením.",
         perNight: "/ noc", btnRes: "Rezervovat přes WhatsApp",
+        titleCamping: "Půjčovna Kempingového a Trekového Vybavení",
+        campIntro: "Vybavte se přímo v hostelu vysokohorským vybavení pro vaše horské tury v Cordillera Blanca:",
+        campItem1: '<i class="fas fa-campground text-kactus-600 mr-2"></i>Třísezónní Stan',
+        campDesc1: "Odolný stan pro horské kempování.", campUnit1: "/ den",
+        campItem2: '<i class="fas fa-bed text-kactus-600 mr-2"></i>Péřový Spací Pytel',
+        campDesc2: "Kvalitní kachní peří (-5°C až -20°C).", campUnit2: "/ den",
+        campItem3: '<i class="fas fa-hiking text-kactus-600 mr-2"></i>Trekové Hole',
+        campDesc3: "Pár ergonomických teleskopických holí.", campUnit3: "/ pár na den",
+        campItem4: '<i class="fas fa-binoculars text-kactus-600 mr-2"></i>Dalekohled',
+        campDesc4: "Pozorování horské krajiny a vrcholků.", campUnit4: "/ den",
+        campItem5: '<i class="fas fa-fire-burner text-kactus-600 mr-2"></i>Kempingový Vařič',
+        campDesc5: "Včetně kuchyňského náčiní. (Plynová kartuše zvlášť).", campUnit5: "/ den",
+        campItem6: '<i class="fas fa-gas-pump text-kactus-600 mr-2"></i>Nová Plynová Kartuše',
+        campDesc6: "Samostatná zapečetěná kartuše.", campUnit6: "/ ks",
+        campCourtesy: '<strong>Speciální pozornost podniku!</strong> Pokud máme k dispozici načaté kartuše po předchozích hostech, dáme vám je k zapůjčení vybavení <strong>zcela zdarma</strong>.',
         titleServices: "Služby a Vybavení",
         sBath: "Vlastní Koupelna", sWater: "Teplá Voda 24/7", sTv: "Smart TV", sWifi: "Wi-Fi Zdarma",
         sParking: "Parkování Zdarma", sLuggage: "Úschova Zavazadel ZDARMA", sKitchen: "Sdílená Kuchyň a Pec", sBreakfast: "Snídaňový Servis",
         titlePayments: "Platební Možnosti a Rezervace",
         payIntro: "Přijímáme několik způsobů platby pro vaše pohodlí:",
-        payYape: "Okamžité digitální platby.", payCards: "Visa, MasterCard, American Express.",
-        payBank: "Bankovní převody BCP a Banco de la Nación.", payCash: "Přímá platba v hotovosti na recepci.",
+        payYape: "Okamžité digitální platby.",
+        payTitleCards: "Kreditní / Debetní Karty", payCards: "Visa, MasterCard, American Express.",
+        payTitleBank: "Bankovní Převod", payBank: "Účty BCP a Banco de la Nación.",
+        payTitleCash: "Hotovost", payCash: "Přímá platba v hotovosti na recepci po příjezdu.",
         titleTours: "Výlety a Doprava z Carazu",
-        t1Title: "⛰️ Jezero Parón", t1Desc: "Přímé odjezdy koordinované s hostelem nebo místními autobusy.",
+        t1Title: "⛰️ Jezero Parón", t1Desc: "Přímé odjezdy koordinované s hostelem nebo místní autobusy z Carazu. Kompletní poradenství k aklimatizaci.",
         t2Title: "🏔️ Jezera Llanganuco a Laguna 69", t2Desc: "Celodenní výlet s licencovaným průvodcem. Zahrnuje dopravu a oficiálního průvodce.",
         titleReviews: "Hodnocení Našich Hostů",
         rev1Text: '"Skvělé čisté místo, klid a teplá voda po 24 hodin. Recepce byla velmi nápomocná při organizování výletu na jezero Parón."',
@@ -932,16 +1115,54 @@
         gPubTitle: "Oblíbená Místa k Návštěvě:",
         gPubDesc: "📍 <strong>Jezero Parón:</strong> Největší tyrkysová laguna v Cordillera Blanca.<br>📍 <strong>Jezera Llanganuco a Laguna 69:</strong> Velkolepé výhledy na vrcholy Huascarán a Chopicalqui.<br>📍 <strong>Hlavní Náměstí v Carazu:</strong> Proslulé tradiční řemeslnou zmrzlinou a teplým počasím.",
         gPrivTitle: "🔐 Soukromý Průvodce Trasami a Službami pro Hosty",
-        gPrivDesc: "Zadejte heslo obdržené na recepci:",
+        gPrivDesc: "Zadejte heslo obdržené na recepci pro zobrazení podrobných průvodců pro jezero Parón, Lagunu 69, restaurace a služby:",
         btnUnlockText: "Odemknout Průvodce", passPlaceholder: "Heslo pro hosty",
-        gShopTitle: "Doporučené Restaurace, Lékárny a Služby:",
+        pTitle: "⛰️ Oficiální Průvodce: Výlet k jezeru Parón",
+        pSub: "Možnosti dopravy, ceny, tipy a informace o kempování.",
+        pOpt1Badge: "DOPORUČENÁ MOŽNOST",
+        pOpt1Title: "🚘 Soukromý odjezd s Hostal Kactus",
+        pOpt1List: '<li>• <strong>Cena:</strong> 40,00 Soles na osobu (Minimálně 4 osoby).</li><li>• <strong>Malé skupiny:</strong> Pokud jste 2 nebo méně, můžete jet za uploatu plné ceny vozidla.</li><li>• <strong>Čas na místě:</strong> 2 plné hodiny u jezera (možnost prodloužení po dohodě skupiny).</li><li>• <strong>Platba:</strong> Hotově nebo kartou na recepci.</li>',
+        pTip: '💡 <strong>Tip z Hostelu:</strong> Doporučujeme vzít si vodu a jídlo z Carazu, u jezera je občerstvení dražší.',
+        pOpt2Badge: "SDÍLENÝ MÍSTNÍ AUTOBUS",
+        pOpt2Title: "Místní Sdílená Dodávka (Colectivo)",
+        pOpt2Desc: "Jděte na stanoviště a spojte se s ostatními cestovateli.",
+        pOpt2List: '<li>• <strong>Cena cca:</strong> 40,00 až 50,00 Soles na osobu.</li><li>• <strong>Zahrnuje:</strong> 2 hodiny čekání u jezera a návrat do Carazu.</li>',
+        pMapBtn: "Otevřít stanici Santa Cruz na Google Maps",
+        pInfoBox: '<div class="font-bold text-slate-800">📌 Důležité informace o jezeru Parón:</div><p>• <strong>Vstupné do parku:</strong> U <strong>obou možností</strong> platí návštěvníci přímo vstupné <strong>5,00 Soles</strong> strážcům parku.</p><p>• <strong>Aktivity:</strong> Vyšlápněte si na vyhlídku pro úchvatné fotografie vrcholu Artesonraju.</p><p>• <strong>Kempování u jezera Parón?</strong> Kompletní vybavení vám půjčíme na recepci.</p>',
+        l69Title: "🏔️ Oficiální Průvodce: Výšlap na Lagunu 69",
+        l69Sub: "Ikonický trek v Cordillera Blanca. Možnosti, povinní průvodci a ceny.",
+        l69Warn: '<strong class="font-bold uppercase tracking-wider text-amber-950 flex items-center gap-1.5 mb-1"><i class="fas fa-triangle-exclamation text-amber-600"></i> Důležitá podmínka Národního Parku Huascarán:</strong>Strážci parku na kontrolním stanovišti <strong>striktně vyžadují přítomnost certifikovaného horského průvodce</strong>. Bez průvodce riskujete, že vás na trasu nepustí.',
+        l69Opt1Badge: "⭐ NEJBEZPEČNĚJŠÍ A DOPORUČENÁ MOŽNOST",
+        l69Opt1Title: "🚌 Organizovaný Výlet s Licencovanou Agenturou",
+        l69Opt1Desc: "Spolupracujeme s prověřenými agenturami a místa vám zarezervujeme přímo na recepci.",
+        l69Opt1List: '<li>• <strong>Cena výletu:</strong> 60,00 Soles na osobu (Doprava + oficiální certifikovaný průvodce v ceně).</li><li>• <strong>Místní přejezd:</strong> 6,00 Soles tam a zpět (3 Soles Caraz-Yungay + 3 Soles zpět).</li><li>• <strong>Místo srazu:</strong> Roh u policejní stanice v Yungay cca v 6:00 ráno.</li><li>• <strong>Doba trvání:</strong> Celodenní (Návrat do Carazu cca v 18:00).</li><li>• <strong>Platba:</strong> Hotově nebo kartou na recepci Hostal Kactus.</li>',
+        l69MapBtn: "Otevřít policejní stanici Yungay na Google Maps",
+        l69Opt2Badge: "INDIVIDUÁLNÍ MOŽNOST",
+        l69Opt2Title: "🥾 Cesta na Vlastní Pěst Místní Dopravou",
+        l69Opt2List: '<li>• <strong>Úsek 1 (Caraz - Yungay):</strong> Místní combi 3,00 Soles tam / 3,00 Soles zpět.</li><li>• <strong>Úsek 2 (Yungay - Začátek trasy):</strong> Dodávky směrem na Yanama cca 30,00 Soles na osobu.</li><li>• <strong>Návrat:</strong> Stopnutí projíždějících aut z Yanama (cca 20,00 až 30,00 Soles).</li>',
+        l69Note: '⚠️ <strong>Poznámka:</strong> Při cestě na vlastní pěst si předem vyřešte povinného průvodce pro kontrolu.',
+        l69EntryBox: '<strong class="text-slate-800">🎟️ Vstupné do Národního Parku Huascarán (Laguna 69):</strong><p class="text-slate-500 mt-0.5">Vstupní poplatek <strong>30,00 Soles na osobu</strong> se platí přímo na kontrolním stanovišti parku.</p>',
+        recTipsBox: '<h4 class="font-bold text-sm mb-1">🗺️ Tipy z Recepce:</h4><p>• <strong>Úschova Zavazadel:</strong> Zdarma před check-inem nebo po check-outu.</p><p>• <strong>Bankomaty v okolí:</strong> BCP a Banco de la Nación 3 bloky od hostelu.</p>',
+        gShopTitle: "Doporučené Restaurace, Lékárny a Služby v okolí:",
         gShopIntro: "Klikněte na odkaz pro otevření trasy v Google Maps:",
+        rest1Title: "🍗 Gerardo's Chicken (Restaurace / Pečené kuře)", rest1Desc: "Vynikající pečené kuře, křupavé hranolky a pestrá večeře v Carazu.",
+        rest2Title: "🍲 Restaurace Pacha Hunta", rest2Desc: "Výborná místní kuchyně a tradiční menu blízko Hlavního náměstí.",
+        rest3Title: "🍗 Pollería Sabor & Tradición", rest3Desc: "Nachází se na Jr. Sucre. Tradiční místo na večeři s pečeným kuřetem.",
+        farm1Title: "💊 Inkafarma (Jr. Sucre / Raymondi)", farm1Desc: "Centrální lékárna pro léky, hygienické potřeby a prášky proti výškové nemoci (soroche).",
+        farm2Title: "💊 Mifarma (Poblíž tržnice)", farm2Desc: "Lékárna blízko hlavní tržnice pro případ jakýchkoliv zdravotních potíží.",
+        gas1Title: '⛽ Čerpací stanice "El Arco" (Caraz)', gas1Desc: "Čerpací stanice při vjezdu do města pro rychlé natankování paliva.",
+        gas2Title: "⛽ Čerpací stanice u hasičské zbrojnice", gas2Desc: "Strategická čerpací stanice blízko hlavního tahu a hasičské stanice.",
+        mechTitle: "🔧 Opravna Motocyklů", mechDesc: "Údržba, výměna oleje a rychlé opravy motocyklů v Carazu.",
         mapLinkText: "Otevřít v Google Maps",
         titleFaq: "Často Kladené Otázky",
         faqQ1: "Kdy je Check-in a Check-out?", faqA1: "Check-in je v 11:00 AM a Check-out v 11:00 AM. Úschova zavazadel zdarma!",
         faqQ2: "Máte teplou voda 24 hodin denně?", faqA2: "Ano, teplá voda 24/7 je k dispozici ve všech pokojích.",
         faqQ3: "Lze v hostelu půjčit kempingové vybavení?", faqA3: "Ano! Půjčujeme stan, péřový spací pytel (-5°C až -20°C), trekové hole, vařiče a dalekohledy.",
-        titleLocation: "Lokalita a Pravidla", lblAddr: "Adresa:", btnMapsText: "Otevřít v Google Maps",
+        titleLocation: "Lokalita a Pravidla", lblAddr: "Adresa:",
+        polTime: '<i class="fas fa-clock mr-1"></i> Check-in & Check-out: 11:00 AM',
+        polLuggage: '<i class="fas fa-suitcase mr-1"></i> Úschova zavazadel zdarma',
+        polPets: '<i class="fas fa-ban mr-1"></i> Zákaz domácích mazlíčků',
+        btnMapsText: "Otevřít v Google Maps",
         stkFrom: "Od", stkBtn: "Rezervovat"
       },
       zh: {
@@ -954,17 +1175,32 @@
         room1Title: "经济双人房", room1Desc: "温馨的小型客房，配备双人床。非常适合情侣或单人旅客。",
         room2Title: "中型双人房", room2Desc: "中型客房，配备双人床，空间更大，采光极佳。",
         perNight: "/ 晚", btnRes: "通过 WhatsApp 预订",
+        titleCamping: "露营与徒步装备租赁",
+        campIntro: "直接在旅馆配备高山专业装备，开启白山脉徒步之旅：",
+        campItem1: '<i class="fas fa-campground text-kactus-600 mr-2"></i>三季露营帐篷',
+        campDesc1: "防风防水高山露营帐篷。", campUnit1: "/ 天",
+        campItem2: '<i class="fas fa-bed text-kactus-600 mr-2"></i>羽绒睡袋',
+        campDesc2: "高抗寒鸭绒睡袋（-5°C至-20°C）。", campUnit2: "/ 天",
+        campItem3: '<i class="fas fa-hiking text-kactus-600 mr-2"></i>专业登山杖',
+        campDesc3: "双杆人体工学伸缩登山杖。", campUnit3: "/ 双/天",
+        campItem4: '<i class="fas fa-binoculars text-kactus-600 mr-2"></i>高倍望远镜',
+        campDesc4: "观赏雪山与高山峡谷风景。", campUnit4: "/ 天",
+        campItem5: '<i class="fas fa-fire-burner text-kactus-600 mr-2"></i>户外便携炉具',
+        campDesc5: "包含炊具套件（不含气罐）。", campUnit5: "/ 天",
+        campItem6: '<i class="fas fa-gas-pump text-kactus-600 mr-2"></i>全新户外气罐',
+        campDesc6: "全新密封户外高压气罐。", campUnit6: "/ 罐",
+        campCourtesy: '<strong>本店特别礼遇！</strong> 若前一位住客留下了未用完的气罐，租用装备时我们将<strong>免费赠送</strong>给您使用。',
         titleServices: "服务与设施",
         sBath: "独立卫浴", sWater: "24/7 热水供应", sTv: "智能电视", sWifi: "免费 Wi-Fi",
         sParking: "免费停车场", sLuggage: "免费行李寄存", sKitchen: "共享厨房与烤箱", sBreakfast: "早餐服务",
         titlePayments: "支付方式与预订途径",
-        payIntro: "秘鲁卡拉斯 (Caraz) 仙人掌旅馆支持多种支付方式：",
+        payIntro: "我们支持多种支付方式，为您带来极致便利：",
         payYape: "通过官方电话号码进行即时数字支付。",
-        payCards: "支持 Visa、MasterCard 及 Express 刷卡。",
-        payBank: "支持 BCP 与国家银行转账。",
-        payCash: "到达时在酒店前台以现金直接支付。",
+        payTitleCards: "信用卡 / 借记卡", payCards: "支持 Visa、MasterCard 及 Express 刷卡。",
+        payTitleBank: "银行转账", payBank: "支持 BCP 与国家银行转账。",
+        payTitleCash: "现金支付", payCash: "到达时在酒店前台以现金直接支付。",
         titleTours: "从卡拉斯出发的旅游与交通",
-        t1Title: "⛰️ 帕隆湖（Laguna Parón）", t1Desc: "旅馆直接协调出发或乘坐当地拼车。",
+        t1Title: "⛰️ 帕隆湖（Laguna Parón）", t1Desc: "旅馆直接协调包车出发，或乘坐当地每日拼车。提供完整的的高原适应与路线建议。",
         t2Title: "🏔️ 扬加努科湖与69号湖", t2Desc: "持牌旅行社一日游，包含往返交通、官方导游及接送服务。",
         titleReviews: "住客评价",
         rev1Text: '"非常干净的地方，安静且24小时热水。前台非常热情地帮我安排了帕隆湖的行程。"',
@@ -973,16 +1209,54 @@
         gPubTitle: "热门景点推荐：",
         gPubDesc: "📍 <strong>帕隆湖（Laguna Parón）：</strong> 白山脉最大的绿松石色高山湖泊。<br>📍 <strong>扬加努科湖与69号湖：</strong> 壮丽观赏瓦斯卡兰峰与肖皮卡尔奇峰。<br>📍 <strong>卡拉斯武器广场：</strong> 以传统手工冰淇淋和宜人气候闻名。",
         gPrivTitle: "🔐 住客专属路线与服务指南",
-        gPrivDesc: "输入前台提供的密码，查看帕隆湖与69号湖指南、推荐餐厅与服务：",
+        gPrivDesc: "输入前台提供的密码，查看帕隆湖与69号湖指南、推荐餐厅与周边服务：",
         btnUnlockText: "解锁指南", passPlaceholder: "住客密码",
+        pTitle: "⛰️ 官方指南：帕隆湖（Laguna Parón）行程",
+        pSub: "交通选择、价格、建议与露营说明。",
+        pOpt1Badge: "推荐选择",
+        pOpt1Title: "🚘 仙人掌旅馆包车/直达服务",
+        pOpt1List: '<li>• <strong>价格：</strong> 每人 40.00 索尔（最少 4 人）。</li><li>• <strong>人数较少：</strong> 若 2 人或以下，可通过支付包车总费用出行。</li><li>• <strong>停留时间：</strong> 湖边整整 2 小时（经住客协商可适当延长）。</li><li>• <strong>支付方式：</strong> 前台支持现金或刷卡。</li>',
+        pTip: '💡 <strong>旅馆温馨提示：</strong> 建议从卡拉斯自带饮用水和零食，湖区食物价格较高。',
+        pOpt2Badge: "当地拼车选择",
+        pOpt2Title: "当地小巴拼车（Colectivo）",
+        pOpt2Desc: "前往客运站与其他游客一同拼车出发。",
+        pOpt2List: '<li>• <strong>预计费用：</strong> 每人 40.00 至 50.00 索尔。</li><li>• <strong>包含：</strong> 湖边停留 2 小时及返回卡拉斯。</li>',
+        pMapBtn: "在 Google 地图中打开 Santa Cruz 客运站",
+        pInfoBox: '<div class="font-bold text-slate-800">📌 帕隆湖重要须知：</div><p>• <strong>景区门票：</strong> 两种方式住客均需在检查站直接向护林员支付 <strong>5.00 索尔</strong> 门票。</p><p>• <strong>活动：</strong> 停留期间可徒步前往观景台，拍摄雪山与湖泊绝美全景。</p><p>• <strong>打算在帕隆湖露营？</strong> 前台出租全部所需的高山露营装备。</p>',
+        l69Title: "🏔️ 官方指南：69号湖（Laguna 69）徒步",
+        l69Sub: "白山脉经典徒步路线。出行选择、强制导游要求与费用。",
+        l69Warn: '<strong class="font-bold uppercase tracking-wider text-amber-950 flex items-center gap-1.5 mb-1"><i class="fas fa-triangle-exclamation text-amber-600"></i> 瓦斯卡兰国家公园关键规定：</strong>检查站护林员<strong>强制要求必须有持证导游陪同</strong>方可进入69号湖徒步路线。未随导游同行者可能会被拒绝进入。',
+        l69Opt1Badge: "⭐ 最安全推荐选择",
+        l69Opt1Title: "🚌 正规旅行社一日游",
+        l69Opt1Desc: "与正规旅行社合作，可直接在前台预订行程。",
+        l69Opt1List: '<li>• <strong>一日游费用：</strong> 每人 60.00 索尔（含往返交通及国家公园官方导游）。</li><li>• <strong>接驳车费：</strong> 往返共 6.00 索尔（卡拉斯至云盖单程 3 索尔）。</li><li>• <strong>集合地点：</strong> 早晨约 6:00 在云盖警察局路口集合。</li><li>• <strong>行程时长：</strong> 全天（约 18:00 返回卡拉斯）。</li><li>• <strong>付款：</strong> 仙人掌旅馆前台支持现金或刷卡。</li>',
+        l69MapBtn: "在 Google 地图中打开云盖警察局",
+        l69Opt2Badge: "自行自由行选择",
+        l69Opt2Title: "🥾 乘坐当地公共交通自由行",
+        l69Opt2List: '<li>• <strong>第一段（卡拉斯 - 云盖）：</strong> 当地小巴往返 6.00 索尔。</li><li>• <strong>第二段（云盖 - 徒步起点）：</strong> 乘坐开往 Yanama 的拼车，每人约 30.00 索尔。</li><li>• <strong>返回：</strong> 乘坐从 Yanama 返回的过路车（约 20.00 至 30.00 索尔）。</li>',
+        l69Note: '⚠️ <strong>注意：</strong> 选择自行前往请务必提前安排好检查站要求的导游陪同。',
+        l69EntryBox: '<strong class="text-slate-800">🎟️ 瓦斯卡兰国家公园门票（69号湖）：</strong><p class="text-slate-500 mt-0.5">两种方式均需在国家公园检查站直接支付门票 <strong>30.00 索尔/人</strong>。</p>',
+        recTipsBox: '<h4 class="font-bold text-sm mb-1">🗺️ 前台快捷提示：</h4><p>• <strong>行李寄存：</strong> 入住前或退房后均可免费寄存行李。</p><p>• <strong>周边 ATM：</strong> 距离旅馆 3 个街区即有 BCP 及国家银行 ATM。</p>',
         gShopTitle: "推荐餐厅、药房、加油站与周边服务：",
         gShopIntro: "点击任意链接在 Google 地图中打开对应路线：",
+        rest1Title: "🍗 Gerardo's Chicken（秘鲁烤鸡餐厅）", rest1Desc: "卡拉斯特色秘鲁烤鸡、酥脆薯条与丰富晚餐。",
+        rest2Title: "🍲 Pacha Hunta 本地餐厅", rest2Desc: "武器广场附近优秀的秘鲁本地特色菜与传统套餐。",
+        rest3Title: "🍗 Sabor & Tradición 烤鸡店", rest3Desc: "位于 Jr. Sucre 街。品尝传统秘鲁烤鸡晚餐的好去处。",
+        farm1Title: "💊 Inkafarma 药房（Jr. Sucre / Raymondi）", farm1Desc: "市中心药房，购买药品、洗漱用品及抗高原反应药（Soroche）。",
+        farm2Title: "💊 Mifarma 药房（菜市场附近）", farm2Desc: "靠近主菜市场的药房，方便紧急医疗购药。",
+        gas1Title: '⛽ "El Arco" 加油站（卡拉斯）', gas1Desc: "位于小镇入口处的加油站，方便快速加油。",
+        gas2Title: "⛽ 消防局附近加油站", gas2Desc: "靠近主干道和卡拉斯消防局的战略位置加油站。",
+        mechTitle: "🔧 摩托车维修店", mechDesc: "卡拉斯摩托车保养、换机油与快速维修服务。",
         mapLinkText: "在 Google 地图中打开",
         titleFaq: "常见问题",
         faqQ1: "入住与退房时间是什么时候？", faqA1: "入住时间为 11:00 AM，退房时间为 11:00 AM。提供免费行李寄存！",
         faqQ2: "是否全天 24 小时供应热水？", faqA2: "是的，所有客房均配备 24/7 热水系统。",
         faqQ3: "可以在旅馆租赁露营装备吗？", faqA3: "是的！我们出租三季帐篷、羽绒睡袋（-5°C至-20°C）、登山杖、带厨具的炉具及望远镜。",
-        titleLocation: "位置与政策", lblAddr: "地址：", btnMapsText: "在 Google 地图中打开",
+        titleLocation: "位置与政策", lblAddr: "地址：",
+        polTime: '<i class="fas fa-clock mr-1"></i> 入住 & 退房: 11:00 AM',
+        polLuggage: '<i class="fas fa-suitcase mr-1"></i> 免费行李寄存',
+        polPets: '<i class="fas fa-ban mr-1"></i> 禁止携带宠物',
+        btnMapsText: "在 Google 地图中打开",
         stkFrom: "起价", stkBtn: "立即预订"
       }
     };
@@ -1009,6 +1283,28 @@
       
       document.querySelectorAll('.btn-res-text').forEach(el => el.innerText = t.btnRes);
 
+      document.getElementById('title-camping').innerText = t.titleCamping;
+      document.getElementById('camp-intro').innerText = t.campIntro;
+      document.getElementById('camp-item1').innerHTML = t.campItem1;
+      document.getElementById('camp-desc1').innerText = t.campDesc1;
+      document.getElementById('camp-unit1').innerText = t.campUnit1;
+      document.getElementById('camp-item2').innerHTML = t.campItem2;
+      document.getElementById('camp-desc2').innerText = t.campDesc2;
+      document.getElementById('camp-unit2').innerText = t.campUnit2;
+      document.getElementById('camp-item3').innerHTML = t.campItem3;
+      document.getElementById('camp-desc3').innerText = t.campDesc3;
+      document.getElementById('camp-unit3').innerText = t.campUnit3;
+      document.getElementById('camp-item4').innerHTML = t.campItem4;
+      document.getElementById('camp-desc4').innerText = t.campDesc4;
+      document.getElementById('camp-unit4').innerText = t.campUnit4;
+      document.getElementById('camp-item5').innerHTML = t.campItem5;
+      document.getElementById('camp-desc5').innerText = t.campDesc5;
+      document.getElementById('camp-unit5').innerText = t.campUnit5;
+      document.getElementById('camp-item6').innerHTML = t.campItem6;
+      document.getElementById('camp-desc6').innerText = t.campDesc6;
+      document.getElementById('camp-unit6').innerText = t.campUnit6;
+      document.getElementById('camp-courtesy').innerHTML = t.campCourtesy;
+
       document.getElementById('title-services').innerText = t.titleServices;
       document.getElementById('s-bath').innerText = t.sBath;
       document.getElementById('s-water').innerText = t.sWater;
@@ -1022,8 +1318,11 @@
       document.getElementById('title-payments').innerText = t.titlePayments;
       document.getElementById('pay-intro').innerText = t.payIntro;
       document.getElementById('pay-yape').innerText = t.payYape;
+      document.getElementById('pay-title-cards').innerText = t.payTitleCards;
       document.getElementById('pay-cards').innerText = t.payCards;
+      document.getElementById('pay-title-bank').innerText = t.payTitleBank;
       document.getElementById('pay-bank').innerText = t.payBank;
+      document.getElementById('pay-title-cash').innerText = t.payTitleCash;
       document.getElementById('pay-cash').innerText = t.payCash;
 
       document.getElementById('title-tours').innerText = t.titleTours;
@@ -1042,8 +1341,58 @@
       document.getElementById('btn-unlock-text').innerText = t.btnUnlockText;
       document.getElementById('passInput').placeholder = t.passPlaceholder;
 
+      // Sección Privada desbloqueable traducida por completo:
+      document.getElementById('p-title').innerText = t.pTitle;
+      document.getElementById('p-sub').innerText = t.pSub;
+      document.getElementById('p-opt1-badge').innerText = t.pOpt1Badge;
+      document.getElementById('p-opt1-title').innerText = t.pOpt1Title;
+      document.getElementById('p-opt1-list').innerHTML = t.pOpt1List;
+      document.getElementById('p-tip').innerHTML = t.pTip;
+      document.getElementById('p-opt2-badge').innerText = t.pOpt2Badge;
+      document.getElementById('p-opt2-title').innerText = t.pOpt2Title;
+      document.getElementById('p-opt2-desc').innerText = t.pOpt2Desc;
+      document.getElementById('p-opt2-list').innerHTML = t.pOpt2List;
+      document.getElementById('p-map-btn').innerText = t.pMapBtn;
+      document.getElementById('p-info-box').innerHTML = t.pInfoBox;
+
+      document.getElementById('l69-title').innerText = t.l69Title;
+      document.getElementById('l69-sub').innerText = t.l69Sub;
+      document.getElementById('l69-warn').innerHTML = t.l69Warn;
+      document.getElementById('l69-opt1-badge').innerText = t.l69Opt1Badge;
+      document.getElementById('l69-opt1-title').innerText = t.l69Opt1Title;
+      document.getElementById('l69-opt1-desc').innerText = t.l69Opt1Desc;
+      document.getElementById('l69-opt1-list').innerHTML = t.l69Opt1List;
+      document.getElementById('l69-map-btn').innerText = t.l69MapBtn;
+      document.getElementById('l69-opt2-badge').innerText = t.l69Opt2Badge;
+      document.getElementById('l69-opt2-title').innerText = t.l69Opt2Title;
+      document.getElementById('l69-opt2-list').innerHTML = t.l69Opt2List;
+      document.getElementById('l69-note').innerHTML = t.l69Note;
+      document.getElementById('l69-entry-box').innerHTML = t.l69EntryBox;
+
+      document.getElementById('rec-tips-box').innerHTML = t.recTipsBox;
+
       document.getElementById('g-shop-title').innerHTML = `<i class="fas fa-map-marked-alt text-kactus-500"></i> ${t.gShopTitle}`;
       document.getElementById('g-shop-intro').innerText = t.gShopIntro;
+
+      document.getElementById('rest1-title').innerText = t.rest1Title;
+      document.getElementById('rest1-desc').innerText = t.rest1Desc;
+      document.getElementById('rest2-title').innerText = t.rest2Title;
+      document.getElementById('rest2-desc').innerText = t.rest2Desc;
+      document.getElementById('rest3-title').innerText = t.rest3Title;
+      document.getElementById('rest3-desc').innerText = t.rest3Desc;
+
+      document.getElementById('farm1-title').innerText = t.farm1Title;
+      document.getElementById('farm1-desc').innerText = t.farm1Desc;
+      document.getElementById('farm2-title').innerText = t.farm2Title;
+      document.getElementById('farm2-desc').innerText = t.farm2Desc;
+
+      document.getElementById('gas1-title').innerText = t.gas1Title;
+      document.getElementById('gas1-desc').innerText = t.gas1Desc;
+      document.getElementById('gas2-title').innerText = t.gas2Title;
+      document.getElementById('gas2-desc').innerText = t.gas2Desc;
+
+      document.getElementById('mech-title').innerText = t.mechTitle;
+      document.getElementById('mech-desc').innerText = t.mechDesc;
 
       document.querySelectorAll('.map-link-text').forEach(el => el.innerText = t.mapLinkText);
 
@@ -1054,6 +1403,9 @@
 
       document.getElementById('title-location').innerText = t.titleLocation;
       document.getElementById('lbl-addr').innerText = t.lblAddr;
+      document.getElementById('pol-time').innerHTML = t.polTime;
+      document.getElementById('pol-luggage').innerHTML = t.polLuggage;
+      document.getElementById('pol-pets').innerHTML = t.polPets;
       document.getElementById('btn-maps-text').innerText = t.btnMapsText;
 
       document.getElementById('stk-from').innerText = t.stkFrom;
