@@ -44,12 +44,29 @@
       border: 1px solid #e2e8f0;
       border-radius: 1.25rem;
     }
+    /* Animación de giro 3D interactivo */
+    .perspective-card {
+      perspective: 1000px;
+    }
+    .card-inner {
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-style: preserve-3d;
+    }
+    .card-inner.is-flipped {
+      transform: rotateY(180deg);
+    }
+    .card-front, .card-back {
+      backface-visibility: hidden;
+    }
+    .card-back {
+      transform: rotateY(180deg);
+    }
   </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-500 selection:text-white pb-24">
 
   <!-- BARRA SUPERIOR PROPIA DE HOSTAL KACTUS -->
-  <nav class="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-xs py-3 px-6 sm:px-10">
+  <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs py-3 px-4 sm:px-10">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
       
       <!-- Logotipo K Exclusivo de Hostal Kactus -->
@@ -64,11 +81,10 @@
         </div>
       </a>
 
-      <!-- Controles Superiores Derecha -->
-      <div class="flex items-center gap-3">
-        
+      <!-- Controles Superiores Escritorio -->
+      <div class="hidden md:flex items-center gap-3">
         <!-- Acceso Código de Huésped -->
-        <a href="#title-guide" class="hidden sm:flex items-center gap-1.5 text-xs font-bold text-slate-700 hover:text-emerald-600 bg-slate-100 px-3.5 py-2 rounded-xl transition-colors">
+        <a href="#title-guide" class="flex items-center gap-1.5 text-xs font-bold text-slate-700 hover:text-emerald-600 bg-slate-100 px-3.5 py-2 rounded-xl transition-colors">
           <i class="fas fa-key text-emerald-600"></i> <span id="nav-code-text">Código de Huésped</span>
         </a>
 
@@ -95,17 +111,46 @@
             <span>中文</span>
           </button>
         </div>
-
       </div>
 
+      <!-- Botón Menú Hamburguesa Móvil -->
+      <button onclick="toggleMobileMenu()" class="md:hidden w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-700 hover:text-emerald-600 focus:outline-none">
+        <i class="fas fa-bars text-base" id="mobile-menu-icon"></i>
+      </button>
+
+    </div>
+
+    <!-- Menú Desplegable Móvil -->
+    <div id="mobile-menu" class="hidden md:hidden mt-3 pt-3 border-t border-slate-200 space-y-3 pb-2">
+      <a href="#title-guide" onclick="toggleMobileMenu()" class="flex items-center gap-2 text-xs font-bold text-slate-700 bg-slate-100 p-3 rounded-xl">
+        <i class="fas fa-key text-emerald-600"></i> <span id="nav-code-text-m">Código de Huésped</span>
+      </a>
+      <div>
+        <div class="text-[10px] font-extrabold text-slate-400 uppercase mb-1.5">Seleccionar Idioma / Language</div>
+        <div class="grid grid-cols-5 gap-1.5 bg-slate-100 p-1.5 rounded-xl">
+          <button class="lang-btn-m active px-2 py-1.5 rounded-lg text-[11px] font-bold flex flex-col items-center justify-center gap-1 bg-emerald-600 text-white" id="btn-es-m" onclick="changeLanguage('es'); toggleMobileMenu();">
+            <img src="https://flagcdn.com/w40/es.png" alt="ES" class="w-4 h-3 object-cover rounded-xs"><span>ES</span>
+          </button>
+          <button class="lang-btn-m px-2 py-1.5 rounded-lg text-[11px] font-bold flex flex-col items-center justify-center gap-1 text-slate-600 bg-white" id="btn-en-m" onclick="changeLanguage('en'); toggleMobileMenu();">
+            <img src="https://flagcdn.com/w40/gb.png" alt="EN" class="w-4 h-3 object-cover rounded-xs"><span>EN</span>
+          </button>
+          <button class="lang-btn-m px-2 py-1.5 rounded-lg text-[11px] font-bold flex flex-col items-center justify-center gap-1 text-slate-600 bg-white" id="btn-fr-m" onclick="changeLanguage('fr'); toggleMobileMenu();">
+            <img src="https://flagcdn.com/w40/fr.png" alt="FR" class="w-4 h-3 object-cover rounded-xs"><span>FR</span>
+          </button>
+          <button class="lang-btn-m px-2 py-1.5 rounded-lg text-[11px] font-bold flex flex-col items-center justify-center gap-1 text-slate-600 bg-white" id="btn-cs-m" onclick="changeLanguage('cs'); toggleMobileMenu();">
+            <img src="https://flagcdn.com/w40/cz.png" alt="CS" class="w-4 h-3 object-cover rounded-xs"><span>CS</span>
+          </button>
+          <button class="lang-btn-m px-2 py-1.5 rounded-lg text-[11px] font-bold flex flex-col items-center justify-center gap-1 text-slate-600 bg-white" id="btn-zh-m" onclick="changeLanguage('zh'); toggleMobileMenu();">
+            <img src="https://flagcdn.com/w40/cn.png" alt="ZH" class="w-4 h-3 object-cover rounded-xs"><span>中文</span>
+          </button>
+        </div>
+      </div>
     </div>
   </nav>
 
-  <!-- BANNER PRINCIPAL (Foto real de la habitación al fondo + Interfaz Verde Claro Kactus Translúcida) -->
+  <!-- BANNER PRINCIPAL -->
   <header class="relative bg-emerald-900 text-white py-20 px-4 overflow-hidden">
-    <!-- Imagen real de la habitación -->
     <div class="absolute inset-0 bg-cover bg-center opacity-75" style="background-image: url('https://lh3.googleusercontent.com/d/1306fD7zgATU2P_1JwTWkWpq-lukMtejG');"></div>
-    <!-- Capa translúcida verde clara Kactus para mantener la visibilidad de la foto y darle un toque fresco -->
     <div class="absolute inset-0 bg-gradient-to-br from-emerald-700/80 via-emerald-800/75 to-teal-800/80 backdrop-brightness-95"></div>
     
     <div class="relative z-10 max-w-5xl mx-auto text-center space-y-4 mb-12">
@@ -119,7 +164,6 @@
 
     <!-- Barra de Búsqueda Flotante -->
     <div class="relative z-20 max-w-4xl mx-auto bg-white text-slate-800 p-3 sm:p-4 rounded-2xl shadow-ayenda grid grid-cols-1 md:grid-cols-4 gap-3 items-center">
-      
       <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-xl border border-slate-200">
         <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-sm">
           <i class="fas fa-map-marker-alt"></i>
@@ -145,7 +189,6 @@
           <i class="fab fa-whatsapp text-base"></i> <span id="btn-search-prices">Consultar Disponibilidad</span>
         </button>
       </div>
-
     </div>
 
     <div class="relative z-10 max-w-3xl mx-auto mt-6 flex flex-wrap justify-center gap-6 text-[11px] font-bold text-emerald-100">
@@ -182,18 +225,14 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        
         <!-- Habitación 1 -->
         <div class="kactus-card overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 flex flex-col group">
           <div class="relative w-full h-60 bg-emerald-900 overflow-hidden" id="carousel1">
             <div class="absolute top-3 left-3 z-20 bg-emerald-900/90 backdrop-blur-md text-white text-[10px] font-black px-3 py-1 rounded-full shadow-xs border border-white/20" id="room1-tag">
               ECONÓMICA & CONFORT
             </div>
-            
             <div class="carousel-slide w-full h-full">
               <img src="https://lh3.googleusercontent.com/d/1xAPzvxsRh7d5ftObKRHJ54-Pg5DKO7zs" alt="Habitación Económica" class="w-full h-full object-cover shrink-0">
-              
-              <!-- CARTEL ELEGANTE Y BRILLANTE CON TONO VERDE KACTUS Y DORADO -->
               <div class="w-full h-full shrink-0 bg-gradient-to-br from-emerald-800 via-emerald-700 to-teal-800 text-white p-6 flex flex-col items-center justify-center text-center space-y-3 shadow-inner">
                 <div class="w-11 h-11 bg-gradient-to-tr from-amber-400 to-yellow-300 text-slate-950 rounded-2xl flex items-center justify-center font-black text-lg shadow-glow animate-pulse">
                   <i class="fas fa-key"></i>
@@ -203,7 +242,6 @@
                 <a href="#title-guide" class="bg-gradient-to-r from-amber-400 to-yellow-400 hover:from-amber-500 hover:to-yellow-500 text-slate-950 text-[11px] font-extrabold py-2 px-5 rounded-xl shadow-md transition-all transform hover:scale-105">Ir a Sección Reservada</a>
               </div>
             </div>
-
             <button aria-label="Anterior" onclick="moveSlide('carousel1', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-left text-xs"></i></button>
             <button aria-label="Siguiente" onclick="moveSlide('carousel1', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-right text-xs"></i></button>
             <div class="carousel-dots absolute bottom-3 left-0 right-0 flex justify-center gap-1.5 z-10">
@@ -211,7 +249,6 @@
               <span class="w-2 h-2 rounded-full bg-white/70 cursor-pointer" onclick="setSlide('carousel1', 1)"></span>
             </div>
           </div>
-          
           <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
             <div>
               <h3 class="text-lg font-extrabold text-slate-900 mb-1.5" id="room1-title">Habitación Matrimonial Económica</h3>
@@ -254,7 +291,6 @@
             </a>
           </div>
         </div>
-
       </div>
     </section>
 
@@ -276,7 +312,6 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
-          <!-- Item 1 -->
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3">
             <div class="h-36 rounded-xl overflow-hidden bg-slate-200">
               <img src="https://lh3.googleusercontent.com/d/1306fD7zgATU2P_1JwTWkWpq-lukMtejG" alt="Carpa" class="w-full h-full object-cover">
@@ -286,7 +321,6 @@
               <p class="text-[11px] text-slate-500 mt-0.5">Carpa resistente para alta montaña.</p>
             </div>
           </div>
-          <!-- Item 2 -->
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3">
             <div class="h-36 rounded-xl overflow-hidden bg-slate-200">
               <img src="https://lh3.googleusercontent.com/d/1DQW5MV5ORQ2VWNBnQ3nlC4eTb0Sktw4y" alt="Saco" class="w-full h-full object-cover">
@@ -296,7 +330,6 @@
               <p class="text-[11px] text-slate-500 mt-0.5">Pluma de alta resistencia (-5°C a -20°C).</p>
             </div>
           </div>
-          <!-- Item 3 -->
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3">
             <div class="h-36 rounded-xl overflow-hidden bg-slate-200">
               <img src="https://lh3.googleusercontent.com/d/1xAPzvxsRh7d5ftObKRHJ54-Pg5DKO7zs" alt="Bastones" class="w-full h-full object-cover">
@@ -306,7 +339,6 @@
               <p class="text-[11px] text-slate-500 mt-0.5">Par de bastones ergonómicos.</p>
             </div>
           </div>
-          <!-- Item 4 -->
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3">
             <div class="h-36 rounded-xl overflow-hidden bg-slate-200">
               <img src="https://lh3.googleusercontent.com/d/1306fD7zgATU2P_1JwTWkWpq-lukMtejG" alt="Binoculares" class="w-full h-full object-cover">
@@ -316,7 +348,6 @@
               <p class="text-[11px] text-slate-500 mt-0.5">Observación de nevados y paisajes.</p>
             </div>
           </div>
-          <!-- Item 5 -->
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3">
             <div class="h-36 rounded-xl overflow-hidden bg-slate-200">
               <img src="https://lh3.googleusercontent.com/d/1DQW5MV5ORQ2VWNBnQ3nlC4eTb0Sktw4y" alt="Cocina" class="w-full h-full object-cover">
@@ -326,7 +357,6 @@
               <p class="text-[11px] text-slate-500 mt-0.5">Incluye utensilios de cocina.</p>
             </div>
           </div>
-          <!-- Item 6 -->
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3">
             <div class="h-36 rounded-xl overflow-hidden bg-slate-200">
               <img src="https://lh3.googleusercontent.com/d/1xAPzvxsRh7d5ftObKRHJ54-Pg5DKO7zs" alt="Gas" class="w-full h-full object-cover">
@@ -405,9 +435,9 @@
           </div>
 
           <!-- CONTENIDO PRIVADO DESBLOQUEABLE COMPLETO -->
-          <div id="secretGuide" class="hidden mt-6 bg-slate-50 p-6 rounded-2xl border-2 border-dashed border-emerald-500 space-y-6">
+          <div id="secretGuide" class="hidden mt-6 bg-slate-50 p-6 rounded-2xl border-2 border-dashed border-emerald-500 space-y-8">
             
-            <!-- PRECIOS DE EQUIPOS (Privado) -->
+            <!-- TARIFAS DE EQUIPOS -->
             <div class="bg-white p-5 rounded-xl border border-slate-200 space-y-4">
               <h4 class="font-extrabold text-sm text-slate-900">🏷️ Tarifas de Alquiler de Equipos de Montaña (Exclusivo Huéspedes)</h4>
               <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs">
@@ -420,42 +450,160 @@
               </div>
             </div>
 
-            <!-- PRECIOS Y OPCIONES DE TOURS (Privado) -->
+            <!-- GUÍA DETALLADA LAGUNA PARÓN -->
             <div class="bg-white p-5 rounded-xl border border-slate-200 space-y-4">
               <h4 class="font-extrabold text-sm text-slate-900">⛰️ Opciones, Costos y Tiempos a Laguna Parón</h4>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-slate-700">
+                
                 <div class="p-4 bg-emerald-50 rounded-xl border border-emerald-200 space-y-2">
-                  <strong class="text-slate-900 block font-bold text-sm">Salida Privada Kactus</strong>
-                  <p>• <strong>Costo:</strong> S/ 40.00 por persona (Mínimo 4 pasajeros).</p>
-                  <p>• <strong>Ventaja exclusiva:</strong> Espera de 2 horas completas en la laguna para caminatas y fotos con total tranquilidad sin apuros.</p>
+                  <strong class="text-slate-900 block font-bold text-sm">Salida Privada Hostal Kactus</strong>
+                  <p>• <strong>Costo:</strong> S/ 40.00 por persona (Mínimo 4 pasajeros o cubriendo los asientos faltantes).</p>
+                  <p>• <strong>Ventaja exclusiva:</strong> 2 horas completas de espera en la laguna para caminatas y fotos con total tranquilidad sin apuros.</p>
+                  <p>• <strong>Entrada al parque:</strong> S/ 5.00 por persona.</p>
                 </div>
-                <div class="p-4 bg-slate-100 rounded-xl border border-slate-200 space-y-2">
-                  <strong class="text-slate-900 block font-bold text-sm">Colectivo o Transporte Local</strong>
-                  <p>• <strong>Costo aprox:</strong> S/ 40.00 a S/ 50.00 por persona.</p>
-                  <p>• <strong>Entrada al parque:</strong> S/ 5.00 directo en garita de control.</p>
+
+                <div class="p-4 bg-slate-100 rounded-xl border border-slate-200 space-y-3">
+                  <strong class="text-slate-900 block font-bold text-sm">Opción Independiente (Particular)</strong>
+                  <p>• <strong>Paradero recomendado:</strong> <a href="https://maps.app.goo.gl/8FSGZDtG5Yc2mGtj9" target="_blank" rel="noopener" class="text-emerald-600 font-bold underline inline-flex items-center gap-1"><i class="fas fa-map-marker-alt"></i> Ver Paradero Santa Cruz en Google Maps</a></p>
+                  <p>• <strong>Recomendación:</strong> Ideal llegar entre las 6:30 a.m. y 8:00 a.m. para juntarte con otros turistas y conseguir transporte más rápido.</p>
+                  <p>• <strong>Costo aprox:</strong> S/ 40.00 a S/ 50.00 por pasajero (incluye espera de 2 horas). <em>Nota: No garantizado directamente por el hostal.</em></p>
+                  <p>• <strong>Entrada al parque:</strong> S/ 5.00 por persona.</p>
                 </div>
+
               </div>
             </div>
 
-            <!-- INDICACIONES Y CONSEJOS DE ALTURA -->
-            <div class="bg-white p-5 rounded-xl border border-slate-200 space-y-3 text-xs text-slate-700">
-              <h4 class="font-extrabold text-sm text-slate-900">⚠️ Recomendaciones de Seguridad y Aclimatación</h4>
-              <ul class="list-disc pl-4 space-y-1.5">
-                <li><strong>Aclimatación:</strong> Dedica el primer día en Caraz a caminatas suaves por el valle antes de intentar rutas exigentes como la Laguna 69 o el Pastoruri.</li>
-                <li><strong>Hidratación:</strong> Toma abundante agua o mate de coca y evita comidas pesadas las primeras 24 horas de altitud.</li>
-                <li><strong>Clima:</strong> La mejor temporada de cielos despejados es de mayo a septiembre. En época de lluvias (octubre a abril), lleva siempre impermeable y calzado con buen agarre.</li>
-              </ul>
+            <!-- GUÍA DETALLADA LAGUNA 69 -->
+            <div class="bg-white p-5 rounded-xl border border-slate-200 space-y-4">
+              <h4 class="font-extrabold text-sm text-slate-900">🏔️ Opciones y Logística a Laguna 69</h4>
+              <div class="p-3 bg-amber-50 border border-amber-200 rounded-lg text-amber-900 text-xs font-semibold">
+                ⚠️ <strong>Aviso Importante:</strong> Las autoridades exigen guía turístico obligatorio para el ingreso al sendero.
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-slate-700">
+                
+                <div class="p-4 bg-emerald-50 rounded-xl border border-emerald-200 space-y-2">
+                  <strong class="text-slate-900 block font-bold text-sm">Vía Tour Huaraz (Organizado por Kactus)</strong>
+                  <p>• <strong>Punto de encuentro:</strong> Abordar transporte en Caraz rumbo a Yungay (S/ 3.00 ida y S/ 3.00 vuelta). El tour se toma en Yungay, en la esquina de la comisaría.</p>
+                  <p>• <strong>Horario de salida:</strong> 6:00 a.m. (Retorno a Caraz aprox. 6:00 p.m. - Full Day).</p>
+                  <p>• <strong>Costos aproximados:</strong> Tour con guía incluido S/ 60 + Boleto Parque Nacional S/ 30 + Pasajes S/ 6. Total aprox: <strong>S/ 96.00 por persona</strong>.</p>
+                </div>
+
+                <div class="p-4 bg-slate-100 rounded-xl border border-slate-200 space-y-2">
+                  <strong class="text-slate-900 block font-bold text-sm">Opción Independiente</strong>
+                  <p>• 1. Viaja de Caraz a Yungay (S/ 3.00 pasaje).</p>
+                  <p>• 2. Toma un colectivo de Yungay hacia Yanama (aprox. S/ 30.00) bajando en el inicio del sendero.</p>
+                  <p>• 3. Paga tu entrada de S/ 30.00 y gestiona tu ingreso (nota: la exigencia de guía hace esta opción compleja).</p>
+                  <p>• 4. Retorno: Toma cualquier vehículo de bajada (S/ 25 - S/ 30) de regreso a Yungay y luego a Caraz.</p>
+                </div>
+
+              </div>
             </div>
 
-            <!-- DIRECTORIO Y FARMACIAS -->
-            <div class="bg-white p-5 rounded-xl border border-slate-200 space-y-3">
-              <h4 class="font-extrabold text-sm text-slate-900">💊 Directorio de Emergencia y Servicios en Caraz</h4>
-              <p class="text-xs text-slate-600 leading-relaxed">
-                • <strong>Farmacias:</strong> Inkafarma y boticas locales en la Plaza de Armas.<br>
-                • <strong>Combustible / Grifos:</strong> Grifo El Arco (salida norte).<br>
-                • <strong>Gastronomía recomendada:</strong> Restaurante Pacha Hunta (comida típica y regional).<br>
-                • <strong>Seguridad:</strong> Comisaría de Caraz disponible para asistencia inmediata. Acude a recepción ante cualquier duda o emergencia.
-              </p>
+            <!-- SECCIÓN INTERACTIVA: LUGARES DE INTERÉS, COMIDA, GRIFOS Y EMERGENCIA (CON TARJETAS GIRATORIAS) -->
+            <div class="space-y-4">
+              <h4 class="font-extrabold text-sm text-slate-900">📍 Directorio Interactivo de Caraz (Haz clic para girar la tarjeta)</h4>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                
+                <!-- Item 1: Pacha Hunta -->
+                <div class="perspective-card h-48 cursor-pointer" onclick="flipCard(this)">
+                  <div class="card-inner relative w-full h-full text-center shadow-sm rounded-xl">
+                    <!-- Frente -->
+                    <div class="card-front absolute inset-0 bg-white border border-slate-200 rounded-xl p-4 flex flex-col items-center justify-center space-y-2">
+                      <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-xl"><i class="fas fa-utensils"></i></div>
+                      <h5 class="font-bold text-slate-900 text-xs">Restaurante Pacha Hunta</h5>
+                      <p class="text-[10px] text-slate-500">Comida regional y típica</p>
+                      <span class="text-[9px] bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded font-bold">👆 Haz clic para girar</span>
+                    </div>
+                    <!-- Reverso -->
+                    <div class="card-back absolute inset-0 bg-emerald-800 text-white rounded-xl p-4 flex flex-col items-center justify-center space-y-2 text-center">
+                      <h5 class="font-extrabold text-amber-300 text-xs">Restaurante Pacha Hunta</h5>
+                      <p class="text-[11px] text-emerald-50">Muy cercano al hostal y altamente recomendable por su sazón tradicional caracina.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Item 2: Plaza de Armas -->
+                <div class="perspective-card h-48 cursor-pointer" onclick="flipCard(this)">
+                  <div class="card-inner relative w-full h-full text-center shadow-sm rounded-xl">
+                    <div class="card-front absolute inset-0 bg-white border border-slate-200 rounded-xl p-4 flex flex-col items-center justify-center space-y-2">
+                      <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-xl"><i class="fas fa-landmark"></i></div>
+                      <h5 class="font-bold text-slate-900 text-xs">Plaza de Armas de Caraz</h5>
+                      <p class="text-[10px] text-slate-500">Centro histórico y fotos</p>
+                      <span class="text-[9px] bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded font-bold">👆 Haz clic para girar</span>
+                    </div>
+                    <div class="card-back absolute inset-0 bg-emerald-800 text-white rounded-xl p-4 flex flex-col items-center justify-center space-y-2 text-center">
+                      <h5 class="font-extrabold text-amber-300 text-xs">Plaza de Armas</h5>
+                      <p class="text-[11px] text-emerald-50">El corazón de la ciudad. Ideal para pasear, tomar fotos de las palmeras, disfrutar helados artesanales y encontrar variedad de restaurantes.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Item 3: Farmacias (Inkafarma y MiFarma) -->
+                <div class="perspective-card h-48 cursor-pointer" onclick="flipCard(this)">
+                  <div class="card-inner relative w-full h-full text-center shadow-sm rounded-xl">
+                    <div class="card-front absolute inset-0 bg-white border border-slate-200 rounded-xl p-4 flex flex-col items-center justify-center space-y-2">
+                      <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xl"><i class="fas fa-pills"></i></div>
+                      <h5 class="font-bold text-slate-900 text-xs">Farmacias Cercanas</h5>
+                      <p class="text-[10px] text-slate-500">Inkafarma & MiFarma</p>
+                      <span class="text-[9px] bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded font-bold">👆 Haz clic para girar</span>
+                    </div>
+                    <div class="card-back absolute inset-0 bg-emerald-800 text-white rounded-xl p-4 flex flex-col items-center justify-center space-y-2 text-center">
+                      <h5 class="font-extrabold text-amber-300 text-xs">Farmacias Locales</h5>
+                      <p class="text-[11px] text-emerald-50">Ubicadas cerca a la Plaza de Armas de Caraz. Encuentra cadenas confiables como <strong>Inkafarma</strong> y <strong>MiFarma</strong> abiertas en horario comercial.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Item 4: Grifos (Grifo El Arco) -->
+                <div class="perspective-card h-48 cursor-pointer" onclick="flipCard(this)">
+                  <div class="card-inner relative w-full h-full text-center shadow-sm rounded-xl">
+                    <div class="card-front absolute inset-0 bg-white border border-slate-200 rounded-xl p-4 flex flex-col items-center justify-center space-y-2">
+                      <div class="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-xl"><i class="fas fa-gas-pump"></i></div>
+                      <h5 class="font-bold text-slate-900 text-xs">Grifos Cercanos</h5>
+                      <p class="text-[10px] text-slate-500">Grifo El Arco y otros</p>
+                      <span class="text-[9px] bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded font-bold">👆 Haz clic para girar</span>
+                    </div>
+                    <div class="card-back absolute inset-0 bg-emerald-800 text-white rounded-xl p-4 flex flex-col items-center justify-center space-y-2 text-center">
+                      <h5 class="font-extrabold text-amber-300 text-xs">Grifo El Arco</h5>
+                      <p class="text-[11px] text-emerald-50">Ubicado en la salida norte de Caraz. Abastecimiento seguro de combustible para vehículos y viajeros en ruta.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Item 5: Comisaría de Caraz -->
+                <div class="perspective-card h-48 cursor-pointer" onclick="flipCard(this)">
+                  <div class="card-inner relative w-full h-full text-center shadow-sm rounded-xl">
+                    <div class="card-front absolute inset-0 bg-white border border-slate-200 rounded-xl p-4 flex flex-col items-center justify-center space-y-2">
+                      <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-xl"><i class="fas fa-shield-alt"></i></div>
+                      <h5 class="font-bold text-slate-900 text-xs">Comisaría de Caraz</h5>
+                      <p class="text-[10px] text-slate-500">Seguridad y asistencia</p>
+                      <span class="text-[9px] bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded font-bold">👆 Haz clic para girar</span>
+                    </div>
+                    <div class="card-back absolute inset-0 bg-emerald-800 text-white rounded-xl p-4 flex flex-col items-center justify-center space-y-2 text-center">
+                      <h5 class="font-extrabold text-amber-300 text-xs">Comisaría de Caraz</h5>
+                      <p class="text-[11px] text-emerald-50">📍 Ubicación céntrica en Caraz.<br>📞 Teléfono de emergencia local disponible o acude directo a la recepción de Kactus para apoyo inmediato.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Item 6: Hospital de Caraz -->
+                <div class="perspective-card h-48 cursor-pointer" onclick="flipCard(this)">
+                  <div class="card-inner relative w-full h-full text-center shadow-sm rounded-xl">
+                    <div class="card-front absolute inset-0 bg-white border border-slate-200 rounded-xl p-4 flex flex-col items-center justify-center space-y-2">
+                      <div class="w-12 h-12 bg-rose-100 text-rose-600 rounded-full flex items-center justify-center text-xl"><i class="fas fa-hospital"></i></div>
+                      <h5 class="font-bold text-slate-900 text-xs">Hospital de Apoyo Caraz</h5>
+                      <p class="text-[10px] text-slate-500">Centro de salud y emergencias</p>
+                      <span class="text-[9px] bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded font-bold">👆 Haz clic para girar</span>
+                    </div>
+                    <div class="card-back absolute inset-0 bg-emerald-800 text-white rounded-xl p-4 flex flex-col items-center justify-center space-y-2 text-center">
+                      <h5 class="font-extrabold text-amber-300 text-xs">Hospital de Caraz</h5>
+                      <p class="text-[11px] text-emerald-50">📍 Atenciones médicas y emergencias 24/7.<br>📞 Ante cualquier malestar de altura o salud, avísanos en recepción de inmediato.</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
             </div>
 
           </div>
@@ -465,8 +613,8 @@
 
   </main>
 
-  <!-- Barra inferior fija para reservas (Verde Claro Kactus) -->
-  <div class="fixed bottom-0 left-0 right-0 bg-emerald-700/95 backdrop-blur-md border-t border-emerald-600 p-3.5 px-6 flex justify-between items-center z-50 text-white">
+  <!-- Barra inferior fija para reservas -->
+  <div class="fixed bottom-0 left-0 right-0 bg-emerald-700/95 backdrop-blur-md border-t border-emerald-600 p-3.5 px-6 flex justify-between items-center z-50 text-white shadow-lg">
     <div class="text-xs">
       <span class="text-emerald-100" id="stk-from">Desde</span> <strong class="text-base text-amber-300 font-black">S/ 35.00</strong>
     </div>
@@ -477,6 +625,19 @@
 
   <script>
     const slideIndexes = { carousel1: 0, carousel2: 0 };
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const icon = document.getElementById('mobile-menu-icon');
+      menu.classList.toggle('hidden');
+      if (menu.classList.contains('hidden')) {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      } else {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      }
+    }
 
     function moveSlide(carouselId, direction) {
       const carousel = document.getElementById(carouselId);
@@ -541,6 +702,11 @@
 
     function handleKey(e) {
       if (e.key === 'Enter') unlockGuide();
+    }
+
+    function flipCard(cardElement) {
+      const inner = cardElement.querySelector('.card-inner');
+      inner.classList.toggle('is-flipped');
     }
 
     const translations = {
@@ -698,13 +864,23 @@
 
     function changeLanguage(lang) {
       document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.remove('active', 'bg-emerald-600', 'text-white');
+        btn.classList.remove('active', 'bg-emerald-600', 'text-white', 'shadow-xs');
         btn.classList.add('text-slate-600');
       });
       const activeBtn = document.getElementById(`btn-${lang}`);
       if (activeBtn) {
-        activeBtn.classList.add('active', 'bg-emerald-600', 'text-white');
+        activeBtn.classList.add('active', 'bg-emerald-600', 'text-white', 'shadow-xs');
         activeBtn.classList.remove('text-slate-600');
+      }
+
+      document.querySelectorAll('.lang-btn-m').forEach(btn => {
+        btn.classList.remove('bg-emerald-600', 'text-white');
+        btn.classList.add('text-slate-600', 'bg-white');
+      });
+      const activeBtnM = document.getElementById(`btn-${lang}-m`);
+      if (activeBtnM) {
+        activeBtnM.classList.add('bg-emerald-600', 'text-white');
+        activeBtnM.classList.remove('text-slate-600', 'bg-white');
       }
 
       const t = translations[lang] || translations['es'];
@@ -746,6 +922,7 @@
       document.getElementById('stk-from').innerText = t.stkFrom;
       document.getElementById('stk-btn').innerText = t.stkBtn;
       document.getElementById('nav-code-text').innerText = t.navCodeText;
+      document.getElementById('nav-code-text-m').innerText = t.navCodeText;
     }
   </script>
 </body>
