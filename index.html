@@ -76,14 +76,14 @@
     </div>
   </nav>
 
-  <!-- Header / Hero Section con Logo -->
-  <header class="relative bg-kactus-800 text-white py-12 px-4 text-center overflow-hidden">
+  <!-- Header / Hero Section con Logo Destacado -->
+  <header class="relative bg-kactus-800 text-white py-14 px-4 text-center overflow-hidden">
     <div class="absolute inset-0 bg-cover bg-center opacity-25 mix-blend-overlay" style="background-image: url('mediana1.jpg');"></div>
     <div class="relative z-10 max-w-3xl mx-auto space-y-4 flex flex-col items-center">
       
-      <!-- Logo centrado multitrayectoria -->
-      <div class="bg-white p-3.5 rounded-2xl shadow-2xl border-2 border-kactus-200 inline-block mb-1 transform hover:scale-105 transition-transform duration-300">
-        <img src="logo.jpeg" alt="Logo Hostal Kactus" class="h-20 sm:h-28 w-auto object-contain" onerror="this.onerror=null; this.src='logo.jpg'; this.onerror=function(){this.src='logo.png';};">
+      <!-- Contenedor Grande del Logo -->
+      <div class="bg-white p-4 rounded-3xl shadow-2xl border-4 border-kactus-200 inline-block mb-2 transform hover:scale-105 transition-transform duration-300">
+        <img src="logo.jpeg" alt="Logo Hostal Kactus" class="h-32 sm:h-40 w-auto object-contain" onerror="this.onerror=null; this.src='logo.jpg'; this.onerror=function(){this.src='logo.png';};">
       </div>
 
       <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white drop-shadow-md">Hostal Kactus</h1>
@@ -114,11 +114,11 @@
       </h3>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div>
-          <label class="block text-xs font-semibold text-slate-500 mb-1" id="lbl-checkin">Llegada (Check-in)</label>
+          <label class="block text-xs font-semibold text-slate-500 mb-1" id="lbl-checkin">Llegada (Check-in 11 AM)</label>
           <input type="date" id="checkinDate" class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-kactus-500">
         </div>
         <div>
-          <label class="block text-xs font-semibold text-slate-500 mb-1" id="lbl-checkout">Salida (Check-out)</label>
+          <label class="block text-xs font-semibold text-slate-500 mb-1" id="lbl-checkout">Salida (Check-out 11 AM)</label>
           <input type="date" id="checkoutDate" class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-kactus-500">
         </div>
         <div class="flex items-end">
@@ -193,6 +193,76 @@
       </div>
     </section>
 
+    <!-- Sección Alquiler de Equipos de Camping & Trekking -->
+    <section class="mb-14">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-2 h-8 bg-kactus-500 rounded-full"></div>
+        <h2 class="text-2xl font-bold text-kactus-800" id="title-camping">Alquiler de Equipos de Camping y Trekking</h2>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl border border-kactus-100 shadow-md">
+        <p class="text-sm text-slate-600 mb-6">Equípate directamente en el hostal con material especializado de alta montaña para tus caminatas en la Cordillera Blanca:</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 flex flex-col justify-between space-y-2">
+            <div>
+              <div class="font-bold text-slate-800 text-base"><i class="fas fa-campground text-kactus-600 mr-2"></i>Carpa 3 Estaciones</div>
+              <p class="text-xs text-slate-500 mt-1">Carpa resistente para acampar en montaña.</p>
+            </div>
+            <div class="text-lg font-extrabold text-kactus-800">S/ 25.00 <span class="text-xs font-normal text-slate-500">/ día</span></div>
+          </div>
+
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 flex flex-col justify-between space-y-2">
+            <div>
+              <div class="font-bold text-slate-800 text-base"><i class="fas fa-bed text-kactus-600 mr-2"></i>Saco de Dormir Pluma</div>
+              <p class="text-xs text-slate-500 mt-1">Pluma de pato de alta resistencia (-5°C a -20°C).</p>
+            </div>
+            <div class="text-lg font-extrabold text-kactus-800">S/ 25.00 <span class="text-xs font-normal text-slate-500">/ día</span></div>
+          </div>
+
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 flex flex-col justify-between space-y-2">
+            <div>
+              <div class="font-bold text-slate-800 text-base"><i class="fas fa-hiking text-kactus-600 mr-2"></i>Bastones de Trekking</div>
+              <p class="text-xs text-slate-500 mt-1">El par de bastones telescópicos ergonómicos.</p>
+            </div>
+            <div class="text-lg font-extrabold text-kactus-800">S/ 5.00 <span class="text-xs font-normal text-slate-500">/ par por día</span></div>
+          </div>
+
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 flex flex-col justify-between space-y-2">
+            <div>
+              <div class="font-bold text-slate-800 text-base"><i class="fas fa-binoculars text-kactus-600 mr-2"></i>Largavistas / Binoculares</div>
+              <p class="text-xs text-slate-500 mt-1">Observación de paisajes y nevados.</p>
+            </div>
+            <div class="text-lg font-extrabold text-kactus-800">S/ 4.00 <span class="text-xs font-normal text-slate-500">/ día</span></div>
+          </div>
+
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 flex flex-col justify-between space-y-2">
+            <div>
+              <div class="font-bold text-slate-800 text-base"><i class="fas fa-fire-burner text-kactus-600 mr-2"></i>Cocina de Campaña</div>
+              <p class="text-xs text-slate-500 mt-1">Incluye utensilios de cocina. (No incluye balón).</p>
+            </div>
+            <div class="text-lg font-extrabold text-kactus-800">S/ 8.00 <span class="text-xs font-normal text-slate-500">/ día</span></div>
+          </div>
+
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 flex flex-col justify-between space-y-2">
+            <div>
+              <div class="font-bold text-slate-800 text-base"><i class="fas fa-gas-pump text-kactus-600 mr-2"></i>Balón de Gas Nuevo</div>
+              <p class="text-xs text-slate-500 mt-1">Balón de gas sellado por separado.</p>
+            </div>
+            <div class="text-lg font-extrabold text-kactus-800">S/ 33.00 <span class="text-xs font-normal text-slate-500">/ unidad</span></div>
+          </div>
+        </div>
+
+        <!-- Nota de cortesía -->
+        <div class="mt-4 p-4 bg-kactus-100 border border-kactus-200 rounded-xl text-xs text-kactus-900 flex items-center gap-3">
+          <i class="fas fa-gift text-xl text-kactus-700"></i>
+          <div>
+            <strong>¡Cortesía especial de la casa!</strong> Si al momento de alquilar tus equipos contamos con balones de gas dejados por huéspedes anteriores, te lo entregamos <strong>completamente gratis</strong> como cortesía por el alquiler.
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Sección Servicios -->
     <section class="mb-14">
       <div class="flex items-center gap-3 mb-6">
@@ -223,7 +293,7 @@
         </div>
         <div class="bg-white p-4 rounded-xl border border-kactus-100 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 text-center">
           <i class="fas fa-suitcase text-2xl text-kactus-500 mb-2"></i>
-          <p id="s-luggage" class="text-xs font-bold text-slate-700">Guardado de Equipaje Gratis</p>
+          <p id="s-luggage" class="text-xs font-bold text-slate-700">Guardado de Equipaje GRATIS</p>
         </div>
         <div class="bg-white p-4 rounded-xl border border-kactus-100 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 text-center">
           <i class="fas fa-utensils text-2xl text-kactus-500 mb-2"></i>
@@ -330,7 +400,7 @@
 
         <div>
           <h3 id="g-priv-title" class="font-bold text-lg text-slate-800 mb-1">🔐 Guía Privada de Rutas y Servicios para Huéspedes</h3>
-          <p id="g-priv-desc" class="text-sm text-slate-600 mb-4">Ingresa la clave proporcionada en recepción para ver información útil, compras cercanas y transporte:</p>
+          <p id="g-priv-desc" class="text-sm text-slate-600 mb-4">Ingresa la clave proporcionada en recepción para ver información útil, restaurantes recomendados, farmacias, grifos y taller mecánico:</p>
           
           <div class="flex flex-col sm:flex-row gap-3 max-w-md">
             <input type="password" id="passInput" placeholder="Contraseña de huésped" onkeypress="handleKey(event)" class="px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-kactus-500 text-sm flex-1">
@@ -342,6 +412,7 @@
             <div>
               <h4 id="g-secret-title" class="font-bold text-slate-800 text-base mb-2">🗺️ Rutas Exclusivas y Consejos Hostal Kactus:</h4>
               <p id="g-secret-text" class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                • <strong>Guardado de Equipaje:</strong> Puedes dejar tus maletas gratis antes del Check-in o después del Check-out.<br>
                 • <strong>Transporte a Laguna Parón:</strong> Colectivos salen desde las 6:30 AM cerca al mercado principal.<br>
                 • <strong>Ahorro en Tours:</strong> Te ayudamos a organizar salidas grupales para reducir costos.<br>
                 • <strong>Cajeros Cercanos:</strong> Encuentra cajeros BCP y Banco de la Nación a 3 cuadras.
@@ -350,72 +421,76 @@
 
             <div class="bg-white p-5 rounded-xl border border-kactus-200">
               <h4 id="g-shop-title" class="font-bold text-slate-800 text-sm mb-1 flex items-center gap-2">
-                <i class="fas fa-map-marked-alt text-kactus-500"></i> Compras, Farmacias, Restaurantes y Grifos Cercanos:
+                <i class="fas fa-map-marked-alt text-kactus-500"></i> Restaurantes Recomendados, Farmacias, Grifos y Servicios Cercanos:
               </h4>
               <p id="g-shop-intro" class="text-xs text-slate-500 mb-4">Toca cualquier enlace para abrir la ruta en Google Maps:</p>
               
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                
-                <div class="bg-slate-50 p-3.5 rounded-lg border-l-4 border-l-kactus-500 flex flex-col justify-between text-xs space-y-2">
+
+                <!-- Restaurantes Recomendados -->
+                <div class="bg-slate-50 p-3.5 rounded-lg border-l-4 border-l-amber-500 flex flex-col justify-between text-xs space-y-2">
                   <div>
-                    <strong id="sh-t1" class="text-slate-800">🛒 Comercial Trujillo (Market)</strong>
-                    <p id="sh-d1" class="text-slate-500 mt-1">Excelente opción para agua, bebidas, galletas, snacks y alimentos para cocinar.</p>
+                    <strong class="text-slate-800">🍗 Gerardo's Chicken (Restaurante / Pollería)</strong>
+                    <p class="text-slate-500 mt-1">Sabor único en pollo a la brasa, papas crujientes y platos variados para cenar en Caraz.</p>
                   </div>
                   <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1 hover:underline"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
                 </div>
 
-                <div class="bg-slate-50 p-3.5 rounded-lg border-l-4 border-l-kactus-500 flex flex-col justify-between text-xs space-y-2">
+                <div class="bg-slate-50 p-3.5 rounded-lg border-l-4 border-l-amber-500 flex flex-col justify-between text-xs space-y-2">
                   <div>
-                    <strong id="sh-t2" class="text-slate-800">💊 Mifarma (Cerca al Mercado)</strong>
-                    <p id="sh-d2" class="text-slate-500 mt-1">Farmacia cercana al mercado principal para medicinas, aseo personal y soroche.</p>
+                    <strong class="text-slate-800">🍲 Restaurante Pacha Hunta</strong>
+                    <p class="text-slate-500 mt-1">Excelente comida local, menús tradicionales y platos típicos cerca de la Plaza de Armas.</p>
                   </div>
                   <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1 hover:underline"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
                 </div>
 
-                <div class="bg-slate-50 p-3.5 rounded-lg border-l-4 border-l-kactus-500 flex flex-col justify-between text-xs space-y-2">
+                <div class="bg-slate-50 p-3.5 rounded-lg border-l-4 border-l-amber-500 flex flex-col justify-between text-xs space-y-2">
                   <div>
-                    <strong id="sh-t3" class="text-slate-800">💊 Inkafarma (Jr. Sucre / Raymondi)</strong>
-                    <p id="sh-d3" class="text-slate-500 mt-1">Botica céntrica para cualquier necesidad médica o cuidado personal.</p>
+                    <strong class="text-slate-800">🍗 Pollería Sabor & Tradición</strong>
+                    <p class="text-slate-500 mt-1">Ubicada en Jr. Sucre (arriba de la plaza). Opción tradicional para cenas y pollo a la brasa.</p>
                   </div>
                   <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1 hover:underline"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
                 </div>
 
-                <div class="bg-slate-50 p-3.5 rounded-lg border-l-4 border-l-kactus-500 flex flex-col justify-between text-xs space-y-2">
+                <!-- Farmacias -->
+                <div class="bg-slate-50 p-3.5 rounded-lg border-l-4 border-l-emerald-600 flex flex-col justify-between text-xs space-y-2">
                   <div>
-                    <strong id="sh-t4" class="text-slate-800">🍲 Restaurante Pacha Hunta</strong>
-                    <p id="sh-d4" class="text-slate-500 mt-1">Excelente comida local y platos típicos muy cerca a la Plaza de Armas.</p>
+                    <strong class="text-slate-800">💊 Inkafarma (Jr. Sucre / Raymondi)</strong>
+                    <p class="text-slate-500 mt-1">Botica céntrica para medicamentos, artículos de aseo personal y pastillas para el soroche.</p>
                   </div>
                   <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1 hover:underline"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
                 </div>
 
-                <div class="bg-slate-50 p-3.5 rounded-lg border-l-4 border-l-kactus-500 flex flex-col justify-between text-xs space-y-2">
+                <div class="bg-slate-50 p-3.5 rounded-lg border-l-4 border-l-emerald-600 flex flex-col justify-between text-xs space-y-2">
                   <div>
-                    <strong id="sh-t5" class="text-slate-800">🍗 Pollería Sabor & Tradición</strong>
-                    <p id="sh-d5" class="text-slate-500 mt-1">Ubicada en Jr. Sucre (más arriba de la plaza). Pollo a la brasa y cenas deliciosas.</p>
+                    <strong class="text-slate-800">💊 Mifarma (Cerca al Mercado)</strong>
+                    <p class="text-slate-500 mt-1">Farmacia cercana al mercado principal para cualquier atención médica de emergencia.</p>
                   </div>
                   <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1 hover:underline"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
                 </div>
 
-                <div class="bg-slate-50 p-3.5 rounded-lg border-l-4 border-l-kactus-500 flex flex-col justify-between text-xs space-y-2">
+                <!-- Grifos -->
+                <div class="bg-slate-50 p-3.5 rounded-lg border-l-4 border-l-red-500 flex flex-col justify-between text-xs space-y-2">
                   <div>
-                    <strong id="sh-t6" class="text-slate-800">🧺 Mercado Central de Caraz</strong>
-                    <p id="sh-d6" class="text-slate-500 mt-1">Frutas frescas, pan regional, queso y punto de partida de combis hacia tours.</p>
+                    <strong class="text-slate-800">⛽ Grifo "El Arco" (Caraz)</strong>
+                    <p class="text-slate-500 mt-1">Estación de servicio ubicada en la entrada a la ciudad para abastecimiento rápido de combustible.</p>
                   </div>
                   <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1 hover:underline"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
                 </div>
 
-                <div class="bg-slate-50 p-3.5 rounded-lg border-l-4 border-l-kactus-500 flex flex-col justify-between text-xs space-y-2">
+                <div class="bg-slate-50 p-3.5 rounded-lg border-l-4 border-l-red-500 flex flex-col justify-between text-xs space-y-2">
                   <div>
-                    <strong id="sh-t7" class="text-slate-800">🏛️ Plaza de Armas de Caraz</strong>
-                    <p id="sh-d7" class="text-slate-500 mt-1">Corazón de la ciudad. Helados artesanales tradicionales, bancos y cafeterías.</p>
+                    <strong class="text-slate-800">⛽ Grifo Cerca a la Compañía de Bomberos</strong>
+                    <p class="text-slate-500 mt-1">Estación de servicio estratégica cerca a la carretera principal y la estación de bomberos de Caraz.</p>
                   </div>
                   <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1 hover:underline"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
                 </div>
 
-                <div class="bg-slate-50 p-3.5 rounded-lg border-l-4 border-l-kactus-500 flex flex-col justify-between text-xs space-y-2">
+                <!-- Taller Mecánico de Motos -->
+                <div class="bg-slate-50 p-3.5 rounded-lg border-l-4 border-l-blue-600 flex flex-col justify-between text-xs space-y-2">
                   <div>
-                    <strong id="sh-t8" class="text-slate-800">⛽ Grifo / Estación de Servicio</strong>
-                    <p id="sh-d8" class="text-slate-500 mt-1">Grifo cercano para recarga de combustible o compras rápidas de viaje.</p>
+                    <strong class="text-slate-800">🔧 Taller Mecánico de Motos</strong>
+                    <p class="text-slate-500 mt-1">Servicio de mantenimiento, cambio de aceite y reparaciones rápidas para motocicletas en Caraz.</p>
                   </div>
                   <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1 hover:underline"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
                 </div>
@@ -442,7 +517,7 @@
             <i class="fas fa-chevron-down transition-transform duration-200"></i>
           </div>
           <div class="hidden px-4 pb-4 text-xs sm:text-sm text-slate-600 border-t border-slate-50 pt-3" id="faq-a1">
-            El Check-in es a partir de las 13:00 hrs y el Check-out hasta las 11:00 hrs. Si llegas temprano, ¡puedes guardar tu equipaje gratis!
+            El Check-in es a las <strong>11:00 AM</strong> y el Check-out a las <strong>11:00 AM</strong>. Si llegas antes o necesitas salir después, ¡puedes guardar tu equipaje gratis!
           </div>
         </div>
 
@@ -458,11 +533,11 @@
 
         <div class="bg-white rounded-xl border border-kactus-100 shadow-sm overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
           <div class="p-4 flex justify-between items-center font-bold text-sm text-kactus-800">
-            <span id="faq-q3">¿Aceptan pagos con Yape, Plin o tarjetas?</span>
+            <span id="faq-q3">¿Puedo alquilar equipos de camping en el hostal?</span>
             <i class="fas fa-chevron-down transition-transform duration-200"></i>
           </div>
           <div class="hidden px-4 pb-4 text-xs sm:text-sm text-slate-600 border-t border-slate-50 pt-3" id="faq-a3">
-            Aceptamos efectivo, transferencias digitales por Yape, Plin y tarjetas de crédito o débito.
+            ¡Sí! Alquilamos carpas 3 estaciones, sacos de dormir de pluma (-5°C a -20°C), bastones de trekking, cocinas con utensilios y largavistas.
           </div>
         </div>
       </div>
@@ -480,9 +555,9 @@
           <i class="fas fa-map-marker-alt text-red-500 mr-1"></i> <strong id="lbl-addr">Dirección:</strong> Avenida Meza Arizona 425 - 202, Caraz, Ancash, Perú
         </p>
         <div class="flex flex-wrap justify-center gap-2">
-          <span class="bg-kactus-50 border border-kactus-200 text-kactus-800 text-xs font-semibold px-3 py-1 rounded-full"><i class="fas fa-ban mr-1"></i> <span id="no-pets-text">No se aceptan mascotas</span></span>
-          <span class="bg-kactus-50 border border-kactus-200 text-kactus-800 text-xs font-semibold px-3 py-1 rounded-full"><i class="fas fa-clock mr-1"></i> <span id="badge-rec">Recepción continua</span></span>
-          <span class="bg-kactus-50 border border-kactus-200 text-kactus-800 text-xs font-semibold px-3 py-1 rounded-full"><i class="fas fa-check-circle mr-1"></i> <span id="badge-cancel">Cancelación flexible</span></span>
+          <span class="bg-kactus-50 border border-kactus-200 text-kactus-800 text-xs font-semibold px-3 py-1 rounded-full"><i class="fas fa-clock mr-1"></i> Check-in & Check-out: 11:00 AM</span>
+          <span class="bg-kactus-50 border border-kactus-200 text-kactus-800 text-xs font-semibold px-3 py-1 rounded-full"><i class="fas fa-suitcase mr-1"></i> Equipaje gratis</span>
+          <span class="bg-kactus-50 border border-kactus-200 text-kactus-800 text-xs font-semibold px-3 py-1 rounded-full"><i class="fas fa-ban mr-1"></i> No mascotas</span>
         </div>
         <div class="pt-2">
           <a href="https://maps.google.com" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 active:scale-95 text-white font-bold py-3 px-6 rounded-xl text-sm transition-all shadow-md">
@@ -552,7 +627,7 @@
       
       let msg = "Hola Hostal Kactus, quisiera consultar disponibilidad de habitaciones.";
       if (inDate || outDate) {
-        msg = `Hola Hostal Kactus, quisiera consultar disponibilidad para ingresar el ${inDate || 'próximo día'} y salir el ${outDate || 'próximo día'}.`;
+        msg = `Hola Hostal Kactus, quisiera consultar disponibilidad para ingresar el ${inDate || 'próximo día'} (Check-in 11 AM) y salir el ${outDate || 'próximo día'} (Check-out 11 AM).`;
       }
       window.open(`https://wa.me/51974364826?text=${encodeURIComponent(msg)}`, '_blank');
     }
@@ -585,8 +660,8 @@
       es: {
         subTitle: "Tu descanso cómodo, seguro y completo en Caraz, Perú",
         barTitle: "Consulta Disponibilidad Directa",
-        lblCheckin: "Llegada (Check-in)",
-        lblCheckout: "Salida (Check-out)",
+        lblCheckin: "Llegada (Check-in 11 AM)",
+        lblCheckout: "Salida (Check-out 11 AM)",
         btnCustomRes: "Consultar por WhatsApp",
         titleRooms: "Nuestras Habitaciones",
         room1Title: "Habitación Matrimonial Económica",
@@ -597,7 +672,7 @@
         btnRes: "Reservar por WhatsApp",
         titleServices: "Servicios e Instalaciones",
         sBath: "Baño Privado", sWater: "Agua Caliente 24/7", sTv: "TV Smart", sWifi: "Wi-Fi Gratis",
-        sParking: "Estacionamiento Gratis", sLuggage: "Guardado de Equipaje Gratis", sKitchen: "Cocina Compartida & Horno", sBreakfast: "Servicio de Desayunos",
+        sParking: "Estacionamiento Gratis", sLuggage: "Guardado de Equipaje GRATIS", sKitchen: "Cocina Compartida & Horno", sBreakfast: "Servicio de Desayunos",
         titlePayments: "Pasarela de Pago y Medios de Reserva",
         payIntro: "Aceptamos múltiples formas de pago para tu máxima comodidad al reservar:",
         payYape: "Pagos digitales instantáneos al teléfono oficial.",
@@ -614,33 +689,25 @@
         gPubTitle: "Lugares Populares para Visitar:",
         gPubDesc: "📍 <strong>Laguna Parón:</strong> La laguna turquesa más grande de la Cordillera Blanca.<br>📍 <strong>Laguna Llanganuco y Laguna 69:</strong> Vistas espectaculares de los nevados Huascarán y Chopicalqui.<br>📍 <strong>Plaza de Armas de Caraz:</strong> Famosa por sus tradicionales helados artesanales y clima cálido.",
         gPrivTitle: "🔐 Guía Privada de Rutas y Servicios para Huéspedes",
-        gPrivDesc: "Ingresa la clave proporcionada en recepción para ver información útil, compras cercanas y transporte:",
+        gPrivDesc: "Ingresa la clave proporcionada en recepción para ver información útil, restaurantes recomendados, farmacias, grifos y taller mecánico:",
         btnUnlockText: "Desbloquear Guía", passPlaceholder: "Contraseña de huésped",
         gSecretTitle: "🗺️ Rutas Exclusivas y Consejos Hostal Kactus:",
-        gSecretText: "• <strong>Transporte a Laguna Parón:</strong> Colectivos salen desde las 6:30 AM cerca al mercado principal.<br>• <strong>Ahorro en Tours:</strong> Te ayudamos a organizar salidas grupales para reducir costos.<br>• <strong>Cajeros Cercanos:</strong> Encuentra cajeros BCP y Banco de la Nación a 3 cuadras.",
-        gShopTitle: "Compras, Farmacias, Restaurantes y Grifos Cercanos:",
+        gSecretText: "• <strong>Guardado de Equipaje:</strong> Puedes dejar tus maletas gratis antes del Check-in o después del Check-out.<br>• <strong>Transporte a Laguna Parón:</strong> Colectivos salen desde las 6:30 AM cerca al mercado principal.<br>• <strong>Ahorro en Tours:</strong> Te ayudamos a organizar salidas grupales para reducir costos.<br>• <strong>Cajeros Cercanos:</strong> Encuentra cajeros BCP y Banco de la Nación a 3 cuadras.",
+        gShopTitle: "Restaurantes Recomendados, Farmacias, Grifos y Servicios Cercanos:",
         gShopIntro: "Toca cualquier enlace para abrir la ruta en Google Maps:",
-        shT1: "🛒 Comercial Trujillo (Market)", shD1: "Excelente opción para agua, bebidas, galletas, snacks y alimentos para cocinar.",
-        shT2: "💊 Mifarma (Cerca al Mercado)", shD2: "Farmacia cercana al mercado principal para medicinas, aseo personal y soroche.",
-        shT3: "💊 Inkafarma (Jr. Sucre / Raymondi)", shD3: "Botica céntrica para cualquier necesidad médica o cuidado personal.",
-        shT4: "🍲 Restaurante Pacha Hunta", shD4: "Excelente comida local y platos típicos muy cerca a la Plaza de Armas.",
-        shT5: "🍗 Pollería Sabor & Tradición", shD5: "Ubicada en Jr. Sucre (más arriba de la plaza). Pollo a la brasa y cenas deliciosas.",
-        shT6: "🧺 Mercado Central de Caraz", shD6: "Frutas frescas, pan regional, queso y punto de partida de combis hacia tours.",
-        shT7: "🏛️ Plaza de Armas de Caraz", shD7: "Corazón de la ciudad. Helados artesanales tradicionales, bancos y cafeterías.",
-        shT8: "⛽ Grifo / Estación de Servicio", shD8: "Grifo cercano para recarga de combustible o compras rápidas de viaje.",
         mapLinkText: "Ver en Google Maps",
         titleFaq: "Preguntas Frecuentes",
-        faqQ1: "¿A qué hora es el Check-in y Check-out?", faqA1: "El Check-in es a partir de las 13:00 hrs y el Check-out hasta las 11:00 hrs. Si llegas temprano, ¡puedes guardar tu equipaje gratis!",
+        faqQ1: "¿A qué hora es el Check-in y Check-out?", faqA1: "El Check-in es a las 11:00 AM y el Check-out a las 11:00 AM. Si llegas antes o necesitas salir después, ¡puedes guardar tu equipaje gratis!",
         faqQ2: "¿Tienen agua caliente las 24 horas?", faqA2: "Sí, disponemos de agua caliente 24/7 en todas nuestras habitaciones.",
-        faqQ3: "¿Aceptan pagos con Yape, Plin o tarjetas?", faqA3: "Aceptamos efectivo, transferencias digitales por Yape, Plin y tarjetas de crédito o débito.",
-        titleLocation: "Ubicación y Políticas", lblAddr: "Dirección:", noPets: "No se aceptan mascotas", badgeRec: "Recepción continua", badgeCancel: "Cancelación flexible", btnMapsText: "Abrir Ubicación en Google Maps",
+        faqQ3: "¿Puedo alquilar equipos de camping en el hostal?", faqA3: "¡Sí! Alquilamos carpas 3 estaciones, sacos de dormir de pluma (-5°C a -20°C), bastones de trekking, cocinas con utensilios y largavistas.",
+        titleLocation: "Ubicación y Políticas", lblAddr: "Dirección:", btnMapsText: "Abrir Ubicación en Google Maps",
         stkFrom: "Desde", stkBtn: "Reservar Ahora"
       },
       en: {
         subTitle: "Your comfortable, safe, and complete stay in Caraz, Peru",
         barTitle: "Check Direct Availability",
-        lblCheckin: "Check-in Date",
-        lblCheckout: "Check-out Date",
+        lblCheckin: "Check-in Date (11 AM)",
+        lblCheckout: "Check-out Date (11 AM)",
         btnCustomRes: "Inquire via WhatsApp",
         titleRooms: "Our Rooms",
         room1Title: "Economy Double Room", room1Desc: "Small cozy room with double bed. Ideal for couples or solo travelers.",
@@ -648,7 +715,7 @@
         perNight: "/ night", btnRes: "Book via WhatsApp",
         titleServices: "Services & Amenities",
         sBath: "Private Bathroom", sWater: "24/7 Hot Water", sTv: "Smart TV", sWifi: "Free Wi-Fi",
-        sParking: "Free Parking", sLuggage: "Free Luggage Storage", sKitchen: "Shared Kitchen & Oven", sBreakfast: "Breakfast Service",
+        sParking: "Free Parking", sLuggage: "FREE Luggage Storage", sKitchen: "Shared Kitchen & Oven", sBreakfast: "Breakfast Service",
         titlePayments: "Payment Options & Booking Methods",
         payIntro: "We accept multiple payment methods for your maximum convenience:",
         payYape: "Instant digital payments via official phone number.",
@@ -665,33 +732,25 @@
         gPubTitle: "Popular Places to Visit:",
         gPubDesc: "📍 <strong>Parón Lake:</strong> The largest turquoise lagoon in the Cordillera Blanca.<br>📍 <strong>Llanganuco & Lake 69:</strong> Spectacular views of Huascarán and Chopicalqui peaks.<br>📍 <strong>Caraz Main Square:</strong> Famous for artisanal ice cream and warm climate.",
         gPrivTitle: "🔐 Private Route & Services Guide for Guests",
-        gPrivDesc: "Enter the key provided at reception to see useful info, shops, and transport:",
+        gPrivDesc: "Enter the key provided at reception to see useful info, recommended restaurants, pharmacies, gas stations & mechanics:",
         btnUnlockText: "Unlock Guide", passPlaceholder: "Guest password",
         gSecretTitle: "🗺️ Exclusive Routes & Hostal Kactus Tips:",
-        gSecretText: "• <strong>Parón Lake Transport:</strong> Shared vans leave from 6:30 AM near the main market.<br>• <strong>Save on Tours:</strong> We help you organize group trips to lower costs.<br>• <strong>ATMs Nearby:</strong> BCP and Banco de la Nación ATMs 3 blocks away.",
-        gShopTitle: "Nearby Shops, Pharmacies, Restaurants & Gas Stations:",
+        gSecretText: "• <strong>Free Luggage Storage:</strong> You can store your bags for free before check-in or after check-out.<br>• <strong>Parón Lake Transport:</strong> Shared vans leave from 6:30 AM near the main market.<br>• <strong>Save on Tours:</strong> We help you organize group trips to lower costs.<br>• <strong>ATMs Nearby:</strong> BCP and Banco de la Nación ATMs 3 blocks away.",
+        gShopTitle: "Recommended Restaurants, Pharmacies, Gas Stations & Mechanics:",
         gShopIntro: "Tap any link to open location on Google Maps:",
-        shT1: "🛒 Comercial Trujillo (Market)", shD1: "Great option for water, drinks, snacks, and groceries.",
-        shT2: "💊 Mifarma (Near Market)", shD2: "Pharmacy near main market for medicine and altitude sickness.",
-        shT3: "💊 Inkafarma (Jr. Sucre)", shD3: "Central pharmacy for medical or personal care needs.",
-        shT4: "🍲 Pacha Hunta Restaurant", shD4: "Excellent local food near the Main Square.",
-        shT5: "🍗 Sabor & Tradición Roast Chicken", shD5: "Located on Jr. Sucre. Delicious roasted chicken and dinner options.",
-        shT6: "🧺 Caraz Central Market", shD6: "Fresh fruit, local bread, cheese, and tour van departures.",
-        shT7: "🏛️ Caraz Main Square", shD7: "Heart of the city. Artisanal ice cream, banks, and cafes.",
-        shT8: "⛽ Gas Station", shD8: "Nearby gas station for fuel or quick travel snacks.",
         mapLinkText: "Open in Google Maps",
         titleFaq: "Frequently Asked Questions",
-        faqQ1: "What time is Check-in and Check-out?", faqA1: "Check-in is from 1:00 PM and Check-out until 11:00 AM. If you arrive early, store your luggage for free!",
+        faqQ1: "What time is Check-in and Check-out?", faqA1: "Check-in is at 11:00 AM and Check-out at 11:00 AM. Free luggage storage available!",
         faqQ2: "Do you have 24/7 hot water?", faqA2: "Yes, we have 24/7 hot water in all rooms.",
-        faqQ3: "Do you accept digital payments or credit cards?", faqA3: "We accept cash, Yape, Plin digital transfers, and credit/debit cards.",
-        titleLocation: "Location & Policies", lblAddr: "Address:", noPets: "No pets allowed", badgeRec: "24/7 Reception", badgeCancel: "Flexible cancellation", btnMapsText: "Open Location in Google Maps",
+        faqQ3: "Can I rent camping gear at the hostel?", faqA3: "Yes! We rent 3-season tents, down sleeping bags (-5°C to -20°C), trekking poles, stoves, and binoculars.",
+        titleLocation: "Location & Policies", lblAddr: "Address:", btnMapsText: "Open Location in Google Maps",
         stkFrom: "From", stkBtn: "Book Now"
       },
       fr: {
         subTitle: "Votre séjour confortable, sécurisé et complet à Caraz, Pérou",
         barTitle: "Vérifier la Disponibilité Directe",
-        lblCheckin: "Date d'arrivée",
-        lblCheckout: "Date de départ",
+        lblCheckin: "Date d'arrivée (11 AM)",
+        lblCheckout: "Date de départ (11 AM)",
         btnCustomRes: "Consulter via WhatsApp",
         titleRooms: "Nos Chambres",
         room1Title: "Chambre Double Économique", room1Desc: "Petite chambre douillette avec lit double. Idéale pour couples ou voyageurs solos.",
@@ -699,7 +758,7 @@
         perNight: "/ nuit", btnRes: "Réserver par WhatsApp",
         titleServices: "Services et Équipements",
         sBath: "Salle de Bain Privée", sWater: "Eau Chaude 24/7", sTv: "Smart TV", sWifi: "Wi-Fi Gratuit",
-        sParking: "Parking Gratuit", sLuggage: "Consigne à Bagages Gratuite", sKitchen: "Cuisine Partagée & Four", sBreakfast: "Service Petit-Déjeuner",
+        sParking: "Parking Gratuit", sLuggage: "Consigne à Bagages GRATUITE", sKitchen: "Cuisine Partagée & Four", sBreakfast: "Service Petit-Déjeuner",
         titlePayments: "Options de Paiement et Réservation",
         payIntro: "Nous acceptons plusieurs modes de paiement pour votre confort :",
         payYape: "Paiements numériques instantanés.", payCards: "Visa, MasterCard, American Express.",
@@ -714,33 +773,25 @@
         gPubTitle: "Lieux Populaires à Visiter :",
         gPubDesc: "📍 <strong>Lac Parón :</strong> Le plus grand lac turquoise de la Cordillère Blanche.<br>📍 <strong>Lacs Llanganuco & Lac 69 :</strong> Vues magnifiques sur les sommets Huascarán et Chopicalqui.<br>📍 <strong>Place Principale de Caraz :</strong> Célèbre pour ses glaces artisanales et son climat chaud.",
         gPrivTitle: "🔐 Guide Privé de Routes et Services pour les Clients",
-        gPrivDesc: "Entrez le mot de passe fourni à la réception pour voir les commerces et cartes :",
+        gPrivDesc: "Entrez le mot de passe fourni à la réception :",
         btnUnlockText: "Déverrouiller le Guide", passPlaceholder: "Mot de passe client",
         gSecretTitle: "🗺️ Routes Exclusives et Conseils Hostal Kactus :",
-        gSecretText: "• <strong>Transport pour le Lac Parón :</strong> Départs des bus dès 6h30 près du marché principal.<br>• <strong>Économisez sur les Tours :</strong> Nous vous aidons à organiser des salidas en groupe.<br>• <strong>DABs proches :</strong> Distributeurs BCP et Banco de la Nación à 3 blocks.",
-        gShopTitle: "Commerces, Pharmacies, Restaurants & Stations-Service :",
+        gSecretText: "• <strong>Bagages Gratuits :</strong> Consigne à bagages gratuite avant le check-in ou après le check-out.<br>• <strong>Transport pour el Lac Parón :</strong> Départs des bus dès 6h30.",
+        gShopTitle: "Restaurants Recommandés, Pharmacies & Services :",
         gShopIntro: "Touchez un lien pour ouvrir sur Google Maps :",
-        shT1: "🛒 Comercial Trujillo (Supermarché)", shD1: "Idéal pour l'eau, boissons, snacks y courses pour cuisiner.",
-        shT2: "💊 Mifarma (Près du Marché)", shD2: "Pharmacie proche du marché principal pour médicaments et soins.",
-        shT3: "💊 Inkafarma (Jr. Sucre)", shD3: "Pharmacie centrale pour vos soins personnels.",
-        shT4: "🍲 Restaurant Pacha Hunta", shD4: "Excellente cuisine locale près de la Place Principale.",
-        shT5: "🍗 Rôtisserie Sabor & Tradición", shD5: "Située Jr. Sucre. Poulet rôti et dîners délicieux.",
-        shT6: "🧺 Marché Central de Caraz", shD6: "Fruits frais, fromage local et départs d'excursions.",
-        shT7: "🏛️ Place Principale de Caraz", shD7: "Cœur de la ville, glaces artisanales, banques et cafés.",
-        shT8: "⛽ Station-service", shD8: "Point de ravitaillement essence et snacks.",
         mapLinkText: "Ouvrir dans Google Maps",
         titleFaq: "Foire Aux Questions",
-        faqQ1: "Heures de Check-in et Check-out ?", faqA1: "Check-in dès 13:00 et Check-out jusqu'à 11:00. Consigne à bagages gratuite !",
+        faqQ1: "Heures de Check-in et Check-out ?", faqA1: "Check-in à 11:00 AM et Check-out à 11:00 AM. Consigne à bagages gratuite !",
         faqQ2: "Avez-vous de l'eau chaude 24h/24 ?", faqA2: "Oui, eau chaude 24/7 dans toutes nos chambres.",
-        faqQ3: "Acceptez-vous les cartes y paiements numériques ?", faqA3: "Nous acceptons espèces, Yape, Plin et cartes de crédit/débit.",
-        titleLocation: "Emplacement & Politiques", lblAddr: "Adresse :", noPets: "Animaux non admis", badgeRec: "Réception continuous", badgeCancel: "Annulation flexible", btnMapsText: "Ouvrir dans Google Maps",
+        faqQ3: "Peut-on louer du matériel de camping ?", faqA3: "Oui ! Tentes 3 saisons, sacs de couchage en duvet, bâtons, réchauds et jumelles.",
+        titleLocation: "Emplacement & Politiques", lblAddr: "Adresse :", btnMapsText: "Ouvrir dans Google Maps",
         stkFrom: "À partir de", stkBtn: "Réserver"
       },
       cs: {
         subTitle: "Váš pohodlný, bezpečný a kompletní pobyt v Carazu v Peru",
         barTitle: "Ověřit Přímou Dostupnost",
-        lblCheckin: "Datum příjezdu",
-        lblCheckout: "Datum odjezdu",
+        lblCheckin: "Datum příjezdu (11 AM)",
+        lblCheckout: "Datum odjezdu (11 AM)",
         btnCustomRes: "Poptat přes WhatsApp",
         titleRooms: "Naše Pokoje",
         room1Title: "Ekonomický Dvoulůžkový Pokoj", room1Desc: "Útulný malý pokoj s manželskou postelí. Ideální pro páry nebo sólo cestovatele.",
@@ -748,7 +799,7 @@
         perNight: "/ noc", btnRes: "Rezervovat přes WhatsApp",
         titleServices: "Služby a Vybavení",
         sBath: "Vlastní Koupelna", sWater: "Teplá Voda 24/7", sTv: "Smart TV", sWifi: "Wi-Fi Zdarma",
-        sParking: "Parkování Zdarma", sLuggage: "Úschova Zavazadel Zdarma", sKitchen: "Sdílená Kuchyň a Pec", sBreakfast: "Snídaňový Servis",
+        sParking: "Parkování Zdarma", sLuggage: "Úschova Zavazadel ZDARMA", sKitchen: "Sdílená Kuchyň a Pec", sBreakfast: "Snídaňový Servis",
         titlePayments: "Platební Možnosti a Rezervace",
         payIntro: "Přijímáme několik způsobů platby pro vaše pohodlí:",
         payYape: "Okamžité digitální platby.", payCards: "Visa, MasterCard, American Express.",
@@ -763,33 +814,25 @@
         gPubTitle: "Oblíbená Místa k Návštěvě:",
         gPubDesc: "📍 <strong>Jezero Parón:</strong> Největší tyrkysová laguna v Cordillera Blanca.<br>📍 <strong>Jezera Llanganuco a Laguna 69:</strong> Velkolepé výhledy na vrcholy Huascarán a Chopicalqui.<br>📍 <strong>Hlavní Náměstí v Carazu:</strong> Proslulé tradiční řemeslnou zmrzlinou a teplým počasím.",
         gPrivTitle: "🔐 Soukromý Průvodce Trasami a Službami pro Hosty",
-        gPrivDesc: "Zadejte heslo obdržené na recepci pro zobrazení informací o obchodech a doprava:",
+        gPrivDesc: "Zadejte heslo obdržené na recepci:",
         btnUnlockText: "Odemknout Průvodce", passPlaceholder: "Heslo pro hosty",
         gSecretTitle: "🗺️ Exkluzivní Trasy a Tipy Hostal Kactus:",
-        gSecretText: "• <strong>Doprava k jezeru Parón:</strong> Sdílené autobusy odjíždějí od 6:30 ráno poblíž hlavního tržiště.<br>• <strong>Úspora na výletech:</strong> Pomůžeme vám zorganizovat skupinové výlety pro snížení nákladů.<br>• <strong>Bankomaty:</strong> Bankomaty BCP a Banco de la Nación 3 bloky od hostelu.",
-        gShopTitle: "Obchody, Lékárny, Restaurace a Čerpací Stanice:",
+        gSecretText: "• <strong>Úschova Zavazadel Zdarma:</strong> Zavazadla si můžete bezplatně uložit před check-inem nebo po check-outu.<br>• <strong>Doprava k jezeru Parón:</strong> Autobusy od 6:30 ráno.",
+        gShopTitle: "Doporučené Restaurace, Lékárny a Služby:",
         gShopIntro: "Klikněte na odkaz pro otevření trasy v Google Maps:",
-        shT1: "🛒 Comercial Trujillo (Obchod)", shD1: "Skvělá volba pro vodu, nápoje, snacky a potraviny na vaření.",
-        shT2: "💊 Mifarma (Poblíž Tržiště)", shD2: "Lékárna poblíž tržiště pro léky a osobní hygienu.",
-        shT3: "💊 Inkafarma (Jr. Sucre)", shD3: "Centrální lékárna pro vaše potřeby.",
-        shT4: "🍲 Restaurace Pacha Hunta", shD4: "Skvělé místní jídlo poblíž hlavního náměstí.",
-        shT5: "🍗 Pollería Sabor & Tradición", shD5: "Nachází se na Jr. Sucre. Grilované kuře a skvělé večeře.",
-        shT6: "🧺 Centralní Tržiště Caraz", shD6: "Čerstvé ovoce, sýry a doprava na výlety.",
-        shT7: "🏛️ Hlavní Náměstí v Carazu", shD7: "Srdce města, zmrzlinárny, banky a kavárny.",
-        shT8: "⛽ Čerpací Stanice", shD8: "Čerpací stanice v okolí pro doplňování paliva.",
         mapLinkText: "Otevřít v Google Maps",
         titleFaq: "Často Kladené Otázky",
-        faqQ1: "Kdy je Check-in a Check-out?", faqA1: "Check-in od 13:00 a Check-out do 11:00. Úschova zavazadel zdarma!",
+        faqQ1: "Kdy je Check-in a Check-out?", faqA1: "Check-in je v 11:00 AM a Check-out v 11:00 AM. Úschova zavazadel zdarma!",
         faqQ2: "Máte teplou voda 24 hodin denně?", faqA2: "Ano, teplá voda 24/7 je k dispozici ve všech pokojích.",
-        faqQ3: "Přijímáte platby kartou nebo digitálně?", faqA3: "Přijímáme hotovost, Yape, Plin a kreditní/debetní karty.",
-        titleLocation: "Lokalita a Pravidla", lblAddr: "Adresa:", noPets: "Domácí mazlíčci nejsou povoleni", badgeRec: "Nepřetržitá recepce", badgeCancel: "Flexibilní storno", btnMapsText: "Otevřít v Google Maps",
+        faqQ3: "Lze v hostelu půjčit kempingové vybavení?", faqA3: "Ano! Půjčujeme stan, péřový spací pytel (-5°C až -20°C), trekové hole, vařiče a dalekohledy.",
+        titleLocation: "Lokalita a Pravidla", lblAddr: "Adresa:", btnMapsText: "Otevřít v Google Maps",
         stkFrom: "Od", stkBtn: "Rezervovat"
       },
       zh: {
         subTitle: "您在秘鲁卡拉斯（Caraz）舒适、安全且完善的下榻之所",
         barTitle: "查询直接空房",
-        lblCheckin: "入住日期",
-        lblCheckout: "退房日期",
+        lblCheckin: "入住日期 (11 AM)",
+        lblCheckout: "退房日期 (11 AM)",
         btnCustomRes: "通过 WhatsApp 咨询",
         titleRooms: "我们的客房",
         room1Title: "经济双人房", room1Desc: "温馨的小型客房，配备双人床。非常适合情侣或单人旅客。",
@@ -814,26 +857,18 @@
         gPubTitle: "热门景点推荐：",
         gPubDesc: "📍 <strong>帕隆湖（Laguna Parón）：</strong> 白山脉最大的绿松石色高山湖泊。<br>📍 <strong>扬加努科湖与69号湖：</strong> 壮丽观赏瓦斯卡兰峰与肖皮卡尔奇峰。<br>📍 <strong>卡拉斯武器广场：</strong> 以传统手工冰淇淋和宜人气候闻名。",
         gPrivTitle: "🔐 住客专属路线与服务指南",
-        gPrivDesc: "输入前台提供的密码，查看附近购物与交通秘诀：",
+        gPrivDesc: "输入前台提供的密码，查看推荐餐厅、药房与加油站：",
         btnUnlockText: "解锁指南", passPlaceholder: "住客密码",
         gSecretTitle: "🗺️ 仙人掌旅馆专属路线与建议：",
-        gSecretText: "• <strong>前往帕隆湖的交通：</strong> 拼车小巴自早晨 6:30 起从主市场附近出发。<br>• <strong>节省行程费用：</strong> 我们协助组织组团出行以分摊成本。<br>• <strong>附近 ATM：</strong> 步行 3 个街区即可到达 BCP 及国家银行 ATM。",
-        gShopTitle: "周边商店、药房、餐厅与加油站：",
+        gSecretText: "• <strong>免费行李寄存：</strong> 入住前或退房后均可免费寄存行李。<br>• <strong>前往帕隆湖的交通：</strong> 拼车小巴自早晨 6:30 起出发。",
+        gShopTitle: "推荐餐厅、药房、加油站与周边服务：",
         gShopIntro: "点击任意链接在 Google 地图中打开对应路线：",
-        shT1: "🛒 Comercial Trujillo (超市)", shD1: "购买饮用水、补水饮料、零食及烹饪食材的理想选择。",
-        shT2: "💊 Mifarma 药房 (近主市场)", shD2: "主市场附近药房，方便购买药品、个人护理及抗高原反应药。",
-        shT3: "💊 Inkafarma 药房 (Jr. Sucre)", shD3: "市中心连锁药房，满足各类用药需求。",
-        shT4: "🍲 Pacha Hunta 特色餐厅", shD4: "武器广场附近的优质当地特色菜餐厅。",
-        shT5: "🍗 Sabor & Tradición 烤鸡店", shD5: "位于 Jr. Sucre 街（广场上方）。提供美味烤鸡与晚餐。",
-        shT6: "🧺 卡拉斯中央市场", shD6: "新鲜水果、当地特色奶酪及景区拼车出发点。",
-        shT7: "🏛️ 卡拉斯武器广场", shD7: "市中心，汇集手工冰淇淋店、银行与咖啡馆。",
-        shT8: "⛽ 加油站", shD8: "附近加油与快速补给点。",
         mapLinkText: "在 Google 地图中打开",
         titleFaq: "常见问题",
-        faqQ1: "入住与退房时间是什么时候？", faqA1: "入住时间为 13:00 起，退房时间为 11:00 前。可免费寄存行李！",
+        faqQ1: "入住与退房时间是什么时候？", faqA1: "入住时间为 11:00 AM，退房时间为 11:00 AM。提供免费行李寄存！",
         faqQ2: "是否全天 24 小时供应热水？", faqA2: "是的，所有客房均配备 24/7 热水系统。",
-        faqQ3: "支持数字支付或刷卡吗？", faqA3: "我们支持现金、Yape、Plin 数字转账以及信用卡/借记卡支付。",
-        titleLocation: "位置与政策", lblAddr: "地址：", noPets: "禁止携带宠物", badgeRec: "24小时前台服务", badgeCancel: "灵活取消政策", btnMapsText: "在 Google 地图中打开",
+        faqQ3: "可以在旅馆租赁露营装备吗？", faqA3: "是的！我们出租三季帐篷、羽绒睡袋（-5°C至-20°C）、登山杖、带厨具的炉具及望远镜。",
+        titleLocation: "位置与政策", lblAddr: "地址：", btnMapsText: "在 Google 地图中打开",
         stkFrom: "起价", stkBtn: "立即预订"
       }
     };
@@ -897,14 +932,6 @@
 
       document.getElementById('g-shop-title').innerHTML = `<i class="fas fa-map-marked-alt text-kactus-500"></i> ${t.gShopTitle}`;
       document.getElementById('g-shop-intro').innerText = t.gShopIntro;
-      document.getElementById('sh-t1').innerText = t.shT1; document.getElementById('sh-d1').innerText = t.shD1;
-      document.getElementById('sh-t2').innerText = t.shT2; document.getElementById('sh-d2').innerText = t.shD2;
-      document.getElementById('sh-t3').innerText = t.shT3; document.getElementById('sh-d3').innerText = t.shD3;
-      document.getElementById('sh-t4').innerText = t.shT4; document.getElementById('sh-d4').innerText = t.shD4;
-      document.getElementById('sh-t5').innerText = t.shT5; document.getElementById('sh-d5').innerText = t.shD5;
-      document.getElementById('sh-t6').innerText = t.shT6; document.getElementById('sh-d6').innerText = t.shD6;
-      document.getElementById('sh-t7').innerText = t.shT7; document.getElementById('sh-d7').innerText = t.shD7;
-      document.getElementById('sh-t8').innerText = t.shT8; document.getElementById('sh-d8').innerText = t.shD8;
 
       document.querySelectorAll('.map-link-text').forEach(el => el.innerText = t.mapLinkText);
 
@@ -915,9 +942,6 @@
 
       document.getElementById('title-location').innerText = t.titleLocation;
       document.getElementById('lbl-addr').innerText = t.lblAddr;
-      document.getElementById('no-pets-text').innerText = t.noPets;
-      document.getElementById('badge-rec').innerText = t.badgeRec;
-      document.getElementById('badge-cancel').innerText = t.badgeCancel;
       document.getElementById('btn-maps-text').innerText = t.btnMapsText;
 
       document.getElementById('stk-from').innerText = t.stkFrom;
