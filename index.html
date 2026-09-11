@@ -26,13 +26,8 @@
           },
           colors: {
             ayenda: {
-              green: '#10b981', // Verde brillante característico estilo Ayenda
+              green: '#10b981',
               dark: '#0f172a',
-            },
-            kactus: {
-              500: '#10b981',
-              600: '#059669',
-              700: '#047857',
             }
           },
           boxShadow: {
@@ -59,100 +54,108 @@
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-500 selection:text-white pb-24">
 
   <!-- BARRA SUPERIOR EXACTA ESTILO AYENDA -->
-  <nav class="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-xs py-3.5 px-6 sm:px-10">
+  <nav class="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-xs py-3 px-6 sm:px-10">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
       
-      <!-- Logo y Nombre Estilo Ayenda -->
-      <a href="#" class="flex items-center gap-2.5 group">
-        <div class="w-9 h-9 bg-emerald-600 rounded-xl flex items-center justify-center text-white shadow-md font-black text-base transform group-hover:scale-105 transition-transform">
-          K
-        </div>
-        <span class="font-extrabold text-xl tracking-tight text-slate-900">Hostal Kactus</span>
+      <!-- Logo y Nombre -->
+      <a href="#" class="flex items-center gap-2 group">
+        <span class="font-extrabold text-2xl tracking-tighter text-slate-900">ayenda</span>
+        <span class="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full font-bold">Kactus</span>
       </a>
 
-      <!-- Iconos y Botones Superiores Derecha (Selector de Idiomas y Accesos) -->
+      <!-- Iconos y Controles Superiores Derecha -->
       <div class="flex items-center gap-3">
-        <!-- Selector de Idioma Minimalista -->
-        <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-full border border-slate-200">
-          <button class="lang-btn active px-2.5 py-1 rounded-full text-[11px] font-bold transition-all flex items-center gap-1 bg-emerald-600 text-white shadow-xs" id="btn-es" onclick="changeLanguage('es')">
+        
+        <!-- Acceso Código de Huésped -->
+        <a href="#title-guide" class="hidden sm:flex items-center gap-1.5 text-xs font-bold text-slate-700 hover:text-emerald-600 bg-slate-100 px-3.5 py-2 rounded-xl transition-colors">
+          <i class="fas fa-key text-emerald-600"></i> <span id="nav-code-text">Código de Huésped</span>
+        </a>
+
+        <!-- Selector de Idioma Desplegable/Minibotones -->
+        <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200">
+          <button class="lang-btn active px-2.5 py-1 rounded-lg text-[11px] font-bold transition-all flex items-center gap-1 bg-emerald-600 text-white shadow-xs" id="btn-es" onclick="changeLanguage('es')">
             <img src="https://flagcdn.com/w40/es.png" alt="ES" class="w-3.5 h-2.5 object-cover rounded-xs">
             <span>ES</span>
           </button>
-          <button class="lang-btn px-2.5 py-1 rounded-full text-[11px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900" id="btn-en" onclick="changeLanguage('en')">
+          <button class="lang-btn px-2.5 py-1 rounded-lg text-[11px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900" id="btn-en" onclick="changeLanguage('en')">
             <img src="https://flagcdn.com/w40/gb.png" alt="EN" class="w-3.5 h-2.5 object-cover rounded-xs">
             <span>EN</span>
           </button>
-          <button class="lang-btn px-2.5 py-1 rounded-full text-[11px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900" id="btn-fr" onclick="changeLanguage('fr')">
+          <button class="lang-btn px-2.5 py-1 rounded-lg text-[11px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900" id="btn-fr" onclick="changeLanguage('fr')">
             <img src="https://flagcdn.com/w40/fr.png" alt="FR" class="w-3.5 h-2.5 object-cover rounded-xs">
             <span>FR</span>
           </button>
-          <button class="lang-btn px-2.5 py-1 rounded-full text-[11px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900" id="btn-cs" onclick="changeLanguage('cs')">
+          <button class="lang-btn px-2.5 py-1 rounded-lg text-[11px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900" id="btn-cs" onclick="changeLanguage('cs')">
             <img src="https://flagcdn.com/w40/cz.png" alt="CS" class="w-3.5 h-2.5 object-cover rounded-xs">
             <span>CS</span>
           </button>
-          <button class="lang-btn px-2.5 py-1 rounded-full text-[11px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900" id="btn-zh" onclick="changeLanguage('zh')">
+          <button class="lang-btn px-2.5 py-1 rounded-lg text-[11px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900" id="btn-zh" onclick="changeLanguage('zh')">
             <img src="https://flagcdn.com/w40/cn.png" alt="ZH" class="w-3.5 h-2.5 object-cover rounded-xs">
             <span>中文</span>
           </button>
         </div>
 
-        <a href="#title-guide" class="hidden sm:flex items-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-full text-xs font-bold transition-colors">
-          <i class="fas fa-key text-emerald-600"></i> <span id="nav-code-text">Código de Huésped</span>
-        </a>
+        <!-- Iconos de Perfil Ayenda -->
+        <div class="hidden md:flex items-center gap-2 pl-2 border-l border-slate-200 text-slate-600">
+          <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold hover:bg-slate-200 cursor-pointer">
+            <i class="fas fa-user"></i>
+          </div>
+        </div>
+
       </div>
 
     </div>
   </nav>
 
-  <!-- BANNER PRINCIPAL CON BUSCADOR FLOTANTE EXACTO ESTILO AYENDA -->
+  <!-- BANNER PRINCIPAL CON BUSCADOR FLOTANTE IDÉNTICO A LA REFERENCIA AYENDA -->
   <header class="relative bg-slate-900 text-white py-20 px-4 overflow-hidden">
-    <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('https://lh3.googleusercontent.com/d/1306fD7zgATU2P_1JwTWkWpq-lukMtejG');"></div>
+    <div class="absolute inset-0 bg-cover bg-center opacity-35" style="background-image: url('https://lh3.googleusercontent.com/d/1306fD7zgATU2P_1JwTWkWpq-lukMtejG');"></div>
     
-    <div class="relative z-10 max-w-5xl mx-auto text-center space-y-4 mb-10">
+    <div class="relative z-10 max-w-5xl mx-auto text-center space-y-4 mb-12">
       <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight max-w-3xl mx-auto leading-tight" id="hero-title">
-        Habitaciones y hostales con la mejor tarifa directa en Caraz, Perú
+        Más de 450 hoteles, hostales y aparthoteles con la mejor tarifa directa en <span class="text-emerald-400">Caraz, Ancash y Perú</span>
       </h1>
       <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto" id="hero-subtitle">
-        Compara y reserva en línea con confirmación inmediata por WhatsApp al mejor precio garantizado.
+        Compara y reserva en línea con confirmación inmediata, y paga al mejor precio con la garantía de tarifa directa.
       </p>
     </div>
 
-    <!-- Barra de Búsqueda Flotante Estilo Ayenda (Exacta) -->
+    <!-- Barra de Búsqueda Flotante Idéntica a Ayenda -->
     <div class="relative z-20 max-w-4xl mx-auto bg-white text-slate-800 p-3 sm:p-4 rounded-2xl shadow-ayenda grid grid-cols-1 md:grid-cols-4 gap-3 items-center">
       
-      <!-- Ubicación / Destino fijo -->
+      <!-- Destino -->
       <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-xl border border-slate-200">
         <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-sm">
           <i class="fas fa-map-marker-alt"></i>
         </div>
         <div class="text-left overflow-hidden">
-          <span class="block text-[10px] font-extrabold text-slate-400 uppercase">Destino</span>
-          <span class="block text-xs font-bold text-slate-800 truncate">Caraz, Ancash, Perú</span>
+          <span class="block text-[10px] font-extrabold text-slate-400 uppercase">Ubicación</span>
+          <span class="block text-xs font-bold text-slate-800 truncate">Caraz, Perú</span>
         </div>
       </div>
 
-      <!-- Fecha Entrada -->
+      <!-- Día de entrada -->
       <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-200">
         <label class="block text-[10px] font-extrabold text-slate-400 uppercase mb-0.5" id="lbl-checkin">Día de entrada</label>
         <input type="date" id="checkinDate" class="w-full bg-transparent text-xs font-bold text-slate-800 focus:outline-none">
       </div>
 
-      <!-- Fecha Salida -->
+      <!-- Día de salida -->
       <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-200">
         <label class="block text-[10px] font-extrabold text-slate-400 uppercase mb-0.5" id="lbl-checkout">Día de salida</label>
         <input type="date" id="checkoutDate" class="w-full bg-transparent text-xs font-bold text-slate-800 focus:outline-none">
       </div>
 
-      <!-- Botón de Acción Principal Verde Ayenda -->
+      <!-- Botón Ver Precios (Verde brillante Ayenda) -->
       <div>
         <button onclick="sendCustomReservation()" class="w-full bg-emerald-500 hover:bg-emerald-600 active:scale-95 text-white font-extrabold py-3.5 px-4 rounded-xl text-xs transition-all shadow-md shadow-emerald-500/20 flex items-center justify-center gap-2">
-          <i class="fab fa-whatsapp text-base"></i> <span id="btn-search-prices">Ver precios y reservar</span>
+          <i class="fab fa-whatsapp text-base"></i> <span id="btn-search-prices">Ver precios</span>
         </button>
       </div>
 
     </div>
 
-    <!-- Garantías debajo del buscador -->
+    <!-- Garantías inferiores del banner -->
     <div class="relative z-10 max-w-3xl mx-auto mt-6 flex flex-wrap justify-center gap-6 text-[11px] font-bold text-slate-300">
       <span class="flex items-center gap-1.5"><i class="fas fa-check-circle text-emerald-400"></i> Sin costos de cancelación</span>
       <span class="flex items-center gap-1.5"><i class="fas fa-shield-halved text-emerald-400"></i> Mejor precio garantizado</span>
@@ -161,7 +164,7 @@
 
   <main class="max-w-7xl mx-auto px-4 sm:px-6 mt-12 space-y-16">
 
-    <!-- Tarjetas de Calificación Superiores -->
+    <!-- Calificaciones -->
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto">
       <a href="https://www.booking.com/hotel/pe/kactus-hostal-caraz.es.html" target="_blank" rel="noopener" class="ayenda-card p-4 shadow-card hover:shadow-lg transition-all flex items-center gap-3.5 group">
         <div class="w-10 h-10 bg-blue-600 text-white rounded-xl flex items-center justify-center font-black text-sm shadow-sm">8.9</div>
@@ -179,7 +182,7 @@
       </a>
     </div>
 
-    <!-- SECCIÓN 1: NUESTRAS HABITACIONES (Estilo Tarjeta Moderna Ayenda) -->
+    <!-- SECCIÓN 1: NUESTRAS HABITACIONES -->
     <section>
       <div class="flex items-center justify-between mb-6">
         <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight" id="title-rooms">Nuestras Habitaciones</h2>
@@ -188,7 +191,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         
-        <!-- Habitación 1: ECONÓMICA (Con foto estética renovada) -->
+        <!-- Habitación 1: ECONÓMICA -->
         <div class="ayenda-card overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 flex flex-col group">
           <div class="relative w-full h-60 bg-slate-900 overflow-hidden" id="carousel1">
             <div class="absolute top-3 left-3 z-20 bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-black px-3 py-1 rounded-full shadow-xs border border-white/20" id="room1-tag">
@@ -198,7 +201,7 @@
             <div class="carousel-slide w-full h-full">
               <!-- Foto Estética Renovada -->
               <img src="https://lh3.googleusercontent.com/d/1xAPzvxsRh7d5ftObKRHJ54-Pg5DKO7zs" alt="Habitación Económica" class="w-full h-full object-cover shrink-0">
-              <!-- Banner Área Protegida Interna -->
+              <!-- Banner Área Protegida -->
               <div class="w-full h-full shrink-0 bg-gradient-to-br from-slate-900 to-emerald-950 text-white p-6 flex flex-col items-center justify-center text-center space-y-3">
                 <div class="w-10 h-10 bg-amber-400 text-slate-950 rounded-xl flex items-center justify-center font-black text-lg animate-bounce">
                   <i class="fas fa-key"></i>
@@ -534,11 +537,11 @@
 
     const translations = {
       es: {
-        heroTitle: "Habitaciones y hostales con la mejor tarifa directa en Caraz, Perú",
-        heroSubtitle: "Compara y reserva en línea con confirmación inmediata por WhatsApp al mejor precio garantizado.",
+        heroTitle: "Más de 450 hoteles, hostales y aparthoteles con la mejor tarifa directa en <span class='text-emerald-400'>Caraz, Ancash y Perú</span>",
+        heroSubtitle: "Compara y reserva en línea con confirmación inmediata, y paga al mejor precio con la garantía de tarifa directa.",
         lblCheckin: "Día de entrada",
         lblCheckout: "Día de salida",
-        btnSearchPrices: "Ver precios y reservar",
+        btnSearchPrices: "Ver precios",
         badgeBooking: "Fabuloso · Excelente Ubicación",
         titleRooms: "Nuestras Habitaciones",
         roomsBadge: "Tarifa Directa Garantizada",
@@ -561,11 +564,11 @@
         stkFrom: "Desde", stkBtn: "Reservar Ahora", navCodeText: "Código de Huésped"
       },
       en: {
-        heroTitle: "Rooms and hostels with the best direct rate in Caraz, Peru",
-        heroSubtitle: "Compare and book online with instant WhatsApp confirmation at the best guaranteed price.",
+        heroTitle: "More than 450 hotels, hostels and apart-hotels with the best direct rate in <span class='text-emerald-400'>Caraz, Ancash and Peru</span>",
+        heroSubtitle: "Compare and book online with instant confirmation, and pay at the best price with direct rate guarantee.",
         lblCheckin: "Check-in date",
         lblCheckout: "Check-out date",
-        btnSearchPrices: "View prices and book",
+        btnSearchPrices: "View prices",
         badgeBooking: "Fabulous · Excellent Location",
         titleRooms: "Our Rooms",
         roomsBadge: "Best Direct Rate Guaranteed",
@@ -588,11 +591,11 @@
         stkFrom: "From", stkBtn: "Book Now", navCodeText: "Guest Code"
       },
       fr: {
-        heroTitle: "Chambres et auberges au meilleur tarif direct à Caraz, Pérou",
-        heroSubtitle: "Comparez et réservez en ligne avec confirmation WhatsApp immédiate au meilleur prix garanti.",
+        heroTitle: "Plus de 450 hôtels, auberges et appart-hôtels au meilleur tarif direct à <span class='text-emerald-400'>Caraz, Ancash et Pérou</span>",
+        heroSubtitle: "Comparez et réservez en ligne avec confirmation immédiate au meilleur prix garanti.",
         lblCheckin: "Date d'arrivée",
         lblCheckout: "Date de départ",
-        btnSearchPrices: "Voir les prix et réserver",
+        btnSearchPrices: "Voir les prix",
         badgeBooking: "Fabuleux · Excellent Emplacement",
         titleRooms: "Nos Chambres",
         roomsBadge: "Meilleur Tarif Direct Garanti",
@@ -615,11 +618,11 @@
         stkFrom: "À partir de", stkBtn: "Réserver", navCodeText: "Code Client"
       },
       cs: {
-        heroTitle: "Pokoje a hostely s nejlepší přímou sazbou v Carazu v Peru",
-        heroSubtitle: "Porovnejte a rezervujte online s okamžitým potvrzením přes WhatsApp za nejlepší zaručenou cenu.",
+        heroTitle: "Více než 450 hotelů, hostelů a aparthotelů s nejlepší přímou sazbou v <span class='text-emerald-400'>Carazu, Ancash a Peru</span>",
+        heroSubtitle: "Porovnejte a rezervujte online s okamžitým potvrzením za nejlepší zaručenou cenu.",
         lblCheckin: "Datum příjezdu",
         lblCheckout: "Datum odjezdu",
-        btnSearchPrices: "Zobrazit ceny a rezervovat",
+        btnSearchPrices: "Zobrazit ceny",
         badgeBooking: "Báječné · Skvělá Lokalita",
         titleRooms: "Naše Pokoje",
         roomsBadge: "Záruka nejlepší přímé ceny",
@@ -642,11 +645,11 @@
         stkFrom: "Od", stkBtn: "Rezervovat", navCodeText: "Kód hosta"
       },
       zh: {
-        heroTitle: "秘鲁卡拉斯最佳直订价格的客房与旅馆",
-        heroSubtitle: "在线比较并预订，通过 WhatsApp 即时确认，享受最优价格保证。",
+        heroTitle: "拥有 450 多家酒店、旅馆和公寓式酒店，在 <span class='text-emerald-400'>秘鲁卡拉斯</span> 提供最优直订价",
+        heroSubtitle: "在线比较并预订，即时确认，享受最优价格保障。",
         lblCheckin: "入住日期",
         lblCheckout: "退房日期",
-        btnSearchPrices: "查看价格并预订",
+        btnSearchPrices: "查看价格",
         badgeBooking: "极佳 · 优越地理位置",
         titleRooms: "我们的客房",
         roomsBadge: "直订最优价格保证",
@@ -682,7 +685,7 @@
       }
 
       const t = translations[lang] || translations['es'];
-      document.getElementById('hero-title').innerText = t.heroTitle;
+      document.getElementById('hero-title').innerHTML = t.heroTitle;
       document.getElementById('hero-subtitle').innerText = t.heroSubtitle;
       document.getElementById('lbl-checkin').innerText = t.lblCheckin;
       document.getElementById('lbl-checkout').innerText = t.lblCheckout;
