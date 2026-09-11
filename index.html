@@ -42,10 +42,6 @@
   </script>
 
   <style>
-    .glass-card {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-    }
     .carousel-slide {
       display: flex;
       transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -80,15 +76,21 @@
     </div>
   </nav>
 
-  <!-- Header / Hero Section -->
-  <header class="relative bg-kactus-800 text-white py-16 px-4 text-center overflow-hidden">
-    <div class="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-overlay" style="background-image: url('mediana1.jpg');"></div>
-    <div class="relative z-10 max-w-3xl mx-auto space-y-3">
+  <!-- Header / Hero Section con Logo -->
+  <header class="relative bg-kactus-800 text-white py-12 px-4 text-center overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center opacity-25 mix-blend-overlay" style="background-image: url('mediana1.jpg');"></div>
+    <div class="relative z-10 max-w-3xl mx-auto space-y-4 flex flex-col items-center">
+      
+      <!-- Contenedor del Logo -->
+      <div class="bg-white p-3 rounded-2xl shadow-xl border-2 border-kactus-200 inline-block mb-1 transform hover:scale-105 transition-transform duration-300">
+        <img src="logo.jpeg" alt="Logo Hostal Kactus" class="h-20 sm:h-24 w-auto object-contain">
+      </div>
+
       <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider text-kactus-200 border border-white/20">
         <i class="fas fa-mountain text-kactus-600"></i> Cordillera Blanca • Ancash
       </div>
-      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white drop-shadow-md">Hostal Kactus</h1>
-      <p id="sub-title" class="text-lg md:text-xl font-light text-kactus-50 max-w-xl mx-auto leading-relaxed">
+      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white drop-shadow-md">Hostal Kactus</h1>
+      <p id="sub-title" class="text-base md:text-xl font-light text-kactus-50 max-w-xl mx-auto leading-relaxed">
         Tu descanso cómodo, seguro y completo en Caraz, Perú
       </p>
     </div>
@@ -215,7 +217,7 @@
       </div>
     </section>
 
-    <!-- Sección Pagos -->
+    <!-- Sección Medios de Pago -->
     <section class="mb-14">
       <div class="flex items-center gap-3 mb-6">
         <div class="w-2 h-8 bg-kactus-500 rounded-full"></div>
@@ -223,27 +225,6 @@
       </div>
 
       <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-md border border-kactus-100">
-        <div class="flex flex-col sm:flex-row items-center gap-4 bg-kactus-50 p-4 rounded-xl border border-dashed border-kactus-500 mb-6">
-          <svg class="w-16 h-16 shrink-0" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <rect x="30" y="5" width="40" height="25" rx="3" fill="#1f2937"/>
-            <rect x="20" y="27" width="60" height="6" rx="2" fill="#1f2937"/>
-            <rect x="30" y="23" width="40" height="4" fill="#dc2626"/>
-            <circle cx="50" cy="50" r="22" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
-            <circle cx="43" cy="46" r="7" fill="none" stroke="#374151" stroke-width="2"/>
-            <circle cx="57" cy="46" r="7" fill="none" stroke="#374151" stroke-width="2"/>
-            <line x1="50" y1="46" x2="50" y2="48" stroke="#374151" stroke-width="2"/>
-            <circle cx="43" cy="46" r="2.5" fill="#1d4ed8"/>
-            <circle cx="57" cy="46" r="2.5" fill="#1d4ed8"/>
-            <path d="M 32 54 Q 50 48 68 54 Q 50 68 32 54 Z" fill="#f59e0b" stroke="#d97706" stroke-width="1.5"/>
-            <circle cx="50" cy="82" r="15" fill="#eab308"/>
-            <text x="50" y="87" font-size="14" font-weight="bold" fill="#78350f" text-anchor="middle">$</text>
-          </svg>
-          <div>
-            <strong id="scrooge-title" class="text-base sm:text-lg font-bold text-kactus-800 block">¡Aprobado por el Tío Rico MacPato! 💰🎩</strong>
-            <span id="scrooge-desc" class="text-xs sm:text-sm text-slate-600">Paga seguro, fácil y sin comisiones ocultas para tus reservas.</span>
-          </div>
-        </div>
-
         <p id="pay-intro" class="text-sm text-slate-600 mb-6">Aceptamos múltiples formas de pago para tu máxima comodidad al reservar:</p>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
@@ -338,7 +319,7 @@
           </div>
 
           <!-- Contenido Desbloqueable -->
-          <div id="secretGuide" class="hidden mt-6 bg-kactus-50 p-6 rounded-xl border border-dashed border-kactus-500 space-y-6 animate-fade-in">
+          <div id="secretGuide" class="hidden mt-6 bg-kactus-50 p-6 rounded-xl border border-dashed border-kactus-500 space-y-6">
             <div>
               <h4 id="g-secret-title" class="font-bold text-slate-800 text-base mb-2">🗺️ Rutas Exclusivas y Consejos Hostal Kactus:</h4>
               <p id="g-secret-text" class="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -584,8 +565,6 @@
         sBath: "Baño Privado", sWater: "Agua Caliente 24/7", sTv: "TV Smart", sWifi: "Wi-Fi Gratis",
         sParking: "Estacionamiento Gratis", sLuggage: "Guardado de Equipaje Gratis", sKitchen: "Cocina Compartida & Horno", sBreakfast: "Servicio de Desayunos",
         titlePayments: "Pasarela de Pago y Medios de Reserva",
-        scroogeTitle: "¡Aprobado por el Tío Rico MacPato! 💰🎩",
-        scroogeDesc: "Paga seguro, fácil y sin comisiones ocultas para tus reservas.",
         payIntro: "Aceptamos múltiples formas de pago para tu máxima comodidad al reservar:",
         payYape: "Pagos digitales instantáneos al teléfono oficial.",
         payCards: "Visa, MasterCard, American Express.",
@@ -633,8 +612,6 @@
         sBath: "Private Bathroom", sWater: "24/7 Hot Water", sTv: "Smart TV", sWifi: "Free Wi-Fi",
         sParking: "Free Parking", sLuggage: "Free Luggage Storage", sKitchen: "Shared Kitchen & Oven", sBreakfast: "Breakfast Service",
         titlePayments: "Payment Options & Booking Methods",
-        scroogeTitle: "Uncle Scrooge Approved! 💰🎩",
-        scroogeDesc: "Safe, easy payments with zero hidden fees for your bookings.",
         payIntro: "We accept multiple payment methods for your maximum convenience:",
         payYape: "Instant digital payments via official phone number.",
         payCards: "Visa, MasterCard, American Express.",
@@ -682,8 +659,6 @@
         sBath: "Salle de Bain Privée", sWater: "Eau Chaude 24/7", sTv: "Smart TV", sWifi: "Wi-Fi Gratuit",
         sParking: "Parking Gratuit", sLuggage: "Consigne à Bagages Gratuite", sKitchen: "Cuisine Partagée & Four", sBreakfast: "Service Petit-Déjeuner",
         titlePayments: "Options de Paiement et Réservation",
-        scroogeTitle: "Approuvé par Oncle Picsou ! 💰🎩",
-        scroogeDesc: "Paiements sécurisés sans frais cachés pour vos réservations.",
         payIntro: "Nous acceptons plusieurs modes de paiement pour votre confort :",
         payYape: "Paiements numériques instantanés.", payCards: "Visa, MasterCard, American Express.",
         payBank: "Virements bancaires BCP et Banco de la Nación.", payCash: "Paiement direct en espèces à la réception.",
@@ -729,8 +704,6 @@
         sBath: "Vlastní Koupelna", sWater: "Teplá Voda 24/7", sTv: "Smart TV", sWifi: "Wi-Fi Zdarma",
         sParking: "Parkování Zdarma", sLuggage: "Úschova Zavazadel Zdarma", sKitchen: "Sdílená Kuchyň a Pec", sBreakfast: "Snídaňový Servis",
         titlePayments: "Platební Možnosti a Rezervace",
-        scroogeTitle: "Schváleno Strýčkem Skrblíkem! 💰🎩",
-        scroogeDesc: "Bezpečné platby bez skrytých poplatků.",
         payIntro: "Přijímáme několik způsobů platby pro vaše pohodlí:",
         payYape: "Okamžité digitální platby.", payCards: "Visa, MasterCard, American Express.",
         payBank: "Bankovní převody BCP a Banco de la Nación.", payCash: "Přímá platba v hotovosti na recepci.",
@@ -761,7 +734,7 @@
         mapLinkText: "Otevřít v Google Maps",
         titleFaq: "Často Kladené Otázky",
         faqQ1: "Kdy je Check-in a Check-out?", faqA1: "Check-in od 13:00 a Check-out do 11:00. Úschova zavazadel zdarma!",
-        faqQ2: "Máte teplou vodu 24 hodin denně?", faqA2: "Ano, teplá voda 24/7 je k dispozici ve všech pokojích.",
+        faqQ2: "Máte teplou voda 24 hodin denně?", faqA2: "Ano, teplá voda 24/7 je k dispozici ve všech pokojích.",
         faqQ3: "Přijímáte platby kartou nebo digitálně?", faqA3: "Přijímáme hotovost, Yape, Plin a kreditní/debetní karty.",
         titleLocation: "Lokalita a Pravidla", lblAddr: "Adresa:", noPets: "Domácí mazlíčci nejsou povoleni", badgeRec: "Nepřetržitá recepce", badgeCancel: "Flexibilní storno", btnMapsText: "Otevřít v Google Maps",
         stkFrom: "Od", stkBtn: "Rezervovat"
@@ -776,8 +749,6 @@
         sBath: "独立卫浴", sWater: "24/7 热水供应", sTv: "智能电视", sWifi: "免费 Wi-Fi",
         sParking: "免费停车场", sLuggage: "免费行李寄存", sKitchen: "共享厨房与烤箱", sBreakfast: "早餐服务",
         titlePayments: "支付方式与预订途径",
-        scroogeTitle: "史高治·麦克老鸭（Tío Rico MacPato）认证！ 💰🎩",
-        scroogeDesc: "预订支付无隐性费用，安全便捷。",
         payIntro: "我们支持多种支付方式，为您带来极致便利：",
         payYape: "通过官方电话号码进行即时数字支付。",
         payCards: "支持 Visa、MasterCard 及 Express 刷卡。",
@@ -846,8 +817,6 @@
       document.getElementById('s-breakfast').innerText = t.sBreakfast;
 
       document.getElementById('title-payments').innerText = t.titlePayments;
-      if(document.getElementById('scrooge-title')) document.getElementById('scrooge-title').innerText = t.scroogeTitle;
-      if(document.getElementById('scrooge-desc')) document.getElementById('scrooge-desc').innerText = t.scroogeDesc;
       document.getElementById('pay-intro').innerText = t.payIntro;
       document.getElementById('pay-yape').innerText = t.payYape;
       document.getElementById('pay-cards').innerText = t.payCards;
