@@ -24,6 +24,13 @@
           fontFamily: {
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
           },
+          colors: {
+            kactus: {
+              DEFAULT: '#047857',
+              dark: '#065f46',
+              light: '#059669',
+            }
+          },
           boxShadow: {
             'ayenda': '0 10px 30px -5px rgba(0, 0, 0, 0.15)',
             'card': '0 4px 20px -2px rgba(0, 0, 0, 0.06)',
@@ -101,15 +108,15 @@
     </div>
   </nav>
 
-  <!-- BANNER PRINCIPAL (Fondo Verde Kactus Profundo y Elegante) -->
-  <header class="relative bg-gradient-to-br from-emerald-950 via-slate-900 to-emerald-900 text-white py-20 px-4 overflow-hidden">
+  <!-- BANNER PRINCIPAL (Fondo Verde Kactus Brillante y Natural) -->
+  <header class="relative bg-gradient-to-br from-emerald-800 via-emerald-900 to-teal-900 text-white py-20 px-4 overflow-hidden">
     <div class="absolute inset-0 bg-cover bg-center opacity-25" style="background-image: url('https://lh3.googleusercontent.com/d/1306fD7zgATU2P_1JwTWkWpq-lukMtejG');"></div>
     
     <div class="relative z-10 max-w-5xl mx-auto text-center space-y-4 mb-12">
       <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight max-w-3xl mx-auto leading-tight" id="hero-title">
-        Tu descanso cómodo, seguro y completo en <span class="text-emerald-400">Caraz, Perú</span>
+        Tu descanso cómodo, seguro y completo en <span class="text-amber-300">Caraz, Perú</span>
       </h1>
-      <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto" id="hero-subtitle">
+      <p class="text-emerald-100 text-sm sm:text-base max-w-xl mx-auto" id="hero-subtitle">
         Disfruta de habitaciones acogedoras, agua caliente 24/7 y la mejor ubicación para tus aventuras en la Cordillera Blanca.
       </p>
     </div>
@@ -145,9 +152,9 @@
 
     </div>
 
-    <div class="relative z-10 max-w-3xl mx-auto mt-6 flex flex-wrap justify-center gap-6 text-[11px] font-bold text-slate-300">
-      <span class="flex items-center gap-1.5"><i class="fas fa-check-circle text-emerald-400"></i> Reserva directa sin intermediarios</span>
-      <span class="flex items-center gap-1.5"><i class="fas fa-shield-halved text-emerald-400"></i> Atención personalizada 24/7</span>
+    <div class="relative z-10 max-w-3xl mx-auto mt-6 flex flex-wrap justify-center gap-6 text-[11px] font-bold text-emerald-100">
+      <span class="flex items-center gap-1.5"><i class="fas fa-check-circle text-amber-300"></i> Reserva directa sin intermediarios</span>
+      <span class="flex items-center gap-1.5"><i class="fas fa-shield-halved text-amber-300"></i> Atención personalizada 24/7</span>
     </div>
   </header>
 
@@ -182,21 +189,21 @@
         
         <!-- Habitación 1 -->
         <div class="kactus-card overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 flex flex-col group">
-          <div class="relative w-full h-60 bg-emerald-950 overflow-hidden" id="carousel1">
-            <div class="absolute top-3 left-3 z-20 bg-emerald-900/90 backdrop-blur-md text-white text-[10px] font-black px-3 py-1 rounded-full shadow-xs border border-white/20" id="room1-tag">
+          <div class="relative w-full h-60 bg-emerald-900 overflow-hidden" id="carousel1">
+            <div class="absolute top-3 left-3 z-20 bg-emerald-950/90 backdrop-blur-md text-white text-[10px] font-black px-3 py-1 rounded-full shadow-xs border border-white/20" id="room1-tag">
               ECONÓMICA & CONFORT
             </div>
             
             <div class="carousel-slide w-full h-full">
               <img src="https://lh3.googleusercontent.com/d/1xAPzvxsRh7d5ftObKRHJ54-Pg5DKO7zs" alt="Habitación Económica" class="w-full h-full object-cover shrink-0">
               
-              <!-- CARTEL ELEGANTE Y BRILLANTE (Ámbar / Dorado Atractivo sobre fondo Verde Kactus Profundo) -->
-              <div class="w-full h-full shrink-0 bg-gradient-to-br from-emerald-950 via-slate-900 to-emerald-900 text-white p-6 flex flex-col items-center justify-center text-center space-y-3 shadow-inner">
+              <!-- CARTEL ELEGANTE Y BRILLANTE CON TONO VERDE KACTUS Y DORADO -->
+              <div class="w-full h-full shrink-0 bg-gradient-to-br from-emerald-900 via-teal-900 to-emerald-950 text-white p-6 flex flex-col items-center justify-center text-center space-y-3 shadow-inner">
                 <div class="w-11 h-11 bg-gradient-to-tr from-amber-400 to-yellow-300 text-slate-950 rounded-2xl flex items-center justify-center font-black text-lg shadow-glow animate-pulse">
                   <i class="fas fa-key"></i>
                 </div>
                 <h4 class="font-extrabold text-xs sm:text-sm text-amber-300 px-2" id="banner-code-title">¿Tienes tu código de reserva?</h4>
-                <p class="text-[11px] text-slate-200 max-w-xs leading-relaxed" id="banner-code-desc">Usa aquí tu código brindado por el alojamiento y encuentra precios protegidos, indicaciones y más.</p>
+                <p class="text-[11px] text-emerald-100 max-w-xs leading-relaxed" id="banner-code-desc">Usa aquí tu código brindado por el alojamiento y encuentra precios protegidos, indicaciones y más.</p>
                 <a href="#title-guide" class="bg-gradient-to-r from-amber-400 to-yellow-400 hover:from-amber-500 hover:to-yellow-500 text-slate-950 text-[11px] font-extrabold py-2 px-5 rounded-xl shadow-md transition-all transform hover:scale-105">Ir a Sección Reservada</a>
               </div>
             </div>
@@ -204,7 +211,7 @@
             <button aria-label="Anterior" onclick="moveSlide('carousel1', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-left text-xs"></i></button>
             <button aria-label="Siguiente" onclick="moveSlide('carousel1', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-right text-xs"></i></button>
             <div class="carousel-dots absolute bottom-3 left-0 right-0 flex justify-center gap-1.5 z-10">
-              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 cursor-pointer shadow-xs" onclick="setSlide('carousel1', 0)"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 cursor-pointer shadow-xs" onclick="setSlide('carousel1', 0)"></span>
               <span class="w-2 h-2 rounded-full bg-white/70 cursor-pointer" onclick="setSlide('carousel1', 1)"></span>
             </div>
           </div>
@@ -215,7 +222,7 @@
               <p class="text-slate-600 text-xs leading-relaxed" id="room1-desc">Habitación pequeña y acogedora con cama de 2 plazas. Ideal para parejas o viajeros solos.</p>
               <div class="text-2xl font-black text-emerald-600 mt-4 flex items-baseline gap-1">S/ 35.00 <span class="text-[11px] font-semibold text-slate-400" id="per-night-1">promedio por noche</span></div>
             </div>
-            <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20deseo%20reservar%20la%20Habitación%20Matrimonial%20Económica%20(S/%2035)" target="_blank" rel="noopener" class="w-full bg-emerald-500 hover:bg-emerald-600 active:scale-95 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2">
+            <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20deseo%20reservar%20la%20Habitación%20Matrimonial%20Económica%20(S/%2035)" target="_blank" rel="noopener" class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2">
               <i class="fab fa-whatsapp text-base"></i> <span class="btn-res-text">Reservar por WhatsApp</span>
             </a>
           </div>
@@ -223,7 +230,7 @@
 
         <!-- Habitación 2 -->
         <div class="kactus-card overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 flex flex-col group">
-          <div class="relative w-full h-60 bg-emerald-950 overflow-hidden" id="carousel2">
+          <div class="relative w-full h-60 bg-emerald-900 overflow-hidden" id="carousel2">
             <div class="absolute top-3 left-3 z-20 bg-emerald-600 text-white text-[10px] font-black px-3 py-1 rounded-full shadow-xs border border-white/20" id="room2-tag">
               MÁS POPULAR
             </div>
@@ -235,7 +242,7 @@
             <button aria-label="Anterior" onclick="moveSlide('carousel2', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-left text-xs"></i></button>
             <button aria-label="Siguiente" onclick="moveSlide('carousel2', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-right text-xs"></i></button>
             <div class="carousel-dots absolute bottom-3 left-0 right-0 flex justify-center gap-1.5 z-10">
-              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 cursor-pointer shadow-xs" onclick="setSlide('carousel2', 0)"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 cursor-pointer shadow-xs" onclick="setSlide('carousel2', 0)"></span>
               <span class="w-2 h-2 rounded-full bg-white/70 cursor-pointer" onclick="setSlide('carousel2', 1)"></span>
               <span class="w-2 h-2 rounded-full bg-white/70 cursor-pointer" onclick="setSlide('carousel2', 2)"></span>
             </div>
@@ -246,7 +253,7 @@
               <p class="text-slate-600 text-xs leading-relaxed" id="room2-desc">Habitación espaciosa con cama de 2 plazas, gran iluminación natural y armario.</p>
               <div class="text-2xl font-black text-emerald-600 mt-4 flex items-baseline gap-1">S/ 45.00 <span class="text-[11px] font-semibold text-slate-400" id="per-night-2">promedio por noche</span></div>
             </div>
-            <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20deseo%20reservar%20la%20Habitación%20Matrimonial%20Mediana%20(S/%2045)" target="_blank" rel="noopener" class="w-full bg-emerald-500 hover:bg-emerald-600 active:scale-95 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2">
+            <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20deseo%20reservar%20la%20Habitación%20Matrimonial%20Mediana%20(S/%2045)" target="_blank" rel="noopener" class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2">
               <i class="fab fa-whatsapp text-base"></i> <span class="btn-res-text">Reservar por WhatsApp</span>
             </a>
           </div>
@@ -262,10 +269,10 @@
       </div>
 
       <div class="kactus-card p-6 shadow-card space-y-6">
-        <div class="bg-gradient-to-r from-emerald-950 to-slate-900 text-white p-5 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="bg-gradient-to-r from-emerald-800 to-teal-900 text-white p-5 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
             <h4 class="font-extrabold text-sm text-amber-300">🧗‍♂️ Equipamiento Profesional para Montaña</h4>
-            <p class="text-xs text-slate-300 mt-0.5">Material especializado de alta montaña listo para tu aventura.</p>
+            <p class="text-xs text-emerald-100 mt-0.5">Material especializado de alta montaña listo para tu aventura.</p>
           </div>
           <a href="#title-guide" class="bg-gradient-to-r from-amber-400 to-yellow-400 text-slate-950 font-black text-[11px] px-4 py-2.5 rounded-xl shadow-sm shrink-0 hover:scale-105 transition-transform">
             <i class="fas fa-key"></i> Ver Precios en Área Reservada
@@ -462,10 +469,10 @@
 
   </main>
 
-  <!-- Barra inferior fija para reservas -->
-  <div class="fixed bottom-0 left-0 right-0 bg-emerald-950/95 backdrop-blur-md border-t border-emerald-900 p-3.5 px-6 flex justify-between items-center z-50 text-white">
+  <!-- Barra inferior fija para reservas (Fondo Verde Kactus Nativo) -->
+  <div class="fixed bottom-0 left-0 right-0 bg-emerald-800/95 backdrop-blur-md border-t border-emerald-700 p-3.5 px-6 flex justify-between items-center z-50 text-white">
     <div class="text-xs">
-      <span class="text-slate-400" id="stk-from">Desde</span> <strong class="text-base text-emerald-400 font-black">S/ 35.00</strong>
+      <span class="text-emerald-200" id="stk-from">Desde</span> <strong class="text-base text-amber-300 font-black">S/ 35.00</strong>
     </div>
     <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20quisiera%20consultar%20disponibilidad" target="_blank" rel="noopener" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-2.5 px-5 rounded-xl text-xs shadow-md flex items-center gap-2">
       <i class="fab fa-whatsapp text-sm"></i> <span id="stk-btn">Reservar Ahora</span>
@@ -486,10 +493,10 @@
       
       dots.forEach((dot, idx) => {
         if (idx === slideIndexes[carouselId]) {
-          dot.classList.add('bg-emerald-500', 'w-3');
+          dot.classList.add('bg-emerald-400', 'w-3');
           dot.classList.remove('bg-white/70', 'w-2');
         } else {
-          dot.classList.remove('bg-emerald-500', 'w-3');
+          dot.classList.remove('bg-emerald-400', 'w-3');
           dot.classList.add('bg-white/70', 'w-2');
         }
       });
@@ -505,10 +512,10 @@
       
       dots.forEach((dot, idx) => {
         if (idx === index) {
-          dot.classList.add('bg-emerald-500', 'w-3');
+          dot.classList.add('bg-emerald-400', 'w-3');
           dot.classList.remove('bg-white/70', 'w-2');
         } else {
-          dot.classList.remove('bg-emerald-500', 'w-3');
+          dot.classList.remove('bg-emerald-400', 'w-3');
           dot.classList.add('bg-white/70', 'w-2');
         }
       });
@@ -542,7 +549,7 @@
 
     const translations = {
       es: {
-        heroTitle: "Tu descanso cómodo, seguro y completo en <span class='text-emerald-400'>Caraz, Perú</span>",
+        heroTitle: "Tu descanso cómodo, seguro y completo en <span class='text-amber-300'>Caraz, Perú</span>",
         heroSubtitle: "Disfruta de habitaciones acogedoras, agua caliente 24/7 y la mejor ubicación para tus aventuras en la Cordillera Blanca.",
         lblCheckin: "Día de entrada",
         lblCheckout: "Día de salida",
@@ -572,7 +579,7 @@
         stkFrom: "Desde", stkBtn: "Reservar Ahora", navCodeText: "Código de Huésped"
       },
       en: {
-        heroTitle: "Your comfortable, safe and complete stay in <span class='text-emerald-400'>Caraz, Peru</span>",
+        heroTitle: "Your comfortable, safe and complete stay in <span class='text-amber-300'>Caraz, Peru</span>",
         heroSubtitle: "Enjoy cozy rooms, 24/7 hot water and the best location for your adventures in the Cordillera Blanca.",
         lblCheckin: "Check-in date",
         lblCheckout: "Check-out date",
@@ -602,7 +609,7 @@
         stkFrom: "From", stkBtn: "Book Now", navCodeText: "Guest Code"
       },
       fr: {
-        heroTitle: "Votre séjour confortable, sûr et complet à <span class='text-emerald-400'>Caraz, Pérou</span>",
+        heroTitle: "Votre séjour confortable, sûr et complet à <span class='text-amber-300'>Caraz, Pérou</span>",
         heroSubtitle: "Profitez de chambres chaleureuses, d'eau chaude 24/7 et du meilleur emplacement pour vos aventures.",
         lblCheckin: "Date d'arrivée",
         lblCheckout: "Date de départ",
@@ -626,13 +633,13 @@
         sBath: "Salle de Bain Privée", sWater: "Eau Chaude 24/7", sTv: "Smart TV", sWifi: "Wi-Fi Gratuit",
         sParking: "Parking Gratuit", sLuggage: "Consigne Bagages", sKitchen: "Cuisine Partagée", sBreakfast: "Petit-Déjeuner",
         titleGuide: "Guide Touristique de Caraz & Espace Réservé",
-        gPubDesc: "📍 <strong>Lac Parón :</strong> Le plus grand lac turquoise de la Cordillère Blanche, situé à 32 km de Caraz.<br><br>📍 <strong>Lacs Llanganuco (Chinancocha et Orconcocha) :</strong> Superbes miroirs d'eau turquoise.<br><br>📍 <strong>Lac 69 :</strong> L'un des treks de haute montagne les plus célèbres au monde.",
+        gPubDesc: "📍 <strong>Lac Parón :</strong> Le plus grand lac turquoise de la Cordillère Blanca, situé à 32 km de Caraz.<br><br>📍 <strong>Lacs Llanganuco (Chinancocha et Orconcocha) :</strong> Superbes miroirs d'eau turquoise.<br><br>📍 <strong>Lac 69 :</strong> L'un des treks de haute montagne les plus célèbres au monde.",
         gPrivDesc: "Entrez le mot de passe fourni à la réception pour voir les prix protégés :",
         btnUnlockText: "Déverrouiller", passPlaceholder: "Mot de passe client",
         stkFrom: "À partir de", stkBtn: "Réserver", navCodeText: "Code Client"
       },
       cs: {
-        heroTitle: "Váš pohodlný, bezpečný a kompletní pobyt v <span class='text-emerald-400'>Carazu v Peru</span>",
+        heroTitle: "Váš pohodlný, bezpečný a kompletní pobyt v <span class='text-amber-300'>Carazu v Peru</span>",
         heroSubtitle: "Užijte si útulné pokoje, teplou vodu 24/7 a nejlepší polohu pro vaše dobrodružství v Cordillera Blanca.",
         lblCheckin: "Datum příjezdu",
         lblCheckout: "Datum odjezdu",
@@ -662,7 +669,7 @@
         stkFrom: "Od", stkBtn: "Rezervovat", navCodeText: "Kód hosta"
       },
       zh: {
-        heroTitle: "您在<span class='text-emerald-400'>秘鲁卡拉斯</span>舒适、安全且温馨的下榻之所",
+        heroTitle: "您在<span class='text-amber-300'>秘鲁卡拉斯</span>舒适、安全且温馨的下榻之所",
         heroSubtitle: "享受温馨舒适的客房、24/7 热水以及探索白山脉的绝佳地理位置。",
         lblCheckin: "入住日期",
         lblCheckout: "退房日期",
