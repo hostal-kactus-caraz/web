@@ -696,80 +696,137 @@
               <p>• <strong>Cajeros Cercanos:</strong> BCP y Banco de la Nación a 3 cuadras del hostal.</p>
             </div>
 
-            <!-- 5. RESTAURANTES, FARMACIAS Y MECÁNICA -->
-            <div class="bg-white p-6 sm:p-7 rounded-2xl border border-kactus-200 space-y-5">
-              <h4 id="g-shop-title" class="font-extrabold text-slate-800 text-base mb-1 flex items-center gap-2">
-                <i class="fas fa-map-marked-alt text-kactus-600"></i> Restaurantes Recomendados, Farmacias, Grifos y Servicios Cercanos:
-              </h4>
-              <p id="g-shop-intro" class="text-xs text-slate-500 mb-5">Toca cualquier enlace para abrir la ruta en Google Maps:</p>
+            <!-- 5. RESTAURANTES, FARMACIAS Y MECÁNICA (PANEL INTERACTIVO POR PESTAÑAS) -->
+            <div class="bg-white/95 p-6 sm:p-8 rounded-3xl border border-kactus-200 shadow-xl space-y-6">
               
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-
-                <div class="bg-slate-50 p-4 rounded-xl border-l-4 border-l-amber-500 flex flex-col justify-between text-xs space-y-3 hover:shadow-xs transition-shadow">
-                  <div>
-                    <strong class="text-slate-800 text-sm" id="rest1-title">🍗 Gerardo's Chicken (Restaurante / Pollería)</strong>
-                    <p class="text-slate-600 mt-1.5 leading-relaxed" id="rest1-desc">Sabor único en pollo a la brasa, papas crujientes y platos variados para cenar en Caraz.</p>
-                  </div>
-                  <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1.5 hover:underline pt-1"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
+              <div class="flex items-center gap-3 border-b border-warm-200 pb-4">
+                <div class="w-10 h-10 bg-kactus-600 text-white rounded-2xl flex items-center justify-center text-xl shadow-md">
+                  <i class="fas fa-map-marked-alt"></i>
                 </div>
-
-                <div class="bg-slate-50 p-4 rounded-xl border-l-4 border-l-amber-500 flex flex-col justify-between text-xs space-y-3 hover:shadow-xs transition-shadow">
-                  <div>
-                    <strong class="text-slate-800 text-sm" id="rest2-title">🍲 Restaurante Pacha Hunta</strong>
-                    <p class="text-slate-600 mt-1.5 leading-relaxed" id="rest2-desc">Excelente comida local, menús tradicionales y platos típicos cerca de la Plaza de Armas.</p>
-                  </div>
-                  <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1.5 hover:underline pt-1"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
+                <div>
+                  <h4 class="font-extrabold text-slate-800 text-lg sm:text-xl">Directorio Recomendado en Caraz</h4>
+                  <p class="text-xs text-slate-500">Selecciona una categoría para explorar opciones locales recomendadas:</p>
                 </div>
-
-                <div class="bg-slate-50 p-4 rounded-xl border-l-4 border-l-amber-500 flex flex-col justify-between text-xs space-y-3 hover:shadow-xs transition-shadow">
-                  <div>
-                    <strong class="text-slate-800 text-sm" id="rest3-title">🍗 Pollería Sabor & Tradición</strong>
-                    <p class="text-slate-600 mt-1.5 leading-relaxed" id="rest3-desc">Ubicada en Jr. Sucre (arriba de la plaza). Opción tradicional para cenas y pollo a la brasa.</p>
-                  </div>
-                  <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1.5 hover:underline pt-1"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
-                </div>
-
-                <div class="bg-slate-50 p-4 rounded-xl border-l-4 border-l-emerald-600 flex flex-col justify-between text-xs space-y-3 hover:shadow-xs transition-shadow">
-                  <div>
-                    <strong class="text-slate-800 text-sm" id="farm1-title">💊 Inkafarma (Jr. Sucre / Raymondi)</strong>
-                    <p class="text-slate-600 mt-1.5 leading-relaxed" id="farm1-desc">Botica céntrica para medicamentos, artículos de aseo personal y pastillas para el soroche.</p>
-                  </div>
-                  <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1.5 hover:underline pt-1"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
-                </div>
-
-                <div class="bg-slate-50 p-4 rounded-xl border-l-4 border-l-emerald-600 flex flex-col justify-between text-xs space-y-3 hover:shadow-xs transition-shadow">
-                  <div>
-                    <strong class="text-slate-800 text-sm" id="farm2-title">💊 Mifarma (Cerca al Mercado)</strong>
-                    <p class="text-slate-600 mt-1.5 leading-relaxed" id="farm2-desc">Farmacia cercana al mercado principal para cualquier atención médica de emergencia.</p>
-                  </div>
-                  <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1.5 hover:underline pt-1"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
-                </div>
-
-                <div class="bg-slate-50 p-4 rounded-xl border-l-4 border-l-red-500 flex flex-col justify-between text-xs space-y-3 hover:shadow-xs transition-shadow">
-                  <div>
-                    <strong class="text-slate-800 text-sm" id="gas1-title">⛽ Grifo "El Arco" (Caraz)</strong>
-                    <p class="text-slate-600 mt-1.5 leading-relaxed" id="gas1-desc">Estación de servicio ubicada en la entrada a la ciudad para abastecimiento rápido de combustible.</p>
-                  </div>
-                  <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1.5 hover:underline pt-1"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
-                </div>
-
-                <div class="bg-slate-50 p-4 rounded-xl border-l-4 border-l-red-500 flex flex-col justify-between text-xs space-y-3 hover:shadow-xs transition-shadow">
-                  <div>
-                    <strong class="text-slate-800 text-sm" id="gas2-title">⛽ Grifo Cerca a la Compañía de Bomberos</strong>
-                    <p class="text-slate-600 mt-1.5 leading-relaxed" id="gas2-desc">Estación de servicio estratégica cerca a la carretera principal y la estación de bomberos de Caraz.</p>
-                  </div>
-                  <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1.5 hover:underline pt-1"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
-                </div>
-
-                <div class="bg-slate-50 p-4 rounded-xl border-l-4 border-l-blue-600 flex flex-col justify-between text-xs space-y-3 hover:shadow-xs transition-shadow">
-                  <div>
-                    <strong class="text-slate-800 text-sm" id="mech-title">🔧 Taller Mecánico de Motos</strong>
-                    <p class="text-slate-600 mt-1.5 leading-relaxed" id="mech-desc">Servicio de mantenimiento, cambio de aceite y reparaciones rápidas para motocicletas en Caraz.</p>
-                  </div>
-                  <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold inline-flex items-center gap-1.5 hover:underline pt-1"><span class="map-link-text">Ver en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i></a>
-                </div>
-
               </div>
+
+              <!-- Botones de Pestañas (Tabs) con Colores Vivos -->
+              <div class="flex flex-wrap gap-2 border-b border-warm-200 pb-3">
+                <button onclick="switchTab('tab-restaurantes')" id="btn-tab-restaurantes" class="tab-btn transition-all duration-300 font-extrabold text-xs px-4 py-2.5 rounded-xl bg-kactus-600 text-white shadow-md flex items-center gap-2 transform hover:scale-105">
+                  <i class="fas fa-utensils"></i> Restaurantes & Pollerías
+                </button>
+                <button onclick="switchTab('tab-farmacias')" id="btn-tab-farmacias" class="tab-btn transition-all duration-300 font-bold text-xs px-4 py-2.5 rounded-xl bg-warm-100 text-slate-700 hover:bg-emerald-100 hover:text-emerald-900 flex items-center gap-2 transform hover:scale-105">
+                  <i class="fas fa-pills text-emerald-600"></i> Farmacias
+                </button>
+                <button onclick="switchTab('tab-grifos')" id="btn-tab-grifos" class="tab-btn transition-all duration-300 font-bold text-xs px-4 py-2.5 rounded-xl bg-warm-100 text-slate-700 hover:bg-rose-100 hover:text-rose-900 flex items-center gap-2 transform hover:scale-105">
+                  <i class="fas fa-gas-pump text-rose-500"></i> Grifos & Servicios
+                </button>
+              </div>
+
+              <!-- Contenido Pestaña 1: Restaurantes -->
+              <div id="tab-restaurantes" class="tab-content transition-all duration-500 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="bg-gradient-to-br from-amber-50 to-orange-50/40 p-5 rounded-2xl border border-amber-200/80 hover:border-amber-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between space-y-3 group hover:-translate-y-1">
+                  <div>
+                    <div class="flex items-center gap-2 font-extrabold text-slate-800 text-sm">
+                      <span class="text-xl">🍗</span> Gerardo's Chicken
+                    </div>
+                    <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Sabor único en pollo a la brasa, papas crujientes y platos variados para cenar en Caraz.</p>
+                  </div>
+                  <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold text-xs inline-flex items-center gap-1.5 group-hover:translate-x-1 transition-transform pt-1">
+                    <span>Ver ruta en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i>
+                  </a>
+                </div>
+
+                <div class="bg-gradient-to-br from-amber-50 to-orange-50/40 p-5 rounded-2xl border border-amber-200/80 hover:border-amber-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between space-y-3 group hover:-translate-y-1">
+                  <div>
+                    <div class="flex items-center gap-2 font-extrabold text-slate-800 text-sm">
+                      <span class="text-xl">🍲</span> Restaurante Pacha Hunta
+                    </div>
+                    <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Excelente comida local, menús tradicionales y platos típicos cerca de la Plaza de Armas.</p>
+                  </div>
+                  <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold text-xs inline-flex items-center gap-1.5 group-hover:translate-x-1 transition-transform pt-1">
+                    <span>Ver ruta en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i>
+                  </a>
+                </div>
+
+                <div class="bg-gradient-to-br from-amber-50 to-orange-50/40 p-5 rounded-2xl border border-amber-200/80 hover:border-amber-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between space-y-3 group hover:-translate-y-1">
+                  <div>
+                    <div class="flex items-center gap-2 font-extrabold text-slate-800 text-sm">
+                      <span class="text-xl">🍗</span> Pollería Sabor & Tradición
+                    </div>
+                    <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Ubicada en Jr. Sucre (arriba de la plaza). Opción tradicional para cenas y pollo a la brasa.</p>
+                  </div>
+                  <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold text-xs inline-flex items-center gap-1.5 group-hover:translate-x-1 transition-transform pt-1">
+                    <span>Ver ruta en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Contenido Pestaña 2: Farmacias -->
+              <div id="tab-farmacias" class="tab-content hidden transition-all duration-500 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="bg-gradient-to-br from-emerald-50 to-teal-50/40 p-5 rounded-2xl border border-emerald-200/80 hover:border-emerald-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between space-y-3 group hover:-translate-y-1">
+                  <div>
+                    <div class="flex items-center gap-2 font-extrabold text-slate-800 text-sm">
+                      <span class="text-xl">💊</span> Inkafarma (Jr. Sucre / Raymondi)
+                    </div>
+                    <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Botica céntrica para medicamentos, artículos de aseo personal y pastillas para el soroche.</p>
+                  </div>
+                  <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold text-xs inline-flex items-center gap-1.5 group-hover:translate-x-1 transition-transform pt-1">
+                    <span>Ver ruta en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i>
+                  </a>
+                </div>
+
+                <div class="bg-gradient-to-br from-emerald-50 to-teal-50/40 p-5 rounded-2xl border border-emerald-200/80 hover:border-emerald-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between space-y-3 group hover:-translate-y-1">
+                  <div>
+                    <div class="flex items-center gap-2 font-extrabold text-slate-800 text-sm">
+                      <span class="text-xl">💊</span> Mifarma (Cerca al Mercado)
+                    </div>
+                    <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Farmacia cercana al mercado principal para cualquier atención médica de emergencia.</p>
+                  </div>
+                  <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold text-xs inline-flex items-center gap-1.5 group-hover:translate-x-1 transition-transform pt-1">
+                    <span>Ver ruta en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Contenido Pestaña 3: Grifos y Servicios -->
+              <div id="tab-grifos" class="tab-content hidden transition-all duration-500 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="bg-gradient-to-br from-rose-50 to-red-50/40 p-5 rounded-2xl border border-red-200/80 hover:border-red-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between space-y-3 group hover:-translate-y-1">
+                  <div>
+                    <div class="flex items-center gap-2 font-extrabold text-slate-800 text-sm">
+                      <span class="text-xl">⛽</span> Grifo "El Arco" (Caraz)
+                    </div>
+                    <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Estación de servicio ubicada en la entrada a la ciudad para abastecimiento rápido de combustible.</p>
+                  </div>
+                  <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold text-xs inline-flex items-center gap-1.5 group-hover:translate-x-1 transition-transform pt-1">
+                    <span>Ver ruta en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i>
+                  </a>
+                </div>
+
+                <div class="bg-gradient-to-br from-rose-50 to-red-50/40 p-5 rounded-2xl border border-red-200/80 hover:border-red-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between space-y-3 group hover:-translate-y-1">
+                  <div>
+                    <div class="flex items-center gap-2 font-extrabold text-slate-800 text-sm">
+                      <span class="text-xl">⛽</span> Grifo Cerca a Bomberos
+                    </div>
+                    <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Estación de servicio estratégica cerca a la carretera principal y la estación de bomberos de Caraz.</p>
+                  </div>
+                  <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold text-xs inline-flex items-center gap-1.5 group-hover:translate-x-1 transition-transform pt-1">
+                    <span>Ver ruta en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i>
+                  </a>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50/40 p-5 rounded-2xl border border-blue-200/80 hover:border-blue-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between space-y-3 group hover:-translate-y-1">
+                  <div>
+                    <div class="flex items-center gap-2 font-extrabold text-slate-800 text-sm">
+                      <span class="text-xl">🔧</span> Taller Mecánico de Motos
+                    </div>
+                    <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Servicio de mantenimiento, cambio de aceite y reparaciones rápidas para motocicletas en Caraz.</p>
+                  </div>
+                  <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-blue-600 font-bold text-xs inline-flex items-center gap-1.5 group-hover:translate-x-1 transition-transform pt-1">
+                    <span>Ver ruta en Google Maps</span> <i class="fas fa-arrow-right text-[10px]"></i>
+                  </a>
+                </div>
+              </div>
+
             </div>
 
           </div>
@@ -930,6 +987,21 @@
       icon.classList.toggle('rotate-180');
     }
 
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('bg-kactus-600', 'text-white', 'shadow-md', 'font-extrabold');
+        btn.classList.add('bg-warm-100', 'text-slate-700', 'font-bold');
+      });
+
+      document.getElementById(tabId).classList.remove('hidden');
+
+      const activeBtn = document.getElementById(`btn-${tabId}`);
+      activeBtn.classList.remove('bg-warm-100', 'text-slate-700', 'font-bold');
+      activeBtn.classList.add('bg-kactus-600', 'text-white', 'shadow-md', 'font-extrabold');
+    }
+
     const translations = {
       es: {
         subTitle: "Tu descanso cómodo, seguro y completo en Caraz, Perú",
@@ -1022,17 +1094,6 @@
         l69Note: '⚠️ <strong>Nota:</strong> Si eliges ir por tu cuenta, asegúrate de coordinar la presencia del guía requerido en el control.',
         l69EntryBox: '<strong class="text-slate-900 text-sm">🎟️ Entrada al Parque Nacional Huascarán (Laguna 69):</strong><p class="text-slate-600 mt-0.5">El pago de <strong>S/ 30.00 por persona</strong> se realiza directamente en el puesto de control del parque en ambas modalidades.</p>',
         recTipsBox: '<h4 class="font-extrabold text-sm mb-2 text-kactus-900">🗺️ Consejos Rápidos de Recepción:</h4><p>• <strong>Guardado de Equipaje:</strong> Deja tus maletas gratis antes del Check-in o después del Check-out.</p><p>• <strong>Cajeros Cercanos:</strong> BCP y Banco de la Nación a 3 cuadras del hostal.</p>',
-        gShopTitle: "Restaurantes Recomendados, Farmacias, Grifos y Servicios Cercanos:",
-        gShopIntro: "Toca cualquier enlace para abrir la ruta en Google Maps:",
-        rest1Title: "🍗 Gerardo's Chicken (Restaurante / Pollería)", rest1Desc: "Sabor único en pollo a la brasa, papas crujientes y platos variados para cenar en Caraz.",
-        rest2Title: "🍲 Restaurante Pacha Hunta", rest2Desc: "Excelente comida local, menús tradicionales y platos típicos cerca de la Plaza de Armas.",
-        rest3Title: "🍗 Pollería Sabor & Tradición", rest3Desc: "Ubicada en Jr. Sucre (arriba de la plaza). Opción tradicional para cenas y pollo a la brasa.",
-        farm1Title: "💊 Inkafarma (Jr. Sucre / Raymondi)", farm1Desc: "Botica céntrica para medicamentos, artículos de aseo personal y pastillas para el soroche.",
-        farm2Title: "💊 Mifarma (Cerca al Mercado)", farm2Desc: "Farmacia cercana al mercado principal para cualquier atención médica de emergencia.",
-        gas1Title: '⛽ Grifo "El Arco" (Caraz)', gas1Desc: "Estación de servicio ubicada en la entrada a la ciudad para abastecimiento rápido de combustible.",
-        gas2Title: "⛽ Grifo Cerca a la Compañía de Bomberos", gas2Desc: "Estación de servicio estratégica cerca a la carretera principal y la estación de bomberos de Caraz.",
-        mechTitle: "🔧 Taller Mecánico de Motos", mechDesc: "Servicio de mantenimiento, cambio de aceite y reparaciones rápidas para motocicletas en Caraz.",
-        mapLinkText: "Ver en Google Maps",
         titleFaq: "Preguntas Frecuentes",
         faqQ1: "¿A qué hora es el Check-in y Check-out?", faqA1: "El Check-in es a las 11:00 AM y el Check-out a las 11:00 AM. Si llegas antes o necesitas salir después, ¡puedes guardar tu equipaje gratis!",
         faqQ2: "¿Tienen agua caliente las 24 horas?", faqA2: "Sí, disponemos de agua caliente las 24 horas en todas nuestras habitaciones.",
@@ -1123,17 +1184,6 @@
         l69Note: '⚠️ <strong>Note:</strong> If traveling independently, ensure guide arrangements are cleared at checkpoint.',
         l69EntryBox: '<strong class="text-slate-900 text-sm">🎟️ Huascarán National Park Fee (Lake 69):</strong><p class="text-slate-600 mt-0.5">The entrance fee of <strong>S/ 30.00 per person</strong> is paid directly at the park checkpoint.</p>',
         recTipsBox: '<h4 class="font-extrabold text-sm mb-2 text-kactus-900">🗺️ Reception Quick Tips:</h4><p>• <strong>Luggage Storage:</strong> Free luggage storage before check-in or after check-out.</p><p>• <strong>ATMs Nearby:</strong> BCP & Banco de la Nación ATMs 3 blocks away.</p>',
-        gShopTitle: "Recommended Restaurants, Pharmacies, Gas Stations & Services:",
-        gShopIntro: "Tap any link to open location in Google Maps:",
-        rest1Title: "🍗 Gerardo's Chicken (Restaurant / Grill)", rest1Desc: "Crispy Peruvian roast chicken, fries, and dinner dishes in Caraz.",
-        rest2Title: "🍲 Pacha Hunta Restaurant", rest2Desc: "Excellent local Peruvian cuisine and traditional set menus near Main Square.",
-        rest3Title: "🍗 Sabor & Tradición Roast Chicken", rest3Desc: "Located on Jr. Sucre. Traditional spot for roast chicken dinners.",
-        farm1Title: "💊 Inkafarma (Jr. Sucre / Raymondi)", farm1Desc: "Central pharmacy for medicines, toiletries, and altitude sickness pills (soroche).",
-        farm2Title: "💊 Mifarma (Near Main Market)", farm2Desc: "Pharmacy close to the main market for any medical emergencies.",
-        gas1Title: '⛽ "El Arco" Gas Station (Caraz)', gas1Desc: "Gas station located at the entrance of town for quick fuel top-ups.",
-        gas2Title: "⛽ Gas Station near Fire Department", gas2Desc: "Strategic gas station near the main highway and Caraz fire station.",
-        mechTitle: "🔧 Motorcycle Repair Workshop", mechDesc: "Maintenance, oil changes, and quick repairs for motorcycles in Caraz.",
-        mapLinkText: "Open in Google Maps",
         titleFaq: "Frequently Asked Questions",
         faqQ1: "What time is Check-in and Check-out?", faqA1: "Check-in is at 11:00 AM and Check-out at 11:00 AM. Free luggage storage available!",
         faqQ2: "Do you have 24/7 hot water?", faqA2: "Yes, we have 24/7 hot water in all rooms.",
@@ -1182,7 +1232,7 @@
         titlePayments: "Options de Paiement et Réservation",
         payIntro: "Nous acceptons plusieurs modes de paiement pour votre confort :",
         payYape: "Paiements numériques instantanés.",
-        payTitleCards: "Cartes de Crédit / Débition", payCards: "Visa, MasterCard, American Express.",
+        payTitleCards: "Cartes de Crédit / Débit", payCards: "Visa, MasterCard, American Express.",
         payTitleBank: "Virement Bancaire", payBank: "Comptes BCP et Banco de la Nación.",
         payTitleCash: "Espèces", payCash: "Paiement direct en espèces à la réception.",
         titleTours: "Excursions et Transports Depuis Caraz",
@@ -1224,17 +1274,6 @@
         l69Note: '⚠️ <strong>Remarque :</strong> En voyage indépendant, assurez-vous d\'avoir réglé la question du guide obligatoire au contrôle.',
         l69EntryBox: '<strong class="text-slate-900 text-sm">🎟️ Entrée du Parc National Huascarán (Lac 69) :</strong><p class="text-slate-600 mt-0.5">Le droit d\'entrée de <strong>30,00 Soles par personne</strong> se règle directement au poste de contrôle.</p>',
         recTipsBox: '<h4 class="font-extrabold text-sm mb-2 text-kactus-900">🗺️ Astuces de la Réception :</h4><p>• <strong>Consigne Bagages :</strong> Consigne à bagages gratuite avant le check-in ou après le check-out.</p><p>• <strong>Distributeurs à proximité :</strong> Distributeurs BCP & Banco de la Nación à 3 pâtés de maisons.</p>',
-        gShopTitle: "Restaurants Recommandés, Pharmacies & Services à proximité :",
-        gShopIntro: "Touchez un lien pour ouvrir l'itinéraire sur Google Maps :",
-        rest1Title: "🍗 Gerardo's Chicken (Pollería / Restaurant)", rest1Desc: "Poulet rôti traditionnel, frites croustillantes et plats variés pour le dîner à Caraz.",
-        rest2Title: "🍲 Restaurant Pacha Hunta", rest2Desc: "Excellente cuisine locale et menus traditionnels près de la Place d'Armes.",
-        rest3Title: "🍗 Pollería Sabor & Tradición", rest3Desc: "Située Jr. Sucre. Option traditionnelle pour les dîners de poulet rôti.",
-        farm1Title: "💊 Inkafarma (Jr. Sucre / Raymondi)", farm1Desc: "Pharmacie centrale pour médicaments, produits d'hygiène et pilules contre el soroche (mal de l'altitude).",
-        farm2Title: "💊 Mifarma (Près du Marché)", farm2Desc: "Pharmacie proche du marché principal pour toute urgence médicale.",
-        gas1Title: '⛽ Station-service "El Arco" (Caraz)', gas1Desc: "Station située à l'entrée de la ville pour un plein rapide de carburant.",
-        gas2Title: "⛽ Station-service près des Pompiers", gas2Desc: "Station stratégique près de la route principale et de la caserne des pompiers.",
-        mechTitle: "🔧 Atelier de Réparation Motos", mechDesc: "Entretien, vidange et réparations rapides pour motos à Caraz.",
-        mapLinkText: "Ouvrir dans Google Maps",
         titleFaq: "Foire Aux Questions",
         faqQ1: "Heures de Check-in et Check-out ?", faqA1: "Check-in à 11:00 AM et Check-out à 11:00 AM. Consigne à bagages gratuite !",
         faqQ2: "Avez-vous de l'eau chaude 24h/24 ?", faqA2: "Oui, eau chaude 24/7 dans toutes nos chambres.",
@@ -1325,17 +1364,6 @@
         l69Note: '⚠️ <strong>Poznámka:</strong> Při cestě na vlastní pěst si předem vyřešte povinného průvodce pro kontrolu.',
         l69EntryBox: '<strong class="text-slate-900 text-sm">🎟️ Vstupné do Národního Parku Huascarán (Laguna 69):</strong><p class="text-slate-600 mt-0.5">Vstupní poplatek <strong>30,00 Soles na osobu</strong> se platí přímo na kontrolním stanovišti parku.</p>',
         recTipsBox: '<h4 class="font-extrabold text-sm mb-2 text-kactus-900">🗺️ Tipy z Recepce:</h4><p>• <strong>Úschova Zavazadel:</strong> Zdarma před check-inem nebo po check-outu.</p><p>• <strong>Bankomaty v okolí:</strong> BCP a Banco de la Nación 3 bloky od hostelu.</p>',
-        gShopTitle: "Doporučené Restaurace, Lékárny a Služby v okolí:",
-        gShopIntro: "Klikněte na odkaz pro otevření trasy v Google Maps:",
-        rest1Title: "🍗 Gerardo's Chicken (Restaurace / Pečené kuře)", rest1Desc: "Vynikající pečené kuře, křupavé hranolky a pestrá večeře v Carazu.",
-        rest2Title: "🍲 Restaurace Pacha Hunta", rest2Desc: "Výborná místní kuchyně a tradiční menu blízko Hlavního náměstí.",
-        rest3Title: "🍗 Pollería Sabor & Tradición", rest3Desc: "Nachází se na Jr. Sucre. Tradiční místo na večeři s pečeným kuřetem.",
-        farm1Title: "💊 Inkafarma (Jr. Sucre / Raymondi)", farm1Desc: "Centrální lékárna pro léky, hygienické potřeby a prášky proti výškové nemoci (soroche).",
-        farm2Title: "💊 Mifarma (Poblíž tržnice)", farm2Desc: "Lékárna blízko hlavní tržnice pro případ jakýchkoliv zdravotních potíží.",
-        gas1Title: '⛽ Čerpací stanice "El Arco" (Caraz)', gas1Desc: "Čerpací stanice při vjezdu do města pro rychlé natankování paliva.",
-        gas2Title: "⛽ Čerpací stanice u hasičské zbrojnice", gas2Desc: "Strategická čerpací stanice blízko hlavního tahu a hasičské stanice.",
-        mechTitle: "🔧 Opravna Motocyklů", mechDesc: "Údržba, výměna oleje a rychlé opravy motocyklů v Carazu.",
-        mapLinkText: "Otevřít v Google Maps",
         titleFaq: "Často Kladené Otázky",
         faqQ1: "Kdy je Check-in a Check-out?", faqA1: "Check-in je v 11:00 AM a Check-out v 11:00 AM. Úschova zavazadel zdarma!",
         faqQ2: "Máte teplou voda 24 hodin denně?", faqA2: "Ano, teplá voda 24/7 je k dispozici ve všech pokojích.",
@@ -1412,8 +1440,8 @@
         pOpt2List: '<li>• <strong>预计费用：</strong> 每人 40.00 至 50.00 索尔。</li><li>• <strong>包含：</strong> 湖边停留 2 小时及返回卡拉斯。</li>',
         pMapBtn: "在 Google 地图中打开 Santa Cruz 客运站",
         pInfoBox: '<div class="font-bold text-slate-900 text-sm">📌 帕隆湖重要须知：</div><p>• <strong>景区门票：</strong> 两种方式住客均需在检查站直接向护林员支付 <strong>5.00 索尔</strong> 门票。</p><p>• <strong>活动：</strong> 停留期间可徒步前往观景台，拍摄雪山与湖泊绝美全景。</p><p>• <strong>打算在帕隆湖露营？</strong> 前台出租全部所需的高山露营装备。</p>',
-        l69Title: "🏔️ 官方指南：69号湖（Laguna 69）徒步",
-        l69Sub: "白山脉经典徒步路线。出行选择、强制导游要求与费用。",
+        l69Title: "🏔️ Official Guide: Lake 69 Day Hike",
+        l69Sub: "Iconic Cordillera Blanca trek. Options, mandatory guides & costs.",
         l69Warn: '<strong class="font-extrabold uppercase tracking-wider text-amber-950 flex items-center gap-2 mb-1.5"><i class="fas fa-triangle-exclamation text-amber-600 text-sm"></i> 瓦斯卡兰国家公园关键规定：</strong>检查站护林员<strong>强制要求必须有持证导游陪同</strong>方可进入69号湖徒步路线。未随导游同行者可能会被拒绝进入。',
         l69Opt1Badge: "⭐ 最安全推荐选择",
         l69Opt1Title: "🚌 正规旅行社一日游",
@@ -1426,17 +1454,6 @@
         l69Note: '⚠️ <strong>注意：</strong> 选择自行前往请务必提前安排好检查站要求的导游陪同。',
         l69EntryBox: '<strong class="text-slate-900 text-sm">🎟️ 瓦斯卡兰国家公园门票（69号湖）：</strong><p class="text-slate-600 mt-0.5">两种方式均需在国家公园检查站直接支付门票 <strong>30.00 索尔/人</strong>。</p>',
         recTipsBox: '<h4 class="font-extrabold text-sm mb-2 text-kactus-900">🗺️ 前台快捷提示：</h4><p>• <strong>行李寄存：</strong> 入住前或退房后均可免费寄存行李。</p><p>• <strong>周边 ATM：</strong> 距离旅馆 3 个街区即有 BCP 及国家银行 ATM。</p>',
-        gShopTitle: "推荐餐厅、药房、加油站与周边服务：",
-        gShopIntro: "点击任意链接在 Google 地图中打开对应路线：",
-        rest1Title: "🍗 Gerardo's Chicken（秘鲁烤鸡餐厅）", rest1Desc: "卡拉斯特色秘鲁烤鸡、酥脆薯条与丰富晚餐。",
-        rest2Title: "🍲 Pacha Hunta 本地餐厅", rest2Desc: "武器广场附近优秀的秘鲁本地特色菜与传统套餐。",
-        rest3Title: "🍗 Sabor & Tradición 烤鸡店", rest3Desc: "位于 Jr. Sucre 街。品尝传统秘鲁烤鸡晚餐的好去处。",
-        farm1Title: "💊 Inkafarma 药房（Jr. Sucre / Raymondi）", farm1Desc: "市中心药房，购买药品、洗漱用品及抗高原反应药（Soroche）。",
-        farm2Title: "💊 Mifarma 药房（菜市场附近）", farm2Desc: "靠近主菜市场的药房，方便紧急医疗购药。",
-        gas1Title: '⛽ "El Arco" 加油站（卡拉斯）', gas1Desc: "位于小镇入口处的加油站，方便快速加油。",
-        gas2Title: "⛽ 消防局附近加油站", gas2Desc: "靠近主干道和卡拉斯消防局的战略位置加油站。",
-        mechTitle: "🔧 摩托车维修店", mechDesc: "卡拉斯摩托车保养、换机油与快速维修服务。",
-        mapLinkText: "在 Google 地图中打开",
         titleFaq: "常见问题",
         faqQ1: "入住与退房时间是什么时候？", faqA1: "入住时间为 11:00 AM，退房时间为 11:00 AM。提供免费行李寄存！",
         faqQ2: "是否全天 24 小时供应热水？", faqA2: "是的，所有客房均配备 24/7 热水系统。",
@@ -1565,31 +1582,6 @@
       document.getElementById('l69-entry-box').innerHTML = t.l69EntryBox;
 
       document.getElementById('rec-tips-box').innerHTML = t.recTipsBox;
-
-      document.getElementById('g-shop-title').innerHTML = `<i class="fas fa-map-marked-alt text-kactus-600"></i> ${t.gShopTitle}`;
-      document.getElementById('g-shop-intro').innerText = t.gShopIntro;
-
-      document.getElementById('rest1-title').innerText = t.rest1Title;
-      document.getElementById('rest1-desc').innerText = t.rest1Desc;
-      document.getElementById('rest2-title').innerText = t.rest2Title;
-      document.getElementById('rest2-desc').innerText = t.rest2Desc;
-      document.getElementById('rest3-title').innerText = t.rest3Title;
-      document.getElementById('rest3-desc').innerText = t.rest3Desc;
-
-      document.getElementById('farm1-title').innerText = t.farm1Title;
-      document.getElementById('farm1-desc').innerText = t.farm1Desc;
-      document.getElementById('farm2-title').innerText = t.farm2Title;
-      document.getElementById('farm2-desc').innerText = t.farm2Desc;
-
-      document.getElementById('gas1-title').innerText = t.gas1Title;
-      document.getElementById('gas1-desc').innerText = t.gas1Desc;
-      document.getElementById('gas2-title').innerText = t.gas2Title;
-      document.getElementById('gas2-desc').innerText = t.gas2Desc;
-
-      document.getElementById('mech-title').innerText = t.mechTitle;
-      document.getElementById('mech-desc').innerText = t.mechDesc;
-
-      document.querySelectorAll('.map-link-text').forEach(el => el.innerText = t.mapLinkText);
 
       document.getElementById('title-faq').innerText = t.titleFaq;
       document.getElementById('faq-q1').innerText = t.faqQ1; document.getElementById('faq-a1').innerText = t.faqA1;
