@@ -24,13 +24,6 @@
           fontFamily: {
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
           },
-          colors: {
-            kactus: {
-              DEFAULT: '#047857',
-              dark: '#065f46',
-              light: '#059669',
-            }
-          },
           boxShadow: {
             'ayenda': '0 10px 30px -5px rgba(0, 0, 0, 0.15)',
             'card': '0 4px 20px -2px rgba(0, 0, 0, 0.06)',
@@ -108,15 +101,18 @@
     </div>
   </nav>
 
-  <!-- BANNER PRINCIPAL (Fondo Verde Kactus Brillante y Natural) -->
-  <header class="relative bg-gradient-to-br from-emerald-800 via-emerald-900 to-teal-900 text-white py-20 px-4 overflow-hidden">
-    <div class="absolute inset-0 bg-cover bg-center opacity-25" style="background-image: url('https://lh3.googleusercontent.com/d/1306fD7zgATU2P_1JwTWkWpq-lukMtejG');"></div>
+  <!-- BANNER PRINCIPAL (Foto real de la habitación al fondo + Interfaz Verde Claro Kactus Translúcida) -->
+  <header class="relative bg-emerald-900 text-white py-20 px-4 overflow-hidden">
+    <!-- Imagen real de la habitación -->
+    <div class="absolute inset-0 bg-cover bg-center opacity-75" style="background-image: url('https://lh3.googleusercontent.com/d/1306fD7zgATU2P_1JwTWkWpq-lukMtejG');"></div>
+    <!-- Capa translúcida verde clara Kactus para mantener la visibilidad de la foto y darle un toque fresco -->
+    <div class="absolute inset-0 bg-gradient-to-br from-emerald-700/80 via-emerald-800/75 to-teal-800/80 backdrop-brightness-95"></div>
     
     <div class="relative z-10 max-w-5xl mx-auto text-center space-y-4 mb-12">
-      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight max-w-3xl mx-auto leading-tight" id="hero-title">
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight max-w-3xl mx-auto leading-tight drop-shadow-sm" id="hero-title">
         Tu descanso cómodo, seguro y completo en <span class="text-amber-300">Caraz, Perú</span>
       </h1>
-      <p class="text-emerald-100 text-sm sm:text-base max-w-xl mx-auto" id="hero-subtitle">
+      <p class="text-emerald-50 text-sm sm:text-base max-w-xl mx-auto drop-shadow-sm" id="hero-subtitle">
         Disfruta de habitaciones acogedoras, agua caliente 24/7 y la mejor ubicación para tus aventuras en la Cordillera Blanca.
       </p>
     </div>
@@ -190,7 +186,7 @@
         <!-- Habitación 1 -->
         <div class="kactus-card overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 flex flex-col group">
           <div class="relative w-full h-60 bg-emerald-900 overflow-hidden" id="carousel1">
-            <div class="absolute top-3 left-3 z-20 bg-emerald-950/90 backdrop-blur-md text-white text-[10px] font-black px-3 py-1 rounded-full shadow-xs border border-white/20" id="room1-tag">
+            <div class="absolute top-3 left-3 z-20 bg-emerald-900/90 backdrop-blur-md text-white text-[10px] font-black px-3 py-1 rounded-full shadow-xs border border-white/20" id="room1-tag">
               ECONÓMICA & CONFORT
             </div>
             
@@ -198,12 +194,12 @@
               <img src="https://lh3.googleusercontent.com/d/1xAPzvxsRh7d5ftObKRHJ54-Pg5DKO7zs" alt="Habitación Económica" class="w-full h-full object-cover shrink-0">
               
               <!-- CARTEL ELEGANTE Y BRILLANTE CON TONO VERDE KACTUS Y DORADO -->
-              <div class="w-full h-full shrink-0 bg-gradient-to-br from-emerald-900 via-teal-900 to-emerald-950 text-white p-6 flex flex-col items-center justify-center text-center space-y-3 shadow-inner">
+              <div class="w-full h-full shrink-0 bg-gradient-to-br from-emerald-800 via-emerald-700 to-teal-800 text-white p-6 flex flex-col items-center justify-center text-center space-y-3 shadow-inner">
                 <div class="w-11 h-11 bg-gradient-to-tr from-amber-400 to-yellow-300 text-slate-950 rounded-2xl flex items-center justify-center font-black text-lg shadow-glow animate-pulse">
                   <i class="fas fa-key"></i>
                 </div>
                 <h4 class="font-extrabold text-xs sm:text-sm text-amber-300 px-2" id="banner-code-title">¿Tienes tu código de reserva?</h4>
-                <p class="text-[11px] text-emerald-100 max-w-xs leading-relaxed" id="banner-code-desc">Usa aquí tu código brindado por el alojamiento y encuentra precios protegidos, indicaciones y más.</p>
+                <p class="text-[11px] text-emerald-50 max-w-xs leading-relaxed" id="banner-code-desc">Usa aquí tu código brindado por el alojamiento y encuentra precios protegidos, indicaciones y más.</p>
                 <a href="#title-guide" class="bg-gradient-to-r from-amber-400 to-yellow-400 hover:from-amber-500 hover:to-yellow-500 text-slate-950 text-[11px] font-extrabold py-2 px-5 rounded-xl shadow-md transition-all transform hover:scale-105">Ir a Sección Reservada</a>
               </div>
             </div>
@@ -269,10 +265,10 @@
       </div>
 
       <div class="kactus-card p-6 shadow-card space-y-6">
-        <div class="bg-gradient-to-r from-emerald-800 to-teal-900 text-white p-5 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="bg-gradient-to-r from-emerald-700 to-teal-800 text-white p-5 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
             <h4 class="font-extrabold text-sm text-amber-300">🧗‍♂️ Equipamiento Profesional para Montaña</h4>
-            <p class="text-xs text-emerald-100 mt-0.5">Material especializado de alta montaña listo para tu aventura.</p>
+            <p class="text-xs text-emerald-50 mt-0.5">Material especializado de alta montaña listo para tu aventura.</p>
           </div>
           <a href="#title-guide" class="bg-gradient-to-r from-amber-400 to-yellow-400 text-slate-950 font-black text-[11px] px-4 py-2.5 rounded-xl shadow-sm shrink-0 hover:scale-105 transition-transform">
             <i class="fas fa-key"></i> Ver Precios en Área Reservada
@@ -469,10 +465,10 @@
 
   </main>
 
-  <!-- Barra inferior fija para reservas (Fondo Verde Kactus Nativo) -->
-  <div class="fixed bottom-0 left-0 right-0 bg-emerald-800/95 backdrop-blur-md border-t border-emerald-700 p-3.5 px-6 flex justify-between items-center z-50 text-white">
+  <!-- Barra inferior fija para reservas (Verde Claro Kactus) -->
+  <div class="fixed bottom-0 left-0 right-0 bg-emerald-700/95 backdrop-blur-md border-t border-emerald-600 p-3.5 px-6 flex justify-between items-center z-50 text-white">
     <div class="text-xs">
-      <span class="text-emerald-200" id="stk-from">Desde</span> <strong class="text-base text-amber-300 font-black">S/ 35.00</strong>
+      <span class="text-emerald-100" id="stk-from">Desde</span> <strong class="text-base text-amber-300 font-black">S/ 35.00</strong>
     </div>
     <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20quisiera%20consultar%20disponibilidad" target="_blank" rel="noopener" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-2.5 px-5 rounded-xl text-xs shadow-md flex items-center gap-2">
       <i class="fab fa-whatsapp text-sm"></i> <span id="stk-btn">Reservar Ahora</span>
@@ -633,7 +629,7 @@
         sBath: "Salle de Bain Privée", sWater: "Eau Chaude 24/7", sTv: "Smart TV", sWifi: "Wi-Fi Gratuit",
         sParking: "Parking Gratuit", sLuggage: "Consigne Bagages", sKitchen: "Cuisine Partagée", sBreakfast: "Petit-Déjeuner",
         titleGuide: "Guide Touristique de Caraz & Espace Réservé",
-        gPubDesc: "📍 <strong>Lac Parón :</strong> Le plus grand lac turquoise de la Cordillère Blanca, situé à 32 km de Caraz.<br><br>📍 <strong>Lacs Llanganuco (Chinancocha et Orconcocha) :</strong> Superbes miroirs d'eau turquoise.<br><br>📍 <strong>Lac 69 :</strong> L'un des treks de haute montagne les plus célèbres au monde.",
+        gPubDesc: "📍 <strong>Lac Parón :</strong> Le plus grand lac turquoise de la Cordillère Blanche, situé à 32 km de Caraz.<br><br>📍 <strong>Lacs Llanganuco (Chinancocha et Orconcocha) :</strong> Superbes miroirs d'eau turquoise.<br><br>📍 <strong>Lac 69 :</strong> L'un des treks de haute montagne les plus célèbres au monde.",
         gPrivDesc: "Entrez le mot de passe fourni à la réception pour voir les prix protégés :",
         btnUnlockText: "Déverrouiller", passPlaceholder: "Mot de passe client",
         stkFrom: "À partir de", stkBtn: "Réserver", navCodeText: "Code Client"
