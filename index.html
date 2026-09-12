@@ -81,15 +81,23 @@
     </div>
   </nav>
 
-  <!-- BANNER PRINCIPAL CON INSIGNIA DE PAGOS MEJORADA Y CALCULADORA -->
+  <!-- BANNER PRINCIPAL CON LOGOS DE TARJETAS GRANDES Y VISIBLES -->
   <header class="relative bg-emerald-950 text-white py-20 px-4 overflow-hidden">
     <div id="webgl-container" class="absolute inset-0 opacity-50 pointer-events-none"></div>
     <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('https://lh3.googleusercontent.com/d/1306fD7zgATU2P_1JwTWkWpq-lukMtejG');"></div>
     <div class="absolute inset-0 bg-gradient-to-br from-emerald-900/90 via-emerald-950/85 to-teal-950/90"></div>
     
-    <!-- INSIGNIA DE MEDIOS DE PAGO CON IMAGEN CLARA Y NÍTIDA -->
-    <div class="absolute top-4 left-4 sm:left-8 z-30 hidden sm:flex items-center gap-3 bg-emerald-900/90 backdrop-blur-md px-4 py-2.5 rounded-2xl border-2 border-emerald-400/40 shadow-2xl">
-      <img src="tarjetas.png" alt="Aceptamos Tarjetas y Efectivo" class="h-8 w-auto object-contain drop-shadow-md" onerror="this.src='https://via.placeholder.com/150x40?text=Tarjetas+%26+Efectivo'">
+    <!-- INSIGNIA DE TARJETAS Y EFECTIVO GRANDE Y MUY VISIBLE -->
+    <div class="absolute top-4 left-4 sm:left-8 z-30 hidden sm:flex items-center gap-3 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl border-2 border-emerald-500 shadow-2xl text-slate-900">
+      <div class="flex flex-col">
+        <span class="text-[9px] font-black uppercase text-emerald-700 tracking-wider" data-i18n="lblBadgePay">Aceptamos Todas las Tarjetas & Efectivo</span>
+        <div class="flex items-center gap-2.5 text-xl mt-1">
+          <i class="fab fa-cc-visa text-blue-600" title="Visa"></i>
+          <i class="fab fa-cc-mastercard text-red-600" title="Mastercard"></i>
+          <i class="fab fa-cc-amex text-blue-500" title="American Express"></i>
+          <i class="fas fa-money-bill-wave text-emerald-600" title="Efectivo"></i>
+        </div>
+      </div>
     </div>
 
     <div class="relative z-10 max-w-4xl mx-auto text-center space-y-6 pt-4">
@@ -199,7 +207,7 @@
       </a>
     </div>
 
-    <!-- NUEVA SECCIÓN PÚBLICA: ATRACCIONES DESTACADAS DE CARAZ (INSPIRACIÓN TURÍSTICA) -->
+    <!-- SECCIÓN PÚBLICA: ATRACCIONES DESTACADAS CON CARRUSELES MÚLTIPLES (FOTOS DESPLAZABLES) -->
     <section>
       <div class="text-center max-w-2xl mx-auto mb-8 space-y-2">
         <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight" data-i18n="publicAttractionsTitle">Maravillas Naturales que Debes Visitar</h2>
@@ -207,11 +215,17 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Laguna Parón -->
+        
+        <!-- Laguna Parón (Carrusel Múltiple) -->
         <div class="kactus-card overflow-hidden shadow-card flex flex-col group">
-          <div class="h-48 overflow-hidden bg-slate-200 relative">
-            <img src="Paron laguna.png" alt="Laguna Parón" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 zoomable-img" onclick="openModal(this.src)" onerror="this.src='lagunaparon2.png'">
-            <span class="absolute top-3 left-3 bg-emerald-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-md">Laguna Parón</span>
+          <div class="relative w-full h-52 bg-slate-900 overflow-hidden" id="pubCarousel1">
+            <div class="absolute top-3 left-3 z-20 bg-emerald-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-md">Laguna Parón</div>
+            <div class="carousel-slide w-full h-full flex">
+              <img src="Paron laguna.png" alt="Laguna Parón 1" class="w-full h-full object-cover shrink-0 zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='lagunaparon2.png'">
+              <img src="lagunaparon2.png" alt="Laguna Parón 2" class="w-full h-full object-cover shrink-0 zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='Paron laguna.png'">
+            </div>
+            <button aria-label="Anterior" onclick="moveSlide('pubCarousel1', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-7 h-7 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-left text-xs"></i></button>
+            <button aria-label="Siguiente" onclick="moveSlide('pubCarousel1', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-7 h-7 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-right text-xs"></i></button>
           </div>
           <div class="p-5 flex flex-col flex-1 justify-between space-y-3">
             <div>
@@ -224,11 +238,16 @@
           </div>
         </div>
 
-        <!-- Laguna 69 -->
+        <!-- Laguna 69 (Carrusel Múltiple) -->
         <div class="kactus-card overflow-hidden shadow-card flex flex-col group">
-          <div class="h-48 overflow-hidden bg-slate-200 relative">
-            <img src="laguna69.png" alt="Laguna 69" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 zoomable-img" onclick="openModal(this.src)" onerror="this.src='laguna692.png'">
-            <span class="absolute top-3 left-3 bg-amber-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-md">Laguna 69</span>
+          <div class="relative w-full h-52 bg-slate-900 overflow-hidden" id="pubCarousel2">
+            <div class="absolute top-3 left-3 z-20 bg-amber-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-md">Laguna 69</div>
+            <div class="carousel-slide w-full h-full flex">
+              <img src="laguna69.png" alt="Laguna 69 1" class="w-full h-full object-cover shrink-0 zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='laguna692.png'">
+              <img src="laguna692.png" alt="Laguna 69 2" class="w-full h-full object-cover shrink-0 zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='laguna69.png'">
+            </div>
+            <button aria-label="Anterior" onclick="moveSlide('pubCarousel2', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-7 h-7 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-left text-xs"></i></button>
+            <button aria-label="Siguiente" onclick="moveSlide('pubCarousel2', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-7 h-7 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-right text-xs"></i></button>
           </div>
           <div class="p-5 flex flex-col flex-1 justify-between space-y-3">
             <div>
@@ -241,11 +260,17 @@
           </div>
         </div>
 
-        <!-- Cañón del Pato -->
+        <!-- Cañón del Pato (Carrusel Múltiple con cañondelpato.png corregido) -->
         <div class="kactus-card overflow-hidden shadow-card flex flex-col group">
-          <div class="h-48 overflow-hidden bg-slate-200 relative">
-            <img src="Cañón del pato.png" alt="Cañón del Pato" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 zoomable-img" onclick="openModal(this.src)" onerror="this.src='tuneles.png'">
-            <span class="absolute top-3 left-3 bg-sky-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-md">Cañón del Pato</span>
+          <div class="relative w-full h-52 bg-slate-900 overflow-hidden" id="pubCarousel3">
+            <div class="absolute top-3 left-3 z-20 bg-sky-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-md">Cañón del Pato</div>
+            <div class="carousel-slide w-full h-full flex">
+              <img src="cañondelpato.png" alt="Cañón del Pato" class="w-full h-full object-cover shrink-0 zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='tuneles.png'">
+              <img src="tuneles.png" alt="Túneles 1" class="w-full h-full object-cover shrink-0 zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='cañondelpato.png'">
+              <img src="tuneles2.png" alt="Túneles 2" class="w-full h-full object-cover shrink-0 zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='cañondelpato.png'">
+            </div>
+            <button aria-label="Anterior" onclick="moveSlide('pubCarousel3', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-7 h-7 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-left text-xs"></i></button>
+            <button aria-label="Siguiente" onclick="moveSlide('pubCarousel3', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-7 h-7 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-right text-xs"></i></button>
           </div>
           <div class="p-5 flex flex-col flex-1 justify-between space-y-3">
             <div>
@@ -257,6 +282,7 @@
             </a>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -274,8 +300,8 @@
             <div class="absolute top-3 left-3 z-20 bg-emerald-950/90 backdrop-blur-md text-white text-[10px] font-black px-3 py-1 rounded-full shadow-xs border border-white/20" data-i18n="room1Tag">
               ECONÓMICA & CONFORT
             </div>
-            <div class="carousel-slide w-full h-full">
-              <img src="economica.jpeg" alt="Habitación Económica" class="w-full h-full object-cover shrink-0 zoomable-img" onclick="openModal(this.src)" onerror="this.src='mediana.png'">
+            <div class="carousel-slide w-full h-full flex">
+              <img src="economica.jpeg" alt="Habitación Económica" class="w-full h-full object-cover shrink-0 zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='mediana.png'">
               <div class="w-full h-full shrink-0 bg-gradient-to-br from-emerald-800 via-emerald-700 to-teal-800 text-white p-6 flex flex-col items-center justify-center text-center space-y-3 shadow-inner">
                 <div class="w-11 h-11 bg-gradient-to-tr from-sky-400 to-cyan-300 text-slate-950 rounded-2xl flex items-center justify-center font-black text-lg shadow-2xl animate-pulse">
                   <i class="fas fa-key"></i>
@@ -306,10 +332,10 @@
             <div class="absolute top-3 left-3 z-20 bg-emerald-600 text-white text-[10px] font-black px-3 py-1 rounded-full shadow-xs border border-white/20" data-i18n="room2Tag">
               MÁS POPULAR
             </div>
-            <div class="carousel-slide w-full h-full">
-              <img src="mediana.png" alt="Habitación Mediana" class="w-full h-full object-cover shrink-0 zoomable-img" onclick="openModal(this.src)" onerror="this.src='mediana1.jpg'">
-              <img src="mediana1.jpg" alt="Habitación Mediana 2" class="w-full h-full object-cover shrink-0 zoomable-img" onclick="openModal(this.src)" onerror="this.src='mediana.png'">
-              <img src="mediana2.png" alt="Habitación Mediana 3" class="w-full h-full object-cover shrink-0 zoomable-img" onclick="openModal(this.src)" onerror="this.src='mediana.png'">
+            <div class="carousel-slide w-full h-full flex">
+              <img src="mediana.png" alt="Habitación Mediana" class="w-full h-full object-cover shrink-0 zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='mediana1.jpg'">
+              <img src="mediana1.jpg" alt="Habitación Mediana 2" class="w-full h-full object-cover shrink-0 zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='mediana.png'">
+              <img src="mediana2.png" alt="Habitación Mediana 3" class="w-full h-full object-cover shrink-0 zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='mediana.png'">
             </div>
             <button aria-label="Anterior" onclick="moveSlide('carousel2', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-left text-xs"></i></button>
             <button aria-label="Siguiente" onclick="moveSlide('carousel2', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-right text-xs"></i></button>
@@ -343,7 +369,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3">
             <div class="h-36 rounded-xl overflow-hidden bg-slate-200">
-              <img src="carpa3_estaciones.png" alt="Carpa" class="w-full h-full object-cover zoomable-img" onclick="openModal(this.src)" onerror="this.src='Carpa 3 estaciones.png';">
+              <img src="carpa3_estaciones.png" alt="Carpa" class="w-full h-full object-cover zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='Carpa 3 estaciones.png';">
             </div>
             <div>
               <div class="font-bold text-slate-900 text-xs flex items-center gap-1.5"><i class="fas fa-campground text-emerald-600"></i> <span data-i18n="gear1Name">Carpa 3 Estaciones</span></div>
@@ -352,7 +378,7 @@
           </div>
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3">
             <div class="h-36 rounded-xl overflow-hidden bg-slate-200">
-              <img src="saco_dormir.png" alt="Saco de Dormir" class="w-full h-full object-cover zoomable-img" onclick="openModal(this.src)" onerror="this.src='saco de dormir .png';">
+              <img src="saco_dormir.png" alt="Saco de Dormir" class="w-full h-full object-cover zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='saco de dormir .png';">
             </div>
             <div>
               <div class="font-bold text-slate-900 text-xs flex items-center gap-1.5"><i class="fas fa-bed text-emerald-600"></i> <span data-i18n="gear2Name">Saco de Dormir Pluma</span></div>
@@ -361,7 +387,7 @@
           </div>
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3">
             <div class="h-36 rounded-xl overflow-hidden bg-slate-200">
-              <img src="bastones_treken.png" alt="Bastones" class="w-full h-full object-cover zoomable-img" onclick="openModal(this.src)" onerror="this.src='Bastones treken.png';">
+              <img src="bastones_treken.png" alt="Bastones" class="w-full h-full object-cover zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='Bastones treken.png';">
             </div>
             <div>
               <div class="font-bold text-slate-900 text-xs flex items-center gap-1.5"><i class="fas fa-hiking text-emerald-600"></i> <span data-i18n="gear3Name">Bastones de Trekking</span></div>
@@ -370,7 +396,7 @@
           </div>
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3">
             <div class="h-36 rounded-xl overflow-hidden bg-slate-200">
-              <img src="vinoculares.png" alt="Binoculares" class="w-full h-full object-cover zoomable-img" onclick="openModal(this.src)" onerror="this.src='vinoculares.jpg';">
+              <img src="vinoculares.png" alt="Binoculares" class="w-full h-full object-cover zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='vinoculares.jpg';">
             </div>
             <div>
               <div class="font-bold text-slate-900 text-xs flex items-center gap-1.5"><i class="fas fa-binoculars text-emerald-600"></i> <span data-i18n="gear4Name">Largavistas / Binoculares</span></div>
@@ -379,7 +405,7 @@
           </div>
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3">
             <div class="h-36 rounded-xl overflow-hidden bg-slate-200">
-              <img src="cocina_y_ollas.png" alt="Cocina" class="w-full h-full object-cover zoomable-img" onclick="openModal(this.src)" onerror="this.src='Cocina _kit.png';">
+              <img src="cocina_y_ollas.png" alt="Cocina" class="w-full h-full object-cover zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='Cocina _kit.png';">
             </div>
             <div>
               <div class="font-bold text-slate-900 text-xs flex items-center gap-1.5"><i class="fas fa-fire-burner text-emerald-600"></i> <span data-i18n="gear5Name">Cocina de Campaña</span></div>
@@ -388,7 +414,7 @@
           </div>
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3">
             <div class="h-36 rounded-xl overflow-hidden bg-slate-200">
-              <img src="gas.png" alt="Gas" class="w-full h-full object-cover zoomable-img" onclick="openModal(this.src)" onerror="this.src='gas.jpg';">
+              <img src="gas.png" alt="Gas" class="w-full h-full object-cover zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='gas.jpg';">
             </div>
             <div>
               <div class="font-bold text-slate-900 text-xs flex items-center gap-1.5"><i class="fas fa-gas-pump text-emerald-600"></i> <span data-i18n="gear6Name">Balón de Gas Nuevo</span></div>
@@ -414,7 +440,7 @@
       </div>
     </section>
 
-    <!-- SECCIÓN 4: GUÍA Y ÁREA PRIVADA (ORGANIZADA Y CON WI-FI FIJO ESTÁTICO) -->
+    <!-- SECCIÓN 4: GUÍA Y ÁREA PRIVADA -->
     <section class="mb-12" id="title-guide">
       <div class="kactus-card p-6 sm:p-8 shadow-card space-y-6">
         <div>
@@ -435,10 +461,10 @@
             <button onclick="unlockGuide()" id="btn-unlock-text" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-5 rounded-xl text-xs shadow-md" data-i18n="btnUnlockText">Desbloquear Sección</button>
           </div>
 
-          <!-- CONTENIDO SECRETO / RESERVADO (CON WIDGET DE WI-FI FIJO Y ESTÁTICO EN LA PARTE SUPERIOR) -->
+          <!-- CONTENIDO SECRETO / RESERVADO CON WIFI FIJO Y ESTÁTICO -->
           <div id="secretGuide" class="hidden mt-6 bg-slate-50 p-6 rounded-2xl border-2 border-dashed border-emerald-500 space-y-10 relative">
             
-            <!-- TARJETA FIJA Y ESTÁTICA DE WI-FI (ACCESIBLE SIEMPRE SIN IMPORTAR EL SCROLL) -->
+            <!-- TARJETA FIJA Y ESTÁTICA DE WI-FI -->
             <div class="sticky top-20 z-40 bg-gradient-to-r from-emerald-900 to-teal-900 text-white p-4 rounded-2xl shadow-xl border-2 border-emerald-400 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div class="flex items-center gap-3">
                 <div class="w-10 h-10 bg-emerald-500 rounded-xl flex items-center justify-center text-white text-lg shadow-md shrink-0">
@@ -486,7 +512,7 @@
                 <div class="font-bold text-slate-900 flex items-center gap-2 text-emerald-700"><i class="fas fa-utensils"></i> <span data-i18n="kitchenTitle">Cocina Compartida, Nevera y Horno Pizzero</span></div>
                 <p class="text-slate-600" data-i18n="kitchenDesc">
                   • <strong>Cocina en 3er Nivel:</strong> Básica pero funcional. Tienes <strong>aceite, condimentos, sal, etc., de manera gratuita</strong>. Solo haz tus compras en el minimarket local y cocina sin problemas.<br>
-                  • <strong>Nevera y Microondas (2do Piso):</strong> Puedes guardar queso, yogur o alimentos en el espacio reservado al final de la nevera (generalmente libre para clientes).<br>
+                  • <strong>Nevera y Microondas (2do Piso):</strong> Puedes guardar queso, yogur o alimentos en el espacio reservado al final de la nevera.<br>
                   • <strong>Horno Pizzero:</strong> Incluido sin costo para que hornees tus pizzas o pollos.
                 </p>
               </div>
@@ -515,7 +541,7 @@
               </div>
             </div>
 
-            <!-- 2. GUÍA DE RECORRIDOS Y PRECIOS (ENLACES MÓVILES OPTIMIZADOS) -->
+            <!-- 2. GUÍA DE RECORRIDOS Y PRECIOS -->
             <div class="space-y-6 pt-4 border-t border-slate-200">
               <h4 class="font-extrabold text-base text-slate-900 flex items-center gap-2 border-b border-slate-200 pb-2" data-i18n="toursGuideTitle">
                 <i class="fas fa-route text-emerald-600"></i> Guía Detallada de Recorridos, Costos y Opciones
@@ -544,7 +570,6 @@
                     <strong class="text-emerald-900" data-i18n="paronTourSelf">Opción Por Tu Cuenta:</strong>
                     <ul class="list-disc pl-4 text-slate-600 space-y-1 mt-1">
                       <li data-i18n="paronS1">Costo habitual de transporte: S/ 40 a S/ 50 por persona.</li>
-                      <!-- ENLACE MÓVIL CORREGIDO Y ASEGURADO CON DISPLAY BLOCK/INLINE-FLEX -->
                       <li class="py-1">
                         <span data-i18n="paronS2">Debes tomar los colectivos desde</span> 
                         <a href="https://maps.app.goo.gl/dhxDVsWRBC7ysK4w8" target="_blank" class="inline-block mt-1 sm:mt-0 text-blue-600 underline font-extrabold bg-blue-50 px-2 py-0.5 rounded border border-blue-200" data-i18n="paronS2Link">📍 este punto de salida</a>.
@@ -606,7 +631,7 @@
               
               <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
                 <div class="bg-white rounded-2xl border border-slate-200 flex flex-col overflow-hidden shadow-sm">
-                  <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=500&q=80" alt="Restaurante" class="w-full h-32 object-cover bg-slate-200 zoomable-img" onclick="openModal(this.src)">
+                  <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=500&q=80" alt="Restaurante" class="w-full h-32 object-cover bg-slate-200 zoomable-img cursor-pointer" onclick="openModal(this.src)">
                   <div class="p-4 flex flex-col flex-1">
                     <h5 class="font-bold text-slate-900 text-xs mb-1" data-i18n="dir1Title">Restaurante Pacha Hunta</h5>
                     <p class="text-[11px] text-slate-500 mb-3 flex-1" data-i18n="dir1Desc">Comida regional tradicional muy cercana al hostal.</p>
@@ -617,7 +642,7 @@
                 </div>
 
                 <div class="bg-white rounded-2xl border border-slate-200 flex flex-col overflow-hidden shadow-sm">
-                  <img src="plaza.png" alt="Plaza de Armas" class="w-full h-32 object-cover bg-slate-200 zoomable-img" onclick="openModal(this.src)" onerror="this.src='https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=500&q=80'">
+                  <img src="plaza.png" alt="Plaza de Armas" class="w-full h-32 object-cover bg-slate-200 zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=500&q=80'">
                   <div class="p-4 flex flex-col flex-1">
                     <h5 class="font-bold text-slate-900 text-xs mb-1" data-i18n="dir2Title">Plaza de Armas de Caraz</h5>
                     <p class="text-[11px] text-slate-500 mb-3 flex-1" data-i18n="dir2Desc">Corazón histórico, ideal para pasear y disfrutar helados artesanales.</p>
@@ -628,7 +653,7 @@
                 </div>
 
                 <div class="bg-white rounded-2xl border border-slate-200 flex flex-col overflow-hidden shadow-sm">
-                  <img src="dolares.png" alt="Caja Huancayo" class="w-full h-32 object-cover bg-slate-200 zoomable-img" onclick="openModal(this.src)" onerror="this.src='https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&w=500&q=80'">
+                  <img src="dolares.png" alt="Caja Huancayo" class="w-full h-32 object-cover bg-slate-200 zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&w=500&q=80'">
                   <div class="p-4 flex flex-col flex-1">
                     <h5 class="font-bold text-slate-900 text-xs mb-1" data-i18n="dir3Title">Caja Huancayo & Cambio</h5>
                     <p class="text-[11px] text-slate-500 mb-3 flex-1" data-i18n="dir3Desc">Ideal para operaciones financieras y cambio de moneda en el centro.</p>
@@ -674,7 +699,7 @@
       document.getElementById('imageModal').style.display = 'flex';
     }
 
-    const slideIndexes = { carousel1: 0, carousel2: 0 };
+    const slideIndexes = { carousel1: 0, carousel2: 0, pubCarousel1: 0, pubCarousel2: 0, pubCarousel3: 0 };
 
     function moveSlide(carouselId, direction) {
       const carousel = document.getElementById(carouselId);
@@ -814,6 +839,7 @@
         heroSubtitle: "Disfruta de habitaciones acogedoras, agua caliente 24/7 y la mejor ubicación para tus aventuras en la Cordillera Blanca.",
         btnOpenCalc: "🗓️ ¡Reserva Ahora / Cotiza en Línea!",
         btnWhatsappDir: "Contacto Directo WhatsApp",
+        lblBadgePay: "Aceptamos Todas las Tarjetas & Efectivo",
         calcPanelTitle: "Calculadora y Cotización en Línea",
         btnCloseCalc: "✕ Cerrar",
         lblRoomType: "Tipo de Habitación",
@@ -893,7 +919,7 @@
         ruleLaundryTitle: "Servicio de Lavandería",
         ruleLaundryText: "Lavado a agua fría y secado al sol natural. Costo: <strong>S/ 4.00 por kilo</strong> según peso.",
         kitchenTitle: "Cocina Compartida, Nevera y Horno Pizzero",
-        kitchenDesc: "• <strong>Cocina en 3er Nivel:</strong> Básica pero funcional. Tienes <strong>aceite, condimentos, sal, etc., de manera gratuita</strong>. Solo haz tus compras en el minimarket local y cocina sin problemas.<br>• <strong>Nevera y Microondas (2do Piso):</strong> Puedes guardar queso, yogur o alimentos en el espacio reservado al final de la nevera (generalmente libre para clientes).<br>• <strong>Horno Pizzero:</strong> Incluido sin costo para que hornees tus pizzas o pollos.",
+        kitchenDesc: "• <strong>Cocina en 3er Nivel:</strong> Básica pero funcional. Tienes <strong>aceite, condimentos, sal, etc., de manera gratuita</strong>. Solo haz tus compras en el minimarket local y cocina sin problemas.<br>• <strong>Nevera y Microondas (2do Piso):</strong> Puedes guardar queso, yogur o alimentos en el espacio reservado al final de la nevera.<br>• <strong>Horno Pizzero:</strong> Incluido sin costo para que hornees tus pizzas o pollos.",
         breakfastMenuTitle: "Carta de Desayunos Hostal Kactus",
         bf1Title: "Desayuno Mochilero",
         bf1Desc: "2 panes con huevo y jamonada + café",
@@ -956,6 +982,7 @@
         heroSubtitle: "Enjoy cozy rooms, 24/7 hot water, and the best location for your adventures in the Cordillera Blanca.",
         btnOpenCalc: "🗓️ Book Now / Quote Online",
         btnWhatsappDir: "Direct WhatsApp Contact",
+        lblBadgePay: "We accept all cards & cash",
         calcPanelTitle: "Online Calculator & Quote",
         btnCloseCalc: "✕ Close",
         lblRoomType: "Room Type",
@@ -976,7 +1003,7 @@
         pubParonDesc: "Stunning mirror of water surrounded by majestic snowy peaks like Artesonraju.",
         pubL69Title: "High Mountain Trekking",
         pubL69Desc: "An unforgettable adventure beneath Huascarán and Chacraraju with intense turquoise waters.",
-        pubCanonTitle: "Canyon of Cliffs & Tunnels",
+        pubCanonTitle: "Tunnels & Cliffs Route",
         pubCanonDesc: "An impressive gorge where the Black and White Cordillera converge with dozens of rock tunnels.",
         pubViewGuide: "View details & prices in guide",
         titleRooms: "Our Rooms",
@@ -1098,6 +1125,7 @@
         heroSubtitle: "Profitez de chambres chaleureuses, d'eau chaude 24h/24 et du meilleur emplacement pour vos aventures dans la Cordillera Blanca.",
         btnOpenCalc: "🗓️ Réserver / Devis en Ligne",
         btnWhatsappDir: "Contact Direct WhatsApp",
+        lblBadgePay: "Cartes & Espèces acceptés",
         calcPanelTitle: "Calculateur & Devis en Ligne",
         btnCloseCalc: "✕ Fermer",
         lblRoomType: "Type de Chambre",
@@ -1118,7 +1146,7 @@
         pubParonDesc: "Miroir d'eau époustouflant entouré de pics enneigés majestueux comme l'Artesonraju.",
         pubL69Title: "Trekking de Haute Montagne",
         pubL69Desc: "Une aventure inoubliable sous le Huascarán et le Chacraraju aux eaux turquoise intenses.",
-        pubCanonTitle: "Route des Falaises et Tunnels",
+        pubCanonTitle: "Route des Tunnels et Falaises",
         pubCanonDesc: "Une gorge impressionnante où se rejoignent les cordillères Noire et Blanche avec de nombreux tunnels.",
         pubViewGuide: "Voir détails & prix dans le guide",
         titleRooms: "Nos Chambres",
@@ -1260,7 +1288,7 @@
         pubParonDesc: "Úchvatné zrcadlo vody obklopené majestátními zasněženými štíty jako Artesonraju.",
         pubL69Title: "Vysokohorský treking",
         pubL69Desc: "Nezapomenutelné dobrodružství pod masivem Huascarán a Chacraraju s průzračnou vodou.",
-        pubCanonTitle: "Kaňon tunelů a útesů",
+        pubCanonTitle: "Trasa tunelů a kaňonu",
         pubCanonDesc: "Působivá roklina, kde se setkávají Černá a Bílá kordillera s desítkami skalních tunelů.",
         pubViewGuide: "Zobrazit podrobnosti a ceny v průvodci",
         titleRooms: "Naše pokoje",
@@ -1382,6 +1410,7 @@
         heroSubtitle: "享受温馨的客房、24小时热水，以及探索白色山脉（Cordillera Blanca）的最佳地理位置。",
         btnOpenCalc: "🗓️ 立即预订 / 在线报价",
         btnWhatsappDir: "WhatsApp 直接联系",
+        lblBadgePay: "支持所有银行卡及现金支付",
         calcPanelTitle: "在线报价与计算器",
         btnCloseCalc: "✕ 关闭",
         lblRoomType: "房型选择",
@@ -1402,7 +1431,7 @@
         pubParonDesc: "四周环绕着阿尔特松拉hu峰等宏伟雪山的绝美高山湖泊。",
         pubL69Title: "高山徒步探险",
         pubL69Desc: "在瓦斯卡兰和查克拉拉胡雪山脚下体验令人难忘的高山冰川湖之旅。",
-        pubCanonTitle: "岩洞与峡谷风光",
+        pubCanonTitle: "隧道与峡谷风光",
         pubCanonDesc: "黑山脉与白山脉交汇处的壮丽峡谷，拥有数十个穿山隧道。",
         pubViewGuide: "在指南中查看详情与价格",
         titleRooms: "客房展示",
@@ -1524,6 +1553,7 @@
         heroSubtitle: "Desfrute de quartos aconchegantes, água quente 24/7 e a melhor localização para suas aventuras na Cordillera Blanca.",
         btnOpenCalc: "🗓️ Reserve Agora / Orçamento Online",
         btnWhatsappDir: "Contato Direto WhatsApp",
+        lblBadgePay: "Aceitamos todos os cartões e dinheiro",
         calcPanelTitle: "Calculadora e Orçamento Online",
         btnCloseCalc: "✕ Fechar",
         lblRoomType: "Tipo de Quarto",
@@ -1544,8 +1574,8 @@
         pubParonDesc: "Espelho d'água deslumbrante cercado por imponentes picos nevados como o Artesonraju.",
         pubL69Title: "Trekking de Alta Montanha",
         pubL69Desc: "Uma aventura inesquecível sob os nevados Huascarán e Chacraraju com águas azul-turquesa.",
-        pubCanonTitle: "Rota de Túneles e Penhascos",
-        pubCanonDesc: "Um desfiladeiro impressionante onde convergem a Cordilheira Negra e Branca com dezenas de túneles.",
+        pubCanonTitle: "Rota de Túneis e Penhascos",
+        pubCanonDesc: "Um desfiladeiro impressionante onde convergem a Cordilheira Negra e Branca com dezenas de túneis.",
         pubViewGuide: "Ver detalhes e preços no guia",
         titleRooms: "Nossos Quartos",
         roomsBadge: "Garantia Melhor Preço Direto",
@@ -1666,6 +1696,7 @@
         heroSubtitle: "Genießen Sie gemütliche Zimmer, warmes Wasser 24/7 und die beste Lage für Ihre Abenteuer in der Cordillera Blanca.",
         btnOpenCalc: "🗓️ Jetzt Buchen / Online Berechnen",
         btnWhatsappDir: "Direkter WhatsApp-Kontakt",
+        lblBadgePay: "Wir akzeptieren alle Karten & Bargeld",
         calcPanelTitle: "Online-Rechner & Angebot",
         btnCloseCalc: "✕ Schließen",
         lblRoomType: "Zimmertyp",
@@ -1808,6 +1839,7 @@
         heroSubtitle: "Наслаждайтесь уютными номерами, горячей водой 24/7 и лучшим расположением для приключений в Кордильера-Бланка.",
         btnOpenCalc: "🗓️ Забронировать / Расчет онлайн",
         btnWhatsappDir: "Прямая связь WhatsApp",
+        lblBadgePay: "Принимаем все карты и наличные",
         calcPanelTitle: "Онлайн-калькулятор и расчет стоимости",
         btnCloseCalc: "✕ Закрыть",
         lblRoomType: "Тип номера",
