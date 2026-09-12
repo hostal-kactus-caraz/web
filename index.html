@@ -41,7 +41,6 @@
       border: 1px solid #e2e8f0;
       border-radius: 1.25rem;
     }
-    /* Scrollbar sutil para idiomas en móvil */
     .lang-container::-webkit-scrollbar {
       height: 3px;
     }
@@ -70,7 +69,7 @@
       </a>
 
       <!-- SELECTOR DE IDIOMAS (CON SCROLL HORIZONTAL PARA MÓVIL) -->
-      <div class="lang-container flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200 overflow-x-auto flex-nowrap max-w-[200px] sm:max-w-none">
+      <div class="lang-container flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200 overflow-x-auto flex-nowrap max-w-[180px] sm:max-w-none">
         <button class="lang-btn active px-1.5 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 bg-emerald-600 text-white shadow-xs shrink-0" id="btn-es" onclick="changeLanguage('es')">
           <img src="https://flagcdn.com/w40/es.png" alt="ES" class="w-3.5 h-2.5 object-cover rounded-xs"><span>ES</span>
         </button>
@@ -105,16 +104,33 @@
     </div>
   </nav>
 
-  <!-- BANNER PRINCIPAL -->
-  <header class="relative bg-emerald-900 text-white py-20 px-4 overflow-hidden">
+  <!-- BANNER PRINCIPAL CON ACCESO RÁPIDO A SECCIÓN RESERVADA EN LA PARTE INICIAL -->
+  <header class="relative bg-emerald-900 text-white py-16 px-4 overflow-hidden">
     <div class="absolute inset-0 bg-cover bg-center opacity-75" style="background-image: url('https://lh3.googleusercontent.com/d/1306fD7zgATU2P_1JwTWkWpq-lukMtejG');"></div>
-    <div class="absolute inset-0 bg-gradient-to-br from-emerald-700/80 via-emerald-800/75 to-teal-800/80"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-emerald-700/85 via-emerald-800/80 to-teal-900/85"></div>
     
-    <div class="relative z-10 max-w-5xl mx-auto text-center space-y-4 mb-12">
-      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight max-w-3xl mx-auto leading-tight drop-shadow-sm" id="hero-title">
+    <div class="relative z-10 max-w-4xl mx-auto text-center space-y-4 mb-8">
+      
+      <!-- WIDGET DE ACCESO RÁPIDO DIRECTO SOLICITADO PARA LA PARTE INICIAL -->
+      <div class="bg-white/10 backdrop-blur-md border border-white/20 p-4 sm:p-5 rounded-2xl max-w-2xl mx-auto shadow-lg space-y-3">
+        <div class="flex items-center justify-center gap-2 text-amber-300 font-black text-xs uppercase tracking-wider">
+          <i class="fas fa-lock-open"></i> <span id="top-access-title">Área Exclusiva de Huéspedes</span>
+        </div>
+        <p class="text-xs text-emerald-50 leading-relaxed" id="top-access-desc">
+          Ingresa el código brindado por el alojamiento acá y descubre tarifas de temporada, Wi-Fi, recomendaciones y normas.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
+          <input type="password" id="topPassInput" placeholder="Ingresa tu código aquí..." onkeypress="handleTopKey(event)" class="px-3.5 py-2 rounded-xl border border-white/30 text-xs flex-1 bg-slate-900/60 text-white placeholder-emerald-200 focus:outline-none focus:ring-2 focus:ring-amber-400">
+          <button onclick="unlockTopGuide()" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-extrabold py-2 px-4 rounded-xl text-xs shadow-md transition-all shrink-0">
+            <span id="top-unlock-btn">Desbloquear Ahora</span>
+          </button>
+        </div>
+      </div>
+
+      <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight max-w-3xl mx-auto leading-tight drop-shadow-sm pt-2" id="hero-title">
         Tu descanso cómodo, seguro y completo en <span class="text-amber-300">Caraz, Perú</span>
       </h1>
-      <p class="text-emerald-50 text-sm sm:text-base max-w-xl mx-auto drop-shadow-sm" id="hero-subtitle">
+      <p class="text-emerald-50 text-xs sm:text-sm max-w-xl mx-auto drop-shadow-sm" id="hero-subtitle">
         Disfruta de habitaciones acogedoras, agua caliente 24/7 y la mejor ubicación para tus aventuras en la Cordillera Blanca.
       </p>
     </div>
@@ -272,7 +288,6 @@
             </div>
           </div>
 
-          <!-- Saco de Dormir -->
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3">
             <div class="h-36 rounded-xl overflow-hidden bg-slate-200">
               <img src="saco_dormir.png" alt="Saco de Dormir" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='saco de dormir .png';">
@@ -386,7 +401,7 @@
 
           <div id="secretGuide" class="hidden mt-6 bg-slate-50 p-6 rounded-2xl border-2 border-dashed border-emerald-500 space-y-8">
             
-            <!-- TARJETA WI-FI CON WIFI.PNG -->
+            <!-- TARJETA WI-FI -->
             <div class="bg-white p-5 rounded-xl border border-slate-200 space-y-4">
               <h4 class="font-extrabold text-sm text-slate-900 flex items-center gap-2" id="wifi-card-title">
                 <i class="fas fa-wifi text-emerald-600"></i> Conexión Wi-Fi de Alta Velocidad
@@ -421,7 +436,7 @@
               </div>
             </div>
 
-            <!-- DIRECTORIO FIJO -->
+            <!-- DIRECTORIO FIJO CON CAJA HUANCAYO / CASA DE CAMBIO Y HOSPITAL -->
             <div class="space-y-4">
               <h4 class="font-extrabold text-sm text-slate-900" id="directory-title">📍 Directorio de Lugares Clave en Caraz</h4>
               
@@ -457,7 +472,22 @@
                   </div>
                 </div>
 
-                <!-- 3. Farmacias Cercanas -->
+                <!-- 3. Caja Huancayo / Casa de Cambio (con dolares.png) -->
+                <div class="bg-white rounded-2xl border border-slate-200 flex flex-col overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                  <img src="dolares.png" alt="Caja Huancayo y Casa de Cambio" class="w-full h-32 object-cover bg-slate-200" onerror="this.src='https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&w=500&q=80'">
+                  <div class="p-4 flex flex-col flex-1">
+                    <div class="flex items-center gap-2 mb-2">
+                      <div class="w-7 h-7 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-xs shrink-0"><i class="fas fa-exchange-alt"></i></div>
+                      <h5 class="font-bold text-slate-900 text-xs">Caja Huancayo & Casa de Cambio</h5>
+                    </div>
+                    <p class="text-[11px] text-slate-500 mb-4 flex-1">Agencia Caja Huancayo Caraz. Ideal para giros, operaciones financieras, retiros y cambio de moneda extranjera (dólares y soles) en el centro de la ciudad.</p>
+                    <a href="https://maps.google.com/?q=Caja+Huancayo+Caraz" target="_blank" rel="noopener" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-[11px] py-2 px-3 rounded-xl flex items-center justify-center gap-1.5 w-full shadow-sm transition-colors mt-auto">
+                      <i class="fas fa-map-marked-alt text-amber-700"></i> Ver Ubicación en Caraz
+                    </a>
+                  </div>
+                </div>
+
+                <!-- 4. Farmacias Cercanas -->
                 <div class="bg-white rounded-2xl border border-slate-200 flex flex-col overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                   <img src="farmacia.png" alt="Farmacias Cercanas" class="w-full h-32 object-cover bg-slate-200" onerror="this.src='https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?auto=format&fit=crop&w=500&q=80'">
                   <div class="p-4 flex flex-col flex-1">
@@ -468,21 +498,6 @@
                     <p class="text-[11px] text-slate-500 mb-4 flex-1">Cadenas de confianza como Inkafarma y MiFarma abiertas en horario comercial cerca al centro.</p>
                     <a href="https://maps.google.com/?q=Inkafarma+Caraz" target="_blank" rel="noopener" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-[11px] py-2 px-3 rounded-xl flex items-center justify-center gap-1.5 w-full shadow-sm transition-colors mt-auto">
                       <i class="fas fa-map-marked-alt text-amber-700"></i> Ver en Google Maps
-                    </a>
-                  </div>
-                </div>
-
-                <!-- 4. Grifos (Facilito Osinergmin) -->
-                <div class="bg-white rounded-2xl border border-slate-200 flex flex-col overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                  <img src="https://images.unsplash.com/photo-1572041703666-4c4078e244b7?auto=format&fit=crop&w=500&q=80" alt="Grifo" class="w-full h-32 object-cover bg-slate-200">
-                  <div class="p-4 flex flex-col flex-1">
-                    <div class="flex items-center gap-2 mb-2">
-                      <div class="w-7 h-7 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-xs shrink-0"><i class="fas fa-gas-pump"></i></div>
-                      <h5 class="font-bold text-slate-900 text-xs">Grifos Cercanos (Facilito)</h5>
-                    </div>
-                    <p class="text-[11px] text-slate-500 mb-4 flex-1">Consulta precios actualizados de combustibles en Caraz a través de la plataforma oficial Osinergmin.</p>
-                    <a href="https://www.facilito.gob.pe" target="_blank" rel="noopener" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-[11px] py-2 px-3 rounded-xl flex items-center justify-center gap-1.5 w-full shadow-sm transition-colors mt-auto">
-                      <i class="fas fa-external-link-alt text-amber-700"></i> Ver en Facilito Osinergmin
                     </a>
                   </div>
                 </div>
@@ -570,6 +585,7 @@
       const secretSection = document.getElementById('secretGuide');
       if (pass === '301298') {
         secretSection.classList.remove('hidden');
+        secretSection.scrollIntoView({ behavior: 'smooth' });
       } else {
         secretSection.classList.add('hidden');
         alert('Contraseña incorrecta. Solicita la clave oficial en recepción.');
@@ -577,15 +593,37 @@
       }
     }
 
+    // Función para desbloquear directamente desde el banner inicial en la parte superior
+    function unlockTopGuide() {
+      const pass = document.getElementById('topPassInput').value.trim();
+      const secretSection = document.getElementById('secretGuide');
+      if (pass === '301298') {
+        secretSection.classList.remove('hidden');
+        // Sincronizar también el input inferior
+        document.getElementById('passInput').value = '301298';
+        secretSection.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        alert('Contraseña incorrecta. Solicita la clave oficial en recepción.');
+        document.getElementById('topPassInput').value = '';
+      }
+    }
+
     function handleKey(e) {
       if (e.key === 'Enter') unlockGuide();
     }
 
-    // Diccionario completo de traducciones fluidas y sincronizadas
+    function handleTopKey(e) {
+      if (e.key === 'Enter') unlockTopGuide();
+    }
+
+    // Diccionario completo de traducciones fluidas
     const translations = {
       es: {
         navLocationSub: "Caraz · Perú",
         navCodeText: "Código de Huésped",
+        topAccessTitle: "Área Exclusiva de Huéspedes",
+        topAccessDesc: "Ingresa el código brindado por el alojamiento acá y descubre tarifas de temporada, Wi-Fi, recomendaciones y normas.",
+        topUnlockBtn: "Desbloquear",
         heroTitle: "Tu descanso cómodo, seguro y completo en <span class='text-amber-300'>Caraz, Perú</span>",
         heroSubtitle: "Disfruta de habitaciones acogedoras, agua caliente 24/7 y la mejor ubicación para tus aventuras en la Cordillera Blanca.",
         lblLocationTitle: "Ubicación",
@@ -653,6 +691,9 @@
       en: {
         navLocationSub: "Caraz · Peru",
         navCodeText: "Guest Code",
+        topAccessTitle: "Exclusive Guest Area",
+        topAccessDesc: "Enter the code provided by the accommodation here to discover seasonal rates, Wi-Fi, recommendations, and rules.",
+        topUnlockBtn: "Unlock",
         heroTitle: "Your comfortable, safe and complete stay in <span class='text-amber-300'>Caraz, Peru</span>",
         heroSubtitle: "Enjoy cozy rooms, 24/7 hot water, and the best location for your adventures in the Cordillera Blanca.",
         lblLocationTitle: "Location",
@@ -720,6 +761,9 @@
       pt: {
         navLocationSub: "Caraz · Peru",
         navCodeText: "Código do Hóspede",
+        topAccessTitle: "Área Exclusiva de Hóspedes",
+        topAccessDesc: "Insira o código fornecido pela hospedagem aqui para descobrir tarifas, Wi-Fi, recomendações e regras.",
+        topUnlockBtn: "Desbloquear",
         heroTitle: "Sua estadia confortável, segura e completa em <span class='text-amber-300'>Caraz, Peru</span>",
         heroSubtitle: "Desfrute de quartos aconchegantes, água quente 24/7 e da melhor localização para suas aventuras na Cordillera Blanca.",
         lblLocationTitle: "Localização",
@@ -787,6 +831,9 @@
       fr: {
         navLocationSub: "Caraz · Pérou",
         navCodeText: "Code Client",
+        topAccessTitle: "Espace Exclusif Clients",
+        topAccessDesc: "Entrez le code fourni par l'hébergement ici pour découvrir les tarifs, le Wi-Fi et les recommandations.",
+        topUnlockBtn: "Déverrouiller",
         heroTitle: "Votre séjour confortable, sûr et complet à <span class='text-amber-300'>Caraz, Pérou</span>",
         heroSubtitle: "Profitez de chambres chaleureuses, d'eau chaude 24h/24 et du meilleur emplacement pour vos aventures dans la Cordillera Blanca.",
         lblLocationTitle: "Emplacement",
@@ -854,6 +901,9 @@
       de: {
         navLocationSub: "Caraz · Peru",
         navCodeText: "Gästekod",
+        topAccessTitle: "Exklusiver Gäste-Bereich",
+        topAccessDesc: "Geben Sie hier den Code ein, um Tarife, Wi-Fi und Empfehlungen zu entdecken.",
+        topUnlockBtn: "Freischalten",
         heroTitle: "Ihr komfortabler, sicherer Aufenthalt in <span class='text-amber-300'>Caraz, Peru</span>",
         heroSubtitle: "Genießen Sie gemütliche Zimmer, 24/7 Warmwasser und die beste Lage für Ihre Abenteuer in der Cordillera Blanca.",
         lblLocationTitle: "Standort",
@@ -921,6 +971,9 @@
       ru: {
         navLocationSub: "Карас · Перу",
         navCodeText: "Код Гостя",
+        topAccessTitle: "Эксклюзивная зона для гостей",
+        topAccessDesc: "Введите здесь предоставленный код для доступа к тарифам, Wi-Fi и рекомендациям.",
+        topUnlockBtn: "Открыть",
         heroTitle: "Комфортный, безопасный и полноценный отдых в <span class='text-amber-300'>Карасе, Перу</span>",
         heroSubtitle: "Наслаждайтесь уютными номерами, горячей водой 24/7 и лучшим расположением для ваших приключений в Кордильере-Бланка.",
         lblLocationTitle: "Местоположение",
@@ -988,6 +1041,9 @@
       cs: {
         navLocationSub: "Caraz · Peru",
         navCodeText: "Kód hosta",
+        topAccessTitle: "Exkluzivní zóna pro hosty",
+        topAccessDesc: "Zadejte zde kód poskytnutý ubytováním a získejte přístup k cenám, Wi-Fi a tipům.",
+        topUnlockBtn: "Odemknout",
         heroTitle: "Váš pohodlný, bezpečný a kompletní pobyt v <span class='text-amber-300'>Carazu, Peru</span>",
         heroSubtitle: "Užijte si útulné pokoje, teplou vodu 24/7 a nejlepší polohu pro vaše dobrodružství v Cordillera Blanca.",
         lblLocationTitle: "Lokalita",
@@ -1055,6 +1111,9 @@
       zh: {
         navLocationSub: "秘鲁 · 卡拉斯",
         navCodeText: "住客专属码",
+        topAccessTitle: "住客专属特权区",
+        topAccessDesc: "在此输入住宿提供的访问码，即可立即查看价格、Wi-Fi密码和出行指南。",
+        topUnlockBtn: "解锁",
         heroTitle: "在秘鲁<span class='text-amber-300'>卡拉斯</span>享受温馨、安全与完美的住宿体验",
         heroSubtitle: "尽享温馨舒适的房间、24小时热水，以及前往白山 Cordillera Blanca 探险的最佳地理位置。",
         lblLocationTitle: "位置",
@@ -1130,6 +1189,10 @@
       
       if(document.getElementById('nav-location-sub')) document.getElementById('nav-location-sub').innerText = t.navLocationSub;
       if(document.getElementById('nav-code-text')) document.getElementById('nav-code-text').innerText = t.navCodeText;
+      if(document.getElementById('top-access-title')) document.getElementById('top-access-title').innerText = t.topAccessTitle;
+      if(document.getElementById('top-access-desc')) document.getElementById('top-access-desc').innerText = t.topAccessDesc;
+      if(document.getElementById('topPassInput')) document.getElementById('topPassInput').placeholder = t.passPlaceholder;
+      if(document.getElementById('top-unlock-btn')) document.getElementById('top-unlock-btn').innerText = t.topUnlockBtn;
       if(document.getElementById('hero-title')) document.getElementById('hero-title').innerHTML = t.heroTitle;
       if(document.getElementById('hero-subtitle')) document.getElementById('hero-subtitle').innerText = t.heroSubtitle;
       if(document.getElementById('lbl-location-title')) document.getElementById('lbl-location-title').innerText = t.lblLocationTitle;
