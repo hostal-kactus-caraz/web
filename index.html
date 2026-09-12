@@ -24,7 +24,7 @@
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-500 selection:text-white pb-24">
 
   <!-- BARRA SUPERIOR -->
-  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80 shadow-xs py-3 px-3 sm:px-10">
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/85 shadow-xs py-3 px-3 sm:px-10">
     <div class="max-w-7xl mx-auto flex justify-between items-center gap-2">
       
       <!-- LOGO -->
@@ -83,18 +83,16 @@
     
     <div class="relative z-10 max-w-4xl mx-auto text-center space-y-5 mb-10">
       
-      <!-- TARJETA GIRATORIA 3D CON FONDO Y BORDE ELEGANTE -->
+      <!-- TARJETA GIRATORIA 3D CON ACCESO RÁPIDO -->
       <div class="neon-yellow-box p-4 sm:p-5 rounded-2xl max-w-2xl mx-auto shadow-2xl space-y-3">
         <div class="flex items-center justify-center gap-2 text-sky-300 font-black text-xs uppercase tracking-wider">
           <i class="fas fa-lock-open"></i> <span id="top-access-title">Área Exclusiva de Huéspedes</span>
         </div>
         <p class="text-xs text-emerald-50 leading-relaxed" id="top-access-desc">
-          Ingresa el código brindado por el alojamiento acá y descubre tarifas de temporada, Wi-Fi, recomendaciones y normas.
+          Ingresa el código brindado por el alojamiento acá y descubre tarifas detalladas, Wi-Fi, tours y normas.
         </p>
         <div class="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
           <input type="password" id="topPassInput" placeholder="Ingresa tu código aquí..." onkeypress="handleTopKey(event)" class="px-3.5 py-2.5 rounded-xl border border-white/30 text-xs flex-1 bg-slate-900/70 text-white placeholder-emerald-200 focus:outline-none focus:ring-2 focus:ring-sky-400">
-          
-          <!-- BOTÓN DESBLOQUEAR CELESTE PROFESIONAL (SUAVE Y MODERNO) -->
           <button onclick="unlockTopGuide()" class="py-2.5 px-5 rounded-xl text-xs shadow-md transition-all shrink-0 bg-sky-500 hover:bg-sky-600 text-white font-semibold shadow-sky-500/30 border border-sky-400/40">
             <span id="top-unlock-btn">Desbloquear</span>
           </button>
@@ -304,7 +302,7 @@
       </div>
     </section>
 
-    <!-- SECCIÓN 3: SERVICIOS -->
+    <!-- SECCIÓN 3: SERVICIOS E INSTALACIONES -->
     <section>
       <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-6" id="title-services">Servicios e Instalaciones</h2>
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -325,110 +323,251 @@
         <div>
           <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-2" id="title-guide-heading">Guía Turística de Caraz & Área Reservada</h2>
           <p id="g-pub-desc" class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-            📍 <strong>Laguna Parón:</strong> La laguna turquesa más grande de la Cordillera Blanca, ubicada a 32 km de Caraz. Espléndidas vistas del Artesonraju y paseos en bote.<br><br>
-            📍 <strong>Laguna Llanganuco (Chinancocha y Orconcocha):</strong> Espejos de agua color turquesa intenso en el Parque Nacional Huascarán, rodeados de imponentes bosques de quenuales.<br><br>
-            📍 <strong>Laguna 69:</strong> Uno de los trekkings de alta montaña más famosos del mundo, desafiante y fascinante bajo los nevados Huascarán y Chacraraju.
+            Bienvenido a nuestra guía oficial. Explora los atractivos imperdibles de la Cordillera Blanca desde Hostal Kactus. 
           </p>
         </div>
 
         <hr class="border-slate-200">
 
         <div id="unlock-area" class="pt-4">
-          <h3 class="font-extrabold text-base text-slate-900 mb-2" id="priv-section-title">🔐 Sección Reservada de Rutas y Servicios para Huéspedes</h3>
-          <p id="g-priv-desc" class="text-xs text-slate-600 mb-4">Ingresa la clave proporcionada en recepción para ver los precios protegidos y guías:</p>
+          <h3 class="font-extrabold text-base text-slate-900 mb-2" id="priv-section-title">🔐 Sección Reservada de Huéspedes (Wi-Fi, Normas, Comodidades y Tours)</h3>
+          <p id="g-priv-desc" class="text-xs text-slate-600 mb-4">Ingresa la contraseña proporcionada en recepción para desbloquear toda la información detallada:</p>
           
           <div class="flex flex-col sm:flex-row gap-3 max-w-md">
             <input type="password" id="passInput" placeholder="Contraseña de huésped" onkeypress="handleKey(event)" class="px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs flex-1 bg-white">
             <button onclick="unlockGuide()" id="btn-unlock-text" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-5 rounded-xl text-xs shadow-md">Desbloquear Sección</button>
           </div>
 
-          <div id="secretGuide" class="hidden mt-6 bg-slate-50 p-6 rounded-2xl border-2 border-dashed border-emerald-500 space-y-8">
+          <!-- CONTENIDO SECRETO / RESERVADO -->
+          <div id="secretGuide" class="hidden mt-6 bg-slate-50 p-6 rounded-2xl border-2 border-dashed border-emerald-500 space-y-10">
             
-            <!-- TARJETA WI-FI -->
-            <div class="bg-white p-5 rounded-xl border border-slate-200 space-y-4 shadow-xs">
-              <h4 class="font-extrabold text-sm text-slate-900 flex items-center gap-2" id="wifi-card-title">
-                <i class="fas fa-wifi text-emerald-600"></i> Conexión Wi-Fi de Alta Velocidad
-              </h4>
-              <div class="flex flex-col md:flex-row items-center gap-6">
-                <div class="w-full md:w-1/3 h-36 rounded-xl overflow-hidden bg-slate-100 border border-slate-200 flex items-center justify-center">
-                  <img src="wifi.png" alt="Wi-Fi Kactus" class="w-full h-full object-cover zoomable-img" onclick="openModal(this.src)" onerror="this.src='https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=500&q=80'">
-                </div>
-                <div class="flex-1 space-y-2 text-xs">
-                  <div class="p-3 bg-emerald-50 rounded-lg flex justify-between items-center">
-                    <span class="text-slate-600 font-semibold" id="wifi-net-label">Nombre de red (SSID):</span>
-                    <strong class="text-emerald-900 bg-white px-3 py-1 rounded border border-emerald-200 text-sm">Segundo Piso</strong>
-                  </div>
-                  <div class="p-3 bg-emerald-50 rounded-lg flex justify-between items-center">
-                    <span class="text-slate-600 font-semibold" id="wifi-pass-label">Contraseña:</span>
-                    <strong class="text-emerald-900 bg-white px-3 py-1 rounded border border-emerald-200 text-sm">Ramirez@2025</strong>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- TARIFAS DE EQUIPOS -->
-            <div class="bg-white p-5 rounded-xl border border-slate-200 space-y-4 shadow-xs">
-              <h4 class="font-extrabold text-sm text-slate-900" id="priv-gear-title">🏷️ Tarifas de Alquiler de Equipos de Montaña</h4>
-              <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs">
-                <div class="p-3 bg-emerald-50 rounded-lg flex justify-between"><span id="p-gear-1">Carpa 3 Estaciones</span><strong class="text-emerald-800">S/ 25.00 /día</strong></div>
-                <div class="p-3 bg-emerald-50 rounded-lg flex justify-between"><span id="p-gear-2">Saco de Dormir Pluma</span><strong class="text-emerald-800">S/ 25.00 /día</strong></div>
-                <div class="p-3 bg-emerald-50 rounded-lg flex justify-between"><span id="p-gear-3">Bastones de Trekking</span><strong class="text-emerald-800">S/ 5.00 /día</strong></div>
-                <div class="p-3 bg-emerald-50 rounded-lg flex justify-between"><span id="p-gear-4">Binoculares</span><strong class="text-emerald-800">S/ 4.00 /día</strong></div>
-                <div class="p-3 bg-emerald-50 rounded-lg flex justify-between"><span id="p-gear-5">Cocina de Campaña</span><strong class="text-emerald-800">S/ 8.00 /día</strong></div>
-                <div class="p-3 bg-emerald-50 rounded-lg flex justify-between"><span id="p-gear-6">Balón de Gas Nuevo</span><strong class="text-emerald-800">S/ 33.00</strong></div>
-              </div>
-            </div>
-
-            <!-- DIRECTORIO FIJO -->
+            <!-- 1. HORARIOS, COMODIDADES Y WI-FI (INTERACTIVO) -->
             <div class="space-y-4">
+              <h4 class="font-extrabold text-sm text-slate-900 flex items-center gap-2">
+                <i class="fas fa-concierge-bell text-emerald-600"></i> Comodidades, Horarios y Normas del Hostal
+              </h4>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                <!-- Check-in / Check-out -->
+                <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-2 shadow-xs">
+                  <div class="font-bold text-slate-900 flex items-center gap-2 text-emerald-700"><i class="fas fa-clock"></i> Horarios de Ingreso / Salida</div>
+                  <p class="text-slate-600"><strong>Check-in:</strong> A partir de las 11:00 AM (¡Sujeto a disponibilidad previa, puede ser mucho antes!).</p>
+                  <p class="text-slate-600"><strong>Check-out:</strong> 10:30 AM.</p>
+                </div>
+
+                <!-- Equipaje y Terraza -->
+                <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-2 shadow-xs">
+                  <div class="font-bold text-slate-900 flex items-center gap-2 text-emerald-700"><i class="fas fa-suitcase-rolling"></i> Equipaje y Terraza Gratis</div>
+                  <p class="text-slate-600">Guardamos tu equipaje en recepción <strong>sin costo adicional</strong>. Puedes esperary descansar en nuestra <strong>terraza</strong> hasta la salida de tu bus a Lima o Trujillo.</p>
+                </div>
+
+                <!-- Cochera -->
+                <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-2 shadow-xs">
+                  <div class="font-bold text-slate-900 flex items-center gap-2 text-emerald-700"><i class="fas fa-car"></i> Cochera Privada</div>
+                  <p class="text-slate-600">Contamos con cochera <strong>completamente gratis</strong> y segura para nuestros huéspedes.</p>
+                </div>
+
+                <!-- Lavandería -->
+                <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-2 shadow-xs">
+                  <div class="font-bold text-slate-900 flex items-center gap-2 text-emerald-700"><i class="fas fa-tshirt"></i> Servicio de Lavandería</div>
+                  <p class="text-slate-600">Lavado a agua fría y secado al sol natural. Costo: <strong>S/ 4.00 por kilo</strong> según peso.</p>
+                </div>
+              </div>
+
+              <!-- Cocina y Nevera / Horno -->
+              <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-3 shadow-xs text-xs">
+                <div class="font-bold text-slate-900 flex items-center gap-2 text-emerald-700"><i class="fas fa-utensils"></i> Cocina Compartida, Nevera y Horno Pizzero</div>
+                <p class="text-slate-600">
+                  • <strong>Cocina en 3er Nivel:</strong> Básica pero funcional. Tienes <strong>aceite, condimentos, sal, etc., de manera gratuita</strong>. Solo haz tus compras en el minimarket local y cocina sin problemas.<br>
+                  • <strong>Nevera y Microondas (2do Piso):</strong> Puedes guardar queso, yogur o alimentos en el espacio reservado al final de la nevera (generalmente libre para clientes).<br>
+                  • <strong>Horno Pizzero:</strong> Incluido sin costo para que hornees tus pizzas o pollos.
+                </p>
+              </div>
+
+              <!-- Wi-Fi interactivo -->
+              <div class="bg-white p-5 rounded-xl border border-slate-200 space-y-3 shadow-xs">
+                <h5 class="font-extrabold text-xs text-slate-900 flex items-center gap-2">
+                  <i class="fas fa-wifi text-emerald-600"></i> Conexión Wi-Fi de Alta Velocidad
+                </h5>
+                <div class="flex flex-col md:flex-row items-center gap-4">
+                  <div class="w-full md:w-1/4 h-28 rounded-xl overflow-hidden bg-slate-100 border border-slate-200 flex items-center justify-center">
+                    <img src="wifi.png" alt="Wi-Fi Kactus" class="w-full h-full object-cover zoomable-img" onclick="openModal(this.src)" onerror="this.src='https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=500&q=80'">
+                  </div>
+                  <div class="flex-1 space-y-2 text-xs w-full">
+                    <div class="p-2.5 bg-emerald-50 rounded-lg flex justify-between items-center">
+                      <span class="text-slate-600 font-semibold">Red (SSID):</span>
+                      <strong class="text-emerald-900 bg-white px-3 py-1 rounded border border-emerald-200 text-sm">Segundo Piso</strong>
+                    </div>
+                    <div class="p-2.5 bg-emerald-50 rounded-lg flex justify-between items-center">
+                      <span class="text-slate-600 font-semibold">Contraseña:</span>
+                      <strong class="text-emerald-900 bg-white px-3 py-1 rounded border border-emerald-200 text-sm">Ramirez@2025</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Desayunos Kactus -->
+              <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-3 shadow-xs text-xs">
+                <div class="font-bold text-slate-900 flex items-center gap-2 text-emerald-700"><i class="fas fa-mug-hot"></i> Carta de Desayunos Hostal Kactus</div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 flex justify-between items-center">
+                    <div><strong>Desayuno Mochilero</strong><br><span class="text-[10px] text-slate-500">2 panes con huevo y jamonada + café</span></div>
+                    <span class="font-black text-emerald-600 text-sm">S/ 5.00</span>
+                  </div>
+                  <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 flex justify-between items-center">
+                    <div><strong>Desayuno Continental</strong><br><span class="text-[10px] text-slate-500">1 huevo frito, mantequilla, mermelada, jugo, café y 3 panes</span></div>
+                    <span class="font-black text-emerald-600 text-sm">S/ 10.00</span>
+                  </div>
+                  <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 flex justify-between items-center">
+                    <div><strong>Desayuno Americano</strong><br><span class="text-[10px] text-slate-500">3 panes, jugo, café y 3 huevos revueltos con jamonada</span></div>
+                    <span class="font-black text-emerald-600 text-sm">S/ 10.00</span>
+                  </div>
+                  <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 flex justify-between items-center">
+                    <div><strong>Desayuno Royal</strong><br><span class="text-[10px] text-slate-500">Lomo saltado (carne salteada jugosa con cebolla y tomate, sin arroz), 3 panes, jugo y café</span></div>
+                    <span class="font-black text-emerald-600 text-sm">S/ 15.00</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- 2. GUÍA DETALLADA DE RECORRIDOS Y PRECIOS -->
+            <div class="space-y-6 pt-4 border-t border-slate-200">
+              <h4 class="font-extrabold text-base text-slate-900 flex items-center gap-2">
+                <i class="fas fa-route text-emerald-600"></i> Guía Detallada de Recorridos, Costos y Opciones
+              </h4>
+
+              <!-- LAGUNA PARÓN -->
+              <div class="bg-white p-5 rounded-2xl border border-slate-200 space-y-3 shadow-xs text-xs">
+                <div class="flex justify-between items-center">
+                  <h5 class="font-extrabold text-sm text-emerald-800"><i class="fas fa-water"></i> 1. Laguna Parón (32 km desde Caraz)</h5>
+                  <span class="bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-full text-[10px] font-bold">ImPERDIBLE</span>
+                </div>
+                <p class="text-slate-600 leading-relaxed">
+                  La laguna turquesa más grande de la Cordillera Blanca, con vistas espectaculares del Artesonraju.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">
+                  <div class="p-3 bg-emerald-50/70 rounded-xl border border-emerald-100 space-y-1">
+                    <strong class="text-emerald-900">Opción Tour Recomendado Hostal:</strong>
+                    <ul class="list-disc pl-4 text-slate-600 space-y-1 mt-1">
+                      <li>El carro los recoge directamente del hostal.</li>
+                      <li><strong>Precio (con 4 personas):</strong> S/ 40.00 por persona (ida y vuelta).</li>
+                      <li><strong>Espera en laguna:</strong> 2 horas para fotos y paseo en bote.</li>
+                      <li><strong>Entrada al parque:</strong> S/ 5.00 al guardabosques.</li>
+                      <li>*Si hay menos pasajeros, el carro sale cubriendo los asientos faltantes. Pagos en efectivo o con tarjeta en el hostal.*</li>
+                    </ul>
+                  </div>
+                  <div class="p-3 bg-slate-50/70 rounded-xl border border-emerald-100 space-y-1">
+                    <strong class="text-emerald-900">Opción Por Tu Cuenta:</strong>
+                    <ul class="list-disc pl-4 text-slate-600 space-y-1 mt-1">
+                      <li>Costo habitual de transporte: S/ 40 a S/ 50 por persona.</li>
+                      <li>Debes tomar los colectivos desde <a href="https://maps.app.goo.gl/dhxDVsWRBC7ysK4w8" target="_blank" class="text-blue-600 underline font-bold">este punto de salida</a>.</li>
+                      <li>Entrada obligatoria de S/ 5.00 al guardabosques (independiente del transporte).</li>
+                      <li>También consideran una espera aproximada de 2 horas en la laguna.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- LAGUNA 69 -->
+              <div class="bg-white p-5 rounded-2xl border border-slate-200 space-y-3 shadow-xs text-xs">
+                <div class="flex justify-between items-center">
+                  <h5 class="font-extrabold text-sm text-emerald-800"><i class="fas fa-mountain"></i> 2. Laguna 69 (Full Day de Alta Montaña)</h5>
+                  <span class="bg-amber-100 text-amber-800 px-2.5 py-1 rounded-full text-[10px] font-bold">Exigente</span>
+                </div>
+                <p class="text-slate-600 leading-relaxed">
+                  Uno de los trekkings más famosos del mundo bajo los nevados Huascarán y Chacraraju. <em>Por disposición del Parque Nacional Huascarán, se exige guía autorizado.</em>
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">
+                  <div class="p-3 bg-emerald-50/70 rounded-xl border border-emerald-100 space-y-1">
+                    <strong class="text-emerald-900">Opción Tour Autorizado:</strong>
+                    <ul class="list-disc pl-4 text-slate-600 space-y-1 mt-1">
+                      <li>Salidas desde Huaraz; dar el alcance en <strong>Yungay a las 6:00 AM</strong> aprox. (incluye permisos y guía).</li>
+                      <li><strong>Desglose de gastos:</strong> S/ 60 (tour) + S/ 6 pasaje Caraz-Yungay (ida y vuelta) + S/ 30 ticket de acceso al Parque Nacional = <strong>Aprox. S/ 96.00 total</strong>.</li>
+                      <li>Retorno a Caraz: entre 5:30 PM y 6:00 PM.</li>
+                    </ul>
+                  </div>
+                  <div class="p-3 bg-slate-50/70 rounded-xl border border-slate-200 space-y-1">
+                    <strong class="text-emerald-900">Opción Por Tus Medios:</strong>
+                    <ul class="list-disc pl-4 text-slate-600 space-y-1 mt-1">
+                      <li>Bus a Yungay (S/ 3) y minivan hacia Yanama (S/ 25 - S/ 30). Bajarse en el inicio del sendero.</li>
+                      <li>Pago de ticket: S/ 30.00.</li>
+                      <li>Retorno: buscar vehículo disponible en ruta (S/ 20 a S/ 30).</li>
+                      <li>*Considera que las autoridades pueden exigir guía obligatorio en ruta.*</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- RUTA DE LAS FRESAS (PAMPACOCHA) Y CERRO SAN JUAN -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                <!-- Pampacocha -->
+                <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-2 shadow-xs">
+                  <h5 class="font-extrabold text-slate-900 flex items-center gap-2 text-emerald-800"><i class="fas fa-seedling"></i> Ruta de las Fresas (Pampacocha)</h5>
+                  <p class="text-slate-600">
+                    Pequeña laguna y experiencia de caminata rural. Tomas colectivos desde <a href="https://maps.app.goo.gl/dhxDVsWRBC7ysK4w8" target="_blank" class="text-blue-600 underline font-bold">este punto</a> (aprox. S/ 10). En el lugar cultivan fresas frescas que puedes comprar a <strong>S/ 3 - S/ 4 el kilo</strong>. Retorno caminando o en carro.
+                  </p>
+                </div>
+                <!-- Cerro San Juan -->
+                <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-2 shadow-xs">
+                  <h5 class="font-extrabold text-slate-900 flex items-center gap-2 text-emerald-800"><i class="fas fa-hiking"></i> Mirador Cerro San Juan (Caraz)</h5>
+                  <p class="text-slate-600">
+                    Caminata ligera justo aquí en Caraz. Demora <strong>1 hora de subida y 1 hora de bajada</strong> aprox. Desde la cima se obtiene una vista panorámica impresionante de todo el valle de Caraz. ¡Ideal para aclimatación!
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- 3. DIRECTORIO DE LUGARES CLAVE -->
+            <div class="space-y-4 pt-4 border-t border-slate-200">
               <h4 class="font-extrabold text-sm text-slate-900" id="directory-title">📍 Directorio de Lugares Clave en Caraz</h4>
               
               <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
                 <!-- 1. Restaurante -->
-                <div class="bg-white rounded-2xl border border-slate-200 flex flex-col overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                <div class="bg-white rounded-2xl border border-slate-200 flex flex-col overflow-hidden shadow-sm">
                   <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=500&q=80" alt="Restaurante" class="w-full h-32 object-cover bg-slate-200 zoomable-img" onclick="openModal(this.src)">
                   <div class="p-4 flex flex-col flex-1">
                     <div class="flex items-center gap-2 mb-2">
                       <div class="w-7 h-7 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-xs shrink-0"><i class="fas fa-utensils"></i></div>
                       <h5 class="font-bold text-slate-900 text-xs">Restaurante Pacha Hunta</h5>
                     </div>
-                    <p class="text-[11px] text-slate-500 mb-4 flex-1">Comida regional y típica. Muy cercano al hostal y altamente recomendable por su sazón tradicional.</p>
-                    <a href="https://maps.google.com/?q=Restaurante+Pacha+Hunta+Caraz+Peru" target="_blank" rel="noopener" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-[11px] py-2 px-3 rounded-xl flex items-center justify-center gap-1.5 w-full shadow-sm transition-colors mt-auto">
+                    <p class="text-[11px] text-slate-500 mb-4 flex-1">Comida regional tradicional muy cercana al hostal.</p>
+                    <a href="https://maps.google.com/?q=Restaurante+Pacha+Hunta+Caraz+Peru" target="_blank" rel="noopener" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-[11px] py-2 px-3 rounded-xl flex items-center justify-center gap-1.5 w-full mt-auto">
                       <i class="fas fa-map-marked-alt text-amber-700"></i> Ver en Google Maps
                     </a>
                   </div>
                 </div>
 
                 <!-- 2. Plaza de Armas -->
-                <div class="bg-white rounded-2xl border border-slate-200 flex flex-col overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                <div class="bg-white rounded-2xl border border-slate-200 flex flex-col overflow-hidden shadow-sm">
                   <img src="plaza.png" alt="Plaza de Armas" class="w-full h-32 object-cover bg-slate-200 zoomable-img" onclick="openModal(this.src)" onerror="this.src='https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=500&q=80'">
                   <div class="p-4 flex flex-col flex-1">
                     <div class="flex items-center gap-2 mb-2">
                       <div class="w-7 h-7 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-xs shrink-0"><i class="fas fa-landmark"></i></div>
                       <h5 class="font-bold text-slate-900 text-xs">Plaza de Armas de Caraz</h5>
                     </div>
-                    <p class="text-[11px] text-slate-500 mb-4 flex-1">El corazón histórico de la ciudad. Ideal para pasear y disfrutar de los famosos helados artesanales.</p>
-                    <a href="https://maps.google.com/?q=Plaza+de+Armas+de+Caraz" target="_blank" rel="noopener" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-[11px] py-2 px-3 rounded-xl flex items-center justify-center gap-1.5 w-full shadow-sm transition-colors mt-auto">
+                    <p class="text-[11px] text-slate-500 mb-4 flex-1">Corazón histórico, ideal para pasear y disfrutar helados artesanales.</p>
+                    <a href="https://maps.google.com/?q=Plaza+de+Armas+de+Caraz" target="_blank" rel="noopener" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-[11px] py-2 px-3 rounded-xl flex items-center justify-center gap-1.5 w-full mt-auto">
                       <i class="fas fa-map-marked-alt text-amber-700"></i> Ver en Google Maps
                     </a>
                   </div>
                 </div>
 
                 <!-- 3. Caja Huancayo -->
-                <div class="bg-white rounded-2xl border border-slate-200 flex flex-col overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                <div class="bg-white rounded-2xl border border-slate-200 flex flex-col overflow-hidden shadow-sm">
                   <img src="dolares.png" alt="Caja Huancayo" class="w-full h-32 object-cover bg-slate-200 zoomable-img" onclick="openModal(this.src)" onerror="this.src='https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&w=500&q=80'">
                   <div class="p-4 flex flex-col flex-1">
                     <div class="flex items-center gap-2 mb-2">
                       <div class="w-7 h-7 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-xs shrink-0"><i class="fas fa-exchange-alt"></i></div>
-                      <h5 class="font-bold text-slate-900 text-xs">Caja Huancayo & Casa de Cambio</h5>
+                      <h5 class="font-bold text-slate-900 text-xs">Caja Huancayo & Cambio</h5>
                     </div>
-                    <p class="text-[11px] text-slate-500 mb-4 flex-1">Agencia Caja Huancayo Caraz. Ideal para giros, operaciones financieras, retiros y cambio de moneda en el centro.</p>
-                    <a href="https://maps.google.com/?q=Caja+Huancayo+Caraz" target="_blank" rel="noopener" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-[11px] py-2 px-3 rounded-xl flex items-center justify-center gap-1.5 w-full shadow-sm transition-colors mt-auto">
-                      <i class="fas fa-map-marked-alt text-amber-700"></i> Ver Ubicación en Caraz
+                    <p class="text-[11px] text-slate-500 mb-4 flex-1">Ideal para operaciones financieras y cambio de moneda en el centro.</p>
+                    <a href="https://maps.google.com/?q=Caja+Huancayo+Caraz" target="_blank" rel="noopener" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-[11px] py-2 px-3 rounded-xl flex items-center justify-center gap-1.5 w-full mt-auto">
+                      <i class="fas fa-map-marked-alt text-amber-700"></i> Ver Ubicación
                     </a>
                   </div>
                 </div>
-
               </div>
             </div>
 
@@ -514,7 +653,7 @@
         secretSection.scrollIntoView({ behavior: 'smooth' });
       } else {
         inputEl.classList.add('animate-shake', 'border-red-500');
-        setTimeout(() => inputEl.classList.remove('animate-shake', 'border-red-500'), 500);
+        setTimeout(() => inputEl.classList.add('animate-shake', 'border-red-500'), 500);
         alert('Contraseña incorrecta. Solicita la clave oficial en recepción.');
         inputEl.value = '';
       }
