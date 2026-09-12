@@ -34,7 +34,7 @@
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-500 selection:text-white pb-24 relative">
 
-  <!-- BOTÓN FLOTANTE DE WHATSAPP PROFESIONAL (SIEMPRE VISIBLE) -->
+  <!-- BOTÓN FLOTANTE DE WHATSAPP PROFESIONAL -->
   <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20quisiera%20hacer%20una%20consulta%20o%20reserva" target="_blank" rel="noopener" class="fixed bottom-20 right-5 z-50 bg-emerald-600 hover:bg-emerald-500 text-white p-3.5 sm:px-4 sm:py-3 rounded-full shadow-2xl flex items-center gap-2 transition-all transform hover:scale-105 group border-2 border-white">
     <i class="fab fa-whatsapp text-2xl animate-bounce"></i>
     <span class="text-xs font-bold hidden sm:inline" data-i18n="whatsappFloatText">¡Reserva o consúltanos!</span>
@@ -490,64 +490,162 @@
               </div>
             </div>
 
-            <!-- 1. COMODIDADES, HORARIOS Y NORMAS -->
-            <div class="space-y-4 pt-2">
-              <h4 class="font-extrabold text-sm text-slate-900 flex items-center gap-2 border-b border-slate-200 pb-2" data-i18n="secAmenitiesTitle">
-                <i class="fas fa-concierge-bell text-emerald-600"></i> Comodidades, Horarios y Normas del Hostal
-              </h4>
-              
+            <!-- SECCIÓN REDISEÑADA: COMODIDADES, NORMAS Y DESAYUNOS INTERACTIVOS (NEON UI) -->
+            <div class="space-y-6 pt-4">
+              <div class="text-center sm:text-left">
+                <h4 class="font-extrabold text-xl text-slate-900 tracking-tight flex items-center justify-center sm:justify-start gap-2.5">
+                  <span class="w-9 h-9 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center shadow-xs">
+                    <i class="fas fa-concierge-bell text-base"></i>
+                  </span>
+                  Comodidades, Horarios y Normas del Hostal
+                </h4>
+                <p class="text-xs text-slate-500 mt-1">Todo lo que necesitas saber para una estadía cómoda y sin preocupaciones en Caraz.</p>
+              </div>
+
+              <!-- TARJETAS PRINCIPALES (GRID MODERNO) -->
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-                <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-2 shadow-xs">
-                  <div class="font-bold text-slate-900 flex items-center gap-2 text-emerald-700"><i class="fas fa-clock"></i> <span data-i18n="ruleTimeTitle">Horarios de Ingreso / Salida</span></div>
-                  <p class="text-slate-600"><strong data-i18n="checkInLabel">Check-in:</strong> <span data-i18n="checkInText">A partir de las 11:00 AM (¡Sujeto a disponibilidad previa, puede ser mucho antes!).</span></p>
-                  <p class="text-slate-600"><strong data-i18n="checkOutLabel">Check-out:</strong> 10:30 AM.</p>
+                
+                <!-- Tarjeta 1: Horarios -->
+                <div class="group relative bg-gradient-to-br from-white to-emerald-50/40 p-5 rounded-2xl border border-emerald-100/80 shadow-md hover:shadow-xl transition-all duration-300 hover:border-emerald-300">
+                  <div class="absolute top-0 right-0 w-24 h-24 bg-emerald-400/5 rounded-full blur-2xl group-hover:bg-emerald-400/10 transition-all"></div>
+                  <div class="flex items-start gap-3.5 relative z-10">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-md shadow-emerald-600/20">
+                      <i class="fas fa-clock text-sm"></i>
+                    </div>
+                    <div class="space-y-1.5 flex-1">
+                      <h5 class="font-extrabold text-slate-900 text-sm">Horarios de Ingreso / Salida</h5>
+                      <p class="text-slate-600 leading-relaxed"><strong>Check-in:</strong> 11:00 AM <span class="text-emerald-700 font-medium">(¡Puede ser antes según disponibilidad!)</span></p>
+                      <p class="text-slate-600"><strong>Check-out:</strong> 10:30 AM</p>
+                    </div>
+                  </div>
                 </div>
-                <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-2 shadow-xs">
-                  <div class="font-bold text-slate-900 flex items-center gap-2 text-emerald-700"><i class="fas fa-suitcase-rolling"></i> <span data-i18n="ruleLuggageTitle">Equipaje y Terraza Gratis</span></div>
-                  <p class="text-slate-600" data-i18n="ruleLuggageText">Guardamos tu equipaje en recepción <strong>sin costo adicional</strong>. Puedes esperar y descansar en nuestra <strong>terraza</strong> hasta la salida de tu bus a Lima o Trujillo.</p>
+
+                <!-- Tarjeta 2: Equipaje y Terraza -->
+                <div class="group relative bg-gradient-to-br from-white to-sky-50/40 p-5 rounded-2xl border border-sky-100/80 shadow-md hover:shadow-xl transition-all duration-300 hover:border-sky-300">
+                  <div class="absolute top-0 right-0 w-24 h-24 bg-sky-400/5 rounded-full blur-2xl group-hover:bg-sky-400/10 transition-all"></div>
+                  <div class="flex items-start gap-3.5 relative z-10">
+                    <div class="w-10 h-10 rounded-xl bg-sky-600 text-white flex items-center justify-center shrink-0 shadow-md shadow-sky-600/20">
+                      <i class="fas fa-suitcase-rolling text-sm"></i>
+                    </div>
+                    <div class="space-y-1.5 flex-1">
+                      <h5 class="font-extrabold text-slate-900 text-sm">Equipaje y Terraza Gratis</h5>
+                      <p class="text-slate-600 leading-relaxed">Guardamos tus maletas sin costo en recepción. Descansa y espera tu bus cómodamente en nuestra <strong>terraza panorámica</strong>.</p>
+                    </div>
+                  </div>
                 </div>
-                <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-2 shadow-xs">
-                  <div class="font-bold text-slate-900 flex items-center gap-2 text-emerald-700"><i class="fas fa-car"></i> <span data-i18n="ruleParkingTitle">Cochera Privada</span></div>
-                  <p class="text-slate-600" data-i18n="ruleParkingText">Contamos con cochera <strong>completamente gratis</strong> y segura para nuestros huéspedes.</p>
+
+                <!-- Tarjeta 3: Cochera -->
+                <div class="group relative bg-gradient-to-br from-white to-amber-50/40 p-5 rounded-2xl border border-amber-100/80 shadow-md hover:shadow-xl transition-all duration-300 hover:border-amber-300">
+                  <div class="absolute top-0 right-0 w-24 h-24 bg-amber-400/5 rounded-full blur-2xl group-hover:bg-amber-400/10 transition-all"></div>
+                  <div class="flex items-start gap-3.5 relative z-10">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center shrink-0 shadow-md shadow-amber-500/20">
+                      <i class="fas fa-car text-sm"></i>
+                    </div>
+                    <div class="space-y-1.5 flex-1">
+                      <h5 class="font-extrabold text-slate-900 text-sm">Cochera Privada Segura</h5>
+                      <p class="text-slate-600 leading-relaxed">Estacionamiento interior <strong>completamente gratis</strong> y vigilado para vehículos y motocicletas de huéspedes.</p>
+                    </div>
+                  </div>
                 </div>
-                <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-2 shadow-xs">
-                  <div class="font-bold text-slate-900 flex items-center gap-2 text-emerald-700"><i class="fas fa-tshirt"></i> <span data-i18n="ruleLaundryTitle">Servicio de Lavandería</span></div>
-                  <p class="text-slate-600" data-i18n="ruleLaundryText">Lavado a agua fría y secado al sol natural. Costo: <strong>S/ 4.00 por kilo</strong> según peso.</p>
+
+                <!-- Tarjeta 4: Lavandería -->
+                <div class="group relative bg-gradient-to-br from-white to-teal-50/40 p-5 rounded-2xl border border-teal-100/80 shadow-md hover:shadow-xl transition-all duration-300 hover:border-teal-300">
+                  <div class="absolute top-0 right-0 w-24 h-24 bg-teal-400/5 rounded-full blur-2xl group-hover:bg-teal-400/10 transition-all"></div>
+                  <div class="flex items-start gap-3.5 relative z-10">
+                    <div class="w-10 h-10 rounded-xl bg-teal-600 text-white flex items-center justify-center shrink-0 shadow-md shadow-teal-600/20">
+                      <i class="fas fa-tshirt text-sm"></i>
+                    </div>
+                    <div class="space-y-1.5 flex-1">
+                      <h5 class="font-extrabold text-slate-900 text-sm">Servicio de Lavandería</h5>
+                      <p class="text-slate-600 leading-relaxed">Lavado a agua fría y secado natural al sol andino. Costo accesible de <strong>S/ 4.00 por kilo</strong>.</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- TARJETA DESTACADA: COCINA COMPARTIDA -->
+              <div class="bg-gradient-to-r from-slate-900 to-emerald-950 text-white p-5 sm:p-6 rounded-2xl shadow-lg border border-emerald-500/30 space-y-3 relative overflow-hidden">
+                <div class="absolute right-0 bottom-0 translate-x-4 translate-y-4 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 rounded-xl bg-emerald-500 text-slate-950 flex items-center justify-center font-bold">
+                    <i class="fas fa-utensils"></i>
+                  </div>
+                  <h5 class="font-extrabold text-sm sm:text-base text-emerald-300">Cocina Compartida, Nevera y Horno Pizzero</h5>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1 text-[11px] text-emerald-50">
+                  <div class="bg-white/10 p-3 rounded-xl border border-white/10">
+                    <strong class="text-amber-300 block mb-1">🍳 Cocina (3er Nivel)</strong>
+                    Funcional y equipada. Tienes <strong>aceite, sal y condimentos 100% gratis</strong> para cocinar lo que gustes.
+                  </div>
+                  <div class="bg-white/10 p-3 rounded-xl border border-white/10">
+                    <strong class="text-amber-300 block mb-1">❄️ Nevera & Microondas</strong>
+                    Espacio exclusivo reservado al final de la nevera en el 2do piso para guardar tus alimentos frescos.
+                  </div>
+                  <div class="bg-white/10 p-3 rounded-xl border border-white/10">
+                    <strong class="text-amber-300 block mb-1">🍕 Horno Pizzero</strong>
+                    Uso libre y sin costo adicional para hornear tus pizzas, empanadas o pollos al horno.
+                  </div>
                 </div>
               </div>
 
-              <!-- Cocina Compartida -->
-              <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-3 shadow-xs text-xs">
-                <div class="font-bold text-slate-900 flex items-center gap-2 text-emerald-700"><i class="fas fa-utensils"></i> <span data-i18n="kitchenTitle">Cocina Compartida, Nevera y Horno Pizzero</span></div>
-                <p class="text-slate-600" data-i18n="kitchenDesc">
-                  • <strong>Cocina en 3er Nivel:</strong> Básica pero funcional. Tienes <strong>aceite, condimentos, sal, etc., de manera gratuita</strong>. Solo haz tus compras en el minimarket local y cocina sin problemas.<br>
-                  • <strong>Nevera y Microondas (2do Piso):</strong> Puedes guardar queso, yogur o alimentos en el espacio reservado al final de la nevera.<br>
-                  • <strong>Horno Pizzero:</strong> Incluido sin costo para que hornees tus pizzas o pollos.
-                </p>
-              </div>
+              <!-- CARTA DE DESAYUNOS INTERACTIVA (ACORDEÓN) -->
+              <div class="bg-white rounded-2xl border border-slate-200 shadow-md overflow-hidden">
+                <button onclick="toggleBreakfastMenu()" class="w-full bg-gradient-to-r from-emerald-600 to-teal-700 text-white p-4 sm:p-5 flex justify-between items-center text-left transition-all hover:opacity-95 cursor-pointer">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center text-white text-base">
+                      <i class="fas fa-mug-hot"></i>
+                    </div>
+                    <div>
+                      <h5 class="font-extrabold text-sm sm:text-base">Carta de Desayunos Hostal Kactus</h5>
+                      <p class="text-[11px] text-emerald-100">Haz clic aquí para ver opciones, ingredientes y precios especiales</p>
+                    </div>
+                  </div>
+                  <div id="breakfastArrow" class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center transition-transform duration-300">
+                    <i class="fas fa-chevron-down text-xs"></i>
+                  </div>
+                </button>
 
-              <!-- Desayunos Kactus -->
-              <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-3 shadow-xs text-xs">
-                <div class="font-bold text-slate-900 flex items-center gap-2 text-emerald-700"><i class="fas fa-mug-hot"></i> <span data-i18n="breakfastMenuTitle">Carta de Desayunos Hostal Kactus</span></div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 flex justify-between items-center">
-                    <div><strong data-i18n="bf1Title">Desayuno Mochilero</strong><br><span class="text-[10px] text-slate-500" data-i18n="bf1Desc">2 panes con huevo y jamonada + café</span></div>
-                    <span class="font-black text-emerald-600 text-sm">S/ 5.00</span>
+                <div id="breakfastContent" class="hidden p-4 sm:p-6 bg-slate-50/70 border-t border-slate-200 space-y-4 transition-all">
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                    
+                    <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs flex justify-between items-center hover:border-emerald-400 transition-all">
+                      <div class="space-y-1">
+                        <strong class="text-slate-900 font-extrabold text-sm block">Desayuno Mochilero</strong>
+                        <p class="text-[11px] text-slate-500">2 panes con huevo y jamonada + café caliente.</p>
+                      </div>
+                      <span class="font-black text-emerald-600 text-base bg-emerald-50 px-3 py-1.5 rounded-lg border border-emerald-100 shrink-0">S/ 5.00</span>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs flex justify-between items-center hover:border-emerald-400 transition-all">
+                      <div class="space-y-1">
+                        <strong class="text-slate-900 font-extrabold text-sm block">Desayuno Continental</strong>
+                        <p class="text-[11px] text-slate-500">1 huevo frito, mantequilla, mermelada, jugo, café y 3 panes.</p>
+                      </div>
+                      <span class="font-black text-emerald-600 text-base bg-emerald-50 px-3 py-1.5 rounded-lg border border-emerald-100 shrink-0">S/ 10.00</span>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs flex justify-between items-center hover:border-emerald-400 transition-all">
+                      <div class="space-y-1">
+                        <strong class="text-slate-900 font-extrabold text-sm block">Desayuno Americano</strong>
+                        <p class="text-[11px] text-slate-500">3 panes, jugo, café y 3 huevos revueltos con jamonada.</p>
+                      </div>
+                      <span class="font-black text-emerald-600 text-base bg-emerald-50 px-3 py-1.5 rounded-lg border border-emerald-100 shrink-0">S/ 10.00</span>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs flex justify-between items-center hover:border-emerald-400 transition-all">
+                      <div class="space-y-1">
+                        <strong class="text-slate-900 font-extrabold text-sm block">Desayuno Royal</strong>
+                        <p class="text-[11px] text-slate-500">Lomo saltado (carne jugosa con cebolla/tomate, sin arroz), 3 panes, jugo y café.</p>
+                      </div>
+                      <span class="font-black text-emerald-600 text-base bg-emerald-50 px-3 py-1.5 rounded-lg border border-emerald-100 shrink-0">S/ 15.00</span>
+                    </div>
+
                   </div>
-                  <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 flex justify-between items-center">
-                    <div><strong data-i18n="bf2Title">Desayuno Continental</strong><br><span class="text-[10px] text-slate-500" data-i18n="bf2Desc">1 huevo frito, mantequilla, mermelada, jugo, café y 3 panes</span></div>
-                    <span class="font-black text-emerald-600 text-sm">S/ 10.00</span>
-                  </div>
-                  <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 flex justify-between items-center">
-                    <div><strong data-i18n="bf3Title">Desayuno Americano</strong><br><span class="text-[10px] text-slate-500" data-i18n="bf3Desc">3 panes, jugo, café y 3 huevos revueltos con jamonada</span></div>
-                    <span class="font-black text-emerald-600 text-sm">S/ 10.00</span>
-                  </div>
-                  <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 flex justify-between items-center">
-                    <div><strong data-i18n="bf4Title">Desayuno Royal</strong><br><span class="text-[10px] text-slate-500" data-i18n="bf4Desc">Lomo saltado (carne jugosa con cebolla y tomate, sin arroz), 3 panes, jugo y café</span></div>
-                    <span class="font-black text-emerald-600 text-sm">S/ 15.00</span>
-                  </div>
+                  <p class="text-[10px] text-slate-400 text-center pt-2">💡 *Los desayunos se pueden solicitar directamente en recepción la noche anterior.*</p>
                 </div>
               </div>
+
             </div>
 
             <!-- 2. GUÍA DE RECORRIDOS Y PRECIOS -->
@@ -701,10 +799,10 @@
     <img id="modalImg" src="" alt="Imagen Ampliada">
   </div>
 
-  <!-- LÓGICA JAVASCRIPT, CALCULADORA, IDIOMAS Y NOTIFICACIÓN A TELEGRAM ANTIBLOQUEO -->
+  <!-- LÓGICA JAVASCRIPT, TELEGRAM ANTIBLOQUEO Y APERTURA AUTOMÁTICA QR VIP -->
   <script>
-    // NOTIFICACIÓN AUTOMÁTICA A TELEGRAM (MÉTODO IMAGEN ANTIBLOQUEO CORS)
     document.addEventListener("DOMContentLoaded", function() {
+      // 1. Notificación a Telegram (Antibloqueo CORS con Imagen)
       const visitorKey = "kactus_visited_session";
       if (!sessionStorage.getItem(visitorKey)) {
         sessionStorage.setItem(visitorKey, "true");
@@ -724,11 +822,35 @@
 
         const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(mensaje)}&parse_mode=Markdown`;
 
-        // Método infalible con objeto Image para evitar bloqueo CORS del navegador
         const img = new Image();
         img.src = url;
       }
+
+      // 2. Apertura automática si entra por el QR especial de recepción (?acceso=vip)
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('acceso') === 'vip') {
+        const secretSection = document.getElementById('secretGuide');
+        if (secretSection) {
+          secretSection.classList.remove('hidden');
+          setTimeout(() => {
+            secretSection.scrollIntoView({ behavior: 'smooth' });
+          }, 500);
+        }
+      }
     });
+
+    // Función para desplegar la carta de desayunos
+    function toggleBreakfastMenu() {
+      const content = document.getElementById('breakfastContent');
+      const arrow = document.getElementById('breakfastArrow');
+      
+      content.classList.toggle('hidden');
+      if (!content.classList.contains('hidden')) {
+        arrow.style.transform = 'rotate(180deg)';
+      } else {
+        arrow.style.transform = 'rotate(0deg)';
+      }
+    }
 
     function openModal(imgSrc) {
       document.getElementById('modalImg').src = imgSrc;
@@ -936,35 +1058,13 @@
         sKitchen: "Cocina Compartida",
         sBreakfast: "Desayunos",
         titleGuideHeading: "Guía Turística de Caraz & Área Reservada",
-        gPubDesc: "Bienvenido a nuestra guía oficial. Explora los atractivos imperdibles de la Cordillera Blanca desde Hostal Kactus.",
+        gPubDesc: "Bienvenido à nuestra guía oficial. Explora los atractivos imperdibles de la Cordillera Blanca desde Hostal Kactus.",
         privSectionTitle: "🔐 Sección Reservada de Huéspedes (Wi-Fi, Normas, Comodidades y Tours)",
         gPrivDesc: "Ingresa la contraseña proporcionada en recepción para desbloquear toda la información detallada:",
         passPlaceholder: "Contraseña de huésped",
         btnUnlockText: "Desbloquear Sección",
         wifiStickySub: "Conexión de Alta Velocidad (Fija)",
         wifiPassLabel: "Contraseña:",
-        secAmenitiesTitle: "Comodidades, Horarios y Normas del Hostal",
-        ruleTimeTitle: "Horarios de Ingreso / Salida",
-        checkInLabel: "Check-in:",
-        checkInText: "A partir de las 11:00 AM (¡Sujeto a disponibilidad previa, puede ser mucho antes!).",
-        checkOutLabel: "Check-out:",
-        ruleLuggageTitle: "Equipaje y Terraza Gratis",
-        ruleLuggageText: "Guardamos tu equipaje en recepción <strong>sin costo adicional</strong>. Puedes esperar y descansar en nuestra <strong>terraza</strong> hasta la salida de tu bus a Lima o Trujillo.",
-        ruleParkingTitle: "Cochera Privada",
-        ruleParkingText: "Contamos con cochera <strong>completamente gratis</strong> y segura para nuestros huéspedes.",
-        ruleLaundryTitle: "Servicio de Lavandería",
-        ruleLaundryText: "Lavado a agua fría y secado al sol natural. Costo: <strong>S/ 4.00 por kilo</strong> según peso.",
-        kitchenTitle: "Cocina Compartida, Nevera y Horno Pizzero",
-        kitchenDesc: "• <strong>Cocina en 3er Nivel:</strong> Básica pero funcional. Tienes <strong>aceite, condimentos, sal, etc., de manera gratuita</strong>. Solo haz tus compras en el minimarket local y cocina sin problemas.<br>• <strong>Nevera y Microondas (2do Piso):</strong> Puedes guardar queso, yogur o alimentos en el espacio reservado al final de la nevera.<br>• <strong>Horno Pizzero:</strong> Incluido sin costo para que hornees tus pizzas o pollos.",
-        breakfastMenuTitle: "Carta de Desayunos Hostal Kactus",
-        bf1Title: "Desayuno Mochilero",
-        bf1Desc: "2 panes con huevo y jamonada + café",
-        bf2Title: "Desayuno Continental",
-        bf2Desc: "1 huevo frito, mantequilla, mermelada, jugo, café y 3 panes",
-        bf3Title: "Desayuno Americano",
-        bf3Desc: "3 panes, jugo, café y 3 huevos revueltos con jamonada",
-        bf4Title: "Desayuno Royal",
-        bf4Desc: "Lomo saltado (carne jugosa con cebolla y tomate, sin arroz), 3 panes, jugo y café",
         toursGuideTitle: "Guía Detallada de Recorridos, Costos y Opciones",
         tourParonTitle: "1. Laguna Parón (32 km desde Caraz)",
         badgeParon: "IMPERDIBLE",
@@ -1086,28 +1186,6 @@
         btnUnlockText: "Unlock Section",
         wifiStickySub: "High-Speed Connection (Fixed)",
         wifiPassLabel: "Password:",
-        secAmenitiesTitle: "Hostal Amenities, Hours & Rules",
-        ruleTimeTitle: "Check-in / Check-out Hours",
-        checkInLabel: "Check-in:",
-        checkInText: "From 11:00 AM (Subject to prior availability, it can be much earlier!).",
-        checkOutLabel: "Check-out:",
-        ruleLuggageTitle: "Free Luggage & Terrace",
-        ruleLuggageText: "We store your luggage at reception <strong>at no extra cost</strong>. You can rest on our <strong>terrace</strong> until your bus leaves for Lima or Trujillo.",
-        ruleParkingTitle: "Private Parking",
-        ruleParkingText: "We offer <strong>completely free</strong> and secure parking for our guests.",
-        ruleLaundryTitle: "Laundry Service",
-        ruleLaundryText: "Cold water wash and natural sun drying. Cost: <strong>S/ 4.00 per kilo</strong> by weight.",
-        kitchenTitle: "Shared Kitchen, Fridge & Pizza Oven",
-        kitchenDesc: "• <strong>3rd Floor Kitchen:</strong> Basic but functional. You have <strong>oil, condiments, salt, etc., completely free</strong>. Just do your shopping at the local minimarket and cook with ease.<br>• <strong>Fridge & Microwave (2nd Floor):</strong> You can store cheese, yogurt, or food in the reserved space at the bottom of the fridge.<br>• <strong>Pizza Oven:</strong> Included at no extra cost to bake your pizzas or chicken.",
-        breakfastMenuTitle: "Hostal Kactus Breakfast Menu",
-        bf1Title: "Backpacker Breakfast",
-        bf1Desc: "2 breads with egg and ham + coffee",
-        bf2Title: "Continental Breakfast",
-        bf2Desc: "1 fried egg, butter, jam, juice, coffee, and 3 breads",
-        bf3Title: "American Breakfast",
-        bf3Desc: "3 breads, juice, coffee, and 3 scrambled eggs with ham",
-        bf4Title: "Royal Breakfast",
-        bf4Desc: "Lomo saltado (juicy beef with onions and tomatoes, no rice), 3 breads, juice, and coffee",
         toursGuideTitle: "Detailed Tours, Costs & Options Guide",
         tourParonTitle: "1. Laguna Parón (32 km from Caraz)",
         badgeParon: "MUST-SEE",
@@ -1229,28 +1307,6 @@
         btnUnlockText: "Débloquer la section",
         wifiStickySub: "Connexion Haute Vitesse (Fixe)",
         wifiPassLabel: "Mot de passe :",
-        secAmenitiesTitle: "Commodités, Horaires et Règles de l'Hostal",
-        ruleTimeTitle: "Horaires d'Arrivée / Départ",
-        checkInLabel: "Arrivée :",
-        checkInText: "À partir de 11h00 (Selon disponibilité, possibilité d'arriver beaucoup plus tôt !).",
-        checkOutLabel: "Départ :",
-        ruleLuggageTitle: "Bagages et Terrasse Gratuits",
-        ruleLuggageText: "Nous gardons vos bagages à la réception <strong>sans frais supplémentaires</strong>. Vous pouvez vous reposer sur notre <strong>terrasse</strong> jusqu'au départ de votre bus.",
-        ruleParkingTitle: "Parking Privé",
-        ruleParkingText: "Nous disposons d'un parking <strong>entièrement gratuit</strong> et sécurisé pour nos clients.",
-        ruleLaundryTitle: "Service de Blanchisserie",
-        ruleLaundryText: "Lavage à l'eau froide et séchage naturel au soleil. Coût : <strong>S/ 4.00 par kilo</strong>.",
-        kitchenTitle: "Cuisine Partagée, Frigo et Four à Pizza",
-        kitchenDesc: "• <strong>Cuisine au 3e Niveau :</strong> Basique mais fonctionnelle. Vous avez <strong>huile, condiments, sel, etc., gratuitement</strong>. Faites vos courses au supérette local et cuisinez sans souci.<br>• <strong>Frigo & Micro-ondes (2e Étage) :</strong> Vous pouvez conserver fromage, yaourt ou aliments dans l'espace réservé au bas du frigo.<br>• <strong>Four à Pizza :</strong> Inclus sans frais pour cuire vos pizzas ou poulets.",
-        breakfastMenuTitle: "Carte des Petits Déjeuners Hostal Kactus",
-        bf1Title: "Petit Déjeuner Randonneur",
-        bf1Desc: "2 pains avec œuf et jambon + café",
-        bf2Title: "Petit Déjeuner Continental",
-        bf2Desc: "1 œuf au plat, beurre, confiture, jus, café et 3 pains",
-        bf3Title: "Petit Déjeuner Américain",
-        bf3Desc: "3 pains, jus, café et 3 œufs brouillés au jambon",
-        bf4Title: "Petit Déjeuner Royal",
-        bf4Desc: "Lomo saltado (viande juteuse avec oignons et tomates, sans riz), 3 pains, jus et café",
         toursGuideTitle: "Guide Détaillé des Excursions, Coûts et Options",
         tourParonTitle: "1. Laguna Parón (32 km de Caraz)",
         badgeParon: "À NE PAS MANQUER",
@@ -1287,7 +1343,7 @@
         dir2Desc: "Cœur historique, idéal pour flâner et déguster des glaces artisanales.",
         dir3Title: "Caja Huancayo & Change",
         dir3Desc: "Idéal pour les opérations financières et le change de devises au centre.",
-        dirLocation: "Voir l'emplacement",
+        btnLocation: "Voir l'emplacement",
         stkFrom: "À partir de",
         stkCalc: "Devis",
         stkBtn: "Réserver Maintenant"
@@ -1372,28 +1428,6 @@
         btnUnlockText: "Odemknout sekci",
         wifiStickySub: "Vysokorychlostní připojení (Pevné)",
         wifiPassLabel: "Heslo:",
-        secAmenitiesTitle: "Vybavení, hodiny a pravidla hostelu",
-        ruleTimeTitle: "Časy příjezdu / odjezdu",
-        checkInLabel: "Check-in:",
-        checkInText: "Od 11:00 (Dle předchozí dostupnosti to může být i mnohem dříve!).",
-        checkOutLabel: "Check-out:",
-        ruleLuggageTitle: "Zavazadla a terasa zdarma",
-        ruleLuggageText: "Vaše zavazadla uschováme na recepci <strong>bez dodatečných nákladů</strong>. Můžete odpočívat na naší <strong>terase</strong> až do odjezdu vašeho autobusu.",
-        ruleParkingTitle: "Soukromé parkoviště",
-        ruleParkingText: "Pro naše hosty máme <strong>zcela bezplatné</strong> a bezpečné parkování.",
-        ruleLaundryTitle: "Služba praní prádla",
-        ruleLaundryText: "Praní ve studené vodě a sušení na slunci. Cena: <strong>S/ 4.00 za kilo</strong>.",
-        kitchenTitle: "Sdílená kuchyň, lednice a pizza pec",
-        kitchenDesc: "• <strong>Kuchyň v 3. patře:</strong> Základní, ale funkční. Máte k dispozici <strong>olej, koření, sůl atd. zcela zdarma</strong>. Nakupte v místním minimarketu a vařte bez starostí.<br>• <strong>Lednice a mikrovlnka (2. patro):</strong> Sýr, jogurt nebo jídlo můžete uložit ve vyhrazeném prostoru dole v lednici.<br>• <strong>Pizza pec:</strong> V ceně pro pečení vašich pizz nebo kuřat.",
-        breakfastMenuTitle: "Snídaňové menu Hostal Kactus",
-        bf1Title: "Baťůžkářská snídaně",
-        bf1Desc: "2 chleby s vejcem a šunkou + káva",
-        bf2Title: "Kontinentální snídaně",
-        bf2Desc: "1 volské oko, máslo, džem, džus, káva a 3 chleby",
-        bf3Title: "Americká snídaně",
-        bf3Desc: "3 chleby, džus, káva a 3 míchaná vajíčka se šunkou",
-        bf4Title: "Royal snídaně",
-        bf4Desc: "Lomo saltado (šťavnaté maso s cibulí a rajčaty, bez rýže), 3 chleby, džus a káva",
         toursGuideTitle: "Podrobný průvodce výlety, náklady a možnostmi",
         tourParonTitle: "1. Laguna Parón (32 km z Carazu)",
         badgeParon: "MUSÍTE VIDĚT",
@@ -1430,7 +1464,7 @@
         dir2Desc: "Historické centrum, ideální pro procházky a řemeslnou zmrzlinu.",
         dir3Title: "Caja Huancayo & Směnárna",
         dir3Desc: "Ideální pro finanční operace a směnu peněz v centru.",
-        dirLocation: "Zobrazit polohu",
+        btnLocation: "Zobrazit polohu",
         stkFrom: "Od",
         stkCalc: "Kalkulace",
         stkBtn: "Rezervovat"
@@ -1515,28 +1549,6 @@
         btnUnlockText: "解锁专区",
         wifiStickySub: "高速无线网络 (固定常驻)",
         wifiPassLabel: "密码:",
-        secAmenitiesTitle: "酒店设施、时间与入住守则",
-        ruleTimeTitle: "入住与退房时间",
-        checkInLabel: "入住时间：",
-        checkInText: "上午 11:00 开始（视前台空房情况而定，可更早入住！）。",
-        checkOutLabel: "退房时间：",
-        ruleLuggageTitle: "免费行李寄存与观景露台",
-        ruleLuggageText: "前台提供<strong>免费行李寄存</strong>服务。您可以在我们的<strong>露台</strong>舒适休息，直到前往利马或特鲁希略的大巴发车。",
-        ruleParkingTitle: "私人停车场",
-        ruleParkingText: "为住客提供<strong>完全免费</strong>且安全的室内停车位。",
-        ruleLaundryTitle: "洗衣服务",
-        ruleLaundryText: "冷水洗涤自然阳光晾干。费用：<strong>按重量每公斤 S/ 4.00 索尔</strong>。",
-        kitchenTitle: "共享厨房、冰箱与披萨烤炉",
-        kitchenDesc: "• <strong>3楼厨房：</strong> 基础且实用。提供<strong>免费的油、调味料、盐等</strong>。只需在当地小超市采购，即可轻松烹饪。<br>• <strong>冰箱与微波炉（2楼）：</strong> 您可以将奶酪、酸奶或食物存放在冰箱底部的预留区域。<br>• <strong>披萨烤炉：</strong> 免费使用，供您烤制披萨或鸡肉。",
-        breakfastMenuTitle: "Hostal Kactus 早餐菜单",
-        bf1Title: "背包客早餐",
-        bf1Desc: "2个面包配鸡蛋和火腿 + 咖啡",
-        bf2Title: "欧式早餐",
-        bf2Desc: "1个煎蛋、黄油、果酱、果汁、咖啡和3个面包",
-        bf3Title: "美式早餐",
-        bf3Desc: "3个面包、果汁、咖啡和3个火腿炒蛋",
-        bf4Title: "皇家早餐",
-        bf4Desc: "Lomo saltado（多汁牛肉配洋葱和番茄，不含米饭），3个面包、果汁和咖啡",
         toursGuideTitle: "详细路线、费用与方案指南",
         tourParonTitle: "1. 帕龙湖 (距卡拉斯 32 公里)",
         badgeParon: "不容错过",
@@ -1658,28 +1670,6 @@
         btnUnlockText: "Desbloquear Seção",
         wifiStickySub: "Conexão de Alta Velocidade (Fixa)",
         wifiPassLabel: "Senha:",
-        secAmenitiesTitle: "Comodidades, Horários e Regras do Hostal",
-        ruleTimeTitle: "Horários de Check-in / Check-out",
-        checkInLabel: "Check-in:",
-        checkInText: "A partir das 11:00 AM (Sujeito a disponibilidade prévia, pode ser muito antes!).",
-        checkOutLabel: "Check-out:",
-        ruleLuggageTitle: "Bagagem e Terraço Grátis",
-        ruleLuggageText: "Guardamos sua bagagem na recepção <strong>sem custo adicional</strong>. Você pode descansar em nosso <strong>terraço</strong> até a saída do seu ônibus.",
-        ruleParkingTitle: "Estacionamento Privado",
-        ruleParkingText: "Contamos com estacionamento <strong>completamente gratuito</strong> e seguro para nossos hóspedes.",
-        ruleLaundryTitle: "Serviço de Lavanderia",
-        ruleLaundryText: "Lavagem a água fria e secagem natural ao sol. Custo: <strong>S/ 4.00 por quilo</strong>.",
-        kitchenTitle: "Cozinha Compartilhada, Geladeira e Forno de Pizza",
-        kitchenDesc: "• <strong>Cozinha no 3º Andar:</strong> Básica, mas funcional. Você tem <strong>óleo, temperos, sal, etc., de forma gratuita</strong>. Basta fazer suas compras no minimercado local e cozinhar sem preocupações.<br>• <strong>Geladeira e Micro-ondas (2º Andar):</strong> Você pode guardar queijo, iogurte ou alimentos no espaço reservado ao final da geladeira.<br>• <strong>Forno de Pizza:</strong> Incluído sem custo para você assar suas pizzas ou frangos.",
-        breakfastMenuTitle: "Cardápio de Cafés da Manhã Hostal Kactus",
-        bf1Title: "Café Mochileiro",
-        bf1Desc: "2 pães com ovo e presunto + café",
-        bf2Title: "Café Continental",
-        bf2Desc: "1 ovo frito, manteiga, geleia, suco, café e 3 pães",
-        bf3Title: "Café Americano",
-        bf3Desc: "3 pães, suco, café e 3 ovos mexidos com presunto",
-        bf4Title: "Café Royal",
-        bf4Desc: "Lomo saltado (carne suculenta com cebola e tomate, sem arroz), 3 pães, suco e café",
         toursGuideTitle: "Guia Detalhado de Passeios, Custos e Opções",
         tourParonTitle: "1. Laguna Parón (32 km de Caraz)",
         badgeParon: "IMPERDÍVEL",
@@ -1707,7 +1697,7 @@
         strawberriesDesc: "Pequena lagoa e experiência de caminhada rural. Lotações a partir de",
         strawberriesLink: "📍 este ponto",
         viewpointTitle: "Mirante Cerro San Juan (Caraz)",
-        viewpointDesc: "Caminhada leve bem em Caraz. Demora <strong>1 hora de subida e 1 de descida</strong>. Vista panorâmica impressionante de todo o vale de Caraz. Ideal para aclimatação!",
+        viewpointDesc: "Caminata leve bem em Caraz. Demora <strong>1 hora de subida e 1 de descida</strong>. Vista panorâmica impressionante de todo o vale de Caraz. Ideal para aclimatação!",
         directoryTitle: "📍 Diretório de Locais Chave em Caraz",
         dir1Title: "Restaurante Pacha Hunta",
         dir1Desc: "Comida regional tradicional muito próxima ao hostal.",
@@ -1801,28 +1791,6 @@
         btnUnlockText: "Bereich freischalten",
         wifiStickySub: "Highspeed-Verbindung (Fest)",
         wifiPassLabel: "Passwort:",
-        secAmenitiesTitle: "Hostal-Ausstattung, Zeiten & Regeln",
-        ruleTimeTitle: "Check-in / Check-out Zeiten",
-        checkInLabel: "Check-in:",
-        checkInText: "Ab 11:00 Uhr (Je nach Verfügbarkeit auch viel früher!).",
-        checkOutLabel: "Check-out:",
-        ruleLuggageTitle: "Kostenloses Gepäck & Terrasse",
-        ruleLuggageText: "Wir bewahren Ihr Gepäck an der Rezeption <strong>ohne Zusatzkosten</strong> auf. Sie können auf unserer <strong>Terrasse</strong> entspannen, bis Ihr Bus abfährt.",
-        ruleParkingTitle: "Privatparkplatz",
-        ruleParkingText: "Wir bieten einen <strong>vollkommen kostenlosen</strong> und sicheren Parkplatz für unsere Gäste.",
-        ruleLaundryTitle: "Wäscheservice",
-        ruleLaundryText: "Kaltwäsche und natürliche Sonnenschonung. Kosten: <strong>S/ 4.00 pro Kilo</strong>.",
-        kitchenTitle: "Gemeinschaftsküche, Kühlschrank & Pizzaofen",
-        kitchenDesc: "• <strong>Küche im 3. Stock:</strong> Einfach, aber funktional. Sie haben <strong>Öl, Gewürze, Salz usw. völlig kostenlos</strong>. Machen Sie einfach Ihre Einkäufe im Minimarkt und kochen Sie stressfrei.<br>• <strong>Kühlschrank & Mikrowelle (2. Stock):</strong> Sie können Käse, Joghurt oder Lebensmittel im reservierten Bereich unten im Kühlschrank aufbewahren.<br>• <strong>Pizzaofen:</strong> Kostenlos inklusive, um Ihre Pizzen oder Hähnchen zu backen.",
-        breakfastMenuTitle: "Hostal Kactus Frühstückskarte",
-        bf1Title: "Backpacker-Frühstück",
-        bf1Desc: "2 Brote mit Ei und Schinken + Kaffee",
-        bf2Title: "Kontinentales Frühstück",
-        bf2Desc: "1 Spiegelei, Butter, Marmelade, Saft, Kaffee und 3 Brote",
-        bf3Title: "Amerikanisches Frühstück",
-        bf3Desc: "3 Brote, Saft, Kaffee und 3 Rühreier mit Schinken",
-        bf4Title: "Royal-Frühstück",
-        bf4Desc: "Lomo saltado (saftiges Rindfleisch mit Zwiebeln und Tomaten, ohne Reis), 3 Brote, Saft und Kaffee",
         toursGuideTitle: "Detaillierter Touren-, Kosten- und Optionsführer",
         tourParonTitle: "1. Laguna Parón (32 km von Caraz)",
         badgeParon: "SEHENSWERT",
@@ -1944,28 +1912,6 @@
         btnUnlockText: "Разблокировать раздел",
         wifiStickySub: "Высокоскоростное подключение (Фиксированное)",
         wifiPassLabel: "Пароль:",
-        secAmenitiesTitle: "Удобства, часы работы и правила хостела",
-        ruleTimeTitle: "Время заезда и выезда",
-        checkInLabel: "Заезд:",
-        checkInText: "С 11:00 (при наличии мест можно значительно раньше!).",
-        checkOutLabel: "Выезд:",
-        ruleLuggageTitle: "Хранение багажа и терраса",
-        ruleLuggageText: "Мы храним ваш багаж на ресепшене <strong>без дополнительной платы</strong>. Вы можете отдохнуть на нашей <strong>террасе</strong> до отправления автобуса.",
-        ruleParkingTitle: "Частная парковка",
-        ruleParkingText: "У нас есть <strong>совершенно бесплатная</strong> и безопасная парковка для гостей.",
-        ruleLaundryTitle: "Услуги прачечной",
-        ruleLaundryText: "Стирка в холодной воде и сушка на солнце. Стоимость: <strong>S/ 4.00 за кг</strong>.",
-        kitchenTitle: "Общая кухня, холодильник и печь для пиццы",
-        kitchenDesc: "• <strong>Кухня на 3-м этаже:</strong> Простая, но функциональная. У вас есть <strong>масло, специи, соль и т. д. совершенно бесплатно</strong>. Купите продукты в местном магазинчике и готовьте без проблем.<br>• <strong>Холодильник и микроволновка (2-й этаж):</strong> Вы можете хранить сыр, йогурт или еду в специальной зоне внизу холодильника.<br>• <strong>Печь для пиццы:</strong> Бесплатно для выпечки пиццы или курицы.",
-        breakfastMenuTitle: "Меню завтраков Hostal Kactus",
-        bf1Title: "Завтрак бэкпекера",
-        bf1Desc: "2 хлеба с яйцом и ветчиной + кофе",
-        bf2Title: "Континентальный завтрак",
-        bf2Desc: "1 яичница, масло, джем, сок, кофе и 3 хлеба",
-        bf3Title: "Американский завтрак",
-        bf3Desc: "3 хлеба, сок, кофе и 3 омлета с ветчиной",
-        bf4Title: "Завтрак Royal",
-        bf4Desc: "Lomo saltado (сочное мясо с луком и томатами, без риса), 3 хлеба, сок и кофе",
         toursGuideTitle: "Подробный гид по маршрутам, ценам и опциям",
         tourParonTitle: "1. Лагуна Парон (32 km from Caraz)",
         badgeParon: "ОБЯЗАТЕЛЬНО К ПОСЕЩЕНИЮ",
@@ -1989,7 +1935,7 @@
         l69TourSelf: "Самостоятельно:",
         l69S1: "Автобус до Юнгая (S/ 3) и минивэн до Янамы (S/ 25 - S/ 30).",
         l69S2: "Билет в национальный парк: S/ 30.00.",
-        strawberriesTitle: "Клубничный маршрут (Пампакоча)",
+        strawberriesTitle: "Клубничный маршрут (Пампакоcha)",
         strawberriesDesc: "Небольшая лагуна и сельская прогулка. Маршрутки от",
         strawberriesLink: "📍 этого места",
         viewpointTitle: "Смотровая площадка Серро-Сан-Хуан (Карас)",
