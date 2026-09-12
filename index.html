@@ -44,7 +44,6 @@
       border: 1px solid #e2e8f0;
       border-radius: 1.25rem;
     }
-    /* Animación de giro 3D interactivo */
     .perspective-card {
       perspective: 1000px;
     }
@@ -83,7 +82,6 @@
 
       <!-- Controles Superiores Escritorio -->
       <div class="hidden md:flex items-center gap-3">
-        <!-- Acceso Código de Huésped -->
         <a href="#title-guide" class="flex items-center gap-1.5 text-xs font-bold text-slate-700 hover:text-emerald-600 bg-slate-100 px-3.5 py-2 rounded-xl transition-colors">
           <i class="fas fa-key text-emerald-600"></i> <span id="nav-code-text">Código de Huésped</span>
         </a>
@@ -307,7 +305,7 @@
       </div>
     </section>
 
-    <!-- SECCIÓN 2: ALQUILER DE EQUIPOS (Con tus imágenes exactas del repositorio) -->
+    <!-- SECCIÓN 2: ALQUILER DE EQUIPOS (Conectado con tus archivos exactos) -->
     <section>
       <div class="flex items-center justify-between mb-6">
         <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight" id="title-camping">Alquiler de Equipos de Camping y Trekking</h2>
@@ -325,39 +323,43 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
-          <!-- Item 1: Carpa 3 estaciones -->
+          
+          <!-- Item 1: Carpa 3 Estaciones -->
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3">
-            <div class="h-36 rounded-xl overflow-hidden bg-slate-200 flex items-center justify-center">
-              <img src="Carpa 3 estaciones.png" alt="Carpa 3 Estaciones" class="w-full h-full object-cover">
+            <div class="h-36 rounded-xl overflow-hidden bg-slate-200">
+              <img src="carpa3_estaciones.png" alt="Carpa 3 Estaciones" class="w-full h-full object-cover">
             </div>
             <div>
               <div class="font-bold text-slate-900 text-xs flex items-center gap-1.5"><i class="fas fa-campground text-emerald-600"></i> <span id="gear-1-name">Carpa 3 Estaciones</span></div>
               <p class="text-[11px] text-slate-500 mt-0.5" id="gear-1-desc">Carpa resistente para alta montaña.</p>
             </div>
           </div>
+
           <!-- Item 2: Saco de Dormir Pluma -->
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3">
-            <div class="h-36 rounded-xl overflow-hidden bg-slate-200 flex items-center justify-center">
-              <img src="saco de dormir .png" alt="Saco de Dormir Pluma" class="w-full h-full object-cover">
+            <div class="h-36 rounded-xl overflow-hidden bg-slate-200">
+              <img src="saco_de_dormir.png" alt="Saco de Dormir Pluma" class="w-full h-full object-cover" onerror="this.src='saco de dormir .png'">
             </div>
             <div>
               <div class="font-bold text-slate-900 text-xs flex items-center gap-1.5"><i class="fas fa-bed text-emerald-600"></i> <span id="gear-2-name">Saco de Dormir Pluma</span></div>
               <p class="text-[11px] text-slate-500 mt-0.5" id="gear-2-desc">Pluma de alta resistencia (-5°C a -20°C).</p>
             </div>
           </div>
+
           <!-- Item 3: Bastones de Trekking -->
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3">
-            <div class="h-36 rounded-xl overflow-hidden bg-slate-200 flex items-center justify-center">
-              <img src="Bastones treken.png" alt="Bastones de Trekking" class="w-full h-full object-cover">
+            <div class="h-36 rounded-xl overflow-hidden bg-slate-200">
+              <img src="bastones_treken.png" alt="Bastones de Trekking" class="w-full h-full object-cover">
             </div>
             <div>
               <div class="font-bold text-slate-900 text-xs flex items-center gap-1.5"><i class="fas fa-hiking text-emerald-600"></i> <span id="gear-3-name">Bastones de Trekking</span></div>
               <p class="text-[11px] text-slate-500 mt-0.5" id="gear-3-desc">Par de bastones ergonómicos.</p>
             </div>
           </div>
+
           <!-- Item 4: Binoculares -->
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3">
-            <div class="h-36 rounded-xl overflow-hidden bg-slate-200 flex items-center justify-center">
+            <div class="h-36 rounded-xl overflow-hidden bg-slate-200">
               <img src="vinoculares.png" alt="Largavistas / Binoculares" class="w-full h-full object-cover">
             </div>
             <div>
@@ -365,19 +367,21 @@
               <p class="text-[11px] text-slate-500 mt-0.5" id="gear-4-desc">Observación de nevados y paisajes.</p>
             </div>
           </div>
+
           <!-- Item 5: Cocina de Campaña -->
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3">
-            <div class="h-36 rounded-xl overflow-hidden bg-slate-200 flex items-center justify-center">
-              <img src="cocina y ollas.png" alt="Cocina de Campaña" class="w-full h-full object-cover">
+            <div class="h-36 rounded-xl overflow-hidden bg-slate-200">
+              <img src="cocina_y_ollas.png" alt="Cocina de Campaña" class="w-full h-full object-cover">
             </div>
             <div>
               <div class="font-bold text-slate-900 text-xs flex items-center gap-1.5"><i class="fas fa-fire-burner text-emerald-600"></i> <span id="gear-5-name">Cocina de Campaña</span></div>
               <p class="text-[11px] text-slate-500 mt-0.5" id="gear-5-desc">Incluye utensilios de cocina.</p>
             </div>
           </div>
+
           <!-- Item 6: Balón de Gas Nuevo -->
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3">
-            <div class="h-36 rounded-xl overflow-hidden bg-slate-200 flex items-center justify-center">
+            <div class="h-36 rounded-xl overflow-hidden bg-slate-200">
               <img src="gas.png" alt="Balón de Gas Nuevo" class="w-full h-full object-cover">
             </div>
             <div>
@@ -385,6 +389,7 @@
               <p class="text-[11px] text-slate-500 mt-0.5" id="gear-6-desc">Balón sellado para montaña.</p>
             </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -518,13 +523,12 @@
               </div>
             </div>
 
-            <!-- SECCIÓN INTERACTIVA: DIRECTORIO DE CARAZ (TARJETAS GIRATORIAS 3D) -->
+            <!-- DIRECTORIO INTERACTIVO -->
             <div class="space-y-4">
               <h4 class="font-extrabold text-sm text-slate-900" id="directory-title">📍 Directorio Interactivo de Caraz (Haz clic para girar la tarjeta)</h4>
               
               <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 
-                <!-- Item 1: Pacha Hunta -->
                 <div class="perspective-card h-48 cursor-pointer" onclick="flipCard(this)">
                   <div class="card-inner relative w-full h-full text-center shadow-sm rounded-xl">
                     <div class="card-front absolute inset-0 bg-white border border-slate-200 rounded-xl p-4 flex flex-col items-center justify-center space-y-2">
@@ -540,7 +544,6 @@
                   </div>
                 </div>
 
-                <!-- Item 2: Plaza de Armas -->
                 <div class="perspective-card h-48 cursor-pointer" onclick="flipCard(this)">
                   <div class="card-inner relative w-full h-full text-center shadow-sm rounded-xl">
                     <div class="card-front absolute inset-0 bg-white border border-slate-200 rounded-xl p-4 flex flex-col items-center justify-center space-y-2">
@@ -551,12 +554,11 @@
                     </div>
                     <div class="card-back absolute inset-0 bg-emerald-800 text-white rounded-xl p-4 flex flex-col items-center justify-center space-y-2 text-center">
                       <h5 class="font-extrabold text-amber-300 text-xs" id="dir-2-title-b">Plaza de Armas</h5>
-                      <p class="text-[11px] text-emerald-50" id="dir-2-desc">El corazón de la ciudad. Ideal para pasear, tomar fotos de las palmeras, disfrutar helados artesanales y encontrar variedad de restaurantes.</p>
+                      <p class="text-[11px] text-emerald-50" id="dir-2-desc">El corazón de la ciudad. Ideal para pasear, tomar fotos de las palmeras y disfrutar helados artesanales.</p>
                     </div>
                   </div>
                 </div>
 
-                <!-- Item 3: Farmacias (Inkafarma y MiFarma) -->
                 <div class="perspective-card h-48 cursor-pointer" onclick="flipCard(this)">
                   <div class="card-inner relative w-full h-full text-center shadow-sm rounded-xl">
                     <div class="card-front absolute inset-0 bg-white border border-slate-200 rounded-xl p-4 flex flex-col items-center justify-center space-y-2">
@@ -567,12 +569,11 @@
                     </div>
                     <div class="card-back absolute inset-0 bg-emerald-800 text-white rounded-xl p-4 flex flex-col items-center justify-center space-y-2 text-center">
                       <h5 class="font-extrabold text-amber-300 text-xs" id="dir-3-title-b">Farmacias Locales</h5>
-                      <p class="text-[11px] text-emerald-50" id="dir-3-desc">Ubicadas cerca a la Plaza de Armas de Caraz. Encuentra cadenas confiables como <strong>Inkafarma</strong> y <strong>MiFarma</strong> abiertas en horario comercial.</p>
+                      <p class="text-[11px] text-emerald-50" id="dir-3-desc">Cadenas confiables como <strong>Inkafarma</strong> y <strong>MiFarma</strong> abiertas en horario comercial.</p>
                     </div>
                   </div>
                 </div>
 
-                <!-- Item 4: Grifos (Grifo El Arco) -->
                 <div class="perspective-card h-48 cursor-pointer" onclick="flipCard(this)">
                   <div class="card-inner relative w-full h-full text-center shadow-sm rounded-xl">
                     <div class="card-front absolute inset-0 bg-white border border-slate-200 rounded-xl p-4 flex flex-col items-center justify-center space-y-2">
@@ -583,12 +584,11 @@
                     </div>
                     <div class="card-back absolute inset-0 bg-emerald-800 text-white rounded-xl p-4 flex flex-col items-center justify-center space-y-2 text-center">
                       <h5 class="font-extrabold text-amber-300 text-xs" id="dir-4-title-b">Grifo El Arco</h5>
-                      <p class="text-[11px] text-emerald-50" id="dir-4-desc">Ubicado en la salida norte de Caraz. Abastecimiento seguro de combustible para vehículos y viajeros en ruta.</p>
+                      <p class="text-[11px] text-emerald-50" id="dir-4-desc">Ubicado en la salida norte de Caraz. Abastecimiento seguro de combustible.</p>
                     </div>
                   </div>
                 </div>
 
-                <!-- Item 5: Comisaría de Caraz -->
                 <div class="perspective-card h-48 cursor-pointer" onclick="flipCard(this)">
                   <div class="card-inner relative w-full h-full text-center shadow-sm rounded-xl">
                     <div class="card-front absolute inset-0 bg-white border border-slate-200 rounded-xl p-4 flex flex-col items-center justify-center space-y-2">
@@ -599,12 +599,11 @@
                     </div>
                     <div class="card-back absolute inset-0 bg-emerald-800 text-white rounded-xl p-4 flex flex-col items-center justify-center space-y-2 text-center">
                       <h5 class="font-extrabold text-amber-300 text-xs" id="dir-5-title-b">Comisaría de Caraz</h5>
-                      <p class="text-[11px] text-emerald-50" id="dir-5-desc">📍 Ubicación céntrica en Caraz.<br>📞 Teléfono de emergencia local disponible o acude directo a la recepción de Kactus para apoyo inmediato.</p>
+                      <p class="text-[11px] text-emerald-50" id="dir-5-desc">📍 Ubicación céntrica en Caraz.<br>📞 Acude directo a la recepción de Kactus para apoyo inmediato.</p>
                     </div>
                   </div>
                 </div>
 
-                <!-- Item 6: Hospital de Caraz -->
                 <div class="perspective-card h-48 cursor-pointer" onclick="flipCard(this)">
                   <div class="card-inner relative w-full h-full text-center shadow-sm rounded-xl">
                     <div class="card-front absolute inset-0 bg-white border border-slate-200 rounded-xl p-4 flex flex-col items-center justify-center space-y-2">
@@ -615,7 +614,7 @@
                     </div>
                     <div class="card-back absolute inset-0 bg-emerald-800 text-white rounded-xl p-4 flex flex-col items-center justify-center space-y-2 text-center">
                       <h5 class="font-extrabold text-amber-300 text-xs" id="dir-6-title-b">Hospital de Caraz</h5>
-                      <p class="text-[11px] text-emerald-50" id="dir-6-desc">📍 Atenciones médicas y emergencias 24/7.<br>📞 Ante cualquier malestar de altura o salud, avísanos en recepción de inmediato.</p>
+                      <p class="text-[11px] text-emerald-50" id="dir-6-desc">📍 Atenciones médicas y emergencias 24/7.<br>📞 Ante cualquier malestar de altura o salud, avísanos en recepción.</p>
                     </div>
                   </div>
                 </div>
@@ -929,7 +928,7 @@
         sBath: "Banheiro Privativo", sWater: "Água Quente 24/7", sTv: "Smart TV", sWifi: "Wi-Fi Grátis",
         sParking: "Estacionamento Grátis", sLuggage: "Guarda-volumes", sKitchen: "Cozinha Compartilhada", sBreakfast: "Café da Manhã",
         titleGuide: "Guia Turístico de Caraz & Área Reservada",
-        gPubDesc: "📍 <strong>Lagoa Parón:</strong> A maior lagoa turquesa da Cordillera Blanca, a 32 km de Caraz. Vistas esplêndidas dos nevados Artesonraju, Pirâmide de Garcilaso e Huandoy.<br><br>📍 <strong>Lagoas Llanganuco:</strong> Incríveis espelhos d'água turquesa cercados por florestas de quenuales, sob a sombra do Huascarán.<br><br>📍 <strong>Lagoa 69:</strong> Um dos trekkings de alta montanha mais famosos do mundo.",
+        gPubDesc: "📍 <strong>Lagoa Parón:</strong> A maior lagoa turquesa da Cordillera Blanca, a 32 km de Caraz. Vistas esplêndidas dos nevados Artesonraju, Pirâmide de Garcilaso e Huandoy.<br><br>📍 <strong>Lagoas Llanganuco:</strong> Incríveis espelhos d'água turquesa cercados por quenuales.<br><br>📍 <strong>Lagoa 69:</strong> Um dos trekkings de alta montanha mais famosos do mundo.",
         privSectionTitle: "🔐 Seção Reservada de Rotas e Serviços para Hóspedes",
         gPrivDesc: "Insira a chave fornecida na recepção para ver os preços protegidos e guias de emergência:",
         btnUnlockText: "Desbloquear Seção", passPlaceholder: "Senha de hóspede",
@@ -959,11 +958,11 @@
         l69IndP4: "• 4. Retorno: Pegue qualquer veículo de descida (S/ 25 - S/ 30) de volta a Yungay e depois a Caraz.",
         directoryTitle: "📍 Diretório Interativo de Caraz (Clique em qualquer cartão para virá-lo)",
         dir1Title: "Restaurante Pacha Hunta", dir1Sub: "Comida regional e típica", dir1Desc: "Muito próximo ao hostal e altamente recomendado por seu tempero tradicional de Caraz.",
-        dir2Title: "Praça de Armas de Caraz", dir2Sub: "Centro histórico e fotos", dir2Desc: "O coração da cidade. Ideal para passear, tirar fotos das palmeiras, desfrutar de sorvetes artesanais e encontrar ótimos restaurantes.",
-        dir3Title: "Farmácias Próximas", dir3Sub: "Inkafarma & MiFarma", dir3Desc: "Localizadas perto da Praça de Armas de Caraz. Encontre redes confiáveis como <strong>Inkafarma</strong> e <strong>MiFarma</strong> abertas no horário comercial.",
-        dir4Title: "Postos de Gasolina", dir4Sub: "Posto El Arco e outros", dir4Desc: "Localizado na saída norte de Caraz. Abastecimento seguro de combustível para veículos e viajantes na rota.",
-        dir5Title: "Delegacia de Caraz", dir5Sub: "Segurança e assistência", dir5Desc: "📍 Localização central em Caraz.<br>📞 Telefone de emergência local disponível ou procure a recepção do Kactus para apoio imediato.",
-        dir6Title: "Hospital de Apoio Caraz", dir6Sub: "Saúde e emergências", dir6Desc: "📍 Atendimento médico e emergências 24/7.<br>📞 Para qualquer mal-estar de altitude ou saúde, avise-nos na recepção imediatamente.",
+        dir2Title: "Praça de Armas de Caraz", dir2Sub: "Centro histórico e fotos", dir2Desc: "O coração da cidade. Ideal para passear, tirar fotos das palmeiras e desfrutar de sorvetes artesanais.",
+        dir3Title: "Farmácias Próximas", dir3Sub: "Inkafarma & MiFarma", dir3Desc: "Redes confiáveis como <strong>Inkafarma</strong> e <strong>MiFarma</strong> abertas no horário comercial.",
+        dir4Title: "Postos de Gasolina", dir4Sub: "Posto El Arco e outros", dir4Desc: "Localizado na saída norte de Caraz. Abastecimento seguro de combustível.",
+        dir5Title: "Delegacia de Caraz", dir5Sub: "Segurança e assistência", dir5Desc: "📍 Localização central em Caraz.<br>📞 Procure a recepção do Kactus para apoio imediato.",
+        dir6Title: "Hospital de Apoio Caraz", dir6Sub: "Saúde e emergências", dir6Desc: "📍 Atendimento médico e emergências 24/7.<br>📞 Para qualquer mal-estar, avise-nos na recepção.",
         flipHint1: "👆 Clique para virar", flipHint2: "👆 Clique para virar", flipHint3: "👆 Clique para virar", flipHint4: "👆 Clique para virar", flipHint5: "👆 Clique para virar", flipHint6: "👆 Clique para virar",
         stkFrom: "A partir de", stkBtn: "Reservar Agora"
       },
@@ -1009,7 +1008,7 @@
         sBath: "Salle de Bain Privée", sWater: "Eau Chaude 24/7", sTv: "Smart TV", sWifi: "Wi-Fi Gratuit",
         sParking: "Parking Gratuit", sLuggage: "Consigne Bagages", sKitchen: "Cuisine Partagée", sBreakfast: "Petit-Déjeuner",
         titleGuide: "Guide Touristique de Caraz & Espace Réservé",
-        gPubDesc: "📍 <strong>Lac Parón :</strong> Le plus grand lac turquoise de la Cordillère Blanche, situé à 32 km de Caraz.<br><br>📍 <strong>Lacs Llanganuco :</strong> Superbes miroirs d'eau turquoise entourés de forêts de quenuales.<br><br>📍 <strong>Lac 69 :</strong> L'un des treks de haute montagne les plus célèbres au monde.",
+        gPubDesc: "📍 <strong>Lac Parón :</strong> Le plus grand lac turquoise de la Cordillère Blanche, situé à 32 km de Caraz.<br><br>📍 <strong>Lacs Llanganuco :</strong> Superbes miroirs d'eau turquoise.<br><br>📍 <strong>Lac 69 :</strong> L'un des treks de haute montagne les plus célèbres au monde.",
         privSectionTitle: "🔐 Espace Réservé des Routes et Services pour Clients",
         gPrivDesc: "Entrez le mot de passe fourni à la réception pour voir les prix protégés :",
         btnUnlockText: "Déverrouiller", passPlaceholder: "Mot de passe client",
@@ -1017,34 +1016,34 @@
         pGear1: "Tente 3 Saisons", pGear2: "Sac de Couchage Duvet (-5°C à -20°C)", pGear3: "Bâtons de Trekking", pGear4: "Jumelles", pGear5: "Réchaud de Campagne avec ustensiles", pGear6: "Cartouche de Gaz Neuve (Scellée)",
         privParonTitle: "⛰️ Options, Coûts et Temps pour le Lac Parón",
         paronKactusTitle: "Départ Privé Hostal Kactus",
-        paronKactusC: "• <strong>Coût :</strong> S/ 40,00 par personne (Minimum 4 passagers ou en couvrant les sièges vides).",
+        paronKactusC: "• <strong>Coût :</strong> S/ 40,00 par personne (Minimum 4 passagers).",
         paronKactusV: "• <strong>Avantage exclusif :</strong> 2 heures d'attente complète au lac pour les randonnées et photos sans stress.",
         paronKactusT: "• <strong>Entrée du parc :</strong> S/ 5,00 par personne.",
         paronIndTitle: "Option Indépendante (Particulier)",
         paronIndStopLbl: "Arrêt recommandé",
         paronIndMapLink: "Voir l'Arrêt Santa Cruz sur Google Maps",
         paronIndTime: "• <strong>Recommandation :</strong> Idéal d'arriver entre 6h30 et 8h00 pour se joindre à d'autres voyageurs.",
-        paronIndCost: "• <strong>Coût approx :</strong> S/ 40,00 à S/ 50,00 par passager (inclut l'attente de 2h). <em>Note : Non garanti par l'hostal.</em>",
+        paronIndCost: "• <strong>Coût approx :</strong> S/ 40,00 à S/ 50,00 par passager (inclut l'attente de 2h).",
         paronIndTicket: "• <strong>Entrée du parc :</strong> S/ 5,00 par personne.",
         privL69Title: "🏔️ Options & Logistique pour le Lac 69",
-        l69Warn: "⚠️ <strong>Avis Important :</strong> Les autorités exigent un guide touristique obligatoire pour accéder au sentier.",
+        l69Warn: "⚠️ <strong>Avis Important :</strong> Les autorités exigent un guide touristique obligatoire.",
         l69KactusTitle: "Via Tour Huaraz (Organisé par Kactus)",
-        l69KactusP1: "• <strong>Point de rendez-vous :</strong> Prendre un transport de Caraz vers Yungay (S/ 3,00 aller-retour). Le tour se prend à Yungay, au coin du commissariat.",
+        l69KactusP1: "• <strong>Point de rendez-vous :</strong> Prendre un transport de Caraz vers Yungay (S/ 3,00).",
         l69KactusP2: "• <strong>Heure de départ :</strong> 6h00 (Retour à Caraz env. 18h00 - Full Day).",
-        l69KactusP3: "• <strong>Coûts approx :</strong> Tour guidé S/ 60 + Billet Parc National S/ 30 + Trajets S/ 6. Total env : <strong>S/ 96,00 par personne</strong>.",
+        l69KactusP3: "• <strong>Coûts approx :</strong> Tour guidé S/ 60 + Billet Parc S/ 30 + Trajets S/ 6. Total env : <strong>S/ 96,00 par personne</strong>.",
         l69IndTitle: "Option Indépendante",
-        l69IndP1: "• 1. Voyagez de Caraz à Yungay (S/ 3,00 trajet).",
-        l69IndP2: "• 2. Prenez un collectif de Yungay vers Yanama (env. S/ 30,00) en descendant au début du sentier.",
-        l69IndP3: "• 3. Payez votre entrée de S/ 30,00 et gérez votre accès (note : l'exigence de guide rend cette option complexe).",
-        l69IndP4: "• 4. Retour : Prenez n'importe quel véhicule en descente (S/ 25 - S/ 30) vers Yungay puis Caraz.",
-        directoryTitle: "📍 Annuaire Interactif de Caraz (Cliquez sur une carte pour la retourner)",
-        dir1Title: "Restaurant Pacha Hunta", dir1Sub: "Cuisine régionale et typique", dir1Desc: "Très proche de l'hostal et hautement recommandé pour sa cuisine traditionnelle de Caraz.",
-        dir2Title: "Place d'Armes de Caraz", dir2Sub: "Centre historique et photos", dir2Desc: "Le cœur de la ville. Idéal pour se promener, photographier les palmiers, déguster des glaces artisanales et trouver d'excellents restaurants.",
-        dir3Title: "Pharmacies Proches", dir3Sub: "Inkafarma & MiFarma", dir3Desc: "Situées près de la Place d'Armes. Retrouvez des chaînes de confiance comme <strong>Inkafarma</strong> et <strong>MiFarma</strong>.",
-        dir4Title: "Stations-Service", dir4Sub: "Station El Arco et autres", dir4Desc: "Située à la sortie nord de Caraz. Approvisionnement sûr en carburant pour véhicules et voyageurs.",
-        dir5Title: "Commissariat de Caraz", dir5Sub: "Sécurité et assistance", dir5Desc: "📍 Emplacement central à Caraz.<br>📞 Téléphone d'urgence disponible ou contactez directement la réception de Kactus.",
-        dir6Title: "Hôpital de Caraz", dir6Sub: "Santé et urgences", dir6Desc: "📍 Soins médicaux et urgences 24/7.<br>📞 Pour tout mal des montagnes ou problème de santé, prévenez immédiatement la réception.",
-        flipHint1: "👆 Cliquez pour retourner", flipHint2: "👆 Cliquez pour retourner", flipHint3: "👆 Cliquez pour retourner", flipHint4: "👆 Cliquez pour retourner", flipHint5: "👆 Cliquez pour retourner", flipHint6: "👆 Cliquez pour retourner",
+        l69IndP1: "• 1. Voyagez de Caraz à Yungay (S/ 3,00).",
+        l69IndP2: "• 2. Prenez un collectif vers Yanama (env. S/ 30,00).",
+        l69IndP3: "• 3. Payez votre entrée de S/ 30,00.",
+        l69IndP4: "• 4. Retour : Prenez un véhicule en descente vers Yungay et Caraz.",
+        directoryTitle: "📍 Annuaire Interactif de Caraz (Cliquez sur une carte)",
+        dir1Title: "Restaurant Pacha Hunta", dir1Sub: "Cuisine régionale", dir1Desc: "Très proche de l'hostal et hautement recommandé pour sa cuisine traditionnelle.",
+        dir2Title: "Place d'Armes de Caraz", dir2Sub: "Centre historique", dir2Desc: "Le cœur de la ville. Idéal pour se promener et déguster des glaces.",
+        dir3Title: "Pharmacies Proches", dir3Sub: "Inkafarma & MiFarma", dir3Desc: "Chaînes de confiance ouvertes en journée.",
+        dir4Title: "Stations-Service", dir4Sub: "Station El Arco", dir4Desc: "Approvisionnement sûr en carburant à la sortie nord.",
+        dir5Title: "Commissariat de Caraz", dir5Sub: "Sécurité", dir5Desc: "📍 Emplacement central à Caraz.<br>📞 Contactez la réception pour appui.",
+        dir6Title: "Hôpital de Caraz", dir6Sub: "Urgences", dir6Desc: "📍 Soins médicaux 24/7.<br>📞 Prévenez la réception en cas de besoin.",
+        flipHint1: "👆 Cliquez", flipHint2: "👆 Cliquez", flipHint3: "👆 Cliquez", flipHint4: "👆 Cliquez", flipHint5: "👆 Cliquez", flipHint6: "👆 Cliquez",
         stkFrom: "À partir de", stkBtn: "Réserver"
       },
       de: {
@@ -1052,12 +1051,12 @@
         navCodeText: "Gästecode",
         navCodeTextM: "Gästecode",
         langSelectLabelM: "Sprache auswählen",
-        heroTitle: "Ihr komfortabler, sicherer und vollständiger Aufenthalt in <span class='text-amber-300'>Caraz, Peru</span>",
-        heroSubtitle: "Genießen Sie gemütliche Zimmer, 24/7 Warmwasser und die beste Lage für Ihre Abenteuer in der Cordillera Blanca.",
+        heroTitle: "Ihr komfortabler, sicherer Aufenthalt in <span class='text-amber-300'>Caraz, Peru</span>",
+        heroSubtitle: "Gemütliche Zimmer, 24/7 Warmwasser und die beste Lage für Abenteuer in der Cordillera Blanca.",
         lblLocationTitle: "Standort",
         lblLocationVal: "Caraz, Peru",
-        lblCheckin: "Anreisedatum",
-        lblCheckout: "Abreisedatum",
+        lblCheckin: "Anreise",
+        lblCheckout: "Abreise",
         btnSearchPrices: "Verfügbarkeit prüfen",
         badgeFeat1: "Direktbuchung ohne Mittelsmänner",
         badgeFeat2: "Persönliche Betreuung 24/7",
@@ -1066,7 +1065,7 @@
         roomsBadge: "Bestpreisgarantie bei Direktbuchung",
         room1Tag: "WIRTSCHAFTLICH & KOMFORT",
         bannerCodeTitle: "Haben Sie Ihren Buchungscode?",
-        bannerCodeDesc: "Geben Sie hier Ihren Code von der Unterkunft ein, um geschützte Preise, Wegbeschreibungen und mehr zu finden.",
+        bannerCodeDesc: "Geben Sie hier Ihren Code ein, um geschützte Preise und Wegbeschreibungen zu finden.",
         bannerCodeBtn: "Zum reservierten Bereich",
         room1Title: "Wirtschaftliches Doppelzimmer",
         room1Desc: "Gemütliches, kleines Zimmer mit Doppelbett. Ideal für Paare oder Alleinreisende.",
@@ -1074,298 +1073,298 @@
         btnRes: "Über WhatsApp buchen",
         room2Tag: "SEHR BELIEBT",
         room2Title: "Mittleres Doppelzimmer",
-        room2Desc: "Geräumiges Zimmer mit Doppelbett, viel Tageslicht und Kleiderschrank.",
+        room2Desc: "Geräumiges Zimmer mit Doppelbett und Tageslicht.",
         titleCamping: "Camping- & Trekkingausrüstung Verleih",
         gearBannerTitle: "🧗‍♂️ Professionelle Bergsteiger Ausrüstung",
-        gearBannerDesc: "Spezialisierte Hochgebirgsausrüstung bereit für Ihr Abenteuer.",
-        gearBannerBtn: "Preise im geschützten Bereich ansehen",
-        gear1Name: "3-Jahreszeiten-Zelt", gear1Desc: "Robustes Zelt für Hochgebirgsbedingungen.",
+        gearBannerDesc: "Spezialisierte Hochgebirgsausrüstung für Ihr Abenteuer.",
+        gearBannerBtn: "Preise im geschützten Bereich",
+        gear1Name: "3-Jahreszeiten-Zelt", gear1Desc: "Robustes Zelt für Hochgebirge.",
         gear2Name: "Daunenschlafsack", gear2Desc: "Hochleistungsdaune (-5°C bis -20°C).",
         gear3Name: "Trekkingstöcke", gear3Desc: "Ergonomisches Paar Wanderstöcke.",
-        gear4Name: "Fernglas", gear4Desc: "Ideal zur Beobachtung von Gipfeln und Landschaften.",
+        gear4Name: "Fernglas", gear4Desc: "Ideal zur Beobachtung von Gipfeln.",
         gear5Name: "Campingkocher", gear5Desc: "Inklusive Kochutensilien.",
-        gear6Name: "Neue Gaskartusche", gear6Desc: "Versiegelte Kartusche für den Bergeinsatz.",
+        gear6Name: "Neue Gaskartusche", gear6Desc: "Versiegelte Kartusche.",
         titleServices: "Dienstleistungen & Ausstattung",
         sBath: "Privates Badezimmer", sWater: "24/7 Warmwasser", sTv: "Smart TV", sWifi: "Kostenloses Wi-Fi",
         sParking: "Kostenlose Parkplätze", sLuggage: "Gepäckaufbewahrung", sKitchen: "Gemeinschaftsküche", sBreakfast: "Frühstück",
         titleGuide: "Caraz Reiseführer & Reservierter Bereich",
-        gPubDesc: "📍 <strong>Parón-See:</strong> Die größte türkisfarbene Lagune der Cordillera Blanca, 32 km von Caraz entfernt. Herrlicher Blick auf Artesonraju und Huandoy.<br><br>📍 <strong>Llanganuco-Seen:</strong> Beeindruckende türkisfarbene Wasserspiegel umgeben von Quenual-Wäldern.<br><br>📍 <strong>Laguna 69:</strong> Eines der berühmtesten Hochgebirgstouren der Welt.",
-        privSectionTitle: "🔐 Reservierter Bereich für Routen und Gästeservices",
-        gPrivDesc: "Geben Sie das an der Rezeption erhaltene Passwort ein, um geschützte Preise und Notfallführer anzuzeigen:",
-        btnUnlockText: "Bereich freischalten", passPlaceholder: "Gästebassword",
-        privGearTitle: "🏷️ Verleihpreise für Bergsteiger Ausrüstung (Nur für Gäste)",
-        pGear1: "3-Jahreszeiten-Zelt", pGear2: "Daunenschlafsack (-5°C bis -20°C)", pGear3: "Trekkingstöcke", pGear4: "Fernglas", pGear5: "Campingkocher mit Utensilien", pGear6: "Neue Gaskartusche (versiegelt)",
-        privParonTitle: "⛰️ Optionen, Kosten und Zeiten zum Parón-See",
+        gPubDesc: "📍 <strong>Parón-See:</strong> Die größte türkisfarbene Lagune, 32 km von Caraz.<br><br>📍 <strong>Llanganuco-Seen:</strong> Beeindruckende Wasserspiegel.<br><br>📍 <strong>Laguna 69:</strong> Eines der berühmtesten Trekkingtouren.",
+        privSectionTitle: "🔐 Reservierter Bereich für Gästeservices",
+        gPrivDesc: "Passwort eingeben:",
+        btnUnlockText: "Freischalten", passPlaceholder: "Gästebassword",
+        privGearTitle: "🏷️ Verleihpreise (Nur für Gäste)",
+        pGear1: "3-Jahreszeiten-Zelt", pGear2: "Daunenschlafsack", pGear3: "Trekkingstöcke", pGear4: "Fernglas", pGear5: "Campingkocher", pGear6: "Neue Gaskartusche",
+        privParonTitle: "⛰️ Optionen zum Parón-See",
         paronKactusTitle: "Private Abfahrt Hostal Kactus",
-        paronKactusC: "• <strong>Kosten:</strong> S/ 40,00 pro Person (Mindestens 4 Fahrgäste oder Übernahme freier Plätze).",
-        paronKactusV: "• <strong>Exklusiver Vorteil:</strong> Volle 2 Stunden Wartezeit an der Lagune für Wanderungen und Fotos ohne Eile.",
-        paronKactusT: "• <strong>Parkeintritt:</strong> S/ 5,00 pro Person.",
-        paronIndTitle: "Unabhängige Option (Privat)",
-        paronIndStopLbl: "Empfohlene Haltestelle",
-        paronIndMapLink: "Santa-Cruz-Haltestelle auf Google Maps anzeigen",
-        paronIndTime: "• <strong>Empfehlung:</strong> Ideal zwischen 6:30 und 8:00 Uhr anzukommen, um sich anderen Touristen anzuschließen.",
-        paronIndCost: "• <strong>Ungefähre Kosten:</strong> S/ 40,00 bis S/ 50,00 pro Fahrgast (inkl. 2 Std. Wartezeit). <em>Hinweis: Nicht direkt vom Hostal garantiert.</em>",
-        paronIndTicket: "• <strong>Parkeintritt:</strong> S/ 5,00 pro Person.",
-        privL69Title: "🏔️ Optionen & Logistik zur Laguna 69",
-        l69Warn: "⚠️ <strong>Wichtiger Hinweis:</strong> Die Behörden verlangen für den Einstieg in den Wanderweg zwingend einen zertifizierten Bergführer.",
-        l69KactusTitle: "Via Tour Huaraz (von Kactus organisiert)",
-        l69KactusP1: "• <strong>Treffpunkt:</strong> Fahrt von Caraz nach Yungay (S/ 3,00 hin und zurück). Die Tour startet in Yungay an der Ecke der Polizeistation.",
-        l69KactusP2: "• <strong>Abfahrtszeit:</strong> 6:00 Uhr morgens (Rückkehr nach Caraz ca. 18:00 Uhr - Full Day).",
-        l69KactusP3: "• <strong>Ungefähre Kosten:</strong> Tour mit Guide S/ 60 + Nationalparkticket S/ 30 + Fahrkarten S/ 6. Gesamt ca.: <strong>S/ 96,00 pro Person</strong>.",
-        l69IndTitle: "Unabhängige Option",
-        l69IndP1: "• 1. Fahrt von Caraz nach Yungay (S/ 3,00 Fahrt).",
-        l69IndP2: "• 2. Nehmen Sie einen Sammeltransport von Yungay nach Yanama (ca. S/ 30,00) und steigen Sie am Start des Wanderwegs aus.",
-        l69IndP3: "• 3. Zahlen Sie Ihren Eintritt von S/ 30,00 und organisieren Sie Ihren Zugang (Hinweis: Die Guide-Pflicht macht diese Option komplex).",
-        l69IndP4: "• 4. Rückkehr: Nehmen Sie ein beliebiges Fahrzeug bergab (S/ 25 - S/ 30) zurück nach Yungay und dann nach Caraz.",
-        directoryTitle: "📍 Interaktives Caraz Verzeichnis (Klicken Sie auf eine Karte zum Umdrehen)",
-        dir1Title: "Restaurant Pacha Hunta", dir1Sub: "Regionale & typische Küche", dir1Desc: "Sehr nah am Hostal und sehr empfehlenswert für die traditionelle Küche von Caraz.",
-        dir2Title: "Hauptplatz von Caraz", dir2Sub: "Historisches Zentrum & Fotos", dir2Desc: "Das Herz der Stadt. Ideal zum Spazierengehen, Fotografieren der Palmen und Genießen von artisanalem Eis.",
-        dir3Title: "Nahegelegene Apotheken", dir3Sub: "Inkafarma & MiFarma", dir3Desc: "In der Nähe des Hauptplatzes von Caraz gelegen. Vertrauenswürdige Ketten wie <strong>Inkafarma</strong> und <strong>MiFarma</strong>.",
-        dir4Title: "Nahegelegene Tankstellen", dir4Sub: "Tankstelle El Arco & andere", dir4Desc: "An der Nordausfahrt von Caraz gelegen. Sichere Kraftstoffversorgung für Fahrzeuge und Reisende unterwegs.",
-        dir5Title: "Polizeistation Caraz", dir5Sub: "Sicherheit & Unterstützung", dir5Desc: "📍 Zentrale Lage in Caraz.<br>📞 Lokale Notrufnummer verfügbar oder wenden Sie sich direkt an die Kactus-Rezeption.",
-        dir6Title: "Krankenhaus Caraz", dir6Sub: "Gesundheit & Notfälle", dir6Desc: "📍 Medizinische Versorgung und Notfälle 24/7.<br>📞 Bei Höhenkrankheit oder gesundheitlichen Beschwerden sofort die Rezeption benachrichtigen.",
-        flipHint1: "👆 Zum Umdrehen klicken", flipHint2: "👆 Zum Umdrehen klicken", flipHint3: "👆 Zum Umdrehen klicken", flipHint4: "👆 Zum Umdrehen klicken", flipHint5: "👆 Zum Umdrehen klicken", flipHint6: "👆 Zum Umdrehen klicken",
-        stkFrom: "Ab", stkBtn: "Jetzt Buchen"
+        paronKactusC: "• <strong>Kosten:</strong> S/ 40,00 pro Person.",
+        paronKactusV: "• <strong>Vorteil:</strong> 2 Std. Wartezeit an der Lagune.",
+        paronKactusT: "• <strong>Parkeintritt:</strong> S/ 5,00.",
+        paronIndTitle: "Unabhängige Option",
+        paronIndStopLbl: "Haltestelle",
+        paronIndMapLink: "Auf Google Maps anzeigen",
+        paronIndTime: "• <strong>Empfehlung:</strong> Früh ankommen.",
+        paronIndCost: "• <strong>Kosten:</strong> S/ 40 - S/ 50.",
+        paronIndTicket: "• <strong>Parkeintritt:</strong> S/ 5,00.",
+        privL69Title: "🏔️ Laguna 69",
+        l69Warn: "⚠️ Führerpflicht am Wanderweg.",
+        l69KactusTitle: "Via Tour Huaraz",
+        l69KactusP1: "• Fahrt nach Yungay.",
+        l69KactusP2: "• Abfahrt 6:00 Uhr.",
+        l69KactusP3: "• Kosten ca. S/ 96,00.",
+        l69IndTitle: "Unabhängig",
+        l69IndP1: "• Nach Yungay fahren.",
+        l69IndP2: "• Weiter nach Yanama.",
+        l69IndP3: "• Eintritt S/ 30 zahlen.",
+        l69IndP4: "• Rückfahrt organisieren.",
+        directoryTitle: "📍 Verzeichnis",
+        dir1Title: "Pacha Hunta", dir1Sub: "Essen", dir1Desc: "Traditionelle Küche.",
+        dir2Title: "Hauptplatz", dir2Sub: "Zentrum", dir2Desc: "Das Herz der Stadt.",
+        dir3Title: "Apotheken", dir3Sub: "Inkafarma", dir3Desc: "Vertrauenswürdige Ketten.",
+        dir4Title: "Tankstelle", dir4Sub: "El Arco", dir4Desc: "Kraftstoffversorgung.",
+        dir5Title: "Polizei", dir5Sub: "Sicherheit", dir5Desc: "📞 Rezeption kontaktieren.",
+        dir6Title: "Krankenhaus", dir6Sub: "Gesundheit", dir6Desc: "📞 Rezeption benachrichtigen.",
+        flipHint1: "👆 Klicken", flipHint2: "👆 Klicken", flipHint3: "👆 Klicken", flipHint4: "👆 Klicken", flipHint5: "👆 Klicken", flipHint6: "👆 Klicken",
+        stkFrom: "Ab", stkBtn: "Buchen"
       },
       ru: {
         navLocationSub: "Карас · Перу",
         navCodeText: "Код Гостя",
         navCodeTextM: "Код Гостя",
-        langSelectLabelM: "Выберите язык",
-        heroTitle: "Ваш комфортный, безопасный и полноценный отдых в <span class='text-amber-300'>Карасе, Перу</span>",
-        heroSubtitle: "Наслаждайтесь уютными номерами, горячей водой 24/7 и лучшим расположением для приключений в Кордильера-Бланка.",
-        lblLocationTitle: "Местоположение",
+        langSelectLabelM: "Язык",
+        heroTitle: "Комфортный отдых в <span class='text-amber-300'>Карасе, Перу</span>",
+        heroSubtitle: "Уютные номера, горячая вода 24/7 и отличное расположение.",
+        lblLocationTitle: "Место",
         lblLocationVal: "Карас, Перу",
-        lblCheckin: "Дата заезда",
-        lblCheckout: "Дата выезда",
+        lblCheckin: "Заезд",
+        lblCheckout: "Выезд",
         btnSearchPrices: "Проверить наличие",
-        badgeFeat1: "Прямое бронирование без посредников",
-        badgeFeat2: "Персональная поддержка 24/7",
-        badgeBooking: "Великолепно · Отличное расположение",
-        titleRooms: "Наши Номера",
-        roomsBadge: "Гарантия лучшей прямой цены",
-        room1Tag: "ЭКОНОМ & КОМФОРТ",
-        bannerCodeTitle: "У вас есть код бронирования?",
-        bannerCodeDesc: "Используйте здесь ваш код, предоставленный отелем, чтобы найти защищенные цены и инструкции.",
+        badgeFeat1: "Прямое бронирование",
+        badgeFeat2: "Поддержка 24/7",
+        badgeBooking: "Великолепно",
+        titleRooms: "Номера",
+        roomsBadge: "Лучшая цена",
+        room1Tag: "ЭКОНОМ",
+        bannerCodeTitle: "Есть код бронирования?",
+        bannerCodeDesc: "Введите код для доступа к спецценам.",
         bannerCodeBtn: "В закрытый раздел",
-        room1Title: "Эконом Двухместный Номер",
-        room1Desc: "Уютный небольшой номер с двуспальной кроватью. Идеально для пар или одиночных путешественников.",
-        perNight: "в среднем за ночь",
-        btnRes: "Забронировать в WhatsApp",
-        room2Tag: "САМЫЙ ПОПУЛЯРНЫЙ",
-        room2Title: "Средний Двухместный Номер",
-        room2Desc: "Просторный номер с двуспальной кроватью, отличным естественным освещением и шкафом.",
-        titleCamping: "Прокат снаряжения для кемпинга и треккинга",
-        gearBannerTitle: "🧗‍♂️ Профессиональное горное снаряжение",
-        gearBannerDesc: "Специализированное высокогорное снаряжение готово к вашему приключению.",
-        gearBannerBtn: "Цены в закрытом разделе",
-        gear1Name: "3-сезонная палатка", gear1Desc: "Прочная палатка для высокогорья.",
-        gear2Name: "Пуховый спальный мешок", gear2Desc: "Высокопрочный пух (-5°C до -20°C).",
-        gear3Name: "Треккинговые палки", gear3Desc: "Эргономичная пара палок для ходьбы.",
-        gear4Name: "Бинокль", gear4Desc: "Идеально для обзора вершин и пейзажей.",
-        gear5Name: "Походная плита", gear5Desc: "Включает кухонные принадлежности.",
-        gear6Name: "Новый газовый баллон", gear6Desc: "Герметичный баллон для гор.",
-        titleServices: "Услуги и Удобства",
-        sBath: "Частная ванная", sWater: "Горячая вода 24/7", sTv: "Смарт ТВ", sWifi: "Бесплатный Wi-Fi",
-        sParking: "Бесплатная парковка", sLuggage: "Хранение багажа", sKitchen: "Общая кухня", sBreakfast: "Завтраки",
-        titleGuide: "Туристический гид по Карасу и закрытая зона",
-        gPubDesc: "📍 <strong>Озеро Парон:</strong> Самая большая бирюзовая лагуна в Кордильера-Бланка, в 32 км от Караса. Великолепные виды на Артесонраху и Уандой.<br><br>📍 <strong>Озера Льянвануко:</strong> Потрясающие зеркала бирюзовой воды среди кведуалевых лесов.<br><br>📍 <strong>Лагуна 69:</strong> Один из самых известных высокогорных треккингов в мире.",
-        privSectionTitle: "🔐 Закрытый раздел маршрутов и услуг для гостей",
-        gPrivDesc: "Введите ключ, выданный на ресепшене, чтобы просмотреть защищенные цены и справочники:",
-        btnUnlockText: "Разблокировать", passPlaceholder: "Пароль гостя",
-        privGearTitle: "🏷️ Тарифы на прокат снаряжения (Только для гостей)",
-        pGear1: "3-сезонная палатка", pGear2: "Пуховый спальный мешок (-5°C до -20°C)", pGear3: "Треккинговые палки", pGear4: "Бинокль", pGear5: "Походная плита с посудой", pGear6: "Новый газовый баллон (герметичный)",
-        privParonTitle: "⛰️ Варианты, расходы и время до озера Парон",
-        paronKactusTitle: "Частный выезд Hostal Kactus",
-        paronKactusC: "• <strong>Стоимость:</strong> 40.00 солей с человека (Минимум 4 пассажира или выкуп пустых мест).",
-        paronKactusV: "• <strong>Эксклюзивное преимущество:</strong> Полные 2 часа ожидания на лагуне для прогулок и фото без спешки.",
-        paronKactusT: "• <strong>Вход в парк:</strong> 5.00 солей с человека.",
-        paronIndTitle: "Самостоятельный вариант (Частный)",
-        paronIndStopLbl: "Рекомендуемая остановка",
-        paronIndMapLink: "Посмотреть остановку Санта-Крус на Google Maps",
-        paronIndTime: "• <strong>Рекомендация:</strong> Идеально приезжать с 6:30 до 8:00 утра, чтобы присоединиться к туристам и быстрее уехать.",
-        paronIndCost: "• <strong>Примерная стоимость:</strong> 40.00 – 50.00 солей с пассажира (включая ожидание 2 часа). <em>Примечание: Отель не гарантирует напрямую.</em>",
-        paronIndTicket: "• <strong>Вход в парк:</strong> 5.00 солей с человека.",
-        privL69Title: "🏔️ Варианты и логистика к Лагуне 69",
-        l69Warn: "⚠️ <strong>Важное примечание:</strong> Власти строго требуют обязательного гида для выхода на тропу.",
-        l69KactusTitle: "Через тур Уараз (Организовано Kactus)",
-        l69KactusP1: "• <strong>Место встречи:</strong> Проезд из Караса в Юнгай (3.00 соля в один конец). Тур берется в Юнгай, на углу поликлиники.",
-        l69KactusP2: "• <strong>Время отправления:</strong> 6:00 утра (Возвращение в Карас ок. 18:00 - Full Day).",
-        l69KactusP3: "• <strong>Примерные расходы:</strong> Тур с гидом 60 солей + Билет в нацпарк 30 солей + Проезд 6 солей. Итого ок.: <strong>96.00 солей с человека</strong>.",
-        l69IndTitle: "Самостоятельный вариант",
-        l69IndP1: "• 1. Поездка из Караса в Юнгай (проезд 3.00 соля).",
-        l69IndP2: "• 2. Садитесь на коллективный автобус из Юнгая в Янаму (ок. 30.00 солей) с выходом у начала тропы.",
-        l69IndP3: "• 3. Оплатите вход 30.00 солей и организуйте подъем (требование гида усложняет этот вариант).",
-        l69IndP4: "• 4. Возвращение: Любой попутный транспорт вниз (25 - 30 солей) обратно в Юнгай, затем в Карас.",
-        directoryTitle: "📍 Интерактивный справочник Караса (Нажмите на карточку, чтобы перевернуть)",
-        dir1Title: "Ресторан Pacha Hunta", dir1Sub: "Региональная и типичная еда", dir1Desc: "Очень близко к хостелу, настоятельно рекомендуется за традиционный вкус Караса.",
-        dir2Title: "Главная площадь Караса", dir2Sub: "Исторический центр и фото", dir2Desc: "Сердце города. Идеально для прогулок, фото с пальмами, ремесленного мороженого и поиска ресторанов.",
-        dir3Title: "Ближайшие аптеки", dir3Sub: "Inkafarma & MiFarma", dir3Desc: "Расположены рядом с главной площадью Караса. Надежные сети <strong>Inkafarma</strong> и <strong>MiFarma</strong> открыты днем.",
-        dir4Title: "Ближайшие заправки", dir4Sub: "Заправка El Arco и др.", dir4Desc: "На северном выезде из Караса. Безопасная заправка топлива для автомобилей и путешественников в пути.",
-        dir5Title: "Полиция Караса", dir5Sub: "Безопасность и помощь", dir5Desc: "📍 Центральное расположение в Карасе.<br>📞 Доступен местный телефон экстренных служб или обратитесь на ресепшн Kactus.",
-        dir6Title: "Больница Караса", dir6Sub: "Здоровье и экстренная помощь", dir6Desc: "📍 Медицинская помощь и экстренные службы 24/7.<br>📞 При горной болезни или недомогании немедленно сообщите нам на ресепшн.",
-        flipHint1: "👆 Нажмите, чтобы перевернуть", flipHint2: "👆 Нажмите, чтобы перевернуть", flipHint3: "👆 Нажмите, чтобы перевернуть", flipHint4: "👆 Нажмите, чтобы перевернуть", flipHint5: "👆 Нажмите, чтобы перевернуть", flipHint6: "👆 Нажмите, чтобы перевернуть",
-        stkFrom: "От", stkBtn: "Забронировать"
+        room1Title: "Эконом Номер",
+        room1Desc: "Уютный небольшой номер.",
+        perNight: "за ночь",
+        btnRes: "В WhatsApp",
+        room2Tag: "ПОПУЛЯРНЫЙ",
+        room2Title: "Средний Номер",
+        room2Desc: "Просторный номер.",
+        titleCamping: "Прокат снаряжения",
+        gearBannerTitle: "🧗‍♂️ Горное снаряжение",
+        gearBannerDesc: "Специализированное снаряжение.",
+        gearBannerBtn: "Цены в разделе",
+        gear1Name: "Палатка", gear1Desc: "Для высокогорья.",
+        gear2Name: "Спальник", gear2Desc: "Пуховый (-5°C / -20°C).",
+        gear3Name: "Палки", gear3Desc: "Треккинговые.",
+        gear4Name: "Бинокль", gear4Desc: "Для обзора.",
+        gear5Name: "Плита", gear5Desc: "С посудой.",
+        gear6Name: "Газ", gear6Desc: "Баллон.",
+        titleServices: "Услуги",
+        sBath: "Душ", sWater: "Горячая вода", sTv: "ТВ", sWifi: "Wi-Fi",
+        sParking: "Парковка", sLuggage: "Багаж", sKitchen: "Кухня", sBreakfast: "Завтрак",
+        titleGuide: "Гид и закрытая зона",
+        gPubDesc: "📍 <strong>Озеро Парон:</strong> Бирюзовая лагуна в Кордильера-Бланка.",
+        privSectionTitle: "🔐 Закрытый раздел",
+        gPrivDesc: "Введите ключ:",
+        btnUnlockText: "Открыть", passPlaceholder: "Пароль",
+        privGearTitle: "🏷️ Цены проката",
+        pGear1: "Палатка", pGear2: "Спальник", pGear3: "Палки", pGear4: "Бинокль", pGear5: "Плита", pGear6: "Газ",
+        privParonTitle: "⛰️ Озеро Парон",
+        paronKactusTitle: "Выезд Kactus",
+        paronKactusC: "• <strong>Цена:</strong> 40 солей.",
+        paronKactusV: "• <strong>Ожидание:</strong> 2 часа.",
+        paronKactusT: "• <strong>Вход:</strong> 5 солей.",
+        paronIndTitle: "Самостоятельно",
+        paronIndStopLbl: "Остановка",
+        paronIndMapLink: "На карте",
+        paronIndTime: "• Ранний выезд.",
+        paronIndCost: "• 40-50 солей.",
+        paronIndTicket: "• Вход 5 солей.",
+        privL69Title: "🏔️ Лагуна 69",
+        l69Warn: "⚠️ Требуется гид.",
+        l69KactusTitle: "Тур",
+        l69KactusP1: "• В Юнгай.",
+        l69KactusP2: "• Выезд 6:00.",
+        l69KactusP3: "• Ок. 96 солей.",
+        l69IndTitle: "Самостоятельно",
+        l69IndP1: "• В Юнгай.",
+        l69IndP2: "• В Янаму.",
+        l69IndP3: "• Вход 30 солей.",
+        l69IndP4: "• Назад в Карас.",
+        directoryTitle: "📍 Справочник",
+        dir1Title: "Ресторан", dir1Sub: "Еда", dir1Desc: "Типичная кухня.",
+        dir2Title: "Площадь", dir2Sub: "Центр", dir2Desc: "Сердце города.",
+        dir3Title: "Аптеки", dir3Sub: "Inkafarma", dir3Desc: "Сети аптек.",
+        dir4Title: "Заправка", dir4Sub: "El Arco", dir4Desc: "Топливо.",
+        dir5Title: "Полиция", dir5Sub: "Помощь", dir5Desc: "📞 На ресепшн.",
+        dir6Title: "Больница", dir6Sub: "Здоровье", dir6Desc: "📞 На ресепшн.",
+        flipHint1: "👆 Нажмите", flipHint2: "👆 Нажмите", flipHint3: "👆 Нажмите", flipHint4: "👆 Нажмите", flipHint5: "👆 Нажмите", flipHint6: "👆 Нажмите",
+        stkFrom: "От", stkBtn: "Бронировать"
       },
       cs: {
         navLocationSub: "Caraz · Peru",
         navCodeText: "Kód hosta",
         navCodeTextM: "Kód hosta",
-        langSelectLabelM: "Vybrat jazyk",
-        heroTitle: "Váš pohodlný, bezpečný a kompletní pobyt v <span class='text-amber-300'>Carazu v Peru</span>",
-        heroSubtitle: "Užijte si útulné pokoje, teplou vodu 24/7 a nejlepší polohu pro vaše dobrodružství v Cordillera Blanca.",
+        langSelectLabelM: "Jazyk",
+        heroTitle: "Pohodlný pobyt v <span class='text-amber-300'>Carazu, Peru</span>",
+        heroSubtitle: "Útulné pokoje, teplá voda 24/7 a skvělá poloha.",
         lblLocationTitle: "Lokalita",
         lblLocationVal: "Caraz, Peru",
-        lblCheckin: "Datum příjezdu",
-        lblCheckout: "Datum odjezdu",
+        lblCheckin: "Příjezd",
+        lblCheckout: "Odjezd",
         btnSearchPrices: "Ověřit dostupnost",
-        badgeFeat1: "Přímá rezervace bez prostředníků",
-        badgeFeat2: "Osobní péče 24/7",
-        badgeBooking: "Báječné · Skvělá lokalita",
-        titleRooms: "Naše Pokoje",
-        roomsBadge: "Záruka nejlepší přímé ceny",
-        room1Tag: "EKONOMICKÝ A POHODLÍ",
-        bannerCodeTitle: "Máte svůj rezervační kód?",
-        bannerCodeDesc: "Zde zadejte svůj kód od ubytování k zobrazení chráněných cen a pokynů.",
-        bannerCodeBtn: "Přejít do rezervované zóny",
-        room1Title: "Ekonomický Dvoulůžkový Pokoj",
-        room1Desc: "Útulný malý pokoj s manželskou postelí. Ideální pro páry nebo sólo cestovatele.",
-        perNight: "průměr za noc",
-        btnRes: "Rezervovat přes WhatsApp",
-        room2Tag: "NEJOBLÍBENĚJŠÍ",
-        room2Title: "Střední Dvoulůžkový Pokoj",
-        room2Desc: "Prostorný pokoj s manželskou postelí, přirozeným světlem a skříní.",
-        titleCamping: "Půjčovna kempingového a trekového vybavení",
-        gearBannerTitle: "🧗‍♂️ Profesionální horské vybavení",
-        gearBannerDesc: "Specializované horské vybavení připravené pro vaše dobrodružství.",
-        gearBannerBtn: "Zobrazit ceny v rezervované zóně",
-        gear1Name: "3-sezónní stan", gear1Desc: "Odolný stan do vysokohorských podmínek.",
-        gear2Name: "Péřový spací pytel", gear2Desc: "Vysokoodolné peří (-5°C až -20°C).",
-        gear3Name: "Trekové hole", gear3Desc: "Ergonomický pár vycházkových holí.",
-        gear4Name: "Dalekohled", gear4Desc: "Ideální pro pozorování vrcholů a scenérií.",
-        gear5Name: "Kempingový vařič", gear5Desc: "Včetně kuchyňského náčiní.",
-        gear6Name: "Nová plynová kartuše", gear6Desc: "Utěsněná kartuše do hor.",
-        titleServices: "Služby a Vybavení",
-        sBath: "Vlastní Koupelna", sWater: "Teplá Voda 24/7", sTv: "Smart TV", sWifi: "Wi-Fi Zdarma",
-        sParking: "Parkování Zdarma", sLuggage: "Úschova Zavazadel", sKitchen: "Sdílená Kuchyň", sBreakfast: "Snídaně",
-        titleGuide: "Turistický průvodce Caraz a rezervační zóna",
-        gPubDesc: "📍 <strong>Jezero Parón:</strong> Největší tyrkysová laguna v Cordillera Blanca, 32 km od Carazu. Nádherný výhled na Artesonraju a Huandoy.<br><br>📍 <strong>Jezera Llanganuco:</strong> Nádherná tyrkysová jezera obklopená lesy quenual.<br><br>📍 <strong>Laguna 69:</strong> Jeden z nejznámějších vysokohorských treků na světě.",
-        privSectionTitle: "🔐 Rezervovaná zóna tras a služeb pro hosty",
-        gPrivDesc: "Zadejte heslo obdržené na recepci pro zobrazení chráněných cen a nouzových průvodců:",
-        btnUnlockText: "Odemknout zónu", passPlaceholder: "Heslo pro hosty",
-        privGearTitle: "🏷️ Ceny pronájmu horského vybavení (Pouze pro hosty)",
-        pGear1: "3-sezónní stan", pGear2: "Péřový spací pytel (-5°C až -20°C)", pGear3: "Trekové hole", pGear4: "Dalekohled", pGear5: "Kempingový vařič s nádobím", pGear6: "Nová plynová kartuše (utěsněná)",
-        privParonTitle: "⛰️ Možnosti, náklady a časy k jezeru Parón",
-        paronKactusTitle: "Soukromý odjezd Hostal Kactus",
-        paronKactusC: "• <strong>Cena:</strong> S/ 40,00 na osobu (Minimálně 4 pasažéři nebo obsazení volných míst).",
-        paronKactusV: "• <strong>Exkluzivní výhoda:</strong> Plné 2 hodiny čekání u laguny na procházky a focení bez spěchu.",
-        paronKactusT: "• <strong>Vstupné do parku:</strong> S/ 5,00 na osobu.",
-        paronIndTitle: "Nezávislá možnost (Soukromá)",
-        paronIndStopLbl: "Doporučená zastávka",
-        paronIndMapLink: "Zobrazit zastávku Santa Cruz na Google Maps",
-        paronIndTime: "• <strong>Doporučení:</strong> Ideální dorazit mezi 6:30 a 8:00 ráno, abyste se připojili k dalším turistům.",
-        paronIndCost: "• <strong>Odh. náklady:</strong> S/ 40,00 až S/ 50,00 za cestujícího (vč. 2 hod. čekání). <em>Pozn.: Není garantováno přímo hostelem.</em>",
-        paronIndTicket: "• <strong>Vstupné do parku:</strong> S/ 5,00 na osobu.",
-        privL69Title: "🏔️ Možnosti a logistika k Laguně 69",
-        l69Warn: "⚠️ <strong>Důležité upozornění:</strong> Úřady přísně vyžadují certifikovaného průvodce pro vstup na stezku.",
-        l69KactusTitle: "Přes Tour Huaraz (organizováno Kactusem)",
-        l69KactusP1: "• <strong>Místo setkání:</strong> Doprava z Carazu do Yungaye (S/ 3,00 tam i zpět). Tour se bere v Yungayi u rohu policejní stanice.",
-        l69KactusP2: "• <strong>Čas odjezdu:</strong> 6:00 ráno (Návrat do Carazu cca 18:00 - Full Day).",
-        l69KactusP3: "• <strong>Odh. náklady:</strong> Tour s průvodcem S/ 60 + Vstup do národního parku S/ 30 + Jízdenky S/ 6. Celkem cca: <strong>S/ 96,00 na osobu</strong>.",
-        l69IndTitle: "Nezávislá možnost",
-        l69IndP1: "• 1. Cesta z Carazu do Yungaye (jízdenka S/ 3,00).",
-        l69IndP2: "• 2. Vezměte si sdílený transport z Yungaye do Yanamy (cca S/ 30,00) a vystupte na začátku stezky.",
-        l69IndP3: "• 3. Zaplaťte vstup S/ 30,00 a vyřiďte vstup (pozn.: povinnost průvodce činí tuto možnost složitou).",
-        l69IndP4: "• 4. Návrat: Vezměte si jakékoliv vozidlo dolů (S/ 25 - S/ 30) zpět do Yungaye a pak do Carazu.",
-        directoryTitle: "📍 Interaktivní adresář Carazu (Kliknutím na kartu ji otočíte)",
-        dir1Title: "Restaurace Pacha Hunta", dir1Sub: "Regionální a typická jídla", dir1Desc: "Velmi blízko hostelu a vřele doporučovaná pro tradiční kuchyni Carazu.",
-        dir2Title: "Hlavní náměstí Carazu", dir2Sub: "Historické centrum a foto", dir2Desc: "Srdce města. Ideální pro procházky, focení palem, vychutnání řemeslné zmrzliny a restaurací.",
-        dir3Title: "Lékárny v okolí", dir3Sub: "Inkafarma & MiFarma", dir3Desc: "Nacházejí se blízko hlavního náměstí. Spolehlivé řetězce <strong>Inkafarma</strong> a <strong>MiFarma</strong> otevřeny denně.",
-        dir4Title: "Čerpací stanice", dir4Sub: "Stanice El Arco a další", dir4Desc: "Na severním výjezdu z Carazu. Bezpečné zásobování palivem pro vozidla a cestovatele na cestách.",
-        dir5Title: "Policejní stanice Caraz", dir5Sub: "Bezpečnost a asistence", dir5Desc: "📍 Centrální poloha v Carazu.<br>📞 K dispozici místní nouzový telefon nebo kontaktujte recepci Kactus.",
-        dir6Title: "Nemocnice Caraz", dir6Sub: "Zdravotní péče a pohotovost", dir6Desc: "📍 Lékařská péče a pohotovost 24/7.<br>📞 Při výškové nemoci nebo zdravotních potížích ihned informujte naši recepci.",
-        flipHint1: "👆 Klikněte pro otočení", flipHint2: "👆 Klikněte pro otočení", flipHint3: "👆 Klikněte pro otočení", flipHint4: "👆 Klikněte pro otočení", flipHint5: "👆 Klikněte pro otočení", flipHint6: "👆 Klikněte pro otočení",
+        badgeFeat1: "Přímá rezervace",
+        badgeFeat2: "Podpora 24/7",
+        badgeBooking: "Báječné",
+        titleRooms: "Pokoje",
+        roomsBadge: "Nejlepší cena",
+        room1Tag: "EKONOMICKÝ",
+        bannerCodeTitle: "Máte rezervační kód?",
+        bannerCodeDesc: "Zadejte kód pro přístup k cenám.",
+        bannerCodeBtn: "Do rezervační zóny",
+        room1Title: "Ekonomický pokoj",
+        room1Desc: "Útulný malý pokoj.",
+        perNight: "za noc",
+        btnRes: "Přes WhatsApp",
+        room2Tag: "OBLÍBENÝ",
+        room2Title: "Střední pokoj",
+        room2Desc: "Prostorný pokoj.",
+        titleCamping: "Půjčovna vybavení",
+        gearBannerTitle: "🧗‍♂️ Horské vybavení",
+        gearBannerDesc: "Specializované vybavení.",
+        gearBannerBtn: "Ceny v zóně",
+        gear1Name: "Stan", gear1Desc: "Do hor.",
+        gear2Name: "Spacák", gear2Desc: "Péřový (-5°C / -20°C).",
+        gear3Name: "Hole", gear3Desc: "Trekové.",
+        gear4Name: "Dalekohled", gear4Desc: "Pro pozorování.",
+        gear5Name: "Vařič", gear5Desc: "S nádobím.",
+        gear6Name: "Plynová kartuše", gear6Desc: "Kartuše.",
+        titleServices: "Služby",
+        sBath: "Koupelna", sWater: "Teplá voda", sTv: "TV", sWifi: "Wi-Fi",
+        sParking: "Parkování", sLuggage: "Zavazadla", sKitchen: "Kuchyň", sBreakfast: "Snídaně",
+        titleGuide: "Průvodce a zóna",
+        gPubDesc: "📍 <strong>Jezero Parón:</strong> Tyrkysová laguna.",
+        privSectionTitle: "🔐 Rezervovaná zóna",
+        gPrivDesc: "Zadejte heslo:",
+        btnUnlockText: "Odemknout", passPlaceholder: "Heslo",
+        privGearTitle: "🏷️ Ceny",
+        pGear1: "Stan", pGear2: "Spacák", pGear3: "Hole", pGear4: "Dalekohled", pGear5: "Vařič", pGear6: "Plynová kartuše",
+        privParonTitle: "⛰️ Jezero Parón",
+        paronKactusTitle: "Odjezd Kactus",
+        paronKactusC: "• <strong>Cena:</strong> S/ 40.",
+        paronKactusV: "• <strong>Čekání:</strong> 2 hod.",
+        paronKactusT: "• <strong>Vstup:</strong> S/ 5.",
+        paronIndTitle: "Nezávisle",
+        paronIndStopLbl: "Zastávka",
+        paronIndMapLink: "Na mapě",
+        paronIndTime: "• Brzký příjezd.",
+        paronIndCost: "• S/ 40 - 50.",
+        paronIndTicket: "• Vstup S/ 5.",
+        privL69Title: "🏔️ Laguna 69",
+        l69Warn: "⚠️ Povinný průvodce.",
+        l69KactusTitle: "Tour",
+        l69KactusP1: "• Do Yungaye.",
+        l69KactusP2: "• Odjezd 6:00.",
+        l69KactusP3: "• Cca S/ 96.",
+        l69IndTitle: "Nezávisle",
+        l69IndP1: "• Do Yungaye.",
+        l69IndP2: "• Do Yanamy.",
+        l69IndP3: "• Vstup S/ 30.",
+        l69IndP4: "• Zpět do Carazu.",
+        directoryTitle: "📍 Adresář",
+        dir1Title: "Restaurace", dir1Sub: "Jídlo", dir1Desc: "Tradiční kuchyně.",
+        dir2Title: "Náměstí", dir2Sub: "Centrum", dir2Desc: "Srdce města.",
+        dir3Title: "Lékárny", dir3Sub: "Inkafarma", dir3Desc: "Spolehlivé řetězce.",
+        dir4Title: "Stanice", dir4Sub: "El Arco", dir4Desc: "Palivo.",
+        dir5Title: "Policie", dir5Sub: "Asistence", dir5Desc: "📞 Kontaktujte recepci.",
+        dir6Title: "Nemocnice", dir6Sub: "Zdraví", dir6Desc: "📞 Informujte recepci.",
+        flipHint1: "👆 Klikněte", flipHint2: "👆 Klikněte", flipHint3: "👆 Klikněte", flipHint4: "👆 Klikněte", flipHint5: "👆 Klikněte", flipHint6: "👆 Klikněte",
         stkFrom: "Od", stkBtn: "Rezervovat"
       },
       zh: {
         navLocationSub: "秘鲁 · 卡拉斯",
         navCodeText: "住客代码",
         navCodeTextM: "住客代码",
-        langSelectLabelM: "选择语言 / Language",
-        heroTitle: "您在<span class='text-amber-300'>秘鲁卡拉斯</span>舒适、安全且温馨的下榻之所",
-        heroSubtitle: "享受温馨舒适的客房、24/7 热水以及探索白山脉的绝佳地理位置。",
-        lblLocationTitle: "地理位置",
+        langSelectLabelM: "选择语言",
+        heroTitle: "在秘鲁<span class='text-amber-300'>卡拉斯</span>的温馨住宿",
+        heroSubtitle: "温馨客房、24/7热水，探索白山脉的绝佳位置。",
+        lblLocationTitle: "位置",
         lblLocationVal: "秘鲁卡拉斯",
-        lblCheckin: "入住日期",
-        lblCheckout: "退房日期",
+        lblCheckin: "入住",
+        lblCheckout: "退房",
         btnSearchPrices: "查询空房",
-        badgeFeat1: "直订无中间商",
-        badgeFeat2: "24/7 个性化协助",
-        badgeBooking: "极佳 · 优越地理位置",
-        titleRooms: "我们的客房",
-        roomsBadge: "直订最优价格保证",
-        room1Tag: "经济实惠与舒适",
-        bannerCodeTitle: "您有预订代码吗？",
-        bannerCodeDesc: "在此输入住宿方提供的代码，即可查看专属价格、指南等信息。",
-        bannerCodeBtn: "前往专属区域",
+        badgeFeat1: "直接预订",
+        badgeFeat2: "24/7 协助",
+        badgeBooking: "极佳",
+        titleRooms: "客房",
+        roomsBadge: "最优价格",
+        room1Tag: "经济房",
+        bannerCodeTitle: "有预订代码吗？",
+        bannerCodeDesc: "输入代码查看专属价格与指南。",
+        bannerCodeBtn: "前往专属区",
         room1Title: "经济双人房",
-        room1Desc: "温馨的小型客房，配备双人床。非常适合情侣或单人旅客。",
-        perNight: "每晚平均",
-        btnRes: "通过 WhatsApp 预订",
-        room2Tag: "最受欢迎",
+        room1Desc: "温馨舒适的小型双人房。",
+        perNight: "每晚",
+        btnRes: "通过 WhatsApp",
+        room2Tag: "受欢迎",
         room2Title: "中型双人房",
-        room2Desc: "宽敞的客房，配备双人床，采光极佳并配有衣柜。",
-        titleCamping: "露营与徒步装备租赁",
-        gearBannerTitle: "🧗‍♂️ 专业高山登山装备",
-        gearBannerDesc: "随时为您的探险提供专用的高山装备。",
-        gearBannerBtn: "在专属区查看价格",
-        gear1Name: "三季帐篷", gear1Desc: "适合高山恶劣环境的坚固帐篷。",
-        gear2Name: "羽绒睡袋", gear2Desc: "高强保暖羽绒（-5°C 至 -20°C）。",
-        gear3Name: "登山杖", gear3Desc: "符合人体工学的专业登山杖。",
-        gear4Name: "双筒望远镜", gear4Desc: "观赏雪山与自然风光的理想选择。",
-        gear5Name: "野营炉具", gear5Desc: "附带配套野营厨具。",
-        gear6Name: "全新高山气罐", gear6Desc: "高山专用密封气罐。",
+        room2Desc: "宽敞舒适的客房。",
+        titleCamping: "装备租赁",
+        gearBannerTitle: "🧗‍♂️ 专业高山装备",
+        gearBannerDesc: "随时准备好您的探险。",
+        gearBannerBtn: "查看价格",
+        gear1Name: "帐篷", gear1Desc: "高山坚固帐篷。",
+        gear2Name: "羽绒睡袋", gear2Desc: "高寒保暖 (-5°C至-20°C)。",
+        gear3Name: "登山杖", gear3Desc: "专业登山杖。",
+        gear4Name: "望远镜", gear4Desc: "观赏雪山。",
+        gear5Name: "野营炉", gear5Desc: "含厨具。",
+        gear6Name: "高山气罐", gear6Desc: "密封气罐。",
         titleServices: "服务与设施",
-        sBath: "独立卫浴", sWater: "24/7 热水", sTv: "智能电视", sWifi: "免费 Wi-Fi",
-        sParking: "免费停车", sLuggage: "行李寄存", sKitchen: "共享厨房", sBreakfast: "早餐服务",
-        titleGuide: "卡拉斯旅游指南与专属区域",
-        gPubDesc: "📍 <strong>帕隆湖：</strong> 白山脉最大的绿松石色高山湖泊，距离卡拉斯32公里。尽览阿尔特松拉胡等雪山壮丽风光。<br><br>📍 <strong>扬加努科湖：</strong> 壮丽的翠绿色高山湖泊群，掩映在奎努亚树林中。<br><br>📍 <strong>69号湖：</strong> 世界闻名的高山徒步路线之一。",
-        privSectionTitle: "🔐 专属住客路线与服务区域",
-        gPrivDesc: "输入前台提供的密码查看受保护的价格和应急指南：",
-        btnUnlockText: "解锁专属区", passPlaceholder: "住客密码",
-        privGearTitle: "🏷️ 高山装备租赁价格（仅限住客）",
-        pGear1: "三季帐篷", pGear2: "羽绒睡袋（-5°C 至 -20°C）", pGear3: "登山杖", pGear4: "双筒望远镜", pGear5: "附厨具的野营炉具", pGear6: "全新高山气罐（密封）",
-        privParonTitle: "⛰️ 前往帕隆湖的选项、费用与时间",
-        paronKactusTitle: "Kactus Hostal 私人包车出行",
-        paronKactusC: "• <strong>费用：</strong> 每人 S/ 40.00（最少 4 名乘客或補齐空位）。",
-        paronKactusV: "• <strong>专属优势：</strong> 在湖畔完整等待 2 小时，方便客人悠闲徒步和拍照。",
-        paronKactusT: "• <strong>公园门票：</strong> 每人 S/ 5.00。",
-        paronIndTitle: "自由行（独立拼车）选项",
-        paronIndStopLbl: "推荐乘车点",
-        paronIndMapLink: "在 Google Maps上查看圣克鲁斯乘车点",
-        paronIndTime: "• <strong>建议：</strong> 最好在早上 6:30 至 8:00 之间到达，以便与其他游客拼车，更快出发。",
-        paronIndCost: "• <strong>预估费用：</strong> 每位乘客 S/ 40.00 至 S/ 50.00（含 2 小时等待）。<em>注：旅馆不提供直接担保。</em>",
-        paronIndTicket: "• <strong>公园门票：</strong> 每人 S/ 5.00。",
-        privL69Title: "🏔️ 前往 69 号湖的选项与后勤指南",
-        l69Warn: "⚠️ <strong>重要提示：</strong> 当地管理部门严格要求进入步道必须配备官方认证的向导。",
-        l69KactusTitle: "通过瓦拉斯旅游团（Kactus 协助安排）",
-        l69KactusP1: "• <strong>集合地点：</strong> 乘坐交通工具从卡拉斯前往永盖（往返 S/ 3.00）。旅游团在永盖警察局拐角处集合。",
-        l69KactusP2: "• <strong>出发时间：</strong> 早上 6:00（返回卡拉斯约下午 6:00 - 全日游）。",
-        l69KactusP3: "• <strong>预估总费用：</strong> 含向导团费 S/ 60 + 国家公园门票 S/ 30 + 交通费 S/ 6。约计：<strong>每人 S/ 96.00</strong>。",
-        l69IndTitle: "独立自由行选项",
-        l69IndP1: "• 1. 从卡拉斯坐车到永盖（车费 S/ 3.00）。",
-        l69IndP2: "• 2. 从永盖乘坐集体小巴前往亚纳马（约 S/ 30.00），在步道起点下车。",
-        l69IndP3: "• 3. 支付 S/ 30.00 门票并办理入园（注：强制向导要求使得该选项较为复杂）。",
-        l69IndP4: "• 4. 返程：搭乘下山车辆（S/ 25 - S/ 30）返回永盖，再转车回卡拉斯。",
-        directoryTitle: "📍 卡拉斯交互式指南（点击任意卡片即可翻转查看详情）",
-        dir1Title: "Pacha Hunta 餐厅", dir1Sub: "地方特色风味美食", dir1Desc: "距离旅馆非常近，因其正宗的卡拉斯传统风味而备受推崇。",
-        dir2Title: "卡拉斯主广场", dir2Sub: "历史中心与打卡拍照", dir2Desc: "城市的核心。非常适合散步、拍摄棕榈树、品尝纯手工冰淇淋及寻找各类餐厅。",
-        dir3Title: "附近药店", dir3Sub: "Inkafarma & MiFarma", dir3Desc: "位于卡拉斯主广场附近。营业时间内可前往 <strong>Inkafarma</strong> 和 <strong>MiFarma</strong> 等信誉连锁药店。",
-        dir4Title: "附近加油站", dir4Sub: "El Arco 加油站等", dir4Desc: "位于卡拉斯北部出口。为途中的车辆和旅行者提供安全的燃油补给。",
-        dir5Title: "卡拉斯警察局", dir5Sub: "安全与警务协助", dir5Desc: "📍 位于卡拉斯市中心。<br>📞 提供本地紧急求助电话，或直接联系 Kactus 前台获得即时协助。",
-        dir6Title: "卡拉斯综合医院", dir6Sub: "医疗与紧急救护", dir6Desc: "📍 提供 24/7 医疗救治与急诊服务。<br>📞 如遇高原反应或身体不适，请立即告知前台。",
-        flipHint1: "👆 点击翻转", flipHint2: "👆 点击翻转", flipHint3: "👆 点击翻转", flipHint4: "👆 点击翻转", flipHint5: "👆 点击翻转", flipHint6: "👆 点击翻转",
-        stkFrom: "起价", stkBtn: "立即预订"
+        sBath: "卫浴", sWater: "热水", sTv: "电视", sWifi: "Wi-Fi",
+        sParking: "停车", sLuggage: "行李", sKitchen: "厨房", sBreakfast: "早餐",
+        titleGuide: "旅游指南与专属区",
+        gPubDesc: "📍 <strong>帕隆湖：</strong> 最大的绿松石高山湖泊。",
+        privSectionTitle: "🔐 专属住客区",
+        gPrivDesc: "请输入密码：",
+        btnUnlockText: "解锁", passPlaceholder: "密码",
+        privGearTitle: "🏷️ 租赁价格",
+        pGear1: "帐篷", pGear2: "睡袋", pGear3: "登山杖", pGear4: "望远镜", pGear5: "野营炉", pGear6: "气罐",
+        privParonTitle: "⛰️ 帕隆湖",
+        paronKactusTitle: "Kactus 包车出行",
+        paronKactusC: "• <strong>费用：</strong> 每人 S/ 40。",
+        paronKactusV: "• <strong>等待时间：</strong> 2 小时。",
+        paronKactusT: "• <strong>门票：</strong> S/ 5。",
+        paronIndTitle: "自由行",
+        paronIndStopLbl: "乘车点",
+        paronIndMapLink: "查看地图",
+        paronIndTime: "• 建议早点出发。",
+        paronIndCost: "• 约 S/ 40 - 50。",
+        paronIndTicket: "• 门票 S/ 5。",
+        privL69Title: "🏔️ 69号湖",
+        l69Warn: "⚠️ 强制向导。",
+        l69KactusTitle: "旅游团",
+        l69KactusP1: "• 前往永盖。",
+        l69KactusP2: "• 早上6点出发。",
+        l69KactusP3: "• 约 S/ 96。",
+        l69IndTitle: "独立出行",
+        l69IndP1: "• 前往永盖。",
+        l69IndP2: "• 前往亚纳马。",
+        l69IndP3: "• 门票 S/ 30。",
+        l69IndP4: "• 返回卡拉斯。",
+        directoryTitle: "📍 实用指南",
+        dir1Title: "餐厅", dir1Sub: "美食", dir1Desc: "传统风味。",
+        dir2Title: "主广场", dir2Sub: "中心", dir2Desc: "城市核心。",
+        dir3Title: "药店", dir3Sub: "Inkafarma", dir3Desc: "连锁药店。",
+        dir4Title: "加油站", dir4Sub: "El Arco", dir4Desc: "燃油补给。",
+        dir5Title: "警察局", dir5Sub: "安全", dir5Desc: "📞 请联系前台。",
+        dir6Title: "医院", dir6Sub: "医疗", dir6Desc: "📞 请通知前台。",
+        flipHint1: "👆 点击", flipHint2: "👆 点击", flipHint3: "👆 点击", flipHint4: "👆 点击", flipHint5: "👆 点击", flipHint6: "👆 点击",
+        stkFrom: "起", stkBtn: "预订"
       }
     };
 
