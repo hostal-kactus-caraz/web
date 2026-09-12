@@ -89,7 +89,7 @@
     
     <div class="relative z-10 max-w-4xl mx-auto text-center space-y-6 pt-2">
       
-      <!-- INSIGNIA DE TARJETAS Y EFECTIVO (VISIBLE EN CELULAR Y WEB, BIEN CONTRASTADA SIN OPAQUEARSE) -->
+      <!-- INSIGNIA DE TARJETAS Y EFECTIVO -->
       <div class="inline-flex flex-col items-center bg-white text-slate-950 px-4 py-2.5 rounded-2xl border-2 border-emerald-400 shadow-2xl mx-auto mb-2">
         <span class="text-[9px] font-black uppercase text-emerald-800 tracking-wider" data-i18n="lblBadgePay">Aceptamos Todas las Tarjetas & Efectivo</span>
         <div class="flex items-center gap-3 text-2xl mt-1">
@@ -459,11 +459,11 @@
             <button onclick="unlockGuide()" id="btn-unlock-text" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-5 rounded-xl text-xs shadow-md" data-i18n="btnUnlockText">Desbloquear Sección</button>
           </div>
 
-          <!-- CONTENIDO SECRETO / RESERVADO CON WIFI FIJO Y ESTÁTICO -->
-          <div id="secretGuide" class="hidden mt-6 bg-slate-50 p-6 rounded-2xl border-2 border-dashed border-emerald-500 space-y-10 relative">
+          <!-- CONTENIDO SECRETO / RESERVADO CON TARJETA WI-FI STICKY (FLOTANTE AL HACER SCROLL) -->
+          <div id="secretGuide" class="hidden mt-6 bg-slate-50 p-4 sm:p-6 rounded-2xl border-2 border-dashed border-emerald-500 space-y-10 relative overflow-visible">
             
-            <!-- TARJETA FIJA Y ESTÁTICA DE WI-FI -->
-            <div class="sticky top-20 z-40 bg-gradient-to-r from-emerald-900 to-teal-900 text-white p-4 rounded-2xl shadow-xl border-2 border-emerald-400 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <!-- TARJETA FIJA Y STICKY DE WI-FI (SE MANTIENE VISIBLE AL BAJAR) -->
+            <div class="sticky top-20 z-40 bg-gradient-to-r from-emerald-900 to-teal-900 text-white p-4 rounded-2xl shadow-2xl border-2 border-emerald-400 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div class="flex items-center gap-3">
                 <div class="w-10 h-10 bg-emerald-500 rounded-xl flex items-center justify-center text-white text-lg shadow-md shrink-0">
                   <i class="fas fa-wifi animate-pulse"></i>
@@ -1249,7 +1249,7 @@
         dir2Desc: "Cœur historique, idéal pour flâner et déguster des glaces artisanales.",
         dir3Title: "Caja Huancayo & Change",
         dir3Desc: "Idéal pour les opérations financières et le change de devises au centre.",
-        btnLocation: "Voir l'emplacement",
+        dir0Location: "Voir l'emplacement",
         stkFrom: "À partir de",
         stkCalc: "Devis",
         stkBtn: "Réserver Maintenant"
@@ -1392,7 +1392,7 @@
         dir2Desc: "Historické centrum, ideální pro procházky a řemeslnou zmrzlinu.",
         dir3Title: "Caja Huancayo & Směnárna",
         dir3Desc: "Ideální pro finanční operace a směnu peněz v centru.",
-        btnLocation: "Zobrazit polohu",
+        dirLocation: "Zobrazit polohu",
         stkFrom: "Od",
         stkCalc: "Kalkulace",
         stkBtn: "Rezervovat"
@@ -1613,7 +1613,7 @@
         sKitchen: "Cozinha Compartilhada",
         sBreakfast: "Café da Manhã",
         titleGuideHeading: "Guia Turístico de Caraz & Área Reservada",
-        gPubDesc: "Bem-vindo ao nosso guia oficial. Explore as atrações imperdibles da Cordillera Blanca a partir do Hostal Kactus.",
+        gPubDesc: "Bem-vindo ao nosso guia oficial. Explore as atrações imperdíveis da Cordillera Blanca a partir do Hostal Kactus.",
         privSectionTitle: "🔐 Área Reservada de Hóspedes (Wi-Fi, Regras, Comodidades e Tours)",
         gPrivDesc: "Insira a senha fornecida na recepção para desbloquear todas as informações detalhadas:",
         passPlaceholder: "Senha de hóspede",
@@ -1663,7 +1663,7 @@
         l69A1: "Saídas de Huaraz; encontrar o grupo em <strong>Yungay às 6:00 AM</strong> aprox.",
         l69A2: "Detalhamento de gastos:",
         l69TourSelf: "Opção Por Meios Próprios:",
-        l69S1: "Ônibus para Yungay (S/ 3) e minivan para Yanama (S/ 25 - S/ 30).",
+        l69S1: "Ônibus para Yungay (S/ 3) et minivan para Yanama (S/ 25 - S/ 30).",
         l69S2: "Pagamento do ticket de entrada ao parque: S/ 30.00.",
         strawberriesTitle: "Rota dos Morangos (Pampacocha)",
         strawberriesDesc: "Pequena lagoa e experiência de caminhada rural. Lotações a partir de",
@@ -1821,7 +1821,7 @@
         dir2Desc: "Historisches Zentrum, ideal zum Spazieren und Genießen von handgemachtem Eis.",
         dir3Title: "Caja Huancayo & Geldwechsel",
         dir3Desc: "Ideal für Finanzoperationen und Geldwechsel im Zentrum.",
-        dir0Location: "Standort ansehen",
+        btnLocation: "Standort ansehen",
         stkFrom: "Ab",
         stkCalc: "Berechnen",
         stkBtn: "Jetzt Buchen"
