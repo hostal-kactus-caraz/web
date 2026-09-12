@@ -14,25 +14,32 @@ body {
   overflow-x: hidden;
 }
 
-/* --- TARJETA CON GIRO / BALANCEO CONSTANTE Y FONDO AMARILLO NEÓN --- */
+/* --- TARJETA CON EFECTO DE GIRO CONSTANTE EN 3D --- */
 .neon-yellow-box {
-  background: rgba(15, 23, 42, 0.9);
+  background: rgba(15, 23, 42, 0.92);
   border: 2px solid #fbbf24;
-  box-shadow: 0 0 30px rgba(251, 191, 36, 0.7), inset 0 0 15px rgba(251, 191, 36, 0.3);
+  box-shadow: 0 0 35px rgba(251, 191, 36, 0.8), inset 0 0 20px rgba(251, 191, 36, 0.3);
   position: relative;
-  animation: cardRotateBounce 6s ease-in-out infinite;
+  perspective: 1000px;
+  animation: cardFullSpin 10s ease-in-out infinite;
   transform-style: preserve-3d;
 }
 
-@keyframes cardRotateBounce {
+@keyframes cardFullSpin {
   0%, 100% {
-    transform: translateY(0) rotate(0deg);
+    transform: rotateY(0deg) scale(1);
   }
-  25% {
-    transform: translateY(-4px) rotate(1deg);
+  20% {
+    transform: rotateY(15deg) scale(1.02);
   }
-  75% {
-    transform: translateY(4px) rotate(-1deg);
+  40% {
+    transform: rotateY(0deg) scale(1);
+  }
+  60% {
+    transform: rotateY(-15deg) scale(1.02);
+  }
+  80% {
+    transform: rotateY(0deg) scale(1);
   }
 }
 
@@ -42,7 +49,7 @@ body {
   color: #0f172a;
   font-weight: 800;
   box-shadow: 0 0 15px rgba(251, 191, 36, 0.9);
-  animation: neonBlinkFast 0.9s ease-in-out infinite;
+  animation: neonBlinkFast 0.8s ease-in-out infinite;
   transition: transform 0.2s ease;
 }
 
@@ -58,9 +65,9 @@ body {
     transform: scale(1);
   }
   50% {
-    box-shadow: 0 0 25px rgba(251, 191, 36, 1), 0 0 45px rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 25px rgba(251, 191, 36, 1), 0 0 45px rgba(255, 255, 255, 0.9);
     filter: brightness(1.3);
-    transform: scale(1.04);
+    transform: scale(1.05);
   }
 }
 
