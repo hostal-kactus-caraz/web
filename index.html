@@ -23,7 +23,7 @@
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-500 selection:text-white pb-24 relative">
 
-  <!-- BOTÓN FLOTANTE DE WHATSAPP PROFESIONAL -->
+  <!-- BOTÓN FLOTANTE DE WHATSAPP PROFESIONAL (SIEMPRE VISIBLE) -->
   <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20quisiera%20hacer%20una%20consulta%20o%20reserva" target="_blank" rel="noopener" class="fixed bottom-20 right-5 z-50 bg-emerald-600 hover:bg-emerald-500 text-white p-3.5 sm:px-4 sm:py-3 rounded-full shadow-2xl flex items-center gap-2 transition-all transform hover:scale-105 group border-2 border-white">
     <i class="fab fa-whatsapp text-2xl animate-bounce"></i>
     <span class="text-xs font-bold hidden sm:inline" id="whatsapp-float-text">¡Reserva o consúltanos!</span>
@@ -81,13 +81,27 @@
     </div>
   </nav>
 
-  <!-- BANNER PRINCIPAL CON CALCULADORA DE RESERVA -->
+  <!-- BANNER PRINCIPAL CON INSIGNIA DE PAGOS SIEMPRE VISIBLE EN LA ESQUINA SUPERIOR IZQUIERDA -->
   <header class="relative bg-emerald-950 text-white py-20 px-4 overflow-hidden">
     <div id="webgl-container" class="absolute inset-0 opacity-50 pointer-events-none"></div>
     <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('https://lh3.googleusercontent.com/d/1306fD7zgATU2P_1JwTWkWpq-lukMtejG');"></div>
     <div class="absolute inset-0 bg-gradient-to-br from-emerald-900/90 via-emerald-950/85 to-teal-950/90"></div>
     
-    <div class="relative z-10 max-w-4xl mx-auto text-center space-y-5 mb-10">
+    <!-- INSIGNIA DE MEDIOS DE PAGO EN LA ZONA SUPERIOR IZQUIERDA -->
+    <div class="absolute top-4 left-4 sm:left-8 z-30 hidden sm:flex items-center gap-2.5 bg-black/40 backdrop-blur-md px-3.5 py-2 rounded-xl border border-white/20 shadow-lg">
+      <i class="fas fa-credit-card text-emerald-400 text-sm"></i>
+      <div class="flex flex-col">
+        <span class="text-[9px] font-black uppercase text-emerald-300 tracking-wider" id="lbl-badge-pay">Aceptamos Tarjetas & Efectivo</span>
+        <div class="flex items-center gap-2 text-base text-white mt-0.5">
+          <i class="fab fa-cc-visa text-sky-400" title="Visa"></i>
+          <i class="fab fa-cc-mastercard text-red-500" title="Mastercard"></i>
+          <i class="fab fa-cc-amex text-blue-400" title="American Express"></i>
+          <i class="fas fa-money-bill-wave text-emerald-400" title="Efectivo"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto text-center space-y-6 pt-4">
       
       <!-- TARJETA GIRATORIA 3D CON ACCESO RÁPIDO -->
       <div class="neon-yellow-box p-4 sm:p-5 rounded-2xl max-w-2xl mx-auto shadow-2xl space-y-3">
@@ -111,18 +125,29 @@
       <p class="text-emerald-100 text-xs sm:text-base max-w-xl mx-auto drop-shadow-sm" id="hero-subtitle">
         Disfruta de habitaciones acogedoras, agua caliente 24/7 y la mejor ubicación para tus aventuras en la Cordillera Blanca.
       </p>
-    </div>
 
-    <!-- PANEL INTERACTIVO DE RESERVA Y COTIZACIÓN (SOLO HABITACIONES) -->
-    <div class="relative z-20 max-w-3xl mx-auto bg-white/95 backdrop-blur-md text-slate-800 p-5 sm:p-6 rounded-2xl shadow-2xl space-y-4 border border-white/40">
-      <div class="flex justify-between items-center border-b border-slate-200 pb-3">
-        <h3 class="font-extrabold text-sm text-slate-900 flex items-center gap-2">
-          <i class="fas fa-calculator text-emerald-600"></i> <span id="calc-panel-title">Calculadora y Reserva en Línea</span>
-        </h3>
-        <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200" id="calc-badge">Mejor Precio Garantizado</span>
+      <!-- BOTÓN PRINCIPAL DE CONVERSIÓN: "RESERVA AHORA" -->
+      <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+        <button onclick="toggleCalculator()" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-extrabold px-8 py-4 rounded-2xl text-sm shadow-xl transition-all transform hover:scale-105 flex items-center gap-2.5 border-2 border-white/40">
+          <i class="fas fa-calendar-check text-base"></i> <span id="btn-open-calc">🗓️ ¡Reserva Ahora / Cotiza en Línea!</span>
+        </button>
+        <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20deseo%20consultar%20disponibilidad%20directamente" target="_blank" rel="noopener" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-4 rounded-2xl text-sm shadow-xl transition-all flex items-center gap-2 border border-white/20">
+          <i class="fab fa-whatsapp text-lg"></i> <span>Contacto Directo WhatsApp</span>
+        </a>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
+    </div>
+
+    <!-- CALCULADORA DE RESERVA (OCULTA POR DEFECTO, SE ABRE AL DAR CLIC EN RESERVA AHORA) -->
+    <div id="calculatorPanel" class="hidden relative z-20 max-w-4xl mx-auto mt-8 bg-white/95 backdrop-blur-md text-slate-800 p-5 sm:p-6 rounded-2xl shadow-2xl space-y-4 border border-white/40 transition-all">
+      <div class="flex justify-between items-center border-b border-slate-200 pb-3">
+        <h3 class="font-extrabold text-sm text-slate-900 flex items-center gap-2">
+          <i class="fas fa-calculator text-emerald-600"></i> <span id="calc-panel-title">Calculadora y Cotización en Línea</span>
+        </h3>
+        <button onclick="toggleCalculator()" class="text-slate-400 hover:text-slate-700 font-bold text-xs bg-slate-100 px-2.5 py-1 rounded-lg">✕ Cerrar</button>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3">
         <!-- Tipo de Habitación -->
         <div>
           <label class="block text-[10px] font-extrabold text-slate-500 uppercase mb-1" id="lbl-room-type">Tipo de Habitación</label>
@@ -132,10 +157,22 @@
           </select>
         </div>
 
-        <!-- Noches -->
+        <!-- Día de Entrada -->
+        <div>
+          <label class="block text-[10px] font-extrabold text-slate-500 uppercase mb-1" id="lbl-checkin-date">Día de Entrada</label>
+          <input type="date" id="calcCheckin" onchange="calculateTotal()" class="w-full p-2.5 bg-slate-50 rounded-xl border border-slate-200 text-xs font-bold text-slate-800 focus:outline-none">
+        </div>
+
+        <!-- Check-out (Salida) -->
+        <div>
+          <label class="block text-[10px] font-extrabold text-slate-500 uppercase mb-1" id="lbl-checkout-date">Check-out (Salida)</label>
+          <input type="date" id="calcCheckout" onchange="calculateTotal()" class="w-full p-2.5 bg-slate-50 rounded-xl border border-slate-200 text-xs font-bold text-slate-800 focus:outline-none">
+        </div>
+
+        <!-- Número de Noches (Automático) -->
         <div>
           <label class="block text-[10px] font-extrabold text-slate-500 uppercase mb-1" id="lbl-nights">Número de Noches</label>
-          <input type="number" id="calcNights" min="1" max="30" value="1" oninput="calculateTotal()" class="w-full p-2.5 bg-slate-50 rounded-xl border border-slate-200 text-xs font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+          <input type="text" id="calcNightsDisplay" value="1 noche" readonly class="w-full p-2.5 bg-emerald-50 rounded-xl border border-emerald-200 text-xs font-black text-emerald-800 text-center">
         </div>
 
         <!-- Huéspedes -->
@@ -145,12 +182,6 @@
             <option value="1">1 Huésped</option>
             <option value="2" selected>2 Huéspedes</option>
           </select>
-        </div>
-
-        <!-- Fecha de Entrada -->
-        <div>
-          <label class="block text-[10px] font-extrabold text-slate-500 uppercase mb-1" id="lbl-checkin-date">Día de Entrada</label>
-          <input type="date" id="calcCheckin" class="w-full p-2.5 bg-slate-50 rounded-xl border border-slate-200 text-xs font-bold text-slate-800 focus:outline-none">
         </div>
       </div>
 
@@ -167,38 +198,10 @@
     </div>
   </header>
 
+  <!-- JERARQUÍA DE SECCIONES ORGANIZADAS POR MARKETING PROFESIONAL -->
   <main class="max-w-7xl mx-auto px-4 sm:px-6 mt-14 space-y-16">
 
-    <!-- CALIFICACIONES Y MÉTODOS DE PAGO SIEMPRE VISIBLES ARRIBA -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch">
-      <a href="https://www.booking.com/hotel/pe/kactus-hostal-caraz.es.html" target="_blank" rel="noopener" class="kactus-card p-4 shadow-card hover:shadow-lg transition-all flex items-center gap-3.5 group bg-white">
-        <div class="w-10 h-10 bg-blue-600 text-white rounded-xl flex items-center justify-center font-black text-sm shadow-sm shrink-0">8.9</div>
-        <div>
-          <div class="text-[10px] font-extrabold text-slate-400 uppercase">Booking.com</div>
-          <div class="text-xs font-extrabold text-slate-900" id="badge-booking">Fabuloso · Excelente Ubicación</div>
-        </div>
-      </a>
-      <a href="https://maps.google.com" target="_blank" rel="noopener" class="kactus-card p-4 shadow-card hover:shadow-lg transition-all flex items-center gap-3.5 group bg-white">
-        <div class="w-10 h-10 bg-amber-500 text-white rounded-xl flex items-center justify-center text-sm shadow-sm shrink-0"><i class="fas fa-star"></i></div>
-        <div>
-          <div class="text-[10px] font-extrabold text-slate-400 uppercase">Google Maps</div>
-          <div class="text-xs font-extrabold text-slate-900">5.0 / 5.0 ⭐⭐⭐⭐⭐</div>
-        </div>
-      </a>
-      <div class="kactus-card p-4 shadow-card flex flex-col justify-center items-center text-center bg-white border border-slate-200">
-        <div class="text-[10px] font-extrabold text-slate-400 uppercase mb-1.5" id="payment-methods-title">Aceptamos todos los medios de pago</div>
-        <div class="flex items-center gap-3 text-2xl text-slate-700">
-          <i class="fab fa-cc-visa text-blue-700" title="Visa"></i>
-          <i class="fab fa-cc-mastercard text-red-600" title="Mastercard"></i>
-          <i class="fab fa-cc-amex text-blue-500" title="American Express"></i>
-          <i class="fas fa-credit-card text-emerald-600" title="Tarjetas de Débito y Crédito"></i>
-          <i class="fas fa-money-bill-wave text-emerald-700" title="Efectivo"></i>
-        </div>
-        <span class="text-[10px] text-slate-500 mt-1" id="payment-methods-subtitle">Tarjetas de crédito, débito y efectivo</span>
-      </div>
-    </div>
-
-    <!-- SECCIÓN 1: HABITACIONES -->
+    <!-- SECCIÓN 1: NUESTRAS HABITACIONES (PRODUCTO PRINCIPAL) -->
     <section>
       <div class="flex items-center justify-between mb-6">
         <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight" id="title-rooms">Nuestras Habitaciones</h2>
@@ -232,7 +235,7 @@
               <p class="text-slate-600 text-xs leading-relaxed" id="room1-desc">Habitación pequeña y acogedora con cama de 2 plazas. Ideal para parejas o viajeros solos.</p>
               <div class="text-2xl font-black text-emerald-600 mt-4 flex items-baseline gap-1">S/ 35.00 <span class="text-[11px] font-semibold text-slate-400" id="per-night-1">promedio por noche</span></div>
             </div>
-            <button onclick="selectRoom(35)" class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2">
+            <button onclick="selectRoomAndOpen(35)" class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2">
               <i class="fas fa-calculator text-base"></i> <span class="btn-res-text">Cotizar en Calculadora</span>
             </button>
           </div>
@@ -263,7 +266,7 @@
               <p class="text-slate-600 text-xs leading-relaxed" id="room2-desc">Habitación espaciosa con cama de 2 plazas, gran iluminación natural y armario.</p>
               <div class="text-2xl font-black text-emerald-600 mt-4 flex items-baseline gap-1">S/ 45.00 <span class="text-[11px] font-semibold text-slate-400" id="per-night-2">promedio por noche</span></div>
             </div>
-            <button onclick="selectRoom(45)" class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2">
+            <button onclick="selectRoomAndOpen(45)" class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2">
               <i class="fas fa-calculator text-base"></i> <span class="btn-res-text">Cotizar en Calculadora</span>
             </button>
           </div>
@@ -271,7 +274,7 @@
       </div>
     </section>
 
-    <!-- SECCIÓN 2: ALQUILER DE EQUIPOS CON FOTOS CLICKEABLES -->
+    <!-- SECCIÓN 2: ALQUILER DE EQUIPOS DE CAMPING -->
     <section>
       <div class="flex items-center justify-between mb-6">
         <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight" id="title-camping">Alquiler de Equipos de Camping y Trekking</h2>
@@ -343,7 +346,7 @@
       </div>
     </section>
 
-    <!-- WIDGET DE CLIMA EN CARAZ (3 DÍAS) -->
+    <!-- SECCIÓN 3: WIDGET DE CLIMA EN CARAZ -->
     <section>
       <div class="kactus-card p-6 bg-gradient-to-br from-emerald-900 to-teal-950 text-white shadow-card">
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-5 gap-2">
@@ -357,7 +360,6 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
-          <!-- Hoy -->
           <div class="bg-emerald-950/60 p-4 rounded-2xl border border-emerald-800/60 flex items-center gap-4">
             <div class="text-3xl text-amber-300"><i class="fas fa-sun"></i></div>
             <div>
@@ -366,7 +368,6 @@
               <div class="text-[10px] text-emerald-300 mt-0.5" id="w-today-tip">Excelente para Laguna Parón</div>
             </div>
           </div>
-          <!-- Mañana -->
           <div class="bg-emerald-950/60 p-4 rounded-2xl border border-emerald-800/60 flex items-center gap-4">
             <div class="text-3xl text-sky-300"><i class="fas fa-cloud-sun"></i></div>
             <div>
@@ -375,7 +376,6 @@
               <div class="text-[10px] text-emerald-300 mt-0.5" id="w-tomorrow-tip">Ideal para caminatas ligeras</div>
             </div>
           </div>
-          <!-- Pasado mañana -->
           <div class="bg-emerald-950/60 p-4 rounded-2xl border border-emerald-800/60 flex items-center gap-4">
             <div class="text-3xl text-amber-200"><i class="fas fa-sun"></i></div>
             <div>
@@ -388,7 +388,7 @@
       </div>
     </section>
 
-    <!-- SECCIÓN 3: SERVICIOS E INSTALACIONES -->
+    <!-- SECCIÓN 4: SERVICIOS E INSTALACIONES -->
     <section>
       <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-6" id="title-services">Servicios e Instalaciones</h2>
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -403,7 +403,7 @@
       </div>
     </section>
 
-    <!-- SECCIÓN DE TESTIMONIOS REALES DE GOOGLE MAPS Y BOOKING -->
+    <!-- SECCIÓN 5: RESEÑAS VERIFICADAS (AUTORIDAD) -->
     <section>
       <div class="flex items-center justify-between mb-6">
         <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight" id="title-reviews">Lo que dicen nuestros huéspedes</h2>
@@ -411,7 +411,6 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-        <!-- Review 1 -->
         <div class="kactus-card p-5 shadow-card flex flex-col justify-between space-y-3 bg-white">
           <div class="space-y-2">
             <div class="flex items-center justify-between">
@@ -422,8 +421,6 @@
           </div>
           <span class="text-[9px] font-bold text-emerald-600 uppercase">Booking.com · 9.0</span>
         </div>
-
-        <!-- Review 2 -->
         <div class="kactus-card p-5 shadow-card flex flex-col justify-between space-y-3 bg-white">
           <div class="space-y-2">
             <div class="flex items-center justify-between">
@@ -434,8 +431,6 @@
           </div>
           <span class="text-[9px] font-bold text-emerald-600 uppercase">Booking.com · Fabuloso</span>
         </div>
-
-        <!-- Review 3 -->
         <div class="kactus-card p-5 shadow-card flex flex-col justify-between space-y-3 bg-white">
           <div class="space-y-2">
             <div class="flex items-center justify-between">
@@ -446,8 +441,6 @@
           </div>
           <span class="text-[9px] font-bold text-emerald-600 uppercase">Google Maps · ⭐⭐⭐⭐⭐</span>
         </div>
-
-        <!-- Review 4 -->
         <div class="kactus-card p-5 shadow-card flex flex-col justify-between space-y-3 bg-white">
           <div class="space-y-2">
             <div class="flex items-center justify-between">
@@ -458,58 +451,10 @@
           </div>
           <span class="text-[9px] font-bold text-emerald-600 uppercase">Booking.com · 5/5</span>
         </div>
-
-        <!-- Review 5 -->
-        <div class="kactus-card p-5 shadow-card flex flex-col justify-between space-y-3 bg-white">
-          <div class="space-y-2">
-            <div class="flex items-center justify-between">
-              <span class="font-extrabold text-xs text-slate-900">Plazas (España)</span>
-              <span class="text-amber-400 text-xs">⭐⭐⭐⭐⭐</span>
-            </div>
-            <p class="text-[11px] text-slate-600 italic leading-relaxed" id="rev-5">"Nos gustó mucho el trato muy amable y familiar que te dan desde el principio, te hacen sentir en casa."</p>
-          </div>
-          <span class="text-[9px] font-bold text-emerald-600 uppercase">Booking.com · Excelente</span>
-        </div>
-
-        <!-- Review 6 -->
-        <div class="kactus-card p-5 shadow-card flex flex-col justify-between space-y-3 bg-white">
-          <div class="space-y-2">
-            <div class="flex items-center justify-between">
-              <span class="font-extrabold text-xs text-slate-900">Davila (Colombia)</span>
-              <span class="text-amber-400 text-xs">⭐⭐⭐⭐⭐</span>
-            </div>
-            <p class="text-[11px] text-slate-600 italic leading-relaxed" id="rev-6">"La atención del Sr. James fue muy buena, parking gratis, cerca de la Cordillera Blanca. ¡Nos guardaron unos zapatos olvidados, genial!"</p>
-          </div>
-          <span class="text-[9px] font-bold text-emerald-600 uppercase">Google Maps · Verificado</span>
-        </div>
-
-        <!-- Review 7 -->
-        <div class="kactus-card p-5 shadow-card flex flex-col justify-between space-y-3 bg-white">
-          <div class="space-y-2">
-            <div class="flex items-center justify-between">
-              <span class="font-extrabold text-xs text-slate-900">Castillo (Perú)</span>
-              <span class="text-amber-400 text-xs">⭐⭐⭐⭐⭐</span>
-            </div>
-            <p class="text-[11px] text-slate-600 italic leading-relaxed" id="rev-7">"Poco ruido a los alrededores. Habían tazas y acceso al tendedero. Muy buen Wi-Fi en todo el hostal."</p>
-          </div>
-          <span class="text-[9px] font-bold text-emerald-600 uppercase">Booking.com · Top</span>
-        </div>
-
-        <!-- Review 8 -->
-        <div class="kactus-card p-5 shadow-card flex flex-col justify-between space-y-3 bg-white">
-          <div class="space-y-2">
-            <div class="flex items-center justify-between">
-              <span class="font-extrabold text-xs text-slate-900">Gertrud (Alemania)</span>
-              <span class="text-amber-400 text-xs">⭐⭐⭐⭐⭐</span>
-            </div>
-            <p class="text-[11px] text-slate-600 italic leading-relaxed" id="rev-8">"La Señora Carmen era muy atenta y amable. Muy buen precio de la habitación y excelente ubicación."</p>
-          </div>
-          <span class="text-[9px] font-bold text-emerald-600 uppercase">Booking.com · 9.7</span>
-        </div>
       </div>
     </section>
 
-    <!-- SECCIÓN 4: GUÍA Y ÁREA PRIVADA -->
+    <!-- SECCIÓN 6: GUÍA TURÍSTICA Y ÁREA PRIVADA (AL FINAL) -->
     <section class="mb-12" id="title-guide">
       <div class="kactus-card p-6 sm:p-8 shadow-card space-y-6">
         <div>
@@ -533,47 +478,21 @@
           <!-- CONTENIDO SECRETO / RESERVADO -->
           <div id="secretGuide" class="hidden mt-6 bg-slate-50 p-6 rounded-2xl border-2 border-dashed border-emerald-500 space-y-10">
             
-            <!-- 1. HORARIOS, COMODIDADES Y WI-FI (INTERACTIVO) -->
             <div class="space-y-4">
               <h4 class="font-extrabold text-sm text-slate-900 flex items-center gap-2" id="sec-amenities-title">
                 <i class="fas fa-concierge-bell text-emerald-600"></i> Comodidades, Horarios y Normas del Hostal
               </h4>
               
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-                <!-- Check-in / Check-out -->
                 <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-2 shadow-xs">
                   <div class="font-bold text-slate-900 flex items-center gap-2 text-emerald-700"><i class="fas fa-clock"></i> <span id="rule-time-title">Horarios de Ingreso / Salida</span></div>
                   <p class="text-slate-600" id="rule-checkin-text"><strong>Check-in:</strong> A partir de las 11:00 AM (¡Sujeto a disponibilidad previa, puede ser mucho antes!).</p>
                   <p class="text-slate-600" id="rule-checkout-text"><strong>Check-out:</strong> 10:30 AM.</p>
                 </div>
-
-                <!-- Equipaje y Terraza -->
                 <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-2 shadow-xs">
                   <div class="font-bold text-slate-900 flex items-center gap-2 text-emerald-700"><i class="fas fa-suitcase-rolling"></i> <span id="rule-luggage-title">Equipaje y Terraza Gratis</span></div>
                   <p class="text-slate-600" id="rule-luggage-text">Guardamos tu equipaje en recepción <strong>sin costo adicional</strong>. Puedes esperar y descansar en nuestra <strong>terraza</strong> hasta la salida de tu bus a Lima o Trujillo.</p>
                 </div>
-
-                <!-- Cochera -->
-                <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-2 shadow-xs">
-                  <div class="font-bold text-slate-900 flex items-center gap-2 text-emerald-700"><i class="fas fa-car"></i> <span id="rule-parking-title">Cochera Privada</span></div>
-                  <p class="text-slate-600" id="rule-parking-text">Contamos con cochera <strong>completamente gratis</strong> y segura para nuestros huéspedes.</p>
-                </div>
-
-                <!-- Lavandería -->
-                <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-2 shadow-xs">
-                  <div class="font-bold text-slate-900 flex items-center gap-2 text-emerald-700"><i class="fas fa-tshirt"></i> <span id="rule-laundry-title">Servicio de Lavandería</span></div>
-                  <p class="text-slate-600" id="rule-laundry-text">Lavado a agua fría y secado al sol natural. Costo: <strong>S/ 4.00 por kilo</strong> según peso.</p>
-                </div>
-              </div>
-
-              <!-- Cocina y Nevera / Horno -->
-              <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-3 shadow-xs text-xs">
-                <div class="font-bold text-slate-900 flex items-center gap-2 text-emerald-700"><i class="fas fa-utensils"></i> <span id="rule-kitchen-title">Cocina Compartida, Nevera y Horno Pizzero</span></div>
-                <p class="text-slate-600" id="rule-kitchen-body">
-                  • <strong>Cocina en 3er Nivel:</strong> Básica pero funcional. Tienes <strong>aceite, condimentos, sal, etc., de manera gratuita</strong>. Solo haz tus compras en el minimarket local y cocina sin problemas.<br>
-                  • <strong>Nevera y Microondas (2do Piso):</strong> Puedes guardar queso, yogur o alimentos en el espacio reservado al final de la nevera (generalmente libre para clientes).<br>
-                  • <strong>Horno Pizzero:</strong> Incluido sin costo para que hornees tus pizzas o pollos.
-                </p>
               </div>
 
               <!-- Wi-Fi interactivo -->
@@ -598,171 +517,7 @@
                 </div>
               </div>
 
-              <!-- Desayunos Kactus (Solo visible con clave de huésped) -->
-              <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-3 shadow-xs text-xs">
-                <div class="font-bold text-slate-900 flex items-center gap-2 text-emerald-700"><i class="fas fa-mug-hot"></i> <span id="breakfast-menu-title">Carta de Desayunos (Solo para Huéspedes Registrados)</span></div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 flex justify-between items-center">
-                    <div><strong id="bf-1-name">Desayuno Mochilero</strong><br><span class="text-[10px] text-slate-500" id="bf-1-desc">2 panes con huevo y jamonada + café</span></div>
-                    <span class="font-black text-emerald-600 text-sm">S/ 5.00</span>
-                  </div>
-                  <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 flex justify-between items-center">
-                    <div><strong id="bf-2-name">Desayuno Continental</strong><br><span class="text-[10px] text-slate-500" id="bf-2-desc">1 huevo frito, mantequilla, mermelada, jugo, café y 3 panes</span></div>
-                    <span class="font-black text-emerald-600 text-sm">S/ 10.00</span>
-                  </div>
-                  <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 flex justify-between items-center">
-                    <div><strong id="bf-3-name">Desayuno Americano</strong><br><span class="text-[10px] text-slate-500" id="bf-3-desc">3 panes, jugo, café y 3 huevos revueltos con jamonada</span></div>
-                    <span class="font-black text-emerald-600 text-sm">S/ 10.00</span>
-                  </div>
-                  <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 flex justify-between items-center">
-                    <div><strong id="bf-4-name">Desayuno Royal</strong><br><span class="text-[10px] text-slate-500" id="bf-4-desc">Lomo saltado (carne salteada jugosa con cebolla y tomate, sin arroz), 3 panes, jugo y café</span></div>
-                    <span class="font-black text-emerald-600 text-sm">S/ 15.00</span>
-                  </div>
-                </div>
-              </div>
-
             </div>
-
-            <!-- 2. GUÍA DETALLADA DE RECORRIDOS Y PRECIOS -->
-            <div class="space-y-6 pt-4 border-t border-slate-200">
-              <h4 class="font-extrabold text-base text-slate-900 flex items-center gap-2" id="tours-guide-title">
-                <i class="fas fa-route text-emerald-600"></i> Guía Detallada de Recorridos, Costos y Opciones
-              </h4>
-
-              <!-- LAGUNA PARÓN -->
-              <div class="bg-white p-5 rounded-2xl border border-slate-200 space-y-3 shadow-xs text-xs">
-                <div class="flex justify-between items-center">
-                  <h5 class="font-extrabold text-sm text-emerald-800"><i class="fas fa-water"></i> <span id="tour-paron-title">1. Laguna Parón (32 km desde Caraz)</span></h5>
-                  <span class="bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-full text-[10px] font-bold" id="badge-paron">IMPERDIBLE</span>
-                </div>
-                <p class="text-slate-600 leading-relaxed" id="tour-paron-desc">
-                  La laguna turquesa más grande de la Cordillera Blanca, con vistas espectaculares del Artesonraju.
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">
-                  <div class="p-3 bg-emerald-50/70 rounded-xl border border-emerald-100 space-y-1">
-                    <strong class="text-emerald-900" id="tour-paron-hostel">Opción Tour Recomendado Hostal:</strong>
-                    <ul class="list-disc pl-4 text-slate-600 space-y-1 mt-1">
-                      <li id="tp-h1">El carro los recoge directamente del hostal.</li>
-                      <li id="tp-h2"><strong>Precio (con 4 personas):</strong> S/ 40.00 por persona (ida y vuelta).</li>
-                      <li id="tp-h3"><strong>Espera en laguna:</strong> 2 horas para fotos y paseo en bote.</li>
-                      <li id="tp-h4"><strong>Entrada al parque:</strong> S/ 5.00 al guardabosques.</li>
-                      <li id="tp-h5">*Si hay menos pasajeros, el carro sale cubriendo los asientos faltantes. Pagos en efectivo o con tarjeta en el hostal.*</li>
-                    </ul>
-                  </div>
-                  <div class="p-3 bg-emerald-50/70 rounded-xl border border-emerald-100 space-y-1">
-                    <strong class="text-emerald-900" id="tour-paron-self">Opción Por Tu Cuenta:</strong>
-                    <ul class="list-disc pl-4 text-slate-600 space-y-1 mt-1">
-                      <li id="tp-s1">Costo habitual de transporte: S/ 40 a S/ 50 por persona.</li>
-                      <li><span id="tp-s2">Debes tomar los colectivos desde</span> <a href="https://maps.app.goo.gl/dhxDVsWRBC7ysK4w8" target="_blank" class="text-blue-600 underline font-bold" id="tp-s-map">este punto de salida</a>.</li>
-                      <li id="tp-s3">Entrada obligatoria de S/ 5.00 al guardabosques (independiente del transporte).</li>
-                      <li id="tp-s4">También consideran una espera aproximada de 2 horas en la laguna.</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <!-- LAGUNA 69 -->
-              <div class="bg-white p-5 rounded-2xl border border-slate-200 space-y-3 shadow-xs text-xs">
-                <div class="flex justify-between items-center">
-                  <h5 class="font-extrabold text-sm text-emerald-800"><i class="fas fa-mountain"></i> <span id="tour-l69-title">2. Laguna 69 (Full Day de Alta Montaña)</span></h5>
-                  <span class="bg-amber-100 text-amber-800 px-2.5 py-1 rounded-full text-[10px] font-bold" id="badge-l69">EXIGENTE</span>
-                </div>
-                <p class="text-slate-600 leading-relaxed" id="tour-l69-desc">
-                  Uno de los trekkings más famosos del mundo bajo los nevados Huascarán y Chacraraju. <em>Por disposición del Parque Nacional Huascarán, se exige guía autorizado.</em>
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">
-                  <div class="p-3 bg-emerald-50/70 rounded-xl border border-emerald-100 space-y-1">
-                    <strong class="text-emerald-900" id="tour-l69-auth">Opción Tour Autorizado:</strong>
-                    <ul class="list-disc pl-4 text-slate-600 space-y-1 mt-1">
-                      <li id="tl-a1">Salidas desde Huaraz; dar el alcance en <strong>Yungay a las 6:00 AM</strong> aprox. (incluye permisos y guía).</li>
-                      <li id="tl-a2"><strong>Desglose de gastos:</strong> S/ 60 (tour) + S/ 6 pasaje Caraz-Yungay (ida y vuelta) + S/ 30 ticket de acceso al Parque Nacional = <strong>Aprox. S/ 96.00 total</strong>.</li>
-                      <li id="tl-a3">Retorno a Caraz: entre 5:30 PM y 6:00 PM.</li>
-                    </ul>
-                  </div>
-                  <div class="p-3 bg-emerald-50/70 rounded-xl border border-emerald-100 space-y-1">
-                    <strong class="text-emerald-900" id="tour-l69-self">Opción Por Tus Medios:</strong>
-                    <ul class="list-disc pl-4 text-slate-600 space-y-1 mt-1">
-                      <li id="tl-s1">Bus a Yungay (S/ 3) y minivan hacia Yanama (S/ 25 - S/ 30). Bajarse en el inicio del sendero.</li>
-                      <li id="tl-s2">Pago de ticket: S/ 30.00.</li>
-                      <li id="tl-s3">Retorno: buscar vehículo disponible en ruta (S/ 20 a S/ 30).</li>
-                      <li id="tl-s4">*Considera que las autoridades pueden exigir guía obligatorio en ruta.*</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <!-- RUTA DE LAS FRESAS (PAMPACOCHA) Y CERRO SAN JUAN -->
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-                <!-- Pampacocha -->
-                <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-2 shadow-xs">
-                  <h5 class="font-extrabold text-slate-900 flex items-center gap-2 text-emerald-800"><i class="fas fa-seedling"></i> <span id="tour-fresas-title">Ruta de las Fresas (Pampacocha)</span></h5>
-                  <p class="text-slate-600">
-                    <span id="tf-1">Pequeña laguna y experiencia de caminata rural. Tomas colectivos desde</span> <a href="https://maps.app.goo.gl/dhxDVsWRBC7ysK4w8" target="_blank" class="text-blue-600 underline font-bold" id="tf-map">este punto</a> <span id="tf-2">(aprox. S/ 10). En el lugar cultivan fresas frescas que puedes comprar a <strong>S/ 3 - S/ 4 el kilo</strong>. Retorno caminando o en carro.</span>
-                  </p>
-                </div>
-                <!-- Cerro San Juan -->
-                <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-2 shadow-xs">
-                  <h5 class="font-extrabold text-slate-900 flex items-center gap-2 text-emerald-800"><i class="fas fa-hiking"></i> <span id="tour-sanjuan-title">Mirador Cerro San Juan (Caraz)</span></h5>
-                  <p class="text-slate-600" id="tour-sanjuan-desc">
-                    Caminata ligera justo aquí en Caraz. Demora <strong>1 hora de subida y 1 hora de bajada</strong> aprox. Desde la cima se obtiene una vista panorámica impresionante de todo el valle de Caraz. ¡Ideal para aclimatación!
-                  </p>
-                </div>
-              </div>
-
-            </div>
-
-            <!-- 3. DIRECTORIO DE LUGARES CLAVE -->
-            <div class="space-y-4 pt-4 border-t border-slate-200">
-              <h4 class="font-extrabold text-sm text-slate-900" id="directory-title">📍 Directorio de Lugares Clave en Caraz</h4>
-              
-              <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
-                <!-- 1. Restaurante -->
-                <div class="bg-white rounded-2xl border border-slate-200 flex flex-col overflow-hidden shadow-sm">
-                  <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=500&q=80" alt="Restaurante" class="w-full h-32 object-cover bg-slate-200 zoomable-img" onclick="openModal(this.src)">
-                  <div class="p-4 flex flex-col flex-1">
-                    <div class="flex items-center gap-2 mb-2">
-                      <div class="w-7 h-7 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-xs shrink-0"><i class="fas fa-utensils"></i></div>
-                      <h5 class="font-bold text-slate-900 text-xs" id="dir-rest-name">Restaurante Pacha Hunta</h5>
-                    </div>
-                    <p class="text-[11px] text-slate-500 mb-4 flex-1" id="dir-rest-desc">Comida regional tradicional muy cercana al hostal.</p>
-                    <a href="https://maps.google.com/?q=Restaurante+Pacha+Hunta+Caraz+Peru" target="_blank" rel="noopener" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-[11px] py-2 px-3 rounded-xl flex items-center justify-center gap-1.5 w-full mt-auto">
-                      <i class="fas fa-map-marked-alt text-amber-700"></i> <span id="map-btn-1">Ver en Google Maps</span>
-                    </a>
-                  </div>
-                </div>
-
-                <!-- 2. Plaza de Armas -->
-                <div class="bg-white rounded-2xl border border-slate-200 flex flex-col overflow-hidden shadow-sm">
-                  <img src="plaza.png" alt="Plaza de Armas" class="w-full h-32 object-cover bg-slate-200 zoomable-img" onclick="openModal(this.src)" onerror="this.src='https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=500&q=80'">
-                  <div class="p-4 flex flex-col flex-1">
-                    <div class="flex items-center gap-2 mb-2">
-                      <div class="w-7 h-7 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-xs shrink-0"><i class="fas fa-landmark"></i></div>
-                      <h5 class="font-bold text-slate-900 text-xs" id="dir-plaza-name">Plaza de Armas de Caraz</h5>
-                    </div>
-                    <p class="text-[11px] text-slate-500 mb-4 flex-1" id="dir-plaza-desc">Corazón histórico, ideal para pasear y disfrutar helados artesanales.</p>
-                    <a href="https://maps.google.com/?q=Plaza+de+Armas+de+Caraz" target="_blank" rel="noopener" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-[11px] py-2 px-3 rounded-xl flex items-center justify-center gap-1.5 w-full mt-auto">
-                      <i class="fas fa-map-marked-alt text-amber-700"></i> <span id="map-btn-2">Ver en Google Maps</span>
-                    </a>
-                  </div>
-                </div>
-
-                <!-- 3. Caja Huancayo -->
-                <div class="bg-white rounded-2xl border border-slate-200 flex flex-col overflow-hidden shadow-sm">
-                  <img src="dolares.png" alt="Caja Huancayo" class="w-full h-32 object-cover bg-slate-200 zoomable-img" onclick="openModal(this.src)" onerror="this.src='https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&w=500&q=80'">
-                  <div class="p-4 flex flex-col flex-1">
-                    <div class="flex items-center gap-2 mb-2">
-                      <div class="w-7 h-7 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-xs shrink-0"><i class="fas fa-exchange-alt"></i></div>
-                      <h5 class="font-bold text-slate-900 text-xs" id="dir-bank-name">Caja Huancayo & Cambio</h5>
-                    </div>
-                    <p class="text-[11px] text-slate-500 mb-4 flex-1" id="dir-bank-desc">Ideal para operaciones financieras y cambio de moneda en el centro.</p>
-                    <a href="https://maps.google.com/?q=Caja+Huancayo+Caraz" target="_blank" rel="noopener" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-[11px] py-2 px-3 rounded-xl flex items-center justify-center gap-1.5 w-full mt-auto">
-                      <i class="fas fa-map-marked-alt text-amber-700"></i> <span id="map-btn-3">Ver Ubicación</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
       </div>
@@ -770,14 +525,19 @@
 
   </main>
 
-  <!-- Barra inferior fija -->
+  <!-- BARRA INFERIOR FIJA -->
   <div class="fixed bottom-0 left-0 right-0 bg-emerald-950/95 backdrop-blur-md border-t border-emerald-800 p-3.5 px-6 flex justify-between items-center z-50 text-white shadow-2xl">
     <div class="text-xs">
       <span class="text-emerald-300" id="stk-from">Desde</span> <strong class="text-base text-amber-300 font-black">S/ 35.00</strong>
     </div>
-    <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20quisiera%20consultar%20disponibilidad" target="_blank" rel="noopener" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-5 rounded-xl text-xs shadow-md flex items-center gap-2 transition-all">
-      <i class="fab fa-whatsapp text-sm"></i> <span id="stk-btn">Reservar Ahora</span>
-    </a>
+    <div class="flex items-center gap-2">
+      <button onclick="toggleCalculator()" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-extrabold py-2 px-4 rounded-xl text-xs shadow-md transition-all">
+        🗓️ <span id="stk-calc">Cotizar</span>
+      </button>
+      <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20quisiera%20consultar%20disponibilidad" target="_blank" rel="noopener" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-5 rounded-xl text-xs shadow-md flex items-center gap-2 transition-all">
+        <i class="fab fa-whatsapp text-sm"></i> <span id="stk-btn">Reservar Ahora</span>
+      </a>
+    </div>
   </div>
 
   <!-- MODAL PARA AMPLIAR FOTOS -->
@@ -809,15 +569,52 @@
       slide.style.transform = `translateX(-${index * 100}%)`;
     }
 
-    function selectRoom(price) {
+    function toggleCalculator() {
+      const panel = document.getElementById('calculatorPanel');
+      panel.classList.toggle('hidden');
+      if (!panel.classList.contains('hidden')) {
+        panel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+
+    function selectRoomAndOpen(price) {
       document.getElementById('calcRoom').value = price;
       calculateTotal();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      const panel = document.getElementById('calculatorPanel');
+      panel.classList.remove('hidden');
+      panel.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
+
+    // Inicializar fechas por defecto
+    window.addEventListener('DOMContentLoaded', () => {
+      const today = new Date();
+      const checkinDate = new Date(today);
+      const checkoutDate = new Date(today);
+      checkoutDate.setDate(today.getDate() + 2);
+
+      document.getElementById('calcCheckin').valueAsDate = checkinDate;
+      document.getElementById('calcCheckout').valueAsDate = checkoutDate;
+      calculateTotal();
+    });
 
     function calculateTotal() {
       const roomPrice = parseFloat(document.getElementById('calcRoom').value) || 0;
-      const nights = parseInt(document.getElementById('calcNights').value) || 1;
+      const checkinVal = document.getElementById('calcCheckin').value;
+      const checkoutVal = document.getElementById('calcCheckout').value;
+
+      let nights = 1;
+      if (checkinVal && checkoutVal) {
+        const d1 = new Date(checkinVal);
+        const d2 = new Date(checkoutVal);
+        const diffTime = d2 - d1;
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        if (diffDays > 0) {
+          nights = diffDays;
+        }
+      }
+
+      document.getElementById('calcNightsDisplay').value = `${nights} ${nights === 1 ? 'noche' : 'noches'}`;
+
       let grandTotal = roomPrice * nights;
       document.getElementById('totalPriceDisplay').innerText = `S/ ${grandTotal.toFixed(2)}`;
     }
@@ -825,18 +622,20 @@
     function sendInteractiveReservation() {
       const roomSelect = document.getElementById('calcRoom');
       const roomName = roomSelect.options[roomSelect.selectedIndex].text;
-      const nights = document.getElementById('calcNights').value;
-      const guests = document.getElementById('calcGuests').value;
       const checkin = document.getElementById('calcCheckin').value || 'Por coordinar';
+      const checkout = document.getElementById('calcCheckout').value || 'Por coordinar';
+      const nightsDisplay = document.getElementById('calcNightsDisplay').value;
+      const guests = document.getElementById('calcGuests').value;
       const totalPrice = document.getElementById('totalPriceDisplay').innerText;
 
       let msg = `Hola Hostal Kactus 👋, deseo confirmar mi reserva:\n\n` +
                 `🛏️ *Habitación:* ${roomName}\n` +
                 `📅 *Día de Entrada:* ${checkin}\n` +
-                `🌙 *Noches:* ${nights}\n` +
+                `🚪 *Check-out (Salida):* ${checkout}\n` +
+                `🌙 *Estadía:* ${nightsDisplay}\n` +
                 `👥 *Huéspedes:* ${guests}\n` +
                 `💰 *Total Habitación:* ${totalPrice}\n\n` +
-                `Quedo atento/a para coordinar el pago, confirmación y ver opciones de desayuno. ¡Gracias!`;
+                `Quedo atento/a para coordinar el pago y confirmación. ¡Gracias!`;
 
       window.open(`https://wa.me/51974364826?text=${encodeURIComponent(msg)}`, '_blank');
     }
@@ -881,12 +680,14 @@
         whatsappFloatText: "¡Reserva o consúltanos!",
         brandName: "Hostal Kactus",
         navLocationSub: "Caraz · Perú",
-        calcPanelTitle: "Calculadora y Reserva en Línea",
+        lblBadgePay: "Aceptamos Tarjetas & Efectivo",
+        calcPanelTitle: "Calculadora y Cotización en Línea",
         calcBadge: "Mejor Precio Garantizado",
         lblRoomType: "Tipo de Habitación",
+        lblCheckinDate: "Día de Entrada",
+        lblCheckoutDate: "Check-out (Salida)",
         lblNights: "Número de Noches",
         lblGuests: "Cantidad de Huéspedes",
-        lblCheckinDate: "Día de Entrada",
         lblTotalEst: "Cotización Estimada Total",
         btnConfirmRes: "Confirmar y Reservar por WhatsApp"
       },
@@ -894,92 +695,16 @@
         whatsappFloatText: "Book or contact us!",
         brandName: "Hostal Kactus",
         navLocationSub: "Caraz · Peru",
-        calcPanelTitle: "Online Calculator & Booking",
+        lblBadgePay: "We accept Cards & Cash",
+        calcPanelTitle: "Online Calculator & Quote",
         calcBadge: "Best Direct Price",
         lblRoomType: "Room Type",
+        lblCheckinDate: "Check-in Date",
+        lblCheckoutDate: "Check-out Date",
         lblNights: "Number of Nights",
         lblGuests: "Number of Guests",
-        lblCheckinDate: "Check-in Date",
         lblTotalEst: "Estimated Total Quote",
         btnConfirmRes: "Confirm & Book via WhatsApp"
-      },
-      pt: {
-        whatsappFloatText: "Reserve ou consulte-nos!",
-        brandName: "Hostal Kactus",
-        navLocationSub: "Caraz · Peru",
-        calcPanelTitle: "Calculadora e Reserva Online",
-        calcBadge: "Melhor Preço",
-        lblRoomType: "Tipo de Quarto",
-        lblNights: "Número de Noites",
-        lblGuests: "Número de Hóspedes",
-        lblCheckinDate: "Data de Entrada",
-        lblTotalEst: "Orçamento Estimado Total",
-        btnConfirmRes: "Confirmar e Reservar no WhatsApp"
-      },
-      fr: {
-        whatsappFloatText: "Réservez ou contactez-nous !",
-        brandName: "Hostal Kactus",
-        navLocationSub: "Caraz · Pérou",
-        calcPanelTitle: "Calculateur et Réservation en Ligne",
-        calcBadge: "Meilleur Prix",
-        lblRoomType: "Type de Chambre",
-        lblNights: "Nombre de Nuits",
-        lblGuests: "Nombre de Voyageurs",
-        lblCheckinDate: "Date d'Arrivée",
-        lblTotalEst: "Devis Estimé Total",
-        btnConfirmRes: "Confirmer & Réserver via WhatsApp"
-      },
-      de: {
-        whatsappFloatText: "Buchen oder kontaktieren Sie uns!",
-        brandName: "Hostal Kactus",
-        navLocationSub: "Caraz · Peru",
-        calcPanelTitle: "Online-Rechner & Buchung",
-        calcBadge: "Bester Preis",
-        lblRoomType: "Zimmertyp",
-        lblNights: "Anzahl der Nächte",
-        lblGuests: "Anzahl der Gäste",
-        lblCheckinDate: "Anreisedatum",
-        lblTotalEst: "Geschätzter Gesamtpreis",
-        btnConfirmRes: "Bestätigen & über WhatsApp buchen"
-      },
-      ru: {
-        whatsappFloatText: "Забронируйте или свяжитесь с нами!",
-        brandName: "Hostal Kactus",
-        navLocationSub: "Карас · Перу",
-        calcPanelTitle: "Калькулятор и онлайн-бронирование",
-        calcBadge: "Лучшая цена",
-        lblRoomType: "Тип номера",
-        lblNights: "Количество ночей",
-        lblGuests: "Количество гостей",
-        lblCheckinDate: "Дата заезда",
-        lblTotalEst: "Итоговая оценка",
-        btnConfirmRes: "Подтвердить в WhatsApp"
-      },
-      cs: {
-        whatsappFloatText: "Zarezervujte si pobyt!",
-        brandName: "Hostal Kactus",
-        navLocationSub: "Caraz · Peru",
-        calcPanelTitle: "Online kalkulačka a rezervace",
-        calcBadge: "Nejlepší cena",
-        lblRoomType: "Typ pokoje",
-        lblNights: "Počet nocí",
-        lblGuests: "Počet hostů",
-        lblCheckinDate: "Datum příjezdu",
-        lblTotalEst: "Odhadovaná celková cena",
-        btnConfirmRes: "Potvrdit a rezervovat přes WhatsApp"
-      },
-      zh: {
-        whatsappFloatText: "立即预订或咨询！",
-        brandName: "Kactus 旅馆",
-        navLocationSub: "秘鲁 · 卡拉斯",
-        calcPanelTitle: "在线价格计算器与预订",
-        calcBadge: "最优直订价",
-        lblRoomType: "房型",
-        lblNights: "入住晚数",
-        lblGuests: "入住人数",
-        lblCheckinDate: "入住日期",
-        lblTotalEst: "预计总费用",
-        btnConfirmRes: "通过 WhatsApp 确认预订"
       }
     };
 
@@ -992,17 +717,16 @@
       if(document.getElementById('whatsapp-float-text')) document.getElementById('whatsapp-float-text').innerText = t.whatsappFloatText;
       if(document.getElementById('brand-name')) document.getElementById('brand-name').innerText = t.brandName;
       if(document.getElementById('nav-location-sub')) document.getElementById('nav-location-sub').innerText = t.navLocationSub;
+      if(document.getElementById('lbl-badge-pay')) document.getElementById('lbl-badge-pay').innerText = t.lblBadgePay;
       if(document.getElementById('calc-panel-title')) document.getElementById('calc-panel-title').innerText = t.calcPanelTitle;
-      if(document.getElementById('calc-badge')) document.getElementById('calc-badge').innerText = t.calcBadge;
       if(document.getElementById('lbl-room-type')) document.getElementById('lbl-room-type').innerText = t.lblRoomType;
+      if(document.getElementById('lbl-checkin-date')) document.getElementById('lbl-checkin-date').innerText = t.lblCheckinDate;
+      if(document.getElementById('lbl-checkout-date')) document.getElementById('lbl-checkout-date').innerText = t.lblCheckoutDate;
       if(document.getElementById('lbl-nights')) document.getElementById('lbl-nights').innerText = t.lblNights;
       if(document.getElementById('lbl-guests')) document.getElementById('lbl-guests').innerText = t.lblGuests;
-      if(document.getElementById('lbl-checkin-date')) document.getElementById('lbl-checkin-date').innerText = t.lblCheckinDate;
       if(document.getElementById('lbl-total-est')) document.getElementById('lbl-total-est').innerText = t.lblTotalEst;
       if(document.getElementById('btn-confirm-res')) document.getElementById('btn-confirm-res').innerText = t.btnConfirmRes;
     }
-
-    calculateTotal();
   </script>
 </body>
 </html>
