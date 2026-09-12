@@ -81,27 +81,25 @@
     </div>
   </nav>
 
-  <!-- BANNER PRINCIPAL CON LOGOS DE TARJETAS GRANDES Y VISIBLES -->
+  <!-- BANNER PRINCIPAL CON INSIGNIA DE PAGOS VISIBLE EN MÓVIL Y WEB -->
   <header class="relative bg-emerald-950 text-white py-20 px-4 overflow-hidden">
     <div id="webgl-container" class="absolute inset-0 opacity-50 pointer-events-none"></div>
     <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('https://lh3.googleusercontent.com/d/1306fD7zgATU2P_1JwTWkWpq-lukMtejG');"></div>
     <div class="absolute inset-0 bg-gradient-to-br from-emerald-900/90 via-emerald-950/85 to-teal-950/90"></div>
     
-    <!-- INSIGNIA DE TARJETAS Y EFECTIVO GRANDE Y MUY VISIBLE -->
-    <div class="absolute top-4 left-4 sm:left-8 z-30 hidden sm:flex items-center gap-3 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl border-2 border-emerald-500 shadow-2xl text-slate-900">
-      <div class="flex flex-col">
-        <span class="text-[9px] font-black uppercase text-emerald-700 tracking-wider" data-i18n="lblBadgePay">Aceptamos Todas las Tarjetas & Efectivo</span>
-        <div class="flex items-center gap-2.5 text-xl mt-1">
+    <div class="relative z-10 max-w-4xl mx-auto text-center space-y-6 pt-2">
+      
+      <!-- INSIGNIA DE TARJETAS Y EFECTIVO (VISIBLE EN CELULAR Y WEB, BIEN CONTRASTADA SIN OPAQUEARSE) -->
+      <div class="inline-flex flex-col items-center bg-white text-slate-950 px-4 py-2.5 rounded-2xl border-2 border-emerald-400 shadow-2xl mx-auto mb-2">
+        <span class="text-[9px] font-black uppercase text-emerald-800 tracking-wider" data-i18n="lblBadgePay">Aceptamos Todas las Tarjetas & Efectivo</span>
+        <div class="flex items-center gap-3 text-2xl mt-1">
           <i class="fab fa-cc-visa text-blue-600" title="Visa"></i>
           <i class="fab fa-cc-mastercard text-red-600" title="Mastercard"></i>
           <i class="fab fa-cc-amex text-blue-500" title="American Express"></i>
           <i class="fas fa-money-bill-wave text-emerald-600" title="Efectivo"></i>
         </div>
       </div>
-    </div>
 
-    <div class="relative z-10 max-w-4xl mx-auto text-center space-y-6 pt-4">
-      
       <!-- TARJETA GIRATORIA 3D CON ACCESO RÁPIDO -->
       <div class="neon-yellow-box p-4 sm:p-5 rounded-2xl max-w-2xl mx-auto shadow-2xl space-y-3">
         <div class="flex items-center justify-center gap-2 text-sky-300 font-black text-xs uppercase tracking-wider">
@@ -207,7 +205,7 @@
       </a>
     </div>
 
-    <!-- SECCIÓN PÚBLICA: ATRACCIONES DESTACADAS CON CARRUSELES MÚLTIPLES (FOTOS DESPLAZABLES) -->
+    <!-- SECCIÓN PÚBLICA: ATRACCIONES DESTACADAS CON CARRUSELES MÚLTIPLES -->
     <section>
       <div class="text-center max-w-2xl mx-auto mb-8 space-y-2">
         <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight" data-i18n="publicAttractionsTitle">Maravillas Naturales que Debes Visitar</h2>
@@ -216,7 +214,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         
-        <!-- Laguna Parón (Carrusel Múltiple) -->
+        <!-- Laguna Parón -->
         <div class="kactus-card overflow-hidden shadow-card flex flex-col group">
           <div class="relative w-full h-52 bg-slate-900 overflow-hidden" id="pubCarousel1">
             <div class="absolute top-3 left-3 z-20 bg-emerald-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-md">Laguna Parón</div>
@@ -238,7 +236,7 @@
           </div>
         </div>
 
-        <!-- Laguna 69 (Carrusel Múltiple) -->
+        <!-- Laguna 69 -->
         <div class="kactus-card overflow-hidden shadow-card flex flex-col group">
           <div class="relative w-full h-52 bg-slate-900 overflow-hidden" id="pubCarousel2">
             <div class="absolute top-3 left-3 z-20 bg-amber-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-md">Laguna 69</div>
@@ -260,7 +258,7 @@
           </div>
         </div>
 
-        <!-- Cañón del Pato (Carrusel Múltiple con cañondelpato.png corregido) -->
+        <!-- Cañón del Pato -->
         <div class="kactus-card overflow-hidden shadow-card flex flex-col group">
           <div class="relative w-full h-52 bg-slate-900 overflow-hidden" id="pubCarousel3">
             <div class="absolute top-3 left-3 z-20 bg-sky-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-md">Cañón del Pato</div>
@@ -1268,6 +1266,7 @@
         heroSubtitle: "Užijte si útulné pokoje, teplou vodu 24/7 a nejlepší polohu pro vaše dobrodružství v Cordillera Blanca.",
         btnOpenCalc: "🗓️ Rezervovat / Online kalkulace",
         btnWhatsappDir: "Přímý kontakt WhatsApp",
+        lblBadgePay: "Přijímáme všechny karty a hotovost",
         calcPanelTitle: "Online kalkulačka a cenová nabídka",
         btnCloseCalc: "✕ Zavřít",
         lblRoomType: "Typ pokoje",
@@ -1614,7 +1613,7 @@
         sKitchen: "Cozinha Compartilhada",
         sBreakfast: "Café da Manhã",
         titleGuideHeading: "Guia Turístico de Caraz & Área Reservada",
-        gPubDesc: "Bem-vindo ao nosso guia oficial. Explore as atrações imperdíveis da Cordillera Blanca a partir do Hostal Kactus.",
+        gPubDesc: "Bem-vindo ao nosso guia oficial. Explore as atrações imperdibles da Cordillera Blanca a partir do Hostal Kactus.",
         privSectionTitle: "🔐 Área Reservada de Hóspedes (Wi-Fi, Regras, Comodidades e Tours)",
         gPrivDesc: "Insira a senha fornecida na recepção para desbloquear todas as informações detalhadas:",
         passPlaceholder: "Senha de hóspede",
@@ -1822,7 +1821,7 @@
         dir2Desc: "Historisches Zentrum, ideal zum Spazieren und Genießen von handgemachtem Eis.",
         dir3Title: "Caja Huancayo & Geldwechsel",
         dir3Desc: "Ideal für Finanzoperationen und Geldwechsel im Zentrum.",
-        btnLocation: "Standort ansehen",
+        dir0Location: "Standort ansehen",
         stkFrom: "Ab",
         stkCalc: "Berechnen",
         stkBtn: "Jetzt Buchen"
@@ -1928,7 +1927,7 @@
         bf3Title: "Американский завтрак",
         bf3Desc: "3 хлеба, сок, кофе и 3 омлета с ветчиной",
         bf4Title: "Завтрак Royal",
-        bf4Desc: "Ломо сальтадо (сочное мясо с луком и томатами, без риса), 3 хлеба, сок и кофе",
+        bf4Desc: "Lomo saltado (сочное мясо с луком и томатами, без риса), 3 хлеба, сок и кофе",
         toursGuideTitle: "Подробный гид по маршрутам, ценам и опциям",
         tourParonTitle: "1. Лагуна Парон (32 км от Караса)",
         badgeParon: "ОБЯЗАТЕЛЬНО К ПОСЕЩЕНИЮ",
