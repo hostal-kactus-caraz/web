@@ -75,7 +75,7 @@
     </div>
   </nav>
 
-  <!-- BANNER PRINCIPAL CON ÁREA MARCADA Y FONDO AMARILLO NEÓN + BOTÓN PARPADEANTE -->
+  <!-- BANNER PRINCIPAL CON TARJETA GIRATORIA Y BOTÓN PARPADEANTE -->
   <header class="relative bg-emerald-950 text-white py-20 px-4 overflow-hidden">
     <div id="webgl-container" class="absolute inset-0 opacity-50 pointer-events-none"></div>
     <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('https://lh3.googleusercontent.com/d/1306fD7zgATU2P_1JwTWkWpq-lukMtejG');"></div>
@@ -83,7 +83,7 @@
     
     <div class="relative z-10 max-w-4xl mx-auto text-center space-y-5 mb-10">
       
-      <!-- CAJA CON FONDO AMARILLO NEÓN PERMANENTE -->
+      <!-- TARJETA GIRATORIA 3D CON FONDO AMARILLO NEÓN -->
       <div class="neon-yellow-box p-4 sm:p-5 rounded-2xl max-w-2xl mx-auto shadow-2xl space-y-3">
         <div class="flex items-center justify-center gap-2 text-amber-300 font-black text-xs uppercase tracking-wider">
           <i class="fas fa-lock-open"></i> <span id="top-access-title">Área Exclusiva de Huéspedes</span>
@@ -93,7 +93,7 @@
         </p>
         <div class="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
           <input type="password" id="topPassInput" placeholder="Ingresa tu código aquí..." onkeypress="handleTopKey(event)" class="px-3.5 py-2.5 rounded-xl border border-white/30 text-xs flex-1 bg-slate-900/70 text-white placeholder-emerald-200 focus:outline-none focus:ring-2 focus:ring-amber-400">
-          <!-- BOTÓN DESBLOQUEAR CON PARPARDEO NEÓN CONSTANTE -->
+          <!-- BOTÓN DESBLOQUEAR PARPADEANTE -->
           <button onclick="unlockTopGuide()" class="neon-blink-btn py-2.5 px-5 rounded-xl text-xs shadow-md transition-all shrink-0">
             <span id="top-unlock-btn">Desbloquear</span>
           </button>
@@ -140,6 +140,97 @@
 
   <main class="max-w-7xl mx-auto px-4 sm:px-6 mt-14 space-y-16">
 
+    <!-- Calificaciones -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto">
+      <a href="https://www.booking.com/hotel/pe/kactus-hostal-caraz.es.html" target="_blank" rel="noopener" class="kactus-card p-4 shadow-card hover:shadow-lg transition-all flex items-center gap-3.5 group">
+        <div class="w-10 h-10 bg-blue-600 text-white rounded-xl flex items-center justify-center font-black text-sm shadow-sm">8.9</div>
+        <div>
+          <div class="text-[10px] font-extrabold text-slate-400 uppercase">Booking.com</div>
+          <div class="text-xs font-extrabold text-slate-900" id="badge-booking">Fabuloso · Excelente Ubicación</div>
+        </div>
+      </a>
+      <a href="https://maps.google.com" target="_blank" rel="noopener" class="kactus-card p-4 shadow-card hover:shadow-lg transition-all flex items-center gap-3.5 group">
+        <div class="w-10 h-10 bg-amber-500 text-white rounded-xl flex items-center justify-center text-sm shadow-sm"><i class="fas fa-star"></i></div>
+        <div>
+          <div class="text-[10px] font-extrabold text-slate-400 uppercase">Google Maps</div>
+          <div class="text-xs font-extrabold text-slate-900">5.0 / 5.0 ⭐⭐⭐⭐⭐</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- SECCIÓN 1: HABITACIONES -->
+    <section>
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight" id="title-rooms">Nuestras Habitaciones</h2>
+        <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-full border border-emerald-200" id="rooms-badge">Garantía Mejor Precio Directo</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Habitación 1 -->
+        <div class="kactus-card overflow-hidden shadow-card flex flex-col group">
+          <div class="relative w-full h-60 bg-emerald-900 overflow-hidden" id="carousel1">
+            <div class="absolute top-3 left-3 z-20 bg-emerald-950/90 backdrop-blur-md text-white text-[10px] font-black px-3 py-1 rounded-full shadow-xs border border-white/20" id="room1-tag">
+              ECONÓMICA & CONFORT
+            </div>
+            <div class="carousel-slide w-full h-full">
+              <img src="economica.jpeg" alt="Habitación Económica" class="w-full h-full object-cover shrink-0 zoomable-img" onclick="openModal(this.src)" onerror="this.src='mediana.png'">
+              <div class="w-full h-full shrink-0 bg-gradient-to-br from-emerald-800 via-emerald-700 to-teal-800 text-white p-6 flex flex-col items-center justify-center text-center space-y-3 shadow-inner">
+                <div class="w-11 h-11 bg-gradient-to-tr from-amber-400 to-yellow-300 text-slate-950 rounded-2xl flex items-center justify-center font-black text-lg shadow-2xl animate-pulse">
+                  <i class="fas fa-key"></i>
+                </div>
+                <h4 class="font-extrabold text-xs sm:text-sm text-amber-300 px-2" id="banner-code-title">¿Tienes tu código de reserva?</h4>
+                <p class="text-[11px] text-emerald-50 max-w-xs leading-relaxed" id="banner-code-desc">Usa aquí tu código brindado por el alojamiento y encuentra precios protegidos, indicaciones y más.</p>
+                <a href="#title-guide" class="bg-gradient-to-r from-amber-400 to-yellow-400 text-slate-950 text-[11px] font-extrabold py-2 px-5 rounded-xl shadow-md transition-all transform hover:scale-105" id="banner-code-btn">Ir a Sección Reservada</a>
+              </div>
+            </div>
+            <button aria-label="Anterior" onclick="moveSlide('carousel1', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-left text-xs"></i></button>
+            <button aria-label="Siguiente" onclick="moveSlide('carousel1', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-right text-xs"></i></button>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="text-lg font-extrabold text-slate-900 mb-1.5" id="room1-title">Habitación Matrimonial Económica</h3>
+              <p class="text-slate-600 text-xs leading-relaxed" id="room1-desc">Habitación pequeña y acogedora con cama de 2 plazas. Ideal para parejas o viajeros solos.</p>
+              <div class="text-2xl font-black text-emerald-600 mt-4 flex items-baseline gap-1">S/ 35.00 <span class="text-[11px] font-semibold text-slate-400" id="per-night-1">promedio por noche</span></div>
+            </div>
+            <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20deseo%20reservar%20la%20Habitación%20Matrimonial%20Económica%20(S/%2035)" target="_blank" rel="noopener" class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2">
+              <i class="fab fa-whatsapp text-base"></i> <span class="btn-res-text">Reservar por WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Habitación 2 -->
+        <div class="kactus-card overflow-hidden shadow-card flex flex-col group">
+          <div class="relative w-full h-60 bg-emerald-900 overflow-hidden" id="carousel2">
+            <div class="absolute top-3 left-3 z-20 bg-emerald-600 text-white text-[10px] font-black px-3 py-1 rounded-full shadow-xs border border-white/20" id="room2-tag">
+              MÁS POPULAR
+            </div>
+            <div class="carousel-slide w-full h-full">
+              <img src="mediana.png" alt="Habitación Mediana" class="w-full h-full object-cover shrink-0 zoomable-img" onclick="openModal(this.src)" onerror="this.src='mediana1.jpg'">
+              <img src="mediana1.jpg" alt="Habitación Mediana 2" class="w-full h-full object-cover shrink-0 zoomable-img" onclick="openModal(this.src)" onerror="this.src='mediana.png'">
+              <img src="mediana2.png" alt="Habitación Mediana 3" class="w-full h-full object-cover shrink-0 zoomable-img" onclick="openModal(this.src)" onerror="this.src='mediana.png'">
+            </div>
+            <button aria-label="Anterior" onclick="moveSlide('carousel2', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-left text-xs"></i></button>
+            <button aria-label="Siguiente" onclick="moveSlide('carousel2', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-right text-xs"></i></button>
+            <div class="carousel-dots absolute bottom-3 left-0 right-0 flex justify-center gap-1.5 z-10">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 cursor-pointer shadow-xs" onclick="setSlide('carousel2', 0)"></span>
+              <span class="w-2 h-2 rounded-full bg-white/70 cursor-pointer" onclick="setSlide('carousel2', 1)"></span>
+              <span class="w-2 h-2 rounded-full bg-white/70 cursor-pointer" onclick="setSlide('carousel2', 2)"></span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="text-lg font-extrabold text-slate-900 mb-1.5" id="room2-title">Habitación Matrimonial Mediana</h3>
+              <p class="text-slate-600 text-xs leading-relaxed" id="room2-desc">Habitación espaciosa con cama de 2 plazas, gran iluminación natural y armario.</p>
+              <div class="text-2xl font-black text-emerald-600 mt-4 flex items-baseline gap-1">S/ 45.00 <span class="text-[11px] font-semibold text-slate-400" id="per-night-2">promedio por noche</span></div>
+            </div>
+            <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20deseo%20reservar%20la%20Habitación%20Matrimonial%20Mediana%20(S/%2045)" target="_blank" rel="noopener" class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2">
+              <i class="fab fa-whatsapp text-base"></i> <span class="btn-res-text">Reservar por WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- SECCIÓN 2: ALQUILER DE EQUIPOS CON FOTOS CLICKEABLES -->
     <section>
       <div class="flex items-center justify-between mb-6">
@@ -155,7 +246,7 @@
             </div>
             <div>
               <div class="font-bold text-slate-900 text-xs flex items-center gap-1.5"><i class="fas fa-campground text-emerald-600"></i> <span id="gear-1-name">Carpa 3 Estaciones</span></div>
-              <p class="text-[11px] text-slate-500 mt-0.5" id="gear-1-desc">Carpa resistente para alta montaña. (Haz clic en la foto para ampliar)</p>
+              <p class="text-[11px] text-slate-500 mt-0.5" id="gear-1-desc">Carpa resistente para alta montaña.</p>
             </div>
           </div>
           <!-- Item 2 -->
@@ -212,25 +303,214 @@
       </div>
     </section>
 
+    <!-- SECCIÓN 3: SERVICIOS -->
+    <section>
+      <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-6" id="title-services">Servicios e Instalaciones</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div class="kactus-card p-4 text-center shadow-xs"><i class="fas fa-bath text-2xl text-emerald-600 mb-2"></i><p id="s-bath" class="text-xs font-bold">Baño Privado</p></div>
+        <div class="kactus-card p-4 text-center shadow-xs"><i class="fas fa-hot-tub text-2xl text-emerald-600 mb-2"></i><p id="s-water" class="text-xs font-bold">Agua Caliente 24/7</p></div>
+        <div class="kactus-card p-4 text-center shadow-xs"><i class="fas fa-tv text-2xl text-emerald-600 mb-2"></i><p id="s-tv" class="text-xs font-bold">TV Smart</p></div>
+        <div class="kactus-card p-4 text-center shadow-xs"><i class="fas fa-wifi text-2xl text-emerald-600 mb-2"></i><p id="s-wifi" class="text-xs font-bold">Wi-Fi Gratis</p></div>
+        <div class="kactus-card p-4 text-center shadow-xs"><i class="fas fa-parking text-2xl text-emerald-600 mb-2"></i><p id="s-parking" class="text-xs font-bold">Estacionamiento Gratis</p></div>
+        <div class="kactus-card p-4 text-center shadow-xs"><i class="fas fa-suitcase text-2xl text-emerald-600 mb-2"></i><p id="s-luggage" class="text-xs font-bold">Guardado de Equipaje</p></div>
+        <div class="kactus-card p-4 text-center shadow-xs"><i class="fas fa-utensils text-2xl text-emerald-600 mb-2"></i><p id="s-kitchen" class="text-xs font-bold">Cocina Compartida</p></div>
+        <div class="kactus-card p-4 text-center shadow-xs"><i class="fas fa-coffee text-2xl text-emerald-600 mb-2"></i><p id="s-breakfast" class="text-xs font-bold">Desayunos</p></div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 4: GUÍA Y ÁREA PRIVADA -->
+    <section class="mb-12" id="title-guide">
+      <div class="kactus-card p-6 sm:p-8 shadow-card space-y-6">
+        <div>
+          <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-2" id="title-guide-heading">Guía Turística de Caraz & Área Reservada</h2>
+          <p id="g-pub-desc" class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            📍 <strong>Laguna Parón:</strong> La laguna turquesa más grande de la Cordillera Blanca, ubicada a 32 km de Caraz. Espléndidas vistas del Artesonraju y paseos en bote.<br><br>
+            📍 <strong>Laguna Llanganuco (Chinancocha y Orconcocha):</strong> Espejos de agua color turquesa intenso en el Parque Nacional Huascarán, rodeados de imponentes bosques de quenuales.<br><br>
+            📍 <strong>Laguna 69:</strong> Uno de los trekkings de alta montaña más famosos del mundo, desafiante y fascinante bajo los nevados Huascarán y Chacraraju.
+          </p>
+        </div>
+
+        <hr class="border-slate-200">
+
+        <div id="unlock-area" class="pt-4">
+          <h3 class="font-extrabold text-base text-slate-900 mb-2" id="priv-section-title">🔐 Sección Reservada de Rutas y Servicios para Huéspedes</h3>
+          <p id="g-priv-desc" class="text-xs text-slate-600 mb-4">Ingresa la clave proporcionada en recepción para ver los precios protegidos y guías:</p>
+          
+          <div class="flex flex-col sm:flex-row gap-3 max-w-md">
+            <input type="password" id="passInput" placeholder="Contraseña de huésped" onkeypress="handleKey(event)" class="px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs flex-1 bg-white">
+            <button onclick="unlockGuide()" id="btn-unlock-text" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-5 rounded-xl text-xs shadow-md">Desbloquear Sección</button>
+          </div>
+
+          <div id="secretGuide" class="hidden mt-6 bg-slate-50 p-6 rounded-2xl border-2 border-dashed border-emerald-500 space-y-8">
+            
+            <!-- TARJETA WI-FI -->
+            <div class="bg-white p-5 rounded-xl border border-slate-200 space-y-4 shadow-xs">
+              <h4 class="font-extrabold text-sm text-slate-900 flex items-center gap-2" id="wifi-card-title">
+                <i class="fas fa-wifi text-emerald-600"></i> Conexión Wi-Fi de Alta Velocidad
+              </h4>
+              <div class="flex flex-col md:flex-row items-center gap-6">
+                <div class="w-full md:w-1/3 h-36 rounded-xl overflow-hidden bg-slate-100 border border-slate-200 flex items-center justify-center">
+                  <img src="wifi.png" alt="Wi-Fi Kactus" class="w-full h-full object-cover zoomable-img" onclick="openModal(this.src)" onerror="this.src='https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=500&q=80'">
+                </div>
+                <div class="flex-1 space-y-2 text-xs">
+                  <div class="p-3 bg-emerald-50 rounded-lg flex justify-between items-center">
+                    <span class="text-slate-600 font-semibold" id="wifi-net-label">Nombre de red (SSID):</span>
+                    <strong class="text-emerald-900 bg-white px-3 py-1 rounded border border-emerald-200 text-sm">Segundo Piso</strong>
+                  </div>
+                  <div class="p-3 bg-emerald-50 rounded-lg flex justify-between items-center">
+                    <span class="text-slate-600 font-semibold" id="wifi-pass-label">Contraseña:</span>
+                    <strong class="text-emerald-900 bg-white px-3 py-1 rounded border border-emerald-200 text-sm">Ramirez@2025</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TARIFAS DE EQUIPOS -->
+            <div class="bg-white p-5 rounded-xl border border-slate-200 space-y-4 shadow-xs">
+              <h4 class="font-extrabold text-sm text-slate-900" id="priv-gear-title">🏷️ Tarifas de Alquiler de Equipos de Montaña</h4>
+              <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs">
+                <div class="p-3 bg-emerald-50 rounded-lg flex justify-between"><span id="p-gear-1">Carpa 3 Estaciones</span><strong class="text-emerald-800">S/ 25.00 /día</strong></div>
+                <div class="p-3 bg-emerald-50 rounded-lg flex justify-between"><span id="p-gear-2">Saco de Dormir Pluma</span><strong class="text-emerald-800">S/ 25.00 /día</strong></div>
+                <div class="p-3 bg-emerald-50 rounded-lg flex justify-between"><span id="p-gear-3">Bastones de Trekking</span><strong class="text-emerald-800">S/ 5.00 /día</strong></div>
+                <div class="p-3 bg-emerald-50 rounded-lg flex justify-between"><span id="p-gear-4">Binoculares</span><strong class="text-emerald-800">S/ 4.00 /día</strong></div>
+                <div class="p-3 bg-emerald-50 rounded-lg flex justify-between"><span id="p-gear-5">Cocina de Campaña</span><strong class="text-emerald-800">S/ 8.00 /día</strong></div>
+                <div class="p-3 bg-emerald-50 rounded-lg flex justify-between"><span id="p-gear-6">Balón de Gas Nuevo</span><strong class="text-emerald-800">S/ 33.00</strong></div>
+              </div>
+            </div>
+
+            <!-- DIRECTORIO FIJO -->
+            <div class="space-y-4">
+              <h4 class="font-extrabold text-sm text-slate-900" id="directory-title">📍 Directorio de Lugares Clave en Caraz</h4>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+                <!-- 1. Restaurante -->
+                <div class="bg-white rounded-2xl border border-slate-200 flex flex-col overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                  <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=500&q=80" alt="Restaurante" class="w-full h-32 object-cover bg-slate-200 zoomable-img" onclick="openModal(this.src)">
+                  <div class="p-4 flex flex-col flex-1">
+                    <div class="flex items-center gap-2 mb-2">
+                      <div class="w-7 h-7 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-xs shrink-0"><i class="fas fa-utensils"></i></div>
+                      <h5 class="font-bold text-slate-900 text-xs">Restaurante Pacha Hunta</h5>
+                    </div>
+                    <p class="text-[11px] text-slate-500 mb-4 flex-1">Comida regional y típica. Muy cercano al hostal y altamente recomendable por su sazón tradicional.</p>
+                    <a href="https://maps.google.com/?q=Restaurante+Pacha+Hunta+Caraz+Peru" target="_blank" rel="noopener" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-[11px] py-2 px-3 rounded-xl flex items-center justify-center gap-1.5 w-full shadow-sm transition-colors mt-auto">
+                      <i class="fas fa-map-marked-alt text-amber-700"></i> Ver en Google Maps
+                    </a>
+                  </div>
+                </div>
+
+                <!-- 2. Plaza de Armas -->
+                <div class="bg-white rounded-2xl border border-slate-200 flex flex-col overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                  <img src="plaza.png" alt="Plaza de Armas" class="w-full h-32 object-cover bg-slate-200 zoomable-img" onclick="openModal(this.src)" onerror="this.src='https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=500&q=80'">
+                  <div class="p-4 flex flex-col flex-1">
+                    <div class="flex items-center gap-2 mb-2">
+                      <div class="w-7 h-7 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-xs shrink-0"><i class="fas fa-landmark"></i></div>
+                      <h5 class="font-bold text-slate-900 text-xs">Plaza de Armas de Caraz</h5>
+                    </div>
+                    <p class="text-[11px] text-slate-500 mb-4 flex-1">El corazón histórico de la ciudad. Ideal para pasear y disfrutar de los famosos helados artesanales.</p>
+                    <a href="https://maps.google.com/?q=Plaza+de+Armas+de+Caraz" target="_blank" rel="noopener" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-[11px] py-2 px-3 rounded-xl flex items-center justify-center gap-1.5 w-full shadow-sm transition-colors mt-auto">
+                      <i class="fas fa-map-marked-alt text-amber-700"></i> Ver en Google Maps
+                    </a>
+                  </div>
+                </div>
+
+                <!-- 3. Caja Huancayo -->
+                <div class="bg-white rounded-2xl border border-slate-200 flex flex-col overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                  <img src="dolares.png" alt="Caja Huancayo" class="w-full h-32 object-cover bg-slate-200 zoomable-img" onclick="openModal(this.src)" onerror="this.src='https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&w=500&q=80'">
+                  <div class="p-4 flex flex-col flex-1">
+                    <div class="flex items-center gap-2 mb-2">
+                      <div class="w-7 h-7 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-xs shrink-0"><i class="fas fa-exchange-alt"></i></div>
+                      <h5 class="font-bold text-slate-900 text-xs">Caja Huancayo & Casa de Cambio</h5>
+                    </div>
+                    <p class="text-[11px] text-slate-500 mb-4 flex-1">Agencia Caja Huancayo Caraz. Ideal para giros, operaciones financieras, retiros y cambio de moneda en el centro.</p>
+                    <a href="https://maps.google.com/?q=Caja+Huancayo+Caraz" target="_blank" rel="noopener" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-[11px] py-2 px-3 rounded-xl flex items-center justify-center gap-1.5 w-full shadow-sm transition-colors mt-auto">
+                      <i class="fas fa-map-marked-alt text-amber-700"></i> Ver Ubicación en Caraz
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <!-- MODAL PARA AMPLIAR FOTOS AL HACER CLIC -->
+  <!-- Barra inferior fija -->
+  <div class="fixed bottom-0 left-0 right-0 bg-emerald-950/95 backdrop-blur-md border-t border-emerald-800 p-3.5 px-6 flex justify-between items-center z-50 text-white shadow-2xl">
+    <div class="text-xs">
+      <span class="text-emerald-300" id="stk-from">Desde</span> <strong class="text-base text-amber-300 font-black">S/ 35.00</strong>
+    </div>
+    <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20quisiera%20consultar%20disponibilidad" target="_blank" rel="noopener" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-5 rounded-xl text-xs shadow-md flex items-center gap-2 transition-all">
+      <i class="fab fa-whatsapp text-sm"></i> <span id="stk-btn">Reservar Ahora</span>
+    </a>
+  </div>
+
+  <!-- MODAL PARA AMPLIAR FOTOS -->
   <div id="imageModal" onclick="this.style.display='none'">
     <img id="modalImg" src="" alt="Imagen Ampliada">
   </div>
 
-  <!-- LÓGICA JAVASCRIPT -->
+  <!-- LÓGICA JAVASCRIPT Y MULTILENGUAJE -->
   <script>
     function openModal(imgSrc) {
       document.getElementById('modalImg').src = imgSrc;
       document.getElementById('imageModal').style.display = 'flex';
     }
 
+    const slideIndexes = { carousel1: 0, carousel2: 0 };
+
+    function moveSlide(carouselId, direction) {
+      const carousel = document.getElementById(carouselId);
+      const slide = carousel.querySelector('.carousel-slide');
+      const items = slide.children;
+      slideIndexes[carouselId] = (slideIndexes[carouselId] + direction + items.length) % items.length;
+      slide.style.transform = `translateX(-${slideIndexes[carouselId] * 100}%)`;
+    }
+
+    function setSlide(carouselId, index) {
+      const carousel = document.getElementById(carouselId);
+      const slide = carousel.querySelector('.carousel-slide');
+      slideIndexes[carouselId] = index;
+      slide.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    function sendCustomReservation() {
+      const inDate = document.getElementById('checkinDate').value;
+      const outDate = document.getElementById('checkoutDate').value;
+      let msg = "Hola Hostal Kactus, quisiera consultar disponibilidad de habitaciones.";
+      if (inDate || outDate) {
+        msg = `Hola Hostal Kactus, quisiera consultar disponibilidad para ingresar el ${inDate || 'próximo día'} y salir el ${outDate || 'próximo día'}.`;
+      }
+      window.open(`https://wa.me/51974364826?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+
+    function unlockGuide() {
+      const pass = document.getElementById('passInput').value.trim();
+      const secretSection = document.getElementById('secretGuide');
+      const inputEl = document.getElementById('passInput');
+      if (pass === '301298') {
+        secretSection.classList.remove('hidden');
+        secretSection.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        secretSection.classList.add('hidden');
+        inputEl.classList.add('animate-shake', 'border-red-500');
+        setTimeout(() => inputEl.classList.remove('animate-shake', 'border-red-500'), 500);
+        alert('Contraseña incorrecta. Solicita la clave oficial en recepción.');
+        inputEl.value = '';
+      }
+    }
+
     function unlockTopGuide() {
       const pass = document.getElementById('topPassInput').value.trim();
+      const secretSection = document.getElementById('secretGuide');
       const inputEl = document.getElementById('topPassInput');
       if (pass === '301298') {
-        alert('¡Código correcto! Accediendo a la sección reservada.');
+        secretSection.classList.remove('hidden');
+        document.getElementById('passInput').value = '301298';
+        secretSection.scrollIntoView({ behavior: 'smooth' });
       } else {
         inputEl.classList.add('animate-shake', 'border-red-500');
         setTimeout(() => inputEl.classList.remove('animate-shake', 'border-red-500'), 500);
@@ -239,9 +519,29 @@
       }
     }
 
+    function handleKey(e) { if (e.key === 'Enter') unlockGuide(); }
     function handleTopKey(e) { if (e.key === 'Enter') unlockTopGuide(); }
-    function sendCustomReservation() { window.open('https://wa.me/51974364826?text=Hola%20Hostal%20Kactus', '_blank'); }
-    function changeLanguage(lang) { /* Traducciones dinámicas */ }
+
+    const translations = {
+      es: { navLocationSub: "Caraz · Perú", navCodeText: "Código de Huésped", topAccessTitle: "Área Exclusiva de Huéspedes" },
+      en: { navLocationSub: "Caraz · Peru", navCodeText: "Guest Code", topAccessTitle: "Exclusive Guest Area" },
+      pt: { navLocationSub: "Caraz · Peru", navCodeText: "Código do Hóspede", topAccessTitle: "Área Exclusiva de Hóspedes" },
+      fr: { navLocationSub: "Caraz · Pérou", navCodeText: "Code Client", topAccessTitle: "Espace Exclusif Clients" },
+      de: { navLocationSub: "Caraz · Peru", navCodeText: "Gästekod", topAccessTitle: "Exklusiver Gäste-Bereich" },
+      ru: { navLocationSub: "Карас · Перу", navCodeText: "Код Гостя", topAccessTitle: "Эксклюзивная зона для гостей" },
+      cs: { navLocationSub: "Caraz · Peru", navCodeText: "Kód hosta", topAccessTitle: "Exkluzivní zóna pro hosty" },
+      zh: { navLocationSub: "秘鲁 · 卡拉斯", navCodeText: "住客专属码", topAccessTitle: "住客专属特权区" }
+    };
+
+    function changeLanguage(lang) {
+      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('bg-emerald-600', 'text-white'));
+      const activeBtn = document.getElementById(`btn-${lang}`);
+      if (activeBtn) activeBtn.classList.add('bg-emerald-600', 'text-white');
+      const t = translations[lang] || translations['es'];
+      if(document.getElementById('nav-location-sub')) document.getElementById('nav-location-sub').innerText = t.navLocationSub;
+      if(document.getElementById('nav-code-text')) document.getElementById('nav-code-text').innerText = t.navCodeText;
+      if(document.getElementById('top-access-title')) document.getElementById('top-access-title').innerText = t.topAccessTitle;
+    }
   </script>
 </body>
 </html>
