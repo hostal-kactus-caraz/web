@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hostal Kactus | Alojamiento & Tours en Caraz, Perú</title>
+  <title id="page-title">Hostal Kactus | Alojamiento & Tours en Caraz, Perú</title>
   <meta name="description" content="Alojamiento acogedor en Caraz, Perú. Baño privado, agua caliente 24/7, Wi-Fi rápido, alquiler de equipos de camping y guía exclusiva a Laguna Parón y Laguna 69.">
   
   <!-- Google Fonts & Font Awesome -->
@@ -170,7 +170,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         
-        <!-- Habitación 1: Económica (Imagen real: economica.jpeg) -->
+        <!-- Habitación 1: Económica -->
         <div class="kactus-card overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 flex flex-col group">
           <div class="relative w-full h-60 bg-emerald-900 overflow-hidden" id="carousel1">
             <div class="absolute top-3 left-3 z-20 bg-emerald-900/90 backdrop-blur-md text-white text-[10px] font-black px-3 py-1 rounded-full shadow-xs border border-white/20" id="room1-tag">
@@ -202,7 +202,7 @@
           </div>
         </div>
 
-        <!-- Habitación 2: Mediana (Imágenes: mediana.png, mediana1.jpg, mediana2.png) -->
+        <!-- Habitación 2: Mediana -->
         <div class="kactus-card overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 flex flex-col group">
           <div class="relative w-full h-60 bg-emerald-900 overflow-hidden" id="carousel2">
             <div class="absolute top-3 left-3 z-20 bg-emerald-600 text-white text-[10px] font-black px-3 py-1 rounded-full shadow-xs border border-white/20" id="room2-tag">
@@ -264,7 +264,7 @@
             </div>
           </div>
 
-          <!-- Saco de Dormir (Imagen corregida: saco_dormir.png) -->
+          <!-- Saco de Dormir -->
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3">
             <div class="h-36 rounded-xl overflow-hidden bg-slate-200">
               <img src="saco_dormir.png" alt="Saco de Dormir" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='saco de dormir .png';">
@@ -333,11 +333,11 @@
       </div>
     </section>
 
-    <!-- SECCIÓN 4: GUÍA Y ÁREA PRIVADA -->
-    <section class="mb-12">
+    <!-- SECCIÓN 4: GUÍA Y ÁREA PRIVADA (CON BANNER DE MARKETING POTENTE) -->
+    <section class="mb-12" id="title-guide">
       <div class="kactus-card p-6 sm:p-8 shadow-card space-y-6">
         <div>
-          <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-2" id="title-guide">Guía Turística de Caraz & Área Reservada</h2>
+          <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-2" id="title-guide-heading">Guía Turística de Caraz & Área Reservada</h2>
           <p id="g-pub-desc" class="text-xs sm:text-sm text-slate-600 leading-relaxed">
             📍 <strong>Laguna Parón:</strong> La laguna turquesa más grande de la Cordillera Blanca, ubicada a 32 km de Caraz.<br><br>
             📍 <strong>Laguna Llanganuco:</strong> Espejos de agua color turquesa rodeados de bosques de quenuales.<br><br>
@@ -347,7 +347,27 @@
 
         <hr class="border-slate-200">
 
-        <div>
+        <!-- BANNER DE MARKETING ALTAMENTE LLAMATIVO -->
+        <div class="bg-gradient-to-r from-emerald-800 via-emerald-700 to-teal-800 text-white p-6 sm:p-8 rounded-2xl shadow-lg border border-emerald-600 space-y-4 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div class="space-y-2">
+            <div class="inline-flex items-center gap-1.5 bg-amber-400 text-slate-950 font-black text-[10px] px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
+              <i class="fas fa-lock-open"></i> <span id="marketing-tag">Área Exclusiva para Huéspedes</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-black text-white tracking-tight" id="marketing-title">
+              ¿Ya te encuentras hospedado o tienes tu código de acceso?
+            </h3>
+            <p class="text-xs sm:text-sm text-emerald-50 max-w-xl leading-relaxed" id="marketing-desc">
+              Ingresa el código brindado por el alojamiento acá y descubre <strong>tarifas especiales de temporada, clave de Wi-Fi de alta velocidad, recomendaciones de los mejores restaurantes locales, normas de casa, horarios de check-in/check-out y números de emergencia</strong> para una estadía perfecta en Caraz.
+            </p>
+          </div>
+          <div class="shrink-0 w-full sm:w-auto">
+            <a href="#unlock-area" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-extrabold text-xs px-6 py-3.5 rounded-xl shadow-md transition-all inline-flex items-center justify-center gap-2 transform hover:scale-105">
+              <i class="fas fa-key text-amber-800"></i> <span id="marketing-btn">Desbloquear Ahora</span>
+            </a>
+          </div>
+        </div>
+
+        <div id="unlock-area" class="pt-4">
           <h3 class="font-extrabold text-base text-slate-900 mb-2" id="priv-section-title">🔐 Sección Reservada de Rutas y Servicios para Huéspedes</h3>
           <p id="g-priv-desc" class="text-xs text-slate-600 mb-4">Ingresa la clave proporcionada en recepción para ver los precios protegidos y guías:</p>
           
@@ -357,6 +377,30 @@
           </div>
 
           <div id="secretGuide" class="hidden mt-6 bg-slate-50 p-6 rounded-2xl border-2 border-dashed border-emerald-500 space-y-8">
+            
+            <!-- TARJETA WI-FI EXCLUSIVA CON LA IMAGEN SOLICITADA -->
+            <div class="bg-white p-5 rounded-xl border border-slate-200 space-y-4">
+              <h4 class="font-extrabold text-sm text-slate-900 flex items-center gap-2" id="wifi-card-title">
+                <i class="fas fa-wifi text-emerald-600"></i> Conexión Wi-Fi de Alta Velocidad
+              </h4>
+              <div class="flex flex-col md:flex-row items-center gap-6">
+                <div class="w-full md:w-1/3 h-36 rounded-xl overflow-hidden bg-slate-100 border border-slate-200 flex items-center justify-center">
+                  <img src="wifi.png" alt="Wi-Fi Kactus" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=500&q=80'">
+                </div>
+                <div class="flex-1 space-y-2 text-xs">
+                  <div class="p-3 bg-emerald-50 rounded-lg flex justify-between items-center">
+                    <span class="text-slate-600 font-semibold" id="wifi-net-label">Nombre de red (SSID):</span>
+                    <strong class="text-emerald-900 bg-white px-3 py-1 rounded border border-emerald-200 text-sm">Segundo Piso</strong>
+                  </div>
+                  <div class="p-3 bg-emerald-50 rounded-lg flex justify-between items-center">
+                    <span class="text-slate-600 font-semibold" id="wifi-pass-label">Contraseña:</span>
+                    <strong class="text-emerald-900 bg-white px-3 py-1 rounded border border-emerald-200 text-sm">Ramirez@2025</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TARIFAS DE EQUIPOS -->
             <div class="bg-white p-5 rounded-xl border border-slate-200 space-y-4">
               <h4 class="font-extrabold text-sm text-slate-900" id="priv-gear-title">🏷️ Tarifas de Alquiler de Equipos de Montaña</h4>
               <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs">
@@ -369,7 +413,7 @@
               </div>
             </div>
 
-            <!-- DIRECTORIO FIJO: PLAZA DE ARMAS CON FOTO REAL -->
+            <!-- DIRECTORIO FIJO CON IMÁGENES REALES -->
             <div class="space-y-4">
               <h4 class="font-extrabold text-sm text-slate-900" id="directory-title">📍 Directorio de Lugares Clave en Caraz</h4>
               
@@ -390,13 +434,13 @@
                   </div>
                 </div>
 
-                <!-- 2. Plaza de Armas de Caraz -->
+                <!-- 2. Plaza de Armas -->
                 <div class="bg-white rounded-2xl border border-slate-200 flex flex-col overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                  <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=500&q=80" alt="Plaza de Armas de Caraz" class="w-full h-32 object-cover bg-slate-200">
+                  <img src="plaza.png" alt="Plaza de Armas de Caraz" class="w-full h-32 object-cover bg-slate-200" onerror="this.src='https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=500&q=80'">
                   <div class="p-4 flex flex-col flex-1">
                     <div class="flex items-center gap-2 mb-2">
                       <div class="w-7 h-7 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-xs shrink-0"><i class="fas fa-landmark"></i></div>
-                      <h5 class="font-bold text-slate-900 text-xs">[Plaza de Armas de Caraz](http://googleusercontent.com/map_location_reference/2)</h5>
+                      <h5 class="font-bold text-slate-900 text-xs">Plaza de Armas de Caraz</h5>
                     </div>
                     <p class="text-[11px] text-slate-500 mb-4 flex-1">El corazón histórico de la ciudad. Ideal para pasear y disfrutar de los famosos helados artesanales.</p>
                     <a href="https://maps.google.com/?q=Plaza+de+Armas+de+Caraz" target="_blank" rel="noopener" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-[11px] py-2 px-3 rounded-xl flex items-center justify-center gap-1.5 w-full shadow-sm transition-colors mt-auto">
@@ -405,9 +449,9 @@
                   </div>
                 </div>
 
-                <!-- 3. Farmacias -->
+                <!-- 3. Farmacias Cercanas -->
                 <div class="bg-white rounded-2xl border border-slate-200 flex flex-col overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                  <img src="https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?auto=format&fit=crop&w=500&q=80" alt="Farmacia" class="w-full h-32 object-cover bg-slate-200">
+                  <img src="farmacia.png" alt="Farmacias Cercanas" class="w-full h-32 object-cover bg-slate-200" onerror="this.src='https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?auto=format&fit=crop&w=500&q=80'">
                   <div class="p-4 flex flex-col flex-1">
                     <div class="flex items-center gap-2 mb-2">
                       <div class="w-7 h-7 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xs shrink-0"><i class="fas fa-pills"></i></div>
@@ -420,24 +464,24 @@
                   </div>
                 </div>
 
-                <!-- 4. Grifos -->
+                <!-- 4. Grifos (Facilito Osinergmin) -->
                 <div class="bg-white rounded-2xl border border-slate-200 flex flex-col overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                   <img src="https://images.unsplash.com/photo-1572041703666-4c4078e244b7?auto=format&fit=crop&w=500&q=80" alt="Grifo" class="w-full h-32 object-cover bg-slate-200">
                   <div class="p-4 flex flex-col flex-1">
                     <div class="flex items-center gap-2 mb-2">
                       <div class="w-7 h-7 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-xs shrink-0"><i class="fas fa-gas-pump"></i></div>
-                      <h5 class="font-bold text-slate-900 text-xs">Grifos Cercanos</h5>
+                      <h5 class="font-bold text-slate-900 text-xs">Grifos Cercanos (Facilito)</h5>
                     </div>
-                    <p class="text-[11px] text-slate-500 mb-4 flex-1">Grifo El Arco y otras estaciones ubicadas en las salidas de Caraz para abastecimiento seguro.</p>
-                    <a href="https://maps.google.com/?q=Grifo+El+Arco+Caraz" target="_blank" rel="noopener" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-[11px] py-2 px-3 rounded-xl flex items-center justify-center gap-1.5 w-full shadow-sm transition-colors mt-auto">
-                      <i class="fas fa-map-marked-alt text-amber-700"></i> Ver en Google Maps
+                    <p class="text-[11px] text-slate-500 mb-4 flex-1">Consulta precios actualizados de combustibles en Caraz a través de la plataforma oficial Osinergmin.</p>
+                    <a href="https://www.facilito.gob.pe" target="_blank" rel="noopener" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-[11px] py-2 px-3 rounded-xl flex items-center justify-center gap-1.5 w-full shadow-sm transition-colors mt-auto">
+                      <i class="fas fa-external-link-alt text-amber-700"></i> Ver en Facilito Osinergmin
                     </a>
                   </div>
                 </div>
 
                 <!-- 5. Comisaría -->
                 <div class="bg-white rounded-2xl border border-slate-200 flex flex-col overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                  <img src="https://images.unsplash.com/photo-1589806497121-657e25287515?auto=format&fit=crop&w=500&q=80" alt="Comisaría" class="w-full h-32 object-cover bg-slate-200">
+                  <img src="comisaria.png" alt="Comisaría" class="w-full h-32 object-cover bg-slate-200" onerror="this.src='https://images.unsplash.com/photo-1589806497121-657e25287515?auto=format&fit=crop&w=500&q=80'">
                   <div class="p-4 flex flex-col flex-1">
                     <div class="flex items-center gap-2 mb-2">
                       <div class="w-7 h-7 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-xs shrink-0"><i class="fas fa-shield-alt"></i></div>
@@ -452,7 +496,7 @@
 
                 <!-- 6. Hospital -->
                 <div class="bg-white rounded-2xl border border-slate-200 flex flex-col overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                  <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=500&q=80" alt="Hospital" class="w-full h-32 object-cover bg-slate-200">
+                  <img src="hospital.png" alt="Hospital" class="w-full h-32 object-cover bg-slate-200" onerror="this.src='https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=500&q=80'">
                   <div class="p-4 flex flex-col flex-1">
                     <div class="flex items-center gap-2 mb-2">
                       <div class="w-7 h-7 bg-rose-100 text-rose-600 rounded-full flex items-center justify-center text-xs shrink-0"><i class="fas fa-hospital"></i></div>
@@ -529,15 +573,544 @@
       if (e.key === 'Enter') unlockGuide();
     }
 
+    // Traducciones inteligentes nativas optimizadas para hospitalidad y turismo
     const translations = {
-      es: { navLocationSub: "Caraz · Perú", heroTitle: "Tu descanso cómodo, seguro y completo en <span class='text-amber-300'>Caraz, Perú</span>" },
-      en: { navLocationSub: "Caraz · Peru", heroTitle: "Your comfortable, safe and complete stay in <span class='text-amber-300'>Caraz, Peru</span>" },
-      pt: { navLocationSub: "Caraz · Peru", heroTitle: "Sua estadia confortável, segura e completa em <span class='text-amber-300'>Caraz, Peru</span>" },
-      fr: { navLocationSub: "Caraz · Pérou", heroTitle: "Votre séjour confortable, sûr et complet à <span class='text-amber-300'>Caraz, Pérou</span>" },
-      de: { navLocationSub: "Caraz · Peru", heroTitle: "Ihr komfortabler, sicherer Aufenthalt in <span class='text-amber-300'>Caraz, Peru</span>" },
-      ru: { navLocationSub: "Карас · Перу", heroTitle: "Комфортный отдых в <span class='text-amber-300'>Карасе, Перу</span>" },
-      cs: { navLocationSub: "Caraz · Peru", heroTitle: "Pohodlný pobyt v <span class='text-amber-300'>Carazu, Peru</span>" },
-      zh: { navLocationSub: "秘鲁 · 卡拉斯", heroTitle: "在秘鲁<span class='text-amber-300'>卡拉斯</span>的温馨住宿" }
+      es: {
+        navLocationSub: "Caraz · Perú",
+        navCodeText: "Código de Huésped",
+        heroTitle: "Tu descanso cómodo, seguro y completo en <span class='text-amber-300'>Caraz, Perú</span>",
+        heroSubtitle: "Disfruta de habitaciones acogedoras, agua caliente 24/7 y la mejor ubicación para tus aventuras en la Cordillera Blanca.",
+        lblLocationTitle: "Ubicación",
+        lblLocationVal: "Caraz, Perú",
+        lblCheckin: "Día de entrada",
+        lblCheckout: "Día de salida",
+        btnSearchPrices: "Consultar Disponibilidad",
+        badgeBooking: "Fabuloso · Excelente Ubicación",
+        titleRooms: "Nuestras Habitaciones",
+        roomsBadge: "Garantía Mejor Precio Directo",
+        room1Tag: "ECONÓMICA & CONFORT",
+        bannerCodeTitle: "¿Tienes tu código de reserva?",
+        bannerCodeDesc: "Usa aquí tu código brindado por el alojamiento y encuentra precios protegidos, indicaciones y más.",
+        bannerCodeBtn: "Ir a Sección Reservada",
+        room1Title: "Habitación Matrimonial Económica",
+        room1Desc: "Habitación pequeña y acogedora con cama de 2 plazas. Ideal para parejas o viajeros solos.",
+        perNight: "promedio por noche",
+        btnResText: "Reservar por WhatsApp",
+        room2Tag: "MÁS POPULAR",
+        room2Title: "Habitación Matrimonial Mediana",
+        room2Desc: "Habitación espaciosa con cama de 2 plazas, gran iluminación natural y armario.",
+        titleCamping: "Alquiler de Equipos de Camping y Trekking",
+        gearBannerTitle: "🧗‍♂️ Equipamiento Profesional para Montaña",
+        gearBannerDesc: "Material especializado de alta montaña listo para tu aventura.",
+        gearBannerBtn: "Ver Precios en Área Reservada",
+        gear1Name: "Carpa 3 Estaciones",
+        gear1Desc: "Carpa resistente para alta montaña.",
+        gear2Name: "Saco de Dormir Pluma",
+        gear2Desc: "Pluma de alta resistencia (-5°C a -20°C).",
+        gear3Name: "Bastones de Trekking",
+        gear3Desc: "Par de bastones ergonómicos.",
+        gear4Name: "Largavistas / Binoculares",
+        gear4Desc: "Observación de nevados y paisajes.",
+        gear5Name: "Cocina de Campaña",
+        gear5Desc: "Incluye utensilios de cocina.",
+        gear6Name: "Balón de Gas Nuevo",
+        gear6Desc: "Balón sellado para montaña.",
+        titleServices: "Servicios e Instalaciones",
+        sBath: "Baño Privado",
+        sWater: "Agua Caliente 24/7",
+        sTv: "TV Smart",
+        sWifi: "Wi-Fi Gratis",
+        sParking: "Estacionamiento Gratis",
+        sLuggage: "Guardado de Equipaje",
+        sKitchen: "Cocina Compartida",
+        sBreakfast: "Desayunos",
+        titleGuideHeading: "Guía Turística de Caraz & Área Reservada",
+        gPubDesc: "📍 <strong>Laguna Parón:</strong> La laguna turquesa más grande de la Cordillera Blanca, ubicada a 32 km de Caraz.<br><br>📍 <strong>Laguna Llanganuco:</strong> Espejos de agua color turquesa rodeados de bosques de quenuales.<br><br>📍 <strong>Laguna 69:</strong> Uno de los trekkings de alta montaña más famosos del mundo en el Parque Nacional Huascarán.",
+        marketingTag: "Área Exclusiva para Huéspedes",
+        marketingTitle: "¿Ya te encuentras hospedado o tienes tu código de acceso?",
+        marketingDesc: "Ingresa el código brindado por el alojamiento acá y descubre <strong>tarifas especiales de temporada, clave de Wi-Fi de alta velocidad, recomendaciones de los mejores restaurantes locales, normas de casa, horarios de check-in/check-out y números de emergencia</strong> para una estadía perfecta en Caraz.",
+        marketingBtn: "Desbloquear Ahora",
+        privSectionTitle: "🔐 Sección Reservada de Rutas y Servicios para Huéspedes",
+        gPrivDesc: "Ingresa la clave proporcionada en recepción para ver los precios protegidos y guías:",
+        passPlaceholder: "Contraseña de huésped",
+        btnUnlockText: "Desbloquear Sección",
+        wifiCardTitle: "Conexión Wi-Fi de Alta Velocidad",
+        wifiNetLabel: "Nombre de red (SSID):",
+        wifiPassLabel: "Contraseña:",
+        privGearTitle: "🏷️ Tarifas de Alquiler de Equipos de Montaña",
+        directoryTitle: "📍 Directorio de Lugares Clave en Caraz",
+        stkFrom: "Desde",
+        stkBtn: "Reservar Ahora"
+      },
+      en: {
+        navLocationSub: "Caraz · Peru",
+        navCodeText: "Guest Code",
+        heroTitle: "Your comfortable, safe and complete stay in <span class='text-amber-300'>Caraz, Peru</span>",
+        heroSubtitle: "Enjoy cozy rooms, 24/7 hot water, and the best location for your adventures in the Cordillera Blanca.",
+        lblLocationTitle: "Location",
+        lblLocationVal: "Caraz, Peru",
+        lblCheckin: "Check-in date",
+        lblCheckout: "Check-out date",
+        btnSearchPrices: "Check Availability",
+        badgeBooking: "Fabulous · Excellent Location",
+        titleRooms: "Our Rooms",
+        roomsBadge: "Direct Best Price Guarantee",
+        room1Tag: "ECONOMIC & COMFORT",
+        bannerCodeTitle: "Do you have your booking code?",
+        bannerCodeDesc: "Use your code provided by the accommodation here to find protected prices, directions, and more.",
+        bannerCodeBtn: "Go to Reserved Section",
+        room1Title: "Economic Double Room",
+        room1Desc: "Small and cozy room with a full-size bed. Ideal for couples or solo travelers.",
+        perNight: "avg. per night",
+        btnResText: "Book via WhatsApp",
+        room2Tag: "MOST POPULAR",
+        room2Title: "Medium Double Room",
+        room2Desc: "Spacious room with a full-size bed, great natural lighting, and a wardrobe.",
+        titleCamping: "Camping and Trekking Gear Rental",
+        gearBannerTitle: "🧗‍♂️ Professional Mountain Equipment",
+        gearBannerDesc: "Specialized high-altitude gear ready for your adventure.",
+        gearBannerBtn: "View Prices in Reserved Area",
+        gear1Name: "3-Season Tent",
+        gear1Desc: "Sturdy tent for high mountains.",
+        gear2Name: "Down Sleeping Bag",
+        gear2Desc: "High-resistance down (-5°C to -20°C).",
+        gear3Name: "Trekking Poles",
+        gear3Desc: "Pair of ergonomic poles.",
+        gear4Name: "Binoculars",
+        gear4Desc: "Landscape and snow-peak viewing.",
+        gear5Name: "Camp Stove",
+        gear5Desc: "Includes cooking utensils.",
+        gear6Name: "New Gas Canister",
+        gear6Desc: "Sealed mountain gas canister.",
+        titleServices: "Services & Facilities",
+        sBath: "Private Bathroom",
+        sWater: "24/7 Hot Water",
+        sTv: "Smart TV",
+        sWifi: "Free Wi-Fi",
+        sParking: "Free Parking",
+        sLuggage: "Luggage Storage",
+        sKitchen: "Shared Kitchen",
+        sBreakfast: "Breakfasts",
+        titleGuideHeading: "Caraz Tourist Guide & Reserved Area",
+        gPubDesc: "📍 <strong>Parón Lake:</strong> The largest turquoise lake in the Cordillera Blanca, located 32 km from Caraz.<br><br>📍 <strong>Llanganuco Lakes:</strong> Turquoise water mirrors surrounded by quenual forests.<br><br>📍 <strong>Laguna 69:</strong> One of the world's most famous high-mountain treks in Huascarán National Park.",
+        marketingTag: "Exclusive Guest Area",
+        marketingTitle: "Already staying with us or have your access code?",
+        marketingDesc: "Enter the code provided by the accommodation here to discover <strong>special seasonal rates, high-speed Wi-Fi passwords, recommendations for the best local restaurants, house rules, check-in/check-out times, and emergency numbers</strong> for a perfect stay in Caraz.",
+        marketingBtn: "Unlock Now",
+        privSectionTitle: "🔐 Reserved Section for Routes and Guest Services",
+        gPrivDesc: "Enter the password provided at reception to view protected prices and guides:",
+        passPlaceholder: "Guest password",
+        btnUnlockText: "Unlock Section",
+        wifiCardTitle: "High-Speed Wi-Fi Connection",
+        wifiNetLabel: "Network name (SSID):",
+        wifiPassLabel: "Password:",
+        privGearTitle: "🏷️ Mountain Gear Rental Rates",
+        directoryTitle: "📍 Key Places Directory in Caraz",
+        stkFrom: "From",
+        stkBtn: "Book Now"
+      },
+      pt: {
+        navLocationSub: "Caraz · Peru",
+        navCodeText: "Código do Hóspede",
+        heroTitle: "Sua estadia confortável, segura e completa em <span class='text-amber-300'>Caraz, Peru</span>",
+        heroSubtitle: "Desfrute de quartos aconchegantes, água quente 24/7 e da melhor localização para suas aventuras na Cordillera Blanca.",
+        lblLocationTitle: "Localização",
+        lblLocationVal: "Caraz, Peru",
+        lblCheckin: "Data de entrada",
+        lblCheckout: "Data de saída",
+        btnSearchPrices: "Consultar Disponibilidade",
+        badgeBooking: "Fabuloso · Excelente Localização",
+        titleRooms: "Nossos Quartos",
+        roomsBadge: "Garantia de Melhor Preço Direto",
+        room1Tag: "ECOMÔNICA & CONFORTO",
+        bannerCodeTitle: "Tem seu código de reserva?",
+        bannerCodeDesc: "Use aqui o código fornecido pela hospedagem e encontre preços protegidos, instruções e mais.",
+        bannerCodeBtn: "Ir para a Seção Reservada",
+        room1Title: "Quarto de Casal Econômico",
+        room1Desc: "Quarto pequeno e aconchegante com cama de casal. Ideal para casais ou viajantes solos.",
+        perNight: "média por noite",
+        btnResText: "Reservar via WhatsApp",
+        room2Tag: "MAIS POPULAR",
+        room2Title: "Quarto de Casal Médio",
+        room2Desc: "Quarto espaçoso com cama de casal, ótima iluminação natural e guarda-roupa.",
+        titleCamping: "Aluguel de Equipamentos de Camping e Trekking",
+        gearBannerTitle: "🧗‍♂️ Equipamento Profissional para Montanha",
+        gearBannerDesc: "Material especializado de alta montanha pronto para sua aventura.",
+        gearBannerBtn: "Ver Preços na Área Reservada",
+        gear1Name: "Barraca 3 Estações",
+        gear1Desc: "Barraca resistente para alta montanha.",
+        gear2Name: "Saco de Dormir de Pluma",
+        gear2Desc: "Pluma de alta resistência (-5°C a -20°C).",
+        gear3Name: "Bastões de Trekking",
+        gear3Desc: "Par de bastões ergonômicos.",
+        gear4Name: "Binóculos",
+        gear4Desc: "Observação de nevados e paisagens.",
+        gear5Name: "Fogareiro de Campanha",
+        gear5Desc: "Inclui utensílios de cozinha.",
+        gear6Name: "Cartucho de Gás Novo",
+        gear6Desc: "Cartucho lacrado para montanha.",
+        titleServices: "Serviços e Instalações",
+        sBath: "Banheiro Privado",
+        sWater: "Água Quente 24/7",
+        sTv: "Smart TV",
+        sWifi: "Wi-Fi Grátis",
+        sParking: "Estacionamento Grátis",
+        sLuggage: "Guarda-volumes",
+        sKitchen: "Cozinha Compartilhada",
+        sBreakfast: "Café da Manhã",
+        titleGuideHeading: "Guia Turístico de Caraz & Área Reservada",
+        gPubDesc: "📍 <strong>Lagoa Parón:</strong> A maior lagoa turquesa da Cordillera Blanca, localizada a 32 km de Caraz.<br><br>📍 <strong>Lagoas de Llanganuco:</strong> Espelhos d'água cor de turquesa cercados por florestas de quenuales.<br><br>📍 <strong>Lagoa 69:</strong> Um dos trekkings de alta montanha mais famosos do mundo no Parque Nacional Huascarán.",
+        marketingTag: "Área Exclusiva para Hóspedes",
+        marketingTitle: "Já está hospedado ou tem seu código de acesso?",
+        marketingDesc: "Insira o código fornecido pela hospedagem aqui e descubra <strong>tarifas especiais de temporada, senha de Wi-Fi de alta velocidade, recomendações dos melhores restaurantes locais, regras da casa, horários de check-in/check-out e números de emergência</strong> para uma estadia perfeita em Caraz.",
+        marketingBtn: "Desbloquear Agora",
+        privSectionTitle: "🔐 Seção Reservada de Rotas e Serviços para Hóspedes",
+        gPrivDesc: "Digite a senha fornecida na recepção para ver os preços protegidos e guias:",
+        passPlaceholder: "Senha do hóspede",
+        btnUnlockText: "Desbloquear Seção",
+        wifiCardTitle: "Conexão Wi-Fi de Alta Velocidade",
+        wifiNetLabel: "Nome da rede (SSID):",
+        wifiPassLabel: "Senha:",
+        privGearTitle: "🏷️ Tarifas de Aluguel de Equipamentos de Montanha",
+        directoryTitle: "📍 Diretório de Locais Chave em Caraz",
+        stkFrom: "A partir de",
+        stkBtn: "Reservar Agora"
+      },
+      fr: {
+        navLocationSub: "Caraz · Pérou",
+        navCodeText: "Code Client",
+        heroTitle: "Votre séjour confortable, sûr et complet à <span class='text-amber-300'>Caraz, Pérou</span>",
+        heroSubtitle: "Profitez de chambres chaleureuses, d'eau chaude 24h/24 et du meilleur emplacement pour vos aventures dans la Cordillera Blanca.",
+        lblLocationTitle: "Emplacement",
+        lblLocationVal: "Caraz, Pérou",
+        lblCheckin: "Date d'arrivée",
+        lblCheckout: "Date de départ",
+        btnSearchPrices: "Vérifier la Disponibilité",
+        badgeBooking: "Fabuleux · Excellent Emplacement",
+        titleRooms: "Nos Chambres",
+        roomsBadge: "Garantie Meilleur Prix Direct",
+        room1Tag: "ÉCONOMIQUE & CONFORT",
+        bannerCodeTitle: "Avez-vous votre code de réservation ?",
+        bannerCodeDesc: "Utilisez ici votre code fourni par l'hébergement pour trouver des tarifs protégés, des indications et plus encore.",
+        bannerCodeBtn: "Aller à la Section Réservée",
+        room1Title: "Chambre Double Économique",
+        room1Desc: "Petite chambre chaleureuse avec un lit double. Idéale pour les couples ou les voyageurs solos.",
+        perNight: "moy. par nuit",
+        btnResText: "Réserver par WhatsApp",
+        room2Tag: "PLUS POPULAIRE",
+        room2Title: "Chambre Double Moyenne",
+        room2Desc: "Chambre spacieuse avec un lit double, une belle lumière naturelle et une armoire.",
+        titleCamping: "Location de Matériel de Camping et Trekking",
+        gearBannerTitle: "🧗‍♂️ Équipement Professionnel de Montagne",
+        gearBannerDesc: "Matériel spécialisé de haute montagne prêt pour votre aventure.",
+        gearBannerBtn: "Voir les Prix dans la Zone Réservée",
+        gear1Name: "Tente 3 Saisons",
+        gear1Desc: "Tente résistante pour haute montagne.",
+        gear2Name: "Sac de Couchage en Duvet",
+        gear2Desc: "Duvet haute résistance (-5°C à -20°C).",
+        gear3Name: "Bâtons de Trekking",
+        gear3Desc: "Paire de bâtons ergonomiques.",
+        gear4Name: "Jumelles",
+        gear4Desc: "Observation des sommets et paysages.",
+        gear5Name: "Réchaud de Campagne",
+        gear5Desc: "Ustensiles de cuisine inclus.",
+        gear6Name: "Cartouche de Gaz Neuve",
+        gear6Desc: "Cartouche scellée pour montagne.",
+        titleServices: "Services & Installations",
+        sBath: "Salle de Bain Privée",
+        sWater: "Eau Chaude 24/7",
+        sTv: "Smart TV",
+        sWifi: "Wi-Fi Gratuit",
+        sParking: "Parking Gratuit",
+        sLuggage: "Consigne à Bagages",
+        sKitchen: "Cuisine Partagée",
+        sBreakfast: "Petits Déjeuners",
+        titleGuideHeading: "Guide Touristique de Caraz & Zone Réservée",
+        gPubDesc: "📍 <strong>Lagune Parón :</strong> La plus grande lagune turquoise de la Cordillera Blanca, située à 32 km de Caraz.<br><br>📍 <strong>Lagunes de Llanganuco :</strong> Miroirs d'eau turquoise entourés de forêts de quenuales.<br><br>📍 <strong>Laguna 69 :</strong> L'un des treks de haute montagne les plus célèbres au monde dans le Parc National Huascarán.",
+        marketingTag: "Espace Exclusif pour Clients",
+        marketingTitle: "Vous séjournez déjà chez nous ou avez votre code d'accès ?",
+        marketingDesc: "Entrez le code fourni par l'hébergement ici et découvrez <strong>les tarifs spéciaux de saison, le mot de passe Wi-Fi haut débit, les recommandations des meilleurs restaurants locaux, le règlement intérieur, les horaires de check-in/check-out et les numéros d'urgence</strong> pour un séjour parfait à Caraz.",
+        marketingBtn: "Déverrouiller Maintenant",
+        privSectionTitle: "🔐 Section Réservée des Itinéraires et Services pour Clients",
+        gPrivDesc: "Entrez le mot de passe fourni à la réception pour voir les prix protégés et guides :",
+        passPlaceholder: "Mot de passe client",
+        btnUnlockText: "Déverrouiller la Section",
+        wifiCardTitle: "Connexion Wi-Fi Haut Débit",
+        wifiNetLabel: "Nom du réseau (SSID) :",
+        wifiPassLabel: "Mot de passe :",
+        privGearTitle: "🏷️ Tarifs de Location de Matériel de Montagne",
+        directoryTitle: "📍 Répertoire des Lieux Clés à Caraz",
+        stkFrom: "À partir de",
+        stkBtn: "Réserver Maintenant"
+      },
+      de: {
+        navLocationSub: "Caraz · Peru",
+        navCodeText: "Gästekod",
+        heroTitle: "Ihr komfortabler, sicherer Aufenthalt in <span class='text-amber-300'>Caraz, Peru</span>",
+        heroSubtitle: "Genießen Sie gemütliche Zimmer, 24/7 Warmwasser und die beste Lage für Ihre Abenteuer in der Cordillera Blanca.",
+        lblLocationTitle: "Standort",
+        lblLocationVal: "Caraz, Peru",
+        lblCheckin: "Anreisedatum",
+        lblCheckout: "Abreisedatum",
+        btnSearchPrices: "Verfügbarkeit Prüfen",
+        badgeBooking: "Fabelhaft · Hervorragende Lage",
+        titleRooms: "Unsere Zimmer",
+        roomsBadge: "Direktbuchungs-Bestpreisgarantie",
+        room1Tag: "GÜNSTIG & KOMFORTABEL",
+        bannerCodeTitle: "Haben Sie Ihren Buchungscode?",
+        bannerCodeDesc: "Verwenden Sie hier Ihren von der Unterkunft bereitgestellten Code für geschützte Preise, Anweisungen und mehr.",
+        bannerCodeBtn: "Zum Reservierten Bereich",
+        room1Title: "Günstiges Doppelzimmer",
+        room1Desc: "Kleines, gemütliches Zimmer mit Doppelbett. Ideal für Paare oder Alleinreisende.",
+        perNight: "durchschn. pro Nacht",
+        btnResText: "Über WhatsApp Buchen",
+        room2Tag: "AM BELIEBTESTEN",
+        room2Title: "Mittleres Doppelzimmer",
+        room2Desc: "Geräumiges Zimmer mit Doppelbett, viel Tageslicht und Kleiderschrank.",
+        titleCamping: "Verleih von Camping- und Trekkingausrüstung",
+        gearBannerTitle: "🧗‍♂️ Professionelle Berg-Ausrüstung",
+        gearBannerDesc: "Spezialisierte Hochgebirgsausrüstung bereit für Ihr Abenteuer.",
+        gearBannerBtn: "Preise im geschützten Bereich ansehen",
+        gear1Name: "3-Jahreszeiten-Zelt",
+        gear1Desc: "Robustes Zelt für das Hochgebirge.",
+        gear2Name: "Daunenschlafsack",
+        gear2Desc: "Hochfester Daunenschlafsack (-5°C bis -20°C).",
+        gear3Name: "Trekkingstöcke",
+        gear3Desc: "Paar ergonomische Stöcke.",
+        gear4Name: "Fernglas",
+        gear4Desc: "Zur Beobachtung von schneebedeckten Gipfeln.",
+        gear5Name: "Campingkocher",
+        gear5Desc: "Inklusive Kochutensilien.",
+        gear6Name: "Neue Gaskartusche",
+        gear6Desc: "Versiegelte Gaskartusche für die Berge.",
+        titleServices: "Dienstleistungen & Ausstattung",
+        sBath: "Privates Bad",
+        sWater: "24/7 Warmwasser",
+        sTv: "Smart-TV",
+        sWifi: "Kostenloses Wi-Fi",
+        sParking: "Kostenloser Parkplatz",
+        sLuggage: "Gepäckaufbewahrung",
+        sKitchen: "Gemeinschaftsküche",
+        sBreakfast: "Frühstück",
+        titleGuideHeading: "Caraz Reiseführer & Reservierter Bereich",
+        gPubDesc: "📍 <strong>Parón-See:</strong> Der größte türkisfarbene See der Cordillera Blanca, 32 km von Caraz entfernt.<br><br>📍 <strong>Llanganuco-Seen:</strong> Türkisfarbene Wasserspiegel umgeben von Quenual-Wäldern.<br><br>📍 <strong>Laguna 69:</strong> Eines der berühmtesten Hochgebirgstouren der Welt im Huascarán-Nationalpark.",
+        marketingTag: "Exklusiver Gäste-Bereich",
+        marketingTitle: "Bereits bei uns zu Gast oder haben Sie Ihren Zugangscode?",
+        marketingDesc: "Geben Sie hier den von der Unterkunft bereitgestellten Code ein und entdecken Sie <strong>Saison-Sonderpreise, Highspeed-Wi-Fi-Passwörter, Empfehlungen für die besten Restaurants vor Ort, Hausregeln, Check-in/Check-out-Zeiten sowie Notfallnummern</strong> für einen perfekten Aufenthalt in Caraz.",
+        marketingBtn: "Jetzt Freischalten",
+        privSectionTitle: "🔐 Reservierter Bereich für Routen und Gästeservice",
+        gPrivDesc: "Geben Sie das an der Rezeption mitgeteilte Passwort ein, um geschützte Preise und Guides zu sehen:",
+        passPlaceholder: "Gästekennwort",
+        btnUnlockText: "Bereich Freischalten",
+        wifiCardTitle: "Highspeed-Wi-Fi-Verbindung",
+        wifiNetLabel: "Netzwerkname (SSID):",
+        wifiPassLabel: "Passwort:",
+        privGearTitle: "🏷️ Verleihpreise für Bergausrüstung",
+        directoryTitle: "📍 Wichtiges Verzeichnis in Caraz",
+        stkFrom: "Ab",
+        stkBtn: "Jetzt Buchen"
+      },
+      ru: {
+        navLocationSub: "Карас · Перу",
+        navCodeText: "Код Гостя",
+        heroTitle: "Комфортный, безопасный и полноценный отдых в <span class='text-amber-300'>Карасе, Перу</span>",
+        heroSubtitle: "Наслаждайтесь уютными номерами, горячей водой 24/7 и лучшим расположением для ваших приключений в Кордильере-Бланка.",
+        lblLocationTitle: "Местоположение",
+        lblLocationVal: "Карас, Перу",
+        lblCheckin: "Дата заезда",
+        lblCheckout: "Дата выезда",
+        btnSearchPrices: "Проверить Доступность",
+        badgeBooking: "Великолепно · Отличное расположение",
+        titleRooms: "Наши Номера",
+        roomsBadge: "Гарантия лучшей прямой цены",
+        room1Tag: "ЭКОНОМ & КОМФОРТ",
+        bannerCodeTitle: "У вас есть код бронирования?",
+        bannerCodeDesc: "Введите здесь предоставленный отелем код, чтобы найти специальные цены, инструкции и многое другое.",
+        bannerCodeBtn: "Перейти в закрытый раздел",
+        room1Title: "Экономичный двуспальный номер",
+        room1Desc: "Небольшой уютный номер с двуспальной кроватью. Идеально для пар или путешественников в одиночку.",
+        perNight: "в среднем за ночь",
+        btnResText: "Забронировать через WhatsApp",
+        room2Tag: "ПОПУЛЯРНЫЙ",
+        room2Title: "Улучшенный двуспальный номер",
+        room2Desc: "Просторный номер с двуспальной кроватью, отличным естественным освещением и шкафом.",
+        titleCamping: "Прокат туристического и альпинистского снаряжения",
+        gearBannerTitle: "🧗‍♂️ Профессиональное горное снаряжение",
+        gearBannerDesc: "Специализированное высокогорное снаряжение готово к вашему приключению.",
+        gearBannerBtn: "Смотреть цены в закрытой зоне",
+        gear1Name: "3-сезонная палатка",
+        gear1Desc: "Прочная палатка для высокогорья.",
+        gear2Name: "Пуховый спальный мешок",
+        gear2Desc: "Высокопрочный пух (-5°C до -20°C).",
+        gear3Name: "Треккинговые палки",
+        gear3Desc: "Пара эргономичных палок.",
+        gear4Name: "Бинокль",
+        gear4Desc: "Для наблюдения за снежными пиками и пейзажами.",
+        gear5Name: "Походная плита",
+        gear5Desc: "Включает кухонные принадлежности.",
+        gear6Name: "Новый газовый баллон",
+        gear6Desc: "Герметичный горный газовый баллон.",
+        titleServices: "Услуги и удобства",
+        sBath: "Частная ванная",
+        sWater: "Горячая вода 24/7",
+        sTv: "Smart TV",
+        sWifi: "Бесплатный Wi-Fi",
+        sParking: "Бесплатная парковка",
+        sLuggage: "Хранение багажа",
+        sKitchen: "Общая кухня",
+        sBreakfast: "Завтраки",
+        titleGuideHeading: "Туристический гид по Карасу и закрытая зона",
+        gPubDesc: "📍 <strong>Лагуна Парон:</strong> Самое большое бирюзовое озеро в Кордильере-Бланка, в 32 км от Караса.<br><br>📍 <strong>Озера Льянгуануко:</strong> Бирюзовые зеркала воды, окруженные лесами кенуаль.<br><br>📍 <strong>Лагуна 69:</strong> Один из самых известных высокогорных треккингов в мире в Национальном парке Уаскаран.",
+        marketingTag: "Эксклюзивная зона для гостей",
+        marketingTitle: "Уже проживаете у нас или есть код доступа?",
+        marketingDesc: "Введите предоставленный отелем код здесь и откройте <strong>специальные сезонные тарифы, пароль от высокоскоростного Wi-Fi, рекомендации лучших местных ресторанов, правила проживания, время заезда/выезда и номера экстренных служб</strong> для идеального отдыха в Карасе.",
+        marketingBtn: "Разблокировать сейчас",
+        privSectionTitle: "🔐 Закрытый раздел маршрутов и услуг для гостей",
+        gPrivDesc: "Введите пароль, полученный на стойке регистрации, чтобы увидеть защищенные цены и гиды:",
+        passPlaceholder: "Пароль гостя",
+        btnUnlockText: "Разблокировать раздел",
+        wifiCardTitle: "Высокоскоростное подключение Wi-Fi",
+        wifiNetLabel: "Имя сети (SSID):",
+        wifiPassLabel: "Пароль:",
+        privGearTitle: "🏷️ Стоимость аренды горного снаряжения",
+        directoryTitle: "📍 Каталог ключевых мест в Карасе",
+        stkFrom: "От",
+        stkBtn: "Забронировать"
+      },
+      cs: {
+        navLocationSub: "Caraz · Peru",
+        navCodeText: "Kód hosta",
+        heroTitle: "Váš pohodlný, bezpečný a kompletní pobyt v <span class='text-amber-300'>Carazu, Peru</span>",
+        heroSubtitle: "Užijte si útulné pokoje, teplou vodu 24/7 a nejlepší polohu pro vaše dobrodružství v Cordillera Blanca.",
+        lblLocationTitle: "Lokalita",
+        lblLocationVal: "Caraz, Peru",
+        lblCheckin: "Datum příjezdu",
+        lblCheckout: "Datum odjezdu",
+        btnSearchPrices: "Ověřit Dostupnost",
+        badgeBooking: "Skvělé · Vynikající poloha",
+        titleRooms: "Naše Pokoje",
+        roomsBadge: "Záruka nejlepší přímé ceny",
+        room1Tag: "EKONOMICKÝ & POHODLNÝ",
+        bannerCodeTitle: "Máte svůj rezervační kód?",
+        bannerCodeDesc: "Zde zadejte kód poskytnutý ubytováním a získejte chráněné ceny, pokyny a další.",
+        bannerCodeBtn: "Přejít do rezervované sekce",
+        room1Title: "Ekonomický dvoulůžkový pokoj",
+        room1Desc: "Malý a útulný pokoj s manželskou postelí. Ideální pro páry nebo solo cestovatele.",
+        perNight: "prům. za noc",
+        btnResText: "Rezervovat přes WhatsApp",
+        room2Tag: "NEJOBLÍBENĚJŠÍ",
+        room2Title: "Střední dvoulůžkový pokoj",
+        room2Desc: "Prostorný pokoj s manželskou postelí, skvělým denním světlem a šatní skříní.",
+        titleCamping: "Půjčovna kempingového a trekového vybavení",
+        gearBannerTitle: "🧗‍♂️ Profesionální horské vybavení",
+        gearBannerDesc: "Specializované vybavení pro vysokohorskou turistiku připravené pro vaše dobrodružství.",
+        gearBannerBtn: "Zobrazit ceny v rezervované zóně",
+        gear1Name: "3sezónní stan",
+        gear1Desc: "Odolný stan do velkých hor.",
+        gear2Name: "Péřový spací pytel",
+        gear2Desc: "Vysoce odolné peří (-5°C až -20°C).",
+        gear3Name: "Trekingové hůlky",
+        gear3Desc: "Pár ergonomických hůlek.",
+        gear4Name: "Dalekohled",
+        gear4Desc: "Pro pozorování štítů a krajiny.",
+        gear5Name: "Kempingový vařič",
+        gear5Desc: "Včetně kuchyňského náčiní.",
+        gear6Name: "Nová plynová kartuše",
+        gear6Desc: "Utěsněná kartuše do hor.",
+        titleServices: "Služby a Vybavení",
+        sBath: "Soukromá koupelna",
+        sWater: "Teplá voda 24/7",
+        sTv: "Smart TV",
+        sWifi: "Wi-Fi Zdarma",
+        sParking: "Parkování Zdarma",
+        sLuggage: "Úschovna zavazadel",
+        sKitchen: "Sdílená kuchyně",
+        sBreakfast: "Snídaně",
+        titleGuideHeading: "Turistický průvodce Caraz a rezervovaná zóna",
+        gPubDesc: "📍 <strong>Laguna Parón:</strong> Největší tyrkysová laguna v Cordillera Blanca, 32 km od Carazu.<br><br>📍 <strong>Laguny Llanganuco:</strong> Tyrkysová jezera obklopená lesy quenual.<br><br>📍 <strong>Laguna 69:</strong> Jeden z nejznámějších vysokohorských treků na světě v Národním parku Huascarán.",
+        marketingTag: "Exkluzivní zóna pro hosty",
+        marketingTitle: "Už jste u nás ubytováni nebo máte přístupový kód?",
+        marketingDesc: "Zadejte kód poskytnutý ubytováním zde a objevte <strong>speciální sezónní ceny, heslo k rychlé Wi-Fi, doporučení na nejlepší místní restaurace, domovní řád, časy check-in/check-out a nouzová čísla</strong> pro dokonalý pobyt v Carazu.",
+        marketingBtn: "Odemknout Nyní",
+        privSectionTitle: "🔐 Rezervovaná sekce tras a služeb pro hosty",
+        gPrivDesc: "Zadejte heslo sdělené na recepci pro zobrazení chráněných cen a průvodců:",
+        passPlaceholder: "Heslo hosta",
+        btnUnlockText: "Odemknout sekci",
+        wifiCardTitle: "Vysokorychlostní Wi-Fi připojení",
+        wifiNetLabel: "Název sítě (SSID):",
+        wifiPassLabel: "Heslo:",
+        privGearTitle: "🏷️ Ceník půjčovného horského vybavení",
+        directoryTitle: "📍 Adresář klíčových míst v Carazu",
+        stkFrom: "Od",
+        stkBtn: "Rezervovat Nyní"
+      },
+      zh: {
+        navLocationSub: "秘鲁 · 卡拉斯",
+        navCodeText: "住客专属码",
+        heroTitle: "在秘鲁<span class='text-amber-300'>卡拉斯</span>享受温馨、安全与完美的住宿体验",
+        heroSubtitle: "尽享温馨舒适的房间、24小时热水，以及前往白山 Cordillera Blanca 探险的最佳地理位置。",
+        lblLocationTitle: "位置",
+        lblLocationVal: "秘鲁卡拉斯",
+        lblCheckin: "入住日期",
+        lblCheckout: "退房日期",
+        btnSearchPrices: "查询实时房态",
+        badgeBooking: "超赞 · 绝佳位置",
+        titleRooms: "精选客房",
+        roomsBadge: "直订最优价格保证",
+        room1Tag: "经济舒适",
+        bannerCodeTitle: "您有预订或入住验证码吗？",
+        bannerCodeDesc: "在此输入酒店提供的专属代码，即可查看内部特惠价格、入住指南及实用信息。",
+        bannerCodeBtn: "前往住客专区",
+        room1Title: "经济大床房",
+        room1Desc: "小巧温馨的双人床房间，非常适合情侣或独行背包客。",
+        perNight: "每晚均价",
+        btnResText: "通过 WhatsApp 预订",
+        room2Tag: "最受欢迎",
+        room2Title: "标准大床房",
+        room2Desc: "空间宽敞，配备大床、充足的自然采光和独立衣柜。",
+        titleCamping: "露营与登山装备租赁",
+        gearBannerTitle: "🧗‍♂️ 专业高山户外装备",
+        gearBannerDesc: "随时为您的探险之旅准备的高山专业防护装备。",
+        gearBannerBtn: "在住客专区查看价格",
+        gear1Name: "三季高山帐篷",
+        gear1Desc: "适合高山恶劣天气的坚固帐篷。",
+        gear2Name: "高蓬松度羽绒睡袋",
+        gear2Desc: "高寒抗冻 (-5°C 至 -20°C)。",
+        gear3Name: "专业登山杖",
+        gear3Desc: "符合人体工学的轻量登山杖（对）。",
+        gear4Name: "高倍望远镜",
+        gear4Desc: "雪山风光与鸟类观察必备。",
+        gear5Name: "野营便携炉具",
+        gear5Desc: "附带户外野炊套锅。",
+        gear6Name: "高山扁气罐",
+        gear6Desc: "高山安全密封气罐。",
+        titleServices: "配套服务与设施",
+        sBath: "独立卫浴",
+        sWater: "24/7 恒温热水",
+        sTv: "智能电视",
+        sWifi: "高速无线网",
+        sParking: "免费停车",
+        sLuggage: "行李寄存",
+        sKitchen: "共享厨房",
+        sBreakfast: "精选早餐",
+        titleGuideHeading: "卡拉斯旅游指南与住客专区",
+        gPubDesc: "📍 <strong>帕龙湖 (Laguna Parón)：</strong> 白山山脉中最大的绿松石色冰川湖，距离卡拉斯 32 公里。<br><br>📍 <strong>兰加努科湖 (Llanganuco)：</strong> 被克纽亚森林环绕的翡翠色高山双子湖。<br><br>📍 <strong>69号湖 (Laguna 69)：</strong> 瓦斯卡兰国家公园内世界闻名的高山徒步路线之一。",
+        marketingTag: "住客专属特权区",
+        marketingTitle: "您已经入住或持有专属访问密码吗？",
+        marketingDesc: "在此输入由前台提供的专属验证码，解锁<strong>当季入住特惠、高速 Wi-Fi 密码、当地人气餐厅推荐、入住须知、退房时间及紧急求助电话</strong>，开启您在卡拉斯的完美旅程。",
+        marketingBtn: "立即解锁专区",
+        privSectionTitle: "🔐 住客专属路线与服务查询区",
+        gPrivDesc: "请输入前台接待处提供的专属密码，以查看内部协议价格和游玩指南：",
+        passPlaceholder: "住客访问密码",
+        btnUnlockText: "立即解锁专区",
+        wifiCardTitle: "高速无线网络连接",
+        wifiNetLabel: "网络名称 (SSID)：",
+        wifiPassLabel: "无线密码：",
+        privGearTitle: "🏷️ 高山户外装备租赁特惠价",
+        directoryTitle: "📍 卡拉斯本地便捷生活指南",
+        stkFrom: "起价",
+        stkBtn: "立即预订"
+      }
     };
 
     function changeLanguage(lang) {
@@ -546,10 +1119,79 @@
       if (activeBtn) activeBtn.classList.add('bg-emerald-600', 'text-white');
       
       const t = translations[lang] || translations['es'];
-      const sub = document.getElementById('nav-location-sub');
-      const hero = document.getElementById('hero-title');
-      if (sub && t.navLocationSub) sub.innerText = t.navLocationSub;
-      if (hero && t.heroTitle) hero.innerHTML = t.heroTitle;
+      
+      // Sincronización completa e inteligente de cada texto e interfaz
+      if(document.getElementById('nav-location-sub')) document.getElementById('nav-location-sub').innerText = t.navLocationSub;
+      if(document.getElementById('nav-code-text')) document.getElementById('nav-code-text').innerText = t.navCodeText;
+      if(document.getElementById('hero-title')) document.getElementById('hero-title').innerHTML = t.heroTitle;
+      if(document.getElementById('hero-subtitle')) document.getElementById('hero-subtitle').innerText = t.heroSubtitle;
+      if(document.getElementById('lbl-location-title')) document.getElementById('lbl-location-title').innerText = t.lblLocationTitle;
+      if(document.getElementById('lbl-location-val')) document.getElementById('lbl-location-val').innerText = t.lblLocationVal;
+      if(document.getElementById('lbl-checkin')) document.getElementById('lbl-checkin').innerText = t.lblCheckin;
+      if(document.getElementById('lbl-checkout')) document.getElementById('lbl-checkout').innerText = t.lblCheckout;
+      if(document.getElementById('btn-search-prices')) document.getElementById('btn-search-prices').innerText = t.btnSearchPrices;
+      if(document.getElementById('badge-booking')) document.getElementById('badge-booking').innerText = t.badgeBooking;
+      if(document.getElementById('title-rooms')) document.getElementById('title-rooms').innerText = t.titleRooms;
+      if(document.getElementById('rooms-badge')) document.getElementById('rooms-badge').innerText = t.roomsBadge;
+      if(document.getElementById('room1-tag')) document.getElementById('room1-tag').innerText = t.room1Tag;
+      if(document.getElementById('banner-code-title')) document.getElementById('banner-code-title').innerText = t.bannerCodeTitle;
+      if(document.getElementById('banner-code-desc')) document.getElementById('banner-code-desc').innerText = t.bannerCodeDesc;
+      if(document.getElementById('banner-code-btn')) document.getElementById('banner-code-btn').innerText = t.bannerCodeBtn;
+      if(document.getElementById('room1-title')) document.getElementById('room1-title').innerText = t.room1Title;
+      if(document.getElementById('room1-desc')) document.getElementById('room1-desc').innerText = t.room1Desc;
+      if(document.getElementById('per-night-1')) document.getElementById('per-night-1').innerText = t.perNight;
+      if(document.getElementById('per-night-2')) document.getElementById('per-night-2').innerText = t.perNight;
+      
+      document.querySelectorAll('.btn-res-text').forEach(el => el.innerText = t.btnResText);
+
+      if(document.getElementById('room2-tag')) document.getElementById('room2-tag').innerText = t.room2Tag;
+      if(document.getElementById('room2-title')) document.getElementById('room2-title').innerText = t.room2Title;
+      if(document.getElementById('room2-desc')) document.getElementById('room2-desc').innerText = t.room2Desc;
+      if(document.getElementById('title-camping')) document.getElementById('title-camping').innerText = t.titleCamping;
+      if(document.getElementById('gear-banner-title')) document.getElementById('gear-banner-title').innerText = t.gearBannerTitle;
+      if(document.getElementById('gear-banner-desc')) document.getElementById('gear-banner-desc').innerText = t.gearBannerDesc;
+      if(document.getElementById('gear-banner-btn')) document.getElementById('gear-banner-btn').innerText = t.gearBannerBtn;
+      
+      if(document.getElementById('gear-1-name')) document.getElementById('gear-1-name').innerText = t.gear1Name;
+      if(document.getElementById('gear-1-desc')) document.getElementById('gear-1-desc').innerText = t.gear1Desc;
+      if(document.getElementById('gear-2-name')) document.getElementById('gear-2-name').innerText = t.gear2Name;
+      if(document.getElementById('gear-2-desc')) document.getElementById('gear-2-desc').innerText = t.gear2Desc;
+      if(document.getElementById('gear-3-name')) document.getElementById('gear-3-name').innerText = t.gear3Name;
+      if(document.getElementById('gear-3-desc')) document.getElementById('gear-3-desc').innerText = t.gear3Desc;
+      if(document.getElementById('gear-4-name')) document.getElementById('gear-4-name').innerText = t.gear4Name;
+      if(document.getElementById('gear-4-desc')) document.getElementById('gear-4-desc').innerText = t.gear4Desc;
+      if(document.getElementById('gear-5-name')) document.getElementById('gear-5-name').innerText = t.gear5Name;
+      if(document.getElementById('gear-5-desc')) document.getElementById('gear-5-desc').innerText = t.gear5Desc;
+      if(document.getElementById('gear-6-name')) document.getElementById('gear-6-name').innerText = t.gear6Name;
+      if(document.getElementById('gear-6-desc')) document.getElementById('gear-6-desc').innerText = t.gear6Desc;
+
+      if(document.getElementById('title-services')) document.getElementById('title-services').innerText = t.titleServices;
+      if(document.getElementById('s-bath')) document.getElementById('s-bath').innerText = t.sBath;
+      if(document.getElementById('s-water')) document.getElementById('s-water').innerText = t.sWater;
+      if(document.getElementById('s-tv')) document.getElementById('s-tv').innerText = t.sTv;
+      if(document.getElementById('s-wifi')) document.getElementById('s-wifi').innerText = t.sWifi;
+      if(document.getElementById('s-parking')) document.getElementById('s-parking').innerText = t.sParking;
+      if(document.getElementById('s-luggage')) document.getElementById('s-luggage').innerText = t.sLuggage;
+      if(document.getElementById('s-kitchen')) document.getElementById('s-kitchen').innerText = t.sKitchen;
+      if(document.getElementById('s-breakfast')) document.getElementById('s-breakfast').innerText = t.sBreakfast;
+
+      if(document.getElementById('title-guide-heading')) document.getElementById('title-guide-heading').innerText = t.titleGuideHeading;
+      if(document.getElementById('g-pub-desc')) document.getElementById('g-pub-desc').innerHTML = t.gPubDesc;
+      if(document.getElementById('marketing-tag')) document.getElementById('marketing-tag').innerText = t.marketingTag;
+      if(document.getElementById('marketing-title')) document.getElementById('marketing-title').innerText = t.marketingTitle;
+      if(document.getElementById('marketing-desc')) document.getElementById('marketing-desc').innerHTML = t.marketingDesc;
+      if(document.getElementById('marketing-btn')) document.getElementById('marketing-btn').innerText = t.marketingBtn;
+      if(document.getElementById('priv-section-title')) document.getElementById('priv-section-title').innerText = t.privSectionTitle;
+      if(document.getElementById('g-priv-desc')) document.getElementById('g-priv-desc').innerText = t.gPrivDesc;
+      if(document.getElementById('passInput')) document.getElementById('passInput').placeholder = t.passPlaceholder;
+      if(document.getElementById('btn-unlock-text')) document.getElementById('btn-unlock-text').innerText = t.btnUnlockText;
+      if(document.getElementById('wifi-card-title')) document.getElementById('wifi-card-title').innerHTML = `<i class="fas fa-wifi text-emerald-600"></i> ${t.wifiCardTitle}`;
+      if(document.getElementById('wifi-net-label')) document.getElementById('wifi-net-label').innerText = t.wifiNetLabel;
+      if(document.getElementById('wifi-pass-label')) document.getElementById('wifi-pass-label').innerText = t.wifiPassLabel;
+      if(document.getElementById('priv-gear-title')) document.getElementById('priv-gear-title').innerText = t.privGearTitle;
+      if(document.getElementById('directory-title')) document.getElementById('directory-title').innerText = t.directoryTitle;
+      if(document.getElementById('stk-from')) document.getElementById('stk-from').innerText = t.stkFrom;
+      if(document.getElementById('stk-btn')) document.getElementById('stk-btn').innerText = t.stkBtn;
     }
   </script>
 </body>
