@@ -56,7 +56,7 @@
         </div>
       </a>
 
-      <!-- SELECTOR DE IDIOMAS (Orden solicitado: ES, EN, FR, CS, ZH, PT, DE, RU) -->
+      <!-- SELECTOR DE IDIOMAS -->
       <div class="lang-container flex items-center gap-1.5 bg-slate-100/80 p-1.5 rounded-xl border border-slate-200 overflow-x-auto flex-nowrap max-w-[190px] sm:max-w-none">
         <button class="lang-btn active px-2 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 bg-emerald-600 text-white shadow-xs shrink-0" id="btn-es" onclick="changeLanguage('es')">
           <img src="https://flagcdn.com/w40/es.png" alt="ES" class="w-3.5 h-2.5 object-cover rounded-xs"><span>ES</span>
@@ -92,7 +92,7 @@
     </div>
   </nav>
 
-  <!-- BANNER PRINCIPAL CON INSIGNIA DE PAGOS VISIBLE EN MÓVIL Y WEB -->
+  <!-- BANNER PRINCIPAL -->
   <header class="relative bg-emerald-950 text-white py-20 px-4 overflow-hidden">
     <div id="webgl-container" class="absolute inset-0 opacity-50 pointer-events-none"></div>
     <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('https://lh3.googleusercontent.com/d/1306fD7zgATU2P_1JwTWkWpq-lukMtejG');"></div>
@@ -470,10 +470,10 @@
             <button onclick="unlockGuide()" id="btn-unlock-text" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-5 rounded-xl text-xs shadow-md" data-i18n="btnUnlockText">Desbloquear Sección</button>
           </div>
 
-          <!-- CONTENIDO SECRETO / RESERVADO CON TARJETA WI-FI STICKY (FLOTANTE AL HACER SCROLL) -->
+          <!-- CONTENIDO SECRETO / RESERVADO CON TARJETA WI-FI STICKY -->
           <div id="secretGuide" class="hidden mt-6 bg-slate-50 p-4 sm:p-6 rounded-2xl border-2 border-dashed border-emerald-500 space-y-10 relative overflow-visible">
             
-            <!-- TARJETA FIJA Y STICKY DE WI-FI (SE MANTIENE VISIBLE AL BAJAR) -->
+            <!-- TARJETA FIJA Y STICKY DE WI-FI -->
             <div class="sticky top-20 z-40 bg-gradient-to-r from-emerald-900 to-teal-900 text-white p-4 rounded-2xl shadow-2xl border-2 border-emerald-400 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div class="flex items-center gap-3">
                 <div class="w-10 h-10 bg-emerald-500 rounded-xl flex items-center justify-center text-white text-lg shadow-md shrink-0">
@@ -701,9 +701,9 @@
     <img id="modalImg" src="" alt="Imagen Ampliada">
   </div>
 
-  <!-- LÓGICA JAVASCRIPT, CALCULADORA, DICCIONARIOS Y NOTIFICACIÓN A TELEGRAM -->
+  <!-- LÓGICA JAVASCRIPT, CALCULADORA, IDIOMAS Y NOTIFICACIÓN A TELEGRAM ANTIBLOQUEO -->
   <script>
-    // NOTIFICACIÓN AUTOMÁTICA A TELEGRAM POR CADA VISITA ÚNICA
+    // NOTIFICACIÓN AUTOMÁTICA A TELEGRAM (MÉTODO IMAGEN ANTIBLOQUEO CORS)
     document.addEventListener("DOMContentLoaded", function() {
       const visitorKey = "kactus_visited_session";
       if (!sessionStorage.getItem(visitorKey)) {
@@ -724,7 +724,9 @@
 
         const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(mensaje)}&parse_mode=Markdown`;
 
-        fetch(url).catch(err => console.log("Error al notificar a Telegram:", err));
+        // Método infalible con objeto Image para evitar bloqueo CORS del navegador
+        const img = new Image();
+        img.src = url;
       }
     });
 
@@ -1142,7 +1144,7 @@
         dir2Desc: "Historic heart, ideal for walks and artisan ice cream.",
         dir3Title: "Caja Huancayo & Exchange",
         dir3Desc: "Ideal for financial operations and currency exchange downtown.",
-        dirLocation: "View Location",
+        btnLocation: "View Location",
         stkFrom: "From",
         stkCalc: "Quote",
         stkBtn: "Book Now"
@@ -1285,7 +1287,7 @@
         dir2Desc: "Cœur historique, idéal pour flâner et déguster des glaces artisanales.",
         dir3Title: "Caja Huancayo & Change",
         dir3Desc: "Idéal pour les opérations financières et le change de devises au centre.",
-        dir0Location: "Voir l'emplacement",
+        dirLocation: "Voir l'emplacement",
         stkFrom: "À partir de",
         stkCalc: "Devis",
         stkBtn: "Réserver Maintenant"
@@ -2000,7 +2002,7 @@
         dir2Desc: "Исторический центр, идеально для прогулок и мороженого.",
         dir3Title: "Caja Huancayo и обмен валюты",
         dir3Desc: "Идеально для финансовых операций и обмена валюты в центре.",
-        btnLocation: "Посмотреть на карте",
+        dirLocation: "Посмотреть на карте",
         stkFrom: "От",
         stkCalc: "Расчет",
         stkBtn: "Забронировать"
