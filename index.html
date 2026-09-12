@@ -81,7 +81,7 @@
     </div>
   </nav>
 
-  <!-- BANNER PRINCIPAL CON TARJETA GIRATORIA Y ACCESO RÁPIDO -->
+  <!-- BANNER PRINCIPAL CON CALCULADORA DE RESERVA -->
   <header class="relative bg-emerald-950 text-white py-20 px-4 overflow-hidden">
     <div id="webgl-container" class="absolute inset-0 opacity-50 pointer-events-none"></div>
     <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('https://lh3.googleusercontent.com/d/1306fD7zgATU2P_1JwTWkWpq-lukMtejG');"></div>
@@ -113,31 +113,55 @@
       </p>
     </div>
 
-    <!-- Barra de Búsqueda Flotante -->
-    <div class="relative z-20 max-w-4xl mx-auto bg-white/95 backdrop-blur-md text-slate-800 p-3 sm:p-4 rounded-2xl shadow-2xl grid grid-cols-1 md:grid-cols-4 gap-3 items-center border border-white/40">
-      <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-xl border border-slate-200">
-        <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-sm">
-          <i class="fas fa-map-marker-alt"></i>
+    <!-- PANEL INTERACTIVO DE RESERVA Y COTIZACIÓN (SOLO HABITACIONES) -->
+    <div class="relative z-20 max-w-3xl mx-auto bg-white/95 backdrop-blur-md text-slate-800 p-5 sm:p-6 rounded-2xl shadow-2xl space-y-4 border border-white/40">
+      <div class="flex justify-between items-center border-b border-slate-200 pb-3">
+        <h3 class="font-extrabold text-sm text-slate-900 flex items-center gap-2">
+          <i class="fas fa-calculator text-emerald-600"></i> <span id="calc-panel-title">Calculadora y Reserva en Línea</span>
+        </h3>
+        <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200" id="calc-badge">Mejor Precio Garantizado</span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
+        <!-- Tipo de Habitación -->
+        <div>
+          <label class="block text-[10px] font-extrabold text-slate-500 uppercase mb-1" id="lbl-room-type">Tipo de Habitación</label>
+          <select id="calcRoom" onchange="calculateTotal()" class="w-full p-2.5 bg-slate-50 rounded-xl border border-slate-200 text-xs font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+            <option value="35">Matrimonial Económica (S/ 35)</option>
+            <option value="45" selected>Matrimonial Mediana (S/ 45)</option>
+          </select>
         </div>
-        <div class="text-left overflow-hidden">
-          <span class="block text-[10px] font-extrabold text-slate-400 uppercase" id="lbl-location-title">Ubicación</span>
-          <span class="block text-xs font-bold text-slate-800 truncate" id="lbl-location-val">Caraz, Perú</span>
+
+        <!-- Noches -->
+        <div>
+          <label class="block text-[10px] font-extrabold text-slate-500 uppercase mb-1" id="lbl-nights">Número de Noches</label>
+          <input type="number" id="calcNights" min="1" max="30" value="1" oninput="calculateTotal()" class="w-full p-2.5 bg-slate-50 rounded-xl border border-slate-200 text-xs font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+        </div>
+
+        <!-- Huéspedes -->
+        <div>
+          <label class="block text-[10px] font-extrabold text-slate-500 uppercase mb-1" id="lbl-guests">Cantidad de Huéspedes</label>
+          <select id="calcGuests" class="w-full p-2.5 bg-slate-50 rounded-xl border border-slate-200 text-xs font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+            <option value="1">1 Huésped</option>
+            <option value="2" selected>2 Huéspedes</option>
+          </select>
+        </div>
+
+        <!-- Fecha de Entrada -->
+        <div>
+          <label class="block text-[10px] font-extrabold text-slate-500 uppercase mb-1" id="lbl-checkin-date">Día de Entrada</label>
+          <input type="date" id="calcCheckin" class="w-full p-2.5 bg-slate-50 rounded-xl border border-slate-200 text-xs font-bold text-slate-800 focus:outline-none">
         </div>
       </div>
 
-      <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-200">
-        <label class="block text-[10px] font-extrabold text-slate-400 uppercase mb-0.5" id="lbl-checkin">Día de entrada</label>
-        <input type="date" id="checkinDate" class="w-full bg-transparent text-xs font-bold text-slate-800 focus:outline-none">
-      </div>
-
-      <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-200">
-        <label class="block text-[10px] font-extrabold text-slate-400 uppercase mb-0.5" id="lbl-checkout">Día de salida</label>
-        <input type="date" id="checkoutDate" class="w-full bg-transparent text-xs font-bold text-slate-800 focus:outline-none">
-      </div>
-
-      <div>
-        <button onclick="sendCustomReservation()" class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-extrabold py-3.5 px-4 rounded-xl text-xs transition-all shadow-md shadow-emerald-600/25 flex items-center justify-center gap-2">
-          <i class="fab fa-whatsapp text-base"></i> <span id="btn-search-prices">Consultar Disponibilidad</span>
+      <!-- TOTAL Y BOTÓN DE CONFIRMACIÓN -->
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 pt-2 border-t border-slate-200">
+        <div class="text-left">
+          <span class="text-[10px] font-extrabold text-slate-400 uppercase block" id="lbl-total-est">Cotización Estimada Total</span>
+          <div class="text-2xl font-black text-emerald-600" id="totalPriceDisplay">S/ 45.00</div>
+        </div>
+        <button onclick="sendInteractiveReservation()" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-extrabold py-3.5 px-6 rounded-xl text-xs transition-all shadow-md shadow-emerald-600/25 flex items-center justify-center gap-2">
+          <i class="fab fa-whatsapp text-base"></i> <span id="btn-confirm-res">Confirmar y Reservar por WhatsApp</span>
         </button>
       </div>
     </div>
@@ -145,17 +169,17 @@
 
   <main class="max-w-7xl mx-auto px-4 sm:px-6 mt-14 space-y-16">
 
-    <!-- CALIFICACIONES Y MÉTODOS DE PAGO -->
+    <!-- CALIFICACIONES Y MÉTODOS DE PAGO SIEMPRE VISIBLES ARRIBA -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch">
-      <a href="https://www.booking.com/hotel/pe/kactus-hostal-caraz.es.html" target="_blank" rel="noopener" class="kactus-card p-4 shadow-card hover:shadow-lg transition-all flex items-center gap-3.5 group">
-        <div class="w-10 h-10 bg-blue-600 text-white rounded-xl flex items-center justify-center font-black text-sm shadow-sm">8.9</div>
+      <a href="https://www.booking.com/hotel/pe/kactus-hostal-caraz.es.html" target="_blank" rel="noopener" class="kactus-card p-4 shadow-card hover:shadow-lg transition-all flex items-center gap-3.5 group bg-white">
+        <div class="w-10 h-10 bg-blue-600 text-white rounded-xl flex items-center justify-center font-black text-sm shadow-sm shrink-0">8.9</div>
         <div>
           <div class="text-[10px] font-extrabold text-slate-400 uppercase">Booking.com</div>
           <div class="text-xs font-extrabold text-slate-900" id="badge-booking">Fabuloso · Excelente Ubicación</div>
         </div>
       </a>
-      <a href="https://maps.google.com" target="_blank" rel="noopener" class="kactus-card p-4 shadow-card hover:shadow-lg transition-all flex items-center gap-3.5 group">
-        <div class="w-10 h-10 bg-amber-500 text-white rounded-xl flex items-center justify-center text-sm shadow-sm"><i class="fas fa-star"></i></div>
+      <a href="https://maps.google.com" target="_blank" rel="noopener" class="kactus-card p-4 shadow-card hover:shadow-lg transition-all flex items-center gap-3.5 group bg-white">
+        <div class="w-10 h-10 bg-amber-500 text-white rounded-xl flex items-center justify-center text-sm shadow-sm shrink-0"><i class="fas fa-star"></i></div>
         <div>
           <div class="text-[10px] font-extrabold text-slate-400 uppercase">Google Maps</div>
           <div class="text-xs font-extrabold text-slate-900">5.0 / 5.0 ⭐⭐⭐⭐⭐</div>
@@ -208,9 +232,9 @@
               <p class="text-slate-600 text-xs leading-relaxed" id="room1-desc">Habitación pequeña y acogedora con cama de 2 plazas. Ideal para parejas o viajeros solos.</p>
               <div class="text-2xl font-black text-emerald-600 mt-4 flex items-baseline gap-1">S/ 35.00 <span class="text-[11px] font-semibold text-slate-400" id="per-night-1">promedio por noche</span></div>
             </div>
-            <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20deseo%20reservar%20la%20Habitación%20Matrimonial%20Económica%20(S/%2035)" target="_blank" rel="noopener" class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2">
-              <i class="fab fa-whatsapp text-base"></i> <span class="btn-res-text">Reservar por WhatsApp</span>
-            </a>
+            <button onclick="selectRoom(35)" class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2">
+              <i class="fas fa-calculator text-base"></i> <span class="btn-res-text">Cotizar en Calculadora</span>
+            </button>
           </div>
         </div>
 
@@ -239,9 +263,9 @@
               <p class="text-slate-600 text-xs leading-relaxed" id="room2-desc">Habitación espaciosa con cama de 2 plazas, gran iluminación natural y armario.</p>
               <div class="text-2xl font-black text-emerald-600 mt-4 flex items-baseline gap-1">S/ 45.00 <span class="text-[11px] font-semibold text-slate-400" id="per-night-2">promedio por noche</span></div>
             </div>
-            <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20deseo%20reservar%20la%20Habitación%20Matrimonial%20Mediana%20(S/%2045)" target="_blank" rel="noopener" class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2">
-              <i class="fab fa-whatsapp text-base"></i> <span class="btn-res-text">Reservar por WhatsApp</span>
-            </a>
+            <button onclick="selectRoom(45)" class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2">
+              <i class="fas fa-calculator text-base"></i> <span class="btn-res-text">Cotizar en Calculadora</span>
+            </button>
           </div>
         </div>
       </div>
@@ -574,9 +598,9 @@
                 </div>
               </div>
 
-              <!-- Desayunos Kactus -->
+              <!-- Desayunos Kactus (Solo visible con clave de huésped) -->
               <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-3 shadow-xs text-xs">
-                <div class="font-bold text-slate-900 flex items-center gap-2 text-emerald-700"><i class="fas fa-mug-hot"></i> <span id="breakfast-menu-title">Carta de Desayunos Hostal Kactus</span></div>
+                <div class="font-bold text-slate-900 flex items-center gap-2 text-emerald-700"><i class="fas fa-mug-hot"></i> <span id="breakfast-menu-title">Carta de Desayunos (Solo para Huéspedes Registrados)</span></div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 flex justify-between items-center">
                     <div><strong id="bf-1-name">Desayuno Mochilero</strong><br><span class="text-[10px] text-slate-500" id="bf-1-desc">2 panes con huevo y jamonada + café</span></div>
@@ -761,7 +785,7 @@
     <img id="modalImg" src="" alt="Imagen Ampliada">
   </div>
 
-  <!-- LÓGICA JAVASCRIPT Y TRADUCCIONES INTELIGENTES -->
+  <!-- LÓGICA JAVASCRIPT Y CALCULADORA -->
   <script>
     function openModal(imgSrc) {
       document.getElementById('modalImg').src = imgSrc;
@@ -785,13 +809,35 @@
       slide.style.transform = `translateX(-${index * 100}%)`;
     }
 
-    function sendCustomReservation() {
-      const inDate = document.getElementById('checkinDate').value;
-      const outDate = document.getElementById('checkoutDate').value;
-      let msg = "Hola Hostal Kactus, quisiera consultar disponibilidad de habitaciones.";
-      if (inDate || outDate) {
-        msg = `Hola Hostal Kactus, quisiera consultar disponibilidad para ingresar el ${inDate || 'próximo día'} y salir el ${outDate || 'próximo día'}.`;
-      }
+    function selectRoom(price) {
+      document.getElementById('calcRoom').value = price;
+      calculateTotal();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function calculateTotal() {
+      const roomPrice = parseFloat(document.getElementById('calcRoom').value) || 0;
+      const nights = parseInt(document.getElementById('calcNights').value) || 1;
+      let grandTotal = roomPrice * nights;
+      document.getElementById('totalPriceDisplay').innerText = `S/ ${grandTotal.toFixed(2)}`;
+    }
+
+    function sendInteractiveReservation() {
+      const roomSelect = document.getElementById('calcRoom');
+      const roomName = roomSelect.options[roomSelect.selectedIndex].text;
+      const nights = document.getElementById('calcNights').value;
+      const guests = document.getElementById('calcGuests').value;
+      const checkin = document.getElementById('calcCheckin').value || 'Por coordinar';
+      const totalPrice = document.getElementById('totalPriceDisplay').innerText;
+
+      let msg = `Hola Hostal Kactus 👋, deseo confirmar mi reserva:\n\n` +
+                `🛏️ *Habitación:* ${roomName}\n` +
+                `📅 *Día de Entrada:* ${checkin}\n` +
+                `🌙 *Noches:* ${nights}\n` +
+                `👥 *Huéspedes:* ${guests}\n` +
+                `💰 *Total Habitación:* ${totalPrice}\n\n` +
+                `Quedo atento/a para coordinar el pago, confirmación y ver opciones de desayuno. ¡Gracias!`;
+
       window.open(`https://wa.me/51974364826?text=${encodeURIComponent(msg)}`, '_blank');
     }
 
@@ -821,7 +867,7 @@
         secretSection.scrollIntoView({ behavior: 'smooth' });
       } else {
         inputEl.classList.add('animate-shake', 'border-red-500');
-        setTimeout(() => inputEl.classList.remove('animate-shake', 'border-red-500'), 500);
+        setTimeout(() => inputEl.classList.add('animate-shake', 'border-red-500'), 500);
         alert('Contraseña incorrecta. Solicita la clave oficial en recepción.');
         inputEl.value = '';
       }
@@ -835,522 +881,105 @@
         whatsappFloatText: "¡Reserva o consúltanos!",
         brandName: "Hostal Kactus",
         navLocationSub: "Caraz · Perú",
-        navCodeText: "Código de Huésped",
-        topAccessTitle: "Área Exclusiva de Huéspedes",
-        topAccessDesc: "Ingresa el código brindado por el alojamiento acá y descubre tarifas detalladas, Wi-Fi, tours y normas.",
-        topUnlockBtn: "Desbloquear",
-        heroTitle: "Tu descanso cómodo, seguro y completo en <span class='text-amber-300'>Caraz, Perú</span>",
-        heroSubtitle: "Disfruta de habitaciones acogedoras, agua caliente 24/7 y la mejor ubicación para tus aventuras en la Cordillera Blanca.",
-        lblLocationTitle: "Ubicación",
-        lblLocationVal: "Caraz, Perú",
-        lblCheckin: "Día de entrada",
-        lblCheckout: "Día de salida",
-        btnSearchPrices: "Consultar Disponibilidad",
-        badgeBooking: "Fabuloso · Excelente Ubicación",
-        paymentMethodsTitle: "Aceptamos todos los medios de pago",
-        paymentMethodsSubtitle: "Tarjetas de crédito, débito y efectivo",
-        titleRooms: "Nuestras Habitaciones",
-        roomsBadge: "Garantía Mejor Precio Directo",
-        room1Tag: "ECONÓMICA & CONFORT",
-        bannerCodeTitle: "¿Tienes tu código de reserva?",
-        bannerCodeDesc: "Usa aquí tu código brindado por el alojamiento y encuentra precios protegidos, indicaciones y más.",
-        bannerCodeBtn: "Ir a Sección Reservada",
-        room1Title: "Habitación Matrimonial Económica",
-        room1Desc: "Habitación pequeña y acogedora con cama de 2 plazas. Ideal para parejas o viajeros solos.",
-        perNight1: "promedio por noche",
-        btnResText: "Reservar por WhatsApp",
-        room2Tag: "MÁS POPULAR",
-        room2Title: "Habitación Matrimonial Mediana",
-        room2Desc: "Habitación espaciosa con cama de 2 plazas, gran iluminación natural y armario.",
-        perNight2: "promedio por noche",
-        titleCamping: "Alquiler de Equipos de Camping y Trekking",
-        gear1Name: "Carpa 3 Estaciones",
-        gear1Desc: "Carpa resistente para alta montaña.",
-        gear2Name: "Saco de Dormir Pluma",
-        gear2Desc: "Pluma de alta resistencia (-5°C a -20°C).",
-        gear3Name: "Bastones de Trekking",
-        gear3Desc: "Par de bastones ergonómicos.",
-        gear4Name: "Largavistas / Binoculares",
-        gear4Desc: "Observación de nevados y paisajes.",
-        gear5Name: "Cocina de Campaña",
-        gear5Desc: "Incluye utensilios de cocina.",
-        gear6Name: "Balón de Gas Nuevo",
-        gear6Desc: "Balón sellado para montaña.",
-        weatherTitle: "Clima Actual y Pronóstico en Caraz",
-        weatherSubtitle: "Cordillera Blanca · Ideal para planificar tus rutas a las lagunas",
-        weatherLiveTag: "Actualizado hoy",
-        wToday: "Hoy · Caraz",
-        wTodayCond: "Soleado / Despejado",
-        wTodayTip: "Excelente para Laguna Parón",
-        wTomorrow: "Mañana",
-        wTomorrowCond: "Parcialmente Nublado",
-        wTomorrowTip: "Ideal para caminatas ligeras",
-        wAfter: "Pasado Mañana",
-        wAfterCond: "Sol Radiante",
-        wAfterTip: "Perfecto para Full Day Laguna 69",
-        titleServices: "Servicios e Instalaciones",
-        sBath: "Baño Privado",
-        sWater: "Agua Caliente 24/7",
-        sTv: "TV Smart",
-        sWifi: "Wi-Fi Gratis",
-        sParking: "Estacionamiento Gratis",
-        sLuggage: "Guardado de Equipaje",
-        sKitchen: "Cocina Compartida",
-        sBreakfast: "Desayunos",
-        titleReviews: "Lo que dicen nuestros huéspedes",
-        reviewsBadge: "Reseñas Verificadas ⭐⭐⭐⭐⭐",
-        titleGuideHeading: "Guía Turística de Caraz & Área Reservada",
-        gPubDesc: "Bienvenido a nuestra guía oficial. Explora los atractivos imperdibles de la Cordillera Blanca desde Hostal Kactus.",
-        privSectionTitle: "🔐 Sección Reservada de Huéspedes (Wi-Fi, Normas, Comodidades y Tours)",
-        gPrivDesc: "Ingresa la contraseña proporcionada en recepción para desbloquear toda la información detallada:",
-        btnUnlockText: "Desbloquear Sección",
-        stkFrom: "Desde",
-        stkBtn: "Reservar Ahora"
+        calcPanelTitle: "Calculadora y Reserva en Línea",
+        calcBadge: "Mejor Precio Garantizado",
+        lblRoomType: "Tipo de Habitación",
+        lblNights: "Número de Noches",
+        lblGuests: "Cantidad de Huéspedes",
+        lblCheckinDate: "Día de Entrada",
+        lblTotalEst: "Cotización Estimada Total",
+        btnConfirmRes: "Confirmar y Reservar por WhatsApp"
       },
       en: {
         whatsappFloatText: "Book or contact us!",
         brandName: "Hostal Kactus",
         navLocationSub: "Caraz · Peru",
-        navCodeText: "Guest Code",
-        topAccessTitle: "Exclusive Guest Area",
-        topAccessDesc: "Enter the code provided by the lodge to discover detailed rates, Wi-Fi, tours, and house rules.",
-        topUnlockBtn: "Unlock",
-        heroTitle: "Your comfortable, safe and complete stay in <span class='text-amber-300'>Caraz, Peru</span>",
-        heroSubtitle: "Enjoy cozy rooms, 24/7 hot water, and the best location for your adventures in the Cordillera Blanca.",
-        lblLocationTitle: "Location",
-        lblLocationVal: "Caraz, Peru",
-        lblCheckin: "Check-in date",
-        lblCheckout: "Check-out date",
-        btnSearchPrices: "Check Availability",
-        badgeBooking: "Fabulous · Excellent Location",
-        paymentMethodsTitle: "We accept all payment methods",
-        paymentMethodsSubtitle: "Credit cards, debit cards, and cash",
-        titleRooms: "Our Rooms",
-        roomsBadge: "Best Direct Price Guarantee",
-        room1Tag: "ECONOMY & COMFORT",
-        bannerCodeTitle: "Do you have your booking code?",
-        bannerCodeDesc: "Use your lodge code here to find protected rates, directions, and more.",
-        bannerCodeBtn: "Go to Reserved Section",
-        room1Title: "Economy Double Room",
-        room1Desc: "Small and cozy room with a full-size bed. Ideal for couples or solo travelers.",
-        perNight1: "average per night",
-        btnResText: "Book via WhatsApp",
-        room2Tag: "MOST POPULAR",
-        room2Title: "Medium Double Room",
-        room2Desc: "Spacious room with a full-size bed, great natural light, and wardrobe.",
-        perNight2: "average per night",
-        titleCamping: "Camping & Trekking Gear Rental",
-        gear1Name: "3-Season Tent",
-        gear1Desc: "Sturdy tent for high mountains.",
-        gear2Name: "Down Sleeping Bag",
-        gear2Desc: "High resistance (-5°C to -20°C).",
-        gear3Name: "Trekking Poles",
-        gear3Desc: "Pair of ergonomic poles.",
-        gear4Name: "Binoculars",
-        gear4Desc: "Glacier and landscape viewing.",
-        gear5Name: "Camp Stove",
-        gear5Desc: "Includes cooking utensils.",
-        gear6Name: "New Gas Canister",
-        gear6Desc: "Sealed mountain gas.",
-        weatherTitle: "Current Weather & Forecast in Caraz",
-        weatherSubtitle: "Cordillera Blanca · Perfect for planning your lagoon routes",
-        weatherLiveTag: "Updated today",
-        wToday: "Today · Caraz",
-        wTodayCond: "Sunny / Clear",
-        wTodayTip: "Excellent for Laguna Parón",
-        wTomorrow: "Tomorrow",
-        wTomorrowCond: "Partly Cloudy",
-        wTomorrowTip: "Ideal for light walks",
-        wAfter: "Day After Tomorrow",
-        wAfterCond: "Radiant Sun",
-        wAfterTip: "Perfect for Full Day Laguna 69",
-        titleServices: "Services & Amenities",
-        sBath: "Private Bathroom",
-        sWater: "24/7 Hot Water",
-        sTv: "Smart TV",
-        sWifi: "Free Wi-Fi",
-        sParking: "Free Parking",
-        sLuggage: "Luggage Storage",
-        sKitchen: "Shared Kitchen",
-        sBreakfast: "Breakfasts",
-        titleReviews: "What our guests say",
-        reviewsBadge: "Verified Reviews ⭐⭐⭐⭐⭐",
-        titleGuideHeading: "Caraz Tourist Guide & Reserved Area",
-        gPubDesc: "Welcome to our official guide. Explore the must-see attractions of the Cordillera Blanca from Hostal Kactus.",
-        privSectionTitle: "🔐 Reserved Guest Section (Wi-Fi, Rules, Amenities & Tours)",
-        gPrivDesc: "Enter the password provided at reception to unlock all detailed info:",
-        btnUnlockText: "Unlock Section",
-        stkFrom: "From",
-        stkBtn: "Book Now"
+        calcPanelTitle: "Online Calculator & Booking",
+        calcBadge: "Best Direct Price",
+        lblRoomType: "Room Type",
+        lblNights: "Number of Nights",
+        lblGuests: "Number of Guests",
+        lblCheckinDate: "Check-in Date",
+        lblTotalEst: "Estimated Total Quote",
+        btnConfirmRes: "Confirm & Book via WhatsApp"
       },
       pt: {
         whatsappFloatText: "Reserve ou consulte-nos!",
         brandName: "Hostal Kactus",
         navLocationSub: "Caraz · Peru",
-        navCodeText: "Código do Hóspede",
-        topAccessTitle: "Área Exclusiva de Hóspedes",
-        topAccessDesc: "Insira o código fornecido pela hospedagem para ver tarifas, Wi-Fi, passeios e normas.",
-        topUnlockBtn: "Desbloquear",
-        heroTitle: "Sua estadia confortável e segura em <span class='text-amber-300'>Caraz, Peru</span>",
-        heroSubtitle: "Desfrute de quartos aconchegantes, água quente 24/7 e excelente localização na Cordillera Blanca.",
-        lblLocationTitle: "Localização",
-        lblLocationVal: "Caraz, Peru",
-        lblCheckin: "Data de entrada",
-        lblCheckout: "Data de saída",
-        btnSearchPrices: "Consultar Disponibilidade",
-        badgeBooking: "Fabuloso · Excelente Localização",
-        paymentMethodsTitle: "Aceitamos todos os meios de pagamento",
-        paymentMethodsSubtitle: "Cartões de crédito, débito e dinheiro",
-        titleRooms: "Nossos Quartos",
-        roomsBadge: "Garantia de Melhor Preço Direto",
-        room1Tag: "ECONÔMICO & CONFORTO",
-        bannerCodeTitle: "Tem seu código de reserva?",
-        bannerCodeDesc: "Use seu código aqui para ver tarifas protegidas e dicas.",
-        bannerCodeBtn: "Ir para Seção Reservada",
-        room1Title: "Quarto de Casal Econômico",
-        room1Desc: "Quarto aconchegante com cama de casal. Ideal para casais ou viajantes solo.",
-        perNight1: "média por noite",
-        btnResText: "Reservar por WhatsApp",
-        room2Tag: "MAIS POPULAR",
-        room2Title: "Quarto de Casal Médio",
-        room2Desc: "Quarto espaçoso com cama de casal, ótima luz natural e armário.",
-        perNight2: "média por noite",
-        titleCamping: "Aluguel de Equipamentos de Camping e Trekking",
-        gear1Name: "Barraca 3 Estações",
-        gear1Desc: "Resistente para alta montanha.",
-        gear2Name: "Saco de Dormir de Pluma",
-        gear2Desc: "Alta resistência (-5°C a -20°C).",
-        gear3Name: "Bastões de Trekking",
-        gear3Desc: "Par de bastões ergonômicos.",
-        gear4Name: "Binóculos",
-        gear4Desc: "Observação de paisagens e nevados.",
-        gear5Name: "Fogareiro de acampamento",
-        gear5Desc: "Inclui utensílios de cozinha.",
-        gear6Name: "Novo Botijão de Gás",
-        gear6Desc: "Gás selado para montanha.",
-        weatherTitle: "Clima Atual e Previsão em Caraz",
-        weatherSubtitle: "Cordillera Blanca · Perfeito para planejar suas rotas",
-        weatherLiveTag: "Atualizado hoje",
-        wToday: "Hoje · Caraz",
-        wTodayCond: "Ensolarado / Limpo",
-        wTodayTip: "Excelente para Laguna Parón",
-        wTomorrow: "Amanhã",
-        wTomorrowCond: "Parcialmente Nublado",
-        wTomorrowTip: "Ideal para caminhadas leves",
-        wAfter: "Depois de Amanhã",
-        wAfterCond: "Sol Radiante",
-        wAfterTip: "Perfeito para Full Day Laguna 69",
-        titleServices: "Serviços e Instalações",
-        sBath: "Banheiro Privativo",
-        sWater: "Água Quente 24/7",
-        sTv: "Smart TV",
-        sWifi: "Wi-Fi Grátis",
-        sParking: "Estacionamento Grátis",
-        sLuggage: "Guarda-volumes",
-        sKitchen: "Cozinha Compartilhada",
-        sBreakfast: "Café da Manhã",
-        titleReviews: "O que dizem nossos hóspedes",
-        reviewsBadge: "Avaliações Verificadas ⭐⭐⭐⭐⭐",
-        titleGuideHeading: "Guia Turístico de Caraz e Área Reservada",
-        gPubDesc: "Bem-vindo ao nosso guia oficial. Explore as atrações imperdíveis da Cordillera Blanca a partir do Hostal Kactus.",
-        privSectionTitle: "🔐 Seção Reservada de Hóspedes (Wi-Fi, Regras, Comodidades e Tours)",
-        gPrivDesc: "Digite a senha fornecida na recepção para desbloquear informações detalhadas:",
-        btnUnlockText: "Desbloquear Seção",
-        stkFrom: "A partir de",
-        stkBtn: "Reservar Agora"
+        calcPanelTitle: "Calculadora e Reserva Online",
+        calcBadge: "Melhor Preço",
+        lblRoomType: "Tipo de Quarto",
+        lblNights: "Número de Noites",
+        lblGuests: "Número de Hóspedes",
+        lblCheckinDate: "Data de Entrada",
+        lblTotalEst: "Orçamento Estimado Total",
+        btnConfirmRes: "Confirmar e Reservar no WhatsApp"
       },
       fr: {
         whatsappFloatText: "Réservez ou contactez-nous !",
         brandName: "Hostal Kactus",
         navLocationSub: "Caraz · Pérou",
-        navCodeText: "Code Client",
-        topAccessTitle: "Espace Exclusif Clients",
-        topAccessDesc: "Entrez le code fourni par l'hébergement pour découvrir les tarifs détaillés, le Wi-Fi et les visites.",
-        topUnlockBtn: "Déverrouiller",
-        heroTitle: "Votre séjour confortable et sûr à <span class='text-amber-300'>Caraz, Pérou</span>",
-        heroSubtitle: "Profitez de chambres confortables, d'eau chaude 24h/24 et du meilleur emplacement dans la Cordillera Blanca.",
-        lblLocationTitle: "Emplacement",
-        lblLocationVal: "Caraz, Pérou",
-        lblCheckin: "Date d'arrivée",
-        lblCheckout: "Date de départ",
-        btnSearchPrices: "Vérifier la disponibilité",
-        badgeBooking: "Fabuloureux · Excellent Emplacement",
-        paymentMethodsTitle: "Nous acceptons tous les modes de paiement",
-        paymentMethodsSubtitle: "Cartes de crédit, cartes de débit et espèces",
-        titleRooms: "Nos Chambres",
-        roomsBadge: "Garantie Meilleur Prix Direct",
-        room1Tag: "ÉCONOMIQUE & CONFORT",
-        bannerCodeTitle: "Avez-vous votre code de réservation ?",
-        bannerCodeDesc: "Utilisez votre code ici pour trouver des tarifs protégés et des indications.",
-        bannerCodeBtn: "Aller à l'espace réservé",
-        room1Title: "Chambre Double Économique",
-        room1Desc: "Petite chambre confortable avec lit double. Idéale pour les couples ou voyageurs solos.",
-        perNight1: "moyenne par nuit",
-        btnResText: "Réserver via WhatsApp",
-        room2Tag: "LE PLUS POPULAIRE",
-        room2Title: "Chambre Double Moyenne",
-        room2Desc: "Chambre spacieuse avec grand lit, belle lumière naturelle et placard.",
-        perNight2: "moyenne par nuit",
-        titleCamping: "Location d'Équipement de Camping et Trekking",
-        gear1Name: "Tente 3 Saisons",
-        gear1Desc: "Tente résistante haute montagne.",
-        gear2Name: "Sac de Couchage Duvet",
-        gear2Desc: "Haute résistance (-5°C à -20°C).",
-        gear3Name: "Bâtons de Trekking",
-        gear3Desc: "Paire de bâtons ergonomiques.",
-        gear4Name: "Jumelles",
-        gear4Desc: "Observation des sommets et paysages.",
-        gear5Name: "Réchaud de Camp",
-        gear5Desc: "Ustensiles de cuisine inclus.",
-        gear6Name: "Cartouche de Gaz",
-        gear6Desc: "Gaz scellé pour montagne.",
-        weatherTitle: "Météo Actuelle et Prévisions à Caraz",
-        weatherSubtitle: "Cordillera Blanca · Idéal pour planifier vos randonnées",
-        weatherLiveTag: "Mis à jour aujourd'hui",
-        wToday: "Aujourd'hui · Caraz",
-        wTodayCond: "Ensoleillé / Dégagé",
-        wTodayTip: "Parfait pour Laguna Parón",
-        wTomorrow: "Demain",
-        wTomorrowCond: "Partiellement Nuageux",
-        wTomorrowTip: "Idéal pour petites balades",
-        wAfter: "Après-demain",
-        wAfterCond: "Grand Soleil",
-        wAfterTip: "Parfait pour Full Day Laguna 69",
-        titleServices: "Services et Installations",
-        sBath: "Salle de Bain Privée",
-        sWater: "Eau Chaude 24/7",
-        sTv: "Smart TV",
-        sWifi: "Wi-Fi Gratuit",
-        sParking: "Parking Gratuit",
-        sLuggage: "Bagagerie",
-        sKitchen: "Cuisine Partagée",
-        sBreakfast: "Petits Déjeuners",
-        titleReviews: "Ce que disent nos clients",
-        reviewsBadge: "Avis Vérifiés ⭐⭐⭐⭐⭐",
-        titleGuideHeading: "Guide Touristique de Caraz & Espace Réservé",
-        gPubDesc: "Bienvenue dans notre guide officiel. Découvrez les incontournables de la Cordillera Blanca depuis l'Hostal Kactus.",
-        privSectionTitle: "🔐 Espace Réservé (Wi-Fi, Règles, Équipements et Excursions)",
-        gPrivDesc: "Entrez le mot de passe fourni à la réception pour déverrouiller les informations détaillées :",
-        btnUnlockText: "Déverrouiller",
-        stkFrom: "À partir de",
-        stkBtn: "Réserver"
+        calcPanelTitle: "Calculateur et Réservation en Ligne",
+        calcBadge: "Meilleur Prix",
+        lblRoomType: "Type de Chambre",
+        lblNights: "Nombre de Nuits",
+        lblGuests: "Nombre de Voyageurs",
+        lblCheckinDate: "Date d'Arrivée",
+        lblTotalEst: "Devis Estimé Total",
+        btnConfirmRes: "Confirmer & Réserver via WhatsApp"
       },
       de: {
         whatsappFloatText: "Buchen oder kontaktieren Sie uns!",
         brandName: "Hostal Kactus",
         navLocationSub: "Caraz · Peru",
-        navCodeText: "Gästekod",
-        topAccessTitle: "Exklusiver Gäste-Bereich",
-        topAccessDesc: "Geben Sie den Code der Unterkunft ein, um Tarife, WLAN und Touren zu entdecken.",
-        topUnlockBtn: "Freischalten",
-        heroTitle: "Ihr komfortabler Aufenthalt in <span class='text-amber-300'>Caraz, Peru</span>",
-        heroSubtitle: "Genießen Sie gemütliche Zimmer, 24/7 Warmwasser und die beste Lage in der Cordillera Blanca.",
-        lblLocationTitle: "Standort",
-        lblLocationVal: "Caraz, Peru",
-        lblCheckin: "Anreisedatum",
-        lblCheckout: "Abreisedatum",
-        btnSearchPrices: "Verfügbarkeit prüfen",
-        badgeBooking: "Fabelhaft · Hervorragende Lage",
-        paymentMethodsTitle: "Wir akzeptieren alle Zahlungsmethoden",
-        paymentMethodsSubtitle: "Kreditkarten, EC-Karten und Bargeld",
-        titleRooms: "Unsere Zimmer",
-        roomsBadge: "Bestpreis-Garantie Direktbuchung",
-        room1Tag: "GÜNSTIG & KOMFORTABEL",
-        bannerCodeTitle: "Haben Sie Ihren Buchungscode?",
-        bannerCodeDesc: "Geben Sie Ihren Code hier ein, um geschützte Tarife und Hinweise zu sehen.",
-        bannerCodeBtn: "Zum geschützten Bereich",
-        room1Title: "Doppelzimmer Economy",
-        room1Desc: "Gemütliches kleines Zimmer mit Doppelbett. Ideal für Paare oder Alleinreisende.",
-        perNight1: "Durchschnitt pro Nacht",
-        btnResText: "Über WhatsApp buchen",
-        room2Tag: "BELIEBTEST",
-        room2Title: "Doppelzimmer Medium",
-        room2Desc: "Geräumiges Zimmer mit Doppelbett, tollem Tageslicht und Kleiderschrank.",
-        perNight2: "Durchschnitt pro Nacht",
-        titleCamping: "Verleih von Camping- & Trekkingausrüstung",
-        gear1Name: "3-Jahreszeiten-Zelt",
-        gear1Desc: "Robustes Zelt für Hochgebirge.",
-        gear2Name: "Daunenschlafsack",
-        gear2Desc: "Hohe Beständigkeit (-5°C bis -20°C).",
-        gear3Name: "Trekkingstöcke",
-        gear3Desc: "Paar ergonomische Stöcke.",
-        gear4Name: "Fernglas",
-        gear4Desc: "Gletscher- und Landschaftsbeobachtung.",
-        gear5Name: "Campingkocher",
-        gear5Desc: "Inklusive Kochutensilien.",
-        gear6Name: "Neue Gaskartusche",
-        gear6Desc: "Versiegeltes Berggas.",
-        weatherTitle: "Wetter und Vorhersage in Caraz",
-        weatherSubtitle: "Cordillera Blanca · Perfekt zur Tourenplanung",
-        weatherLiveTag: "Heute aktualisiert",
-        wToday: "Heute · Caraz",
-        wTodayCond: "Sonnig / Klar",
-        wTodayTip: "Hervorragend für Laguna Parón",
-        wTomorrow: "Morgen",
-        wTomorrowCond: "Teilweise bewölkt",
-        wTomorrowTip: "Ideal für leichte Spaziergänge",
-        wAfter: "Übermorgen",
-        wAfterCond: "Strahlende Sonne",
-        wAfterTip: "Perfekt für Full Day Laguna 69",
-        titleServices: "Dienstleistungen & Ausstattung",
-        sBath: "Privates Bad",
-        sWater: "24/7 Warmwasser",
-        sTv: "Smart TV",
-        sWifi: "Kostenloses WLAN",
-        sParking: "Kostenlose Parkplätze",
-        sLuggage: "Gepäckaufbewahrung",
-        sKitchen: "Gemeinschaftsküche",
-        sBreakfast: "Frühstück",
-        titleReviews: "Das sagen unsere Gäste",
-        reviewsBadge: "Verifizierte Bewertungen ⭐⭐⭐⭐⭐",
-        titleGuideHeading: "Caraz Reiseführer & geschützter Bereich",
-        gPubDesc: "Willkommen in unserem offiziellen Guide. Entdecken Sie die Highlights der Cordillera Blanca.",
-        privSectionTitle: "🔐 Geschützter Gäste-Bereich (WLAN, Regeln, Touren)",
-        gPrivDesc: "Geben Sie das an der Rezeption erhaltene Passwort ein:",
-        btnUnlockText: "Bereich freischalten",
-        stkFrom: "Ab",
-        stkBtn: "Jetzt buchen"
+        calcPanelTitle: "Online-Rechner & Buchung",
+        calcBadge: "Bester Preis",
+        lblRoomType: "Zimmertyp",
+        lblNights: "Anzahl der Nächte",
+        lblGuests: "Anzahl der Gäste",
+        lblCheckinDate: "Anreisedatum",
+        lblTotalEst: "Geschätzter Gesamtpreis",
+        btnConfirmRes: "Bestätigen & über WhatsApp buchen"
       },
       ru: {
         whatsappFloatText: "Забронируйте или свяжитесь с нами!",
         brandName: "Hostal Kactus",
         navLocationSub: "Карас · Перу",
-        navCodeText: "Код Гостя",
-        topAccessTitle: "Эксклюзивная зона для гостей",
-        topAccessDesc: "Введите код от хостела, чтобы узнать тарифы, пароль Wi-Fi и правила.",
-        topUnlockBtn: "Разблокировать",
-        heroTitle: "Ваш комфортный и безопасный отдых в <span class='text-amber-300'>Карасе, Перу</span>",
-        heroSubtitle: "Уютные номера, горячая вода 24/7 и отличное расположение в Кордильера-Бланка.",
-        lblLocationTitle: "Местоположение",
-        lblLocationVal: "Карас, Перу",
-        lblCheckin: "Дата заезда",
-        lblCheckout: "Дата выезда",
-        btnSearchPrices: "Проверить наличие",
-        badgeBooking: "Великолепно · Отличное расположение",
-        paymentMethodsTitle: "Мы принимаем все виды оплаты",
-        paymentMethodsSubtitle: "Кредитные карты, дебетовые карты и наличные",
-        titleRooms: "Наши номера",
-        roomsBadge: "Гарантия лучшей цены при прямой брони",
-        room1Tag: "ЭКОНОМ И КОМФОРТ",
-        bannerCodeTitle: "У вас есть код бронирования?",
-        bannerCodeDesc: "Введите код здесь, чтобы увидеть спецтарифы и подсказки.",
-        bannerCodeBtn: "Перейти в закрытый раздел",
-        room1Title: "Эконом двухместный номер",
-        room1Desc: "Уютный небольшой номер с двуспальной кроватью. Идеально для пар.",
-        perNight1: "в среднем за ночь",
-        btnResText: "Забронировать в WhatsApp",
-        room2Tag: "ПОПУЛЯРНЫЙ",
-        room2Title: "Средний двухместный номер",
-        room2Desc: "Просторный номер с большой кроватью, отличным светом и шкафом.",
-        perNight2: "в среднем за ночь",
-        titleCamping: "Прокат туристического снаряжения",
-        weatherTitle: "Погода и прогноз в Карасе",
-        weatherSubtitle: "Кордильера-Бланка · Идеально для планирования маршрутов",
-        weatherLiveTag: "Обновлено сегодня",
-        titleServices: "Услуги и удобства",
-        titleReviews: "Отзывы наших гостей",
-        reviewsBadge: "Проверенные отзывы ⭐⭐⭐⭐⭐",
-        titleGuideHeading: "Путеводитель по Карасу и закрытый раздел",
-        gPubDesc: "Добро пожаловать в наш официальный гид. Исследуйте Кордильера-Бланка из Hostal Kactus.",
-        privSectionTitle: "🔐 Закрытый раздел для гостей (Wi-Fi, правила, туры)",
-        gPrivDesc: "Введите пароль, полученный на ресепшн:",
-        btnUnlockText: "Разблокировать",
-        stkFrom: "От",
-        stkBtn: "Забронировать"
+        calcPanelTitle: "Калькулятор и онлайн-бронирование",
+        calcBadge: "Лучшая цена",
+        lblRoomType: "Тип номера",
+        lblNights: "Количество ночей",
+        lblGuests: "Количество гостей",
+        lblCheckinDate: "Дата заезда",
+        lblTotalEst: "Итоговая оценка",
+        btnConfirmRes: "Подтвердить в WhatsApp"
       },
       cs: {
         whatsappFloatText: "Zarezervujte si pobyt!",
         brandName: "Hostal Kactus",
         navLocationSub: "Caraz · Peru",
-        navCodeText: "Kód hosta",
-        topAccessTitle: "Exkluzivní zóna pro hosty",
-        topAccessDesc: "Zadejte kód od ubytování a objevte detailní ceny, Wi-Fi a tipy na výlety.",
-        topUnlockBtn: "Odemknout",
-        heroTitle: "Váš pohodlný pobyt v <span class='text-amber-300'>Carazu v Peru</span>",
-        heroSubtitle: "Užijte si útulné pokoje, teplou vodu 24/7 a skvělou polohu v Cordillera Blanca.",
-        lblLocationTitle: "Lokalita",
-        lblLocationVal: "Caraz, Peru",
-        lblCheckin: "Datum příjezdu",
-        lblCheckout: "Datum odjezdu",
-        btnSearchPrices: "Zkontrolovat dostupnost",
-        badgeBooking: "Skvělé · Výborná lokalita",
-        paymentMethodsTitle: "Přijímáme všechny platební metody",
-        paymentMethodsSubtitle: "Kreditní karty, debetní karty a hotovost",
-        titleRooms: "Naše pokoje",
-        roomsBadge: "Záruka nejlepší přímé ceny",
-        room1Tag: "EKONOMICKÝ & POHODLNÝ",
-        bannerCodeTitle: "Máte svůj rezervační kód?",
-        bannerCodeDesc: "Zde zadejte kód pro zobrazení chráněných cen a pokynů.",
-        bannerCodeBtn: "Přejít do soukromé sekce",
-        room1Title: "Dvoulůžkový pokoj Economy",
-        room1Desc: "Útulný menší pokoj s manželskou postelí. Ideální pro páry či jednotlivce.",
-        perNight1: "průměr za noc",
-        btnResText: "Rezervovat přes WhatsApp",
-        room2Tag: "NEJOBLÍBENĚJŠÍ",
-        room2Title: "Dvoulůžkový pokoj Medium",
-        room2Desc: "Prostorný pokoj s manželskou postelí, skvělým světlem a skříní.",
-        perNight2: "průměr za noc",
-        titleCamping: "Půjčovna kempingového vybavení",
-        weatherTitle: "Aktuální počasí a předpověď v Carazu",
-        weatherSubtitle: "Cordillera Blanca · Ideální pro plánování výletů",
-        weatherLiveTag: "Aktualizováno dnes",
-        titleServices: "Služby a vybavení",
-        titleReviews: "Co říkají naši hosté",
-        reviewsBadge: "Ověřené recenze ⭐⭐⭐⭐⭐",
-        titleGuideHeading: "Turistický průvodce Carazem a soukromá sekce",
-        gPubDesc: "Vítejte v našem oficiálním průvodci Cordillerou Blancou z Hostal Kactus.",
-        privSectionTitle: "🔐 Soukromá sekce hostů (Wi-Fi, pravidla, výlety)",
-        gPrivDesc: "Zadejte heslo získané na recepci k odemčení detailních informací:",
-        btnUnlockText: "Odemknout sekci",
-        stkFrom: "Od",
-        stkBtn: "Rezervovat"
+        calcPanelTitle: "Online kalkulačka a rezervace",
+        calcBadge: "Nejlepší cena",
+        lblRoomType: "Typ pokoje",
+        lblNights: "Počet nocí",
+        lblGuests: "Počet hostů",
+        lblCheckinDate: "Datum příjezdu",
+        lblTotalEst: "Odhadovaná celková cena",
+        btnConfirmRes: "Potvrdit a rezervovat přes WhatsApp"
       },
       zh: {
         whatsappFloatText: "立即预订或咨询！",
         brandName: "Kactus 旅馆",
         navLocationSub: "秘鲁 · 卡拉斯",
-        navCodeText: "住客专属码",
-        topAccessTitle: "住客专属特权区",
-        topAccessDesc: "输入旅馆提供的代码，解锁详细价格、Wi-Fi、旅游路线及规章制度。",
-        topUnlockBtn: "解锁",
-        heroTitle: "您在<span class='text-amber-300'>秘鲁卡拉斯</span>舒适、安全的温馨居所",
-        heroSubtitle: "尽享温馨客房、24小时热水，以及通往白山 Cordillera Blanca 探险的最佳地理位置。",
-        lblLocationTitle: "地理位置",
-        lblLocationVal: "秘鲁卡拉斯",
-        lblCheckin: "入住日期",
-        lblCheckout: "退房日期",
-        btnSearchPrices: "查询实时空房",
-        badgeBooking: "超赞 · 绝佳地理位置",
-        paymentMethodsTitle: "我们接受所有支付方式",
-        paymentMethodsSubtitle: "信用卡、借记卡及现金支付",
-        titleRooms: "客房展示",
-        roomsBadge: "直订最优价格保证",
-        room1Tag: "经济舒适",
-        bannerCodeTitle: "您有预订代码吗？",
-        bannerCodeDesc: "在此输入您的专属代码以获取优惠价格与温馨提示。",
-        bannerCodeBtn: "前往住客专区",
-        room1Title: "经济双人房",
-        room1Desc: "小巧温馨的双人床房间，非常适合情侣或独自旅行的背包客。",
-        perNight1: "每晚均价",
-        btnResText: "通过 WhatsApp 预订",
-        room2Tag: "最受欢迎",
-        room2Title: "精致中号双人房",
-        room2Desc: "空间宽敞，配有双人床、充足的自然采光与衣柜。",
-        perNight2: "每晚均价",
-        titleCamping: "野营与徒步装备租赁",
-        weatherTitle: "卡拉斯实时天气与预报",
-        weatherSubtitle: "科迪勒拉布兰卡山脉 · 完美规划您的泻湖徒步路线",
-        weatherLiveTag: "今日实时更新",
-        titleServices: "服务与设施",
-        titleReviews: "住客真实评价",
-        reviewsBadge: "真实验证好评 ⭐⭐⭐⭐⭐",
-        titleGuideHeading: "卡拉斯旅游指南与住客专区",
-        gPubDesc: "欢迎阅读我们的官方指南，从 Kactus 旅馆出发探索白山景区的迷人风光。",
-        privSectionTitle: "🔐 住客专属区域（Wi-Fi、入住须知、旅游指南）",
-        gPrivDesc: "输入前台提供的密码即可解锁全部实用信息：",
-        btnUnlockText: "解锁专区",
-        stkFrom: "起",
-        stkBtn: "立即预订"
+        calcPanelTitle: "在线价格计算器与预订",
+        calcBadge: "最优直订价",
+        lblRoomType: "房型",
+        lblNights: "入住晚数",
+        lblGuests: "入住人数",
+        lblCheckinDate: "入住日期",
+        lblTotalEst: "预计总费用",
+        btnConfirmRes: "通过 WhatsApp 确认预订"
       }
     };
 
@@ -1363,46 +992,17 @@
       if(document.getElementById('whatsapp-float-text')) document.getElementById('whatsapp-float-text').innerText = t.whatsappFloatText;
       if(document.getElementById('brand-name')) document.getElementById('brand-name').innerText = t.brandName;
       if(document.getElementById('nav-location-sub')) document.getElementById('nav-location-sub').innerText = t.navLocationSub;
-      if(document.getElementById('nav-code-text')) document.getElementById('nav-code-text').innerText = t.navCodeText;
-      if(document.getElementById('top-access-title')) document.getElementById('top-access-title').innerText = t.topAccessTitle;
-      if(document.getElementById('top-access-desc')) document.getElementById('top-access-desc').innerText = t.topAccessDesc;
-      if(document.getElementById('top-unlock-btn')) document.getElementById('top-unlock-btn').innerText = t.topUnlockBtn;
-      if(document.getElementById('hero-title')) document.getElementById('hero-title').innerHTML = t.heroTitle;
-      if(document.getElementById('hero-subtitle')) document.getElementById('hero-subtitle').innerText = t.heroSubtitle;
-      if(document.getElementById('lbl-location-title')) document.getElementById('lbl-location-title').innerText = t.lblLocationTitle;
-      if(document.getElementById('lbl-location-val')) document.getElementById('lbl-location-val').innerText = t.lblLocationVal;
-      if(document.getElementById('lbl-checkin')) document.getElementById('lbl-checkin').innerText = t.lblCheckin;
-      if(document.getElementById('lbl-checkout')) document.getElementById('lbl-checkout').innerText = t.lblCheckout;
-      if(document.getElementById('btn-search-prices')) document.getElementById('btn-search-prices').innerText = t.btnSearchPrices;
-      if(document.getElementById('badge-booking')) document.getElementById('badge-booking').innerText = t.badgeBooking;
-      if(document.getElementById('payment-methods-title')) document.getElementById('payment-methods-title').innerText = t.paymentMethodsTitle;
-      if(document.getElementById('payment-methods-subtitle')) document.getElementById('payment-methods-subtitle').innerText = t.paymentMethodsSubtitle;
-      if(document.getElementById('title-rooms')) document.getElementById('title-rooms').innerText = t.titleRooms;
-      if(document.getElementById('rooms-badge')) document.getElementById('rooms-badge').innerText = t.roomsBadge;
-      if(document.getElementById('room1-tag')) document.getElementById('room1-tag').innerText = t.room1Tag;
-      if(document.getElementById('banner-code-title')) document.getElementById('banner-code-title').innerText = t.bannerCodeTitle;
-      if(document.getElementById('banner-code-desc')) document.getElementById('banner-code-desc').innerText = t.bannerCodeDesc;
-      if(document.getElementById('banner-code-btn')) document.getElementById('banner-code-btn').innerText = t.bannerCodeBtn;
-      if(document.getElementById('room1-title')) document.getElementById('room1-title').innerText = t.room1Title;
-      if(document.getElementById('room1-desc')) document.getElementById('room1-desc').innerText = t.room1Desc;
-      if(document.getElementById('per-night-1')) document.getElementById('per-night-1').innerText = t.perNight1;
-      document.querySelectorAll('.btn-res-text').forEach(el => el.innerText = t.btnResText);
-      if(document.getElementById('room2-tag')) document.getElementById('room2-tag').innerText = t.room2Tag;
-      if(document.getElementById('room2-title')) document.getElementById('room2-title').innerText = t.room2Title;
-      if(document.getElementById('room2-desc')) document.getElementById('room2-desc').innerText = t.room2Desc;
-      if(document.getElementById('per-night-2')) document.getElementById('per-night-2').innerText = t.perNight2;
-      if(document.getElementById('title-camping')) document.getElementById('title-camping').innerText = t.titleCamping;
-      if(document.getElementById('title-services')) document.getElementById('title-services').innerText = t.titleServices;
-      if(document.getElementById('title-reviews')) document.getElementById('title-reviews').innerText = t.titleReviews;
-      if(document.getElementById('reviews-badge')) document.getElementById('reviews-badge').innerText = t.reviewsBadge;
-      if(document.getElementById('title-guide-heading')) document.getElementById('title-guide-heading').innerText = t.titleGuideHeading;
-      if(document.getElementById('g-pub-desc')) document.getElementById('g-pub-desc').innerText = t.gPubDesc;
-      if(document.getElementById('priv-section-title')) document.getElementById('priv-section-title').innerText = t.privSectionTitle;
-      if(document.getElementById('g-priv-desc')) document.getElementById('g-priv-desc').innerText = t.gPrivDesc;
-      if(document.getElementById('btn-unlock-text')) document.getElementById('btn-unlock-text').innerText = t.btnUnlockText;
-      if(document.getElementById('stk-from')) document.getElementById('stk-from').innerText = t.stkFrom;
-      if(document.getElementById('stk-btn')) document.getElementById('stk-btn').innerText = t.stkBtn;
+      if(document.getElementById('calc-panel-title')) document.getElementById('calc-panel-title').innerText = t.calcPanelTitle;
+      if(document.getElementById('calc-badge')) document.getElementById('calc-badge').innerText = t.calcBadge;
+      if(document.getElementById('lbl-room-type')) document.getElementById('lbl-room-type').innerText = t.lblRoomType;
+      if(document.getElementById('lbl-nights')) document.getElementById('lbl-nights').innerText = t.lblNights;
+      if(document.getElementById('lbl-guests')) document.getElementById('lbl-guests').innerText = t.lblGuests;
+      if(document.getElementById('lbl-checkin-date')) document.getElementById('lbl-checkin-date').innerText = t.lblCheckinDate;
+      if(document.getElementById('lbl-total-est')) document.getElementById('lbl-total-est').innerText = t.lblTotalEst;
+      if(document.getElementById('btn-confirm-res')) document.getElementById('btn-confirm-res').innerText = t.btnConfirmRes;
     }
+
+    calculateTotal();
   </script>
 </body>
 </html>
