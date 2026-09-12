@@ -14,6 +14,9 @@
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Three.js para efectos WebGL avanzados en el Hero -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
   <script>
     tailwind.config = {
       theme: {
@@ -22,9 +25,9 @@
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
           },
           boxShadow: {
-            'ayenda': '0 10px 30px -5px rgba(0, 0, 0, 0.15)',
-            'card': '0 4px 20px -2px rgba(0, 0, 0, 0.06)',
-            'glow': '0 0 25px -5px rgba(16, 185, 129, 0.4)',
+            'ayenda': '0 20px 40px -15px rgba(0, 0, 0, 0.2)',
+            'card': '0 10px 30px -5px rgba(0, 0, 0, 0.08)',
+            'glow': '0 0 30px -5px rgba(16, 185, 129, 0.5)',
           }
         }
       }
@@ -34,31 +37,45 @@
   <style>
     .carousel-slide {
       display: flex;
-      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .kactus-card {
       background: #ffffff;
       border: 1px solid #e2e8f0;
-      border-radius: 1.25rem;
+      border-radius: 1.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .kactus-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.1);
     }
     .lang-container::-webkit-scrollbar {
       height: 3px;
     }
     .lang-container::-webkit-scrollbar-thumb {
-      background: #cbd5e1;
+      background: #10b981;
       border-radius: 4px;
+    }
+    /* Animación de error sutil */
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-6px); }
+      40%, 80% { transform: translateX(6px); }
+    }
+    .animate-shake {
+      animation: shake 0.4s ease-in-out;
     }
   </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-500 selection:text-white pb-24">
 
-  <!-- BARRA SUPERIOR CON TODOS LOS IDIOMAS VISIBLES EN MÓVIL Y ESCRITORIO -->
-  <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs py-2.5 px-3 sm:px-10">
+  <!-- BARRA SUPERIOR -->
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80 shadow-xs py-3 px-3 sm:px-10">
     <div class="max-w-7xl mx-auto flex justify-between items-center gap-2">
       
       <!-- LOGO -->
-      <a href="#" class="flex items-center gap-2 shrink-0">
-        <div class="w-9 h-9 sm:w-10 sm:h-10 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-xl flex items-center justify-center text-white shadow-md font-black text-base sm:text-lg relative overflow-hidden">
+      <a href="#" class="flex items-center gap-2.5 shrink-0 group">
+        <div class="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-xl flex items-center justify-center text-white shadow-md font-black text-lg relative overflow-hidden group-hover:scale-105 transition-transform">
           <i class="fas fa-seedling text-xs absolute bottom-1 right-1 opacity-40"></i>
           <span>K</span>
         </div>
@@ -68,51 +85,53 @@
         </div>
       </a>
 
-      <!-- SELECTOR DE IDIOMAS (CON SCROLL HORIZONTAL PARA MÓVIL) -->
-      <div class="lang-container flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200 overflow-x-auto flex-nowrap max-w-[180px] sm:max-w-none">
-        <button class="lang-btn active px-1.5 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 bg-emerald-600 text-white shadow-xs shrink-0" id="btn-es" onclick="changeLanguage('es')">
+      <!-- SELECTOR DE IDIOMAS -->
+      <div class="lang-container flex items-center gap-1.5 bg-slate-100/80 p-1.5 rounded-xl border border-slate-200 overflow-x-auto flex-nowrap max-w-[190px] sm:max-w-none">
+        <button class="lang-btn active px-2 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 bg-emerald-600 text-white shadow-xs shrink-0" id="btn-es" onclick="changeLanguage('es')">
           <img src="https://flagcdn.com/w40/es.png" alt="ES" class="w-3.5 h-2.5 object-cover rounded-xs"><span>ES</span>
         </button>
-        <button class="lang-btn px-1.5 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-en" onclick="changeLanguage('en')">
+        <button class="lang-btn px-2 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-en" onclick="changeLanguage('en')">
           <img src="https://flagcdn.com/w40/gb.png" alt="EN" class="w-3.5 h-2.5 object-cover rounded-xs"><span>EN</span>
         </button>
-        <button class="lang-btn px-1.5 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-pt" onclick="changeLanguage('pt')">
+        <button class="lang-btn px-2 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-pt" onclick="changeLanguage('pt')">
           <img src="https://flagcdn.com/w40/br.png" alt="PT" class="w-3.5 h-2.5 object-cover rounded-xs"><span>PT</span>
         </button>
-        <button class="lang-btn px-1.5 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-fr" onclick="changeLanguage('fr')">
+        <button class="lang-btn px-2 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-fr" onclick="changeLanguage('fr')">
           <img src="https://flagcdn.com/w40/fr.png" alt="FR" class="w-3.5 h-2.5 object-cover rounded-xs"><span>FR</span>
         </button>
-        <button class="lang-btn px-1.5 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-de" onclick="changeLanguage('de')">
+        <button class="lang-btn px-2 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-de" onclick="changeLanguage('de')">
           <img src="https://flagcdn.com/w40/de.png" alt="DE" class="w-3.5 h-2.5 object-cover rounded-xs"><span>DE</span>
         </button>
-        <button class="lang-btn px-1.5 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-ru" onclick="changeLanguage('ru')">
+        <button class="lang-btn px-2 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-ru" onclick="changeLanguage('ru')">
           <img src="https://flagcdn.com/w40/ru.png" alt="RU" class="w-3.5 h-2.5 object-cover rounded-xs"><span>RU</span>
         </button>
-        <button class="lang-btn px-1.5 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-cs" onclick="changeLanguage('cs')">
+        <button class="lang-btn px-2 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-cs" onclick="changeLanguage('cs')">
           <img src="https://flagcdn.com/w40/cz.png" alt="CS" class="w-3.5 h-2.5 object-cover rounded-xs"><span>CS</span>
         </button>
-        <button class="lang-btn px-1.5 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-zh" onclick="changeLanguage('zh')">
+        <button class="lang-btn px-2 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-zh" onclick="changeLanguage('zh')">
           <img src="https://flagcdn.com/w40/cn.png" alt="ZH" class="w-3.5 h-2.5 object-cover rounded-xs"><span>中文</span>
         </button>
       </div>
 
       <!-- BOTÓN CÓDIGO DE HUÉSPED -->
-      <a href="#title-guide" class="bg-slate-100 hover:bg-emerald-50 px-2.5 py-2 rounded-xl text-[11px] font-bold text-slate-700 hover:text-emerald-600 shrink-0 flex items-center gap-1 transition-colors">
+      <a href="#title-guide" class="bg-slate-100 hover:bg-emerald-50 px-3 py-2 rounded-xl text-[11px] font-bold text-slate-700 hover:text-emerald-600 shrink-0 flex items-center gap-1.5 transition-colors border border-slate-200">
         <i class="fas fa-key text-emerald-600"></i> <span class="hidden sm:inline" id="nav-code-text">Código de Huésped</span>
       </a>
 
     </div>
   </nav>
 
-  <!-- BANNER PRINCIPAL CON ACCESO RÁPIDO A SECCIÓN RESERVADA EN LA PARTE INICIAL -->
-  <header class="relative bg-emerald-900 text-white py-16 px-4 overflow-hidden">
-    <div class="absolute inset-0 bg-cover bg-center opacity-75" style="background-image: url('https://lh3.googleusercontent.com/d/1306fD7zgATU2P_1JwTWkWpq-lukMtejG');"></div>
-    <div class="absolute inset-0 bg-gradient-to-br from-emerald-700/85 via-emerald-800/80 to-teal-900/85"></div>
+  <!-- BANNER PRINCIPAL CON LIENZO WEBGL (THREE.JS) -->
+  <header class="relative bg-emerald-950 text-white py-20 px-4 overflow-hidden">
+    <!-- Contenedor WebGL Three.js -->
+    <div id="webgl-container" class="absolute inset-0 opacity-40 pointer-events-none"></div>
+    <div class="absolute inset-0 bg-cover bg-center opacity-40" style="background-image: url('https://lh3.googleusercontent.com/d/1306fD7zgATU2P_1JwTWkWpq-lukMtejG');"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-emerald-900/90 via-emerald-950/85 to-teal-950/90"></div>
     
-    <div class="relative z-10 max-w-4xl mx-auto text-center space-y-4 mb-8">
+    <div class="relative z-10 max-w-4xl mx-auto text-center space-y-5 mb-10">
       
-      <!-- WIDGET DE ACCESO RÁPIDO DIRECTO SOLICITADO PARA LA PARTE INICIAL -->
-      <div class="bg-white/10 backdrop-blur-md border border-white/20 p-4 sm:p-5 rounded-2xl max-w-2xl mx-auto shadow-lg space-y-3">
+      <!-- WIDGET DE ACCESO RÁPIDO SUPERIOR -->
+      <div class="bg-white/10 backdrop-blur-md border border-white/20 p-4 sm:p-5 rounded-2xl max-w-2xl mx-auto shadow-2xl space-y-3">
         <div class="flex items-center justify-center gap-2 text-amber-300 font-black text-xs uppercase tracking-wider">
           <i class="fas fa-lock-open"></i> <span id="top-access-title">Área Exclusiva de Huéspedes</span>
         </div>
@@ -120,23 +139,23 @@
           Ingresa el código brindado por el alojamiento acá y descubre tarifas de temporada, Wi-Fi, recomendaciones y normas.
         </p>
         <div class="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
-          <input type="password" id="topPassInput" placeholder="Ingresa tu código aquí..." onkeypress="handleTopKey(event)" class="px-3.5 py-2 rounded-xl border border-white/30 text-xs flex-1 bg-slate-900/60 text-white placeholder-emerald-200 focus:outline-none focus:ring-2 focus:ring-amber-400">
-          <button onclick="unlockTopGuide()" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-extrabold py-2 px-4 rounded-xl text-xs shadow-md transition-all shrink-0">
-            <span id="top-unlock-btn">Desbloquear Ahora</span>
+          <input type="password" id="topPassInput" placeholder="Ingresa tu código aquí..." onkeypress="handleTopKey(event)" class="px-3.5 py-2.5 rounded-xl border border-white/30 text-xs flex-1 bg-slate-900/70 text-white placeholder-emerald-200 focus:outline-none focus:ring-2 focus:ring-amber-400">
+          <button onclick="unlockTopGuide()" class="bg-gradient-to-r from-amber-400 to-yellow-400 hover:from-amber-500 hover:to-yellow-500 text-slate-950 font-extrabold py-2.5 px-5 rounded-xl text-xs shadow-md transition-all shrink-0">
+            <span id="top-unlock-btn">Desbloquear</span>
           </button>
         </div>
       </div>
 
-      <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight max-w-3xl mx-auto leading-tight drop-shadow-sm pt-2" id="hero-title">
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight max-w-3xl mx-auto leading-tight drop-shadow-md pt-2" id="hero-title">
         Tu descanso cómodo, seguro y completo en <span class="text-amber-300">Caraz, Perú</span>
       </h1>
-      <p class="text-emerald-50 text-xs sm:text-sm max-w-xl mx-auto drop-shadow-sm" id="hero-subtitle">
+      <p class="text-emerald-100 text-xs sm:text-base max-w-xl mx-auto drop-shadow-sm" id="hero-subtitle">
         Disfruta de habitaciones acogedoras, agua caliente 24/7 y la mejor ubicación para tus aventuras en la Cordillera Blanca.
       </p>
     </div>
 
     <!-- Barra de Búsqueda Flotante -->
-    <div class="relative z-20 max-w-4xl mx-auto bg-white text-slate-800 p-3 sm:p-4 rounded-2xl shadow-ayenda grid grid-cols-1 md:grid-cols-4 gap-3 items-center">
+    <div class="relative z-20 max-w-4xl mx-auto bg-white/95 backdrop-blur-md text-slate-800 p-3 sm:p-4 rounded-2xl shadow-ayenda grid grid-cols-1 md:grid-cols-4 gap-3 items-center border border-white/40">
       <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-xl border border-slate-200">
         <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-sm">
           <i class="fas fa-map-marker-alt"></i>
@@ -158,14 +177,14 @@
       </div>
 
       <div>
-        <button onclick="sendCustomReservation()" class="w-full bg-emerald-500 hover:bg-emerald-600 active:scale-95 text-white font-extrabold py-3.5 px-4 rounded-xl text-xs transition-all shadow-md shadow-emerald-500/20 flex items-center justify-center gap-2">
+        <button onclick="sendCustomReservation()" class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-extrabold py-3.5 px-4 rounded-xl text-xs transition-all shadow-md shadow-emerald-600/25 flex items-center justify-center gap-2">
           <i class="fab fa-whatsapp text-base"></i> <span id="btn-search-prices">Consultar Disponibilidad</span>
         </button>
       </div>
     </div>
   </header>
 
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 mt-12 space-y-16">
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 mt-14 space-y-16">
 
     <!-- Calificaciones -->
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto">
@@ -185,19 +204,19 @@
       </a>
     </div>
 
-    <!-- SECCIÓN 1: NUESTRAS HABITACIONES -->
+    <!-- SECCIÓN 1: HABITACIONES -->
     <section>
       <div class="flex items-center justify-between mb-6">
         <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight" id="title-rooms">Nuestras Habitaciones</h2>
-        <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200" id="rooms-badge">Garantía Mejor Precio Directo</span>
+        <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-full border border-emerald-200" id="rooms-badge">Garantía Mejor Precio Directo</span>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         
-        <!-- Habitación 1: Económica -->
-        <div class="kactus-card overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 flex flex-col group">
+        <!-- Habitación 1 -->
+        <div class="kactus-card overflow-hidden shadow-card flex flex-col group">
           <div class="relative w-full h-60 bg-emerald-900 overflow-hidden" id="carousel1">
-            <div class="absolute top-3 left-3 z-20 bg-emerald-900/90 backdrop-blur-md text-white text-[10px] font-black px-3 py-1 rounded-full shadow-xs border border-white/20" id="room1-tag">
+            <div class="absolute top-3 left-3 z-20 bg-emerald-950/90 backdrop-blur-md text-white text-[10px] font-black px-3 py-1 rounded-full shadow-xs border border-white/20" id="room1-tag">
               ECONÓMICA & CONFORT
             </div>
             <div class="carousel-slide w-full h-full">
@@ -226,8 +245,8 @@
           </div>
         </div>
 
-        <!-- Habitación 2: Mediana -->
-        <div class="kactus-card overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 flex flex-col group">
+        <!-- Habitación 2 -->
+        <div class="kactus-card overflow-hidden shadow-card flex flex-col group">
           <div class="relative w-full h-60 bg-emerald-900 overflow-hidden" id="carousel2">
             <div class="absolute top-3 left-3 z-20 bg-emerald-600 text-white text-[10px] font-black px-3 py-1 rounded-full shadow-xs border border-white/20" id="room2-tag">
               MÁS POPULAR
@@ -267,7 +286,7 @@
       </div>
 
       <div class="kactus-card p-6 shadow-card space-y-6">
-        <div class="bg-gradient-to-r from-emerald-700 to-teal-800 text-white p-5 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="bg-gradient-to-r from-emerald-800 to-teal-900 text-white p-5 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 shadow-lg">
           <div>
             <h4 class="font-extrabold text-sm text-amber-300" id="gear-banner-title">🧗‍♂️ Equipamiento Profesional para Montaña</h4>
             <p class="text-xs text-emerald-50 mt-0.5" id="gear-banner-desc">Material especializado de alta montaña listo para tu aventura.</p>
@@ -278,6 +297,7 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+          <!-- Item 1 -->
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3">
             <div class="h-36 rounded-xl overflow-hidden bg-slate-200">
               <img src="carpa3_estaciones.png" alt="Carpa" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='Carpa 3 estaciones.png';">
@@ -287,7 +307,7 @@
               <p class="text-[11px] text-slate-500 mt-0.5" id="gear-1-desc">Carpa resistente para alta montaña.</p>
             </div>
           </div>
-
+          <!-- Item 2 -->
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3">
             <div class="h-36 rounded-xl overflow-hidden bg-slate-200">
               <img src="saco_dormir.png" alt="Saco de Dormir" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='saco de dormir .png';">
@@ -297,7 +317,7 @@
               <p class="text-[11px] text-slate-500 mt-0.5" id="gear-2-desc">Pluma de alta resistencia (-5°C a -20°C).</p>
             </div>
           </div>
-
+          <!-- Item 3 -->
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3">
             <div class="h-36 rounded-xl overflow-hidden bg-slate-200">
               <img src="bastones_treken.png" alt="Bastones" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='Bastones treken.png';">
@@ -307,7 +327,7 @@
               <p class="text-[11px] text-slate-500 mt-0.5" id="gear-3-desc">Par de bastones ergonómicos.</p>
             </div>
           </div>
-
+          <!-- Item 4 -->
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3">
             <div class="h-36 rounded-xl overflow-hidden bg-slate-200">
               <img src="vinoculares.png" alt="Binoculares" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='vinoculares.jpg';">
@@ -317,7 +337,7 @@
               <p class="text-[11px] text-slate-500 mt-0.5" id="gear-4-desc">Observación de nevados y paisajes.</p>
             </div>
           </div>
-
+          <!-- Item 5 -->
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3">
             <div class="h-36 rounded-xl overflow-hidden bg-slate-200">
               <img src="cocina_y_ollas.png" alt="Cocina" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='Cocina _kit.png';">
@@ -327,7 +347,7 @@
               <p class="text-[11px] text-slate-500 mt-0.5" id="gear-5-desc">Incluye utensilios de cocina.</p>
             </div>
           </div>
-
+          <!-- Item 6 -->
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3">
             <div class="h-36 rounded-xl overflow-hidden bg-slate-200">
               <img src="gas.png" alt="Gas" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='gas.jpg';">
@@ -370,8 +390,8 @@
 
         <hr class="border-slate-200">
 
-        <!-- BANNER DE MARKETING POTENTE -->
-        <div class="bg-gradient-to-r from-emerald-800 via-emerald-700 to-teal-800 text-white p-6 sm:p-8 rounded-2xl shadow-lg border border-emerald-600 space-y-4 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6">
+        <!-- BANNER DE MARKETING -->
+        <div class="bg-gradient-to-r from-emerald-900 via-emerald-800 to-teal-900 text-white p-6 sm:p-8 rounded-2xl shadow-xl border border-emerald-700 space-y-4 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6">
           <div class="space-y-2">
             <div class="inline-flex items-center gap-1.5 bg-amber-400 text-slate-950 font-black text-[10px] px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
               <i class="fas fa-lock-open"></i> <span id="marketing-tag">Área Exclusiva para Huéspedes</span>
@@ -402,7 +422,7 @@
           <div id="secretGuide" class="hidden mt-6 bg-slate-50 p-6 rounded-2xl border-2 border-dashed border-emerald-500 space-y-8">
             
             <!-- TARJETA WI-FI -->
-            <div class="bg-white p-5 rounded-xl border border-slate-200 space-y-4">
+            <div class="bg-white p-5 rounded-xl border border-slate-200 space-y-4 shadow-xs">
               <h4 class="font-extrabold text-sm text-slate-900 flex items-center gap-2" id="wifi-card-title">
                 <i class="fas fa-wifi text-emerald-600"></i> Conexión Wi-Fi de Alta Velocidad
               </h4>
@@ -424,7 +444,7 @@
             </div>
 
             <!-- TARIFAS DE EQUIPOS -->
-            <div class="bg-white p-5 rounded-xl border border-slate-200 space-y-4">
+            <div class="bg-white p-5 rounded-xl border border-slate-200 space-y-4 shadow-xs">
               <h4 class="font-extrabold text-sm text-slate-900" id="priv-gear-title">🏷️ Tarifas de Alquiler de Equipos de Montaña</h4>
               <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs">
                 <div class="p-3 bg-emerald-50 rounded-lg flex justify-between"><span id="p-gear-1">Carpa 3 Estaciones</span><strong class="text-emerald-800">S/ 25.00 /día</strong></div>
@@ -436,7 +456,7 @@
               </div>
             </div>
 
-            <!-- DIRECTORIO FIJO CON CAJA HUANCAYO / CASA DE CAMBIO Y HOSPITAL -->
+            <!-- DIRECTORIO FIJO -->
             <div class="space-y-4">
               <h4 class="font-extrabold text-sm text-slate-900" id="directory-title">📍 Directorio de Lugares Clave en Caraz</h4>
               
@@ -472,7 +492,7 @@
                   </div>
                 </div>
 
-                <!-- 3. Caja Huancayo / Casa de Cambio (con dolares.png) -->
+                <!-- 3. Caja Huancayo -->
                 <div class="bg-white rounded-2xl border border-slate-200 flex flex-col overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                   <img src="dolares.png" alt="Caja Huancayo y Casa de Cambio" class="w-full h-32 object-cover bg-slate-200" onerror="this.src='https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&w=500&q=80'">
                   <div class="p-4 flex flex-col flex-1">
@@ -480,7 +500,7 @@
                       <div class="w-7 h-7 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-xs shrink-0"><i class="fas fa-exchange-alt"></i></div>
                       <h5 class="font-bold text-slate-900 text-xs">Caja Huancayo & Casa de Cambio</h5>
                     </div>
-                    <p class="text-[11px] text-slate-500 mb-4 flex-1">Agencia Caja Huancayo Caraz. Ideal para giros, operaciones financieras, retiros y cambio de moneda extranjera (dólares y soles) en el centro de la ciudad.</p>
+                    <p class="text-[11px] text-slate-500 mb-4 flex-1">Agencia Caja Huancayo Caraz. Ideal para giros, operaciones financieras, retiros y cambio de moneda en el centro.</p>
                     <a href="https://maps.google.com/?q=Caja+Huancayo+Caraz" target="_blank" rel="noopener" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-[11px] py-2 px-3 rounded-xl flex items-center justify-center gap-1.5 w-full shadow-sm transition-colors mt-auto">
                       <i class="fas fa-map-marked-alt text-amber-700"></i> Ver Ubicación en Caraz
                     </a>
@@ -543,16 +563,58 @@
   </main>
 
   <!-- Barra inferior fija -->
-  <div class="fixed bottom-0 left-0 right-0 bg-emerald-700/95 backdrop-blur-md border-t border-emerald-600 p-3.5 px-6 flex justify-between items-center z-50 text-white shadow-lg">
+  <div class="fixed bottom-0 left-0 right-0 bg-emerald-950/95 backdrop-blur-md border-t border-emerald-800 p-3.5 px-6 flex justify-between items-center z-50 text-white shadow-2xl">
     <div class="text-xs">
-      <span class="text-emerald-100" id="stk-from">Desde</span> <strong class="text-base text-amber-300 font-black">S/ 35.00</strong>
+      <span class="text-emerald-300" id="stk-from">Desde</span> <strong class="text-base text-amber-300 font-black">S/ 35.00</strong>
     </div>
-    <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20quisiera%20consultar%20disponibilidad" target="_blank" rel="noopener" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-2.5 px-5 rounded-xl text-xs shadow-md flex items-center gap-2">
+    <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20quisiera%20consultar%20disponibilidad" target="_blank" rel="noopener" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-5 rounded-xl text-xs shadow-md flex items-center gap-2 transition-all">
       <i class="fab fa-whatsapp text-sm"></i> <span id="stk-btn">Reservar Ahora</span>
     </a>
   </div>
 
   <script>
+    // --- EFECTO WEBGL / THREE.JS EN EL HERO ---
+    window.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('webgl-container');
+      if (container && typeof THREE !== 'undefined') {
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ alpha: true });
+        renderer.setSize(container.offsetWidth, container.offsetHeight);
+        container.appendChild(renderer.domElement);
+
+        // Crear partículas sutiles flotantes (estilo polvo estelar / alta montaña)
+        const geometry = new THREE.BufferGeometry();
+        const count = 150;
+        const positions = new Float32Array(count * 3);
+
+        for (let i = 0; i < count * 3; i++) {
+          positions[i] = (Math.random() - 0.5) * 20;
+        }
+
+        geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        const material = new THREE.PointsMaterial({ color: 0x10b981, size: 0.08, transparent: true, opacity: 0.6 });
+        const particles = new THREE.Points(geometry, material);
+        scene.add(particles);
+
+        camera.position.z = 5;
+
+        function animate() {
+          requestAnimationFrame(animate);
+          particles.rotation.y += 0.001;
+          renderer.render(scene, camera);
+        }
+        animate();
+
+        window.addEventListener('resize', () => {
+          camera.aspect = container.offsetWidth / container.innerHeight;
+          camera.updateProjectionMatrix();
+          renderer.setSize(container.offsetWidth, container.offsetHeight);
+        });
+      }
+    });
+
+    // --- LÓGICA DE CARRUSELES Y ACCESO ---
     const slideIndexes = { carousel1: 0, carousel2: 0 };
 
     function moveSlide(carouselId, direction) {
@@ -583,40 +645,39 @@
     function unlockGuide() {
       const pass = document.getElementById('passInput').value.trim();
       const secretSection = document.getElementById('secretGuide');
+      const inputEl = document.getElementById('passInput');
       if (pass === '301298') {
         secretSection.classList.remove('hidden');
         secretSection.scrollIntoView({ behavior: 'smooth' });
       } else {
         secretSection.classList.add('hidden');
+        inputEl.classList.add('animate-shake', 'border-red-500');
+        setTimeout(() => inputEl.classList.remove('animate-shake', 'border-red-500'), 500);
         alert('Contraseña incorrecta. Solicita la clave oficial en recepción.');
-        document.getElementById('passInput').value = '';
+        inputEl.value = '';
       }
     }
 
-    // Función para desbloquear directamente desde el banner inicial en la parte superior
     function unlockTopGuide() {
       const pass = document.getElementById('topPassInput').value.trim();
       const secretSection = document.getElementById('secretGuide');
+      const inputEl = document.getElementById('topPassInput');
       if (pass === '301298') {
         secretSection.classList.remove('hidden');
-        // Sincronizar también el input inferior
         document.getElementById('passInput').value = '301298';
         secretSection.scrollIntoView({ behavior: 'smooth' });
       } else {
+        inputEl.classList.add('animate-shake', 'border-red-500');
+        setTimeout(() => inputEl.classList.remove('animate-shake', 'border-red-500'), 500);
         alert('Contraseña incorrecta. Solicita la clave oficial en recepción.');
-        document.getElementById('topPassInput').value = '';
+        inputEl.value = '';
       }
     }
 
-    function handleKey(e) {
-      if (e.key === 'Enter') unlockGuide();
-    }
+    function handleKey(e) { if (e.key === 'Enter') unlockGuide(); }
+    function handleTopKey(e) { if (e.key === 'Enter') unlockTopGuide(); }
 
-    function handleTopKey(e) {
-      if (e.key === 'Enter') unlockTopGuide();
-    }
-
-    // Diccionario completo de traducciones fluidas
+    // Diccionario completo de traducciones fluidas y sincronizadas
     const translations = {
       es: {
         navLocationSub: "Caraz · Perú",
