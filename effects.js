@@ -14,60 +14,48 @@ body {
   overflow-x: hidden;
 }
 
-/* --- TARJETA CON EFECTO DE GIRO CONSTANTE EN 3D --- */
+/* --- TARJETA CON GIRO 3D ELEGANTE --- */
 .neon-yellow-box {
   background: rgba(15, 23, 42, 0.92);
-  border: 2px solid #fbbf24;
-  box-shadow: 0 0 35px rgba(251, 191, 36, 0.8), inset 0 0 20px rgba(251, 191, 36, 0.3);
+  border: 1px solid rgba(147, 197, 253, 0.4);
+  box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.2);
   position: relative;
   perspective: 1000px;
-  animation: cardFullSpin 10s ease-in-out infinite;
+  animation: cardFullSpin 12s ease-in-out infinite;
   transform-style: preserve-3d;
 }
 
 @keyframes cardFullSpin {
-  0%, 100% {
-    transform: rotateY(0deg) scale(1);
-  }
-  20% {
-    transform: rotateY(15deg) scale(1.02);
-  }
-  40% {
-    transform: rotateY(0deg) scale(1);
-  }
-  60% {
-    transform: rotateY(-15deg) scale(1.02);
-  }
-  80% {
-    transform: rotateY(0deg) scale(1);
-  }
+  0%, 100% { transform: rotateY(0deg) scale(1); }
+  25% { transform: rotateY(8deg) scale(1.01); }
+  75% { transform: rotateY(-8deg) scale(1.01); }
 }
 
-/* --- BOTÓN AMARILLO "DESBLOQUEAR" CON PARPARDEO INTENSO --- */
+/* --- BOTÓN CELESTE SUAVE / PROFESIONAL (ESTILO MODERN WEB) --- */
 .neon-blink-btn {
-  background: linear-gradient(135deg, #fbbf24, #f59e0b);
-  color: #0f172a;
-  font-weight: 800;
-  box-shadow: 0 0 15px rgba(251, 191, 36, 0.9);
-  animation: neonBlinkFast 0.8s ease-in-out infinite;
-  transition: transform 0.2s ease;
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  color: #ffffff;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 14px rgba(14, 165, 233, 0.4);
+  animation: softPulse 3s ease-in-out infinite;
+  transition: all 0.3s ease;
 }
 
 .neon-blink-btn:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 30px rgba(251, 191, 36, 1);
+  background: linear-gradient(135deg, #0ea5e9, #0284c7);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(14, 165, 233, 0.6);
 }
 
-@keyframes neonBlinkFast {
+@keyframes softPulse {
   0%, 100% {
-    box-shadow: 0 0 8px rgba(251, 191, 36, 0.4);
+    box-shadow: 0 4px 14px rgba(14, 165, 233, 0.4);
     filter: brightness(1);
-    transform: scale(1);
   }
   50% {
-    box-shadow: 0 0 25px rgba(251, 191, 36, 1), 0 0 45px rgba(255, 255, 255, 0.9);
-    filter: brightness(1.3);
-    transform: scale(1.05);
+    box-shadow: 0 4px 22px rgba(56, 189, 248, 0.8);
+    filter: brightness(1.1);
   }
 }
 
