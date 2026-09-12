@@ -14,9 +14,7 @@ body {
   overflow-x: hidden;
 }
 
-/* --- EFECTOS VISUALES LLAMATIVOS Y MODERNOS --- */
-
-/* 1. Tarjetas con efecto Neón Glow flotante */
+/* Tarjetas con efecto Neón Glow flotante */
 .kactus-card {
   background: #ffffff;
   border: 1px solid rgba(16, 185, 129, 0.2);
@@ -55,7 +53,7 @@ body {
   opacity: 0.6;
 }
 
-/* 2. Animación de sacudida para errores de clave */
+/* Animación de sacudida para errores de clave */
 @keyframes shake {
   0%, 100% { transform: translateX(0); }
   20%, 60% { transform: translateX(-6px); }
@@ -65,13 +63,13 @@ body {
   animation: shake 0.4s ease-in-out;
 }
 
-/* 3. Carruseles fluidos */
+/* Carruseles fluidos */
 .carousel-slide {
   display: flex;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* 4. Scroll personalizado llamativo */
+/* Scroll personalizado */
 .lang-container::-webkit-scrollbar {
   height: 4px;
 }
