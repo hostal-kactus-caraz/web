@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title id="page-title">Hostal Kactus | Alojamiento & Tours en Caraz, Perú</title>
-  <meta name="description" content="Alojamiento acogedor en Caraz, Perú. Baño privado, agua caliente 24/7, Wi-Fi rápido, alquiler de equipos de camping y guía exclusiva a Laguna Parón y Laguna 69.">
+  <meta name="description" content="Alojamiento acogedor en Caraz, Perú. Baño privado, agua caliente 24/7, Wi-Fi rápido, alquiler de equipos de camping y guía exclusiva a Laguna Parón, Laguna 69 y Cañón del Pato.">
   
   <!-- Google Fonts & Font Awesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -81,24 +81,15 @@
     </div>
   </nav>
 
-  <!-- BANNER PRINCIPAL CON INSIGNIA DE PAGOS Y CALCULADORA -->
+  <!-- BANNER PRINCIPAL CON INSIGNIA DE PAGOS MEJORADA Y CALCULADORA -->
   <header class="relative bg-emerald-950 text-white py-20 px-4 overflow-hidden">
     <div id="webgl-container" class="absolute inset-0 opacity-50 pointer-events-none"></div>
     <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('https://lh3.googleusercontent.com/d/1306fD7zgATU2P_1JwTWkWpq-lukMtejG');"></div>
     <div class="absolute inset-0 bg-gradient-to-br from-emerald-900/90 via-emerald-950/85 to-teal-950/90"></div>
     
-    <!-- INSIGNIA DE MEDIOS DE PAGO EN LA ZONA SUPERIOR IZQUIERDA -->
-    <div class="absolute top-4 left-4 sm:left-8 z-30 hidden sm:flex items-center gap-2.5 bg-black/40 backdrop-blur-md px-3.5 py-2 rounded-xl border border-white/20 shadow-lg">
-      <i class="fas fa-credit-card text-emerald-400 text-sm"></i>
-      <div class="flex flex-col">
-        <span class="text-[9px] font-black uppercase text-emerald-300 tracking-wider" data-i18n="lblBadgePay">Aceptamos Tarjetas & Efectivo</span>
-        <div class="flex items-center gap-2 text-base text-white mt-0.5">
-          <i class="fab fa-cc-visa text-sky-400" title="Visa"></i>
-          <i class="fab fa-cc-mastercard text-red-500" title="Mastercard"></i>
-          <i class="fab fa-cc-amex text-blue-400" title="American Express"></i>
-          <i class="fas fa-money-bill-wave text-emerald-400" title="Efectivo"></i>
-        </div>
-      </div>
+    <!-- INSIGNIA DE MEDIOS DE PAGO CON IMAGEN CLARA Y NÍTIDA -->
+    <div class="absolute top-4 left-4 sm:left-8 z-30 hidden sm:flex items-center gap-3 bg-emerald-900/90 backdrop-blur-md px-4 py-2.5 rounded-2xl border-2 border-emerald-400/40 shadow-2xl">
+      <img src="tarjetas.png" alt="Aceptamos Tarjetas y Efectivo" class="h-8 w-auto object-contain drop-shadow-md" onerror="this.src='https://via.placeholder.com/150x40?text=Tarjetas+%26+Efectivo'">
     </div>
 
     <div class="relative z-10 max-w-4xl mx-auto text-center space-y-6 pt-4">
@@ -120,10 +111,10 @@
       </div>
 
       <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight max-w-3xl mx-auto leading-tight drop-shadow-md pt-2">
-        <span data-i18n="heroTitleStart">Tu descanso cómodo, seguro y completo en</span> <span class="text-amber-300">Caraz, Perú[cite: 1]</span>
+        <span data-i18n="heroTitleStart">Tu descanso cómodo, seguro y completo en</span> <span class="text-amber-300">Caraz, Perú</span>
       </h1>
       <p class="text-emerald-100 text-xs sm:text-base max-w-xl mx-auto drop-shadow-sm" data-i18n="heroSubtitle">
-        Disfruta de habitaciones acogedoras, agua caliente 24/7 y la mejor ubicación para tus aventuras en la Cordillera Blanca[cite: 1].
+        Disfruta de habitaciones acogedoras, agua caliente 24/7 y la mejor ubicación para tus aventuras en la Cordillera Blanca.
       </p>
 
       <!-- BOTÓN PRINCIPAL DE CONVERSIÓN -->
@@ -138,7 +129,7 @@
 
     </div>
 
-    <!-- CALCULADORA DE RESERVA (OCULTA POR DEFECTO CON CLASE HIDDEN) -->
+    <!-- CALCULADORA DE RESERVA -->
     <div id="calculatorPanel" class="hidden relative z-20 max-w-4xl mx-auto mt-8 bg-white/95 backdrop-blur-md text-slate-800 p-5 sm:p-6 rounded-2xl shadow-2xl space-y-4 border border-white/40 transition-all">
       <div class="flex justify-between items-center border-b border-slate-200 pb-3">
         <h3 class="font-extrabold text-sm text-slate-900 flex items-center gap-2">
@@ -148,7 +139,6 @@
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3">
-        <!-- Tipo de Habitación -->
         <div>
           <label class="block text-[10px] font-extrabold text-slate-500 uppercase mb-1" data-i18n="lblRoomType">Tipo de Habitación</label>
           <select id="calcRoom" onchange="calculateTotal()" class="w-full p-2.5 bg-slate-50 rounded-xl border border-slate-200 text-xs font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500">
@@ -156,26 +146,18 @@
             <option value="45" selected data-i18n="optMed">Matrimonial Mediana (S/ 45)</option>
           </select>
         </div>
-
-        <!-- Día de Entrada -->
         <div>
           <label class="block text-[10px] font-extrabold text-slate-500 uppercase mb-1" data-i18n="lblCheckinDate">Día de Entrada</label>
           <input type="date" id="calcCheckin" onchange="calculateTotal()" class="w-full p-2.5 bg-slate-50 rounded-xl border border-slate-200 text-xs font-bold text-slate-800 focus:outline-none">
         </div>
-
-        <!-- Check-out (Salida) -->
         <div>
           <label class="block text-[10px] font-extrabold text-slate-500 uppercase mb-1" data-i18n="lblCheckoutDate">Check-out (Salida)</label>
           <input type="date" id="calcCheckout" onchange="calculateTotal()" class="w-full p-2.5 bg-slate-50 rounded-xl border border-slate-200 text-xs font-bold text-slate-800 focus:outline-none">
         </div>
-
-        <!-- Número de Noches (Automático) -->
         <div>
           <label class="block text-[10px] font-extrabold text-slate-500 uppercase mb-1" data-i18n="lblNights">Número de Noches</label>
           <input type="text" id="calcNightsDisplay" value="1 noche" readonly class="w-full p-2.5 bg-emerald-50 rounded-xl border border-emerald-200 text-xs font-black text-emerald-800 text-center">
         </div>
-
-        <!-- Huéspedes -->
         <div>
           <label class="block text-[10px] font-extrabold text-slate-500 uppercase mb-1" data-i18n="lblGuests">Cantidad de Huéspedes</label>
           <select id="calcGuests" class="w-full p-2.5 bg-slate-50 rounded-xl border border-slate-200 text-xs font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500">
@@ -185,7 +167,6 @@
         </div>
       </div>
 
-      <!-- TOTAL Y BOTÓN DE CONFIRMACIÓN -->
       <div class="flex flex-col sm:flex-row justify-between items-center gap-4 pt-2 border-t border-slate-200">
         <div class="text-left">
           <span class="text-[10px] font-extrabold text-slate-400 uppercase block" data-i18n="lblTotalEst">Cotización Estimada Total</span>
@@ -217,6 +198,67 @@
         </div>
       </a>
     </div>
+
+    <!-- NUEVA SECCIÓN PÚBLICA: ATRACCIONES DESTACADAS DE CARAZ (INSPIRACIÓN TURÍSTICA) -->
+    <section>
+      <div class="text-center max-w-2xl mx-auto mb-8 space-y-2">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight" data-i18n="publicAttractionsTitle">Maravillas Naturales que Debes Visitar</h2>
+        <p class="text-xs sm:text-sm text-slate-600" data-i18n="publicAttractionsDesc">Hostal Kactus es tu punto de partida ideal para conocer los paisajes más imponentes de la Cordillera Blanca y los Conchucos.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Laguna Parón -->
+        <div class="kactus-card overflow-hidden shadow-card flex flex-col group">
+          <div class="h-48 overflow-hidden bg-slate-200 relative">
+            <img src="Paron laguna.png" alt="Laguna Parón" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 zoomable-img" onclick="openModal(this.src)" onerror="this.src='lagunaparon2.png'">
+            <span class="absolute top-3 left-3 bg-emerald-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-md">Laguna Parón</span>
+          </div>
+          <div class="p-5 flex flex-col flex-1 justify-between space-y-3">
+            <div>
+              <h3 class="font-extrabold text-slate-900 text-sm mb-1" data-i18n="pubParonTitle">La Laguna Turquesa Más Grande</h3>
+              <p class="text-[11px] text-slate-600 leading-relaxed" data-i18n="pubParonDesc">Impresionante espejo de agua rodeado por imponentes picos nevados como el Artesonraju.</p>
+            </div>
+            <a href="#title-guide" class="text-emerald-600 font-bold text-xs flex items-center gap-1 hover:underline">
+              <i class="fas fa-arrow-right"></i> <span data-i18n="pubViewGuide">Ver detalles y precios en guía</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Laguna 69 -->
+        <div class="kactus-card overflow-hidden shadow-card flex flex-col group">
+          <div class="h-48 overflow-hidden bg-slate-200 relative">
+            <img src="laguna69.png" alt="Laguna 69" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 zoomable-img" onclick="openModal(this.src)" onerror="this.src='laguna692.png'">
+            <span class="absolute top-3 left-3 bg-amber-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-md">Laguna 69</span>
+          </div>
+          <div class="p-5 flex flex-col flex-1 justify-between space-y-3">
+            <div>
+              <h3 class="font-extrabold text-slate-900 text-sm mb-1" data-i18n="pubL69Title">Trekking de Alta Montaña</h3>
+              <p class="text-[11px] text-slate-600 leading-relaxed" data-i18n="pubL69Desc">Una aventura inolvidable bajo los nevados Huascarán y Chacraraju con aguas de intenso color celeste.</p>
+            </div>
+            <a href="#title-guide" class="text-emerald-600 font-bold text-xs flex items-center gap-1 hover:underline">
+              <i class="fas fa-arrow-right"></i> <span data-i18n="pubViewGuide">Ver detalles y precios en guía</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Cañón del Pato -->
+        <div class="kactus-card overflow-hidden shadow-card flex flex-col group">
+          <div class="h-48 overflow-hidden bg-slate-200 relative">
+            <img src="Cañón del pato.png" alt="Cañón del Pato" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 zoomable-img" onclick="openModal(this.src)" onerror="this.src='tuneles.png'">
+            <span class="absolute top-3 left-3 bg-sky-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-md">Cañón del Pato</span>
+          </div>
+          <div class="p-5 flex flex-col flex-1 justify-between space-y-3">
+            <div>
+              <h3 class="font-extrabold text-slate-900 text-sm mb-1" data-i18n="pubCanonTitle">Ruta de Túneles y Acantilados</h3>
+              <p class="text-[11px] text-slate-600 leading-relaxed" data-i18n="pubCanonDesc">Un impresionante desfiladero donde convergen la Cordillera Negra y Blanca con decenas de túneles en la roca.</p>
+            </div>
+            <a href="#title-guide" class="text-emerald-600 font-bold text-xs flex items-center gap-1 hover:underline">
+              <i class="fas fa-arrow-right"></i> <span data-i18n="pubViewGuide">Ver detalles y precios en guía</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- SECCIÓN 1: HABITACIONES -->
     <section>
@@ -372,13 +414,13 @@
       </div>
     </section>
 
-    <!-- SECCIÓN 4: GUÍA Y ÁREA PRIVADA -->
+    <!-- SECCIÓN 4: GUÍA Y ÁREA PRIVADA (ORGANIZADA Y CON WI-FI FIJO ESTÁTICO) -->
     <section class="mb-12" id="title-guide">
       <div class="kactus-card p-6 sm:p-8 shadow-card space-y-6">
         <div>
           <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-2" data-i18n="titleGuideHeading">Guía Turística de Caraz & Área Reservada</h2>
           <p class="text-xs sm:text-sm text-slate-600 leading-relaxed" data-i18n="gPubDesc">
-            Bienvenido a nossa guía oficial[cite: 1]. Explora los atractivos imperdibles de la Cordillera Blanca desde Hostal Kactus[cite: 1]. 
+            Bienvenido a nuestra guía oficial. Explora los atractivos imperdibles de la Cordillera Blanca desde Hostal Kactus.
           </p>
         </div>
 
@@ -393,12 +435,29 @@
             <button onclick="unlockGuide()" id="btn-unlock-text" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-5 rounded-xl text-xs shadow-md" data-i18n="btnUnlockText">Desbloquear Sección</button>
           </div>
 
-          <!-- CONTENIDO SECRETO / RESERVADO -->
-          <div id="secretGuide" class="hidden mt-6 bg-slate-50 p-6 rounded-2xl border-2 border-dashed border-emerald-500 space-y-10">
+          <!-- CONTENIDO SECRETO / RESERVADO (CON WIDGET DE WI-FI FIJO Y ESTÁTICO EN LA PARTE SUPERIOR) -->
+          <div id="secretGuide" class="hidden mt-6 bg-slate-50 p-6 rounded-2xl border-2 border-dashed border-emerald-500 space-y-10 relative">
             
-            <!-- Comodidades y Normas -->
-            <div class="space-y-4">
-              <h4 class="font-extrabold text-sm text-slate-900 flex items-center gap-2" data-i18n="secAmenitiesTitle">
+            <!-- TARJETA FIJA Y ESTÁTICA DE WI-FI (ACCESIBLE SIEMPRE SIN IMPORTAR EL SCROLL) -->
+            <div class="sticky top-20 z-40 bg-gradient-to-r from-emerald-900 to-teal-900 text-white p-4 rounded-2xl shadow-xl border-2 border-emerald-400 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-emerald-500 rounded-xl flex items-center justify-center text-white text-lg shadow-md shrink-0">
+                  <i class="fas fa-wifi animate-pulse"></i>
+                </div>
+                <div>
+                  <span class="text-[10px] uppercase font-black text-emerald-300 tracking-wider block" data-i18n="wifiStickySub">Conexión de Alta Velocidad (Fija)</span>
+                  <div class="text-xs sm:text-sm font-extrabold">Red: <span class="text-amber-300">Segundo Piso</span></div>
+                </div>
+              </div>
+              <div class="bg-black/40 px-4 py-2 rounded-xl border border-white/20 flex items-center gap-2 text-xs">
+                <span class="text-slate-300 font-semibold" data-i18n="wifiPassLabel">Contraseña:</span>
+                <strong class="text-white text-sm font-mono tracking-wider">Ramirez@2025</strong>
+              </div>
+            </div>
+
+            <!-- 1. COMODIDADES, HORARIOS Y NORMAS -->
+            <div class="space-y-4 pt-2">
+              <h4 class="font-extrabold text-sm text-slate-900 flex items-center gap-2 border-b border-slate-200 pb-2" data-i18n="secAmenitiesTitle">
                 <i class="fas fa-concierge-bell text-emerald-600"></i> Comodidades, Horarios y Normas del Hostal
               </h4>
               
@@ -432,28 +491,6 @@
                 </p>
               </div>
 
-              <!-- Wi-Fi interactivo -->
-              <div class="bg-white p-5 rounded-xl border border-slate-200 space-y-3 shadow-xs">
-                <h5 class="font-extrabold text-xs text-slate-900 flex items-center gap-2" data-i18n="wifiCardTitle">
-                  <i class="fas fa-wifi text-emerald-600"></i> Conexión Wi-Fi de Alta Velocidad
-                </h5>
-                <div class="flex flex-col md:flex-row items-center gap-4">
-                  <div class="w-full md:w-1/4 h-28 rounded-xl overflow-hidden bg-slate-100 border border-slate-200 flex items-center justify-center">
-                    <img src="wifi.png" alt="Wi-Fi Kactus" class="w-full h-full object-cover zoomable-img" onclick="openModal(this.src)" onerror="this.src='https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=500&q=80'">
-                  </div>
-                  <div class="flex-1 space-y-2 text-xs w-full">
-                    <div class="p-2.5 bg-emerald-50 rounded-lg flex justify-between items-center">
-                      <span class="text-slate-600 font-semibold" data-i18n="wifiNetLabel">Red (SSID):</span>
-                      <strong class="text-emerald-900 bg-white px-3 py-1 rounded border border-emerald-200 text-sm" data-i18n="wifiNetVal">Segundo Piso</strong>
-                    </div>
-                    <div class="p-2.5 bg-emerald-50 rounded-lg flex justify-between items-center">
-                      <span class="text-slate-600 font-semibold" data-i18n="wifiPassLabel">Contraseña:</span>
-                      <strong class="text-emerald-900 bg-white px-3 py-1 rounded border border-emerald-200 text-sm">Ramirez@2025</strong>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
               <!-- Desayunos Kactus -->
               <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-3 shadow-xs text-xs">
                 <div class="font-bold text-slate-900 flex items-center gap-2 text-emerald-700"><i class="fas fa-mug-hot"></i> <span data-i18n="breakfastMenuTitle">Carta de Desayunos Hostal Kactus</span></div>
@@ -476,12 +513,11 @@
                   </div>
                 </div>
               </div>
-
             </div>
 
-            <!-- Guía de Recorridos y Precios -->
+            <!-- 2. GUÍA DE RECORRIDOS Y PRECIOS (ENLACES MÓVILES OPTIMIZADOS) -->
             <div class="space-y-6 pt-4 border-t border-slate-200">
-              <h4 class="font-extrabold text-base text-slate-900 flex items-center gap-2" data-i18n="toursGuideTitle">
+              <h4 class="font-extrabold text-base text-slate-900 flex items-center gap-2 border-b border-slate-200 pb-2" data-i18n="toursGuideTitle">
                 <i class="fas fa-route text-emerald-600"></i> Guía Detallada de Recorridos, Costos y Opciones
               </h4>
 
@@ -508,7 +544,11 @@
                     <strong class="text-emerald-900" data-i18n="paronTourSelf">Opción Por Tu Cuenta:</strong>
                     <ul class="list-disc pl-4 text-slate-600 space-y-1 mt-1">
                       <li data-i18n="paronS1">Costo habitual de transporte: S/ 40 a S/ 50 por persona.</li>
-                      <li data-i18n="paronS2">Debes tomar los colectivos desde <a href="https://maps.app.goo.gl/dhxDVsWRBC7ysK4w8" target="_blank" class="text-blue-600 underline font-bold" data-i18n="paronS2Link">este punto de salida</a>.</li>
+                      <!-- ENLACE MÓVIL CORREGIDO Y ASEGURADO CON DISPLAY BLOCK/INLINE-FLEX -->
+                      <li class="py-1">
+                        <span data-i18n="paronS2">Debes tomar los colectivos desde</span> 
+                        <a href="https://maps.app.goo.gl/dhxDVsWRBC7ysK4w8" target="_blank" class="inline-block mt-1 sm:mt-0 text-blue-600 underline font-extrabold bg-blue-50 px-2 py-0.5 rounded border border-blue-200" data-i18n="paronS2Link">📍 este punto de salida</a>.
+                      </li>
                       <li data-i18n="paronS3">Entrada obligatoria de S/ 5.00 al guardabosques.</li>
                     </ul>
                   </div>
@@ -546,8 +586,9 @@
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
                 <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-2 shadow-xs">
                   <h5 class="font-extrabold text-slate-900 flex items-center gap-2 text-emerald-800"><i class="fas fa-seedling"></i> <span data-i18n="strawberriesTitle">Ruta de las Fresas (Pampacocha)</span></h5>
-                  <p class="text-slate-600" data-i18n="strawberriesDesc">
-                    Pequeña laguna y experiencia de caminata rural. Colectivos desde <a href="https://maps.app.goo.gl/dhxDVsWRBC7ysK4w8" target="_blank" class="text-blue-600 underline font-bold" data-i18n="strawberriesLink">este punto</a> (aprox. S/ 10). Fresas frescas a <strong>S/ 3 - S/ 4 el kilo</strong>.
+                  <p class="text-slate-600">
+                    <span data-i18n="strawberriesDesc">Pequeña laguna y experiencia de caminata rural. Colectivos desde</span> 
+                    <a href="https://maps.app.goo.gl/dhxDVsWRBC7ysK4w8" target="_blank" class="inline-block mt-1 text-blue-600 underline font-extrabold bg-blue-50 px-2 py-0.5 rounded border border-blue-200" data-i18n="strawberriesLink">📍 este punto</a> (aprox. S/ 10). Fresas frescas a <strong>S/ 3 - S/ 4 el kilo</strong>.
                   </p>
                 </div>
                 <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-2 shadow-xs">
@@ -557,10 +598,9 @@
                   </p>
                 </div>
               </div>
-
             </div>
 
-            <!-- Directorio de Lugares Clave -->
+            <!-- 3. DIRECTORIO DE LUGARES CLAVE -->
             <div class="space-y-4 pt-4 border-t border-slate-200">
               <h4 class="font-extrabold text-sm text-slate-900" data-i18n="directoryTitle">📍 Directorio de Lugares Clave en Caraz</h4>
               
@@ -764,17 +804,16 @@
     const translations = {
       es: {
         whatsappFloatText: "¡Reserva o consúltanos!",
-        navLocationSub: "Caraz · Perú[cite: 1]",
+        navLocationSub: "Caraz · Perú",
         navCodeText: "Código de Huésped",
         topAccessTitle: "Área Exclusiva de Huéspedes",
         topAccessDesc: "Ingresa el código brindado por el alojamiento acá y descubre tarifas detalladas, Wi-Fi, tours y normas.",
         topPassPlaceholder: "Ingresa tu código aquí...",
         topUnlockBtn: "Desbloquear",
         heroTitleStart: "Tu descanso cómodo, seguro y completo en",
-        heroSubtitle: "Disfruta de habitaciones acogedoras, agua caliente 24/7 y la mejor ubicación para tus aventuras en la Cordillera Blanca[cite: 1].",
+        heroSubtitle: "Disfruta de habitaciones acogedoras, agua caliente 24/7 y la mejor ubicación para tus aventuras en la Cordillera Blanca.",
         btnOpenCalc: "🗓️ ¡Reserva Ahora / Cotiza en Línea!",
         btnWhatsappDir: "Contacto Directo WhatsApp",
-        lblBadgePay: "Aceptamos Tarjetas & Efectivo",
         calcPanelTitle: "Calculadora y Cotización en Línea",
         btnCloseCalc: "✕ Cerrar",
         lblRoomType: "Tipo de Habitación",
@@ -789,6 +828,15 @@
         lblTotalEst: "Cotización Estimada Total",
         btnConfirmRes: "Confirmar y Reservar por WhatsApp",
         badgeBooking: "Fabuloso · Excelente Ubicación",
+        publicAttractionsTitle: "Maravillas Naturales que Debes Visitar",
+        publicAttractionsDesc: "Hostal Kactus es tu punto de partida ideal para conocer los paisajes más imponentes de la Cordillera Blanca y los Conchucos.",
+        pubParonTitle: "La Laguna Turquesa Más Grande",
+        pubParonDesc: "Impresionante espejo de agua rodeado por imponentes picos nevados como el Artesonraju.",
+        pubL69Title: "Trekking de Alta Montaña",
+        pubL69Desc: "Una aventura inolvidable bajo los nevados Huascarán y Chacraraju con aguas de intenso color celeste.",
+        pubCanonTitle: "Ruta de Túneles y Acantilados",
+        pubCanonDesc: "Un impresionante desfiladero donde convergen la Cordillera Negra y Blanca con decenas de túneles en la roca.",
+        pubViewGuide: "Ver detalles y precios en guía",
         titleRooms: "Nuestras Habitaciones",
         roomsBadge: "Garantía Mejor Precio Directo",
         room1Tag: "ECONÓMICA & CONFORT",
@@ -826,11 +874,13 @@
         sKitchen: "Cocina Compartida",
         sBreakfast: "Desayunos",
         titleGuideHeading: "Guía Turística de Caraz & Área Reservada",
-        gPubDesc: "Bienvenido a nossa guía oficial[cite: 1]. Explora los atractivos imperdibles de la Cordillera Blanca desde Hostal Kactus[cite: 1].",
+        gPubDesc: "Bienvenido a nuestra guía oficial. Explora los atractivos imperdibles de la Cordillera Blanca desde Hostal Kactus.",
         privSectionTitle: "🔐 Sección Reservada de Huéspedes (Wi-Fi, Normas, Comodidades y Tours)",
         gPrivDesc: "Ingresa la contraseña proporcionada en recepción para desbloquear toda la información detallada:",
         passPlaceholder: "Contraseña de huésped",
         btnUnlockText: "Desbloquear Sección",
+        wifiStickySub: "Conexión de Alta Velocidad (Fija)",
+        wifiPassLabel: "Contraseña:",
         secAmenitiesTitle: "Comodidades, Horarios y Normas del Hostal",
         ruleTimeTitle: "Horarios de Ingreso / Salida",
         checkInLabel: "Check-in:",
@@ -843,11 +893,7 @@
         ruleLaundryTitle: "Servicio de Lavandería",
         ruleLaundryText: "Lavado a agua fría y secado al sol natural. Costo: <strong>S/ 4.00 por kilo</strong> según peso.",
         kitchenTitle: "Cocina Compartida, Nevera y Horno Pizzero",
-        kitchenDesc: "• <strong>Cocina en 3er Nivel:</strong> Básica pero funcional. Tienes <strong>aceite, condimentos, sal, etc., de manera gratuita</strong>. Solo haz tus compras en el minimarket local y cocina sin problemas.<br>• <strong>Nevera y Microondas (2do Piso):</strong> Puedes guardar queso, yogur o alimentos en el espacio reservado al final de la nevera (generally libre para clientes).<br>• <strong>Horno Pizzero:</strong> Incluido sin costo para que hornees tus pizzas o pollos.",
-        wifiCardTitle: "Conexión Wi-Fi de Alta Velocidad",
-        wifiNetLabel: "Red (SSID):",
-        wifiNetVal: "Segundo Piso",
-        wifiPassLabel: "Contraseña:",
+        kitchenDesc: "• <strong>Cocina en 3er Nivel:</strong> Básica pero funcional. Tienes <strong>aceite, condimentos, sal, etc., de manera gratuita</strong>. Solo haz tus compras en el minimarket local y cocina sin problemas.<br>• <strong>Nevera y Microondas (2do Piso):</strong> Puedes guardar queso, yogur o alimentos en el espacio reservado al final de la nevera (generalmente libre para clientes).<br>• <strong>Horno Pizzero:</strong> Incluido sin costo para que hornees tus pizzas o pollos.",
         breakfastMenuTitle: "Carta de Desayunos Hostal Kactus",
         bf1Title: "Desayuno Mochilero",
         bf1Desc: "2 panes con huevo y jamonada + café",
@@ -869,7 +915,7 @@
         paronTourSelf: "Opción Por Tu Cuenta:",
         paronS1: "Costo habitual de transporte: S/ 40 a S/ 50 por persona.",
         paronS2: "Debes tomar los colectivos desde",
-        paronS2Link: "este punto de salida",
+        paronS2Link: "📍 este punto de salida",
         paronS3: "Entrada obligatoria de S/ 5.00 al guardabosques.",
         tourL69Title: "2. Laguna 69 (Full Day de Alta Montaña)",
         badgeL69: "EXIGENTE",
@@ -882,7 +928,7 @@
         l69S2: "Pago de ticket de ingreso al parque: S/ 30.00.",
         strawberriesTitle: "Ruta de las Fresas (Pampacocha)",
         strawberriesDesc: "Pequeña laguna y experiencia de caminata rural. Colectivos desde",
-        strawberriesLink: "este punto",
+        strawberriesLink: "📍 este punto",
         viewpointTitle: "Mirador Cerro San Juan (Caraz)",
         viewpointDesc: "Caminata ligera justo en Caraz. Demora <strong>1 hora de subida y 1 de bajada</strong>. Vista panorámica impresionante de todo el valle de Caraz. ¡Ideal para aclimatación!",
         directoryTitle: "📍 Directorio de Lugares Clave en Caraz",
@@ -910,7 +956,6 @@
         heroSubtitle: "Enjoy cozy rooms, 24/7 hot water, and the best location for your adventures in the Cordillera Blanca.",
         btnOpenCalc: "🗓️ Book Now / Quote Online",
         btnWhatsappDir: "Direct WhatsApp Contact",
-        lblBadgePay: "We accept Cards & Cash",
         calcPanelTitle: "Online Calculator & Quote",
         btnCloseCalc: "✕ Close",
         lblRoomType: "Room Type",
@@ -925,6 +970,15 @@
         lblTotalEst: "Estimated Total Quote",
         btnConfirmRes: "Confirm & Book via WhatsApp",
         badgeBooking: "Fabulous · Excellent Location",
+        publicAttractionsTitle: "Natural Wonders You Must Visit",
+        publicAttractionsDesc: "Hostal Kactus is your ideal starting point to discover the most breathtaking landscapes of the Cordillera Blanca.",
+        pubParonTitle: "The Largest Turquoise Lagoon",
+        pubParonDesc: "Stunning mirror of water surrounded by majestic snowy peaks like Artesonraju.",
+        pubL69Title: "High Mountain Trekking",
+        pubL69Desc: "An unforgettable adventure beneath Huascarán and Chacraraju with intense turquoise waters.",
+        pubCanonTitle: "Canyon of Cliffs & Tunnels",
+        pubCanonDesc: "An impressive gorge where the Black and White Cordillera converge with dozens of rock tunnels.",
+        pubViewGuide: "View details & prices in guide",
         titleRooms: "Our Rooms",
         roomsBadge: "Best Direct Price Guarantee",
         room1Tag: "ECONOMY & COMFORT",
@@ -967,6 +1021,8 @@
         gPrivDesc: "Enter the password provided at reception to unlock detailed information:",
         passPlaceholder: "Guest password",
         btnUnlockText: "Unlock Section",
+        wifiStickySub: "High-Speed Connection (Fixed)",
+        wifiPassLabel: "Password:",
         secAmenitiesTitle: "Hostal Amenities, Hours & Rules",
         ruleTimeTitle: "Check-in / Check-out Hours",
         checkInLabel: "Check-in:",
@@ -979,11 +1035,7 @@
         ruleLaundryTitle: "Laundry Service",
         ruleLaundryText: "Cold water wash and natural sun drying. Cost: <strong>S/ 4.00 per kilo</strong> by weight.",
         kitchenTitle: "Shared Kitchen, Fridge & Pizza Oven",
-        kitchenDesc: "• <strong>3rd Floor Kitchen:</strong> Basic but functional. You have <strong>oil, condiments, salt, etc., completely free</strong>. Just do your shopping at the local minimarket and cook with ease.<br>• <strong>Fridge & Microwave (2nd Floor):</strong> You can store cheese, yogurt, or food in the reserved space at the bottom of the fridge (generally free for guests).<br>• <strong>Pizza Oven:</strong> Included at no extra cost to bake your pizzas or chicken.",
-        wifiCardTitle: "High-Speed Wi-Fi Connection",
-        wifiNetLabel: "Network (SSID):",
-        wifiNetVal: "Segundo Piso",
-        wifiPassLabel: "Password:",
+        kitchenDesc: "• <strong>3rd Floor Kitchen:</strong> Basic but functional. You have <strong>oil, condiments, salt, etc., completely free</strong>. Just do your shopping at the local minimarket and cook with ease.<br>• <strong>Fridge & Microwave (2nd Floor):</strong> You can store cheese, yogurt, or food in the reserved space at the bottom of the fridge.<br>• <strong>Pizza Oven:</strong> Included at no extra cost to bake your pizzas or chicken.",
         breakfastMenuTitle: "Hostal Kactus Breakfast Menu",
         bf1Title: "Backpacker Breakfast",
         bf1Desc: "2 breads with egg and ham + coffee",
@@ -1005,7 +1057,7 @@
         paronTourSelf: "Self-Guided Option:",
         paronS1: "Standard transport cost: S/ 40 to S/ 50 per person.",
         paronS2: "Take local shared taxis from",
-        paronS2Link: "this departure point",
+        paronS2Link: "📍 this departure point",
         paronS3: "Mandatory park entrance fee of S/ 5.00.",
         tourL69Title: "2. Laguna 69 (High Mountain Full Day)",
         badgeL69: "DEMANDING",
@@ -1018,7 +1070,7 @@
         l69S2: "National Park entrance ticket: S/ 30.00.",
         strawberriesTitle: "Strawberry Route (Pampacocha)",
         strawberriesDesc: "Small lagoon and rural walking experience. Shared taxis from",
-        strawberriesLink: "this point",
+        strawberriesLink: "📍 this point",
         viewpointTitle: "Cerro San Juan Viewpoint (Caraz)",
         viewpointDesc: "Light hike right in Caraz. Takes <strong>1 hour up and 1 hour down</strong>. Stunning panoramic view of the entire Caraz valley. Ideal for acclimatization!",
         directoryTitle: "📍 Key Places Directory in Caraz",
@@ -1046,7 +1098,6 @@
         heroSubtitle: "Profitez de chambres chaleureuses, d'eau chaude 24h/24 et du meilleur emplacement pour vos aventures dans la Cordillera Blanca.",
         btnOpenCalc: "🗓️ Réserver / Devis en Ligne",
         btnWhatsappDir: "Contact Direct WhatsApp",
-        lblBadgePay: "Cartes & Espèces acceptés",
         calcPanelTitle: "Calculateur & Devis en Ligne",
         btnCloseCalc: "✕ Fermer",
         lblRoomType: "Type de Chambre",
@@ -1061,6 +1112,15 @@
         lblTotalEst: "Devis Estimé Total",
         btnConfirmRes: "Confirmer & Réserver via WhatsApp",
         badgeBooking: "Fabulose · Emplacement exceptionnel",
+        publicAttractionsTitle: "Merveilles Naturelles à Visiter",
+        publicAttractionsDesc: "Hostal Kactus est votre point de départ idéal pour explorer les paysages époustouflants de la Cordillera Blanca.",
+        pubParonTitle: "Le Plus Grand Lagon Turquoise",
+        pubParonDesc: "Miroir d'eau époustouflant entouré de pics enneigés majestueux comme l'Artesonraju.",
+        pubL69Title: "Trekking de Haute Montagne",
+        pubL69Desc: "Une aventure inoubliable sous le Huascarán et le Chacraraju aux eaux turquoise intenses.",
+        pubCanonTitle: "Route des Falaises et Tunnels",
+        pubCanonDesc: "Une gorge impressionnante où se rejoignent les cordillères Noire et Blanche avec de nombreux tunnels.",
+        pubViewGuide: "Voir détails & prix dans le guide",
         titleRooms: "Nos Chambres",
         roomsBadge: "Garantie Meilleur Prix Direct",
         room1Tag: "ÉCONOMIQUE & CONFORT",
@@ -1103,6 +1163,8 @@
         gPrivDesc: "Entrez le mot de passe fourni à la réception pour débloquer toutes les informations détaillées :",
         passPlaceholder: "Mot de passe client",
         btnUnlockText: "Débloquer la section",
+        wifiStickySub: "Connexion Haute Vitesse (Fixe)",
+        wifiPassLabel: "Mot de passe :",
         secAmenitiesTitle: "Commodités, Horaires et Règles de l'Hostal",
         ruleTimeTitle: "Horaires d'Arrivée / Départ",
         checkInLabel: "Arrivée :",
@@ -1115,11 +1177,7 @@
         ruleLaundryTitle: "Service de Blanchisserie",
         ruleLaundryText: "Lavage à l'eau froide et séchage naturel au soleil. Coût : <strong>S/ 4.00 par kilo</strong>.",
         kitchenTitle: "Cuisine Partagée, Frigo et Four à Pizza",
-        kitchenDesc: "• <strong>Cuisine au 3e Niveau :</strong> Basique mais fonctionnelle. Vous avez <strong>huile, condiments, sel, etc., gratuitement</strong>. Faites vos courses au supérette local et cuisinez sans souci.<br>• <strong>Frigo & Micro-ondes (2e Étage) :</strong> Vous pouvez conserver fromage, yaourt ou aliments dans l'espace réservé au bas du frigo (généralement libre).<br>• <strong>Four à Pizza :</strong> Inclus sans frais pour cuire vos pizzas ou poulets.",
-        wifiCardTitle: "Connexion Wi-Fi Haute Vitesse",
-        wifiNetLabel: "Réseau (SSID) :",
-        wifiNetVal: "Segundo Piso",
-        wifiPassLabel: "Mot de passe :",
+        kitchenDesc: "• <strong>Cuisine au 3e Niveau :</strong> Basique mais fonctionnelle. Vous avez <strong>huile, condiments, sel, etc., gratuitement</strong>. Faites vos courses au supérette local et cuisinez sans souci.<br>• <strong>Frigo & Micro-ondes (2e Étage) :</strong> Vous pouvez conserver fromage, yaourt ou aliments dans l'espace réservé au bas du frigo.<br>• <strong>Four à Pizza :</strong> Inclus sans frais pour cuire vos pizzas ou poulets.",
         breakfastMenuTitle: "Carte des Petits Déjeuners Hostal Kactus",
         bf1Title: "Petit Déjeuner Randonneur",
         bf1Desc: "2 pains avec œuf et jambon + café",
@@ -1141,7 +1199,7 @@
         paronTourSelf: "Option Par Vos Propres Moyens :",
         paronS1: "Coût habituel du transport : S/ 40 à S/ 50 par personne.",
         paronS2: "Prenez les taxis collectifs depuis",
-        paronS2Link: "ce point de départ",
+        paronS2Link: "📍 ce point de départ",
         paronS3: "Entrée obligatoire de S/ 5.00 au garde forestier.",
         tourL69Title: "2. Laguna 69 (Full Day de Haute Montagne)",
         badgeL69: "EXIGEANT",
@@ -1154,7 +1212,7 @@
         l69S2: "Paiement du billet d'entrée au parc : S/ 30.00.",
         strawberriesTitle: "Route des Fraises (Pampacocha)",
         strawberriesDesc: "Petite lagune et expérience de marche rurale. Collectifs depuis",
-        strawberriesLink: "ce point",
+        strawberriesLink: "📍 ce point",
         viewpointTitle: "Mirador Cerro San Juan (Caraz)",
         viewpointDesc: "Randonnée facile à Caraz. Comptez <strong>1 heure de montée et 1 heure de descente</strong>. Vue panoramique impressionnante sur toute la vallée de Caraz. Idéal pour l'acclimatation !",
         directoryTitle: "📍 Répertoire des Lieux Clés à Caraz",
@@ -1182,7 +1240,6 @@
         heroSubtitle: "Užijte si útulné pokoje, teplou vodu 24/7 a nejlepší polohu pro vaše dobrodružství v Cordillera Blanca.",
         btnOpenCalc: "🗓️ Rezervovat / Online kalkulace",
         btnWhatsappDir: "Přímý kontakt WhatsApp",
-        lblBadgePay: "Přijímáme karty i hotovost",
         calcPanelTitle: "Online kalkulačka a cenová nabídka",
         btnCloseCalc: "✕ Zavřít",
         lblRoomType: "Typ pokoje",
@@ -1197,6 +1254,15 @@
         lblTotalEst: "Odhadovaná celková cena",
         btnConfirmRes: "Potvrdit a rezervovat přes WhatsApp",
         badgeBooking: "Skvělé · Výborná poloha",
+        publicAttractionsTitle: "Přírodní divy, které musíte navštívit",
+        publicAttractionsDesc: "Hostal Kactus je vaším ideálním výchozím bodem pro poznávání nejkrásnějších scenérií v Cordillera Blanca.",
+        pubParonTitle: "Největší tyrkysová laguna",
+        pubParonDesc: "Úchvatné zrcadlo vody obklopené majestátními zasněženými štíty jako Artesonraju.",
+        pubL69Title: "Vysokohorský treking",
+        pubL69Desc: "Nezapomenutelné dobrodružství pod masivem Huascarán a Chacraraju s průzračnou vodou.",
+        pubCanonTitle: "Kaňon tunelů a útesů",
+        pubCanonDesc: "Působivá roklina, kde se setkávají Černá a Bílá kordillera s desítkami skalních tunelů.",
+        pubViewGuide: "Zobrazit podrobnosti a ceny v průvodci",
         titleRooms: "Naše pokoje",
         roomsBadge: "Garance nejlepší přímé ceny",
         room1Tag: "EKONOMICKÝ A POHODLNÝ",
@@ -1239,6 +1305,8 @@
         gPrivDesc: "Zadejte heslo poskytnuté na recepci pro odemknutí všech podrobných informací:",
         passPlaceholder: "Heslo hosta",
         btnUnlockText: "Odemknout sekci",
+        wifiStickySub: "Vysokorychlostní připojení (Pevné)",
+        wifiPassLabel: "Heslo:",
         secAmenitiesTitle: "Vybavení, hodiny a pravidla hostelu",
         ruleTimeTitle: "Časy příjezdu / odjezdu",
         checkInLabel: "Check-in:",
@@ -1252,10 +1320,6 @@
         ruleLaundryText: "Praní ve studené vodě a sušení na slunci. Cena: <strong>S/ 4.00 za kilo</strong>.",
         kitchenTitle: "Sdílená kuchyň, lednice a pizza pec",
         kitchenDesc: "• <strong>Kuchyň v 3. patře:</strong> Základní, ale funkční. Máte k dispozici <strong>olej, koření, sůl atd. zcela zdarma</strong>. Nakupte v místním minimarketu a vařte bez starostí.<br>• <strong>Lednice a mikrovlnka (2. patro):</strong> Sýr, jogurt nebo jídlo můžete uložit ve vyhrazeném prostoru dole v lednici.<br>• <strong>Pizza pec:</strong> V ceně pro pečení vašich pizz nebo kuřat.",
-        wifiCardTitle: "Vysokorychlostní Wi-Fi připojení",
-        wifiNetLabel: "Síť (SSID):",
-        wifiNetVal: "Segundo Piso",
-        wifiPassLabel: "Heslo:",
         breakfastMenuTitle: "Snídaňové menu Hostal Kactus",
         bf1Title: "Baťůžkářská snídaně",
         bf1Desc: "2 chleby s vejcem a šunkou + káva",
@@ -1277,7 +1341,7 @@
         paronTourSelf: "Na vlastní pěst:",
         paronS1: "Běžné náklady na dopravu: S/ 40 až S/ 50 na osobu.",
         paronS2: "Nastupte na místní sdílená auta z",
-        paronS2Link: "tohoto odjezdového místa",
+        paronS2Link: "📍 tohoto odjezdového místa",
         paronS3: "Povinný poplatek strážci parku ve výši S/ 5.00.",
         tourL69Title: "2. Laguna 69 (Celodenní horský trek)",
         badgeL69: "NÁROČNÉ",
@@ -1290,7 +1354,7 @@
         l69S2: "Vstupenka do národního parku: S/ 30.00.",
         strawberriesTitle: "Jahodová cesta (Pampacocha)",
         strawberriesDesc: "Malá laguna a zážitek z venkovské procházky. Sdílená auta z",
-        strawberriesLink: "tohoto místa",
+        strawberriesLink: "📍 tohoto místa",
         viewpointTitle: "Vyhlídka Cerro San Juan (Caraz)",
         viewpointDesc: "Lehká túra přímo v Carazu. Trvá <strong>1 hodinu nahoru a 1 hodinu dolů</strong>. Úchvatný panoramatický výhled na celé údolí Caraz. Ideální pro aklimatizaci!",
         directoryTitle: "📍 Klíčová místa v Carazu",
@@ -1318,7 +1382,6 @@
         heroSubtitle: "享受温馨的客房、24小时热水，以及探索白色山脉（Cordillera Blanca）的最佳地理位置。",
         btnOpenCalc: "🗓️ 立即预订 / 在线报价",
         btnWhatsappDir: "WhatsApp 直接联系",
-        lblBadgePay: "支持刷卡与现金支付",
         calcPanelTitle: "在线报价与计算器",
         btnCloseCalc: "✕ 关闭",
         lblRoomType: "房型选择",
@@ -1333,6 +1396,15 @@
         lblTotalEst: "预计总费用",
         btnConfirmRes: "通过 WhatsApp 确认并预订",
         badgeBooking: "超赞 · 绝佳地理位置",
+        publicAttractionsTitle: "不容错过的自然奇观",
+        publicAttractionsDesc: "Hostal Kactus 是您探索科迪勒拉布兰卡（Cordillera Blanca）壮丽风景的理想起点。",
+        pubParonTitle: "最大的绿松石湖",
+        pubParonDesc: "四周环绕着阿尔特松拉hu峰等宏伟雪山的绝美高山湖泊。",
+        pubL69Title: "高山徒步探险",
+        pubL69Desc: "在瓦斯卡兰和查克拉拉胡雪山脚下体验令人难忘的高山冰川湖之旅。",
+        pubCanonTitle: "岩洞与峡谷风光",
+        pubCanonDesc: "黑山脉与白山脉交汇处的壮丽峡谷，拥有数十个穿山隧道。",
+        pubViewGuide: "在指南中查看详情与价格",
         titleRooms: "客房展示",
         roomsBadge: "直订最优价保证",
         room1Tag: "经济实惠与舒适",
@@ -1375,6 +1447,8 @@
         gPrivDesc: "请输入前台提供的密码解锁所有详细信息：",
         passPlaceholder: "住客密码",
         btnUnlockText: "解锁专区",
+        wifiStickySub: "高速无线网络 (固定常驻)",
+        wifiPassLabel: "密码:",
         secAmenitiesTitle: "酒店设施、时间与入住守则",
         ruleTimeTitle: "入住与退房时间",
         checkInLabel: "入住时间：",
@@ -1388,10 +1462,6 @@
         ruleLaundryText: "冷水洗涤自然阳光晾干。费用：<strong>按重量每公斤 S/ 4.00 索尔</strong>。",
         kitchenTitle: "共享厨房、冰箱与披萨烤炉",
         kitchenDesc: "• <strong>3楼厨房：</strong> 基础且实用。提供<strong>免费的油、调味料、盐等</strong>。只需在当地小超市采购，即可轻松烹饪。<br>• <strong>冰箱与微波炉（2楼）：</strong> 您可以将奶酪、酸奶或食物存放在冰箱底部的预留区域。<br>• <strong>披萨烤炉：</strong> 免费使用，供您烤制披萨或鸡肉。",
-        wifiCardTitle: "高速无线网络",
-        wifiNetLabel: "WiFi名称 (SSID):",
-        wifiNetVal: "Segundo Piso",
-        wifiPassLabel: "密码:",
         breakfastMenuTitle: "Hostal Kactus 早餐菜单",
         bf1Title: "背包客早餐",
         bf1Desc: "2个面包配鸡蛋和火腿 + 咖啡",
@@ -1404,7 +1474,7 @@
         toursGuideTitle: "详细路线、费用与方案指南",
         tourParonTitle: "1. 帕龙湖 (距卡拉斯 32 公里)",
         badgeParon: "不容错过",
-        tourParonDesc: "科迪勒拉布兰카（Cordillera Blanca）最大的绿松石湖，可欣赏阿尔特松拉hu峰的壮丽景色。",
+        tourParonDesc: "科迪勒拉布兰卡（Cordillera Blanca）最大的绿松石湖，可欣赏阿尔特松拉hu峰的壮丽景色。",
         paronTourHostal: "推荐旅舍跟团游选项：",
         paronT1: "车辆直接从旅舍接送。",
         paronT2Price: "价格（4人成行）：",
@@ -1413,7 +1483,7 @@
         paronTourSelf: "自助出行选项：",
         paronS1: "常规交通费用：每人 S/ 40 至 S/ 50 索尔。",
         paronS2: "您必须从",
-        paronS2Link: "这个上车点",
+        paronS2Link: "📍 这个上车点",
         paronS3: "须向护林员缴纳 5.00 索尔的门票。",
         tourL69Title: "2. 69号湖 (高山全天徒步)",
         badgeL69: "极具挑战",
@@ -1426,7 +1496,7 @@
         l69S2: "国家公园门票：30.00 索尔。",
         strawberriesTitle: "草莓之路 (Pampacocha)",
         strawberriesDesc: "小型湖泊与乡村徒步体验。集体车从",
-        strawberriesLink: "这个地点",
+        strawberriesLink: "📍 这个地点",
         viewpointTitle: "圣胡安山观景台 (卡拉斯)",
         viewpointDesc: "卡拉斯当地的轻松徒步。<strong>上山1小时，下山1小时</strong>。可俯瞰整个卡拉斯山谷的壮丽全景。是适应高原反应的绝佳去处！",
         directoryTitle: "📍 卡拉斯核心地点指南",
@@ -1454,7 +1524,6 @@
         heroSubtitle: "Desfrute de quartos aconchegantes, água quente 24/7 e a melhor localização para suas aventuras na Cordillera Blanca.",
         btnOpenCalc: "🗓️ Reserve Agora / Orçamento Online",
         btnWhatsappDir: "Contato Direto WhatsApp",
-        lblBadgePay: "Aceitamos Cartões & Dinheiro",
         calcPanelTitle: "Calculadora e Orçamento Online",
         btnCloseCalc: "✕ Fechar",
         lblRoomType: "Tipo de Quarto",
@@ -1469,6 +1538,15 @@
         lblTotalEst: "Orçamento Estimado Total",
         btnConfirmRes: "Confirmar e Reservar pelo WhatsApp",
         badgeBooking: "Fabuloso · Excelente Localização",
+        publicAttractionsTitle: "Maravilhas Naturais que Você Deve Visitar",
+        publicAttractionsDesc: "Hostal Kactus é o seu ponto de partida ideal para conhecer as paisagens mais impressionantes da Cordillera Blanca.",
+        pubParonTitle: "A Maior Lagoa Turquesa",
+        pubParonDesc: "Espelho d'água deslumbrante cercado por imponentes picos nevados como o Artesonraju.",
+        pubL69Title: "Trekking de Alta Montanha",
+        pubL69Desc: "Uma aventura inesquecível sob os nevados Huascarán e Chacraraju com águas azul-turquesa.",
+        pubCanonTitle: "Rota de Túneles e Penhascos",
+        pubCanonDesc: "Um desfiladeiro impressionante onde convergem a Cordilheira Negra e Branca com dezenas de túneles.",
+        pubViewGuide: "Ver detalhes e preços no guia",
         titleRooms: "Nossos Quartos",
         roomsBadge: "Garantia Melhor Preço Direto",
         room1Tag: "ECONÔMICA & CONFORTO",
@@ -1511,6 +1589,8 @@
         gPrivDesc: "Insira a senha fornecida na recepção para desbloquear todas as informações detalhadas:",
         passPlaceholder: "Senha de hóspede",
         btnUnlockText: "Desbloquear Seção",
+        wifiStickySub: "Conexão de Alta Velocidade (Fixa)",
+        wifiPassLabel: "Senha:",
         secAmenitiesTitle: "Comodidades, Horários e Regras do Hostal",
         ruleTimeTitle: "Horários de Check-in / Check-out",
         checkInLabel: "Check-in:",
@@ -1523,11 +1603,7 @@
         ruleLaundryTitle: "Serviço de Lavanderia",
         ruleLaundryText: "Lavagem a água fria e secagem natural ao sol. Custo: <strong>S/ 4.00 por quilo</strong>.",
         kitchenTitle: "Cozinha Compartilhada, Geladeira e Forno de Pizza",
-        kitchenDesc: "• <strong>Cozinha no 3º Andar:</strong> Básica, mas funcional. Você tem <strong>óleo, temperos, sal, etc., de forma gratuita</strong>. Basta fazer suas compras no minimercado local e cozinhar sem preocupações.<br>• <strong>Geladeira e Micro-ondas (2º Andar):</strong> Você pode guardar queijo, iogurte ou alimentos no espaço reservado ao final da geladeira (geralmente livre para clientes).<br>• <strong>Forno de Pizza:</strong> Incluído sem custo para você assar suas pizzas ou frangos.",
-        wifiCardTitle: "Conexão Wi-Fi de Alta Velocidade",
-        wifiNetLabel: "Rede (SSID):",
-        wifiNetVal: "Segundo Piso",
-        wifiPassLabel: "Senha:",
+        kitchenDesc: "• <strong>Cozinha no 3º Andar:</strong> Básica, mas funcional. Você tem <strong>óleo, temperos, sal, etc., de forma gratuita</strong>. Basta fazer suas compras no minimercado local e cozinhar sem preocupações.<br>• <strong>Geladeira e Micro-ondas (2º Andar):</strong> Você pode guardar queijo, iogurte ou alimentos no espaço reservado ao final da geladeira.<br>• <strong>Forno de Pizza:</strong> Incluído sem custo para você assar suas pizzas ou frangos.",
         breakfastMenuTitle: "Cardápio de Cafés da Manhã Hostal Kactus",
         bf1Title: "Café Mochileiro",
         bf1Desc: "2 pães com ovo e presunto + café",
@@ -1549,7 +1625,7 @@
         paronTourSelf: "Opção Por Conta Própria:",
         paronS1: "Custo habitual de transporte: S/ 40 a S/ 50 por pessoa.",
         paronS2: "Você deve pegar os lotações a partir de",
-        paronS2Link: "este ponto de partida",
+        paronS2Link: "📍 este ponto de partida",
         paronS3: "Entrada obrigatória de S/ 5.00 ao guarda-parque.",
         tourL69Title: "2. Laguna 69 (Full Day de Alta Montanha)",
         badgeL69: "EXIGENTE",
@@ -1562,7 +1638,7 @@
         l69S2: "Pagamento do ticket de entrada ao parque: S/ 30.00.",
         strawberriesTitle: "Rota dos Morangos (Pampacocha)",
         strawberriesDesc: "Pequena lagoa e experiência de caminhada rural. Lotações a partir de",
-        strawberriesLink: "este ponto",
+        strawberriesLink: "📍 este ponto",
         viewpointTitle: "Mirante Cerro San Juan (Caraz)",
         viewpointDesc: "Caminhada leve bem em Caraz. Demora <strong>1 hora de subida e 1 de descida</strong>. Vista panorâmica impressionante de todo o vale de Caraz. Ideal para aclimatação!",
         directoryTitle: "📍 Diretório de Locais Chave em Caraz",
@@ -1590,7 +1666,6 @@
         heroSubtitle: "Genießen Sie gemütliche Zimmer, warmes Wasser 24/7 und die beste Lage für Ihre Abenteuer in der Cordillera Blanca.",
         btnOpenCalc: "🗓️ Jetzt Buchen / Online Berechnen",
         btnWhatsappDir: "Direkter WhatsApp-Kontakt",
-        lblBadgePay: "Wir akzeptieren Karten & Bargeld",
         calcPanelTitle: "Online-Rechner & Angebot",
         btnCloseCalc: "✕ Schließen",
         lblRoomType: "Zimmertyp",
@@ -1605,6 +1680,15 @@
         lblTotalEst: "Geschätztes Gesamtangebot",
         btnConfirmRes: "Bestätigen & Buchen über WhatsApp",
         badgeBooking: "Fabelhaft · Hervorragende Lage",
+        publicAttractionsTitle: "Naturwunder, die Sie besuchen müssen",
+        publicAttractionsDesc: "Hostal Kactus ist Ihr idealer Ausgangspunkt, um die atemberaubendsten Landschaften der Cordillera Blanca zu entdecken.",
+        pubParonTitle: "Die größte türkisfarbene Lagune",
+        pubParonDesc: "Atemberaubender Spiegel aus Wasser, umgeben von majestätischen schneebedeckten Gipfeln wie dem Artesonraju.",
+        pubL69Title: "Hochgebirgs-Trekking",
+        pubL69Desc: "Ein unvergessliches Abenteuer unter den Gletschern von Huascarán und Chacraraju mit intensiven blauen Wässern.",
+        pubCanonTitle: "Tunnel- und Schluchtenroute",
+        pubCanonDesc: "Eine beeindruckende Schlucht, in der sich die Schwarze und Weiße Kordillere mit Dutzenden Finstertunneln treffen.",
+        pubViewGuide: "Details & Preise im Guide ansehen",
         titleRooms: "Unsere Zimmer",
         roomsBadge: "Bestpreis-Garantie bei Direktbuchung",
         room1Tag: "WIRTSCHAFTLICH & KOMFORT",
@@ -1647,6 +1731,8 @@
         gPrivDesc: "Geben Sie das an der Rezeption erhaltene Passwort ein, um alle detaillierten Informationen freizuschalten:",
         passPlaceholder: "Gästebewährung / Passwort",
         btnUnlockText: "Bereich freischalten",
+        wifiStickySub: "Highspeed-Verbindung (Fest)",
+        wifiPassLabel: "Passwort:",
         secAmenitiesTitle: "Hostal-Ausstattung, Zeiten & Regeln",
         ruleTimeTitle: "Check-in / Check-out Zeiten",
         checkInLabel: "Check-in:",
@@ -1660,10 +1746,6 @@
         ruleLaundryText: "Kaltwäsche und natürliche Sonnenschonung. Kosten: <strong>S/ 4.00 pro Kilo</strong>.",
         kitchenTitle: "Gemeinschaftsküche, Kühlschrank & Pizzaofen",
         kitchenDesc: "• <strong>Küche im 3. Stock:</strong> Einfach, aber funktional. Sie haben <strong>Öl, Gewürze, Salz usw. völlig kostenlos</strong>. Machen Sie einfach Ihre Einkäufe im Minimarkt und kochen Sie stressfrei.<br>• <strong>Kühlschrank & Mikrowelle (2. Stock):</strong> Sie können Käse, Joghurt oder Lebensmittel im reservierten Bereich unten im Kühlschrank aufbewahren.<br>• <strong>Pizzaofen:</strong> Kostenlos inklusive, um Ihre Pizzen oder Hähnchen zu backen.",
-        wifiCardTitle: "Highspeed-WLAN-Verbindung",
-        wifiNetLabel: "Netzwerk (SSID):",
-        wifiNetVal: "Segundo Piso",
-        wifiPassLabel: "Passwort:",
         breakfastMenuTitle: "Hostal Kactus Frühstückskarte",
         bf1Title: "Backpacker-Frühstück",
         bf1Desc: "2 Brote mit Ei und Schinken + Kaffee",
@@ -1685,7 +1767,7 @@
         paronTourSelf: "Auf eigene Faust:",
         paronS1: "Übliche Transportkosten: S/ 40 bis S/ 50 pro Person.",
         paronS2: "Nehmen Sie die Sammeltaxis ab",
-        paronS2Link: "diesem Abfahrtsort",
+        paronS2Link: "📍 diesem Abfahrtsort",
         paronS3: "Obligatorischer Parkeintritt von S/ 5.00.",
         tourL69Title: "2. Laguna 69 (Hochgebirgs-Trekking)",
         badgeL69: "FORDERND",
@@ -1698,7 +1780,7 @@
         l69S2: "Eintrittskarte für den Nationalpark: S/ 30.00.",
         strawberriesTitle: "Erdbeer-Route (Pampacocha)",
         strawberriesDesc: "Kleine Lagune und ländliches Wandererlebnis. Sammeltaxis ab",
-        strawberriesLink: "diesem Punkt",
+        strawberriesLink: "📍 diesem Punkt",
         viewpointTitle: "Aussichtspunkt Cerro San Juan (Caraz)",
         viewpointDesc: "Leichte Wanderung direkt in Caraz. Dauert <strong>1 Stunde im Aufstieg und 1 Stunde im Abstieg</strong>. Beeindruckender Panoramablick auf das gesamte Caraz-Tal. Ideal für die Akklimatisierung!",
         directoryTitle: "📍 Wichtige Orte in Caraz",
@@ -1726,7 +1808,6 @@
         heroSubtitle: "Наслаждайтесь уютными номерами, горячей водой 24/7 и лучшим расположением для приключений в Кордильера-Бланка.",
         btnOpenCalc: "🗓️ Забронировать / Расчет онлайн",
         btnWhatsappDir: "Прямая связь WhatsApp",
-        lblBadgePay: "Принимаем карты и наличные",
         calcPanelTitle: "Онлайн-калькулятор и расчет стоимости",
         btnCloseCalc: "✕ Закрыть",
         lblRoomType: "Тип номера",
@@ -1741,6 +1822,15 @@
         lblTotalEst: "Примерная общая стоимость",
         btnConfirmRes: "Подтвердить и забронировать в WhatsApp",
         badgeBooking: "Великолепно · Отличное расположение",
+        publicAttractionsTitle: "Природные чудеса, которые стоит посетить",
+        publicAttractionsDesc: "Hostal Kactus — идеальная отправная точка для знакомства с впечатляющими пейзажами Кордильера-Бланка.",
+        pubParonTitle: "Крупнейшее бирюзовое озеро",
+        pubParonDesc: "Потрясающее зеркало воды, окруженное величественными снежными пиками, такими как Артесонраху.",
+        pubL69Title: "Треккинг в высоких горах",
+        pubL69Desc: "Незабываемое приключение под ледниками Уаскаран и Чакрараху с бирюзовой водой.",
+        pubCanonTitle: "Маршрут тоннелей и каньона",
+        pubCanonDesc: "Впечатляющее ущелье, где сходятся Черная и Белая Кордильеры с десятками горных тоннелей.",
+        pubViewGuide: "Посмотреть детали и цены в гиде",
         titleRooms: "Наши номера",
         roomsBadge: "Гарантия лучшей прямой цены",
         room1Tag: "ЭКОНОМ И КОМФОРТ",
@@ -1783,6 +1873,8 @@
         gPrivDesc: "Введите пароль, полученный на ресепшене, чтобы открыть всю подробную информацию:",
         passPlaceholder: "Пароль гостя",
         btnUnlockText: "Разблокировать раздел",
+        wifiStickySub: "Высокоскоростное подключение (Фиксированное)",
+        wifiPassLabel: "Пароль:",
         secAmenitiesTitle: "Удобства, часы работы и правила хостела",
         ruleTimeTitle: "Время заезда и выезда",
         checkInLabel: "Заезд:",
@@ -1796,10 +1888,6 @@
         ruleLaundryText: "Стирка в холодной воде и сушка на солнце. Стоимость: <strong>S/ 4.00 за кг</strong>.",
         kitchenTitle: "Общая кухня, холодильник и печь для пиццы",
         kitchenDesc: "• <strong>Кухня на 3-м этаже:</strong> Простая, но функциональная. У вас есть <strong>масло, специи, соль и т. д. совершенно бесплатно</strong>. Купите продукты в местном магазинчике и готовьте без проблем.<br>• <strong>Холодильник и микроволновка (2-й этаж):</strong> Вы можете хранить сыр, йогурт или еду в специальной зоне внизу холодильника.<br>• <strong>Печь для пиццы:</strong> Бесплатно для выпечки пиццы или курицы.",
-        wifiCardTitle: "Высокоскоростной Wi-Fi",
-        wifiNetLabel: "Сеть (SSID):",
-        wifiNetVal: "Segundo Piso",
-        wifiPassLabel: "Пароль:",
         breakfastMenuTitle: "Меню завтраков Hostal Kactus",
         bf1Title: "Завтрак бэкпекера",
         bf1Desc: "2 хлеба с яйцом и ветчиной + кофе",
@@ -1821,7 +1909,7 @@
         paronTourSelf: "Самостоятельно:",
         paronS1: "Обычная стоимость проезда: от S/ 40 до S/ 50 с человека.",
         paronS2: "Садитесь на маршрутки от",
-        paronS2Link: "этой точки отправления",
+        paronS2Link: "📍 этой точки отправления",
         paronS3: "Обязательный сбор егерю: S/ 5.00.",
         tourL69Title: "2. Лагуна 69 (Треккинг на целый день)",
         badgeL69: "СЛОЖНЫЙ",
@@ -1834,7 +1922,7 @@
         l69S2: "Билет в национальный парк: S/ 30.00.",
         strawberriesTitle: "Клубничный маршрут (Пампакоча)",
         strawberriesDesc: "Небольшая лагуна и сельская прогулка. Маршрутки от",
-        strawberriesLink: "этого места",
+        strawberriesLink: "📍 этого места",
         viewpointTitle: "Смотровая площадка Серро-Сан-Хуан (Карас)",
         viewpointDesc: "Легкий поход прямо в Карасе. Занимает <strong>1 час на подъём и 1 час на спуск</strong>. Впечатляющий панорамный вид на всю долину Караса. Идеально для акклиматизации!",
         directoryTitle: "📍 Ключевые места в Карасе",
