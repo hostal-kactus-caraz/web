@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --primary: #059669;
-  --primary-dark: #047857;
+  --primary: #10b981;
+  --primary-glow: rgba(16, 185, 129, 0.4);
   --accent: #fbbf24;
   --bg-slate: #f8fafc;
 }
@@ -14,54 +14,48 @@ body {
   overflow-x: hidden;
 }
 
-/* --- ANIMACIONES PROFESIONALES --- */
+/* --- EFECTOS VISUALES LLAMATIVOS Y MODERNOS --- */
 
-/* 1. Animación de aparición suave desde abajo (Fade In Up) */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in {
-  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-/* 2. Efecto de brillo dinámico en tarjetas al pasar el cursor */
+/* 1. Tarjetas con efecto Neón Glow flotante */
 .kactus-card {
   background: #ffffff;
-  border: 1px solid #e2e8f0;
+  border: 1px solid rgba(16, 185, 129, 0.2);
   border-radius: 1.5rem;
   position: relative;
   overflow: hidden;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.kactus-card::after {
+.kactus-card::before {
   content: '';
   position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.08), transparent 70%);
+  inset: -2px;
+  background: linear-gradient(45deg, #10b981, #3b82f6, #fbbf24, #10b981);
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(8px);
   opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
+  transition: opacity 0.4s ease-in-out;
+  animation: glowingBorder 8s linear infinite;
+}
+
+@keyframes glowingBorder {
+  0% { background-position: 0 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0 50%; }
 }
 
 .kactus-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 25px 50px -12px rgba(16, 185, 129, 0.25);
+  border-color: #10b981;
 }
 
-.kactus-card:hover::after {
-  opacity: 1;
+.kactus-card:hover::before {
+  opacity: 0.6;
 }
 
-/* 3. Animación de sacudida (Shake) para contraseñas incorrectas */
+/* 2. Animación de sacudida para errores de clave */
 @keyframes shake {
   0%, 100% { transform: translateX(0); }
   20%, 60% { transform: translateX(-6px); }
@@ -71,17 +65,17 @@ body {
   animation: shake 0.4s ease-in-out;
 }
 
-/* Carruseles fluidos */
+/* 3. Carruseles fluidos */
 .carousel-slide {
   display: flex;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Scroll personalizado */
+/* 4. Scroll personalizado llamativo */
 .lang-container::-webkit-scrollbar {
-  height: 3px;
+  height: 4px;
 }
 .lang-container::-webkit-scrollbar-thumb {
-  background: #10b981;
+  background: linear-gradient(90deg, #10b981, #3b82f6);
   border-radius: 4px;
 }
