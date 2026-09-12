@@ -41,11 +41,19 @@
       border: 1px solid #e2e8f0;
       border-radius: 1.25rem;
     }
+    /* Scrollbar sutil para idiomas en móvil */
+    .lang-container::-webkit-scrollbar {
+      height: 3px;
+    }
+    .lang-container::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
   </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-500 selection:text-white pb-24">
 
-  <!-- BARRA SUPERIOR CON BANDERAS DE IDIOMA SIEMPRE VISIBLES -->
+  <!-- BARRA SUPERIOR CON TODOS LOS IDIOMAS VISIBLES EN MÓVIL Y ESCRITORIO -->
   <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs py-2.5 px-3 sm:px-10">
     <div class="max-w-7xl mx-auto flex justify-between items-center gap-2">
       
@@ -61,30 +69,30 @@
         </div>
       </a>
 
-      <!-- SELECTOR DE IDIOMAS DIRECTO -->
-      <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200 overflow-x-auto">
-        <button class="lang-btn active px-1.5 sm:px-2 py-1 rounded-lg text-[10px] sm:text-[11px] font-bold transition-all flex items-center gap-1 bg-emerald-600 text-white shadow-xs shrink-0" id="btn-es" onclick="changeLanguage('es')">
+      <!-- SELECTOR DE IDIOMAS (CON SCROLL HORIZONTAL PARA MÓVIL) -->
+      <div class="lang-container flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200 overflow-x-auto flex-nowrap max-w-[200px] sm:max-w-none">
+        <button class="lang-btn active px-1.5 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 bg-emerald-600 text-white shadow-xs shrink-0" id="btn-es" onclick="changeLanguage('es')">
           <img src="https://flagcdn.com/w40/es.png" alt="ES" class="w-3.5 h-2.5 object-cover rounded-xs"><span>ES</span>
         </button>
-        <button class="lang-btn px-1.5 sm:px-2 py-1 rounded-lg text-[10px] sm:text-[11px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-en" onclick="changeLanguage('en')">
+        <button class="lang-btn px-1.5 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-en" onclick="changeLanguage('en')">
           <img src="https://flagcdn.com/w40/gb.png" alt="EN" class="w-3.5 h-2.5 object-cover rounded-xs"><span>EN</span>
         </button>
-        <button class="lang-btn px-1.5 sm:px-2 py-1 rounded-lg text-[10px] sm:text-[11px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-pt" onclick="changeLanguage('pt')">
+        <button class="lang-btn px-1.5 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-pt" onclick="changeLanguage('pt')">
           <img src="https://flagcdn.com/w40/br.png" alt="PT" class="w-3.5 h-2.5 object-cover rounded-xs"><span>PT</span>
         </button>
-        <button class="lang-btn px-1.5 sm:px-2 py-1 rounded-lg text-[10px] sm:text-[11px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0 hidden sm:flex" id="btn-fr" onclick="changeLanguage('fr')">
+        <button class="lang-btn px-1.5 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-fr" onclick="changeLanguage('fr')">
           <img src="https://flagcdn.com/w40/fr.png" alt="FR" class="w-3.5 h-2.5 object-cover rounded-xs"><span>FR</span>
         </button>
-        <button class="lang-btn px-1.5 sm:px-2 py-1 rounded-lg text-[10px] sm:text-[11px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0 hidden md:flex" id="btn-de" onclick="changeLanguage('de')">
+        <button class="lang-btn px-1.5 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-de" onclick="changeLanguage('de')">
           <img src="https://flagcdn.com/w40/de.png" alt="DE" class="w-3.5 h-2.5 object-cover rounded-xs"><span>DE</span>
         </button>
-        <button class="lang-btn px-1.5 sm:px-2 py-1 rounded-lg text-[10px] sm:text-[11px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0 hidden lg:flex" id="btn-ru" onclick="changeLanguage('ru')">
+        <button class="lang-btn px-1.5 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-ru" onclick="changeLanguage('ru')">
           <img src="https://flagcdn.com/w40/ru.png" alt="RU" class="w-3.5 h-2.5 object-cover rounded-xs"><span>RU</span>
         </button>
-        <button class="lang-btn px-1.5 sm:px-2 py-1 rounded-lg text-[10px] sm:text-[11px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0 hidden lg:flex" id="btn-cs" onclick="changeLanguage('cs')">
+        <button class="lang-btn px-1.5 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-cs" onclick="changeLanguage('cs')">
           <img src="https://flagcdn.com/w40/cz.png" alt="CS" class="w-3.5 h-2.5 object-cover rounded-xs"><span>CS</span>
         </button>
-        <button class="lang-btn px-1.5 sm:px-2 py-1 rounded-lg text-[10px] sm:text-[11px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-zh" onclick="changeLanguage('zh')">
+        <button class="lang-btn px-1.5 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-zh" onclick="changeLanguage('zh')">
           <img src="https://flagcdn.com/w40/cn.png" alt="ZH" class="w-3.5 h-2.5 object-cover rounded-xs"><span>中文</span>
         </button>
       </div>
@@ -333,21 +341,21 @@
       </div>
     </section>
 
-    <!-- SECCIÓN 4: GUÍA Y ÁREA PRIVADA (CON BANNER DE MARKETING POTENTE) -->
+    <!-- SECCIÓN 4: GUÍA Y ÁREA PRIVADA -->
     <section class="mb-12" id="title-guide">
       <div class="kactus-card p-6 sm:p-8 shadow-card space-y-6">
         <div>
           <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-2" id="title-guide-heading">Guía Turística de Caraz & Área Reservada</h2>
           <p id="g-pub-desc" class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-            📍 <strong>Laguna Parón:</strong> La laguna turquesa más grande de la Cordillera Blanca, ubicada a 32 km de Caraz.<br><br>
-            📍 <strong>Laguna Llanganuco:</strong> Espejos de agua color turquesa rodeados de bosques de quenuales.<br><br>
-            📍 <strong>Laguna 69:</strong> Uno de los trekkings de alta montaña más famosos del mundo en el Parque Nacional Huascarán.
+            📍 <strong>Laguna Parón:</strong> La laguna turquesa más grande de la Cordillera Blanca, ubicada a 32 km de Caraz. Espléndidas vistas del Artesonraju y paseos en bote.<br><br>
+            📍 <strong>Laguna Llanganuco (Chinancocha y Orconcocha):</strong> Espejos de agua color turquesa intenso en el Parque Nacional Huascarán, rodeados de imponentes bosques de quenuales.<br><br>
+            📍 <strong>Laguna 69:</strong> Uno de los trekkings de alta montaña más famosos del mundo, desafiante y fascinante bajo los nevados Huascarán y Chacraraju.
           </p>
         </div>
 
         <hr class="border-slate-200">
 
-        <!-- BANNER DE MARKETING ALTAMENTE LLAMATIVO -->
+        <!-- BANNER DE MARKETING POTENTE -->
         <div class="bg-gradient-to-r from-emerald-800 via-emerald-700 to-teal-800 text-white p-6 sm:p-8 rounded-2xl shadow-lg border border-emerald-600 space-y-4 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6">
           <div class="space-y-2">
             <div class="inline-flex items-center gap-1.5 bg-amber-400 text-slate-950 font-black text-[10px] px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
@@ -378,7 +386,7 @@
 
           <div id="secretGuide" class="hidden mt-6 bg-slate-50 p-6 rounded-2xl border-2 border-dashed border-emerald-500 space-y-8">
             
-            <!-- TARJETA WI-FI EXCLUSIVA CON LA IMAGEN SOLICITADA -->
+            <!-- TARJETA WI-FI CON WIFI.PNG -->
             <div class="bg-white p-5 rounded-xl border border-slate-200 space-y-4">
               <h4 class="font-extrabold text-sm text-slate-900 flex items-center gap-2" id="wifi-card-title">
                 <i class="fas fa-wifi text-emerald-600"></i> Conexión Wi-Fi de Alta Velocidad
@@ -413,7 +421,7 @@
               </div>
             </div>
 
-            <!-- DIRECTORIO FIJO CON IMÁGENES REALES -->
+            <!-- DIRECTORIO FIJO -->
             <div class="space-y-4">
               <h4 class="font-extrabold text-sm text-slate-900" id="directory-title">📍 Directorio de Lugares Clave en Caraz</h4>
               
@@ -573,7 +581,7 @@
       if (e.key === 'Enter') unlockGuide();
     }
 
-    // Traducciones inteligentes nativas optimizadas para hospitalidad y turismo
+    // Diccionario completo de traducciones fluidas y sincronizadas
     const translations = {
       es: {
         navLocationSub: "Caraz · Perú",
@@ -625,7 +633,7 @@
         sKitchen: "Cocina Compartida",
         sBreakfast: "Desayunos",
         titleGuideHeading: "Guía Turística de Caraz & Área Reservada",
-        gPubDesc: "📍 <strong>Laguna Parón:</strong> La laguna turquesa más grande de la Cordillera Blanca, ubicada a 32 km de Caraz.<br><br>📍 <strong>Laguna Llanganuco:</strong> Espejos de agua color turquesa rodeados de bosques de quenuales.<br><br>📍 <strong>Laguna 69:</strong> Uno de los trekkings de alta montaña más famosos del mundo en el Parque Nacional Huascarán.",
+        gPubDesc: "📍 <strong>Laguna Parón:</strong> La laguna turquesa más grande de la Cordillera Blanca, ubicada a 32 km de Caraz. Espléndidas vistas del Artesonraju y paseos en bote.<br><br>📍 <strong>Laguna Llanganuco (Chinancocha y Orconcocha):</strong> Espejos de agua color turquesa intenso en el Parque Nacional Huascarán, rodeados de imponentes bosques de quenuales.<br><br>📍 <strong>Laguna 69:</strong> Uno de los trekkings de alta montaña más famosos del mundo, desafiante y fascinante bajo los nevados Huascarán y Chacraraju.",
         marketingTag: "Área Exclusiva para Huéspedes",
         marketingTitle: "¿Ya te encuentras hospedado o tienes tu código de acceso?",
         marketingDesc: "Ingresa el código brindado por el alojamiento acá y descubre <strong>tarifas especiales de temporada, clave de Wi-Fi de alta velocidad, recomendaciones de los mejores restaurantes locales, normas de casa, horarios de check-in/check-out y números de emergencia</strong> para una estadía perfecta en Caraz.",
@@ -692,7 +700,7 @@
         sKitchen: "Shared Kitchen",
         sBreakfast: "Breakfasts",
         titleGuideHeading: "Caraz Tourist Guide & Reserved Area",
-        gPubDesc: "📍 <strong>Parón Lake:</strong> The largest turquoise lake in the Cordillera Blanca, located 32 km from Caraz.<br><br>📍 <strong>Llanganuco Lakes:</strong> Turquoise water mirrors surrounded by quenual forests.<br><br>📍 <strong>Laguna 69:</strong> One of the world's most famous high-mountain treks in Huascarán National Park.",
+        gPubDesc: "📍 <strong>Parón Lake:</strong> The largest turquoise lake in the Cordillera Blanca, located 32 km from Caraz with stunning views of Artesonraju and boat rides.<br><br>📍 <strong>Llanganuco Lakes (Chinancocha & Orconcocha):</strong> Intense turquoise water mirrors inside Huascarán National Park, surrounded by majestic quenual forests.<br><br>📍 <strong>Laguna 69:</strong> One of the world's most famous, challenging, and breathtaking high-mountain treks under Huascarán and Chacraraju snow peaks.",
         marketingTag: "Exclusive Guest Area",
         marketingTitle: "Already staying with us or have your access code?",
         marketingDesc: "Enter the code provided by the accommodation here to discover <strong>special seasonal rates, high-speed Wi-Fi passwords, recommendations for the best local restaurants, house rules, check-in/check-out times, and emergency numbers</strong> for a perfect stay in Caraz.",
@@ -759,7 +767,7 @@
         sKitchen: "Cozinha Compartilhada",
         sBreakfast: "Café da Manhã",
         titleGuideHeading: "Guia Turístico de Caraz & Área Reservada",
-        gPubDesc: "📍 <strong>Lagoa Parón:</strong> A maior lagoa turquesa da Cordillera Blanca, localizada a 32 km de Caraz.<br><br>📍 <strong>Lagoas de Llanganuco:</strong> Espelhos d'água cor de turquesa cercados por florestas de quenuales.<br><br>📍 <strong>Lagoa 69:</strong> Um dos trekkings de alta montanha mais famosos do mundo no Parque Nacional Huascarán.",
+        gPubDesc: "📍 <strong>Lagoa Parón:</strong> A maior lagoa turquesa da Cordillera Blanca, localizada a 32 km de Caraz, com vistas incríveis do Artesonraju.<br><br>📍 <strong>Lagoas de Llanganuco:</strong> Espelhos d'água cor de turquesa intenso no Parque Nacional Huascarán, cercados por majestosas florestas de quenuales.<br><br>📍 <strong>Lagoa 69:</strong> Um dos trekkings de alta montanha mais famosos e fascinantes do mundo sob os nevados Huascarán e Chacraraju.",
         marketingTag: "Área Exclusiva para Hóspedes",
         marketingTitle: "Já está hospedado ou tem seu código de acesso?",
         marketingDesc: "Insira o código fornecido pela hospedagem aqui e descubra <strong>tarifas especiais de temporada, senha de Wi-Fi de alta velocidade, recomendações dos melhores restaurantes locais, regras da casa, horários de check-in/check-out e números de emergência</strong> para uma estadia perfeita em Caraz.",
@@ -826,7 +834,7 @@
         sKitchen: "Cuisine Partagée",
         sBreakfast: "Petits Déjeuners",
         titleGuideHeading: "Guide Touristique de Caraz & Zone Réservée",
-        gPubDesc: "📍 <strong>Lagune Parón :</strong> La plus grande lagune turquoise de la Cordillera Blanca, située à 32 km de Caraz.<br><br>📍 <strong>Lagunes de Llanganuco :</strong> Miroirs d'eau turquoise entourés de forêts de quenuales.<br><br>📍 <strong>Laguna 69 :</strong> L'un des treks de haute montagne les plus célèbres au monde dans le Parc National Huascarán.",
+        gPubDesc: "📍 <strong>Lagune Parón :</strong> La plus grande lagune turquoise de la Cordillera Blanca, à 32 km de Caraz, avec des vues imprenables sur l'Artesonraju.<br><br>📍 <strong>Lagunes de Llanganuco :</strong> Miroirs d'eau turquoise intense dans le Parc National Huascarán, entourés de forêts de quenuales.<br><br>📍 <strong>Laguna 69 :</strong> L'un des treks de haute montagne les plus célèbres et fascinants au monde sous les sommets enneigés du Huascarán.",
         marketingTag: "Espace Exclusif pour Clients",
         marketingTitle: "Vous séjournez déjà chez nous ou avez votre code d'accès ?",
         marketingDesc: "Entrez le code fourni par l'hébergement ici et découvrez <strong>les tarifs spéciaux de saison, le mot de passe Wi-Fi haut débit, les recommandations des meilleurs restaurants locaux, le règlement intérieur, les horaires de check-in/check-out et les numéros d'urgence</strong> pour un séjour parfait à Caraz.",
@@ -893,7 +901,7 @@
         sKitchen: "Gemeinschaftsküche",
         sBreakfast: "Frühstück",
         titleGuideHeading: "Caraz Reiseführer & Reservierter Bereich",
-        gPubDesc: "📍 <strong>Parón-See:</strong> Der größte türkisfarbene See der Cordillera Blanca, 32 km von Caraz entfernt.<br><br>📍 <strong>Llanganuco-Seen:</strong> Türkisfarbene Wasserspiegel umgeben von Quenual-Wäldern.<br><br>📍 <strong>Laguna 69:</strong> Eines der berühmtesten Hochgebirgstouren der Welt im Huascarán-Nationalpark.",
+        gPubDesc: "📍 <strong>Parón-See:</strong> Der größte türkisfarbene See der Cordillera Blanca, 32 km von Caraz entfernt, mit herrlichem Blick auf den Artesonraju.<br><br>📍 <strong>Llanganuco-Seen:</strong> Intensive türkisfarbene Wasserspiegel im Huascarán-Nationalpark, umgeben von Quenual-Wäldern.<br><br>📍 <strong>Laguna 69:</strong> Eines der weltberühmtesten und faszinierendsten Hochgebirgstouren unter den schneebedeckten Gipfeln.",
         marketingTag: "Exklusiver Gäste-Bereich",
         marketingTitle: "Bereits bei uns zu Gast oder haben Sie Ihren Zugangscode?",
         marketingDesc: "Geben Sie hier den von der Unterkunft bereitgestellten Code ein und entdecken Sie <strong>Saison-Sonderpreise, Highspeed-Wi-Fi-Passwörter, Empfehlungen für die besten Restaurants vor Ort, Hausregeln, Check-in/Check-out-Zeiten sowie Notfallnummern</strong> für einen perfekten Aufenthalt in Caraz.",
@@ -960,7 +968,7 @@
         sKitchen: "Общая кухня",
         sBreakfast: "Завтраки",
         titleGuideHeading: "Туристический гид по Карасу и закрытая зона",
-        gPubDesc: "📍 <strong>Лагуна Парон:</strong> Самое большое бирюзовое озеро в Кордильере-Бланка, в 32 км от Караса.<br><br>📍 <strong>Озера Льянгуануко:</strong> Бирюзовые зеркала воды, окруженные лесами кенуаль.<br><br>📍 <strong>Лагуна 69:</strong> Один из самых известных высокогорных треккингов в мире в Национальном парке Уаскаран.",
+        gPubDesc: "📍 <strong>Лагуна Парон:</strong> Крупнейшее бирюзовое озеро в Кордильере-Бланка, в 32 км от Караса, с потрясающими видами на Артесонраху.<br><br>📍 <strong>Озера Льянгуануко:</strong> Насыщенные бирюзовые зеркала воды в Национальном парке Уаскаран, окруженные лесами кенуаль.<br><br>📍 <strong>Лагуна 69:</strong> Один из самых известных и захватывающих высокогорных треккингов в мире подснежными пиками.",
         marketingTag: "Эксклюзивная зона для гостей",
         marketingTitle: "Уже проживаете у нас или есть код доступа?",
         marketingDesc: "Введите предоставленный отелем код здесь и откройте <strong>специальные сезонные тарифы, пароль от высокоскоростного Wi-Fi, рекомендации лучших местных ресторанов, правила проживания, время заезда/выезда и номера экстренных служб</strong> для идеального отдыха в Карасе.",
@@ -1027,7 +1035,7 @@
         sKitchen: "Sdílená kuchyně",
         sBreakfast: "Snídaně",
         titleGuideHeading: "Turistický průvodce Caraz a rezervovaná zóna",
-        gPubDesc: "📍 <strong>Laguna Parón:</strong> Největší tyrkysová laguna v Cordillera Blanca, 32 km od Carazu.<br><br>📍 <strong>Laguny Llanganuco:</strong> Tyrkysová jezera obklopená lesy quenual.<br><br>📍 <strong>Laguna 69:</strong> Jeden z nejznámějších vysokohorských treků na světě v Národním parku Huascarán.",
+        gPubDesc: "📍 <strong>Laguna Parón:</strong> Největší tyrkysová laguna v Cordillera Blanca, 32 km od Carazu, s nádherným výhledem na Artesonraju.<br><br>📍 <strong>Laguny Llanganuco:</strong> Intenzivní tyrkysová jezera v Národním parku Huascarán obklopená lesy quenual.<br><br>📍 <strong>Laguna 69:</strong> Jeden z nejznámějších a nejfascinantnějších vysokohorských treků na světě pod zasněženými vrcholky.",
         marketingTag: "Exkluzivní zóna pro hosty",
         marketingTitle: "Už jste u nás ubytováni nebo máte přístupový kód?",
         marketingDesc: "Zadejte kód poskytnutý ubytováním zde a objevte <strong>speciální sezónní ceny, heslo k rychlé Wi-Fi, doporučení na nejlepší místní restaurace, domovní řád, časy check-in/check-out a nouzová čísla</strong> pro dokonalý pobyt v Carazu.",
@@ -1094,7 +1102,7 @@
         sKitchen: "共享厨房",
         sBreakfast: "精选早餐",
         titleGuideHeading: "卡拉斯旅游指南与住客专区",
-        gPubDesc: "📍 <strong>帕龙湖 (Laguna Parón)：</strong> 白山山脉中最大的绿松石色冰川湖，距离卡拉斯 32 公里。<br><br>📍 <strong>兰加努科湖 (Llanganuco)：</strong> 被克纽亚森林环绕的翡翠色高山双子湖。<br><br>📍 <strong>69号湖 (Laguna 69)：</strong> 瓦斯卡兰国家公园内世界闻名的高山徒步路线之一。",
+        gPubDesc: "📍 <strong>帕龙湖 (Laguna Parón)：</strong> 白山山脉中最大的绿松石色冰川湖，距离卡拉斯 32 公里，可欣赏Artisónraju雪山壮丽景色并搭乘游船。<br><br>📍 <strong>兰加努科湖 (Llanganuco)：</strong> 位于瓦斯卡兰国家公园内的高山翠绿双子湖，周围环绕着茂密的克纽亚原始森林。<br><br>📍 <strong>69号湖 (Laguna 69)：</strong> 位于瓦斯卡兰国家公园内、雄伟雪山之下的世界级高山徒步路线，挑战与美景并存。",
         marketingTag: "住客专属特权区",
         marketingTitle: "您已经入住或持有专属访问密码吗？",
         marketingDesc: "在此输入由前台提供的专属验证码，解锁<strong>当季入住特惠、高速 Wi-Fi 密码、当地人气餐厅推荐、入住须知、退房时间及紧急求助电话</strong>，开启您在卡拉斯的完美旅程。",
@@ -1120,7 +1128,6 @@
       
       const t = translations[lang] || translations['es'];
       
-      // Sincronización completa e inteligente de cada texto e interfaz
       if(document.getElementById('nav-location-sub')) document.getElementById('nav-location-sub').innerText = t.navLocationSub;
       if(document.getElementById('nav-code-text')) document.getElementById('nav-code-text').innerText = t.navCodeText;
       if(document.getElementById('hero-title')) document.getElementById('hero-title').innerHTML = t.heroTitle;
