@@ -701,8 +701,33 @@
     <img id="modalImg" src="" alt="Imagen Ampliada">
   </div>
 
-  <!-- LÓGICA JAVASCRIPT, CALCULADORA Y DICCIONARIOS NATIVOS -->
+  <!-- LÓGICA JAVASCRIPT, CALCULADORA, DICCIONARIOS Y NOTIFICACIÓN A TELEGRAM -->
   <script>
+    // NOTIFICACIÓN AUTOMÁTICA A TELEGRAM POR CADA VISITA ÚNICA
+    document.addEventListener("DOMContentLoaded", function() {
+      const visitorKey = "kactus_visited_session";
+      if (!sessionStorage.getItem(visitorKey)) {
+        sessionStorage.setItem(visitorKey, "true");
+
+        const botToken = "8868918432:AAFUcTrY3FvY-dJwrvwnH8-IZ2kP_TIVpG0"; 
+        const chatId = "2071321925"; 
+        
+        const horaLocal = new Date().toLocaleTimeString();
+        const idiomaNavegador = navigator.language || navigator.userLanguage;
+        const dispositivo = /Mobi|Android/i.test(navigator.userAgent) ? "📱 Celular / Móvil" : "💻 Computadora / PC";
+
+        const mensaje = `🚨 *¡Nuevo visitante en Hostal Kactus!*\n\n` +
+                        `🕒 Hora: ${horaLocal}\n` +
+                        `🌐 Idioma: ${idiomaNavegador}\n` +
+                        `💻 Dispositivo: ${dispositivo}\n` +
+                        `📍 Página: Sitio web oficial (Caraz)`;
+
+        const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(mensaje)}&parse_mode=Markdown`;
+
+        fetch(url).catch(err => console.log("Error al notificar a Telegram:", err));
+      }
+    });
+
     function openModal(imgSrc) {
       document.getElementById('modalImg').src = imgSrc;
       document.getElementById('imageModal').style.display = 'flex';
@@ -1117,7 +1142,7 @@
         dir2Desc: "Historic heart, ideal for walks and artisan ice cream.",
         dir3Title: "Caja Huancayo & Exchange",
         dir3Desc: "Ideal for financial operations and currency exchange downtown.",
-        btnLocation: "View Location",
+        dirLocation: "View Location",
         stkFrom: "From",
         stkCalc: "Quote",
         stkBtn: "Book Now"
@@ -1940,7 +1965,7 @@
         bf4Title: "Завтрак Royal",
         bf4Desc: "Lomo saltado (сочное мясо с луком и томатами, без риса), 3 хлеба, сок и кофе",
         toursGuideTitle: "Подробный гид по маршрутам, ценам и опциям",
-        tourParonTitle: "1. Лагуна Парон (32 км от Караса)",
+        tourParonTitle: "1. Лагуна Парон (32 km from Caraz)",
         badgeParon: "ОБЯЗАТЕЛЬНО К ПОСЕЩЕНИЮ",
         tourParonDesc: "Крупнейшее бирюзовое озеро Кордильера-Бланка с потрясающим видом на Артесонраху.",
         paronTourHostal: "Рекомендуемый вариант тура от хостела:",
