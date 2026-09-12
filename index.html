@@ -277,7 +277,7 @@
       </div>
     </section>
 
-    <!-- SECCIÓN 2: ALQUILER DE EQUIPOS -->
+    <!-- SECCIÓN 2: ALQUILER DE EQUIPOS (Con respaldo para sazo de dormir y cocina kit) -->
     <section>
       <div class="flex items-center justify-between mb-6">
         <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight" id="title-camping">Alquiler de Equipos de Camping y Trekking</h2>
@@ -295,6 +295,8 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+          
+          <!-- Carpa -->
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3">
             <div class="h-36 rounded-xl overflow-hidden bg-slate-200">
               <img src="carpa3_estaciones.png" alt="Carpa" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='Carpa 3 estaciones.png';">
@@ -305,6 +307,7 @@
             </div>
           </div>
 
+          <!-- Saco de Dormir (Con respaldo exacto al nombre con espacios) -->
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3">
             <div class="h-36 rounded-xl overflow-hidden bg-slate-200">
               <img src="saco_de_dormir.png" alt="Saco" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='saco de dormir .png';">
@@ -315,6 +318,7 @@
             </div>
           </div>
 
+          <!-- Bastones -->
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3">
             <div class="h-36 rounded-xl overflow-hidden bg-slate-200">
               <img src="bastones_treken.png" alt="Bastones" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='Bastones treken.png';">
@@ -325,6 +329,7 @@
             </div>
           </div>
 
+          <!-- Binoculares -->
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3">
             <div class="h-36 rounded-xl overflow-hidden bg-slate-200">
               <img src="vinoculares.png" alt="Binoculares" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='vinoculares.jpg';">
@@ -335,6 +340,7 @@
             </div>
           </div>
 
+          <!-- Cocina de Campaña (Con respaldo a Cocina _kit.png) -->
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3">
             <div class="h-36 rounded-xl overflow-hidden bg-slate-200">
               <img src="cocina_y_ollas.png" alt="Cocina" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='Cocina _kit.png';">
@@ -345,6 +351,7 @@
             </div>
           </div>
 
+          <!-- Gas -->
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3">
             <div class="h-36 rounded-xl overflow-hidden bg-slate-200">
               <img src="gas.png" alt="Gas" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='gas.jpg';">
@@ -354,6 +361,7 @@
               <p class="text-[11px] text-slate-500 mt-0.5" id="gear-6-desc">Balón sellado para montaña.</p>
             </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -409,14 +417,14 @@
               </div>
             </div>
 
-            <!-- DIRECTORIO INTERACTIVO 3D CON ENLACES DIRECTOS A GOOGLE MAPS -->
+            <!-- DIRECTORIO INTERACTIVO 3D (ALTURA AMPLIADA A h-60 PARA QUE EL BOTÓN MAPS SEA VISIBLE) -->
             <div class="space-y-4">
               <h4 class="font-extrabold text-sm text-slate-900" id="directory-title">📍 Directorio Interactivo de Caraz (Haz clic para girar la tarjeta)</h4>
               
               <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 
                 <!-- 1. Restaurante -->
-                <div class="perspective-card h-52 cursor-pointer" onclick="flipCard(this)">
+                <div class="perspective-card h-60 cursor-pointer" onclick="flipCard(this)">
                   <div class="card-inner relative w-full h-full text-center shadow-sm rounded-xl">
                     <div class="card-front absolute inset-0 bg-white border border-slate-200 rounded-xl p-4 flex flex-col items-center justify-center space-y-2">
                       <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-xl"><i class="fas fa-utensils"></i></div>
@@ -429,7 +437,7 @@
                         <h5 class="font-extrabold text-amber-300 text-xs mb-1">Restaurante Pacha Hunta</h5>
                         <p class="text-[11px] text-emerald-50">Muy cercano al hostal y altamente recomendable por su sazón tradicional.</p>
                       </div>
-                      <a href="https://maps.google.com/?q=Caraz+Peru" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-[10px] py-1.5 px-3 rounded-lg flex items-center justify-center gap-1.5 w-full shadow-sm">
+                      <a href="https://maps.google.com/?q=Caraz+Peru" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-[11px] py-2 px-3 rounded-lg flex items-center justify-center gap-1.5 w-full shadow-md">
                         <i class="fas fa-map-marked-alt"></i> Ver en Google Maps
                       </a>
                     </div>
@@ -437,7 +445,7 @@
                 </div>
 
                 <!-- 2. Plaza de Armas -->
-                <div class="perspective-card h-52 cursor-pointer" onclick="flipCard(this)">
+                <div class="perspective-card h-60 cursor-pointer" onclick="flipCard(this)">
                   <div class="card-inner relative w-full h-full text-center shadow-sm rounded-xl">
                     <div class="card-front absolute inset-0 bg-white border border-slate-200 rounded-xl p-4 flex flex-col items-center justify-center space-y-2">
                       <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-xl"><i class="fas fa-landmark"></i></div>
@@ -450,7 +458,7 @@
                         <h5 class="font-extrabold text-amber-300 text-xs mb-1">Plaza de Armas</h5>
                         <p class="text-[11px] text-emerald-50">El corazón de la ciudad. Ideal para pasear y disfrutar helados artesanales.</p>
                       </div>
-                      <a href="https://maps.google.com/?q=Plaza+de+Armas+de+Caraz" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-[10px] py-1.5 px-3 rounded-lg flex items-center justify-center gap-1.5 w-full shadow-sm">
+                      <a href="https://maps.google.com/?q=Plaza+de+Armas+de+Caraz" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-[11px] py-2 px-3 rounded-lg flex items-center justify-center gap-1.5 w-full shadow-md">
                         <i class="fas fa-map-marked-alt"></i> Ver en Google Maps
                       </a>
                     </div>
@@ -458,7 +466,7 @@
                 </div>
 
                 <!-- 3. Farmacias -->
-                <div class="perspective-card h-52 cursor-pointer" onclick="flipCard(this)">
+                <div class="perspective-card h-60 cursor-pointer" onclick="flipCard(this)">
                   <div class="card-inner relative w-full h-full text-center shadow-sm rounded-xl">
                     <div class="card-front absolute inset-0 bg-white border border-slate-200 rounded-xl p-4 flex flex-col items-center justify-center space-y-2">
                       <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xl"><i class="fas fa-pills"></i></div>
@@ -471,7 +479,7 @@
                         <h5 class="font-extrabold text-amber-300 text-xs mb-1">Farmacias Locales</h5>
                         <p class="text-[11px] text-emerald-50">Cadenas confiables como Inkafarma y MiFarma abiertas en horario comercial.</p>
                       </div>
-                      <a href="https://maps.google.com/?q=Inkafarma+Caraz" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-[10px] py-1.5 px-3 rounded-lg flex items-center justify-center gap-1.5 w-full shadow-sm">
+                      <a href="https://maps.google.com/?q=Inkafarma+Caraz" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-[11px] py-2 px-3 rounded-lg flex items-center justify-center gap-1.5 w-full shadow-md">
                         <i class="fas fa-map-marked-alt"></i> Ver en Google Maps
                       </a>
                     </div>
@@ -479,7 +487,7 @@
                 </div>
 
                 <!-- 4. Grifos -->
-                <div class="perspective-card h-52 cursor-pointer" onclick="flipCard(this)">
+                <div class="perspective-card h-60 cursor-pointer" onclick="flipCard(this)">
                   <div class="card-inner relative w-full h-full text-center shadow-sm rounded-xl">
                     <div class="card-front absolute inset-0 bg-white border border-slate-200 rounded-xl p-4 flex flex-col items-center justify-center space-y-2">
                       <div class="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-xl"><i class="fas fa-gas-pump"></i></div>
@@ -492,7 +500,7 @@
                         <h5 class="font-extrabold text-amber-300 text-xs mb-1">Grifo El Arco</h5>
                         <p class="text-[11px] text-emerald-50">Ubicado en la salida norte de Caraz. Abastecimiento seguro de combustible.</p>
                       </div>
-                      <a href="https://maps.google.com/?q=Grifo+El+Arco+Caraz" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-[10px] py-1.5 px-3 rounded-lg flex items-center justify-center gap-1.5 w-full shadow-sm">
+                      <a href="https://maps.google.com/?q=Grifo+El+Arco+Caraz" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-[11px] py-2 px-3 rounded-lg flex items-center justify-center gap-1.5 w-full shadow-md">
                         <i class="fas fa-map-marked-alt"></i> Ver en Google Maps
                       </a>
                     </div>
@@ -500,7 +508,7 @@
                 </div>
 
                 <!-- 5. Comisaría -->
-                <div class="perspective-card h-52 cursor-pointer" onclick="flipCard(this)">
+                <div class="perspective-card h-60 cursor-pointer" onclick="flipCard(this)">
                   <div class="card-inner relative w-full h-full text-center shadow-sm rounded-xl">
                     <div class="card-front absolute inset-0 bg-white border border-slate-200 rounded-xl p-4 flex flex-col items-center justify-center space-y-2">
                       <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-xl"><i class="fas fa-shield-alt"></i></div>
@@ -513,7 +521,7 @@
                         <h5 class="font-extrabold text-amber-300 text-xs mb-1">Comisaría de Caraz</h5>
                         <p class="text-[11px] text-emerald-50">Ubicación céntrica. Acude directo o avísanos en recepción para apoyo.</p>
                       </div>
-                      <a href="https://maps.google.com/?q=Comisaria+Caraz" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-[10px] py-1.5 px-3 rounded-lg flex items-center justify-center gap-1.5 w-full shadow-sm">
+                      <a href="https://maps.google.com/?q=Comisaria+Caraz" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-[11px] py-2 px-3 rounded-lg flex items-center justify-center gap-1.5 w-full shadow-md">
                         <i class="fas fa-map-marked-alt"></i> Ver en Google Maps
                       </a>
                     </div>
@@ -521,7 +529,7 @@
                 </div>
 
                 <!-- 6. Hospital -->
-                <div class="perspective-card h-52 cursor-pointer" onclick="flipCard(this)">
+                <div class="perspective-card h-60 cursor-pointer" onclick="flipCard(this)">
                   <div class="card-inner relative w-full h-full text-center shadow-sm rounded-xl">
                     <div class="card-front absolute inset-0 bg-white border border-slate-200 rounded-xl p-4 flex flex-col items-center justify-center space-y-2">
                       <div class="w-12 h-12 bg-rose-100 text-rose-600 rounded-full flex items-center justify-center text-xl"><i class="fas fa-hospital"></i></div>
@@ -532,9 +540,9 @@
                     <div class="card-back absolute inset-0 bg-emerald-800 text-white rounded-xl p-4 flex flex-col items-center justify-between text-center">
                       <div>
                         <h5 class="font-extrabold text-amber-300 text-xs mb-1">Hospital San Juan de Dios</h5>
-                        <p class="text-[11px] text-emerald-50">Av. Circunvalación Norte s/n. Atenciones de emergencia 24/7.</p>
+                        <p class="text-[11px] text-emerald-50">Atenciones de emergencia 24/7.</p>
                       </div>
-                      <a href="https://maps.google.com/?q=Hospital+de+Apoyo+San+Juan+de+Dios+Caraz" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-[10px] py-1.5 px-3 rounded-lg flex items-center justify-center gap-1.5 w-full shadow-sm">
+                      <a href="https://maps.google.com/?q=Hospital+de+Apoyo+San+Juan+de+Dios+Caraz" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-[11px] py-2 px-3 rounded-lg flex items-center justify-center gap-1.5 w-full shadow-md">
                         <i class="fas fa-map-marked-alt"></i> Ver en Google Maps
                       </a>
                     </div>
