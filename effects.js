@@ -1,3 +1,225 @@
+/* ==========================================================
+   HOSTAL KACTUS - MOTOR DE EFECTOS 3D Y TRADUCCIÓN (effects.js)
+   ========================================================== */
+
+let currentLang = 'es';
+
+document.addEventListener("DOMContentLoaded", function() {
+  // 1. Notificación de Visita en Telegram
+  const visitorKey = "kactus_visited_session";
+  if (!sessionStorage.getItem(visitorKey)) {
+    sessionStorage.setItem(visitorKey, "true");
+    const botToken = "8868918432:AAFUcTrY3FvY-dJwrvwnH8-IZ2kP_TIVpG0"; 
+    const chatId = "2071321925"; 
+    const horaLocal = new Date().toLocaleTimeString();
+    const idiomaNavegador = navigator.language || navigator.userLanguage;
+    const dispositivo = /Mobi|Android/i.test(navigator.userAgent) ? "📱 Celular / Móvil" : "💻 Computadora / PC";
+    const mensaje = `🚨 *¡Nuevo visitante en Hostal Kactus!*\n\n🕒 Hora: ${horaLocal}\n🌐 Idioma: ${idiomaNavegador}\n💻 Dispositivo: ${dispositivo}\n📍 Caraz, Perú`;
+    const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(mensaje)}&parse_mode=Markdown`;
+    const img = new Image();
+    img.src = url;
+  }
+
+  // 2. Acceso VIP por URL (?acceso=vip)
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('acceso') === 'vip') {
+    const secretSection = document.getElementById('secretGuide');
+    if (secretSection) {
+      secretSection.classList.remove('hidden');
+      setTimeout(() => secretSection.scrollIntoView({ behavior: 'smooth' }), 500);
+    }
+  }
+
+  // 3. Inicializar Fechas en Calculadora
+  const today = new Date();
+  const checkinDate = new Date(today);
+  const checkoutDate = new Date(today);
+  checkoutDate.setDate(today.getDate() + 2);
+  const checkinEl = document.getElementById('calcCheckin');
+  const checkoutEl = document.getElementById('calcCheckout');
+  if (checkinEl && checkoutEl) {
+    checkinEl.valueAsDate = checkinDate;
+    checkoutEl.valueAsDate = checkoutDate;
+    calculateTotal();
+  }
+
+  // 4. Inicializar Motor 3D & Glare
+  init3DEffects();
+
+  // 5. Inicializar Canvas del Banner
+  initHeroCanvas();
+
+  // 6. Aplicar idioma por defecto
+  changeLanguage('es');
+});
+
+/* Motor de Inclinación 3D y Efecto Glare */
+function init3DEffects() {
+  const cards = document.querySelectorAll('.effect-3d');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = -((y - centerY) / centerY) * 7;
+      const rotateY = ((x - centerX) / centerX) * 7;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+      card.style.setProperty('--mouse-x', `${(x / rect.width) * 100}%`);
+      card.style.setProperty('--mouse-y', `${(y / rect.height) * 100}%`);
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+    });
+  });
+}
+
+/* Canvas Dinámico de Fondo para el Banner */
+function initHeroCanvas() {
+  const canvas = document.getElementById('hero-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let width = canvas.width = canvas.parentElement.offsetWidth;
+  let height = canvas.height = canvas.parentElement.offsetHeight;
+
+  window.addEventListener('resize', () => {
+    if (!canvas.parentElement) return;
+    width = canvas.width = canvas.parentElement.offsetWidth;
+    height = canvas.height = canvas.parentElement.offsetHeight;
+  });
+
+  const particles = [];
+  const count = Math.floor(width / 30);
+  for (let i = 0; i < count; i++) {
+    particles.push({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      radius: Math.random() * 2 + 0.5,
+      speedY: Math.random() * 0.4 + 0.1,
+      alpha: Math.random() * 0.5 + 0.2
+    });
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+    particles.forEach(p => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255, 255, 255, ${p.alpha})`;
+      ctx.fill();
+      p.y -= p.speedY;
+      if (p.y < 0) p.y = height;
+    });
+    requestAnimationFrame(animate);
+  }
+  animate();
+}
+
+/* Control de Carruseles */
+const slideIndexes = { carousel1: 0, carousel2: 0, pubCarousel1: 0, pubCarousel2: 0, pubCarousel3: 0 };
+
+function moveSlide(carouselId, direction) {
+  const carousel = document.getElementById(carouselId);
+  if (!carousel) return;
+  const slide = carousel.querySelector('.carousel-slide');
+  const items = slide.children;
+  slideIndexes[carouselId] = (slideIndexes[carouselId] + direction + items.length) % items.length;
+  slide.style.transform = `translateX(-${slideIndexes[carouselId] * 100}%)`;
+}
+
+function openModal(imgSrc) {
+  document.getElementById('modalImg').src = imgSrc;
+  document.getElementById('imageModal').style.display = 'flex';
+}
+
+function toggleCalculator() {
+  const panel = document.getElementById('calculatorPanel');
+  panel.classList.toggle('hidden');
+  if (!panel.classList.contains('hidden')) {
+    panel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
+
+function calculateTotal() {
+  const roomPrice = parseFloat(document.getElementById('calcRoom').value) || 0;
+  const checkinVal = document.getElementById('calcCheckin').value;
+  const checkoutVal = document.getElementById('calcCheckout').value;
+  let nights = 1;
+  if (checkinVal && checkoutVal) {
+    const d1 = new Date(checkinVal);
+    const d2 = new Date(checkoutVal);
+    const diffTime = d2 - d1;
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    if (diffDays > 0) nights = diffDays;
+  }
+  document.getElementById('calcNightsDisplay').value = `${nights} ${nights === 1 ? 'noche' : 'noches'}`;
+  let grandTotal = roomPrice * nights;
+  document.getElementById('totalPriceDisplay').innerText = `S/ ${grandTotal.toFixed(2)}`;
+}
+
+function sendInteractiveReservation() {
+  const roomSelect = document.getElementById('calcRoom');
+  const roomName = roomSelect.options[roomSelect.selectedIndex].text;
+  const checkin = document.getElementById('calcCheckin').value || 'Por coordinar';
+  const checkout = document.getElementById('calcCheckout').value || 'Por coordinar';
+  const nightsDisplay = document.getElementById('calcNightsDisplay').value;
+  const guests = document.getElementById('calcGuests').value;
+  const totalPrice = document.getElementById('totalPriceDisplay').innerText;
+  const msg = `Hola Hostal Kactus 👋, deseo confirmar mi reserva:\n\n🛏️ *Habitación:* ${roomName}\n📅 *Entrada:* ${checkin}\n🚪 *Salida:* ${checkout}\n🌙 *Estadía:* ${nightsDisplay}\n👥 *Huéspedes:* ${guests}\n💰 *Total:* ${totalPrice}`;
+  window.open(`https://wa.me/51974364826?text=${encodeURIComponent(msg)}`, '_blank');
+}
+
+function bookRoomDirect(price, roomKey) {
+  const roomNames = {
+    es: { eco: 'Habitación Matrimonial Económica', med: 'Habitación Matrimonial Mediana' },
+    en: { eco: 'Economy Double Room', med: 'Medium Double Room' },
+    fr: { eco: 'Chambre Double Économique', med: 'Chambre Double Standard' },
+    cs: { eco: 'Ekonomický dvoulůžkový pokoj', med: 'Standardní dvoulůžkový pokoj' },
+    zh: { eco: '经济双人房', med: '中等双人房' },
+    pt: { eco: 'Quarto Matrimonial Econômico', med: 'Quarto Matrimonial Médio' },
+    de: { eco: 'Wirtschaftliches Doppelzimmer', med: 'Mittelgroßes Doppelzimmer' },
+    ru: { eco: 'Эконом двухместный номер', med: 'Стандартный двухместный номер' }
+  };
+  const langDict = roomNames[currentLang] || roomNames['es'];
+  const roomTitle = langDict[roomKey] || 'Habitación Matrimonial Mediana';
+  const msg = `Hola Hostal Kactus 👋, deseo reservar la *${roomTitle}* (S/ ${price}.00 por noche). ¡Gracias!`;
+  window.open(`https://wa.me/51974364826?text=${encodeURIComponent(msg)}`, '_blank');
+}
+
+function sendGlobalWhatsApp() {
+  const msg = "Hola Hostal Kactus 👋, quisiera hacer una consulta o reserva.";
+  window.open(`https://wa.me/51974364826?text=${encodeURIComponent(msg)}`, '_blank');
+}
+
+function unlockGuide() {
+  const pass = document.getElementById('passInput').value.trim();
+  const secretSection = document.getElementById('secretGuide');
+  if (pass === '301298') {
+    secretSection.classList.remove('hidden');
+    secretSection.scrollIntoView({ behavior: 'smooth' });
+  } else {
+    alert('Contraseña incorrecta. Solicita la clave oficial en recepción.');
+  }
+}
+
+function unlockTopGuide() {
+  const pass = document.getElementById('topPassInput').value.trim();
+  const secretSection = document.getElementById('secretGuide');
+  if (pass === '301298') {
+    secretSection.classList.remove('hidden');
+    secretSection.scrollIntoView({ behavior: 'smooth' });
+  } else {
+    alert('Contraseña incorrecta. Solicita la clave oficial en recepción.');
+  }
+}
+
+function handleKey(e) { if (e.key === 'Enter') unlockGuide(); }
+function handleTopKey(e) { if (e.key === 'Enter') unlockTopGuide(); }
+
+/* Objeto de Traducciones Globales */
 const translations = {
   es: {
     whatsappFloatText: "¡Reserva o consúltanos!",
@@ -776,3 +998,37 @@ const translations = {
     stkBtn: "Забронировать"
   }
 };
+
+/* Función Global de Cambio de Idioma que traduce absolutamente todo */
+function changeLanguage(lang) {
+  currentLang = lang;
+  
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.remove('bg-emerald-600', 'text-white', 'shadow-xs');
+    btn.classList.add('text-slate-600', 'hover:text-slate-900');
+  });
+  
+  const activeBtn = document.getElementById(`btn-${lang}`);
+  if (activeBtn) {
+    activeBtn.classList.remove('text-slate-600', 'hover:text-slate-900');
+    activeBtn.classList.add('bg-emerald-600', 'text-white', 'shadow-xs');
+  }
+
+  const t = translations[lang] || translations['es'];
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) {
+      el.innerHTML = t[key];
+    }
+  });
+
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (t[key] !== undefined) {
+      el.placeholder = t[key];
+    }
+  });
+
+  calculateTotal();
+}
