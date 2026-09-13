@@ -136,7 +136,7 @@
 
       <!-- BOTÓN PRINCIPAL DE CONVERSIÓN -->
       <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
-        <button onclick="toggleCalculator()" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-extrabold px-8 py-4 rounded-2xl text-sm shadow-xl transition-all transform hover:scale-105 flex items-center gap-2.5 border-2 border-white/40">
+        <button onclick="toggleCalculator()" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-extrabold px-8 py-4 rounded-2xl text-sm shadow-xl transition-all transform hover:scale-105 flex items-center gap-2.5 border-2 border-white/40 cursor-pointer">
           <i class="fas fa-calculator text-base"></i> <span data-i18n="btnOpenCalc">🗓️ ¡Reserva / Cotiza en Línea!</span>
         </button>
         <button onclick="sendGlobalWhatsApp('general')" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-4 rounded-2xl text-sm shadow-xl transition-all flex items-center gap-2 border border-white/20 cursor-pointer">
@@ -152,7 +152,7 @@
         <h3 class="font-extrabold text-sm text-slate-900 flex items-center gap-2">
           <i class="fas fa-calculator text-emerald-600"></i> <span data-i18n="calcPanelTitle">Calculadora y Cotización en Línea</span>
         </h3>
-        <button onclick="toggleCalculator()" class="text-slate-400 hover:text-slate-700 font-bold text-xs bg-slate-100 px-2.5 py-1 rounded-lg" data-i18n="btnCloseCalc">✕ Cerrar</button>
+        <button onclick="toggleCalculator()" class="text-slate-400 hover:text-slate-700 font-bold text-xs bg-slate-100 px-2.5 py-1 rounded-lg cursor-pointer" data-i18n="btnCloseCalc">✕ Cerrar</button>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3">
@@ -189,7 +189,7 @@
           <span class="text-[10px] font-extrabold text-slate-400 uppercase block" data-i18n="lblTotalEst">Cotización Estimada Total</span>
           <div class="text-2xl font-black text-emerald-600" id="totalPriceDisplay">S/ 45.00</div>
         </div>
-        <button onclick="sendInteractiveReservation()" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-extrabold py-3.5 px-6 rounded-xl text-xs transition-all shadow-md shadow-emerald-600/25 flex items-center justify-center gap-2">
+        <button onclick="sendInteractiveReservation()" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-extrabold py-3.5 px-6 rounded-xl text-xs transition-all shadow-md shadow-emerald-600/25 flex items-center justify-center gap-2 cursor-pointer">
           <i class="fab fa-whatsapp text-base"></i> <span data-i18n="btnConfirmRes">Confirmar y Reservar por WhatsApp</span>
         </button>
       </div>
@@ -228,13 +228,13 @@
         <!-- Laguna Parón -->
         <div class="kactus-card overflow-hidden shadow-card flex flex-col group">
           <div class="relative w-full h-52 bg-slate-900 overflow-hidden" id="pubCarousel1">
-            <div class="absolute top-3 left-3 z-20 bg-emerald-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-md">Laguna Parón</div>
+            <div class="absolute top-3 left-3 z-20 bg-emerald-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-md" data-i18n="badgeParon">Laguna Parón</div>
             <div class="carousel-slide w-full h-full flex">
               <img src="Paron laguna.png" alt="Laguna Parón 1" class="w-full h-full object-cover shrink-0 zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='lagunaparon2.png'">
               <img src="lagunaparon2.png" alt="Laguna Parón 2" class="w-full h-full object-cover shrink-0 zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='Paron laguna.png'">
             </div>
-            <button aria-label="Anterior" onclick="moveSlide('pubCarousel1', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-7 h-7 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-left text-xs"></i></button>
-            <button aria-label="Siguiente" onclick="moveSlide('pubCarousel1', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-7 h-7 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-right text-xs"></i></button>
+            <button aria-label="Anterior" onclick="moveSlide('pubCarousel1', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-7 h-7 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100 cursor-pointer"><i class="fas fa-chevron-left text-xs"></i></button>
+            <button aria-label="Siguiente" onclick="moveSlide('pubCarousel1', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-7 h-7 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100 cursor-pointer"><i class="fas fa-chevron-right text-xs"></i></button>
           </div>
           <div class="p-5 flex flex-col flex-1 justify-between space-y-3">
             <div>
@@ -250,13 +250,13 @@
         <!-- Laguna 69 -->
         <div class="kactus-card overflow-hidden shadow-card flex flex-col group">
           <div class="relative w-full h-52 bg-slate-900 overflow-hidden" id="pubCarousel2">
-            <div class="absolute top-3 left-3 z-20 bg-amber-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-md">Laguna 69</div>
+            <div class="absolute top-3 left-3 z-20 bg-amber-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-md" data-i18n="badgeL69">Laguna 69</div>
             <div class="carousel-slide w-full h-full flex">
               <img src="laguna69.png" alt="Laguna 69 1" class="w-full h-full object-cover shrink-0 zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='laguna692.png'">
               <img src="laguna692.png" alt="Laguna 69 2" class="w-full h-full object-cover shrink-0 zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='laguna69.png'">
             </div>
-            <button aria-label="Anterior" onclick="moveSlide('pubCarousel2', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-7 h-7 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-left text-xs"></i></button>
-            <button aria-label="Siguiente" onclick="moveSlide('pubCarousel2', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-7 h-7 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-right text-xs"></i></button>
+            <button aria-label="Anterior" onclick="moveSlide('pubCarousel2', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-7 h-7 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100 cursor-pointer"><i class="fas fa-chevron-left text-xs"></i></button>
+            <button aria-label="Siguiente" onclick="moveSlide('pubCarousel2', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-7 h-7 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100 cursor-pointer"><i class="fas fa-chevron-right text-xs"></i></button>
           </div>
           <div class="p-5 flex flex-col flex-1 justify-between space-y-3">
             <div>
@@ -272,14 +272,14 @@
         <!-- Cañón del Pato -->
         <div class="kactus-card overflow-hidden shadow-card flex flex-col group">
           <div class="relative w-full h-52 bg-slate-900 overflow-hidden" id="pubCarousel3">
-            <div class="absolute top-3 left-3 z-20 bg-sky-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-md">Cañón del Pato</div>
+            <div class="absolute top-3 left-3 z-20 bg-sky-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-md" data-i18n="badgeCanon">Cañón del Pato</div>
             <div class="carousel-slide w-full h-full flex">
               <img src="cañondelpato.png" alt="Cañón del Pato" class="w-full h-full object-cover shrink-0 zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='tuneles.png'">
               <img src="tuneles.png" alt="Túneles 1" class="w-full h-full object-cover shrink-0 zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='cañondelpato.png'">
               <img src="tuneles2.png" alt="Túneles 2" class="w-full h-full object-cover shrink-0 zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='cañondelpato.png'">
             </div>
-            <button aria-label="Anterior" onclick="moveSlide('pubCarousel3', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-7 h-7 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-left text-xs"></i></button>
-            <button aria-label="Siguiente" onclick="moveSlide('pubCarousel3', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-7 h-7 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-right text-xs"></i></button>
+            <button aria-label="Anterior" onclick="moveSlide('pubCarousel3', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-7 h-7 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100 cursor-pointer"><i class="fas fa-chevron-left text-xs"></i></button>
+            <button aria-label="Siguiente" onclick="moveSlide('pubCarousel3', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-7 h-7 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100 cursor-pointer"><i class="fas fa-chevron-right text-xs"></i></button>
           </div>
           <div class="p-5 flex flex-col flex-1 justify-between space-y-3">
             <div>
@@ -320,8 +320,8 @@
                 <a href="#title-guide" class="bg-gradient-to-r from-sky-400 to-cyan-400 text-slate-950 text-[11px] font-extrabold py-2 px-5 rounded-xl shadow-md transition-all transform hover:scale-105" data-i18n="bannerCodeBtn">Ir a Sección Reservada</a>
               </div>
             </div>
-            <button aria-label="Anterior" onclick="moveSlide('carousel1', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-left text-xs"></i></button>
-            <button aria-label="Siguiente" onclick="moveSlide('carousel1', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-right text-xs"></i></button>
+            <button aria-label="Anterior" onclick="moveSlide('carousel1', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100 cursor-pointer"><i class="fas fa-chevron-left text-xs"></i></button>
+            <button aria-label="Siguiente" onclick="moveSlide('carousel1', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100 cursor-pointer"><i class="fas fa-chevron-right text-xs"></i></button>
           </div>
           <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
             <div>
@@ -346,8 +346,8 @@
               <img src="mediana1.jpg" alt="Habitación Mediana 2" class="w-full h-full object-cover shrink-0 zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='mediana.png'">
               <img src="mediana2.png" alt="Habitación Mediana 3" class="w-full h-full object-cover shrink-0 zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='mediana.png'">
             </div>
-            <button aria-label="Anterior" onclick="moveSlide('carousel2', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-left text-xs"></i></button>
-            <button aria-label="Siguiente" onclick="moveSlide('carousel2', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100"><i class="fas fa-chevron-right text-xs"></i></button>
+            <button aria-label="Anterior" onclick="moveSlide('carousel2', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100 cursor-pointer"><i class="fas fa-chevron-left text-xs"></i></button>
+            <button aria-label="Siguiente" onclick="moveSlide('carousel2', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100 cursor-pointer"><i class="fas fa-chevron-right text-xs"></i></button>
             <div class="carousel-dots absolute bottom-3 left-0 right-0 flex justify-center gap-1.5 z-10">
               <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 cursor-pointer shadow-xs" onclick="setSlide('carousel2', 0)"></span>
               <span class="w-2 h-2 rounded-full bg-white/70 cursor-pointer" onclick="setSlide('carousel2', 1)"></span>
@@ -467,7 +467,7 @@
           
           <div class="flex flex-col sm:flex-row gap-3 max-w-md">
             <input type="password" id="passInput" placeholder="Contraseña de huésped" onkeypress="handleKey(event)" class="px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs flex-1 bg-white" data-i18n-placeholder="passPlaceholder">
-            <button onclick="unlockGuide()" id="btn-unlock-text" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-5 rounded-xl text-xs shadow-md" data-i18n="btnUnlockText">Desbloquear Sección</button>
+            <button onclick="unlockGuide()" id="btn-unlock-text" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-5 rounded-xl text-xs shadow-md cursor-pointer" data-i18n="btnUnlockText">Desbloquear Sección</button>
           </div>
 
           <!-- CONTENIDO SECRETO / RESERVADO CON TARJETA WI-FI STICKY -->
@@ -481,7 +481,7 @@
                 </div>
                 <div>
                   <span class="text-[10px] uppercase font-black text-emerald-300 tracking-wider block" data-i18n="wifiStickySub">Conexión de Alta Velocidad (Fija)</span>
-                  <div class="text-xs sm:text-sm font-extrabold">Red: <span class="text-amber-300">Segundo Piso</span></div>
+                  <div class="text-xs sm:text-sm font-extrabold"><span data-i18n="wifiNetLabel">Red:</span> <span class="text-amber-300" data-i18n="wifiNetName">Segundo Piso</span></div>
                 </div>
               </div>
               <div class="bg-black/40 px-4 py-2 rounded-xl border border-white/20 flex items-center gap-2 text-xs">
@@ -497,9 +497,9 @@
                   <span class="w-10 h-10 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center shadow-xs text-lg">
                     <i class="fas fa-concierge-bell"></i>
                   </span>
-                  Comodidades, Horarios y Normas del Hostal
+                  <span data-i18n="amenitiesMainTitle">Comodidades, Horarios y Normas del Hostal</span>
                 </h4>
-                <p class="text-xs text-slate-500 mt-1">Todo lo que necesitas saber para una estadía cómoda y sin preocupaciones en Caraz.</p>
+                <p class="text-xs text-slate-500 mt-1" data-i18n="amenitiesMainDesc">Todo lo que necesitas saber para una estadía cómoda y sin preocupaciones en Caraz.</p>
               </div>
 
               <!-- Tarjetas Principales -->
@@ -510,9 +510,9 @@
                       <i class="fas fa-clock"></i>
                     </div>
                     <div class="space-y-1.5 flex-1">
-                      <h5 class="font-extrabold text-slate-900 text-sm">Horarios de Ingreso / Salida</h5>
-                      <p class="text-slate-600 leading-relaxed"><strong>Check-in:</strong> 11:00 AM <span class="text-emerald-700 font-medium">(¡Puede ser antes según disponibilidad!)</span></p>
-                      <p class="text-slate-600"><strong>Check-out:</strong> 10:30 AM</p>
+                      <h5 class="font-extrabold text-slate-900 text-sm" data-i18n="cardHoursTitle">Horarios de Ingreso / Salida</h5>
+                      <p class="text-slate-600 leading-relaxed"><strong data-i18n="checkinLabel">Check-in:</strong> 11:00 AM <span class="text-emerald-700 font-medium" data-i18n="checkinSub">(¡Puede ser antes según disponibilidad!)</span></p>
+                      <p class="text-slate-600"><strong data-i18n="checkoutLabel">Check-out:</strong> 10:30 AM</p>
                     </div>
                   </div>
                 </div>
@@ -523,8 +523,8 @@
                       <i class="fas fa-suitcase-rolling"></i>
                     </div>
                     <div class="space-y-1.5 flex-1">
-                      <h5 class="font-extrabold text-slate-900 text-sm">Equipaje y Terraza Gratis</h5>
-                      <p class="text-slate-600 leading-relaxed">Guardamos tus maletas sin costo en recepción. Descansa y espera tu bus cómodamente en nuestra <strong>terraza panorámica</strong>.</p>
+                      <h5 class="font-extrabold text-slate-900 text-sm" data-i18n="cardLuggageTitle">Equipaje y Terraza Gratis</h5>
+                      <p class="text-slate-600 leading-relaxed" data-i18n="cardLuggageDesc">Guardamos tus maletas sin costo en recepción. Descansa y espera tu bus cómodamente en nuestra <strong>terraza panorámica</strong>.</p>
                     </div>
                   </div>
                 </div>
@@ -535,8 +535,8 @@
                       <i class="fas fa-car"></i>
                     </div>
                     <div class="space-y-1.5 flex-1">
-                      <h5 class="font-extrabold text-slate-900 text-sm">Cochera Privada Segura</h5>
-                      <p class="text-slate-600 leading-relaxed">Estacionamiento interior <strong>completamente gratis</strong> y vigilado para vehículos y motocicletas de huéspedes.</p>
+                      <h5 class="font-extrabold text-slate-900 text-sm" data-i18n="cardParkingTitle">Cochera Privada Segura</h5>
+                      <p class="text-slate-600 leading-relaxed" data-i18n="cardParkingDesc">Estacionamiento interior <strong>completamente gratis</strong> y vigilado para vehículos y motocicletas de huéspedes.</p>
                     </div>
                   </div>
                 </div>
@@ -547,8 +547,8 @@
                       <i class="fas fa-tshirt"></i>
                     </div>
                     <div class="space-y-1.5 flex-1">
-                      <h5 class="font-extrabold text-slate-900 text-sm">Servicio de Lavandería</h5>
-                      <p class="text-slate-600 leading-relaxed">Lavado a agua fría y secado natural al sol andino. Costo accesible de <strong>S/ 4.00 por kilo</strong>.</p>
+                      <h5 class="font-extrabold text-slate-900 text-sm" data-i18n="cardLaundryTitle">Servicio de Lavandería</h5>
+                      <p class="text-slate-600 leading-relaxed" data-i18n="cardLaundryDesc">Lavado a agua fría y secado natural al sol andino. Costo accesible de <strong>S/ 4.00 por kilo</strong>.</p>
                     </div>
                   </div>
                 </div>
@@ -561,31 +561,31 @@
                     <i class="fas fa-utensils"></i>
                   </div>
                   <div>
-                    <h5 class="font-extrabold text-base text-slate-900">Cocina Compartida, Nevera y Horno Pizzero</h5>
-                    <p class="text-xs text-emerald-800 font-medium">Equipamiento completo a tu entera disposición</p>
+                    <h5 class="font-extrabold text-base text-slate-900" data-i18n="kitchenMainTitle">Cocina Compartida, Nevera y Horno Pizzero</h5>
+                    <p class="text-xs text-emerald-800 font-medium" data-i18n="kitchenMainSub">Equipamiento completo a tu entera disposición</p>
                   </div>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-1 text-xs">
                   <div class="bg-white p-4 rounded-xl border border-slate-200/80 shadow-xs space-y-2">
                     <div class="flex items-center gap-2.5 text-emerald-700 font-extrabold text-sm">
                       <div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-lg"><i class="fas fa-fire-burner"></i></div>
-                      Cocina (3er Nivel)
+                      <span data-i18n="kitBox1Title">Cocina (3er Nivel)</span>
                     </div>
-                    <p class="text-slate-600 text-[11px] leading-relaxed">Funcional y equipada. Tienes <strong>aceite, sal y condimentos 100% gratis</strong> para cocinar.</p>
+                    <p class="text-slate-600 text-[11px] leading-relaxed" data-i18n="kitBox1Desc">Funcional y equipada. Tienes <strong>aceite, sal y condimentos 100% gratis</strong> para cocinar.</p>
                   </div>
                   <div class="bg-white p-4 rounded-xl border border-slate-200/80 shadow-xs space-y-2">
                     <div class="flex items-center gap-2.5 text-sky-700 font-extrabold text-sm">
                       <div class="w-9 h-9 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center text-lg"><i class="fas fa-snowflake"></i></div>
-                      Nevera & Microondas
+                      <span data-i18n="kitBox2Title">Nevera & Microondas</span>
                     </div>
-                    <p class="text-slate-600 text-[11px] leading-relaxed">Espacio exclusivo reservado al final de la nevera en el 2do piso para guardar tus alimentos.</p>
+                    <p class="text-slate-600 text-[11px] leading-relaxed" data-i18n="kitBox2Desc">Espacio exclusivo reservado al final de la nevera en el 2do piso para guardar tus alimentos.</p>
                   </div>
                   <div class="bg-white p-4 rounded-xl border border-slate-200/80 shadow-xs space-y-2">
                     <div class="flex items-center gap-2.5 text-amber-700 font-extrabold text-sm">
                       <div class="w-9 h-9 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-lg"><i class="fas fa-pizza-slice"></i></div>
-                      Horno Pizzero
+                      <span data-i18n="kitBox3Title">Horno Pizzero</span>
                     </div>
-                    <p class="text-slate-600 text-[11px] leading-relaxed">Uso libre y sin costo adicional para hornear tus pizzas, empanadas o pollos al horno.</p>
+                    <p class="text-slate-600 text-[11px] leading-relaxed" data-i18n="kitBox3Desc">Uso libre y sin costo adicional para hornear tus pizzas, empanadas o pollos al horno.</p>
                   </div>
                 </div>
               </div>
@@ -596,8 +596,8 @@
                   <div class="flex items-center gap-3.5">
                     <div class="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center text-white text-2xl shadow-sm"><i class="fas fa-hat-chef"></i></div>
                     <div>
-                      <h5 class="font-extrabold text-sm sm:text-base">Carta de Desayunos Hostal Kactus</h5>
-                      <p class="text-[11px] text-emerald-100">Haz clic aquí para ver opciones con huevos fritos, jugos, café y precios</p>
+                      <h5 class="font-extrabold text-sm sm:text-base" data-i18n=" breakfastMenuTitle">Carta de Desayunos Hostal Kactus</h5>
+                      <p class="text-[11px] text-emerald-100" data-i18n="breakfastMenuSub">Haz clic aquí para ver opciones con huevos fritos, jugos, café y precios</p>
                     </div>
                   </div>
                   <div id="breakfastArrow" class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center transition-transform duration-300">
@@ -610,8 +610,8 @@
                       <div class="flex items-start gap-3">
                         <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-lg shrink-0 mt-0.5"><i class="fas fa-egg"></i></div>
                         <div class="space-y-1">
-                          <strong class="text-slate-900 font-extrabold text-sm block">Desayuno Mochilero</strong>
-                          <p class="text-[11px] text-slate-500">2 panes con huevo y jamonada + café caliente.</p>
+                          <strong class="text-slate-900 font-extrabold text-sm block" data-i18n="bf1Title">Desayuno Mochilero</strong>
+                          <p class="text-[11px] text-slate-500" data-i18n="bf1Desc">2 panes con huevo y jamonada + café caliente.</p>
                         </div>
                       </div>
                       <span class="font-black text-emerald-600 text-base bg-emerald-50 px-3 py-1.5 rounded-lg border border-emerald-100 shrink-0">S/ 5.00</span>
@@ -620,8 +620,8 @@
                       <div class="flex items-start gap-3">
                         <div class="w-10 h-10 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center text-lg shrink-0 mt-0.5"><i class="fas fa-mug-hot"></i></div>
                         <div class="space-y-1">
-                          <strong class="text-slate-900 font-extrabold text-sm block">Desayuno Continental</strong>
-                          <p class="text-[11px] text-slate-500">1 huevo frito, mantequilla, mermelada, jugo, café y 3 panes.</p>
+                          <strong class="text-slate-900 font-extrabold text-sm block" data-i18n="bf2Title">Desayuno Continental</strong>
+                          <p class="text-[11px] text-slate-500" data-i18n="bf2Desc">1 huevo frito, mantequilla, mermelada, jugo, café y 3 panes.</p>
                         </div>
                       </div>
                       <span class="font-black text-emerald-600 text-base bg-emerald-50 px-3 py-1.5 rounded-lg border border-emerald-100 shrink-0">S/ 10.00</span>
@@ -630,8 +630,8 @@
                       <div class="flex items-start gap-3">
                         <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-lg shrink-0 mt-0.5"><i class="fas fa-utensils"></i></div>
                         <div class="space-y-1">
-                          <strong class="text-slate-900 font-extrabold text-sm block">Desayuno Americano</strong>
-                          <p class="text-[11px] text-slate-500">3 panes, jugo, café y 3 huevos revueltos con jamonada.</p>
+                          <strong class="text-slate-900 font-extrabold text-sm block" data-i18n="bf3Title">Desayuno Americano</strong>
+                          <p class="text-[11px] text-slate-500" data-i18n="bf3Desc">3 panes, jugo, café y 3 huevos revueltos con jamonada.</p>
                         </div>
                       </div>
                       <span class="font-black text-emerald-600 text-base bg-emerald-50 px-3 py-1.5 rounded-lg border border-emerald-100 shrink-0">S/ 10.00</span>
@@ -640,14 +640,14 @@
                       <div class="flex items-start gap-3">
                         <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center text-lg shrink-0 mt-0.5"><i class="fas fa-burger"></i></div>
                         <div class="space-y-1">
-                          <strong class="text-slate-900 font-extrabold text-sm block">Desayuno Royal</strong>
-                          <p class="text-[11px] text-slate-500">Lomo saltado (carne con cebolla/tomate, sin arroz), 3 panes, jugo y café.</p>
+                          <strong class="text-slate-900 font-extrabold text-sm block" data-i18n="bf4Title">Desayuno Royal</strong>
+                          <p class="text-[11px] text-slate-500" data-i18n="bf4Desc">Lomo saltado (carne con cebolla/tomate, sin arroz), 3 panes, jugo y café.</p>
                         </div>
                       </div>
                       <span class="font-black text-emerald-600 text-base bg-emerald-50 px-3 py-1.5 rounded-lg border border-emerald-100 shrink-0">S/ 15.00</span>
                     </div>
                   </div>
-                  <p class="text-[10px] text-slate-400 text-center pt-2">💡 *Los desayunos se pueden solicitar directamente en recepción la noche anterior.*</p>
+                  <p class="text-[10px] text-slate-400 text-center pt-2" data-i18n="breakfastNote">💡 *Los desayunos se pueden solicitar directamente en recepción la noche anterior.*</p>
                 </div>
               </div>
             </div>
@@ -661,9 +661,9 @@
                   <span class="w-10 h-10 rounded-2xl bg-emerald-600 text-white flex items-center justify-center shadow-md text-lg">
                     <i class="fas fa-route"></i>
                   </span>
-                  Guía Rápida de Tours (Parón & Laguna 69)
+                  <span data-i18n="toursMainTitle">Guía Rápida de Tours (Parón & Laguna 69)</span>
                 </h4>
-                <p class="text-xs text-slate-500 mt-1">Información directa para decidir tu aventura en segundos. Paga en efectivo o tarjeta en el alojamiento.</p>
+                <p class="text-xs text-slate-500 mt-1" data-i18n="toursMainDesc">Información directa para decidir tu aventura en segundos. Paga en efectivo o tarjeta en el alojamiento.</p>
               </div>
 
               <!-- Tarjetas Contenedoras Principales -->
@@ -671,7 +671,7 @@
 
                 <!-- TARJETA 1: LAGUNA PARÓN -->
                 <div class="bg-white rounded-2xl border-2 border-emerald-500/40 shadow-lg p-5 space-y-4 relative overflow-hidden flex flex-col justify-between">
-                  <div class="absolute top-0 right-0 bg-emerald-600 text-white text-[9px] font-black uppercase px-3 py-1 rounded-bl-xl shadow-xs z-20">
+                  <div class="absolute top-0 right-0 bg-emerald-600 text-white text-[9px] font-black uppercase px-3 py-1 rounded-bl-xl shadow-xs z-20" data-i18n="tourTag1">
                     ⭐ IMPERDIBLE
                   </div>
                   
@@ -679,9 +679,9 @@
                     <!-- Título -->
                     <div>
                       <h5 class="font-extrabold text-slate-900 text-sm flex items-center gap-2">
-                        <span>🌊</span> 1. Laguna Parón <span class="text-[10px] text-slate-400 font-normal">(32 km de Caraz)</span>
+                        <span>🌊</span> <span data-i18n="tour1Header">1. Laguna Parón</span> <span class="text-[10px] text-slate-400 font-normal" data-i18n="tour1SubHeader">(32 km de Caraz)</span>
                       </h5>
-                      <p class="text-[11px] text-slate-500 mt-0.5">La laguna turquesa más grande de la Cordillera Blanca.</p>
+                      <p class="text-[11px] text-slate-500 mt-0.5" data-i18n="tour1Desc">La laguna turquesa más grande de la Cordillera Blanca.</p>
                     </div>
 
                     <!-- FOTO CIRCULAR CON RESPLANDOR AMARILLO (AURA) -->
@@ -694,12 +694,12 @@
                     <!-- Opción Tour Hostal -->
                     <div class="bg-emerald-50/70 p-3.5 rounded-xl border border-emerald-100 space-y-2">
                       <div class="text-xs font-extrabold text-emerald-900 flex items-center gap-1.5">
-                        <span>🚌</span> Tour del Hostal <span class="text-[10px] font-normal text-emerald-700">(¡Te recogemos en la puerta!)</span>
+                        <span>🚌</span> <span data-i18n="tour1Opt1Title">Tour del Hostal</span> <span class="text-[10px] font-normal text-emerald-700" data-i18n="tour1Opt1Sub">(¡Te recogemos en la puerta!)</span>
                       </div>
                       <div class="text-[11px] text-slate-700 font-medium space-y-1">
-                        <div>👥 Salida base: <strong>4 personas</strong> | 💰 <strong>S/ 40</strong> p/p (ida y vuelta)</div>
-                        <div>⏳ <strong>2 hrs</strong> en laguna para fotos y paseo | 🎟️ Entradas: <strong>S/ 5</strong></div>
-                        <div class="text-[10px] text-emerald-800 bg-emerald-100/70 p-1.5 rounded-lg mt-1">
+                        <div data-i18n="tour1Opt1Line1">👥 Salida base: <strong>4 personas</strong> | 💰 <strong>S/ 40</strong> p/p (ida y vuelta)</div>
+                        <div data-i18n="tour1Opt1Line2">⏳ <strong>2 hrs</strong> en laguna para fotos y paseo | 🎟️ Entradas: <strong>S/ 5</strong></div>
+                        <div class="text-[10px] text-emerald-800 bg-emerald-100/70 p-1.5 rounded-lg mt-1" data-i18n="tour1Opt1Tip">
                           💡 <em>¿Menos personas? Puedes cubrir el costo de los asientos restantes y la unidad sale de inmediato.</em>
                         </div>
                       </div>
@@ -708,23 +708,23 @@
                     <!-- Opción Por Tu Cuenta -->
                     <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 space-y-1.5">
                       <div class="text-xs font-extrabold text-slate-800 flex items-center gap-1.5">
-                        <span>🥾</span> Por tu cuenta
+                        <span>🥾</span> <span data-i18n="tour1Opt2Title">Por tu cuenta</span>
                       </div>
                       <div class="text-[11px] text-slate-600">
-                        🚐 Colectivo local: <strong>S/ 40 - 50</strong> | 🎟️ Entrada: <strong>S/ 5</strong> <br>
-                        <a href="https://maps.app.goo.gl/dhxDVsWRBC7ysK4w8" target="_blank" class="text-blue-600 font-bold underline inline-flex items-center gap-1 mt-1">📍 Ver punto de salida de colectivos</a>
+                        <span data-i18n="tour1Opt2Line">🚐 Colectivo local: <strong>S/ 40 - 50</strong> | 🎟️ Entrada: <strong>S/ 5</strong></span> <br>
+                        <a href="https://maps.app.goo.gl/dhxDVsWRBC7ysK4w8" target="_blank" class="text-blue-600 font-bold underline inline-flex items-center gap-1 mt-1" data-i18n="tour1Opt2Map">📍 Ver punto de salida de colectivos</a>
                       </div>
                     </div>
                   </div>
 
                   <button onclick="sendTourWhatsApp('paron')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs py-2.5 px-4 rounded-xl shadow-sm text-center transition-all flex items-center justify-center gap-2 mt-3 cursor-pointer">
-                    <i class="fab fa-whatsapp"></i> Reservar Parón
+                    <i class="fab fa-whatsapp"></i> <span data-i18n="btnBookParon">Reservar Parón</span>
                   </button>
                 </div>
 
                 <!-- TARJETA 2: LAGUNA 69 -->
                 <div class="bg-white rounded-2xl border-2 border-amber-500/40 shadow-lg p-5 space-y-4 relative overflow-hidden flex flex-col justify-between">
-                  <div class="absolute top-0 right-0 bg-amber-500 text-slate-950 text-[9px] font-black uppercase px-3 py-1 rounded-bl-xl shadow-xs z-20">
+                  <div class="absolute top-0 right-0 bg-amber-500 text-slate-950 text-[9px] font-black uppercase px-3 py-1 rounded-bl-xl shadow-xs z-20" data-i18n="tourTag2">
                     ⚡ EXIGENTE
                   </div>
                   
@@ -732,9 +732,9 @@
                     <!-- Título -->
                     <div>
                       <h5 class="font-extrabold text-slate-900 text-sm flex items-center gap-2">
-                        <span>🏔️</span> 2. Laguna 69 <span class="text-[10px] text-slate-400 font-normal">(Full Day Alta Montaña)</span>
+                        <span>🏔️</span> <span data-i18n="tour2Header">2. Laguna 69</span> <span class="text-[10px] text-slate-400 font-normal" data-i18n="tour2SubHeader">(Full Day Alta Montaña)</span>
                       </h5>
-                      <p class="text-[11px] text-slate-500 mt-0.5">Trekking bajo los nevados Huascarán y Chacraraju. <em>Guía requerido por el Parque.</em></p>
+                      <p class="text-[11px] text-slate-500 mt-0.5" data-i18n="tour2Desc">Trekking bajo los nevados Huascarán y Chacraraju. <em>Guía requerido por el Parque.</em></p>
                     </div>
 
                     <!-- FOTO CIRCULAR CON RESPLANDOR AMARILLO (AURA) -->
@@ -747,32 +747,32 @@
                     <!-- Opción Tour Autorizado -->
                     <div class="bg-amber-50/70 p-3.5 rounded-xl border border-amber-100 space-y-1.5">
                       <div class="text-xs font-extrabold text-amber-900 flex items-center gap-1.5">
-                        <span>🚌</span> Tour Autorizado (Con Nosotros)
+                        <span>🚌</span> <span data-i18n="tour2Opt1Title">Tour Autorizado (Con Nosotros)</span>
                       </div>
                       <div class="text-[11px] text-slate-700 space-y-1">
-                        <div>⏰ Salida <strong>6:00 AM en Yungay</strong> <span class="text-slate-500">(alcanzar tour desde Huaraz)</span></div>
-                        <div>🚐 Pasaje Caraz-Yungay (ida y vuelta): <strong>S/ 6</strong> (S/ 3 ida + S/ 3 vuelta)</div>
-                        <div>💳 Desglose: Tour (S/ 60) + Ticket Parque Nacional (S/ 30) = <strong>Total aprox. S/ 96</strong></div>
-                        <div>✅ <em>Incluye guía turístico oficial requerido por el Parque Huascarán.</em></div>
-                        <div>🕒 Retorno a Caraz: <strong>5:30 PM a 6:00 PM</strong></div>
+                        <div data-i18n="tour2Opt1Line1">⏰ Salida <strong>6:00 AM en Yungay</strong> <span class="text-slate-500">(alcanzar tour desde Huaraz)</span></div>
+                        <div data-i18n="tour2Opt1Line2">🚐 Pasaje Caraz-Yungay (ida y vuelta): <strong>S/ 6</strong> (S/ 3 ida + S/ 3 vuelta)</div>
+                        <div data-i18n="tour2Opt1Line3">💳 Desglose: Tour (S/ 60) + Ticket Parque Nacional (S/ 30) = <strong>Total aprox. S/ 96</strong></div>
+                        <div data-i18n="tour2Opt1Line4">✅ <em>Incluye guía turístico oficial requerido por el Parque Huascarán.</em></div>
+                        <div data-i18n="tour2Opt1Line5">🕒 Retorno a Caraz: <strong>5:30 PM a 6:00 PM</strong></div>
                       </div>
                     </div>
 
                     <!-- Opción Por Tus Medios -->
                     <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 space-y-1.5">
                       <div class="text-xs font-extrabold text-slate-800 flex items-center gap-1.5">
-                        <span>🥾</span> Por tus medios
+                        <span>🥾</span> <span data-i18n="tour2Opt2Title">Por tus medios</span>
                       </div>
                       <div class="text-[11px] text-slate-600 space-y-1">
-                        <div>🚌 Bus Yungay (<strong>S/ 3</strong>) + Minivan ida (<strong>S/ 25 - 30</strong>) + Retorno (<strong>S/ 25 - 30</strong>)</div>
-                        <div>🎟️ Ticket Parque Nacional: <strong>S/ 30</strong></div>
-                        <div class="font-bold text-slate-800 pt-0.5">💰 Total estimado aprox.: <strong>S/ 90 - 98</strong></div>
+                        <div data-i18n="tour2Opt2Line1">🚌 Bus Yungay (<strong>S/ 3</strong>) + Minivan ida (<strong>S/ 25 - 30</strong>) + Retorno (<strong>S/ 25 - 30</strong>)</div>
+                        <div data-i18n="tour2Opt2Line2">🎟️ Ticket Parque Nacional: <strong>S/ 30</strong></div>
+                        <div class="font-bold text-slate-800 pt-0.5" data-i18n="tour2Opt2Line3">💰 Total estimado aprox.: <strong>S/ 90 - 98</strong></div>
                       </div>
                     </div>
                   </div>
 
                   <button onclick="sendTourWhatsApp('laguna69')" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold text-xs py-2.5 px-4 rounded-xl shadow-sm text-center transition-all flex items-center justify-center gap-2 mt-3 cursor-pointer">
-                    <i class="fab fa-whatsapp"></i> Reservar Laguna 69
+                    <i class="fab fa-whatsapp"></i> <span data-i18n="btnBookL69">Reservar Laguna 69</span>
                   </button>
                 </div>
 
@@ -847,7 +847,7 @@
     <img id="modalImg" src="" alt="Imagen Ampliada">
   </div>
 
-  <!-- LÓGICA JAVASCRIPT Y TRADUCCIONES NATIVAS OPTIMIZADAS -->
+  <!-- LÓGICA JAVASCRIPT Y TRADUCCIONES NATIVAS 100% COMPLETAS Y PROFESIONALES -->
   <script>
     let currentLang = 'es';
 
@@ -931,7 +931,6 @@
       }
     }
 
-    // WHATSAPP GLOBAL / BOTONES FLOTANTES / BARRA INFERIOR (EN EL IDIOMA ACTUAL)
     function sendGlobalWhatsApp(type) {
       const globalMessages = {
         es: "Hola Hostal Kactus 👋, quisiera hacer una consulta o reserva.",
@@ -948,7 +947,6 @@
       window.open(`https://wa.me/51974364826?text=${encodeURIComponent(msg)}`, '_blank');
     }
 
-    // RESERVA DE TOURS (PARÓN Y LAGUNA 69) EN EL IDIOMA ACTUAL
     function sendTourWhatsApp(tourKey) {
       const tourMessages = {
         es: {
@@ -991,7 +989,6 @@
       window.open(`https://wa.me/51974364826?text=${encodeURIComponent(msg)}`, '_blank');
     }
 
-    // RESERVA DIRECTA DESDE LAS TARJETAS DE HABITACIÓN (EN EL IDIOMA ACTUAL)
     function bookRoomDirect(price, roomKey) {
       const roomNames = {
         es: { eco: 'Habitación Matrimonial Económica', med: 'Habitación Matrimonial Mediana' },
@@ -1216,6 +1213,9 @@
         badgeBooking: "Fabuloso · Excelente Ubicación",
         publicAttractionsTitle: "Maravillas Naturales que Debes Visitar",
         publicAttractionsDesc: "Hostal Kactus es tu punto de partida ideal para conocer los paisajes más imponentes de la Cordillera Blanca y los Conchucos.",
+        badgeParon: "Laguna Parón",
+        badgeL69: "Laguna 69",
+        badgeCanon: "Cañón del Pato",
         pubParonTitle: "La Laguna Turquesa Más Grande",
         pubParonDesc: "Impresionante espejo de agua rodeado por imponentes picos nevados como el Artesonraju.",
         pubL69Title: "Trekking de Alta Montaña",
@@ -1266,7 +1266,70 @@
         passPlaceholder: "Contraseña de huésped",
         btnUnlockText: "Desbloquear Sección",
         wifiStickySub: "Conexión de Alta Velocidad (Fija)",
+        wifiNetLabel: "Red:",
+        wifiNetName: "Segundo Piso",
         wifiPassLabel: "Contraseña:",
+        amenitiesMainTitle: "Comodidades, Horarios y Normas del Hostal",
+        amenitiesMainDesc: "Todo lo que necesitas saber para una estadía cómoda y sin preocupaciones en Caraz.",
+        cardHoursTitle: "Horarios de Ingreso / Salida",
+        checkinLabel: "Check-in:",
+        checkinSub: "(¡Puede ser antes según disponibilidad!)",
+        checkoutLabel: "Check-out:",
+        cardLuggageTitle: "Equipaje y Terraza Gratis",
+        cardLuggageDesc: "Guardamos tus maletas sin costo en recepción. Descansa y espera tu bus cómodamente en nuestra <strong>terraza panorámica</strong>.",
+        cardParkingTitle: "Cochera Privada Segura",
+        cardParkingDesc: "Estacionamiento interior <strong>completamente gratis</strong> y vigilado para vehículos y motocicletas de huéspedes.",
+        cardLaundryTitle: "Servicio de Lavandería",
+        cardLaundryDesc: "Lavado a agua fría y secado natural al sol andino. Costo accesible de <strong>S/ 4.00 por kilo</strong>.",
+        kitchenMainTitle: "Cocina Compartida, Nevera y Horno Pizzero",
+        kitchenMainSub: "Equipamiento completo a tu entera disposición",
+        kitBox1Title: "Cocina (3er Nivel)",
+        kitBox1Desc: "Funcional y equipada. Tienes <strong>aceite, sal y condimentos 100% gratis</strong> para cocinar.",
+        kitBox2Title: "Nevera & Microondas",
+        kitBox2Desc: "Espacio exclusivo reservado al final de la nevera en el 2do piso para guardar tus alimentos.",
+        kitBox3Title: "Horno Pizzero",
+        kitBox3Desc: "Uso libre y sin costo adicional para hornear tus pizzas, empanadas o pollos al horno.",
+        breakfastMenuTitle: "Carta de Desayunos Hostal Kactus",
+        breakfastMenuSub: "Haz clic aquí para ver opciones con huevos fritos, jugos, café y precios",
+        bf1Title: "Desayuno Mochilero",
+        bf1Desc: "2 panes con huevo y jamonada + café caliente.",
+        bf2Title: "Desayuno Continental",
+        bf2Desc: "1 huevo frito, mantequilla, mermelada, jugo, café y 3 panes.",
+        bf3Title: "Desayuno Americano",
+        bf3Desc: "3 panes, jugo, café y 3 huevos revueltos con jamonada.",
+        bf4Title: "Desayuno Royal",
+        bf4Desc: "Lomo saltado (carne con cebolla/tomate, sin arroz), 3 panes, jugo y café.",
+        breakfastNote: "💡 *Los desayunos se pueden solicitar directamente en recepción la noche anterior.*",
+        toursMainTitle: "Guía Rápida de Tours (Parón & Laguna 69)",
+        toursMainDesc: "Información directa para decidir tu aventura en segundos. Paga en efectivo o tarjeta en el alojamiento.",
+        tourTag1: "⭐ IMPERDIBLE",
+        tour1Header: "1. Laguna Parón",
+        tour1SubHeader: "(32 km de Caraz)",
+        tour1Desc: "La laguna turquesa más grande de la Cordillera Blanca.",
+        tour1Opt1Title: "Tour del Hostal",
+        tour1Opt1Sub: "(¡Te recogemos en la puerta!)",
+        tour1Opt1Line1: "👥 Salida base: <strong>4 personas</strong> | 💰 <strong>S/ 40</strong> p/p (ida y vuelta)",
+        tour1Opt1Line2: "⏳ <strong>2 hrs</strong> en laguna para fotos y paseo | 🎟️ Entradas: <strong>S/ 5</strong>",
+        tour1Opt1Tip: "💡 <em>¿Menos personas? Puedes cubrir el costo de los asientos restantes y la unidad sale de inmediato.</em>",
+        tour1Opt2Title: "Por tu cuenta",
+        tour1Opt2Line: "🚐 Colectivo local: <strong>S/ 40 - 50</strong> | 🎟️ Entrada: <strong>S/ 5</strong>",
+        tour1Opt2Map: "📍 Ver punto de salida de colectivos",
+        btnBookParon: "Reservar Parón",
+        tourTag2: "⚡ EXIGENTE",
+        tour2Header: "2. Laguna 69",
+        tour2SubHeader: "(Full Day Alta Montaña)",
+        tour2Desc: "Trekking bajo los nevados Huascarán y Chacraraju. <em>Guía requerido por el Parque.</em>",
+        tour2Opt1Title: "Tour Autorizado (Con Nosotros)",
+        tour2Opt1Line1: "⏰ Salida <strong>6:00 AM en Yungay</strong> <span class=\"text-slate-500\">(alcanzar tour desde Huaraz)</span>",
+        tour2Opt1Line2: "🚐 Pasaje Caraz-Yungay (ida y vuelta): <strong>S/ 6</strong> (S/ 3 ida + S/ 3 vuelta)",
+        tour2Opt1Line3: "💳 Desglose: Tour (S/ 60) + Ticket Parque Nacional (S/ 30) = <strong>Total aprox. S/ 96</strong>",
+        tour2Opt1Line4: "✅ <em>Incluye guía turístico oficial requerido por el Parque Huascarán.</em>",
+        tour2Opt1Line5: "🕒 Retorno a Caraz: <strong>5:30 PM a 6:00 PM</strong>",
+        tour2Opt2Title: "Por tus medios",
+        tour2Opt2Line1: "🚌 Bus Yungay (<strong>S/ 3</strong>) + Minivan ida (<strong>S/ 25 - 30</strong>) + Retorno (<strong>S/ 25 - 30</strong>)",
+        tour2Opt2Line2: "🎟️ Ticket Parque Nacional: <strong>S/ 30</strong>",
+        tour2Opt2Line3: "💰 Total estimado aprox.: <strong>S/ 90 - 98</strong>",
+        btnBookL69: "Reservar Laguna 69",
         directoryTitle: "📍 Directorio de Lugares Clave en Caraz",
         dir1Title: "Restaurante Pacha Hunta",
         dir1Desc: "Comida regional tradicional muy cercana al hostal.",
@@ -1309,6 +1372,9 @@
         badgeBooking: "Fabulous · Excellent Location",
         publicAttractionsTitle: "Natural Wonders You Must Visit",
         publicAttractionsDesc: "Hostal Kactus is your ideal starting point to discover the most breathtaking landscapes of the Cordillera Blanca.",
+        badgeParon: "Laguna Parón",
+        badgeL69: "Laguna 69",
+        badgeCanon: "Cañón del Pato",
         pubParonTitle: "The Largest Turquoise Lagoon",
         pubParonDesc: "Stunning mirror of water surrounded by majestic snowy peaks like Artesonraju.",
         pubL69Title: "High Mountain Trekking",
@@ -1359,7 +1425,70 @@
         passPlaceholder: "Guest password",
         btnUnlockText: "Unlock Section",
         wifiStickySub: "High-Speed Connection (Fixed)",
+        wifiNetLabel: "Network:",
+        wifiNetName: "Second Floor",
         wifiPassLabel: "Password:",
+        amenitiesMainTitle: "Hostal Amenities, Hours & Rules",
+        amenitiesMainDesc: "Everything you need to know for a comfortable and worry-free stay in Caraz.",
+        cardHoursTitle: "Check-in / Check-out Hours",
+        checkinLabel: "Check-in:",
+        checkinSub: "(May be earlier subject to availability!)",
+        checkoutLabel: "Check-out:",
+        cardLuggageTitle: "Free Luggage & Terrace",
+        cardLuggageDesc: "We store your bags for free at reception. Relax and wait for your bus comfortably on our <strong>panoramic terrace</strong>.",
+        cardParkingTitle: "Secure Private Parking",
+        cardParkingDesc: "Indoor parking <strong>completely free</strong> and monitored for guests' cars and motorcycles.",
+        cardLaundryTitle: "Laundry Service",
+        cardLaundryDesc: "Cold water wash and natural drying under the Andean sun. Affordable cost of <strong>S/ 4.00 per kilo</strong>.",
+        kitchenMainTitle: "Shared Kitchen, Fridge & Pizza Oven",
+        kitchenMainSub: "Full equipment entirely at your disposal",
+        kitBox1Title: "Kitchen (3rd Floor)",
+        kitBox1Desc: "Functional and equipped. You have <strong>100% free oil, salt, and seasonings</strong> for cooking.",
+        kitBox2Title: "Fridge & Microwave",
+        kitBox2Desc: "Exclusive space reserved at the end of the fridge on the 2nd floor to store your food.",
+        kitBox3Title: "Pizza Oven",
+        kitBox3Desc: "Free use and no extra cost to bake your pizzas, empanadas, or roast chickens.",
+        breakfastMenuTitle: "Hostal Kactus Breakfast Menu",
+        breakfastMenuSub: "Click here to view options with fried eggs, juices, coffee, and prices",
+        bf1Title: "Backpacker Breakfast",
+        bf1Desc: "2 breads with egg and ham + hot coffee.",
+        bf2Title: "Continental Breakfast",
+        bf2Desc: "1 fried egg, butter, jam, juice, coffee, and 3 breads.",
+        bf3Title: "American Breakfast",
+        bf3Desc: "3 breads, juice, coffee, and 3 scrambled eggs with ham.",
+        bf4Title: "Royal Breakfast",
+        bf4Desc: "Lomo saltado (beef with onions/tomatoes, no rice), 3 breads, juice, and coffee.",
+        breakfastNote: "💡 *Breakfasts can be requested directly at reception the night before.*",
+        toursMainTitle: "Quick Tour Guide (Parón & Laguna 69)",
+        toursMainDesc: "Direct information to decide your adventure in seconds. Pay in cash or card at the accommodation.",
+        tourTag1: "⭐ A MUST-SEE",
+        tour1Header: "1. Laguna Parón",
+        tour1SubHeader: "(32 km from Caraz)",
+        tour1Desc: "The largest turquoise lagoon in the Cordillera Blanca.",
+        tour1Opt1Title: "Hostal Tour",
+        tour1Opt1Sub: "(We pick you up at the door!)",
+        tour1Opt1Line1: "👥 Base departure: <strong>4 people</strong> | 💰 <strong>S/ 40</strong> p/p (round trip)",
+        tour1Opt1Line2: "⏳ <strong>2 hrs</strong> at the lagoon for photos and walk | 🎟️ Tickets: <strong>S/ 5</strong>",
+        tour1Opt1Tip: "💡 <em>Fewer people? You can cover the cost of remaining seats and the vehicle leaves immediately.</em>",
+        tour1Opt2Title: "On your own",
+        tour1Opt2Line: "🚐 Local colectivo: <strong>S/ 40 - 50</strong> | 🎟️ Entrance: <strong>S/ 5</strong>",
+        tour1Opt2Map: "📍 View colectivo departure point",
+        btnBookParon: "Book Parón",
+        tourTag2: "⚡ DEMANDING",
+        tour2Header: "2. Laguna 69",
+        tour2SubHeader: "(Full Day High Mountain)",
+        tour2Desc: "Trekking beneath Huascarán and Chacraraju snow peaks. <em>Guide required by the Park.</em>",
+        tour2Opt1Title: "Authorized Tour (With Us)",
+        tour2Opt1Line1: "⏰ Departure <strong>6:00 AM in Yungay</strong> <span class=\"text-slate-500\">(join tour from Huaraz)</span>",
+        tour2Opt1Line2: "🚐 Caraz-Yungay ticket (round trip): <strong>S/ 6</strong> (S/ 3 out + S/ 3 return)",
+        tour2Opt1Line3: "💳 Breakdown: Tour (S/ 60) + National Park Ticket (S/ 30) = <strong>Approx. total S/ 96</strong>",
+        tour2Opt1Line4: "✅ <em>Includes official tour guide required by Huascarán Park.</em>",
+        tour2Opt1Line5: "🕒 Return to Caraz: <strong>5:30 PM to 6:00 PM</strong>",
+        tour2Opt2Title: "On your own",
+        tour2Opt2Line1: "🚌 Bus to Yungay (<strong>S/ 3</strong>) + Minivan outbound (<strong>S/ 25 - 30</strong>) + Return (<strong>S/ 25 - 30</strong>)",
+        tour2Opt2Line2: "🎟️ National Park Ticket: <strong>S/ 30</strong>",
+        tour2Opt2Line3: "💰 Approx. estimated total: <strong>S/ 90 - 98</strong>",
+        btnBookL69: "Book Laguna 69",
         directoryTitle: "📍 Key Places Directory in Caraz",
         dir1Title: "Restaurante Pacha Hunta",
         dir1Desc: "Traditional regional food very close to the hostal.",
@@ -1402,6 +1531,9 @@
         badgeBooking: "Fabulose · Emplacement exceptionnel",
         publicAttractionsTitle: "Merveilles Naturelles à Visiter",
         publicAttractionsDesc: "Hostal Kactus est votre point de départ idéal pour explorer les paysages époustouflants de la Cordillera Blanca.",
+        badgeParon: "Laguna Parón",
+        badgeL69: "Laguna 69",
+        badgeCanon: "Cañón del Pato",
         pubParonTitle: "Le Plus Grand Lagon Turquoise",
         pubParonDesc: "Miroir d'eau époustouflant entouré de pics enneigés majeurs comme l'Artesonraju.",
         pubL69Title: "Trekking de Haute Montagne",
@@ -1452,7 +1584,70 @@
         passPlaceholder: "Mot de passe client",
         btnUnlockText: "Débloquer la section",
         wifiStickySub: "Connexion Haute Vitesse (Fixe)",
+        wifiNetLabel: "Réseau :",
+        wifiNetName: "Deuxième Étage",
         wifiPassLabel: "Mot de passe :",
+        amenitiesMainTitle: "Commodités, Horaires et Règles de l'Hostal",
+        amenitiesMainDesc: "Tout ce que vous devez savoir pour un séjour confortable et sans soucis à Caraz.",
+        cardHoursTitle: "Horaires d'Arrivée / Départ",
+        checkinLabel: "Check-in :",
+        checkinSub: "(Possibilité d'arriver plus tôt selon disponibilité !)",
+        checkoutLabel: "Check-out :",
+        cardLuggageTitle: "Bagages et Terrasse Gratuits",
+        cardLuggageDesc: "Nous gardons vos valises gratuitement à la réception. Reposez-vous et attendez votre bus confortablement sur notre <strong>terrasse panoramique</strong>.",
+        cardParkingTitle: "Parking Privé Sécurisé",
+        cardParkingDesc: "Stationnement intérieur <strong>totalement gratuit</strong> et surveillé pour les véhicules et motos des clients.",
+        cardLaundryTitle: "Service de Blanchisserie",
+        cardLaundryDesc: "Lavage à l'eau froide et séchage naturel au soleil des Andes. Tarif abordable de <strong>S/ 4.00 par kilo</strong>.",
+        kitchenMainTitle: "Cuisine Partagée, Réfrigérateur et Four à Pizza",
+        kitchenMainSub: "Équipement complet entièrement à votre disposition",
+        kitBox1Title: "Cuisine (3e Niveau)",
+        kitBox1Desc: "Fonctionnelle et équipée. Vous disposez d'<strong>huile, sel et condiments 100% gratuits</strong> pour cuisiner.",
+        kitBox2Title: "Réfrigérateur & Micro-ondes",
+        kitBox2Desc: "Espace exclusif réservé au fond du réfrigérateur au 2e étage pour conserver vos aliments.",
+        kitBox3Title: "Four à Pizza",
+        kitBox3Desc: "Utilisation libre et sans frais supplémentaires pour cuire vos pizzas, empanadas ou poulets rôtis.",
+        breakfastMenuTitle: "Carte des Petits Déjeuners Hostal Kactus",
+        breakfastMenuSub: "Cliquez ici pour voir les options avec œufs au plat, jus, café et prix",
+        bf1Title: "Petit-déjeuner Randonneur",
+        bf1Desc: "2 pains avec œuf et jambon + café chaud.",
+        bf2Title: "Petit-déjeuner Continental",
+        bf2Desc: "1 œuf au plat, beurre, confiture, jus, café et 3 pains.",
+        bf3Title: "Petit-déjeuner Américain",
+        bf3Desc: "3 pains, jus, café et 3 œufs brouillés avec jambon.",
+        bf4Title: "Petit-déjeuner Royal",
+        bf4Desc: "Lomo saltado (viande avec oignon/tomate, sans riz), 3 pains, jus et café.",
+        breakfastNote: "💡 *Les petits déjeuners peuvent être commandés directement à la réception la veille au soir.*",
+        toursMainTitle: "Guide Rapide des Tours (Parón & Laguna 69)",
+        toursMainDesc: "Informations directes pour décider de votre aventure en quelques secondes. Payez en espèces ou par carte à l'hébergement.",
+        tourTag1: "⭐ INCONTOURNABLE",
+        tour1Header: "1. Laguna Parón",
+        tour1SubHeader: "(32 km de Caraz)",
+        tour1Desc: "Le plus grand lagon turquoise de la Cordillera Blanca.",
+        tour1Opt1Title: "Tour de l'Hostal",
+        tour1Opt1Sub: "(Nous venons vous chercher à la porte !)",
+        tour1Opt1Line1: "👥 Départ de base : <strong>4 personnes</strong> | 💰 <strong>S/ 40</strong> p/p (aller-retour)",
+        tour1Opt1Line2: "⏳ <strong>2 h</strong> au lagon pour photos et balade | 🎟️ Entrées : <strong>S/ 5</strong>",
+        tour1Opt1Tip: "💡 <em>Moins de personnes ? Vous pouvez couvrir le coût des places restantes et le véhicule part immédiatement.</em>",
+        tour1Opt2Title: "Par vos propres moyens",
+        tour1Opt2Line: "🚐 Colectivo local : <strong>S/ 40 - 50</strong> | 🎟️ Entrée : <strong>S/ 5</strong>",
+        tour1Opt2Map: "📍 Voir le point de départ des colectivos",
+        btnBookParon: "Réserver Parón",
+        tourTag2: "⚡ EXIGEANT",
+        tour2Header: "2. Laguna 69",
+        tour2SubHeader: "(Full Day Haute Montagne)",
+        tour2Desc: "Trekking sous les sommets enneigés du Huascarán et du Chacraraju. <em>Guide requis par le Parc.</em>",
+        tour2Opt1Title: "Tour Autorisé (Avec Nous)",
+        tour2Opt1Line1: "⏰ Départ <strong>6h00 à Yungay</strong> <span class=\"text-slate-500\">(rejoindre le tour depuis Huaraz)</span>",
+        tour2Opt1Line2: "🚐 Trajet Caraz-Yungay (aller-retour) : <strong>S/ 6</strong> (S/ 3 aller + S/ 3 retour)",
+        tour2Opt1Line3: "💳 Détail : Tour (S/ 60) + Billet Parc National (S/ 30) = <strong>Total approx. S/ 96</strong>",
+        tour2Opt1Line4: "✅ <em>Inclut un guide touristique officiel requis par le Parc Huascarán.</em>",
+        tour2Opt1Line5: "🕒 Retour à Caraz : <strong>17h30 à 18h00</strong>",
+        tour2Opt2Title: "Par vos propres moyens",
+        tour2Opt2Line1: "🚌 Bus Yungay (<strong>S/ 3</strong>) + Minivan aller (<strong>S/ 25 - 30</strong>) + Retour (<strong>S/ 25 - 30</strong>)",
+        tour2Opt2Line2: "🎟️ Billet Parc National : <strong>S/ 30</strong>",
+        tour2Opt2Line3: "💰 Total estimé approx. : <strong>S/ 90 - 98</strong>",
+        btnBookL69: "Réserver Laguna 69",
         directoryTitle: "📍 Répertoire des Lieux Clés à Caraz",
         dir1Title: "Restaurant Pacha Hunta",
         dir1Desc: "Cuisine régionale traditionnelle très proche de l'hostal.",
@@ -1495,6 +1690,9 @@
         badgeBooking: "Skvělé · Výborná poloha",
         publicAttractionsTitle: "Přírodní divy, které musíte navštívit",
         publicAttractionsDesc: "Hostal Kactus je vaším ideálním výchozím bodem pro poznávání nejkrásnějších scenérií v Cordillera Blanca.",
+        badgeParon: "Laguna Parón",
+        badgeL69: "Laguna 69",
+        badgeCanon: "Cañón del Pato",
         pubParonTitle: "Největší tyrkysová laguna",
         pubParonDesc: "Úchvatné zrcadlo vody obklopené majestátními zasněženými štíty jako Artesonraju.",
         pubL69Title: "Vysokohorský treking",
@@ -1545,8 +1743,71 @@
         passPlaceholder: "Heslo hosta",
         btnUnlockText: "Odemknout sekci",
         wifiStickySub: "Vysokorychlostní připojení (Pevné)",
+        wifiNetLabel: "Síť:",
+        wifiNetName: "Druhé patro",
         wifiPassLabel: "Heslo:",
-        directoryTitle: "📍 Klíčová místa v Carazu",
+        amenitiesMainTitle: "Vybavení, hodiny a pravidla hostelu",
+        amenitiesMainDesc: "Vše, co potřebujete vědět pro pohodlný a bezstarostný pobyt v Carazu.",
+        cardHoursTitle: "Časy příjezdu / odjezdu",
+        checkinLabel: "Check-in:",
+        checkinSub: "(Možnost dřívějšího příjezdu dle dostupnosti!)",
+        checkoutLabel: "Check-out:",
+        cardLuggageTitle: "Úschovna zavazadel a terasa zdarma",
+        cardLuggageDesc: "Vaše zavazadla uschováme na recepci zdarma. Odpočiňte si a počkejte na svůj autobus v pohodlí na naší <strong>panoramatické terase</strong>.",
+        cardParkingTitle: "Bezpečné soukromé parkování",
+        cardParkingDesc: "Vnitřní parkoviště <strong>zcela zdarma</strong> a hlídané pro vozy a motocykly hostů.",
+        cardLaundryTitle: "Služba praní prádla",
+        cardLaundryDesc: "Praní ve studené vodě a přirozené sušení na andském slunci. Dostupná cena <strong>S/ 4.00 za kilo</strong>.",
+        kitchenMainTitle: "Sdílená kuchyň, lednice a pizza pec",
+        kitchenMainSub: "Kompletní vybavení plně k vašim službám",
+        kitBox1Title: "Kuchyň (3. patro)",
+        kitBox1Desc: "Funkční a plně vybavená. K vaření máte <strong>olej, sůl a koření 100% zdarma</strong>.",
+        kitBox2Title: "Lednice a mikrovlnka",
+        kitBox2Desc: "Exkluzivní prostor vyhrazený na konci lednice ve 2. patře pro uložení vašich potravin.",
+        kitBox3Title: "Pizza pec",
+        kitBox3Desc: "Volné použití bez poplatku navíc pro pečení pizzy, empanád nebo kuřat.",
+        breakfastMenuTitle: "Snídaňové menu Hostal Kactus",
+        breakfastMenuSub: "Klikněte zde pro zobrazení možností s volskými oky, džusy, kávou a cenami",
+        bf1Title: "Baťůžkářská snídaně",
+        bf1Desc: "2 chleby s vejcem a šunkou + horká káva.",
+        bf2Title: "Kontinentální snídaně",
+        bf2Desc: "1 volské oko, máslo, marmeláda, džus, káva a 3 chleby.",
+        bf3Title: "Americká snídaně",
+        bf3Desc: "3 chleby, džus, káva a 3 míchaná vajíčka se šunkou.",
+        bf4Title: "Královská snídaně",
+        bf4Desc: "Lomo saltado (maso s cibulí/rajčaty, bez rýže), 3 chleby, džus a káva.",
+        breakfastNote: "💡 *Snídaně lze objednat přímo na recepci večer předem.*",
+        toursMainTitle: "Rychlý průvodce výlety (Parón & Laguna 69)",
+        toursMainDesc: "Přímé informace pro rozhodnutí o vašem dobrodružství během chvilky. Platba hotově nebo kartou v ubytování.",
+        tourTag1: "⭐ NEPŘEHLÉDNUTELNÉ",
+        tour1Header: "1. Laguna Parón",
+        tour1SubHeader: "(32 km od Carazu)",
+        tour1Desc: "Největší tyrkysová laguna v Cordillera Blanca.",
+        tour1Opt1Title: "Výlet s hostelem",
+        tour1Opt1Sub: "(Vyzvedneme vás přímo u dveří!)",
+        tour1Opt1Line1: "👥 Základní výjezd: <strong>4 osoby</strong> | 💰 <strong>S/ 40</strong> p/p (tam i zpět)",
+        tour1Opt1Line2: "⏳ <strong>2 hodiny</strong> u laguny na fotky a procházku | 🎟️ Vstupné: <strong>S/ 5</strong>",
+        tour1Opt1Tip: "💡 <em>Méně osob? Můžete doplatit zbývající místa a auto vyjede okamžitě.</em>",
+        tour1Opt2Title: "Na vlastní pěst",
+        tour1Opt2Line: "🚐 Místní kolektivní doprava: <strong>S/ 40 - 50</strong> | 🎟️ Vstupné: <strong>S/ 5</strong>",
+        tour1Opt2Map: "📍 Zobrazit místo odjezdu dopravců",
+        btnBookParon: "Rezervovat Parón",
+        tourTag2: "⚡ NÁROČNÉ",
+        tour2Header: "2. Laguna 69",
+        tour2SubHeader: "(Full Day Vysokohorská)",
+        tour2Desc: "Treking pod štíty Huascarán a Chacraraju. <em>Průvodce vyžadován parkem.</em>",
+        tour2Opt1Title: "Autorizovaný výlet (S námi)",
+        tour2Opt1Line1: "⏰ Odjezd <strong>6:00 v Yungay</strong> <span class=\"text-slate-500\">(připojení k výletu z Huarazu)</span>",
+        tour2Opt1Line2: "🚐 Jízdenka Caraz-Yungay (tam i zpět): <strong>S/ 6</strong> (S/ 3 tam + S/ 3 zpět)",
+        tour2Opt1Line3: "💳 Rozpis: Výlet (S/ 60) + Vstup do parku (S/ 30) = <strong>Celkem cca S/ 96</strong>",
+        tour2Opt1Line4: "✅ <em>Zahrnuje oficiálního průvodce vyžadovaného parkem Huascarán.</em>",
+        tour2Opt1Line5: "🕒 Návrat do Carazu: <strong>17:30 až 18:00</strong>",
+        tour2Opt2Title: "Na vlastní pěst",
+        tour2Opt2Line1: "🚌 Autobus do Yungay (<strong>S/ 3</strong>) + Minivan tam (<strong>S/ 25 - 30</strong>) + Zpět (<strong>S/ 25 - 30</strong>)",
+        tour2Opt2Line2: "🎟️ Vstup do národního parku: <strong>S/ 30</strong>",
+        tour2Opt2Line3: "💰 Odhadovaný celkový odhad: <strong>S/ 90 - 98</strong>",
+        btnBookL69: "Rezervovat Laguňu 69",
+        directoryTitle: "📍 Adresář klíčových míst v Carazu",
         dir1Title: "Restaurace Pacha Hunta",
         dir1Desc: "Tradiční regionální jídlo velmi blízko hostelu.",
         dirMaps: "Zobrazit na Google Maps",
@@ -1588,6 +1849,9 @@
         badgeBooking: "超赞 · 绝佳地理位置",
         publicAttractionsTitle: "不容错过的自然奇观",
         publicAttractionsDesc: "Hostal Kactus 是您探索科迪勒拉布兰卡（Cordillera Blanca）壮丽风景的理想起点。",
+        badgeParon: "帕龙湖",
+        badgeL69: "69号湖",
+        badgeCanon: "鸭子峡谷",
         pubParonTitle: "最大的绿松石湖",
         pubParonDesc: "四周环绕着阿尔特松拉hu峰等宏伟雪山的绝美高山湖泊。",
         pubL69Title: "高山徒步探险",
@@ -1638,18 +1902,81 @@
         passPlaceholder: "住客密码",
         btnUnlockText: "解锁专区",
         wifiStickySub: "高速无线网络 (固定常驻)",
-        wifiPassLabel: "密码:",
-        directoryTitle: "📍 卡拉斯核心地点指南",
+        wifiNetLabel: "网络：",
+        wifiNetName: "二楼",
+        wifiPassLabel: "密码：",
+        amenitiesMainTitle: "旅舍设施、开放时间与入住须知",
+        amenitiesMainDesc: "在卡拉斯享受舒适无忧假期所需了解的一切信息。",
+        cardHoursTitle: "入住 / 退房时间",
+        checkinLabel: "入住时间：",
+        checkinSub: "（视房态而定，可提前入住！）",
+        checkoutLabel: "退房时间：",
+        cardLuggageTitle: "免费行李寄存与观景露台",
+        cardLuggageDesc: "在前台免费寄存您的行李。在我们的<strong>全景露台</strong>上放松身心，舒适地等候您的巴士。",
+        cardParkingTitle: "安全私家停车场",
+        cardParkingDesc: "为住客提供<strong>完全免费</strong>且配备监控的室内车辆及摩托车停车场。",
+        cardLaundryTitle: "洗衣服务",
+        cardLaundryDesc: "冷水洗涤并在安第斯阳光下自然晾干。实惠价格仅需每公斤 <strong>S/ 4.00</strong>。",
+        kitchenMainTitle: "共享厨房、冰箱与披萨烤炉",
+        kitchenMainSub: "齐全设备完全供您自由使用",
+        kitBox1Title: "厨房（三楼）",
+        kitBox1Desc: "功能齐全。做饭可<strong>100%免费使用油、盐及各种调味料</strong>。",
+        kitBox2Title: "冰箱与微波炉",
+        kitBox2Desc: "二楼冰箱末端设有专属空间，供您存放食材。",
+        kitBox3Title: "披萨烤炉",
+        kitBox3Desc: "免费且无附加费用，可用于烘焙披萨、肉馅饼或烤鸡。",
+        breakfastMenuTitle: "Hostal Kactus 早餐菜单",
+        breakfastMenuSub: "点击此处查看煎蛋、鲜榨果汁、咖啡及价格等选项",
+        bf1Title: "背包客早餐",
+        bf1Desc: "2个面包加鸡蛋火腿 + 热咖啡。",
+        bf2Title: "欧式早餐",
+        bf2Desc: "1个煎蛋、黄油、果酱、果汁、咖啡和3个面包。",
+        bf3Title: "美式早餐",
+        bf3Desc: "3个面包、果汁、咖啡和3个火腿炒蛋。",
+        bf4Title: "皇家早餐",
+        bf4Desc: "秘鲁炒牛肉（Lomo saltado，不含米饭），3个面包、果汁和咖啡。",
+        breakfastNote: "💡 *早餐可于前一晚直接在前台预订。*",
+        toursMainTitle: "热门旅游路线指南（帕龙湖与69号湖）",
+        toursMainDesc: "一手资讯助您秒定行程。可在旅舍直接以现金或刷卡支付。",
+        tourTag1: "⭐ 不容错过",
+        tour1Header: "1. 帕龙湖 (Laguna Parón)",
+        tour1SubHeader: "(距卡拉斯 32 公里)",
+        tour1Desc: "白色山脉（Cordillera Blanca）中最大的绿松石高山湖泊。",
+        tour1Opt1Title: "旅舍专属包车团",
+        tour1Opt1Sub: "（我们在门口接您！）",
+        tour1Opt1Line1: "👥 发车基数：<strong>4人成行</strong> | 💰 <strong>S/ 40</strong> 每人（往返）",
+        tour1Opt1Line2: "⏳ <strong>2小时</strong>湖畔留影与漫步 | 🎟️ 门票：<strong>S/ 5</strong>",
+        tour1Opt1Tip: "💡 <em>人数不足？您可以补齐空位费用，车辆即可立即出发。</em>",
+        tour1Opt2Title: "自由行前往",
+        tour1Opt2Line: "🚐 当地班车 (Colectivo)：<strong>S/ 40 - 50</strong> | 🎟️ 门票：<strong>S/ 5</strong>",
+        tour1Opt2Map: "📍 查看班车上车点位置",
+        btnBookParon: "预订帕龙湖团",
+        tourTag2: "⚡ 挑战路线",
+        tour2Header: "2. 69号湖 (Laguna 69)",
+        tour2SubHeader: "(高山全天徒步)",
+        tour2Desc: "在瓦斯卡兰和查克拉拉胡雪山脚下徒步。<em>国家公园强制要求配备向导。</em>",
+        tour2Opt1Title: "官方授权团（通过我们报名）",
+        tour2Opt1Line1: "⏰ <strong>6:00 AM 于永盖（Yungay）</strong>集合出发 <span class=\"text-slate-500\">（可从瓦拉斯自行前往集合点）</span>",
+        tour2Opt1Line2: "🚐 卡拉斯-永盖往返交通：<strong>S/ 6</strong>（去程3 + 返程3）",
+        tour2Opt1Line3: "💳 费用明细：团费(S/ 60) + 国家公园门票(S/ 30) = <strong>约计 S/ 96</strong>",
+        tour2Opt1Line4: "✅ <em>包含瓦斯卡兰国家公园强制要求的官方专业向导。</em>",
+        tour2Opt1Line5: "🕒 返回卡拉斯时间：<strong>下午 5:30 至 6:00</strong>",
+        tour2Opt2Title: "完全自由行",
+        tour2Opt2Line1: "🚌 乘车至永盖（<strong>S/ 3</strong>）+ 换乘小巴去程（<strong>S/ 25 - 30</strong>）+ 返程（<strong>S/ 25 - 30</strong>）",
+        tour2Opt2Line2: "🎟️ 国家公园门票：<strong>S/ 30</strong>",
+        tour2Opt2Line3: "💰 预计总费用约为：<strong>S/ 90 - 98</strong>",
+        btnBookL69: "预订 69号湖团",
+        directoryTitle: "📍 卡拉斯核心生活及出行指南",
         dir1Title: "Pacha Hunta 餐厅",
-        dir1Desc: "提供传统秘鲁风味地方菜，距离旅舍非常近。",
-        btnMaps: "在谷歌地图查看",
-        dir2Title: "卡拉斯武器广场",
-        dir2Desc: "城市历史中心，漫步休闲与品尝手工冰淇淋。",
-        dir3Title: "Caja Huancayo 银行与兑换",
-        dir3Desc: "市中心办理金融业务与外币兑换的理想地点。",
+        dir1Desc: "距离旅舍极近，提供正宗地道的传统地方美食。",
+        dirMaps: "在谷歌地图查看",
+        dir2Title: "卡拉斯武器广场 (Plaza de Armas)",
+        dir2Desc: "城市历史中心，漫步休闲与品尝手作冰淇淋的最佳去处。",
+        dir3Title: "Caja Huancayo 银行及换汇",
+        dir3Desc: "位于市中心，方便办理金融业务与外汇兑换。",
         dirLocation: "查看具体位置",
         stkFrom: "起价",
-        stkCalc: "报价",
+        stkCalc: "在线报价",
         stkBtn: "立即预订"
       },
       pt: {
@@ -1681,6 +2008,9 @@
         badgeBooking: "Fabuloso · Excelente Localização",
         publicAttractionsTitle: "Maravilhas Naturais que Você Deve Visitar",
         publicAttractionsDesc: "Hostal Kactus é o seu ponto de partida ideal para conhecer as paisagens mais impressionantes da Cordillera Blanca.",
+        badgeParon: "Laguna Parón",
+        badgeL69: "Laguna 69",
+        badgeCanon: "Cañón del Pato",
         pubParonTitle: "A Maior Lagoa Turquesa",
         pubParonDesc: "Espelho d'água deslumbrante cercado por imponentes picos nevados como o Artesonraju.",
         pubL69Title: "Trekking de Alta Montanha",
@@ -1731,7 +2061,70 @@
         passPlaceholder: "Senha de hóspede",
         btnUnlockText: "Desbloquear Seção",
         wifiStickySub: "Conexão de Alta Velocidade (Fixa)",
+        wifiNetLabel: "Rede:",
+        wifiNetName: "Segundo Andar",
         wifiPassLabel: "Senha:",
+        amenitiesMainTitle: "Comodidades, Horários e Regras do Hostal",
+        amenitiesMainDesc: "Tudo o que você precisa saber para uma estadia confortável e sem preocupações em Caraz.",
+        cardHoursTitle: "Horários de Entrada / Saída",
+        checkinLabel: "Check-in:",
+        checkinSub: "(Pode ser antes, conforme disponibilidade!)",
+        checkoutLabel: "Check-out:",
+        cardLuggageTitle: "Bagagem e Terraço Grátis",
+        cardLuggageDesc: "Guardamos suas malas sem custo na recepção. Descanse e aguarde seu ônibus confortavelmente em nosso <strong>terraço panorâmico</strong>.",
+        cardParkingTitle: "Estacionamento Privado Seguro",
+        cardParkingDesc: "Estacionamento interno <strong>completamente grátis</strong> e monitorado para carros e motos de hóspedes.",
+        cardLaundryTitle: "Serviço de Lavanderia",
+        cardLaundryDesc: "Lavagem com água fria e secagem natural ao sol andino. Preço acessível de <strong>S/ 4.00 por quilo</strong>.",
+        kitchenMainTitle: "Cozinha Compartilhada, Geladeira e Forno de Pizza",
+        kitchenMainSub: "Equipamento completo à sua inteira disposição",
+        kitBox1Title: "Cozinha (3º Andar)",
+        kitBox1Desc: "Funcional e equipada. Você tem <strong>óleo, sal e temperos 100% grátis</strong> para cozinhar.",
+        kitBox2Title: "Geladeira & Micro-ondas",
+        kitBox2Desc: "Espaço exclusivo reservado no final da geladeira no 2º andar para guardar seus alimentos.",
+        kitBox3Title: "Forno de Pizza",
+        kitBox3Desc: "Uso livre e sem custo adicional para assar suas pizzas, empadas ou frangos.",
+        breakfastMenuTitle: "Cardápio de Café da Manhã Hostal Kactus",
+        breakfastMenuSub: "Clique aqui para ver opções com ovos fritos, sucos, café e preços",
+        bf1Title: "Café da Manhã Mochileiro",
+        bf1Desc: "2 pães com ovo e presunto + café quente.",
+        bf2Title: "Café da Manhã Continental",
+        bf2Desc: "1 ovo frito, manteiga, geleia, suco, café e 3 pães.",
+        bf3Title: "Café da Manhã Americano",
+        bf3Desc: "3 pães, suco, café e 3 ovos mexidos com presunto.",
+        bf4Title: "Café da Manhã Royal",
+        bf4Desc: "Lomo saltado (carne com cebola/tomate, sem arroz), 3 pães, suco e café.",
+        breakfastNote: "💡 *Os cafés da manhã podem ser solicitados diretamente na recepção na noite anterior.*",
+        toursMainTitle: "Guia Rápido de Passeios (Parón & Laguna 69)",
+        toursMainDesc: "Informações diretas para decidir sua aventura em segundos. Pague em dinheiro ou cartão na hospedagem.",
+        tourTag1: "⭐ IMPERDÍVEL",
+        tour1Header: "1. Laguna Parón",
+        tour1SubHeader: "(32 km de Caraz)",
+        tour1Desc: "A maior lagoa turquesa da Cordillera Blanca.",
+        tour1Opt1Title: "Passeio do Hostal",
+        tour1Opt1Sub: "(Te buscamos na porta!)",
+        tour1Opt1Line1: "👥 Saída base: <strong>4 pessoas</strong> | 💰 <strong>S/ 40</strong> p/p (ida e volta)",
+        tour1Opt1Line2: "⏳ <strong>2h</strong> na lagoa para fotos e passeio | 🎟️ Ingressos: <strong>S/ 5</strong>",
+        tour1Opt1Tip: "💡 <em>Menos pessoas? Você pode cobrir o custo dos assentos restantes e a van sai imediatamente.</em>",
+        tour1Opt2Title: "Por conta própria",
+        tour1Opt2Line: "🚐 Coletivo local: <strong>S/ 40 - 50</strong> | 🎟️ Entrada: <strong>S/ 5</strong>",
+        tour1Opt2Map: "📍 Ver ponto de saída dos coletivos",
+        btnBookParon: "Reservar Parón",
+        tourTag2: "⚡ EXIGENTE",
+        tour2Header: "2. Laguna 69",
+        tour2SubHeader: "(Full Day Alta Montanha)",
+        tour2Desc: "Trekking sob os nevados Huascarán e Chacraraju. <em>Guia exigido pelo Parque.</em>",
+        tour2Opt1Title: "Passeio Autorizado (Conosco)",
+        tour2Opt1Line1: "⏰ Saída <strong>6h00 em Yungay</strong> <span class=\"text-slate-500\">(alcançar o tour saindo de Huaraz)</span>",
+        tour2Opt1Line2: "🚐 Passagem Caraz-Yungay (ida e volta): <strong>S/ 6</strong> (S/ 3 ida + S/ 3 volta)",
+        tour2Opt1Line3: "💳 Detalhes: Tour (S/ 60) + Ingreso Parque Nacional (S/ 30) = <strong>Total aprox. S/ 96</strong>",
+        tour2Opt1Line4: "✅ <em>Inclui guia turístico oficial exigido pelo Parque Huascarán.</em>",
+        tour2Opt1Line5: "🕒 Retorno a Caraz: <strong>17h30 às 18h00</strong>",
+        tour2Opt2Title: "Por conta própria",
+        tour2Opt2Line1: "🚌 Ônibus Yungay (<strong>S/ 3</strong>) + Minivan ida (<strong>S/ 25 - 30</strong>) + Retorno (<strong>S/ 25 - 30</strong>)",
+        tour2Opt2Line2: "🎟️ Ingresso Parque Nacional: <strong>S/ 30</strong>",
+        tour2Opt2Line3: "💰 Total estimado aprox.: <strong>S/ 90 - 98</strong>",
+        btnBookL69: "Reservar Laguna 69",
         directoryTitle: "📍 Diretório de Locais Chave em Caraz",
         dir1Title: "Restaurante Pacha Hunta",
         dir1Desc: "Comida regional tradicional muito próxima ao hostal.",
@@ -1774,6 +2167,9 @@
         badgeBooking: "Fabelhaft · Hervorragende Lage",
         publicAttractionsTitle: "Naturwunder, die Sie besuchen müssen",
         publicAttractionsDesc: "Hostal Kactus ist Ihr idealer Ausgangspunkt, um die atemberaubendsten Landschaften der Cordillera Blanca zu entdecken.",
+        badgeParon: "Laguna Parón",
+        badgeL69: "Laguna 69",
+        badgeCanon: "Cañón del Pato",
         pubParonTitle: "Die größte türkisfarbene Lagune",
         pubParonDesc: "Atemberaubender Spiegel aus Wasser, umgeben von majestätischen schneebedeckten Gipfeln wie dem Artesonraju.",
         pubL69Title: "Hochgebirgs-Trekking",
@@ -1824,7 +2220,70 @@
         passPlaceholder: "Gästebewährung / Passwort",
         btnUnlockText: "Bereich freischalten",
         wifiStickySub: "Highspeed-Verbindung (Fest)",
+        wifiNetLabel: "Netzwerk:",
+        wifiNetName: "Zweiter Stock",
         wifiPassLabel: "Passwort:",
+        amenitiesMainTitle: "Hostal-Ausstattung, Öffnungszeiten & Regeln",
+        amenitiesMainDesc: "Alles, was Sie für einen komfortablen und sorgenfreien Aufenthalt in Caraz wissen müssen.",
+        cardHoursTitle: "Check-in / Check-out Zeiten",
+        checkinLabel: "Check-in:",
+        checkinSub: "(Frühzeitiger Check-in je nach Verfügbarkeit möglich!)",
+        checkoutLabel: "Check-out:",
+        cardLuggageTitle: "Kostenloses Gepäck & Terrasse",
+        cardLuggageDesc: "Wir bewahren Ihre Taschen kostenlos an der Rezeption auf. Entspannen Sie sich und warten Sie bequem auf Ihren Bus auf unserer <strong>Panoramaterrasse</strong>.",
+        cardParkingTitle: "Sicherer Privatparkplatz",
+        cardParkingDesc: "Innenparkplatz <strong>vollkommen kostenlos</strong> und videoüberwacht für Autos und Motorräder von Gästen.",
+        cardLaundryTitle: "Wäscheservice",
+        cardLaundryDesc: "Kaltwäsche und natürliche Trocknung unter der Andensonne. Günstiger Preis von <strong>S/ 4.00 pro Kilo</strong>.",
+        kitchenMainTitle: "Gemeinschaftsküche, Kühlschrank & Pizzaofen",
+        kitchenMainSub: "Vollständige Ausstattung zu Ihrer freien Verfügung",
+        kitBox1Title: "Küche (3. Stock)",
+        kitBox1Desc: "Funktional und ausgestattet. Sie haben <strong>Öl, Salz und Gewürze zu 100% kostenlos</strong> zum Kochen.",
+        kitBox2Title: "Kühlschrank & Mikrowelle",
+        kitBox2Desc: "Exklusiver Bereich am Ende des Kühlschranks im 2. Stock zur Aufbewahrung Ihrer Lebensmittel.",
+        kitBox3Title: "Pizzaofen",
+        kitBox3Desc: "Freie Nutzung ohne Aufpreis zum Backen Ihrer Pizzen, Empanadas oder Hähnchen.",
+        breakfastMenuTitle: "Hostal Kactus Frühstückskarte",
+        breakfastMenuSub: "Klicken Sie hier für Optionen mit Spiegeleiern, Säften, Kaffee und Preisen",
+        bf1Title: "Backpacker-Frühstück",
+        bf1Desc: "2 Brote mit Ei und Schinken + heißer Kaffee.",
+        bf2Title: "Kontinentales Frühstück",
+        bf2Desc: "1 Spiegelei, Butter, Marmelade, Saft, Kaffee und 3 Brote.",
+        bf3Title: "Amerikanisches Frühstück",
+        bf3Desc: "3 Brote, Saft, Kaffee und 3 Rühreier mit Schinken.",
+        bf4Title: "Royal-Frühstück",
+        bf4Desc: "Lomo saltado (Rindfleisch mit Zwiebeln/Tomaten, ohne Reis), 3 Brote, Saft und Kaffee.",
+        breakfastNote: "💡 *Frühstücke können am Vorabend direkt an der Rezeption bestellt werden.*",
+        toursMainTitle: "Schnellübersicht Touren (Parón & Laguna 69)",
+        toursMainDesc: "Direkte Informationen, um Ihr Abenteuer in Sekundenschnelle zu planen. Bar oder mit Karte in der Unterkunft bezahlen.",
+        tourTag1: "⭐ EIN MUSS",
+        tour1Header: "1. Laguna Parón",
+        tour1SubHeader: "(32 km von Caraz)",
+        tour1Desc: "Die größte türkisfarbene Lagune der Cordillera Blanca.",
+        tour1Opt1Title: "Hostal-Tour",
+        tour1Opt1Sub: "(Wir holen Sie an der Haustür ab!)",
+        tour1Opt1Line1: "👥 Mindestteilnehmer: <strong>4 Personen</strong> | 💰 <strong>S/ 40</strong> p.P. (Hin- und Rückfahrt)",
+        tour1Opt1Line2: "⏳ <strong>2 Std.</strong> an der Lagune für Fotos und Spaziergang | 🎟️ Eintritt: <strong>S/ 5</strong>",
+        tour1Opt1Tip: "💡 <em>Weniger Personen? Sie können die Kosten für die restlichen Plätze übernehmen und das Fahrzeug startet sofort.</em>",
+        tour1Opt2Title: "Auf eigene Faust",
+        tour1Opt2Line: "🚐 Lokaler Colectivo: <strong>S/ 40 - 50</strong> | 🎟️ Eintritt: <strong>S/ 5</strong>",
+        tour1Opt2Map: "📍 Abfahrtsort der Colectivos anzeigen",
+        btnBookParon: "Parón buchen",
+        tourTag2: "⚡ ANSPRUCHSVOLL",
+        tour2Header: "2. Laguna 69",
+        tour2SubHeader: "(Full Day Hochgebirge)",
+        tour2Desc: "Trekking unter den Schneegipfeln des Huascarán und Chacraraju. <em>Guide vom Park vorgeschrieben.</em>",
+        tour2Opt1Title: "Autorisierte Tour (Mit uns)",
+        tour2Opt1Line1: "⏰ Abfahrt <strong>6:00 Uhr in Yungay</strong> <span class=\"text-slate-500\">(Tour ab Huaraz anschließen)</span>",
+        tour2Opt1Line2: "🚐 Fahrt Caraz-Yungay (Hin- und Rückfahrt): <strong>S/ 6</strong> (S/ 3 hin + S/ 3 zurück)",
+        tour2Opt1Line3: "💳 Aufschlüsselung: Tour (S/ 60) + Nationalpark-Ticket (S/ 30) = <strong>Ca. Gesamtkosten S/ 96</strong>",
+        tour2Opt1Line4: "✅ <em>Inklusive offiziellem Tourguide vorgeschrieben vom Huascarán-Park.</em>",
+        tour2Opt1Line5: "🕒 Rückkehr nach Caraz: <strong>17:30 bis 18:00 Uhr</strong>",
+        tour2Opt2Title: "Auf eigene Faust",
+        tour2Opt2Line1: "🚌 Bus nach Yungay (<strong>S/ 3</strong>) + Minivan Hinweg (<strong>S/ 25 - 30</strong>) + Rückweg (<strong>S/ 25 - 30</strong>)",
+        tour2Opt2Line2: "🎟️ Nationalpark-Ticket: <strong>S/ 30</strong>",
+        tour2Opt2Line3: "💰 Geschätzte Gesamtkosten: <strong>S/ 90 - 98</strong>",
+        btnBookL69: "Laguna 69 buchen",
         directoryTitle: "📍 Wichtige Orte in Caraz",
         dir1Title: "Restaurant Pacha Hunta",
         dir1Desc: "Traditionelle regionale Küche ganz in der Nähe des Hostals.",
@@ -1867,6 +2326,9 @@
         badgeBooking: "Великолепно · Отличное расположение",
         publicAttractionsTitle: "Природные чудеса, которые стоит посетить",
         publicAttractionsDesc: "Hostal Kactus — идеальная отправная точка для знакомства с впечатляющими пейзажами Кордильера-Бланка.",
+        badgeParon: "Laguna Parón",
+        badgeL69: "Laguna 69",
+        badgeCanon: "Cañón del Pato",
         pubParonTitle: "Крупнейшее бирюзовое озеро",
         pubParonDesc: "Потрясающее зеркало воды, окруженное величественными снежными пиками, такими как Артесонраху.",
         pubL69Title: "Треккинг в высоких горах",
@@ -1917,15 +2379,78 @@
         passPlaceholder: "Пароль гостя",
         btnUnlockText: "Разблокировать раздел",
         wifiStickySub: "Высокоскоростное подключение (Фиксированное)",
+        wifiNetLabel: "Сеть:",
+        wifiNetName: "Второй этаж",
         wifiPassLabel: "Пароль:",
-        directoryTitle: "📍 Ключевые места в Карасе",
+        amenitiesMainTitle: "Удобства, часы работы и правила хостела",
+        amenitiesMainDesc: "Всё, что нужно знать для комфортного и беззаботного пребывания в Карасе.",
+        cardHoursTitle: "Часы заезда / выезда",
+        checkinLabel: "Заезд (Check-in):",
+        checkinSub: "(Возможен раньше при наличии свободных мест!)",
+        checkoutLabel: "Выезд (Check-out):",
+        cardLuggageTitle: "Бесплатный багаж и терраса",
+        cardLuggageDesc: "Мы бесплатно храним ваши сумки на ресепшене. Отдохните и с комфортом подождите автобус на нашей <strong>панорамной террасе</strong>.",
+        cardParkingTitle: "Безо охраняемая парковка",
+        cardParkingDesc: "Крытая парковка <strong>абсолютно бесплатная</strong> и охраняемая для автомобилей и мотоциклов гостей.",
+        cardLaundryTitle: "Услуги прачечной",
+        cardLaundryDesc: "Стирка в холодной воде и естественная сушка под андандским солнцем. Доступная цена <strong>S/ 4.00 за килограмм</strong>.",
+        kitchenMainTitle: "Общая кухня, холодильник и печь для пиццы",
+        kitchenMainSub: "Полное оборудование полностью в вашем распоряжении",
+        kitBox1Title: "Кухня (3-й этаж)",
+        kitBox1Desc: "Функциональная и оборудованная. У вас есть <strong>масло, соль и специи на 100% бесплатно</strong> для готовки.",
+        kitBox2Title: "Холодильник и микроволновка",
+        kitBox2Desc: "Эксклюзивное место в конце холодильника на 2-м этаже для хранения ваших продуктов.",
+        kitBox3Title: "Печь для пиццы",
+        kitBox3Desc: "Свободное использование без дополнительной платы для выпечки пиццы, эмпанадас или курицы.",
+        breakfastMenuTitle: "Меню завтраков Hostal Kactus",
+        breakfastMenuSub: "Нажмите здесь, чтобы посмотреть варианты с яичницей, соками, кофе и ценами",
+        bf1Title: "Завтрак бэкпекера",
+        bf1Desc: "2 хлеба с яйцом и ветчиной + горячий кофе.",
+        bf2Title: "Континентальный завтрак",
+        bf2Desc: "1 яичница, масло, джем, сок, кофе и 3 хлеба.",
+        bf3Title: "Американский завтрак",
+        bf3Desc: "3 хлеба, сок, кофе и 3 омлета с ветчиной.",
+        bf4Title: "Королевский завтрак",
+        bf4Desc: "Ломо сальтадо (мясо с луком/помидорами, без риса), 3 хлеба, сок и кофе.",
+        breakfastNote: "💡 *Завтраки можно заказать прямо на ресепшене накануне вечером.*",
+        toursMainTitle: "Быстрый гид по турам (Парон и Лагуна 69)",
+        toursMainDesc: "Прямая информация для выбора приключения за секунды. Оплата наличными или картой в хостеле.",
+        tourTag1: "⭐ ОБЯЗАТЕЛЬНО К ПОСЕЩЕНИЮ",
+        tour1Header: "1. Лагуна Парон",
+        tour1SubHeader: "(32 км от Караса)",
+        tour1Desc: "Самое большое бирюзовое озеро в Кордильера-Бланка.",
+        tour1Opt1Title: "Тур от хостела",
+        tour1Opt1Sub: "(Заберем вас прямо у входа!)",
+        tour1Opt1Line1: "👥 Группа от: <strong>4 человек</strong> | 💰 <strong>S/ 40</strong> с человека (туда и обратно)",
+        tour1Opt1Line2: "⏳ <strong>2 часа</strong> у лагуны для фото и прогулки | 🎟️ Билеты: <strong>S/ 5</strong>",
+        tour1Opt1Tip: "💡 <em>Мало людей? Вы можете покрыть стоимость оставшихся мест, и машина отправится немедленно.</em>",
+        tour1Opt2Title: "Самостоятельно",
+        tour1Opt2Line: "🚐 Местный маршрутный автобус: <strong>S/ 40 - 50</strong> | 🎟️ Вход: <strong>S/ 5</strong>",
+        tour1Opt2Map: "📍 Посмотреть точку отправления транспорта",
+        btnBookParon: "Забронировать Парон",
+        tourTag2: "⚡ СЛОЖНЫЙ ТРЕККИНГ",
+        tour2Header: "2. Лагуна 69",
+        tour2SubHeader: "(Full Day Высокогорье)",
+        tour2Desc: "Треккинг под снежными пиками Уаскаран и Чакрараху. <em>Парк требует гида.</em>",
+        tour2Opt1Title: "Официальный тур (С нами)",
+        tour2Opt1Line1: "⏰ Выезд в <strong>6:00 утра из Юнгая</strong> <span class=\"text-slate-500\">(присоединиться из Уараса)</span>",
+        tour2Opt1Line2: "🚐 Проезд Карас-Юнгай (туда и обратно): <strong>S/ 6</strong> (S/ 3 туда + S/ 3 обратно)",
+        tour2Opt1Line3: "💳 Расчет: Тур (S/ 60) + Билет в парк (S/ 30) = <strong>Итого около S/ 96</strong>",
+        tour2Opt1Line4: "✅ <em>Включает официального гида, требуемого Национальным парком Уаскаран.</em>",
+        tour2Opt1Line5: "🕒 Возвращение в Карас: <strong>с 17:30 до 18:00</strong>",
+        tour2Opt2Title: "Самостоятельно",
+        tour2Opt2Line1: "🚌 Автобус до Юнгая (<strong>S/ 3</strong>) + Минивэн туда (<strong>S/ 25 - 30</strong>) + Обратно (<strong>S/ 25 - 30</strong>)",
+        tour2Opt2Line2: "🎟️ Билет в Нацпарк: <strong>S/ 30</strong>",
+        tour2Opt2Line3: "💰 Примерная стоимость: <strong>S/ 90 - 98</strong>",
+        btnBookL69: "Забронировать Лагуну 69",
+        directoryTitle: "📍 Справочник ключевых мест в Карасе",
         dir1Title: "Ресторан Pacha Hunta",
-        dir1Desc: "Traditionelle regionale Küche ganz in der Nähe des Hostals.",
-        dirMaps: "Посмотреть на Google Maps",
+        dir1Desc: "Традиционная региональная кухня очень близко к хостелу.",
+        dirMaps: "Смотреть на Google Maps",
         dir2Title: "Главная площадь Караса",
-        dir2Desc: "Исторический центр, идеально для прогулок.",
+        dir2Desc: "Исторический центр, идеально для прогулок и ремесленного мороженого.",
         dir3Title: "Caja Huancayo и обмен валюты",
-        dir3Desc: "Идеально для финансовых операций в центре.",
+        dir3Desc: "Идеально для финансовых операций и обмена валюты в центре.",
         dirLocation: "Посмотреть на карте",
         stkFrom: "От",
         stkCalc: "Расчет",
