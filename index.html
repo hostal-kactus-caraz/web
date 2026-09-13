@@ -111,18 +111,18 @@
         </div>
       </div>
 
-      <!-- TARJETA GIRATORIA 3D CON ACCESO RÁPIDO -->
-      <div class="neon-yellow-box p-4 sm:p-5 rounded-2xl max-w-2xl mx-auto shadow-2xl space-y-3">
-        <div class="flex items-center justify-center gap-2 text-sky-300 font-black text-xs uppercase tracking-wider">
-          <i class="fas fa-lock-open"></i> <span data-i18n="topAccessTitle">Área Exclusiva de Huéspedes</span>
+      <!-- SECCIÓN SUPERIOR AMIGABLE Y ACOGEDORA -->
+      <div class="neon-yellow-box p-4 sm:p-5 rounded-2xl max-w-2xl mx-auto shadow-2xl space-y-3 bg-slate-900/60 border border-emerald-500/30 backdrop-blur-sm">
+        <div class="flex items-center justify-center gap-2 text-emerald-300 font-bold text-xs uppercase tracking-wider">
+          <i class="fas fa-compass"></i> <span data-i18n="topAccessTitle">¿Ya tienes tu código de bienvenida?</span>
         </div>
-        <p class="text-xs text-emerald-50 leading-relaxed" data-i18n="topAccessDesc">
-          Ingresa el código brindado por el alojamiento acá y descubre tarifas detalladas, Wi-Fi, tours y normas.
+        <p class="text-xs text-slate-200 leading-relaxed max-w-lg mx-auto" data-i18n="topAccessDesc">
+          Ingrésalo aquí para acceder de inmediato a la guía completa de la zona, recomendaciones locales, Wi-Fi de alta velocidad y tarifas especiales.
         </p>
-        <div class="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
-          <input type="password" id="topPassInput" placeholder="Ingresa tu código aquí..." onkeypress="handleTopKey(event)" class="px-3.5 py-2.5 rounded-xl border border-white/30 text-xs flex-1 bg-slate-900/70 text-white placeholder-emerald-200 focus:outline-none focus:ring-2 focus:ring-sky-400" data-i18n-placeholder="topPassPlaceholder">
-          <button onclick="unlockTopGuide()" class="py-2.5 px-5 rounded-xl text-xs shadow-md transition-all shrink-0 bg-sky-500 hover:bg-sky-600 text-white font-semibold shadow-sky-500/30 border border-sky-400/40">
-            <span data-i18n="topUnlockBtn">Desbloquear</span>
+        <div class="flex flex-col sm:flex-row gap-2 max-w-md mx-auto pt-1">
+          <input type="password" id="topPassInput" placeholder="Escribe tu código aquí..." onkeypress="handleTopKey(event)" class="px-3.5 py-2.5 rounded-xl border border-white/25 text-xs flex-1 bg-slate-950/80 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400" data-i18n-placeholder="topPassPlaceholder">
+          <button onclick="unlockTopGuide()" class="py-2.5 px-5 rounded-xl text-xs shadow-md transition-all shrink-0 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold shadow-emerald-600/30 border border-emerald-500/40">
+            <span data-i18n="topUnlockBtn">Ver Contenido</span>
           </button>
         </div>
       </div>
@@ -763,15 +763,16 @@
                       <div class="text-xs font-extrabold text-slate-800 flex items-center gap-1.5">
                         <span>🥾</span> Por tus medios
                       </div>
-                      <div class="text-[11px] text-slate-600">
-                        🚌 Bus Yungay (<strong>S/ 3</strong>) + Minivan Yanama (<strong>S/ 25 - 30</strong> ida y aprox. <strong>S/ 25 - 30</strong> retorno)<br>
-                        🎟️ Ticket Parque Nacional: <strong>S/ 30</strong>
+                      <div class="text-[11px] text-slate-600 space-y-1">
+                        <div>🚌 Bus Yungay (<strong>S/ 3</strong>) + Minivan ida (<strong>S/ 25 - 30</strong>) + Retorno (<strong>S/ 25 - 30</strong>)</div>
+                        <div>🎟️ Ticket Parque Nacional: <strong>S/ 30</strong></div>
+                        <div class="font-bold text-slate-800 pt-0.5">💰 Total estimado aprox.: <strong>S/ 90 - 98</strong></div>
                       </div>
                     </div>
                   </div>
 
-                  <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20quisiera%20coordinar%20mi%20tour%20a%20la%20Laguna%2069" target="_blank" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold text-xs py-2.5 px-4 rounded-xl shadow-sm text-center transition-all flex items-center justify-center gap-2 mt-3">
-                    <i class="fab fa-whatsapp"></i> Consultar Laguna 69
+                  <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20quisiera%20reservar%20el%20tour%20a%20la%20Laguna%2069" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs py-2.5 px-4 rounded-xl shadow-sm text-center transition-all flex items-center justify-center gap-2 mt-3">
+                    <i class="fab fa-whatsapp"></i> Reservar Laguna 69
                   </a>
                 </div>
 
@@ -846,7 +847,7 @@
     <img id="modalImg" src="" alt="Imagen Ampliada">
   </div>
 
-  <!-- LÓGICA JAVASCRIPT, TELEGRAM ANTIBLOQUEO Y APERTURA AUTOMÁTICA QR VIP -->
+  <!-- LÓGICA JAVASCRIPT Y TRADUCCIONES NATIVAS OPTIMIZADAS -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       // 1. Notificación a Telegram (Antibloqueo CORS con Imagen)
@@ -886,7 +887,6 @@
       }
     });
 
-    // Función para desplegar la carta de desayunos
     function toggleBreakfastMenu() {
       const content = document.getElementById('breakfastContent');
       const arrow = document.getElementById('breakfastArrow');
@@ -1036,10 +1036,10 @@
         whatsappFloatText: "¡Reserva o consúltanos!",
         navLocationSub: "Caraz · Perú",
         navCodeText: "Código de Huésped",
-        topAccessTitle: "Área Exclusiva de Huéspedes",
-        topAccessDesc: "Ingresa el código brindado por el alojamiento acá y descubre tarifas detalladas, Wi-Fi, tours y normas.",
-        topPassPlaceholder: "Ingresa tu código aquí...",
-        topUnlockBtn: "Desbloquear",
+        topAccessTitle: "¿Ya tienes tu código de bienvenida?",
+        topAccessDesc: "Ingrésalo aquí para acceder de inmediato a la guía completa de la zona, recomendaciones locales, Wi-Fi de alta velocidad y tarifas especiales.",
+        topPassPlaceholder: "Escribe tu código aquí...",
+        topUnlockBtn: "Ver Contenido",
         heroTitleStart: "Tu descanso cómodo, seguro y completo en",
         heroSubtitle: "Disfruta de habitaciones acogedoras, agua caliente 24/7 y la mejor ubicación para tus aventuras en la Cordillera Blanca.",
         btnOpenCalc: "🗓️ ¡Reserva Ahora / Cotiza en Línea!",
@@ -1129,10 +1129,10 @@
         whatsappFloatText: "Book or contact us!",
         navLocationSub: "Caraz · Peru",
         navCodeText: "Guest Code",
-        topAccessTitle: "Exclusive Guest Area",
-        topAccessDesc: "Enter the code provided by the accommodation here to discover detailed rates, Wi-Fi, tours, and rules.",
-        topPassPlaceholder: "Enter your code here...",
-        topUnlockBtn: "Unlock",
+        topAccessTitle: "Already have your welcome code?",
+        topAccessDesc: "Enter it here for instant access to the complete local guide, local tips, high-speed Wi-Fi, and special rates.",
+        topPassPlaceholder: "Type your code here...",
+        topUnlockBtn: "View Content",
         heroTitleStart: "Your comfortable, safe, and complete stay in",
         heroSubtitle: "Enjoy cozy rooms, 24/7 hot water, and the best location for your adventures in the Cordillera Blanca.",
         btnOpenCalc: "🗓️ Book Now / Quote Online",
@@ -1222,10 +1222,10 @@
         whatsappFloatText: "Réservez ou contactez-nous !",
         navLocationSub: "Caraz · Pérou",
         navCodeText: "Code Client",
-        topAccessTitle: "Espace Exclusif Clients",
-        topAccessDesc: "Entrez le code fourni par l'hébergement ici pour découvrir les tarifs détaillés, le Wi-Fi, les excursions et les règles.",
-        topPassPlaceholder: "Entrez votre code ici...",
-        topUnlockBtn: "Débloquer",
+        topAccessTitle: "Vous avez votre code de bienvenue ?",
+        topAccessDesc: "Entrez-le ici pour accéder instantanément au guide complet, conseils locaux, Wi-Fi haut débit et tarifs préférentiels.",
+        topPassPlaceholder: "Écrivez votre code ici...",
+        topUnlockBtn: "Voir le contenu",
         heroTitleStart: "Votre séjour confortable, sûr et complet à",
         heroSubtitle: "Profitez de chambres chaleureuses, d'eau chaude 24h/24 et du meilleur emplacement pour vos aventures dans la Cordillera Blanca.",
         btnOpenCalc: "🗓️ Réserver / Devis en Ligne",
@@ -1315,10 +1315,10 @@
         whatsappFloatText: "Zarezervujte si nebo nás kontaktujte!",
         navLocationSub: "Caraz · Peru",
         navCodeText: "Kód hosta",
-        topAccessTitle: "Exkluzivní zóna pro hosty",
-        topAccessDesc: "Zde zadejte kód poskytnutý ubytováním a objevte podrobné ceny, Wi-Fi, výlety a pravidla.",
+        topAccessTitle: "Máte svůj uvítací kód?",
+        topAccessDesc: "Zadejte ho sem pro okamžitý přístup ke kompletnímu průvodci, místním tipům, rychlé Wi-Fi a speciálním cenám.",
         topPassPlaceholder: "Zde zadejte svůj kód...",
-        topUnlockBtn: "Odemknout",
+        topUnlockBtn: "Zobrazit obsah",
         heroTitleStart: "Váš pohodlný, bezpečný a kompletní pobyt v",
         heroSubtitle: "Užijte si útulné pokoje, teplou vodu 24/7 a nejlepší polohu pro vaše dobrodružství v Cordillera Blanca.",
         btnOpenCalc: "🗓️ Rezervovat / Online kalkulace",
@@ -1394,7 +1394,7 @@
         directoryTitle: "📍 Klíčová místa v Carazu",
         dir1Title: "Restaurace Pacha Hunta",
         dir1Desc: "Tradiční regionální jídlo velmi blízko hostelu.",
-        dirMaps: "Zobrazit na Google Maps",
+        btnMaps: "Zobrazit na Google Maps",
         dir2Title: "Náměstí Plaza de Armas v Carazu",
         dir2Desc: "Historické centrum, ideální pro procházky.",
         dir3Title: "Caja Huancayo & Směnárna",
@@ -1408,10 +1408,10 @@
         whatsappFloatText: "预订或联系我们！",
         navLocationSub: "秘鲁 · 卡拉斯",
         navCodeText: "住客专属码",
-        topAccessTitle: "住客特权专区",
-        topAccessDesc: "在此输入酒店提供的专属码，查看详细价格、Wi-Fi、旅游路线及入住须知。",
+        topAccessTitle: "您有欢迎专属码吗？",
+        topAccessDesc: "在此输入即可立即访问完整周边指南、本地建议、高速Wi-Fi及特惠价格。",
         topPassPlaceholder: "在此输入您的代码...",
-        topUnlockBtn: "解锁",
+        topUnlockBtn: "查看内容",
         heroTitleStart: "在舒适、安全且完美的秘鲁卡拉斯享受假期",
         heroSubtitle: "享受温馨的客房、24小时热水，以及探索白色山脉（Cordillera Blanca）的最佳地理位置。",
         btnOpenCalc: "🗓️ 立即预订 / 在线报价",
@@ -1501,10 +1501,10 @@
         whatsappFloatText: "Reserve ou fale conosco!",
         navLocationSub: "Caraz · Peru",
         navCodeText: "Código do Hóspede",
-        topAccessTitle: "Área Exclusiva de Hóspedes",
-        topAccessDesc: "Insira o código fornecido pelo alojamento aqui para descobrir tarifas detalhadas, Wi-Fi, passeios e regras.",
-        topPassPlaceholder: "Insira seu código aqui...",
-        topUnlockBtn: "Desbloquear",
+        topAccessTitle: "Já tem o seu código de boas-vindas?",
+        topAccessDesc: "Insira-o aqui para acesso imediato ao guia completo da região, dicas locais, Wi-Fi de alta velocidade e tarifas especiais.",
+        topPassPlaceholder: "Digite seu código aqui...",
+        topUnlockBtn: "Ver Conteúdo",
         heroTitleStart: "Sua estadia confortável, segura e completa em",
         heroSubtitle: "Desfrute de quartos aconchegantes, água quente 24/7 e a melhor localização para suas aventuras na Cordillera Blanca.",
         btnOpenCalc: "🗓️ Reserve Agora / Orçamento Online",
@@ -1594,10 +1594,10 @@
         whatsappFloatText: "Buchen oder kontaktieren Sie uns!",
         navLocationSub: "Caraz · Peru",
         navCodeText: "Gästekod",
-        topAccessTitle: "Exklusiver Gäste-Bereich",
-        topAccessDesc: "Geben Sie den von der Unterkunft bereitgestellten Code hier ein, um detaillierte Preise, WLAN, Touren und Regeln zu entdecken.",
-        topPassPlaceholder: "Geben Sie Ihren Code hier ein...",
-        topUnlockBtn: "Freischalten",
+        topAccessTitle: "Haben Sie Ihren Willkommenscode?",
+        topAccessDesc: "Geben Sie ihn hier ein für sofortigen Zugriff auf den vollständigen Guide, lokale Tipps, Highspeed-WLAN und Sonderpreise.",
+        topPassPlaceholder: "Code hier eingeben...",
+        topUnlockBtn: "Inhalt ansehen",
         heroTitleStart: "Ihr komfortabler, sicherer und kompletter Aufenthalt in",
         heroSubtitle: "Genießen Sie gemütliche Zimmer, warmes Wasser 24/7 und die beste Lage für Ihre Abenteuer in der Cordillera Blanca.",
         btnOpenCalc: "🗓️ Jetzt Buchen / Online Berechnen",
@@ -1687,10 +1687,10 @@
         whatsappFloatText: "Забронируйте или свяжитесь с нами!",
         navLocationSub: "Карас · Перу",
         navCodeText: "Код Гостя",
-        topAccessTitle: "Эксклюзивная зона для гостей",
-        topAccessDesc: "Введите код, выданный хостелом, чтобы узнать тарифы, пароль Wi-Fi, экскурсии и правила.",
-        topPassPlaceholder: "Введите ваш код здесь...",
-        topUnlockBtn: "Разблокировать",
+        topAccessTitle: "У вас есть приветственный код?",
+        topAccessDesc: "Введите его здесь для мгновенного доступа к полному гиду, местным советам, быстрому Wi-Fi и спецтарифам.",
+        topPassPlaceholder: "Введите код здесь...",
+        topUnlockBtn: "Смотреть контент",
         heroTitleStart: "Ваш комфортный, безопасный и полноценный отдых в",
         heroSubtitle: "Наслаждайтесь уютными номерами, горячей водой 24/7 и лучшим расположением для приключений в Кордильера-Бланка.",
         btnOpenCalc: "🗓️ Забронировать / Расчет онлайн",
