@@ -34,11 +34,11 @@
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-500 selection:text-white pb-24 relative">
 
-  <!-- BOTÓN FLOTANTE DE WHATSAPP PROFESIONAL -->
-  <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20quisiera%20hacer%20una%20consulta%20o%20reserva" target="_blank" rel="noopener" class="fixed bottom-20 right-5 z-50 bg-emerald-600 hover:bg-emerald-500 text-white p-3.5 sm:px-4 sm:py-3 rounded-full shadow-2xl flex items-center gap-2 transition-all transform hover:scale-105 group border-2 border-white">
+  <!-- BOTÓN FLOTANTE DE WHATSAPP DINÁMICO -->
+  <button onclick="sendGlobalWhatsApp('general')" class="fixed bottom-20 right-5 z-50 bg-emerald-600 hover:bg-emerald-500 text-white p-3.5 sm:px-4 sm:py-3 rounded-full shadow-2xl flex items-center gap-2 transition-all transform hover:scale-105 group border-2 border-white cursor-pointer">
     <i class="fab fa-whatsapp text-2xl animate-bounce"></i>
     <span class="text-xs font-bold hidden sm:inline" data-i18n="whatsappFloatText">¡Reserva o consúltanos!</span>
-  </a>
+  </button>
 
   <!-- BARRA SUPERIOR -->
   <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/85 shadow-xs py-3 px-3 sm:px-10">
@@ -139,9 +139,9 @@
         <button onclick="toggleCalculator()" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-extrabold px-8 py-4 rounded-2xl text-sm shadow-xl transition-all transform hover:scale-105 flex items-center gap-2.5 border-2 border-white/40">
           <i class="fas fa-calculator text-base"></i> <span data-i18n="btnOpenCalc">🗓️ ¡Reserva / Cotiza en Línea!</span>
         </button>
-        <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20deseo%20consultar%20disponibilidad%20directamente" target="_blank" rel="noopener" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-4 rounded-2xl text-sm shadow-xl transition-all flex items-center gap-2 border border-white/20">
+        <button onclick="sendGlobalWhatsApp('general')" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-4 rounded-2xl text-sm shadow-xl transition-all flex items-center gap-2 border border-white/20 cursor-pointer">
           <i class="fab fa-whatsapp text-lg"></i> <span data-i18n="btnWhatsappDir">Contacto Directo WhatsApp</span>
-        </a>
+        </button>
       </div>
 
     </div>
@@ -329,7 +329,7 @@
               <p class="text-slate-600 text-xs leading-relaxed" data-i18n="room1Desc">Habitación pequeña y acogedora con cama de 2 plazas. Ideal para parejas o viajeros solos.</p>
               <div class="text-2xl font-black text-emerald-600 mt-4 flex items-baseline gap-1">S/ 35.00 <span class="text-[11px] font-semibold text-slate-400" data-i18n="perNight1">promedio por noche</span></div>
             </div>
-            <button onclick="bookRoomDirect(35, 'eco')" class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2">
+            <button onclick="bookRoomDirect(35, 'eco')" class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer">
               <i class="fab fa-whatsapp text-base"></i> <span data-i18n="btnBookDirectText">Reservar Habitación</span>
             </button>
           </div>
@@ -360,7 +360,7 @@
               <p class="text-slate-600 text-xs leading-relaxed" data-i18n="room2Desc">Habitación espaciosa con cama de 2 plazas, gran iluminación natural y armario.</p>
               <div class="text-2xl font-black text-emerald-600 mt-4 flex items-baseline gap-1">S/ 45.00 <span class="text-[11px] font-semibold text-slate-400" data-i18n="perNight2">promedio por noche</span></div>
             </div>
-            <button onclick="bookRoomDirect(45, 'med')" class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2">
+            <button onclick="bookRoomDirect(45, 'med')" class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer">
               <i class="fab fa-whatsapp text-base"></i> <span data-i18n="btnBookDirectText">Reservar Habitación</span>
             </button>
           </div>
@@ -717,9 +717,9 @@
                     </div>
                   </div>
 
-                  <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20deseo%20reservar%20el%20tour%20a%20la%20Laguna%20Parón" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs py-2.5 px-4 rounded-xl shadow-sm text-center transition-all flex items-center justify-center gap-2 mt-3">
+                  <button onclick="sendTourWhatsApp('paron')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs py-2.5 px-4 rounded-xl shadow-sm text-center transition-all flex items-center justify-center gap-2 mt-3 cursor-pointer">
                     <i class="fab fa-whatsapp"></i> Reservar Parón
-                  </a>
+                  </button>
                 </div>
 
                 <!-- TARJETA 2: LAGUNA 69 -->
@@ -771,9 +771,9 @@
                     </div>
                   </div>
 
-                  <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20quisiera%20reservar%20el%20tour%20a%20la%20Laguna%2069" target="_blank" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold text-xs py-2.5 px-4 rounded-xl shadow-sm text-center transition-all flex items-center justify-center gap-2 mt-3">
+                  <button onclick="sendTourWhatsApp('laguna69')" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold text-xs py-2.5 px-4 rounded-xl shadow-sm text-center transition-all flex items-center justify-center gap-2 mt-3 cursor-pointer">
                     <i class="fab fa-whatsapp"></i> Reservar Laguna 69
-                  </a>
+                  </button>
                 </div>
 
               </div>
@@ -833,12 +833,12 @@
       <span class="text-emerald-300" data-i18n="stkFrom">Desde</span> <strong class="text-base text-amber-300 font-black">S/ 35.00</strong>
     </div>
     <div class="flex items-center gap-2">
-      <button onclick="toggleCalculator()" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-extrabold py-2 px-4 rounded-xl text-xs shadow-md transition-all">
+      <button onclick="toggleCalculator()" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-extrabold py-2 px-4 rounded-xl text-xs shadow-md transition-all cursor-pointer">
         🗓️ <span data-i18n="stkCalc">Cotizar</span>
       </button>
-      <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20quisiera%20consultar%20disponibilidad" target="_blank" rel="noopener" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-5 rounded-xl text-xs shadow-md flex items-center gap-2 transition-all">
+      <button onclick="sendGlobalWhatsApp('general')" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-5 rounded-xl text-xs shadow-md flex items-center gap-2 transition-all cursor-pointer">
         <i class="fab fa-whatsapp text-sm"></i> <span data-i18n="stkBtn">Reservar Ahora</span>
-      </a>
+      </button>
     </div>
   </div>
 
@@ -931,7 +931,67 @@
       }
     }
 
-    // RESERVA DIRECTA DESDE LAS TARJETAS (AHORA DICE 'RESERVAR' Y LLEGA EN EL IDIOMA ACTUAL)
+    // WHATSAPP GLOBAL / BOTONES FLOTANTES / BARRA INFERIOR (EN EL IDIOMA ACTUAL)
+    function sendGlobalWhatsApp(type) {
+      const globalMessages = {
+        es: "Hola Hostal Kactus 👋, quisiera hacer una consulta o reserva.",
+        en: "Hello Hostal Kactus 👋, I would like to make an inquiry or reservation.",
+        fr: "Bonjour Hostal Kactus 👋, je souhaite faire une demande ou une réservation.",
+        cs: "Dobrý den, Hostal Kactus 👋, rád bych se na něco zeptal nebo provedl rezervaci.",
+        zh: "您好 Hostal Kactus 👋，我想进行咨询或预订。",
+        pt: "Olá Hostal Kactus 👋, gostaria de fazer uma consulta ou reserva.",
+        de: "Hallo Hostal Kactus 👋, ich möchte eine Anfrage oder Reservierung vornehmen.",
+        ru: "Здравствуйте, Hostal Kactus 👋, я бы хотел сделать запрос или бронирование."
+      };
+
+      const msg = globalMessages[currentLang] || globalMessages['es'];
+      window.open(`https://wa.me/51974364826?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+
+    // RESERVA DE TOURS (PARÓN Y LAGUNA 69) EN EL IDIOMA ACTUAL
+    function sendTourWhatsApp(tourKey) {
+      const tourMessages = {
+        es: {
+          paron: "Hola Hostal Kactus 👋, deseo reservar el tour a la Laguna Parón.",
+          laguna69: "Hola Hostal Kactus 👋, quisiera reservar el tour a la Laguna 69."
+        },
+        en: {
+          paron: "Hello Hostal Kactus 👋, I would like to book the tour to Laguna Parón.",
+          laguna69: "Hello Hostal Kactus 👋, I would like to book the tour to Laguna 69."
+        },
+        fr: {
+          paron: "Bonjour Hostal Kactus 👋, je souhaite réserver l'excursion à la lagune Parón.",
+          laguna69: "Bonjour Hostal Kactus 👋, je souhaite réserver l'excursion à la lagune 69."
+        },
+        cs: {
+          paron: "Dobrý den, Hostal Kactus 👋, rád bych si rezervoval výlet k laguře Parón.",
+          laguna69: "Dobrý den, Hostal Kactus 👋, rád bych si rezervoval výlet k laguře 69."
+        },
+        zh: {
+          paron: "您好 Hostal Kactus 👋，我想预订帕龙湖（Laguna Parón）之旅。",
+          laguna69: "您好 Hostal Kactus 👋，我想预订69号湖（Laguna 69）徒步之旅。"
+        },
+        pt: {
+          paron: "Olá Hostal Kactus 👋, gostaria de reservar o passeio para a Lagoa Parón.",
+          laguna69: "Olá Hostal Kactus 👋, gostaria de reservar o passeio para a Lagoa 69."
+        },
+        de: {
+          paron: "Hallo Hostal Kactus 👋, ich möchte die Tour zur Laguna Parón buchen.",
+          laguna69: "Hallo Hostal Kactus 👋, ich möchte die Tour zur Laguna 69 buchen."
+        },
+        ru: {
+          paron: "Здравствуйте, Hostal Kactus 👋, я хочу забронировать тур на лагуну Парон.",
+          laguna69: "Здравствуйте, Hostal Kactus 👋, я хочу забронировать тур на лагуну 69."
+        }
+      };
+
+      const langDict = tourMessages[currentLang] || tourMessages['es'];
+      const msg = langDict[tourKey] || (tourKey === 'paron' ? "Hola Hostal Kactus 👋, deseo reservar el tour a la Laguna Parón." : "Hola Hostal Kactus 👋, quisiera reservar el tour a la Laguna 69.");
+      
+      window.open(`https://wa.me/51974364826?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+
+    // RESERVA DIRECTA DESDE LAS TARJETAS DE HABITACIÓN (EN EL IDIOMA ACTUAL)
     function bookRoomDirect(price, roomKey) {
       const roomNames = {
         es: { eco: 'Habitación Matrimonial Económica', med: 'Habitación Matrimonial Mediana' },
@@ -1489,7 +1549,7 @@
         directoryTitle: "📍 Klíčová místa v Carazu",
         dir1Title: "Restaurace Pacha Hunta",
         dir1Desc: "Tradiční regionální jídlo velmi blízko hostelu.",
-        btnMaps: "Zobrazit na Google Maps",
+        dirMaps: "Zobrazit na Google Maps",
         dir2Title: "Náměstí Plaza de Armas v Carazu",
         dir2Desc: "Historické centrum, ideální pro procházky.",
         dir3Title: "Caja Huancayo & Směnárna",
