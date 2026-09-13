@@ -6,14 +6,14 @@
   <title id="page-title">Hostal Kactus | Alojamiento & Tours en Caraz, Perú</title>
   <meta name="description" content="Alojamiento acogedor en Caraz, Perú. Baño privado, agua caliente 24/7, Wi-Fi rápido, alquiler de equipos de camping y guía exclusiva a Laguna Parón, Laguna 69 y Cañón del Pato.">
   
-  <!-- OPENGRAPH PARA WHATSAPP Y REDES SOCIALES (TARJETA PROFESIONAL) -->
+  <!-- OPENGRAPH PARA WHATSAPP Y REDES SOCIALES -->
   <meta property="og:title" content="Hostal Kactus | Alojamiento & Tours en Caraz, Perú">
   <meta property="og:description" content="Habitaciones cómodas, agua caliente 24/7, Wi-Fi, cochera gratis y guías hacia Laguna Parón y Laguna 69. ¡Reserva al mejor precio directo!">
   <meta property="og:image" content="https://lh3.googleusercontent.com/d/1306fD7zgATU2P_1JwTWkWpq-lukMtejG">
   <meta property="og:url" content="https://hostalkactus.com">
   <meta property="og:type" content="website">
 
-  <!-- FAVICON E ICONO MÓVIL (PWA READY) -->
+  <!-- FAVICON E ICONO MÓVIL -->
   <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23059669%22/><text x=%2250%%22 y=%2255%%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2260%22 fill=%22white%22 font-family=%22sans-serif%22 font-weight=%22900%22>K</text></svg>">
   <meta name="theme-color" content="#022c22">
 
@@ -31,33 +31,8 @@
 
   <!-- Three.js para WebGL -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  
-  <style>
-    @keyframes floatMascot {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-4px); }
-    }
-    .mascot-float {
-      animation: floatMascot 3s ease-in-out infinite;
-    }
-  </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-500 selection:text-white pb-24 relative">
-
-  <!-- BOTÓN FLOTANTE DE WHATSAPP + MASCOTA KACTUS FLOTANDO ENCIMA -->
-  <div class="fixed bottom-20 right-5 z-50 flex flex-col items-end gap-1.5 pointer-events-auto">
-    <!-- Mascota Kactus (Avatar circular con la imagen oficial) -->
-    <div class="mascot-float relative flex items-center bg-emerald-900 text-white px-3 py-1.5 rounded-full shadow-xl border-2 border-amber-400 gap-2">
-      <img src="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx (2) (1).png" alt="Mascota Kactus" class="w-7 h-7 rounded-full object-cover border border-white shadow-sm" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23059669%22/><text x=%2250%%22 y=%2255%%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2250%22 fill=%22white%22>🌵</text></svg>'">
-      <span class="text-[10px] font-extrabold tracking-wide uppercase text-amber-300" data-i18n="mascotBubble">¡Hola viajer@! 🌵</span>
-    </div>
-
-    <!-- Botón Principal WhatsApp -->
-    <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20quisiera%20hacer%20una%20consulta%20o%20reserva" target="_blank" rel="noopener" class="bg-emerald-600 hover:bg-emerald-500 text-white p-3.5 sm:px-5 sm:py-3.5 rounded-full shadow-2xl flex items-center gap-2.5 transition-all transform hover:scale-105 border-2 border-white">
-      <i class="fab fa-whatsapp text-2xl animate-bounce"></i>
-      <span class="text-xs font-bold" data-i18n="whatsappFloatText">Reserva Ahora</span>
-    </a>
-  </div>
 
   <!-- BARRA SUPERIOR -->
   <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/85 shadow-xs py-3 px-3 sm:px-10">
@@ -235,7 +210,7 @@
       </a>
     </div>
 
-    <!-- SECCIÓN PÚBLICA: ATRACCIONES DESTACADAS CON CARRUSELES MÚLTIPLES -->
+    <!-- SECCIÓN PÚBLICA: ATRACCIONES DESTACADAS -->
     <section>
       <div class="text-center max-w-2xl mx-auto mb-8 space-y-2">
         <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight" data-i18n="publicAttractionsTitle">Maravillas Naturales que Debes Visitar</h2>
@@ -609,12 +584,12 @@
                 </div>
               </div>
 
-              <!-- Desayunos con Mascota Kactus en la Cabecera -->
+              <!-- Desayunos -->
               <div class="bg-white rounded-2xl border border-slate-200 shadow-md overflow-hidden">
                 <button onclick="toggleBreakfastMenu()" class="w-full bg-gradient-to-r from-emerald-600 to-teal-700 text-white p-4 sm:p-5 flex justify-between items-center text-left transition-all hover:opacity-95 cursor-pointer">
                   <div class="flex items-center gap-3.5">
                     <div class="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-2xl shadow-sm border border-white/30 shrink-0 relative overflow-hidden">
-                      <img src="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx (2) (1).png" alt="Mascota" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23059669%22/><text x=%2250%%22 y=%2255%%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2250%22 fill=%22white%22>🌵</text></svg>'">
+                      <span>🌵</span>
                     </div>
                     <div>
                       <h5 class="font-extrabold text-sm sm:text-base flex items-center gap-2">
@@ -836,10 +811,10 @@
     <img id="modalImg" src="" alt="Imagen Ampliada">
   </div>
 
-  <!-- LÓGICA JAVASCRIPT, TELEGRAM ROBUSTO Y TRADUCCIONES -->
+  <!-- LÓGICA JAVASCRIPT Y TRADUCCIONES -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      // 1. Notificación a Telegram 100% infalible mediante Image Beacon y fetch con fallback
+      // Notificación automática a Telegram al ingresar
       const visitorKey = "kactus_visited_session";
       if (!sessionStorage.getItem(visitorKey)) {
         sessionStorage.setItem(visitorKey, "true");
@@ -859,14 +834,13 @@
 
         const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(mensaje)}&parse_mode=Markdown`;
 
-        // Método doble: fetch y creación de objeto Image invisble para evitar bloqueos del navegador
         fetch(url, { method: 'GET', mode: 'no-cors' }).catch(() => {
           const img = new Image();
           img.src = url;
         });
       }
 
-      // 2. Apertura automática si entra por el QR especial (?acceso=vip)
+      // Apertura automática si entra por el QR VIP
       const urlParams = new URLSearchParams(window.location.search);
       if (urlParams.get('acceso') === 'vip') {
         const secretSection = document.getElementById('secretGuide');
@@ -879,7 +853,6 @@
       }
     });
 
-    // Función para desplegar la carta de desayunos
     function toggleBreakfastMenu() {
       const content = document.getElementById('breakfastContent');
       const arrow = document.getElementById('breakfastArrow');
@@ -989,6 +962,7 @@
       window.open(`https://wa.me/51974364826?text=${encodeURIComponent(msg)}`, '_blank');
     }
 
+    // FUNCIÓN DE DESBLOQUEO CORREGIDA Y ROBUSTA
     function unlockGuide() {
       const pass = document.getElementById('passInput').value.trim();
       const secretSection = document.getElementById('secretGuide');
@@ -1015,7 +989,7 @@
         secretSection.scrollIntoView({ behavior: 'smooth' });
       } else {
         inputEl.classList.add('animate-shake', 'border-red-500');
-        setTimeout(() => inputEl.classList.add('animate-shake', 'border-red-500'), 500);
+        setTimeout(() => inputEl.classList.remove('animate-shake', 'border-red-500'), 500);
         alert('Contraseña incorrecta. Solicita la clave oficial en recepción.');
         inputEl.value = '';
       }
@@ -1024,11 +998,9 @@
     function handleKey(e) { if (e.key === 'Enter') unlockGuide(); }
     function handleTopKey(e) { if (e.key === 'Enter') unlockTopGuide(); }
 
-    // DICCIONARIO DE TRADUCCIONES 100% NATIVAS Y COHERENTES (8 IDIOMAS)
+    // DICCIONARIO DE TRADUCCIONES
     const translations = {
       es: {
-        mascotBubble: "¡Hola viajer@! 🌵",
-        whatsappFloatText: "Reserva Ahora",
         navLocationSub: "Caraz · Perú",
         navCodeText: "Código de Huésped",
         topAccessTitle: "Área Exclusiva de Huéspedes",
@@ -1185,8 +1157,6 @@
         stkBtn: "Reservar Ahora"
       },
       en: {
-        mascotBubble: "Hello traveler! 🌵",
-        whatsappFloatText: "Book Now",
         navLocationSub: "Caraz · Peru",
         navCodeText: "Guest Code",
         topAccessTitle: "Exclusive Guest Area",
@@ -1343,8 +1313,6 @@
         stkBtn: "Book Now"
       },
       fr: {
-        mascotBubble: "Bonjour voyageur ! 🌵",
-        whatsappFloatText: "Réserver",
         navLocationSub: "Caraz · Pérou",
         navCodeText: "Code Client",
         topAccessTitle: "Espace Exclusif Clients",
@@ -1501,8 +1469,6 @@
         stkBtn: "Réserver Maintenant"
       },
       cs: {
-        mascotBubble: "Ahoj cestovateli! 🌵",
-        whatsappFloatText: "Rezervovat",
         navLocationSub: "Caraz · Peru",
         navCodeText: "Kód hosta",
         topAccessTitle: "Exkluzivní zóna pro hosty",
@@ -1617,7 +1583,7 @@
         bf4Desc: "Lomo saltado (hovězí nudličky s cibulí a rajčaty, bez rýže), 3 pečiva, džus a káva.",
         bfNote: "💡 *Snídaně lze objednat přímo na recepci večer předem.*",
         toursGuideTitle: "Rychlý průvodce výlety (Parón & Laguna 69)",
-        toursGuideSub: "Přímé informace pro naplánování dobrodružství během vteřiny. Platba v hotovosti nebo kartou v ubytování.",
+        toursGuideSub: "Přímé informace pro naplánování dobrodružství během vteřiny. Platba v hotovosti nebo kartě v ubytování.",
         badgeImperdible: "⭐ DOPORUČUJEME",
         badgeExigente: "⚡ NÁROČNÉ",
         t1Name: "1. Laguna Parón",
@@ -1648,7 +1614,7 @@
         directoryTitle: "📍 Klíčová místa v Carazu",
         dir1Title: "Restaurace Pacha Hunta",
         dir1Desc: "Tradiční regionální jídla v bezprostřední blízkosti hostelu.",
-        btnMaps: "Zobrazit na Google Maps",
+        dirMaps: "Zobrazit na Google Maps",
         dir2Title: "Náměstí Plaza de Armas v Carazu",
         dir2Desc: "Historické centrum, ideální pro procházky a ochutnávku domácí zmrzliny.",
         dir3Title: "Caja Huancayo & Směnárna",
@@ -1659,8 +1625,6 @@
         stkBtn: "Rezervovat"
       },
       zh: {
-        mascotBubble: "你好，旅行者！🌵",
-        whatsappFloatText: "立即预订",
         navLocationSub: "秘鲁 · 卡拉斯",
         navCodeText: "住客验证码",
         topAccessTitle: "住客专属特权区",
@@ -1817,8 +1781,6 @@
         stkBtn: "立即预订"
       },
       pt: {
-        mascotBubble: "Olá viajante! 🌵",
-        whatsappFloatText: "Reservar Agora",
         navLocationSub: "Caraz · Peru",
         navCodeText: "Código do Hóspede",
         topAccessTitle: "Área Exclusiva de Hóspedes",
@@ -1926,7 +1888,7 @@
         bf1Name: "Café da Manhã Mochileiro",
         bf1Desc: "2 pães com ovo e presunto + café quente.",
         bf2Name: "Café da Manhã Continental",
-        bf2Desc: "1 ovo frito, manteiga, geleia, suco, café e 3 pães.",
+        bf2Desc: "1 ovo frito, mantequilla, mermelada, suco, café e 3 pães.",
         bf3Name: "Café da Manhã Americano",
         bf3Desc: "3 pães, suco, café e 3 ovos mexidos com presunto.",
         bf4Name: "Café da Manhã Royal",
@@ -1975,8 +1937,6 @@
         stkBtn: "Reservar Agora"
       },
       de: {
-        mascotBubble: "Hallo Reisender! 🌵",
-        whatsappFloatText: "Jetzt Buchen",
         navLocationSub: "Caraz · Peru",
         navCodeText: "Gästekod",
         topAccessTitle: "Exklusiver Gäste-Bereich",
@@ -2133,8 +2093,6 @@
         stkBtn: "Jetzt Buchen"
       },
       ru: {
-        mascotBubble: "Привет, путешественник! 🌵",
-        whatsappFloatText: "Забронировать",
         navLocationSub: "Карас · Перу",
         navCodeText: "Код Гостя",
         topAccessTitle: "Эксклюзивная зона для гостей",
