@@ -329,8 +329,8 @@
               <p class="text-slate-600 text-xs leading-relaxed" data-i18n="room1Desc">Habitación pequeña y acogedora con cama de 2 plazas. Ideal para parejas o viajeros solos.</p>
               <div class="text-2xl font-black text-emerald-600 mt-4 flex items-baseline gap-1">S/ 35.00 <span class="text-[11px] font-semibold text-slate-400" data-i18n="perNight1">promedio por noche</span></div>
             </div>
-            <button onclick="selectRoomAndOpen(35)" class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2">
-              <i class="fas fa-calculator text-base"></i> <span data-i18n="btnQuoteText">Cotizar en Calculadora</span>
+            <button onclick="bookRoomDirect(35, 'Habitación Matrimonial Económica')" class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2">
+              <i class="fab fa-whatsapp text-base"></i> <span data-i18n="btnBookDirectText">Reservar Habitación</span>
             </button>
           </div>
         </div>
@@ -360,8 +360,8 @@
               <p class="text-slate-600 text-xs leading-relaxed" data-i18n="room2Desc">Habitación espaciosa con cama de 2 plazas, gran iluminación natural y armario.</p>
               <div class="text-2xl font-black text-emerald-600 mt-4 flex items-baseline gap-1">S/ 45.00 <span class="text-[11px] font-semibold text-slate-400" data-i18n="perNight2">promedio por noche</span></div>
             </div>
-            <button onclick="selectRoomAndOpen(45)" class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2">
-              <i class="fas fa-calculator text-base"></i> <span data-i18n="btnQuoteText">Cotizar en Calculadora</span>
+            <button onclick="bookRoomDirect(45, 'Habitación Matrimonial Mediana')" class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2">
+              <i class="fab fa-whatsapp text-base"></i> <span data-i18n="btnBookDirectText">Reservar Habitación</span>
             </button>
           </div>
         </div>
@@ -771,7 +771,7 @@
                     </div>
                   </div>
 
-                  <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20quisiera%20reservar%20el%20tour%20a%20la%20Laguna%2069" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs py-2.5 px-4 rounded-xl shadow-sm text-center transition-all flex items-center justify-center gap-2 mt-3">
+                  <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20quisiera%20reservar%20el%20tour%20a%20la%20Laguna%2069" target="_blank" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold text-xs py-2.5 px-4 rounded-xl shadow-sm text-center transition-all flex items-center justify-center gap-2 mt-3">
                     <i class="fab fa-whatsapp"></i> Reservar Laguna 69
                   </a>
                 </div>
@@ -849,6 +849,8 @@
 
   <!-- LÓGICA JAVASCRIPT Y TRADUCCIONES NATIVAS OPTIMIZADAS -->
   <script>
+    let currentLang = 'es';
+
     document.addEventListener("DOMContentLoaded", function() {
       // 1. Notificación a Telegram (Antibloqueo CORS con Imagen)
       const visitorKey = "kactus_visited_session";
@@ -929,12 +931,34 @@
       }
     }
 
-    function selectRoomAndOpen(price) {
-      document.getElementById('calcRoom').value = price;
-      calculateTotal();
-      const panel = document.getElementById('calculatorPanel');
-      panel.classList.remove('hidden');
-      panel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // FUNCIÓN DE RESERVA DIRECTA SEGÚN EL IDIOMA ACTUAL
+    function bookRoomDirect(price, roomNameEs) {
+      const roomNames = {
+        es: roomNameEs,
+        en: roomNameEs.includes('Económica') ? 'Economy Double Room' : 'Medium Double Room',
+        fr: roomNameEs.includes('Económica') ? 'Chambre Double Économique' : 'Chambre Double Standard',
+        cs: roomNameEs.includes('Económica') ? 'Ekonomický dvoulůžkový pokoj' : 'Standardní dvoulůžkový pokoj',
+        zh: roomNameEs.includes('Económica') ? '经济双人房' : '中等双人房',
+        pt: roomNameEs.includes('Económica') ? 'Quarto Matrimonial Econômico' : 'Quarto Matrimonial Médio',
+        de: roomNameEs.includes('Económica') ? 'Wirtschaftliches Doppelzimmer' : 'Mittelgroßes Doppelzimmer',
+        ru: roomNameEs.includes('Económica') ? 'Эконом двухместный номер' : 'Стандартный двухместный номер'
+      };
+
+      const roomTitle = roomNames[currentLang] || roomNameEs;
+
+      const messages = {
+        es: `Hola Hostal Kactus 👋, deseo reservar la *${roomTitle}* (S/ ${price}.00 por noche). Quedo atento/a para coordinar fechas y detalles. ¡Gracias!`,
+        en: `Hello Hostal Kactus 👋, I would like to book the *${roomTitle}* (S/ ${price}.00 per night). I look forward to coordinating dates and details. Thank you!`,
+        fr: `Bonjour Hostal Kactus 👋, je souhaite réserver la *${roomTitle}* (S/ ${price}.00 par nuit). J'attends votre retour pour coordonner les dates. Merci !`,
+        cs: `Dobrý den, Hostal Kactus 👋, rád bych si rezervoval pokoj *${roomTitle}* (S/ ${price}.00 za noc). Těším se na koordinaci termínů. Děkuji!`,
+        zh: `您好 Hostal Kactus 👋，我想预订 *${roomTitle}*（每晚 S/ ${price}.00）。期待与您确认入住日期和详情。谢谢！`,
+        pt: `Olá Hostal Kactus 👋, gostaria de reservar o *${roomTitle}* (S/ ${price}.00 por noite). Fico no aguardo para coordenar as datas. Obrigado!`,
+        de: `Hallo Hostal Kactus 👋, ich möchte das *${roomTitle}* (S/ ${price}.00 pro Nacht) buchen. Ich freue mich auf die Bestätigung. Danke!`,
+        ru: `Здравствуйте, Hostal Kactus 👋, я хочу забронировать номер *${roomTitle}* (S/ ${price}.00 за ночь). Жду подтверждения дат и деталей. Спасибо!`
+      };
+
+      const msg = messages[currentLang] || messages['es'];
+      window.open(`https://wa.me/51974364826?text=${encodeURIComponent(msg)}`, '_blank');
     }
 
     window.addEventListener('DOMContentLoaded', () => {
@@ -1078,7 +1102,7 @@
         room1Desc: "Habitación pequeña y acogedora con cama de 2 plazas. Ideal para parejas o viajeros solos.",
         perNight1: "promedio por noche",
         perNight2: "promedio por noche",
-        btnQuoteText: "Cotizar en Calculadora",
+        btnBookDirectText: "Reservar Habitación",
         room2Tag: "MÁS POPULAR",
         room2Title: "Habitación Matrimonial Mediana",
         room2Desc: "Habitación espaciosa con cama de 2 plazas, gran iluminación natural y armario.",
@@ -1171,7 +1195,7 @@
         room1Desc: "Cozy small room with a full-size bed. Ideal for couples or solo travelers.",
         perNight1: "average per night",
         perNight2: "average per night",
-        btnQuoteText: "Quote in Calculator",
+        btnBookDirectText: "Book Room",
         room2Tag: "MOST POPULAR",
         room2Title: "Medium Double Room",
         room2Desc: "Spacious room with a full-size bed, great natural light, and a wardrobe.",
@@ -1264,7 +1288,7 @@
         room1Desc: "Petite chambre confortable avec lit double. Idéale pour les couples ou voyageurs solos.",
         perNight1: "moyenne par nuit",
         perNight2: "moyenne par nuit",
-        btnQuoteText: "Calculer le tarif",
+        btnBookDirectText: "Réserver la chambre",
         room2Tag: "LE PLUS POPULAIRE",
         room2Title: "Chambre Double Standard",
         room2Desc: "Chambre spacieuse avec lit double, belle lumière naturelle et placard.",
@@ -1357,7 +1381,7 @@
         room1Desc: "Útulný menší pokoj s manželskou postelí. Ideální pro páry nebo solo cestovatele.",
         perNight1: "průměr za noc",
         perNight2: "průměr za noc",
-        btnQuoteText: "Kalkulovat cenu",
+        btnBookDirectText: "Rezervovat pokoj",
         room2Tag: "NEJOBLÍBENĚJŠÍ",
         room2Title: "Standardní dvoulůžkový pokoj",
         room2Desc: "Prostorný pokoj s manželskou postelí, skvělým denním světlem a skříní.",
@@ -1450,7 +1474,7 @@
         room1Desc: "小巧温馨的双人床房间，非常适合情侣或独行旅客。",
         perNight1: "每晚平均",
         perNight2: "每晚平均",
-        btnQuoteText: "在线报价",
+        btnBookDirectText: "立即预订房间",
         room2Tag: "最受欢迎",
         room2Title: "中等双人房",
         room2Desc: "空间宽敞，配有双人床、充足的自然光线与衣柜。",
@@ -1543,7 +1567,7 @@
         room1Desc: "Quarto pequeno e aconchegante com cama de casal. Ideal para casais ou viajantes sozinhos.",
         perNight1: "média por noite",
         perNight2: "média por noite",
-        btnQuoteText: "Orçar na Calculadora",
+        btnBookDirectText: "Reservar Quarto",
         room2Tag: "MAIS POPULAR",
         room2Title: "Quarto Matrimonial Médio",
         room2Desc: "Quarto espaçoso com cama de casal, excelente iluminação natural e armário.",
@@ -1636,7 +1660,7 @@
         room1Desc: "Gemütliches kleines Zimmer mit Doppelbett. Ideal für Paare oder Alleinreisende.",
         perNight1: "Durchschnitt pro Nacht",
         perNight2: "Durchschnitt pro Nacht",
-        btnQuoteText: "Im Rechner kalkulieren",
+        btnBookDirectText: "Zimmer reservieren",
         room2Tag: "AM BELIEBTESTEN",
         room2Title: "Mittelgroßes Doppelzimmer",
         room2Desc: "Geräumiges Zimmer mit Doppelbett, tollem Tageslicht und Kleiderschrank.",
@@ -1729,7 +1753,7 @@
         room1Desc: "Уютный небольшой номер с двуспальной кроватью. Идеально для пар или соло-путешественников.",
         perNight1: "в среднем за ночь",
         perNight2: "в среднем за ночь",
-        btnQuoteText: "Рассчитать в калькуляторе",
+        btnBookDirectText: "Забронировать номер",
         room2Tag: "САМЫЙ ПОПУЛЯРНЫЙ",
         room2Title: "Стандартный двухместный номер",
         room2Desc: "Просторный номер с двуспальной кроватью, отличным естественным освещением и шкафом.",
@@ -1779,6 +1803,7 @@
     };
 
     function changeLanguage(lang) {
+      currentLang = lang;
       document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('bg-emerald-600', 'text-white'));
       const activeBtn = document.getElementById(`btn-${lang}`);
       if (activeBtn) activeBtn.classList.add('bg-emerald-600', 'text-white');
