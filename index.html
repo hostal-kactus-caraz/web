@@ -35,7 +35,7 @@
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-500 selection:text-white pb-24 relative">
 
   <!-- BOTÓN FLOTANTE DE WHATSAPP -->
-  <button onclick="sendGlobalWhatsApp('general')" class="fixed bottom-20 right-5 z-50 bg-emerald-600 hover:bg-emerald-500 text-white p-3.5 sm:px-4 sm:py-3 rounded-full shadow-2xl flex items-center gap-2 transition-all transform hover:scale-105 border-2 border-white cursor-pointer">
+  <button onclick="sendGlobalWhatsApp('general')" class="fixed bottom-20 right-5 z-50 bg-emerald-600 hover:bg-emerald-500 text-white p-3.5 sm:px-4 sm:py-3 rounded-full shadow-2xl flex items-center gap-2 transition-all transform hover:scale-105 group border-2 border-white cursor-pointer">
     <i class="fab fa-whatsapp text-2xl animate-bounce"></i>
     <span class="text-xs font-bold hidden sm:inline" data-i18n="whatsappFloatText">¡Reserva o consúltanos!</span>
   </button>
@@ -43,6 +43,8 @@
   <!-- BARRA SUPERIOR -->
   <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/85 shadow-xs py-3 px-3 sm:px-10">
     <div class="max-w-7xl mx-auto flex justify-between items-center gap-2">
+      
+      <!-- LOGO -->
       <a href="#" class="flex items-center gap-2.5 shrink-0 group">
         <div class="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-xl flex items-center justify-center text-white shadow-md font-black text-lg relative overflow-hidden group-hover:scale-105 transition-transform">
           <i class="fas fa-seedling text-xs absolute bottom-1 right-1 opacity-40"></i>
@@ -56,19 +58,37 @@
 
       <!-- SELECTOR DE IDIOMAS -->
       <div class="lang-container flex items-center gap-1.5 bg-slate-100/80 p-1.5 rounded-xl border border-slate-200 overflow-x-auto flex-nowrap max-w-[190px] sm:max-w-none">
-        <button class="lang-btn active px-2 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 bg-emerald-600 text-white shadow-xs shrink-0" id="btn-es" onclick="changeLanguage('es')"><img src="https://flagcdn.com/w40/es.png" alt="ES" class="w-3.5 h-2.5 object-cover rounded-xs"><span>ES</span></button>
-        <button class="lang-btn px-2 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-en" onclick="changeLanguage('en')"><img src="https://flagcdn.com/w40/gb.png" alt="EN" class="w-3.5 h-2.5 object-cover rounded-xs"><span>EN</span></button>
-        <button class="lang-btn px-2 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-fr" onclick="changeLanguage('fr')"><img src="https://flagcdn.com/w40/fr.png" alt="FR" class="w-3.5 h-2.5 object-cover rounded-xs"><span>FR</span></button>
-        <button class="lang-btn px-2 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-cs" onclick="changeLanguage('cs')"><img src="https://flagcdn.com/w40/cz.png" alt="CS" class="w-3.5 h-2.5 object-cover rounded-xs"><span>CS</span></button>
-        <button class="lang-btn px-2 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-zh" onclick="changeLanguage('zh')"><img src="https://flagcdn.com/w40/cn.png" alt="ZH" class="w-3.5 h-2.5 object-cover rounded-xs"><span>中文</span></button>
-        <button class="lang-btn px-2 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-pt" onclick="changeLanguage('pt')"><img src="https://flagcdn.com/w40/br.png" alt="PT" class="w-3.5 h-2.5 object-cover rounded-xs"><span>PT</span></button>
-        <button class="lang-btn px-2 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-de" onclick="changeLanguage('de')"><img src="https://flagcdn.com/w40/de.png" alt="DE" class="w-3.5 h-2.5 object-cover rounded-xs"><span>DE</span></button>
-        <button class="lang-btn px-2 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-ru" onclick="changeLanguage('ru')"><img src="https://flagcdn.com/w40/ru.png" alt="RU" class="w-3.5 h-2.5 object-cover rounded-xs"><span>RU</span></button>
+        <button class="lang-btn active px-2 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 bg-emerald-600 text-white shadow-xs shrink-0" id="btn-es" onclick="changeLanguage('es')">
+          <img src="https://flagcdn.com/w40/es.png" alt="ES" class="w-3.5 h-2.5 object-cover rounded-xs"><span>ES</span>
+        </button>
+        <button class="lang-btn px-2 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-en" onclick="changeLanguage('en')">
+          <img src="https://flagcdn.com/w40/gb.png" alt="EN" class="w-3.5 h-2.5 object-cover rounded-xs"><span>EN</span>
+        </button>
+        <button class="lang-btn px-2 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-fr" onclick="changeLanguage('fr')">
+          <img src="https://flagcdn.com/w40/fr.png" alt="FR" class="w-3.5 h-2.5 object-cover rounded-xs"><span>FR</span>
+        </button>
+        <button class="lang-btn px-2 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-cs" onclick="changeLanguage('cs')">
+          <img src="https://flagcdn.com/w40/cz.png" alt="CS" class="w-3.5 h-2.5 object-cover rounded-xs"><span>CS</span>
+        </button>
+        <button class="lang-btn px-2 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-zh" onclick="changeLanguage('zh')">
+          <img src="https://flagcdn.com/w40/cn.png" alt="ZH" class="w-3.5 h-2.5 object-cover rounded-xs"><span>中文</span>
+        </button>
+        <button class="lang-btn px-2 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-pt" onclick="changeLanguage('pt')">
+          <img src="https://flagcdn.com/w40/br.png" alt="PT" class="w-3.5 h-2.5 object-cover rounded-xs"><span>PT</span>
+        </button>
+        <button class="lang-btn px-2 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-de" onclick="changeLanguage('de')">
+          <img src="https://flagcdn.com/w40/de.png" alt="DE" class="w-3.5 h-2.5 object-cover rounded-xs"><span>DE</span>
+        </button>
+        <button class="lang-btn px-2 py-1 rounded-lg text-[10px] font-bold transition-all flex items-center gap-1 text-slate-600 hover:text-slate-900 shrink-0" id="btn-ru" onclick="changeLanguage('ru')">
+          <img src="https://flagcdn.com/w40/ru.png" alt="RU" class="w-3.5 h-2.5 object-cover rounded-xs"><span>RU</span>
+        </button>
       </div>
 
+      <!-- BOTÓN CÓDIGO DE HUÉSPED -->
       <a href="#title-guide" class="bg-slate-100 hover:bg-emerald-50 px-3 py-2 rounded-xl text-[11px] font-bold text-slate-700 hover:text-emerald-600 shrink-0 flex items-center gap-1.5 transition-colors border border-slate-200">
         <i class="fas fa-key text-emerald-600"></i> <span class="hidden sm:inline" data-i18n="navCodeText">Código de Huésped</span>
       </a>
+
     </div>
   </nav>
 
@@ -79,13 +99,19 @@
     <div class="absolute inset-0 bg-gradient-to-br from-emerald-900/90 via-emerald-950/85 to-teal-950/90"></div>
     
     <div class="relative z-10 max-w-4xl mx-auto text-center space-y-6 pt-2">
+      
+      <!-- INSIGNIA DE TARJETAS Y EFECTIVO -->
       <div class="inline-flex flex-col items-center bg-white text-slate-950 px-4 py-2.5 rounded-2xl border-2 border-emerald-400 shadow-2xl mx-auto mb-2">
         <span class="text-[9px] font-black uppercase text-emerald-800 tracking-wider" data-i18n="lblBadgePay">Aceptamos Todas las Tarjetas & Efectivo</span>
         <div class="flex items-center gap-3 text-2xl mt-1">
-          <i class="fab fa-cc-visa text-blue-600"></i><i class="fab fa-cc-mastercard text-red-600"></i><i class="fab fa-cc-amex text-blue-500"></i><i class="fas fa-money-bill-wave text-emerald-600"></i>
+          <i class="fab fa-cc-visa text-blue-600" title="Visa"></i>
+          <i class="fab fa-cc-mastercard text-red-600" title="Mastercard"></i>
+          <i class="fab fa-cc-amex text-blue-500" title="American Express"></i>
+          <i class="fas fa-money-bill-wave text-emerald-600" title="Efectivo"></i>
         </div>
       </div>
 
+      <!-- ACCESO RÁPIDO CON CÓDIGO -->
       <div class="neon-yellow-box p-4 sm:p-5 rounded-2xl max-w-2xl mx-auto shadow-2xl space-y-3 bg-slate-900/60 border border-emerald-500/30 backdrop-blur-sm">
         <div class="flex items-center justify-center gap-2 text-emerald-300 font-bold text-xs uppercase tracking-wider">
           <i class="fas fa-compass"></i> <span data-i18n="topAccessTitle">¿Ya tienes tu código de bienvenida?</span>
@@ -95,7 +121,7 @@
         </p>
         <div class="flex flex-col sm:flex-row gap-2 max-w-md mx-auto pt-1">
           <input type="password" id="topPassInput" placeholder="Escribe tu código aquí..." onkeypress="handleTopKey(event)" class="px-3.5 py-2.5 rounded-xl border border-white/25 text-xs flex-1 bg-slate-950/80 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400" data-i18n-placeholder="topPassPlaceholder">
-          <button onclick="unlockTopGuide()" class="py-2.5 px-5 rounded-xl text-xs shadow-md transition-all shrink-0 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold border border-emerald-500/40 cursor-pointer">
+          <button onclick="unlockTopGuide()" class="py-2.5 px-5 rounded-xl text-xs shadow-md transition-all shrink-0 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold shadow-emerald-600/30 border border-emerald-500/40">
             <span data-i18n="topUnlockBtn">Ver Contenido</span>
           </button>
         </div>
@@ -108,6 +134,7 @@
         Disfruta de habitaciones acogedoras, agua caliente 24/7 y la mejor ubicación para tus aventuras en la Cordillera Blanca.
       </p>
 
+      <!-- BOTONES PRINCIPALES -->
       <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
         <button onclick="toggleCalculator()" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-extrabold px-8 py-4 rounded-2xl text-sm shadow-xl transition-all transform hover:scale-105 flex items-center gap-2.5 border-2 border-white/40 cursor-pointer">
           <i class="fas fa-calculator text-base"></i> <span data-i18n="btnOpenCalc">🗓️ ¡Reserva / Cotiza en Línea!</span>
@@ -116,31 +143,33 @@
           <i class="fab fa-whatsapp text-lg"></i> <span data-i18n="btnWhatsappDir">Contacto Directo WhatsApp</span>
         </button>
       </div>
+
     </div>
 
     <!-- CALCULADORA DE RESERVA -->
-    <div id="calculatorPanel" class="hidden relative z-20 max-w-4xl mx-auto mt-8 bg-white/95 backdrop-blur-md text-slate-800 p-5 sm:p-6 rounded-2xl shadow-2xl space-y-4 border border-white/40">
+    <div id="calculatorPanel" class="hidden relative z-20 max-w-4xl mx-auto mt-8 bg-white/95 backdrop-blur-md text-slate-800 p-5 sm:p-6 rounded-2xl shadow-2xl space-y-4 border border-white/40 transition-all">
       <div class="flex justify-between items-center border-b border-slate-200 pb-3">
         <h3 class="font-extrabold text-sm text-slate-900 flex items-center gap-2">
           <i class="fas fa-calculator text-emerald-600"></i> <span data-i18n="calcPanelTitle">Calculadora y Cotización en Línea</span>
         </h3>
         <button onclick="toggleCalculator()" class="text-slate-400 hover:text-slate-700 font-bold text-xs bg-slate-100 px-2.5 py-1 rounded-lg cursor-pointer" data-i18n="btnCloseCalc">✕ Cerrar</button>
       </div>
+
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3">
         <div>
           <label class="block text-[10px] font-extrabold text-slate-500 uppercase mb-1" data-i18n="lblRoomType">Tipo de Habitación</label>
-          <select id="calcRoom" onchange="calculateTotal()" class="w-full p-2.5 bg-slate-50 rounded-xl border border-slate-200 text-xs font-bold text-slate-800 focus:outline-none">
+          <select id="calcRoom" onchange="calculateTotal()" class="w-full p-2.5 bg-slate-50 rounded-xl border border-slate-200 text-xs font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500">
             <option value="35" data-i18n="optEco">Matrimonial Económica (S/ 35)</option>
             <option value="45" selected data-i18n="optMed">Matrimonial Mediana (S/ 45)</option>
           </select>
         </div>
         <div>
           <label class="block text-[10px] font-extrabold text-slate-500 uppercase mb-1" data-i18n="lblCheckinDate">Día de Entrada</label>
-          <input type="date" id="calcCheckin" onchange="calculateTotal()" class="w-full p-2.5 bg-slate-50 rounded-xl border border-slate-200 text-xs font-bold text-slate-800">
+          <input type="date" id="calcCheckin" onchange="calculateTotal()" class="w-full p-2.5 bg-slate-50 rounded-xl border border-slate-200 text-xs font-bold text-slate-800 focus:outline-none">
         </div>
         <div>
           <label class="block text-[10px] font-extrabold text-slate-500 uppercase mb-1" data-i18n="lblCheckoutDate">Check-out (Salida)</label>
-          <input type="date" id="calcCheckout" onchange="calculateTotal()" class="w-full p-2.5 bg-slate-50 rounded-xl border border-slate-200 text-xs font-bold text-slate-800">
+          <input type="date" id="calcCheckout" onchange="calculateTotal()" class="w-full p-2.5 bg-slate-50 rounded-xl border border-slate-200 text-xs font-bold text-slate-800 focus:outline-none">
         </div>
         <div>
           <label class="block text-[10px] font-extrabold text-slate-500 uppercase mb-1" data-i18n="lblNights">Número de Noches</label>
@@ -148,18 +177,19 @@
         </div>
         <div>
           <label class="block text-[10px] font-extrabold text-slate-500 uppercase mb-1" data-i18n="lblGuests">Cantidad de Huéspedes</label>
-          <select id="calcGuests" class="w-full p-2.5 bg-slate-50 rounded-xl border border-slate-200 text-xs font-bold text-slate-800">
+          <select id="calcGuests" class="w-full p-2.5 bg-slate-50 rounded-xl border border-slate-200 text-xs font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500">
             <option value="1" data-i18n="optG1">1 Huésped</option>
             <option value="2" selected data-i18n="optG2">2 Huéspedes</option>
           </select>
         </div>
       </div>
+
       <div class="flex flex-col sm:flex-row justify-between items-center gap-4 pt-2 border-t border-slate-200">
-        <div>
+        <div class="text-left">
           <span class="text-[10px] font-extrabold text-slate-400 uppercase block" data-i18n="lblTotalEst">Cotización Estimada Total</span>
           <div class="text-2xl font-black text-emerald-600" id="totalPriceDisplay">S/ 45.00</div>
         </div>
-        <button onclick="sendInteractiveReservation()" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-3.5 px-6 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer">
+        <button onclick="sendInteractiveReservation()" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-extrabold py-3.5 px-6 rounded-xl text-xs transition-all shadow-md shadow-emerald-600/25 flex items-center justify-center gap-2 cursor-pointer">
           <i class="fab fa-whatsapp text-base"></i> <span data-i18n="btnConfirmRes">Confirmar y Reservar por WhatsApp</span>
         </button>
       </div>
@@ -172,69 +202,95 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto">
       <a href="https://www.booking.com/hotel/pe/kactus-hostal-caraz.es.html" target="_blank" rel="noopener" class="kactus-card p-4 shadow-card hover:shadow-lg transition-all flex items-center gap-3.5 group">
         <div class="w-10 h-10 bg-blue-600 text-white rounded-xl flex items-center justify-center font-black text-sm shadow-sm">8.9</div>
-        <div><div class="text-[10px] font-extrabold text-slate-400 uppercase">Booking.com</div><div class="text-xs font-extrabold text-slate-900" data-i18n="badgeBooking">Fabuloso · Excelente Ubicación</div></div>
+        <div>
+          <div class="text-[10px] font-extrabold text-slate-400 uppercase">Booking.com</div>
+          <div class="text-xs font-extrabold text-slate-900" data-i18n="badgeBooking">Fabuloso · Excelente Ubicación</div>
+        </div>
       </a>
       <a href="https://maps.google.com" target="_blank" rel="noopener" class="kactus-card p-4 shadow-card hover:shadow-lg transition-all flex items-center gap-3.5 group">
         <div class="w-10 h-10 bg-amber-500 text-white rounded-xl flex items-center justify-center text-sm shadow-sm"><i class="fas fa-star"></i></div>
-        <div><div class="text-[10px] font-extrabold text-slate-400 uppercase">Google Maps</div><div class="text-xs font-extrabold text-slate-900">5.0 / 5.0 ⭐⭐⭐⭐⭐</div></div>
+        <div>
+          <div class="text-[10px] font-extrabold text-slate-400 uppercase">Google Maps</div>
+          <div class="text-xs font-extrabold text-slate-900">5.0 / 5.0 ⭐⭐⭐⭐⭐</div>
+        </div>
       </a>
     </div>
 
-    <!-- SECCIÓN PÚBLICA: ATRACCIONES -->
+    <!-- SECCIÓN PÚBLICA: ATRACCIONES DESTACADAS -->
     <section>
       <div class="text-center max-w-2xl mx-auto mb-8 space-y-2">
         <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight" data-i18n="publicAttractionsTitle">Maravillas Naturales que Debes Visitar</h2>
         <p class="text-xs sm:text-sm text-slate-600" data-i18n="publicAttractionsDesc">Hostal Kactus es tu punto de partida ideal para conocer los paisajes más imponentes de la Cordillera Blanca y los Conchucos.</p>
       </div>
+
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
         <!-- Laguna Parón -->
         <div class="kactus-card overflow-hidden shadow-card flex flex-col group">
           <div class="relative w-full h-52 bg-slate-900 overflow-hidden" id="pubCarousel1">
             <div class="absolute top-3 left-3 z-20 bg-emerald-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-md" data-i18n="badgeParon">Laguna Parón</div>
             <div class="carousel-slide w-full h-full flex">
-              <img src="Paron laguna.png" alt="Parón 1" class="w-full h-full object-cover shrink-0 cursor-pointer" onclick="openModal(this.src)">
-              <img src="lagunaparon2.png" alt="Parón 2" class="w-full h-full object-cover shrink-0 cursor-pointer" onclick="openModal(this.src)">
+              <img src="Paron laguna.png" alt="Laguna Parón 1" class="w-full h-full object-cover shrink-0 zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='lagunaparon2.png'">
+              <img src="lagunaparon2.png" alt="Laguna Parón 2" class="w-full h-full object-cover shrink-0 zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='Paron laguna.png'">
             </div>
-            <button onclick="moveSlide('pubCarousel1', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white w-7 h-7 rounded-full flex items-center justify-center z-10 cursor-pointer"><i class="fas fa-chevron-left text-xs"></i></button>
-            <button onclick="moveSlide('pubCarousel1', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white w-7 h-7 rounded-full flex items-center justify-center z-10 cursor-pointer"><i class="fas fa-chevron-right text-xs"></i></button>
+            <button aria-label="Anterior" onclick="moveSlide('pubCarousel1', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-7 h-7 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100 cursor-pointer"><i class="fas fa-chevron-left text-xs"></i></button>
+            <button aria-label="Siguiente" onclick="moveSlide('pubCarousel1', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-7 h-7 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100 cursor-pointer"><i class="fas fa-chevron-right text-xs"></i></button>
           </div>
           <div class="p-5 flex flex-col flex-1 justify-between space-y-3">
-            <div><h3 class="font-extrabold text-slate-900 text-sm mb-1" data-i18n="pubParonTitle">La Laguna Turquesa Más Grande</h3><p class="text-[11px] text-slate-600 leading-relaxed" data-i18n="pubParonDesc">Impresionante espejo de agua rodeado por imponentes picos nevados.</p></div>
-            <a href="#title-guide" class="text-emerald-600 font-bold text-xs flex items-center gap-1 hover:underline"><i class="fas fa-arrow-right"></i> <span data-i18n="pubViewGuide">Ver detalles y precios en guía</span></a>
+            <div>
+              <h3 class="font-extrabold text-slate-900 text-sm mb-1" data-i18n="pubParonTitle">La Laguna Turquesa Más Grande</h3>
+              <p class="text-[11px] text-slate-600 leading-relaxed" data-i18n="pubParonDesc">Impresionante espejo de agua rodeado por imponentes picos nevados como el Artesonraju.</p>
+            </div>
+            <a href="#title-guide" class="text-emerald-600 font-bold text-xs flex items-center gap-1 hover:underline">
+              <i class="fas fa-arrow-right"></i> <span data-i18n="pubViewGuide">Ver detalles y precios en guía</span>
+            </a>
           </div>
         </div>
+
         <!-- Laguna 69 -->
         <div class="kactus-card overflow-hidden shadow-card flex flex-col group">
           <div class="relative w-full h-52 bg-slate-900 overflow-hidden" id="pubCarousel2">
             <div class="absolute top-3 left-3 z-20 bg-amber-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-md" data-i18n="badgeL69">Laguna 69</div>
             <div class="carousel-slide w-full h-full flex">
-              <img src="laguna69.png" alt="69 1" class="w-full h-full object-cover shrink-0 cursor-pointer" onclick="openModal(this.src)">
-              <img src="laguna692.png" alt="69 2" class="w-full h-full object-cover shrink-0 cursor-pointer" onclick="openModal(this.src)">
+              <img src="laguna69.png" alt="Laguna 69 1" class="w-full h-full object-cover shrink-0 zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='laguna692.png'">
+              <img src="laguna692.png" alt="Laguna 69 2" class="w-full h-full object-cover shrink-0 zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='laguna69.png'">
             </div>
-            <button onclick="moveSlide('pubCarousel2', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white w-7 h-7 rounded-full flex items-center justify-center z-10 cursor-pointer"><i class="fas fa-chevron-left text-xs"></i></button>
-            <button onclick="moveSlide('pubCarousel2', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white w-7 h-7 rounded-full flex items-center justify-center z-10 cursor-pointer"><i class="fas fa-chevron-right text-xs"></i></button>
+            <button aria-label="Anterior" onclick="moveSlide('pubCarousel2', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-7 h-7 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100 cursor-pointer"><i class="fas fa-chevron-left text-xs"></i></button>
+            <button aria-label="Siguiente" onclick="moveSlide('pubCarousel2', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-7 h-7 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100 cursor-pointer"><i class="fas fa-chevron-right text-xs"></i></button>
           </div>
           <div class="p-5 flex flex-col flex-1 justify-between space-y-3">
-            <div><h3 class="font-extrabold text-slate-900 text-sm mb-1" data-i18n="pubL69Title">Trekking de Alta Montaña</h3><p class="text-[11px] text-slate-600 leading-relaxed" data-i18n="pubL69Desc">Aventura inolvidable bajo los nevados Huascarán y Chacraraju.</p></div>
-            <a href="#title-guide" class="text-emerald-600 font-bold text-xs flex items-center gap-1 hover:underline"><i class="fas fa-arrow-right"></i> <span data-i18n="pubViewGuide">Ver detalles y precios en guía</span></a>
+            <div>
+              <h3 class="font-extrabold text-slate-900 text-sm mb-1" data-i18n="pubL69Title">Trekking de Alta Montaña</h3>
+              <p class="text-[11px] text-slate-600 leading-relaxed" data-i18n="pubL69Desc">Una aventura inolvidable bajo los nevados Huascarán y Chacraraju con aguas de intenso color celeste.</p>
+            </div>
+            <a href="#title-guide" class="text-emerald-600 font-bold text-xs flex items-center gap-1 hover:underline">
+              <i class="fas fa-arrow-right"></i> <span data-i18n="pubViewGuide">Ver detalles y precios en guía</span>
+            </a>
           </div>
         </div>
+
         <!-- Cañón del Pato -->
         <div class="kactus-card overflow-hidden shadow-card flex flex-col group">
           <div class="relative w-full h-52 bg-slate-900 overflow-hidden" id="pubCarousel3">
             <div class="absolute top-3 left-3 z-20 bg-sky-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-md" data-i18n="badgeCanon">Cañón del Pato</div>
             <div class="carousel-slide w-full h-full flex">
-              <img src="cañondelpato.png" alt="Cañón" class="w-full h-full object-cover shrink-0 cursor-pointer" onclick="openModal(this.src)">
-              <img src="tuneles.png" alt="Túneles" class="w-full h-full object-cover shrink-0 cursor-pointer" onclick="openModal(this.src)">
+              <img src="tuneles.png" alt="Túneles 1" class="w-full h-full object-cover shrink-0 zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='tuneles2.png'">
+              <img src="tuneles2.png" alt="Túneles 2" class="w-full h-full object-cover shrink-0 zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='tuneles.png'">
             </div>
-            <button onclick="moveSlide('pubCarousel3', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white w-7 h-7 rounded-full flex items-center justify-center z-10 cursor-pointer"><i class="fas fa-chevron-left text-xs"></i></button>
-            <button onclick="moveSlide('pubCarousel3', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white w-7 h-7 rounded-full flex items-center justify-center z-10 cursor-pointer"><i class="fas fa-chevron-right text-xs"></i></button>
+            <button aria-label="Anterior" onclick="moveSlide('pubCarousel3', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-7 h-7 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100 cursor-pointer"><i class="fas fa-chevron-left text-xs"></i></button>
+            <button aria-label="Siguiente" onclick="moveSlide('pubCarousel3', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-7 h-7 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100 cursor-pointer"><i class="fas fa-chevron-right text-xs"></i></button>
           </div>
           <div class="p-5 flex flex-col flex-1 justify-between space-y-3">
-            <div><h3 class="font-extrabold text-slate-900 text-sm mb-1" data-i18n="pubCanonTitle">Ruta de Túneles y Acantilados</h3><p class="text-[11px] text-slate-600 leading-relaxed" data-i18n="pubCanonDesc">Impresionante desfiladero con decenas de túneles en la roca.</p></div>
-            <a href="#title-guide" class="text-emerald-600 font-bold text-xs flex items-center gap-1 hover:underline"><i class="fas fa-arrow-right"></i> <span data-i18n="pubViewGuide">Ver detalles y precios en guía</span></a>
+            <div>
+              <h3 class="font-extrabold text-slate-900 text-sm mb-1" data-i18n="pubCanonTitle">Ruta de Túneles y Acantilados</h3>
+              <p class="text-[11px] text-slate-600 leading-relaxed" data-i18n="pubCanonDesc">Un impresionante desfiladero donde convergen la Cordillera Negra y Blanca con decenas de túneles en la roca.</p>
+            </div>
+            <a href="#title-guide" class="text-emerald-600 font-bold text-xs flex items-center gap-1 hover:underline">
+              <i class="fas fa-arrow-right"></i> <span data-i18n="pubViewGuide">Ver detalles y precios en guía</span>
+            </a>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -244,22 +300,27 @@
         <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight" data-i18n="titleRooms">Nuestras Habitaciones</h2>
         <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-full border border-emerald-200" data-i18n="roomsBadge">Garantía Mejor Precio Directo</span>
       </div>
+
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- Habitación Económica -->
+        <!-- Habitación 1 -->
         <div class="kactus-card overflow-hidden shadow-card flex flex-col group">
           <div class="relative w-full h-60 bg-emerald-900 overflow-hidden" id="carousel1">
-            <div class="absolute top-3 left-3 z-20 bg-emerald-950/90 text-white text-[10px] font-black px-3 py-1 rounded-full shadow-xs border border-white/20" data-i18n="room1Tag">ECONÓMICA & CONFORT</div>
+            <div class="absolute top-3 left-3 z-20 bg-emerald-950/90 backdrop-blur-md text-white text-[10px] font-black px-3 py-1 rounded-full shadow-xs border border-white/20" data-i18n="room1Tag">
+              ECONÓMICA & CONFORT
+            </div>
             <div class="carousel-slide w-full h-full flex">
-              <img src="economica.jpeg" alt="Económica" class="w-full h-full object-cover shrink-0 cursor-pointer" onclick="openModal(this.src)">
-              <div class="w-full h-full shrink-0 bg-gradient-to-br from-emerald-800 to-teal-800 text-white p-6 flex flex-col items-center justify-center text-center space-y-3">
-                <div class="w-11 h-11 bg-sky-400 text-slate-950 rounded-2xl flex items-center justify-center font-black text-lg animate-pulse"><i class="fas fa-key"></i></div>
-                <h4 class="font-extrabold text-xs sm:text-sm text-sky-200" data-i18n="bannerCodeTitle">¿Tienes tu código de reserva?</h4>
-                <p class="text-[11px] text-emerald-50 max-w-xs" data-i18n="bannerCodeDesc">Usa aquí tu código brindado por el alojamiento para ver precios protegidos e indicaciones.</p>
-                <a href="#title-guide" class="bg-sky-400 text-slate-950 text-[11px] font-extrabold py-2 px-5 rounded-xl shadow-md" data-i18n="bannerCodeBtn">Ir a Sección Reservada</a>
+              <img src="mediana.png" alt="Habitación Económica" class="w-full h-full object-cover shrink-0 zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='mediana1.jpg'">
+              <div class="w-full h-full shrink-0 bg-gradient-to-br from-emerald-800 via-emerald-700 to-teal-800 text-white p-6 flex flex-col items-center justify-center text-center space-y-3 shadow-inner">
+                <div class="w-11 h-11 bg-gradient-to-tr from-sky-400 to-cyan-300 text-slate-950 rounded-2xl flex items-center justify-center font-black text-lg shadow-2xl animate-pulse">
+                  <i class="fas fa-key"></i>
+                </div>
+                <h4 class="font-extrabold text-xs sm:text-sm text-sky-200 px-2" data-i18n="bannerCodeTitle">¿Tienes tu código de reserva?</h4>
+                <p class="text-[11px] text-emerald-50 max-w-xs leading-relaxed" data-i18n="bannerCodeDesc">Usa aquí tu código brindado por el alojamiento y encuentra precios protegidos, indicaciones y más.</p>
+                <a href="#title-guide" class="bg-gradient-to-r from-sky-400 to-cyan-400 text-slate-950 text-[11px] font-extrabold py-2 px-5 rounded-xl shadow-md transition-all transform hover:scale-105" data-i18n="bannerCodeBtn">Ir a Sección Reservada</a>
               </div>
             </div>
-            <button onclick="moveSlide('carousel1', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white w-8 h-8 rounded-full flex items-center justify-center z-10 cursor-pointer"><i class="fas fa-chevron-left text-xs"></i></button>
-            <button onclick="moveSlide('carousel1', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white w-8 h-8 rounded-full flex items-center justify-center z-10 cursor-pointer"><i class="fas fa-chevron-right text-xs"></i></button>
+            <button aria-label="Anterior" onclick="moveSlide('carousel1', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100 cursor-pointer"><i class="fas fa-chevron-left text-xs"></i></button>
+            <button aria-label="Siguiente" onclick="moveSlide('carousel1', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100 cursor-pointer"><i class="fas fa-chevron-right text-xs"></i></button>
           </div>
           <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
             <div>
@@ -267,21 +328,25 @@
               <p class="text-slate-600 text-xs leading-relaxed" data-i18n="room1Desc">Habitación pequeña y acogedora con cama de 2 plazas. Ideal para parejas o viajeros solos.</p>
               <div class="text-2xl font-black text-emerald-600 mt-4 flex items-baseline gap-1">S/ 35.00 <span class="text-[11px] font-semibold text-slate-400" data-i18n="perNight1">promedio por noche</span></div>
             </div>
-            <button onclick="bookRoomDirect(35, 'eco')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer">
+            <button onclick="bookRoomDirect(35, 'eco')" class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer">
               <i class="fab fa-whatsapp text-base"></i> <span data-i18n="btnBookDirectText">Reservar Habitación</span>
             </button>
           </div>
         </div>
-        <!-- Habitación Mediana -->
+
+        <!-- Habitación 2 -->
         <div class="kactus-card overflow-hidden shadow-card flex flex-col group">
           <div class="relative w-full h-60 bg-emerald-900 overflow-hidden" id="carousel2">
-            <div class="absolute top-3 left-3 z-20 bg-emerald-600 text-white text-[10px] font-black px-3 py-1 rounded-full shadow-xs border border-white/20" data-i18n="room2Tag">MÁS POPULAR</div>
-            <div class="carousel-slide w-full h-full flex">
-              <img src="mediana.png" alt="Mediana 1" class="w-full h-full object-cover shrink-0 cursor-pointer" onclick="openModal(this.src)">
-              <img src="mediana1.jpg" alt="Mediana 2" class="w-full h-full object-cover shrink-0 cursor-pointer" onclick="openModal(this.src)">
+            <div class="absolute top-3 left-3 z-20 bg-emerald-600 text-white text-[10px] font-black px-3 py-1 rounded-full shadow-xs border border-white/20" data-i18n="room2Tag">
+              MÁS POPULAR
             </div>
-            <button onclick="moveSlide('carousel2', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white w-8 h-8 rounded-full flex items-center justify-center z-10 cursor-pointer"><i class="fas fa-chevron-left text-xs"></i></button>
-            <button onclick="moveSlide('carousel2', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white w-8 h-8 rounded-full flex items-center justify-center z-10 cursor-pointer"><i class="fas fa-chevron-right text-xs"></i></button>
+            <div class="carousel-slide w-full h-full flex">
+              <img src="mediana1.jpg" alt="Habitación Mediana 1" class="w-full h-full object-cover shrink-0 zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='mediana.png'">
+              <img src="mediana2.png" alt="Habitación Mediana 2" class="w-full h-full object-cover shrink-0 zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='mediana.png'">
+              <img src="mediana.png" alt="Habitación Mediana 3" class="w-full h-full object-cover shrink-0 zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='mediana1.jpg'">
+            </div>
+            <button aria-label="Anterior" onclick="moveSlide('carousel2', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100 cursor-pointer"><i class="fas fa-chevron-left text-xs"></i></button>
+            <button aria-label="Siguiente" onclick="moveSlide('carousel2', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-emerald-600 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 opacity-70 hover:opacity-100 cursor-pointer"><i class="fas fa-chevron-right text-xs"></i></button>
           </div>
           <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
             <div>
@@ -289,7 +354,7 @@
               <p class="text-slate-600 text-xs leading-relaxed" data-i18n="room2Desc">Habitación espaciosa con cama de 2 plazas, gran iluminación natural y armario.</p>
               <div class="text-2xl font-black text-emerald-600 mt-4 flex items-baseline gap-1">S/ 45.00 <span class="text-[11px] font-semibold text-slate-400" data-i18n="perNight2">promedio por noche</span></div>
             </div>
-            <button onclick="bookRoomDirect(45, 'med')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer">
+            <button onclick="bookRoomDirect(45, 'med')" class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer">
               <i class="fab fa-whatsapp text-base"></i> <span data-i18n="btnBookDirectText">Reservar Habitación</span>
             </button>
           </div>
@@ -299,42 +364,51 @@
 
     <!-- SECCIÓN 2: ALQUILER DE EQUIPOS -->
     <section>
-      <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-6" data-i18n="titleCamping">Alquiler de Equipos de Camping y Trekking</h2>
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight" data-i18n="titleCamping">Alquiler de Equipos de Camping y Trekking</h2>
+      </div>
+
       <div class="kactus-card p-6 shadow-card space-y-6">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3">
-            <div class="h-36 rounded-xl overflow-hidden bg-slate-200"><img src="carpa3_estaciones.png" alt="Carpa" class="w-full h-full object-cover cursor-pointer" onclick="openModal(this.src)"></div>
-            <div><div class="font-bold text-slate-900 text-xs flex items-center gap-1.5"><i class="fas fa-campground text-emerald-600"></i> <span data-i18n="gear1Name">Carpa 3 Estaciones</span></div><p class="text-[11px] text-slate-500 mt-0.5" data-i18n="gear1Desc">Carpa resistente para alta montaña.</p></div>
+            <div class="h-36 rounded-xl overflow-hidden bg-slate-200">
+              <img src="tarjetas.png" alt="Carpa" class="w-full h-full object-cover zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='mediana.png';">
+            </div>
+            <div>
+              <div class="font-bold text-slate-900 text-xs flex items-center gap-1.5"><i class="fas fa-campground text-emerald-600"></i> <span data-i18n="gear1Name">Carpa 3 Estaciones</span></div>
+              <p class="text-[11px] text-slate-500 mt-0.5" data-i18n="gear1Desc">Carpa resistente para alta montaña.</p>
+            </div>
           </div>
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3">
-            <div class="h-36 rounded-xl overflow-hidden bg-slate-200"><img src="saco_dormir.png" alt="Saco" class="w-full h-full object-cover cursor-pointer" onclick="openModal(this.src)"></div>
-            <div><div class="font-bold text-slate-900 text-xs flex items-center gap-1.5"><i class="fas fa-bed text-emerald-600"></i> <span data-i18n="gear2Name">Saco de Dormir Pluma</span></div><p class="text-[11px] text-slate-500 mt-0.5" data-i18n="gear2Desc">Pluma de alta resistencia.</p></div>
+            <div class="h-36 rounded-xl overflow-hidden bg-slate-200">
+              <img src="saco_dormir.png" alt="Saco de Dormir" class="w-full h-full object-cover zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='mediana.png';">
+            </div>
+            <div>
+              <div class="font-bold text-slate-900 text-xs flex items-center gap-1.5"><i class="fas fa-bed text-emerald-600"></i> <span data-i18n="gear2Name">Saco de Dormir Pluma</span></div>
+              <p class="text-[11px] text-slate-500 mt-0.5" data-i18n="gear2Desc">Pluma de alta resistencia (-5°C a -20°C).</p>
+            </div>
           </div>
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3">
-            <div class="h-36 rounded-xl overflow-hidden bg-slate-200"><img src="bastones_treken.png" alt="Bastones" class="w-full h-full object-cover cursor-pointer" onclick="openModal(this.src)"></div>
-            <div><div class="font-bold text-slate-900 text-xs flex items-center gap-1.5"><i class="fas fa-hiking text-emerald-600"></i> <span data-i18n="gear3Name">Bastones de Trekking</span></div><p class="text-[11px] text-slate-500 mt-0.5" data-i18n="gear3Desc">Par de bastones ergonómicos.</p></div>
+            <div class="h-36 rounded-xl overflow-hidden bg-slate-200">
+              <img src="plaza.png" alt="Bastones" class="w-full h-full object-cover zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='mediana.png';">
+            </div>
+            <div>
+              <div class="font-bold text-slate-900 text-xs flex items-center gap-1.5"><i class="fas fa-hiking text-emerald-600"></i> <span data-i18n="gear3Name">Bastones de Trekking</span></div>
+              <p class="text-[11px] text-slate-500 mt-0.5" data-i18n="gear3Desc">Par de bastones ergonómicos.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECCIÓN 3: SERVICIOS -->
-    <section>
-      <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-6" data-i18n="titleServices">Servicios e Instalaciones</h2>
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <div class="kactus-card p-4 text-center shadow-xs"><i class="fas fa-bath text-2xl text-emerald-600 mb-2"></i><p data-i18n="sBath" class="text-xs font-bold">Baño Privado</p></div>
-        <div class="kactus-card p-4 text-center shadow-xs"><i class="fas fa-hot-tub text-2xl text-emerald-600 mb-2"></i><p data-i18n="sWater" class="text-xs font-bold">Agua Caliente 24/7</p></div>
-        <div class="kactus-card p-4 text-center shadow-xs"><i class="fas fa-tv text-2xl text-emerald-600 mb-2"></i><p data-i18n="sTv" class="text-xs font-bold">TV Smart</p></div>
-        <div class="kactus-card p-4 text-center shadow-xs"><i class="fas fa-wifi text-2xl text-emerald-600 mb-2"></i><p data-i18n="sWifi" class="text-xs font-bold">Wi-Fi Gratis</p></div>
-      </div>
-    </section>
-
-    <!-- SECCIÓN 4: GUÍA Y ÁREA PRIVADA -->
+    <!-- SECCIÓN 3: GUÍA Y ÁREA PRIVADA -->
     <section class="mb-12" id="title-guide">
       <div class="kactus-card p-6 sm:p-8 shadow-card space-y-6">
         <div>
           <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-2" data-i18n="titleGuideHeading">Guía Turística de Caraz & Área Reservada</h2>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed" data-i18n="gPubDesc">Bienvenido a nuestra guía oficial. Explora los atractivos imperdibles de la Cordillera Blanca desde Hostal Kactus.</p>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed" data-i18n="gPubDesc">
+            Bienvenido a nuestra guía oficial. Explora los atractivos imperdibles de la Cordillera Blanca desde Hostal Kactus.
+          </p>
         </div>
 
         <hr class="border-slate-200">
@@ -348,13 +422,14 @@
             <button onclick="unlockGuide()" id="btn-unlock-text" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-5 rounded-xl text-xs shadow-md cursor-pointer" data-i18n="btnUnlockText">Desbloquear Sección</button>
           </div>
 
-          <!-- CONTENIDO SECRETO / RESERVADO -->
-          <div id="secretGuide" class="hidden mt-6 bg-slate-50 p-4 sm:p-6 rounded-2xl border-2 border-dashed border-emerald-500 space-y-10">
+          <!-- CONTENIDO RESERVADO CON WI-Fi -->
+          <div id="secretGuide" class="hidden mt-6 bg-slate-50 p-4 sm:p-6 rounded-2xl border-2 border-dashed border-emerald-500 space-y-10 relative overflow-visible">
             
-            <!-- TARJETA WI-FI STICKY -->
             <div class="sticky top-20 z-40 bg-gradient-to-r from-emerald-900 to-teal-900 text-white p-4 rounded-2xl shadow-2xl border-2 border-emerald-400 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-emerald-500 rounded-xl flex items-center justify-center text-white text-lg shadow-md shrink-0"><i class="fas fa-wifi animate-pulse"></i></div>
+                <div class="w-10 h-10 bg-emerald-500 rounded-xl flex items-center justify-center text-white text-lg shadow-md shrink-0">
+                  <i class="fas fa-wifi animate-pulse"></i>
+                </div>
                 <div>
                   <span class="text-[10px] uppercase font-black text-emerald-300 tracking-wider block" data-i18n="wifiStickySub">Conexión de Alta Velocidad (Fija)</span>
                   <div class="text-xs sm:text-sm font-extrabold"><span data-i18n="wifiNetLabel">Red:</span> <span class="text-amber-300" data-i18n="wifiNetName">Segundo Piso</span></div>
@@ -366,90 +441,50 @@
               </div>
             </div>
 
-            <!-- DESAYUNOS -->
-            <div class="bg-white rounded-2xl border border-slate-200 shadow-md overflow-hidden">
-              <button onclick="toggleBreakfastMenu()" class="w-full bg-gradient-to-r from-emerald-600 to-teal-700 text-white p-4 sm:p-5 flex justify-between items-center text-left cursor-pointer">
-                <div class="flex items-center gap-3.5">
-                  <div class="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center text-white text-2xl"><i class="fas fa-hat-chef"></i></div>
-                  <div><h5 class="font-extrabold text-sm sm:text-base" data-i18n="breakfastMenuTitle">Carta de Desayunos Hostal Kactus</h5><p class="text-[11px] text-emerald-100" data-i18n="breakfastMenuSub">Haz clic aquí para ver opciones con huevos fritos, jugos, café y precios</p></div>
-                </div>
-                <div id="breakfastArrow" class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center transition-transform duration-300"><i class="fas fa-chevron-down text-xs"></i></div>
-              </button>
-              <div id="breakfastContent" class="hidden p-4 sm:p-6 bg-slate-50 border-t border-slate-200 space-y-4">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                  <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs flex justify-between items-center">
-                    <div><strong class="text-slate-900 font-extrabold text-sm block" data-i18n="bf1Title">Desayuno Mochilero</strong><p class="text-[11px] text-slate-500" data-i18n="bf1Desc">2 panes con huevo y jamonada + café caliente.</p></div>
-                    <span class="font-black text-emerald-600 text-base bg-emerald-50 px-3 py-1.5 rounded-lg">S/ 5.00</span>
-                  </div>
-                  <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs flex justify-between items-center">
-                    <div><strong class="text-slate-900 font-extrabold text-sm block" data-i18n="bf2Title">Desayuno Continental</strong><p class="text-[11px] text-slate-500" data-i18n="bf2Desc">1 huevo frito, mantequilla, mermelada, jugo, café y 3 panes.</p></div>
-                    <span class="font-black text-emerald-600 text-base bg-emerald-50 px-3 py-1.5 rounded-lg">S/ 10.00</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- TOURS (PARÓN & 69) -->
+            <!-- SECCIÓN TOURS -->
             <div class="space-y-6 pt-6 border-t-2 border-emerald-200">
-              <h4 class="font-extrabold text-xl text-slate-900 tracking-tight flex items-center gap-2.5">
-                <span class="w-10 h-10 rounded-2xl bg-emerald-600 text-white flex items-center justify-center"><i class="fas fa-route"></i></span>
-                <span data-i18n="toursMainTitle">Guía Rápida de Tours (Parón & Laguna 69)</span>
-              </h4>
+              <div class="text-center sm:text-left">
+                <h4 class="font-extrabold text-xl text-slate-900 tracking-tight flex items-center justify-center sm:justify-start gap-2.5">
+                  <span class="w-10 h-10 rounded-2xl bg-emerald-600 text-white flex items-center justify-center shadow-md text-lg">
+                    <i class="fas fa-route"></i>
+                  </span>
+                  <span data-i18n="toursMainTitle">Guía Rápida de Tours (Parón & Laguna 69)</span>
+                </h4>
+              </div>
+
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Parón -->
-                <div class="bg-white rounded-2xl border-2 border-emerald-500/40 shadow-lg p-5 space-y-4 relative flex flex-col justify-between">
-                  <div class="absolute top-0 right-0 bg-emerald-600 text-white text-[9px] font-black uppercase px-3 py-1 rounded-bl-xl" data-i18n="tourTag1">⭐ IMPERDIBLE</div>
+                <!-- Laguna Parón -->
+                <div class="bg-white rounded-2xl border-2 border-emerald-500/40 shadow-lg p-5 space-y-4 relative overflow-hidden flex flex-col justify-between">
                   <div class="space-y-3">
-                    <h5 class="font-extrabold text-slate-900 text-sm">🌊 <span data-i18n="tour1Header">1. Laguna Parón</span></h5>
+                    <h5 class="font-extrabold text-slate-900 text-sm flex items-center gap-2">
+                      <span>🌊</span> <span data-i18n="tour1Header">1. Laguna Parón</span>
+                    </h5>
                     <div class="flex justify-center my-3">
-                      <div class="relative w-28 h-28 rounded-full flex items-center justify-center shadow-md" style="box-shadow: 0 0 20px 4px rgba(234, 179, 8, 0.45); background: rgba(234, 179, 8, 0.15);">
-                        <img src="Paron laguna.png" alt="Parón" class="w-24 h-24 object-cover rounded-full border-2 border-white cursor-pointer" onclick="openModal(this.src)">
+                      <div class="relative w-28 h-28 rounded-full flex items-center justify-center shadow-lg bg-amber-100/30">
+                        <img src="Paron laguna.png" alt="Laguna Parón" class="w-24 h-24 object-cover rounded-full border-2 border-white shadow-md zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='lagunaparon2.png'">
                       </div>
                     </div>
-                    <div class="bg-emerald-50 p-3.5 rounded-xl border border-emerald-100 text-[11px]">
-                      <div>👥 <strong>4 personas</strong> | 💰 <strong>S/ 40</strong> p/p</div>
-                      <div>⏳ <strong>2 hrs</strong> en laguna | 🎟️ Entradas: <strong>S/ 5</strong></div>
-                    </div>
                   </div>
-                  <button onclick="sendTourWhatsApp('paron')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs py-2.5 rounded-xl flex items-center justify-center gap-2 cursor-pointer mt-3">
+                  <button onclick="sendTourWhatsApp('paron')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs py-2.5 px-4 rounded-xl shadow-sm text-center transition-all flex items-center justify-center gap-2 mt-3 cursor-pointer">
                     <i class="fab fa-whatsapp"></i> <span data-i18n="btnBookParon">Reservar Parón</span>
                   </button>
                 </div>
+
                 <!-- Laguna 69 -->
-                <div class="bg-white rounded-2xl border-2 border-amber-500/40 shadow-lg p-5 space-y-4 relative flex flex-col justify-between">
-                  <div class="absolute top-0 right-0 bg-amber-500 text-slate-950 text-[9px] font-black uppercase px-3 py-1 rounded-bl-xl" data-i18n="tourTag2">⚡ EXIGENTE</div>
+                <div class="bg-white rounded-2xl border-2 border-amber-500/40 shadow-lg p-5 space-y-4 relative overflow-hidden flex flex-col justify-between">
                   <div class="space-y-3">
-                    <h5 class="font-extrabold text-slate-900 text-sm">🏔️ <span data-i18n="tour2Header">2. Laguna 69</span></h5>
+                    <h5 class="font-extrabold text-slate-900 text-sm flex items-center gap-2">
+                      <span>🏔️</span> <span data-i18n="tour2Header">2. Laguna 69</span>
+                    </h5>
                     <div class="flex justify-center my-3">
-                      <div class="relative w-28 h-28 rounded-full flex items-center justify-center shadow-md" style="box-shadow: 0 0 20px 4px rgba(234, 179, 8, 0.45); background: rgba(234, 179, 8, 0.15);">
-                        <img src="laguna69.png" alt="69" class="w-24 h-24 object-cover rounded-full border-2 border-white cursor-pointer" onclick="openModal(this.src)">
+                      <div class="relative w-28 h-28 rounded-full flex items-center justify-center shadow-lg bg-amber-100/30">
+                        <img src="laguna69.png" alt="Laguna 69" class="w-24 h-24 object-cover rounded-full border-2 border-white shadow-md zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='laguna692.png'">
                       </div>
                     </div>
-                    <div class="bg-amber-50 p-3.5 rounded-xl border border-amber-100 text-[11px]">
-                      <div>⏰ Salida <strong>6:00 AM en Yungay</strong></div>
-                      <div>💳 Tour (S/ 60) + Ticket (S/ 30) = <strong>S/ 96 aprox.</strong></div>
-                    </div>
                   </div>
-                  <button onclick="sendTourWhatsApp('laguna69')" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold text-xs py-2.5 rounded-xl flex items-center justify-center gap-2 cursor-pointer mt-3">
+                  <button onclick="sendTourWhatsApp('laguna69')" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold text-xs py-2.5 px-4 rounded-xl shadow-sm text-center transition-all flex items-center justify-center gap-2 mt-3 cursor-pointer">
                     <i class="fab fa-whatsapp"></i> <span data-i18n="btnBookL69">Reservar Laguna 69</span>
                   </button>
-                </div>
-              </div>
-            </div>
-
-            <!-- DIRECTORIO DE LUGARES CLAVE -->
-            <div class="space-y-4 pt-6 border-t border-slate-200">
-              <h4 class="font-extrabold text-sm text-slate-900" data-i18n="directoryTitle">📍 Directorio de Lugares Clave en Caraz</h4>
-              <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
-                <div class="bg-white rounded-2xl border border-slate-200 flex flex-col overflow-hidden shadow-sm">
-                  <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=500&q=80" alt="Restaurante" class="w-full h-32 object-cover bg-slate-200 cursor-pointer" onclick="openModal(this.src)">
-                  <div class="p-4 flex flex-col flex-1">
-                    <h5 class="font-bold text-slate-900 text-xs mb-1" data-i18n="dir1Title">Restaurante Pacha Hunta</h5>
-                    <p class="text-[11px] text-slate-500 mb-3 flex-1" data-i18n="dir1Desc">Comida regional tradicional muy cercana al hostal.</p>
-                    <a href="https://maps.google.com/?q=Restaurante+Pacha+Hunta+Caraz+Peru" target="_blank" rel="noopener" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-[11px] py-2 px-3 rounded-xl flex items-center justify-center gap-1.5 w-full mt-auto">
-                      <i class="fas fa-map-marked-alt text-amber-700"></i> <span data-i18n="btnMaps">Ver en Google Maps</span>
-                    </a>
-                  </div>
                 </div>
               </div>
             </div>
@@ -461,27 +496,164 @@
 
   </main>
 
-  <!-- BARRA INFERIOR FIJA -->
-  <div class="fixed bottom-0 left-0 right-0 bg-emerald-950/95 backdrop-blur-md border-t border-emerald-800 p-3.5 px-6 flex justify-between items-center z-50 text-white shadow-2xl">
-    <div class="text-xs">
-      <span class="text-emerald-300" data-i18n="stkFrom">Desde</span> <strong class="text-base text-amber-300 font-black">S/ 35.00</strong>
-    </div>
-    <div class="flex items-center gap-2">
-      <button onclick="toggleCalculator()" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-extrabold py-2 px-4 rounded-xl text-xs cursor-pointer">
-        🗓️ <span data-i18n="stkCalc">Cotizar</span>
-      </button>
-      <button onclick="sendGlobalWhatsApp('general')" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-5 rounded-xl text-xs flex items-center gap-2 cursor-pointer">
-        <i class="fab fa-whatsapp text-sm"></i> <span data-i18n="stkBtn">Reservar Ahora</span>
-      </button>
-    </div>
-  </div>
-
-  <!-- MODAL DE IMÁGENES -->
+  <!-- MODAL PARA AMPLIAR FOTOS -->
   <div id="imageModal" onclick="this.style.display='none'">
     <img id="modalImg" src="" alt="Imagen Ampliada">
   </div>
 
-  <!-- SCRIPT EXTERNO O INCLUIDO -->
-  <script src="effects.js"></script>
+  <!-- SCRIPTS Y LÓGICA -->
+  <script>
+    let currentLang = 'es';
+
+    function openModal(imgSrc) {
+      document.getElementById('modalImg').src = imgSrc;
+      document.getElementById('imageModal').style.display = 'flex';
+    }
+
+    const slideIndexes = { carousel1: 0, carousel2: 0, pubCarousel1: 0, pubCarousel2: 0, pubCarousel3: 0 };
+
+    function moveSlide(carouselId, direction) {
+      const carousel = document.getElementById(carouselId);
+      const slide = carousel.querySelector('.carousel-slide');
+      const items = slide.children;
+      slideIndexes[carouselId] = (slideIndexes[carouselId] + direction + items.length) % items.length;
+      slide.style.transform = `translateX(-${slideIndexes[carouselId] * 100}%)`;
+    }
+
+    function toggleCalculator() {
+      const panel = document.getElementById('calculatorPanel');
+      panel.classList.toggle('hidden');
+    }
+
+    function sendGlobalWhatsApp(type) {
+      window.open(`https://wa.me/51974364826?text=${encodeURIComponent("Hola Hostal Kactus 👋, quisiera hacer una consulta o reserva.")}`, '_blank');
+    }
+
+    function sendTourWhatsApp(tourKey) {
+      const msg = tourKey === 'paron' ? "Hola Hostal Kactus 👋, deseo reservar el tour a la Laguna Parón." : "Hola Hostal Kactus 👋, quisiera reservar el tour a la Laguna 69.";
+      window.open(`https://wa.me/51974364826?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+
+    function bookRoomDirect(price, roomKey) {
+      const roomName = roomKey === 'eco' ? 'Habitación Matrimonial Económica' : 'Habitación Matrimonial Mediana';
+      window.open(`https://wa.me/51974364826?text=${encodeURIComponent(`Hola Hostal Kactus 👋, deseo reservar la *${roomName}* (S/ ${price}.00 por noche). ¡Gracias!`)}`, '_blank');
+    }
+
+    function calculateTotal() {
+      const roomPrice = parseFloat(document.getElementById('calcRoom').value) || 0;
+      document.getElementById('totalPriceDisplay').innerText = `S/ ${roomPrice.toFixed(2)}`;
+    }
+
+    function sendInteractiveReservation() {
+      window.open(`https://wa.me/51974364826?text=${encodeURIComponent("Hola Hostal Kactus 👋, deseo confirmar mi reserva en línea.")}`, '_blank');
+    }
+
+    function unlockGuide() {
+      const pass = document.getElementById('passInput').value.trim();
+      const secretSection = document.getElementById('secretGuide');
+      if (pass === '301298') {
+        secretSection.classList.remove('hidden');
+        secretSection.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        alert('Contraseña incorrecta.');
+      }
+    }
+
+    function unlockTopGuide() {
+      const pass = document.getElementById('topPassInput').value.trim();
+      const secretSection = document.getElementById('secretGuide');
+      if (pass === '301298') {
+        secretSection.classList.remove('hidden');
+        secretSection.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        alert('Contraseña incorrecta.');
+      }
+    }
+
+    function handleKey(e) { if (e.key === 'Enter') unlockGuide(); }
+    function handleTopKey(e) { if (e.key === 'Enter') unlockTopGuide(); }
+
+    const translations = {
+      es: {
+        whatsappFloatText: "¡Reserva o consúltanos!",
+        navLocationSub: "Caraz · Perú",
+        navCodeText: "Código de Huésped",
+        topAccessTitle: "¿Ya tienes tu código de bienvenida?",
+        topAccessDesc: "Ingrésalo aquí para acceder de inmediato a la guía completa de la zona, recomendaciones locales y Wi-Fi.",
+        topUnlockBtn: "Ver Contenido",
+        heroTitleStart: "Tu descanso cómodo, seguro y completo en",
+        heroSubtitle: "Disfruta de habitaciones acogedoras, agua caliente 24/7 y la mejor ubicación para tus aventuras en la Cordillera Blanca.",
+        btnOpenCalc: "🗓️ ¡Reserva / Cotiza en Línea!",
+        btnWhatsappDir: "Contacto Directo WhatsApp",
+        lblBadgePay: "Aceptamos Todas las Tarjetas & Efectivo",
+        titleRooms: "Nuestras Habitaciones",
+        roomsBadge: "Garantía Mejor Precio Directo",
+        room1Title: "Habitación Matrimonial Económica",
+        room1Desc: "Habitación pequeña y acogedora con cama de 2 plazas.",
+        room2Title: "Habitación Matrimonial Mediana",
+        room2Desc: "Habitación espaciosa con cama de 2 plazas.",
+        titleGuideHeading: "Guía Turística de Caraz & Área Reservada",
+        gPubDesc: "Bienvenido a nuestra guía oficial. Explora los atractivos imperdibles.",
+        privSectionTitle: "🔐 Sección Reservada de Huéspedes",
+        passPlaceholder: "Contraseña de huésped",
+        btnUnlockText: "Desbloquear Sección",
+        wifiStickySub: "Conexión de Alta Velocidad (Fija)",
+        wifiNetLabel: "Red:",
+        wifiNetName: "Segundo Piso",
+        wifiPassLabel: "Contraseña:",
+        toursMainTitle: "Guía Rápida de Tours (Parón & Laguna 69)",
+        tour1Header: "1. Laguna Parón",
+        tour2Header: "2. Laguna 69",
+        btnBookParon: "Reservar Parón",
+        btnBookL69: "Reservar Laguna 69"
+      },
+      en: {
+        whatsappFloatText: "Book or contact us!",
+        navLocationSub: "Caraz · Peru",
+        navCodeText: "Guest Code",
+        topAccessTitle: "Already have your welcome code?",
+        topAccessDesc: "Enter it here for instant access to the complete guide, Wi-Fi, and rates.",
+        topUnlockBtn: "View Content",
+        heroTitleStart: "Your comfortable, safe, and complete stay in",
+        heroSubtitle: "Enjoy cozy rooms, 24/7 hot water, and the best location in Cordillera Blanca.",
+        btnOpenCalc: "🗓️ Book / Quote Online",
+        btnWhatsappDir: "Direct WhatsApp",
+        lblBadgePay: "We accept all cards & cash",
+        titleRooms: "Our Rooms",
+        roomsBadge: "Best Direct Price Guarantee",
+        room1Title: "Economy Double Room",
+        room1Desc: "Cozy small room with full-size bed.",
+        room2Title: "Medium Double Room",
+        room2Desc: "Spacious room with full-size bed.",
+        titleGuideHeading: "Caraz Tourist Guide & Reserved Area",
+        gPubDesc: "Welcome to our official guide.",
+        privSectionTitle: "🔐 Reserved Guest Area",
+        passPlaceholder: "Guest password",
+        btnUnlockText: "Unlock Section",
+        wifiStickySub: "High-Speed Connection",
+        wifiNetLabel: "Network:",
+        wifiNetName: "Second Floor",
+        wifiPassLabel: "Password:",
+        toursMainTitle: "Quick Tour Guide",
+        tour1Header: "1. Laguna Parón",
+        tour2Header: "2. Laguna 69",
+        btnBookParon: "Book Parón",
+        btnBookL69: "Book Laguna 69"
+      }
+    };
+
+    function changeLanguage(lang) {
+      currentLang = lang;
+      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('bg-emerald-600', 'text-white'));
+      const activeBtn = document.getElementById(`btn-${lang}`);
+      if (activeBtn) activeBtn.classList.add('bg-emerald-600', 'text-white');
+      
+      const t = translations[lang] || translations['es'];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) el.innerHTML = t[key];
+      });
+    }
+  </script>
 </body>
 </html>
