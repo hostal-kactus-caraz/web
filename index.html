@@ -31,23 +31,33 @@
 
   <!-- Three.js para WebGL -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  
+  <style>
+    @keyframes floatMascot {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-4px); }
+    }
+    .mascot-float {
+      animation: floatMascot 3s ease-in-out infinite;
+    }
+  </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-500 selection:text-white pb-24 relative">
 
-  <!-- BOTÓN FLOTANTE ESTILO ASISTENTE IA CON LOGUITO KACTUS -->
-  <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20quisiera%20hacer%20una%20consulta%20o%20reserva" target="_blank" rel="noopener" class="fixed bottom-20 right-5 z-50 bg-emerald-600 hover:bg-emerald-500 text-white p-3.5 sm:px-4 sm:py-3 rounded-full shadow-2xl flex items-center gap-2.5 transition-all transform hover:scale-105 group border-2 border-white">
-    <div class="relative flex items-center justify-center">
-      <!-- Loguito Asistente Kactus con brillo/aura -->
-      <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-emerald-500 to-teal-400 border-2 border-white flex items-center justify-center shadow-md overflow-hidden shrink-0">
-        <i class="fas fa-seedling text-white text-xs"></i>
-      </div>
-      <span class="absolute -top-1 -right-1 w-3 h-3 bg-amber-400 border-2 border-emerald-700 rounded-full animate-ping"></span>
+  <!-- BOTÓN FLOTANTE DE WHATSAPP + MASCOTA KACTUS FLOTANDO ENCIMA -->
+  <div class="fixed bottom-20 right-5 z-50 flex flex-col items-end gap-1.5 pointer-events-auto">
+    <!-- Mascota Kactus (Avatar circular con la imagen oficial) -->
+    <div class="mascot-float relative flex items-center bg-emerald-900 text-white px-3 py-1.5 rounded-full shadow-xl border-2 border-amber-400 gap-2">
+      <img src="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx (2) (1).png" alt="Mascota Kactus" class="w-7 h-7 rounded-full object-cover border border-white shadow-sm" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23059669%22/><text x=%2250%%22 y=%2255%%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2250%22 fill=%22white%22>🌵</text></svg>'">
+      <span class="text-[10px] font-extrabold tracking-wide uppercase text-amber-300" data-i18n="mascotBubble">¡Hola viajer@! 🌵</span>
     </div>
-    <div class="flex flex-col text-left">
-      <span class="text-[9px] uppercase font-bold text-emerald-200 tracking-wider leading-none">Asistente Kactus</span>
-      <span class="text-xs font-black tracking-tight leading-tight" data-i18n="whatsappFloatText">¡Reserva o consúltanos!</span>
-    </div>
-  </a>
+
+    <!-- Botón Principal WhatsApp -->
+    <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20quisiera%20hacer%20una%20consulta%20o%20reserva" target="_blank" rel="noopener" class="bg-emerald-600 hover:bg-emerald-500 text-white p-3.5 sm:px-5 sm:py-3.5 rounded-full shadow-2xl flex items-center gap-2.5 transition-all transform hover:scale-105 border-2 border-white">
+      <i class="fab fa-whatsapp text-2xl animate-bounce"></i>
+      <span class="text-xs font-bold" data-i18n="whatsappFloatText">Reserva Ahora</span>
+    </a>
+  </div>
 
   <!-- BARRA SUPERIOR -->
   <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/85 shadow-xs py-3 px-3 sm:px-10">
@@ -599,19 +609,17 @@
                 </div>
               </div>
 
-              <!-- Desayunos con Loguito Kactus Centrado en la Cabecera -->
+              <!-- Desayunos con Mascota Kactus en la Cabecera -->
               <div class="bg-white rounded-2xl border border-slate-200 shadow-md overflow-hidden">
                 <button onclick="toggleBreakfastMenu()" class="w-full bg-gradient-to-r from-emerald-600 to-teal-700 text-white p-4 sm:p-5 flex justify-between items-center text-left transition-all hover:opacity-95 cursor-pointer">
                   <div class="flex items-center gap-3.5">
-                    <!-- Loguito asistente Kactus integrado y centrado -->
                     <div class="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-2xl shadow-sm border border-white/30 shrink-0 relative overflow-hidden">
-                      <div class="absolute inset-0 bg-emerald-500/20"></div>
-                      <i class="fas fa-seedling text-emerald-200 text-xl z-10 animate-pulse"></i>
+                      <img src="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx (2) (1).png" alt="Mascota" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23059669%22/><text x=%2250%%22 y=%2255%%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2250%22 fill=%22white%22>🌵</text></svg>'">
                     </div>
                     <div>
                       <h5 class="font-extrabold text-sm sm:text-base flex items-center gap-2">
                         <span data-i18n="bfMenuTitle">Carta de Desayunos Hostal Kactus</span>
-                        <span class="text-[9px] bg-amber-400 text-slate-950 px-2 py-0.5 rounded-full font-black uppercase shadow-xs">Kactus AI</span>
+                        <span class="text-[9px] bg-amber-400 text-slate-950 px-2 py-0.5 rounded-full font-black uppercase shadow-xs">Kactus</span>
                       </h5>
                       <p class="text-[11px] text-emerald-100" data-i18n="bfMenuSub">Haz clic aquí para ver opciones con huevos fritos, jugos, café y precios</p>
                     </div>
@@ -668,10 +676,8 @@
               </div>
             </div>
 
-            <!-- 2. GUÍA DE RECORRIDOS SUPERDINÁMICA, PROFESIONAL Y VISUAL CON FOTOS CIRCULARES E ILUMINACIÓN AMARILLA -->
+            <!-- GUÍA DE RECORRIDOS CON FOTOS CIRCULARES -->
             <div class="space-y-6 pt-6 border-t-2 border-emerald-200">
-              
-              <!-- Cabecera de la sección -->
               <div class="text-center sm:text-left">
                 <h4 class="font-extrabold text-xl text-slate-900 tracking-tight flex items-center justify-center sm:justify-start gap-2.5">
                   <span class="w-10 h-10 rounded-2xl bg-emerald-600 text-white flex items-center justify-center shadow-md text-lg">
@@ -682,32 +688,22 @@
                 <p class="text-xs text-slate-500 mt-1" data-i18n="toursGuideSub">Información directa para decidir tu aventura en segundos. Paga en efectivo o tarjeta en el alojamiento.</p>
               </div>
 
-              <!-- Tarjetas Contenedoras Principales -->
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
                 <!-- TARJETA 1: LAGUNA PARÓN -->
                 <div class="bg-white rounded-2xl border-2 border-emerald-500/40 shadow-lg p-5 space-y-4 relative overflow-hidden flex flex-col justify-between">
-                  <div class="absolute top-0 right-0 bg-emerald-600 text-white text-[9px] font-black uppercase px-3 py-1 rounded-bl-xl shadow-xs z-20" data-i18n="badgeImperdible">
-                    ⭐ IMPERDIBLE
-                  </div>
-                  
+                  <div class="absolute top-0 right-0 bg-emerald-600 text-white text-[9px] font-black uppercase px-3 py-1 rounded-bl-xl shadow-xs z-20" data-i18n="badgeImperdible">⭐ IMPERDIBLE</div>
                   <div class="space-y-3">
-                    <!-- Título -->
                     <div>
                       <h5 class="font-extrabold text-slate-900 text-sm flex items-center gap-2">
                         <span>🌊</span> <span data-i18n="t1Name">1. Laguna Parón</span> <span class="text-[10px] text-slate-400 font-normal" data-i18n="t1Sub">(32 km de Caraz)</span>
                       </h5>
                       <p class="text-[11px] text-slate-500 mt-0.5" data-i18n="t1Desc">La laguna turquesa más grande de la Cordillera Blanca.</p>
                     </div>
-
-                    <!-- FOTO CIRCULAR CON RESPLANDOR AMARILLO (AURA) -->
                     <div class="flex justify-center my-3">
                       <div class="relative w-28 h-28 rounded-full flex items-center justify-center" style="box-shadow: 0 0 20px 4px rgba(234, 179, 8, 0.45); background: rgba(234, 179, 8, 0.15);">
                         <img src="Paron laguna.png" alt="Laguna Parón" class="w-24 h-24 object-cover rounded-full border-2 border-white shadow-md zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='lagunaparon2.png'">
                       </div>
                     </div>
-
-                    <!-- Opción Tour Hostal -->
                     <div class="bg-emerald-50/70 p-3.5 rounded-xl border border-emerald-100 space-y-2">
                       <div class="text-xs font-extrabold text-emerald-900 flex items-center gap-1.5">
                         <span>🚌</span> <span data-i18n="t1HostalTour">Tour del Hostal</span> <span class="text-[10px] font-normal text-emerald-700" data-i18n="t1HostalSub">(¡Te recogemos en la puerta!)</span>
@@ -715,13 +711,9 @@
                       <div class="text-[11px] text-slate-700 font-medium space-y-1">
                         <div data-i18n="t1Det1">👥 Salida base: <strong>4 personas</strong> | 💰 <strong>S/ 40</strong> p/p (ida y vuelta)</div>
                         <div data-i18n="t1Det2">⏳ <strong>2 hrs</strong> en laguna para fotos y paseo | 🎟️ Entradas: <strong>S/ 5</strong></div>
-                        <div class="text-[10px] text-emerald-800 bg-emerald-100/70 p-1.5 rounded-lg mt-1" data-i18n="t1Tip">
-                          💡 <em>¿Menos personas? Puedes cubrir el costo de los asientos restantes y la unidad sale de inmediato.</em>
-                        </div>
+                        <div class="text-[10px] text-emerald-800 bg-emerald-100/70 p-1.5 rounded-lg mt-1" data-i18n="t1Tip">💡 <em>¿Menos personas? Puedes cubrir el costo de los asientos restantes y la unidad sale de inmediato.</em></div>
                       </div>
                     </div>
-
-                    <!-- Opción Por Tu Cuenta -->
                     <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 space-y-1.5">
                       <div class="text-xs font-extrabold text-slate-800 flex items-center gap-1.5">
                         <span>🥾</span> <span data-i18n="t1OwnTitle">Por tu cuenta</span>
@@ -732,7 +724,6 @@
                       </div>
                     </div>
                   </div>
-
                   <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20deseo%20reservar%20el%20tour%20a%20la%20Laguna%20Parón" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs py-2.5 px-4 rounded-xl shadow-sm text-center transition-all flex items-center justify-center gap-2 mt-3">
                     <i class="fab fa-whatsapp"></i> <span data-i18n="btnResParon">Reservar Parón</span>
                   </a>
@@ -740,27 +731,19 @@
 
                 <!-- TARJETA 2: LAGUNA 69 -->
                 <div class="bg-white rounded-2xl border-2 border-amber-500/40 shadow-lg p-5 space-y-4 relative overflow-hidden flex flex-col justify-between">
-                  <div class="absolute top-0 right-0 bg-amber-500 text-slate-950 text-[9px] font-black uppercase px-3 py-1 rounded-bl-xl shadow-xs z-20" data-i18n="badgeExigente">
-                    ⚡ EXIGENTE
-                  </div>
-                  
+                  <div class="absolute top-0 right-0 bg-amber-500 text-slate-950 text-[9px] font-black uppercase px-3 py-1 rounded-bl-xl shadow-xs z-20" data-i18n="badgeExigente">⚡ EXIGENTE</div>
                   <div class="space-y-3">
-                    <!-- Título -->
                     <div>
                       <h5 class="font-extrabold text-slate-900 text-sm flex items-center gap-2">
                         <span>🏔️</span> <span data-i18n="t2Name">2. Laguna 69</span> <span class="text-[10px] text-slate-400 font-normal" data-i18n="t2Sub">(Full Day Alta Montaña)</span>
                       </h5>
                       <p class="text-[11px] text-slate-500 mt-0.5" data-i18n="t2Desc">Trekking bajo los nevados Huascarán y Chacraraju. <em>Guía requerido por el Parque.</em></p>
                     </div>
-
-                    <!-- FOTO CIRCULAR CON RESPLANDOR AMARILLO (AURA) -->
                     <div class="flex justify-center my-3">
                       <div class="relative w-28 h-28 rounded-full flex items-center justify-center" style="box-shadow: 0 0 20px 4px rgba(234, 179, 8, 0.45); background: rgba(234, 179, 8, 0.15);">
                         <img src="laguna69.png" alt="Laguna 69" class="w-24 h-24 object-cover rounded-full border-2 border-white shadow-md zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='laguna692.png'">
                       </div>
                     </div>
-
-                    <!-- Opción Tour Autorizado -->
                     <div class="bg-amber-50/70 p-3.5 rounded-xl border border-amber-100 space-y-1.5">
                       <div class="text-xs font-extrabold text-amber-900 flex items-center gap-1.5">
                         <span>🚌</span> <span data-i18n="t2AuthTitle">Tour Autorizado (Con Nosotros)</span>
@@ -773,32 +756,25 @@
                         <div data-i18n="t2Det5">🕒 Retorno a Caraz: <strong>5:30 PM a 6:00 PM</strong></div>
                       </div>
                     </div>
-
-                    <!-- Opción Por Tus Medios -->
                     <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 space-y-1.5">
                       <div class="text-xs font-extrabold text-slate-800 flex items-center gap-1.5">
                         <span>🥾</span> <span data-i18n="t2OwnTitle">Por tus medios</span>
                       </div>
                       <div class="text-[11px] text-slate-600" data-i18n="t2OwnText">
-                        🚌 Bus Yungay (<strong>S/ 3</strong>) + Minivan Yanama (<strong>S/ 25 - 30</strong> ida y aprox. <strong>S/ 25 - 30</strong> retorno)<br>
-                        🎟️ Ticket Parque Nacional: <strong>S/ 30</strong>
+                        🚌 Bus Yungay (<strong>S/ 3</strong>) + Minivan Yanama (<strong>S/ 25 - 30</strong> ida y aprox. <strong>S/ 25 - 30</strong> retorno)<br>🎟️ Ticket Parque Nacional: <strong>S/ 30</strong>
                       </div>
                     </div>
                   </div>
-
                   <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20quisiera%20coordinar%20mi%20tour%20a%20la%20Laguna%2069" target="_blank" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold text-xs py-2.5 px-4 rounded-xl shadow-sm text-center transition-all flex items-center justify-center gap-2 mt-3">
                     <i class="fab fa-whatsapp"></i> <span data-i18n="btnResL69">Consultar Laguna 69</span>
                   </a>
                 </div>
-
               </div>
-
             </div>
 
-            <!-- 3. DIRECTORIO DE LUGARES CLAVE -->
+            <!-- DIRECTORIO DE LUGARES CLAVE -->
             <div class="space-y-4 pt-6 border-t border-slate-200">
               <h4 class="font-extrabold text-sm text-slate-900" data-i18n="directoryTitle">📍 Directorio de Lugares Clave en Caraz</h4>
-              
               <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
                 <div class="bg-white rounded-2xl border border-slate-200 flex flex-col overflow-hidden shadow-sm">
                   <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=500&q=80" alt="Restaurante" class="w-full h-32 object-cover bg-slate-200 zoomable-img cursor-pointer" onclick="openModal(this.src)">
@@ -810,7 +786,6 @@
                     </a>
                   </div>
                 </div>
-
                 <div class="bg-white rounded-2xl border border-slate-200 flex flex-col overflow-hidden shadow-sm">
                   <img src="plaza.png" alt="Plaza de Armas" class="w-full h-32 object-cover bg-slate-200 zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=500&q=80'">
                   <div class="p-4 flex flex-col flex-1">
@@ -821,7 +796,6 @@
                     </a>
                   </div>
                 </div>
-
                 <div class="bg-white rounded-2xl border border-slate-200 flex flex-col overflow-hidden shadow-sm">
                   <img src="dolares.png" alt="Caja Huancayo" class="w-full h-32 object-cover bg-slate-200 zoomable-img cursor-pointer" onclick="openModal(this.src)" onerror="this.src='https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&w=500&q=80'">
                   <div class="p-4 flex flex-col flex-1">
@@ -862,10 +836,10 @@
     <img id="modalImg" src="" alt="Imagen Ampliada">
   </div>
 
-  <!-- LÓGICA JAVASCRIPT, TELEGRAM INFALIBLE Y TRADUCCIONES NATIVAS -->
+  <!-- LÓGICA JAVASCRIPT, TELEGRAM ROBUSTO Y TRADUCCIONES -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      // 1. Notificación a Telegram 100% robusta con fetch() y control completo de sesión
+      // 1. Notificación a Telegram 100% infalible mediante Image Beacon y fetch con fallback
       const visitorKey = "kactus_visited_session";
       if (!sessionStorage.getItem(visitorKey)) {
         sessionStorage.setItem(visitorKey, "true");
@@ -885,10 +859,14 @@
 
         const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(mensaje)}&parse_mode=Markdown`;
 
-        fetch(url).catch(err => console.error("Error al notificar Telegram:", err));
+        // Método doble: fetch y creación de objeto Image invisble para evitar bloqueos del navegador
+        fetch(url, { method: 'GET', mode: 'no-cors' }).catch(() => {
+          const img = new Image();
+          img.src = url;
+        });
       }
 
-      // 2. Apertura automática si entra por el QR especial de recepción (?acceso=vip)
+      // 2. Apertura automática si entra por el QR especial (?acceso=vip)
       const urlParams = new URLSearchParams(window.location.search);
       if (urlParams.get('acceso') === 'vip') {
         const secretSection = document.getElementById('secretGuide');
@@ -1049,7 +1027,8 @@
     // DICCIONARIO DE TRADUCCIONES 100% NATIVAS Y COHERENTES (8 IDIOMAS)
     const translations = {
       es: {
-        whatsappFloatText: "¡Reserva o consúltanos!",
+        mascotBubble: "¡Hola viajer@! 🌵",
+        whatsappFloatText: "Reserva Ahora",
         navLocationSub: "Caraz · Perú",
         navCodeText: "Código de Huésped",
         topAccessTitle: "Área Exclusiva de Huéspedes",
@@ -1206,7 +1185,8 @@
         stkBtn: "Reservar Ahora"
       },
       en: {
-        whatsappFloatText: "Book or chat with us!",
+        mascotBubble: "Hello traveler! 🌵",
+        whatsappFloatText: "Book Now",
         navLocationSub: "Caraz · Peru",
         navCodeText: "Guest Code",
         topAccessTitle: "Exclusive Guest Area",
@@ -1363,7 +1343,8 @@
         stkBtn: "Book Now"
       },
       fr: {
-        whatsappFloatText: "Réservez ou contactez-nous !",
+        mascotBubble: "Bonjour voyageur ! 🌵",
+        whatsappFloatText: "Réserver",
         navLocationSub: "Caraz · Pérou",
         navCodeText: "Code Client",
         topAccessTitle: "Espace Exclusif Clients",
@@ -1520,7 +1501,8 @@
         stkBtn: "Réserver Maintenant"
       },
       cs: {
-        whatsappFloatText: "Zarezervujte si nebo napište!",
+        mascotBubble: "Ahoj cestovateli! 🌵",
+        whatsappFloatText: "Rezervovat",
         navLocationSub: "Caraz · Peru",
         navCodeText: "Kód hosta",
         topAccessTitle: "Exkluzivní zóna pro hosty",
@@ -1677,7 +1659,8 @@
         stkBtn: "Rezervovat"
       },
       zh: {
-        whatsappFloatText: "立即预订或咨询我们！",
+        mascotBubble: "你好，旅行者！🌵",
+        whatsappFloatText: "立即预订",
         navLocationSub: "秘鲁 · 卡拉斯",
         navCodeText: "住客验证码",
         topAccessTitle: "住客专属特权区",
@@ -1834,7 +1817,8 @@
         stkBtn: "立即预订"
       },
       pt: {
-        whatsappFloatText: "Reserve ou fale conosco!",
+        mascotBubble: "Olá viajante! 🌵",
+        whatsappFloatText: "Reservar Agora",
         navLocationSub: "Caraz · Peru",
         navCodeText: "Código do Hóspede",
         topAccessTitle: "Área Exclusiva de Hóspedes",
@@ -1980,7 +1964,7 @@
         directoryTitle: "📍 Diretório de Locais Chave em Caraz",
         dir1Title: "Restaurante Pacha Hunta",
         dir1Desc: "Comida regional tradicional muito próxima ao hostal.",
-        btnMaps: "Ver no Google Maps",
+        dirMaps: "Ver no Google Maps",
         dir2Title: "Praça de Armas de Caraz",
         dir2Desc: "Coração histórico, ideal para passear e saborear sorvetes artesanais.",
         dir3Title: "Caja Huancayo & Câmbio",
@@ -1991,7 +1975,8 @@
         stkBtn: "Reservar Agora"
       },
       de: {
-        whatsappFloatText: "Buchen oder uns kontaktieren!",
+        mascotBubble: "Hallo Reisender! 🌵",
+        whatsappFloatText: "Jetzt Buchen",
         navLocationSub: "Caraz · Peru",
         navCodeText: "Gästekod",
         topAccessTitle: "Exklusiver Gäste-Bereich",
@@ -2148,7 +2133,8 @@
         stkBtn: "Jetzt Buchen"
       },
       ru: {
-        whatsappFloatText: "Забронируйте или напишите нам!",
+        mascotBubble: "Привет, путешественник! 🌵",
+        whatsappFloatText: "Забронировать",
         navLocationSub: "Карас · Перу",
         navCodeText: "Код Гостя",
         topAccessTitle: "Эксклюзивная зона для гостей",
