@@ -137,7 +137,7 @@
       <!-- BOTÓN PRINCIPAL DE CONVERSIÓN -->
       <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
         <button onclick="toggleCalculator()" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-extrabold px-8 py-4 rounded-2xl text-sm shadow-xl transition-all transform hover:scale-105 flex items-center gap-2.5 border-2 border-white/40">
-          <i class="fas fa-calculator text-base"></i> <span data-i18n="btnOpenCalc">🗓️ ¡Reserva Ahora / Cotiza en Línea!</span>
+          <i class="fas fa-calculator text-base"></i> <span data-i18n="btnOpenCalc">🗓️ ¡Reserva / Cotiza en Línea!</span>
         </button>
         <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20deseo%20consultar%20disponibilidad%20directamente" target="_blank" rel="noopener" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-4 rounded-2xl text-sm shadow-xl transition-all flex items-center gap-2 border border-white/20">
           <i class="fab fa-whatsapp text-lg"></i> <span data-i18n="btnWhatsappDir">Contacto Directo WhatsApp</span>
@@ -329,7 +329,7 @@
               <p class="text-slate-600 text-xs leading-relaxed" data-i18n="room1Desc">Habitación pequeña y acogedora con cama de 2 plazas. Ideal para parejas o viajeros solos.</p>
               <div class="text-2xl font-black text-emerald-600 mt-4 flex items-baseline gap-1">S/ 35.00 <span class="text-[11px] font-semibold text-slate-400" data-i18n="perNight1">promedio por noche</span></div>
             </div>
-            <button onclick="bookRoomDirect(35, 'Habitación Matrimonial Económica')" class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2">
+            <button onclick="bookRoomDirect(35, 'eco')" class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2">
               <i class="fab fa-whatsapp text-base"></i> <span data-i18n="btnBookDirectText">Reservar Habitación</span>
             </button>
           </div>
@@ -360,7 +360,7 @@
               <p class="text-slate-600 text-xs leading-relaxed" data-i18n="room2Desc">Habitación espaciosa con cama de 2 plazas, gran iluminación natural y armario.</p>
               <div class="text-2xl font-black text-emerald-600 mt-4 flex items-baseline gap-1">S/ 45.00 <span class="text-[11px] font-semibold text-slate-400" data-i18n="perNight2">promedio por noche</span></div>
             </div>
-            <button onclick="bookRoomDirect(45, 'Habitación Matrimonial Mediana')" class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2">
+            <button onclick="bookRoomDirect(45, 'med')" class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2">
               <i class="fab fa-whatsapp text-base"></i> <span data-i18n="btnBookDirectText">Reservar Habitación</span>
             </button>
           </div>
@@ -931,20 +931,21 @@
       }
     }
 
-    // FUNCIÓN DE RESERVA DIRECTA SEGÚN EL IDIOMA ACTUAL
-    function bookRoomDirect(price, roomNameEs) {
+    // RESERVA DIRECTA DESDE LAS TARJETAS (AHORA DICE 'RESERVAR' Y LLEGA EN EL IDIOMA ACTUAL)
+    function bookRoomDirect(price, roomKey) {
       const roomNames = {
-        es: roomNameEs,
-        en: roomNameEs.includes('Económica') ? 'Economy Double Room' : 'Medium Double Room',
-        fr: roomNameEs.includes('Económica') ? 'Chambre Double Économique' : 'Chambre Double Standard',
-        cs: roomNameEs.includes('Económica') ? 'Ekonomický dvoulůžkový pokoj' : 'Standardní dvoulůžkový pokoj',
-        zh: roomNameEs.includes('Económica') ? '经济双人房' : '中等双人房',
-        pt: roomNameEs.includes('Económica') ? 'Quarto Matrimonial Econômico' : 'Quarto Matrimonial Médio',
-        de: roomNameEs.includes('Económica') ? 'Wirtschaftliches Doppelzimmer' : 'Mittelgroßes Doppelzimmer',
-        ru: roomNameEs.includes('Económica') ? 'Эконом двухместный номер' : 'Стандартный двухместный номер'
+        es: { eco: 'Habitación Matrimonial Económica', med: 'Habitación Matrimonial Mediana' },
+        en: { eco: 'Economy Double Room', med: 'Medium Double Room' },
+        fr: { eco: 'Chambre Double Économique', med: 'Chambre Double Standard' },
+        cs: { eco: 'Ekonomický dvoulůžkový pokoj', med: 'Standardní dvoulůžkový pokoj' },
+        zh: { eco: '经济双人房', med: '中等双人房' },
+        pt: { eco: 'Quarto Matrimonial Econômico', med: 'Quarto Matrimonial Médio' },
+        de: { eco: 'Wirtschaftliches Doppelzimmer', med: 'Mittelgroßes Doppelzimmer' },
+        ru: { eco: 'Эконом двухместный номер', med: 'Стандартный двухместный номер' }
       };
 
-      const roomTitle = roomNames[currentLang] || roomNameEs;
+      const langDict = roomNames[currentLang] || roomNames['es'];
+      const roomTitle = langDict[roomKey] || (roomKey === 'eco' ? 'Habitación Matrimonial Económica' : 'Habitación Matrimonial Mediana');
 
       const messages = {
         es: `Hola Hostal Kactus 👋, deseo reservar la *${roomTitle}* (S/ ${price}.00 por noche). Quedo atento/a para coordinar fechas y detalles. ¡Gracias!`,
@@ -993,7 +994,18 @@
         }
       }
 
-      document.getElementById('calcNightsDisplay').value = `${nights} ${nights === 1 ? 'noche' : 'noches'}`;
+      const nightLabels = {
+        es: nights === 1 ? '1 noche' : `${nights} noches`,
+        en: nights === 1 ? '1 night' : `${nights} nights`,
+        fr: nights === 1 ? '1 nuit' : `${nights} nuits`,
+        cs: nights === 1 ? '1 noc' : `${nights} nocí`,
+        zh: `1 晚`,
+        pt: nights === 1 ? '1 noite' : `${nights} noites`,
+        de: nights === 1 ? '1 Nacht' : `${nights} Nächte`,
+        ru: `${nights} ночь`
+      };
+
+      document.getElementById('calcNightsDisplay').value = nightLabels[currentLang] || `${nights} noches`;
 
       let grandTotal = roomPrice * nights;
       document.getElementById('totalPriceDisplay').innerText = `S/ ${grandTotal.toFixed(2)}`;
@@ -1008,15 +1020,74 @@
       const guests = document.getElementById('calcGuests').value;
       const totalPrice = document.getElementById('totalPriceDisplay').innerText;
 
-      let msg = `Hola Hostal Kactus 👋, deseo confirmar mi reserva:\n\n` +
-                `🛏️ *Habitación:* ${roomName}\n` +
-                `📅 *Día de Entrada:* ${checkin}\n` +
-                `🚪 *Check-out (Salida):* ${checkout}\n` +
-                `🌙 *Estadía:* ${nightsDisplay}\n` +
-                `👥 *Huéspedes:* ${guests}\n` +
-                `💰 *Total Habitación:* ${totalPrice}\n\n` +
-                `Quedo atento/a para coordinar el pago y confirmación. ¡Gracias!`;
+      const calcMessages = {
+        es: `Hola Hostal Kactus 👋, deseo confirmar mi reserva:\n\n` +
+            `🛏️ *Habitación:* ${roomName}\n` +
+            `📅 *Día de Entrada:* ${checkin}\n` +
+            `🚪 *Check-out (Salida):* ${checkout}\n` +
+            `🌙 *Estadía:* ${nightsDisplay}\n` +
+            `👥 *Huéspedes:* ${guests}\n` +
+            `💰 *Total Habitación:* ${totalPrice}\n\n` +
+            `Quedo atento/a para coordinar el pago y confirmación. ¡Gracias!`,
+        en: `Hello Hostal Kactus 👋, I would like to confirm my booking:\n\n` +
+            `🛏️ *Room:* ${roomName}\n` +
+            `📅 *Check-in Date:* ${checkin}\n` +
+            `🚪 *Check-out:* ${checkout}\n` +
+            `🌙 *Stay:* ${nightsDisplay}\n` +
+            `👥 *Guests:* ${guests}\n` +
+            `💰 *Total Price:* ${totalPrice}\n\n` +
+            `I look forward to coordinating payment and confirmation. Thank you!`,
+        fr: `Bonjour Hostal Kactus 👋, je souhaite confirmer ma réservation :\n\n` +
+            `🛏️ *Chambre :* ${roomName}\n` +
+            `📅 *Date d'arrivée :* ${checkin}\n` +
+            `🚪 *Départ :* ${checkout}\n` +
+            `🌙 *Séjour :* ${nightsDisplay}\n` +
+            `👥 *Invités :* ${guests}\n` +
+            `💰 *Total :* ${totalPrice}\n\n` +
+            `J'attends votre retour pour coordonner le paiement. Merci !`,
+        cs: `Dobrý den, Hostal Kactus 👋, rád bych potvrdil svou rezervaci:\n\n` +
+            `🛏️ *Pokoj:* ${roomName}\n` +
+            `📅 *Příjezd:* ${checkin}\n` +
+            `🚪 *Odjezd:* ${checkout}\n` +
+            `🌙 *Pobyt:* ${nightsDisplay}\n` +
+            `👥 *Hosté:* ${guests}\n` +
+            `💰 *Celkem:* ${totalPrice}\n\n` +
+            `Těším se na koordinaci platby. Děkuji!`,
+        zh: `您好 Hostal Kactus 👋，我想确认我的预订：\n\n` +
+            `🛏️ *房型:* ${roomName}\n` +
+            `📅 *入住日期:* ${checkin}\n` +
+            `🚪 *退房日期:* ${checkout}\n` +
+            `🌙 *入住天数:* ${nightsDisplay}\n` +
+            `👥 *入住人数:* ${guests}\n` +
+            `💰 *总计:* ${totalPrice}\n\n` +
+            `期待与您确认支付和预订详情。谢谢！`,
+        pt: `Olá Hostal Kactus 👋, gostaria de confirmar minha reserva:\n\n` +
+            `🛏️ *Quarto:* ${roomName}\n` +
+            `📅 *Data de Entrada:* ${checkin}\n` +
+            `🚪 *Saída:* ${checkout}\n` +
+            `🌙 *Estadia:* ${nightsDisplay}\n` +
+            `👥 *Huéspedes:* ${guests}\n` +
+            `💰 *Total:* ${totalPrice}\n\n` +
+            `Fico no aguardo para coordenar o pagamento. Obrigado!`,
+        de: `Hallo Hostal Kactus 👋, ich möchte meine Buchung bestätigen:\n\n` +
+            `🛏️ *Zimmer:* ${roomName}\n` +
+            `📅 *Anreisedatum:* ${checkin}\n` +
+            `🚪 *Abreise:* ${checkout}\n` +
+            `🌙 *Aufenthalt:* ${nightsDisplay}\n` +
+            `👥 *Gäste:* ${guests}\n` +
+            `💰 *Gesamt:* ${totalPrice}\n\n` +
+            `Ich freue mich auf die Bestätigung. Danke!`,
+        ru: `Здравствуйте, Hostal Kactus 👋, я хочу подтвердить бронирование:\n\n` +
+            `🛏️ *Номер:* ${roomName}\n` +
+            `📅 *Дата заезда:* ${checkin}\n` +
+            `🚪 *Выезд:* ${checkout}\n` +
+            `🌙 *Проживание:* ${nightsDisplay}\n` +
+            `👥 *Гости:* ${guests}\n` +
+            `💰 *Итого:* ${totalPrice}\n\n` +
+            `Жду подтверждения и деталей оплаты. Спасибо!`
+      };
 
+      const msg = calcMessages[currentLang] || calcMessages['es'];
       window.open(`https://wa.me/51974364826?text=${encodeURIComponent(msg)}`, '_blank');
     }
 
@@ -1066,7 +1137,7 @@
         topUnlockBtn: "Ver Contenido",
         heroTitleStart: "Tu descanso cómodo, seguro y completo en",
         heroSubtitle: "Disfruta de habitaciones acogedoras, agua caliente 24/7 y la mejor ubicación para tus aventuras en la Cordillera Blanca.",
-        btnOpenCalc: "🗓️ ¡Reserva Ahora / Cotiza en Línea!",
+        btnOpenCalc: "🗓️ ¡Reserva / Cotiza en Línea!",
         btnWhatsappDir: "Contacto Directo WhatsApp",
         lblBadgePay: "Aceptamos Todas las Tarjetas & Efectivo",
         calcPanelTitle: "Calculadora y Cotización en Línea",
@@ -1159,7 +1230,7 @@
         topUnlockBtn: "View Content",
         heroTitleStart: "Your comfortable, safe, and complete stay in",
         heroSubtitle: "Enjoy cozy rooms, 24/7 hot water, and the best location for your adventures in the Cordillera Blanca.",
-        btnOpenCalc: "🗓️ Book Now / Quote Online",
+        btnOpenCalc: "🗓️ Book / Quote Online",
         btnWhatsappDir: "Direct WhatsApp Contact",
         lblBadgePay: "We accept all cards & cash",
         calcPanelTitle: "Online Calculator & Quote",
@@ -1325,7 +1396,7 @@
         directoryTitle: "📍 Répertoire des Lieux Clés à Caraz",
         dir1Title: "Restaurant Pacha Hunta",
         dir1Desc: "Cuisine régionale traditionnelle très proche de l'hostal.",
-        btnMaps: "Voir sur Google Maps",
+        dirMaps: "Voir sur Google Maps",
         dir2Title: "Plaza de Armas de Caraz",
         dir2Desc: "Cœur historique, idéal pour flâner.",
         dir3Title: "Caja Huancayo & Change",
@@ -1438,7 +1509,7 @@
         topUnlockBtn: "查看内容",
         heroTitleStart: "在舒适、安全且完美的秘鲁卡拉斯享受假期",
         heroSubtitle: "享受温馨的客房、24小时热水，以及探索白色山脉（Cordillera Blanca）的最佳地理位置。",
-        btnOpenCalc: "🗓️ 立即预订 / 在线报价",
+        btnOpenCalc: "🗓️ 预订 / 在线报价",
         btnWhatsappDir: "WhatsApp 直接联系",
         lblBadgePay: "支持所有银行卡及现金支付",
         calcPanelTitle: "在线报价与计算器",
@@ -1474,7 +1545,7 @@
         room1Desc: "小巧温馨的双人床房间，非常适合情侣或独行旅客。",
         perNight1: "每晚平均",
         perNight2: "每晚平均",
-        btnBookDirectText: "立即预订房间",
+        btnBookDirectText: "预订房间",
         room2Tag: "最受欢迎",
         room2Title: "中等双人房",
         room2Desc: "空间宽敞，配有双人床、充足的自然光线与衣柜。",
@@ -1531,7 +1602,7 @@
         topUnlockBtn: "Ver Conteúdo",
         heroTitleStart: "Sua estadia confortável, segura e completa em",
         heroSubtitle: "Desfrute de quartos aconchegantes, água quente 24/7 e a melhor localização para suas aventuras na Cordillera Blanca.",
-        btnOpenCalc: "🗓️ Reserve Agora / Orçamento Online",
+        btnOpenCalc: "🗓️ Reserve / Orçamento Online",
         btnWhatsappDir: "Contato Direto WhatsApp",
         lblBadgePay: "Aceitamos todos os cartões e dinheiro",
         calcPanelTitle: "Calculadora e Orçamento Online",
@@ -1604,7 +1675,7 @@
         directoryTitle: "📍 Diretório de Locais Chave em Caraz",
         dir1Title: "Restaurante Pacha Hunta",
         dir1Desc: "Comida regional tradicional muito próxima ao hostal.",
-        btnMaps: "Ver no Google Maps",
+        dirMaps: "Ver no Google Maps",
         dir2Title: "Praça de Armas de Caraz",
         dir2Desc: "Coração histórico, ideal para passear.",
         dir3Title: "Caja Huancayo & Câmbio",
@@ -1624,7 +1695,7 @@
         topUnlockBtn: "Inhalt ansehen",
         heroTitleStart: "Ihr komfortabler, sicherer und kompletter Aufenthalt in",
         heroSubtitle: "Genießen Sie gemütliche Zimmer, warmes Wasser 24/7 und die beste Lage für Ihre Abenteuer in der Cordillera Blanca.",
-        btnOpenCalc: "🗓️ Jetzt Buchen / Online Berechnen",
+        btnOpenCalc: "🗓️ Buchen / Online Berechnen",
         btnWhatsappDir: "Direkter WhatsApp-Kontakt",
         lblBadgePay: "Wir akzeptieren alle Karten & Bargeld",
         calcPanelTitle: "Online-Rechner & Angebot",
@@ -1789,7 +1860,7 @@
         wifiPassLabel: "Пароль:",
         directoryTitle: "📍 Ключевые места в Карасе",
         dir1Title: "Ресторан Pacha Hunta",
-        dir1Desc: "Традиционная региональная еда очень близко к хостелу.",
+        dir1Desc: "Traditionelle regionale Küche ganz in der Nähe des Hostals.",
         dirMaps: "Посмотреть на Google Maps",
         dir2Title: "Главная площадь Караса",
         dir2Desc: "Исторический центр, идеально для прогулок.",
@@ -1823,6 +1894,8 @@
           el.placeholder = t[key];
         }
       });
+
+      calculateTotal();
     }
   </script>
 </body>
