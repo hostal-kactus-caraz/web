@@ -34,10 +34,19 @@
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-500 selection:text-white pb-24 relative">
 
-  <!-- BOTÓN FLOTANTE DE WHATSAPP PROFESIONAL -->
-  <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20quisiera%20hacer%20una%20consulta%20o%20reserva" target="_blank" rel="noopener" class="fixed bottom-20 right-5 z-50 bg-emerald-600 hover:bg-emerald-500 text-white p-3.5 sm:px-4 sm:py-3 rounded-full shadow-2xl flex items-center gap-2 transition-all transform hover:scale-105 group border-2 border-white">
-    <i class="fab fa-whatsapp text-2xl animate-bounce"></i>
-    <span class="text-xs font-bold hidden sm:inline" data-i18n="whatsappFloatText">¡Reserva o consúltanos!</span>
+  <!-- BOTÓN FLOTANTE ESTILO ASISTENTE IA CON LOGUITO KACTUS -->
+  <a href="https://wa.me/51974364826?text=Hola%20Hostal%20Kactus,%20quisiera%20hacer%20una%20consulta%20o%20reserva" target="_blank" rel="noopener" class="fixed bottom-20 right-5 z-50 bg-emerald-600 hover:bg-emerald-500 text-white p-3.5 sm:px-4 sm:py-3 rounded-full shadow-2xl flex items-center gap-2.5 transition-all transform hover:scale-105 group border-2 border-white">
+    <div class="relative flex items-center justify-center">
+      <!-- Loguito Asistente Kactus con brillo/aura -->
+      <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-emerald-500 to-teal-400 border-2 border-white flex items-center justify-center shadow-md overflow-hidden shrink-0">
+        <i class="fas fa-seedling text-white text-xs"></i>
+      </div>
+      <span class="absolute -top-1 -right-1 w-3 h-3 bg-amber-400 border-2 border-emerald-700 rounded-full animate-ping"></span>
+    </div>
+    <div class="flex flex-col text-left">
+      <span class="text-[9px] uppercase font-bold text-emerald-200 tracking-wider leading-none">Asistente Kactus</span>
+      <span class="text-xs font-black tracking-tight leading-tight" data-i18n="whatsappFloatText">¡Reserva o consúltanos!</span>
+    </div>
   </a>
 
   <!-- BARRA SUPERIOR -->
@@ -590,17 +599,24 @@
                 </div>
               </div>
 
-              <!-- Desayunos -->
+              <!-- Desayunos con Loguito Kactus Centrado en la Cabecera -->
               <div class="bg-white rounded-2xl border border-slate-200 shadow-md overflow-hidden">
                 <button onclick="toggleBreakfastMenu()" class="w-full bg-gradient-to-r from-emerald-600 to-teal-700 text-white p-4 sm:p-5 flex justify-between items-center text-left transition-all hover:opacity-95 cursor-pointer">
                   <div class="flex items-center gap-3.5">
-                    <div class="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center text-white text-2xl shadow-sm"><i class="fas fa-hat-chef"></i></div>
+                    <!-- Loguito asistente Kactus integrado y centrado -->
+                    <div class="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-2xl shadow-sm border border-white/30 shrink-0 relative overflow-hidden">
+                      <div class="absolute inset-0 bg-emerald-500/20"></div>
+                      <i class="fas fa-seedling text-emerald-200 text-xl z-10 animate-pulse"></i>
+                    </div>
                     <div>
-                      <h5 class="font-extrabold text-sm sm:text-base" data-i18n="bfMenuTitle">Carta de Desayunos Hostal Kactus</h5>
+                      <h5 class="font-extrabold text-sm sm:text-base flex items-center gap-2">
+                        <span data-i18n="bfMenuTitle">Carta de Desayunos Hostal Kactus</span>
+                        <span class="text-[9px] bg-amber-400 text-slate-950 px-2 py-0.5 rounded-full font-black uppercase shadow-xs">Kactus AI</span>
+                      </h5>
                       <p class="text-[11px] text-emerald-100" data-i18n="bfMenuSub">Haz clic aquí para ver opciones con huevos fritos, jugos, café y precios</p>
                     </div>
                   </div>
-                  <div id="breakfastArrow" class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center transition-transform duration-300">
+                  <div id="breakfastArrow" class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center transition-transform duration-300 shrink-0">
                     <i class="fas fa-chevron-down text-xs"></i>
                   </div>
                 </button>
@@ -1807,7 +1823,7 @@
         directoryTitle: "📍 卡拉斯核心生活与服务指南",
         dir1Title: "Pacha Hunta 传统餐厅",
         dir1Desc: "提供地道的安第斯山脉传统风味美食，距离旅舍非常近。",
-        btnMaps: "在谷歌地图中查看",
+        dirMaps: "在谷歌地图中查看",
         dir2Title: "卡拉斯武器广场",
         dir2Desc: "城市历史文化中心，漫步休闲与品尝手作冰淇淋的好去处。",
         dir3Title: "Caja Huancayo 银行与兑换点",
@@ -1953,7 +1969,7 @@
         t2Sub: "(Full Day Alta Montanha)",
         t2Desc: "Trekking sob os nevados Huascarán e Chacraraju. <em>Guia exigido pelo Parque Nacional.</em>",
         t2AuthTitle: "Tour Autorizado (Conosco)",
-        t2Det1: "⏰ Saída às <strong>6:00 AM em Yungay</strong> <span class="text-slate-500">(alcançar o tour saindo de Huaraz)</span>",
+        t2Det1: "⏰ Saída às <strong>6:00 AM em Yungay</strong> <span class="text-slate-500">(alcanzar o tour saindo de Huaraz)</span>",
         t2Det2: "🚐 Transporte Caraz-Yungay (ida e volta): <strong>S/ 6</strong> (S/ 3 ida + S/ 3 volta)",
         t2Det3: "💳 Detalhes: Tour (S/ 60) + Ticket Parque Nacional (S/ 30) = <strong>Total aprox. S/ 96</strong>",
         t2Det4: "✅ <em>Inclui guia turístico oficial exigido pelo Parque Huascarán.</em>",
@@ -2121,7 +2137,7 @@
         directoryTitle: "📍 Wichtige Orte in Caraz",
         dir1Title: "Restaurant Pacha Hunta",
         dir1Desc: "Traditionelle regionale Küche ganz in der Nähe des Hostals.",
-        btnMaps: "Auf Google Maps ansehen",
+        dirMaps: "Auf Google Maps ansehen",
         dir2Title: "Plaza de Armas von Caraz",
         dir2Desc: "Das historische Stadtzentrum, ideal zum Flanieren und für handgemachtes Eis.",
         dir3Title: "Caja Huancayo & Wechselstube",
@@ -2278,7 +2294,7 @@
         directoryTitle: "📍 Ключевые места в Карасе",
         dir1Title: "Ресторан Pacha Hunta",
         dir1Desc: "Традиционная региональная кухня в непосредственной близости от хостела.",
-        btnMaps: "Посмотреть на Google Maps",
+        dirMaps: "Посмотреть на Google Maps",
         dir2Title: "Главная площадь Караса",
         dir2Desc: "Исторический центр города, идеально для прогулок и дегустации домашнего мороженого.",
         dir3Title: "Caja Huancayo & Обмен валюты",
