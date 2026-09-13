@@ -1,72 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+/* ==========================================================
+   HOSTAL KACTUS - ESTILOS Y EFECTOS 3D PROFESIONALES (style.css)
+   ========================================================== */
 
 :root {
-  --primary: #10b981;
-  --primary-glow: rgba(16, 185, 129, 0.4);
+  --primary: #059669;
+  --primary-dark: #022c22;
   --accent: #fbbf24;
-  --bg-slate: #f8fafc;
 }
 
-body {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  background-color: var(--bg-slate);
-  color: #1e293b;
-  overflow-x: hidden;
-}
-
-/* --- ÁREA MARCADA CON FONDO AMARILLO NEÓN PERMANENTE --- */
-.neon-yellow-box {
-  background: rgba(15, 23, 42, 0.85);
-  border: 2px solid #fbbf24;
-  box-shadow: 0 0 25px rgba(251, 191, 36, 0.6), inset 0 0 15px rgba(251, 191, 36, 0.2);
-  position: relative;
-}
-
-/* --- BOTÓN DESBLOQUEAR PARPADEANTE LLAMATIVO --- */
-.neon-blink-btn {
-  background: linear-gradient(135deg, #fbbf24, #f59e0b);
-  color: #0f172a;
-  font-weight: 800;
-  box-shadow: 0 0 15px rgba(251, 191, 36, 0.9);
-  animation: neonBlink 1.2s ease-in-out infinite;
-  transition: transform 0.2s ease;
-}
-
-.neon-blink-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(251, 191, 36, 1);
-}
-
-@keyframes neonBlink {
-  0%, 100% {
-    box-shadow: 0 0 10px rgba(251, 191, 36, 0.5), inset 0 0 5px rgba(255, 255, 255, 0.5);
-    filter: brightness(1);
-  }
-  50% {
-    box-shadow: 0 0 25px rgba(251, 191, 36, 1), 0 0 40px rgba(251, 191, 36, 0.8);
-    filter: brightness(1.25);
-  }
-}
-
-/* --- FOTOS DE EQUIPOS CLICKEABLES --- */
-.zoomable-img {
-  cursor: pointer;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.zoomable-img:hover {
-  transform: scale(1.03);
-  filter: brightness(1.05);
-}
-
-/* Modal o visor de imagen ampliada */
+/* Modal de Imagen Ampliada */
 #imageModal {
   display: none;
   position: fixed;
   inset: 0;
   z-index: 100;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(5px);
+  background: rgba(2, 44, 34, 0.9);
+  backdrop-filter: blur(8px);
   align-items: center;
   justify-content: center;
   padding: 20px;
@@ -75,46 +24,48 @@ body {
 #imageModal img {
   max-width: 90%;
   max-height: 90vh;
-  border-radius: 1rem;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.5);
-  border: 2px solid #10b981;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  animation: zoomInModal 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Tarjetas generales */
-.kactus-card {
-  background: #ffffff;
-  border: 1px solid rgba(16, 185, 129, 0.2);
-  border-radius: 1.5rem;
+@keyframes zoomInModal {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Efectos 3D de Inclinación y Reflexión para Tarjetas y Botones */
+.effect-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
   position: relative;
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.kactus-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px -12px rgba(16, 185, 129, 0.2);
-  border-color: #10b981;
+/* Brillo dinámico (Glare) generado por JavaScript */
+.effect-3d::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.25) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  z-index: 10;
 }
 
-/* Animación de sacudida para errores */
-@keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  20%, 60% { transform: translateX(-6px); }
-  40%, 80% { transform: translateX(6px); }
-}
-.animate-shake {
-  animation: shake 0.4s ease-in-out;
+.effect-3d:hover::after {
+  opacity: 1;
 }
 
-/* Carruseles y scroll */
-.carousel-slide {
-  display: flex;
+/* Zoom suave en imágenes al pasar el cursor */
+.zoomable-img {
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.lang-container::-webkit-scrollbar {
-  height: 4px;
-}
-.lang-container::-webkit-scrollbar-thumb {
-  background: linear-gradient(90deg, #10b981, #3b82f6);
-  border-radius: 4px;
+
+.group:hover .zoomable-img {
+  transform: scale(1.08);
 }
